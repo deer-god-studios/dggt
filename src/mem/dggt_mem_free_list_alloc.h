@@ -6,6 +6,7 @@ struct free_block;
 template <>
 struct allocator<alloc_t::FREE_LIST>
 {
+	static const alloc_t TYPE=alloc_t::FREE_LIST;
 	blk<void> block;
 	free_block* freeList;
 	msize used;

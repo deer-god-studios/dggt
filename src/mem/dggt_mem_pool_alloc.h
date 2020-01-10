@@ -7,6 +7,7 @@ struct pool_block;
 template <>
 struct allocator<alloc_t::POOL>
 {
+	static const alloc_t TYPE=alloc_t::POOL;
 	blk<void> block;
 	pool_block* pool;
 	msize blockSize;

@@ -5,6 +5,7 @@
 template <>
 struct allocator<alloc_t::LINEAR>
 {
+	static const alloc_t TYPE=alloc_t::LINEAR;
 	blk<void> block;
 	msize used;
 

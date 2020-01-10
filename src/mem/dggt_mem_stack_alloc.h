@@ -10,6 +10,7 @@ struct stack_state
 template <>
 struct allocator<alloc_t::STACK>
 {
+	static const alloc_t TYPE=alloc_t::STACK;
 	blk<void> block;
 	msize used;
 	u32 savedCount;
