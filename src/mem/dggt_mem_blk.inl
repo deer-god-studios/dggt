@@ -67,6 +67,28 @@ const T* blk<T>::data() const
 }
 
 template <typename T>
+T* blk<T>::operator->()
+{
+	return mem;
+}
+
+template <typename T>
+const T* blk<T>::operator->() const
+{
+	return mem;
+}
+
+template <typename T>
+T& blk<T>::operator*()
+{
+	return *mem;
+}
+template <typename T>
+const T& blk<T>::operator*() const
+{
+	return *mem;
+}
+template <typename T>
 T& blk<T>::operator[](uint32_t index)
 {
 	return *(mem+index);

@@ -23,6 +23,11 @@ struct blk
 	T* data();
 	const T* data() const;
 
+	T* operator->();
+	const T* operator->() const;
+	T& operator*();
+	const T& operator*() const;
+
 	T& operator[](uint32_t index);
 	const T& operator[](uint32_t index) const;
 
