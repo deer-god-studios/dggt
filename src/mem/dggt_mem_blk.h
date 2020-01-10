@@ -55,7 +55,7 @@ struct blk<void>
 	blk(void* mem,msize size);
 	blk(const blk& other);
 	template <typename T>
-	blk(const blk<T> other)
+	blk(const blk<T>& other)
 		: blk(other.mem,other.count*sizeof(T)) { }
 
 	blk operator+(uint32_t offset) const;
@@ -73,6 +73,9 @@ struct blk<void>
 		return blk<S>((S*)mem,size/sizeof(S));
 	}
 };
+
+template <typename T>
+static const NULL_BLK=blk<T>();
 
 blk<void> blk_alloc(msize size);
 void blk_free(blk<void>& block);
