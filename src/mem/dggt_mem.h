@@ -5,6 +5,7 @@
 
 #include "dggt_mem_free_list.h"
 #include "dggt_mem_alloc.h"
+#include "dggt_mem_free_store.h"
 
 namespace dggt
 {
