@@ -1,5 +1,5 @@
 AC_PREREQ([2.69])
-AC_INIT([dggt], [0.1.a])
+AC_INIT([dggt], [0.01.a])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([build-aux])
