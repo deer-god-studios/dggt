@@ -4,6 +4,7 @@
 // TODO: comments and docs!
 
 #include "dggt_mem_alloc.h"
+#include "dggt_mem_free_store.h"
 
 namespace dggt
 {
