@@ -33,7 +33,8 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_blk.cpp \
 						src/mem/dggt_mem_alloc.h \
 						src/mem/dggt_mem_alloc.inl \
-						src/mem/dggt_mem_alloc.cpp
+						src/mem/dggt_mem_alloc.cpp \
+						src/mem/dggt_free_list.h
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
 check_PROGRAMS = dggt_test_linux
 dggt_test_linux_SOURCES = src/test/dggt_test_linux.cpp
