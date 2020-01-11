@@ -1,7 +1,8 @@
 #include "dggt_mem.h"
 
-namespace
+namespace dggt_internal_
 {
+	using namespace dggt;
 	static b32 isInitialized=0;
 	static blk<void> cacheBlock=blk<void>();
 	static allocator cache=allocator();
@@ -9,25 +10,26 @@ namespace
 
 namespace dggt
 {
+	using namespace dggt_internal_;
 	void cache_init(msize cacheSize)
 	{
-		::cacheBlock=cache_alloc(cacheSize);
-		::cache=allocator(alloc_t::FREE_LIST,cacheBlock);
-		::isInitialized=1;
+		cacheBlock=blk_alloc(cacheSize);
+		cache=allocator(alloc_t::FREE_LIST,cacheBlock);
+		isInitialized=1;
 	}
 
 	b32 cache_is_initialized()
 	{
-		return ::isInitialized;
+		return isInitialized;
 	}
 
 	void cache_shutdown()
 	{
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			blk_free(::cacheBlock);
-			::cache.buffer=blk<void>();
-			::isInitialized=0;
+			blk_free(cacheBlock);
+			cache.buffer=blk<void>();
+			isInitialized=0;
 		}
 	}
 
@@ -40,9 +42,9 @@ namespace dggt
 	msize available_cache_mem()
 	{
 		msize result=0;
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			result=::cache.available_mem();
+			result=cache.available_mem();
 		}
 		return result;
 	}
@@ -50,9 +52,9 @@ namespace dggt
 	msize used_cache_mem()
 	{
 		msize result=0;
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			result=::cache.used;
+			result=cache.used;
 		}
 		return result;
 	}
@@ -60,46 +62,46 @@ namespace dggt
 	msize cache_size()
 	{
 		msize result=0;
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			result=::cacheBlock.size;
+			result=cacheBlock.size;
 		}
 		return result;
 	}
 
 	void cache_clear()
 	{
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			::cache.clear();
+			cache.clear();
 		}
 	}
 
 	void cache_free(blk<void>& block)
 	{
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			::cache.free(block);
+			cache.free(block);
 		}
 	}
 
-	blk<void> dggt_mem_cache_alloc(msize size)
+	blk<void> cache_alloc(msize size)
 	{
 		blk<void> result;
-		if (::isInitialized)
+		if (isInitialized)
 		{
-			result=::cache.alloc(size);
+			result=cache.alloc(size);
 		}
 		return result;
 	}
 
-	allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize)
+	allocator create_alloc(alloc_t type,msize size,msize blockSize)
 	{
 		blk<void> block=blk_alloc(size);
 		return allocator(type,block,blockSize);
 	}
 
-	void dggt_mem_destroy_alloc(allocator& alloc)
+	void destroy_alloc(allocator& alloc)
 	{
 		blk_free(alloc.buffer);
 	}

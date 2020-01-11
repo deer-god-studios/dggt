@@ -194,7 +194,6 @@ namespace dggt_internal_
 	void init_free_list(allocator* alloc, blk<void>& block)
 	{
 		alloc->buffer=block;
-
 		alloc->freeList=(free_block*)block.mem;
 		alloc->freeList->next=0;
 		alloc->freeList->size=block.size;
@@ -270,7 +269,7 @@ namespace dggt_internal_
 			if (prev) // not adding block to the beginning?
 			{
 				void* prevEnd=end_addr(prev,prev->size);
-				msize distP2C=mem_size(prevEnd,toFree);
+				msize distP2C=size_diff(prevEnd,toFree);
 				if (distP2C<sizeof(free_block)) // small gap?
 				{
 					// no gap!
@@ -298,7 +297,7 @@ namespace dggt_internal_
 			if (current) // not adding to end of list?
 			{
 				void* toFreeEnd=end_addr(toFree,toFree->size);
-				msize distF2C=mem_size(toFreeEnd,current);
+				msize distF2C=size_diff(toFreeEnd,current);
 				if (distF2C<sizeof(free_block)) // small gap?
 				{
 					// no gap!
@@ -457,7 +456,8 @@ namespace dggt
 
 	b32 allocator::free(void* ptr,msize size)
 	{
-		return free(blk<void>(ptr,size));
+		blk<void> block=blk<void>(ptr,size);
+		return free(block);
 	}
 
 	void allocator::clear()
@@ -494,7 +494,7 @@ namespace dggt
 		stack_state result=0;
 		if (type==alloc_t::STACK)
 		{
-			result=::save_stack(this);
+			result=dggt_internal_::save_stack(this);
 		}
 		return result;
 	}
