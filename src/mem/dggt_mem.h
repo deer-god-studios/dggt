@@ -3,6 +3,7 @@
 // TODO: add set_block functions to allocators.
 // TODO: comments and docs!
 
+#include "dggt_mem_free_list.h"
 #include "dggt_mem_alloc.h"
 
 void dggt_mem_init(msize cacheSize);
