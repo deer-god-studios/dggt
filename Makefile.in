@@ -89,6 +89,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+check_PROGRAMS = dggt_test_linux$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
@@ -149,6 +150,14 @@ libdggtmem_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
 	-o $@
+am_dggt_test_linux_OBJECTS =  \
+	src/test/dggt_test_linux-dggt_test_linux.$(OBJEXT)
+dggt_test_linux_OBJECTS = $(am_dggt_test_linux_OBJECTS)
+dggt_test_linux_DEPENDENCIES =
+dggt_test_linux_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+	$(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) \
+	$(dggt_test_linux_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -167,7 +176,8 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_alloc.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo \
-	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo
+	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo \
+	src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -205,8 +215,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libdggtmem_la_SOURCES)
-DIST_SOURCES = $(libdggtmem_la_SOURCES)
+SOURCES = $(libdggtmem_la_SOURCES) $(dggt_test_linux_SOURCES)
+DIST_SOURCES = $(libdggtmem_la_SOURCES) $(dggt_test_linux_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -422,6 +432,11 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_alloc.cpp
 
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
+dggt_test_linux_SOURCES = src/test/dggt_test_linux.cpp
+dggt_test_linux_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
+#dggt_test_linux_LIBADD = libdggtmem.la
+dggt_test_linux_LDADD = -ldggtmem
+dggt_test_linux_LDFLAGS = -Wl,-rpath=. -L$(libdir)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -476,6 +491,15 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 distclean-hdr:
 	-rm -f config.h stamp-h1
 
+clean-checkPROGRAMS:
+	@list='$(check_PROGRAMS)'; test -n "$$list" || exit 0; \
+	echo " rm -f" $$list; \
+	rm -f $$list || exit $$?; \
+	test -n "$(EXEEXT)" || exit 0; \
+	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
+	echo " rm -f" $$list; \
+	rm -f $$list
+
 install-libLTLIBRARIES: $(lib_LTLIBRARIES)
 	@$(NORMAL_INSTALL)
 	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
@@ -527,11 +551,24 @@ src/mem/libdggtmem_la-dggt_mem_alloc.lo: src/mem/$(am__dirstamp) \
 
 libdggtmem.la: $(libdggtmem_la_OBJECTS) $(libdggtmem_la_DEPENDENCIES) $(EXTRA_libdggtmem_la_DEPENDENCIES) 
 	$(AM_V_CXXLD)$(libdggtmem_la_LINK) -rpath $(libdir) $(libdggtmem_la_OBJECTS) $(libdggtmem_la_LIBADD) $(LIBS)
+src/test/$(am__dirstamp):
+	@$(MKDIR_P) src/test
+	@: > src/test/$(am__dirstamp)
+src/test/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/test/$(DEPDIR)
+	@: > src/test/$(DEPDIR)/$(am__dirstamp)
+src/test/dggt_test_linux-dggt_test_linux.$(OBJEXT):  \
+	src/test/$(am__dirstamp) src/test/$(DEPDIR)/$(am__dirstamp)
+
+dggt_test_linux$(EXEEXT): $(dggt_test_linux_OBJECTS) $(dggt_test_linux_DEPENDENCIES) $(EXTRA_dggt_test_linux_DEPENDENCIES) 
+	@rm -f dggt_test_linux$(EXEEXT)
+	$(AM_V_CXXLD)$(dggt_test_linux_LINK) $(dggt_test_linux_OBJECTS) $(dggt_test_linux_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 	-rm -f src/mem/*.$(OBJEXT)
 	-rm -f src/mem/*.lo
+	-rm -f src/test/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
@@ -540,6 +577,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -598,6 +636,20 @@ src/mem/libdggtmem_la-dggt_mem_alloc.lo: src/mem/dggt_mem_alloc.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/mem/dggt_mem_alloc.cpp' object='src/mem/libdggtmem_la-dggt_mem_alloc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -c -o src/mem/libdggtmem_la-dggt_mem_alloc.lo `test -f 'src/mem/dggt_mem_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_alloc.cpp
+
+src/test/dggt_test_linux-dggt_test_linux.o: src/test/dggt_test_linux.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.o -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/test/dggt_test_linux.cpp' object='src/test/dggt_test_linux-dggt_test_linux.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
+
+src/test/dggt_test_linux-dggt_test_linux.obj: src/test/dggt_test_linux.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.obj -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/test/dggt_test_linux.cpp' object='src/test/dggt_test_linux-dggt_test_linux.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -856,6 +908,7 @@ distcleancheck: distclean
 	       $(distcleancheck_listfiles) ; \
 	       exit 1; } >&2
 check-am: all-am
+	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
 check: check-am
 all-am: Makefile $(LTLIBRARIES) $(HEADERS) config.h
 installdirs:
@@ -890,14 +943,16 @@ distclean-generic:
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
 	-rm -f src/mem/$(DEPDIR)/$(am__dirstamp)
 	-rm -f src/mem/$(am__dirstamp)
+	-rm -f src/test/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/test/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
-	mostlyclean-am
+clean-am: clean-checkPROGRAMS clean-generic clean-libLTLIBRARIES \
+	clean-libtool mostlyclean-am
 
 distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
@@ -905,6 +960,7 @@ distclean: distclean-am
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo
+	-rm -f src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-libtool distclean-tags
@@ -956,6 +1012,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo
+	-rm -f src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -974,22 +1031,22 @@ ps-am:
 
 uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES
 
-.MAKE: all install-am install-strip
+.MAKE: all check-am install-am install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am am--depfiles am--refresh check \
-	check-am clean clean-cscope clean-generic clean-libLTLIBRARIES \
-	clean-libtool cscope cscopelist-am ctags ctags-am dist \
-	dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ \
-	dist-xz dist-zip distcheck distclean distclean-compile \
-	distclean-generic distclean-hdr distclean-libtool \
-	distclean-tags distcleancheck distdir distuninstallcheck dvi \
-	dvi-am html html-am info info-am install install-am \
-	install-data install-data-am install-dvi install-dvi-am \
-	install-exec install-exec-am install-html install-html-am \
-	install-includeHEADERS install-info install-info-am \
-	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
+	check-am clean clean-checkPROGRAMS clean-cscope clean-generic \
+	clean-libLTLIBRARIES clean-libtool cscope cscopelist-am ctags \
+	ctags-am dist dist-all dist-bzip2 dist-gzip dist-lzip \
+	dist-shar dist-tarZ dist-xz dist-zip distcheck distclean \
+	distclean-compile distclean-generic distclean-hdr \
+	distclean-libtool distclean-tags distcleancheck distdir \
+	distuninstallcheck dvi dvi-am html html-am info info-am \
+	install install-am install-data install-data-am install-dvi \
+	install-dvi-am install-exec install-exec-am install-html \
+	install-html-am install-includeHEADERS install-info \
+	install-info-am install-libLTLIBRARIES install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
 	maintainer-clean-generic mostlyclean mostlyclean-compile \
 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
 	tags tags-am uninstall uninstall-am uninstall-includeHEADERS \
