@@ -4,14 +4,13 @@ namespace
 {
 	static b32 isInitialized=0;
 	static blk<void> cacheBlock=blk<void>();
-	static allocator<alloc_t::FREE_LIST> cache=
-		allocator<alloc_t::FREE_LIST>();
+	static allocator cache=allocator();
 }
 
 void dggt_mem_init(msize cacheSize)
 {
 	::cacheBlock=blk_alloc(cacheSize);
-	::cache=allocator<alloc_t::FREE_LIST>(cacheBlock);
+	::cache=allocator(alloc_t::FREE_LIST,cacheBlock);
 	::isInitialized=1;
 }
 
@@ -20,7 +19,7 @@ msize dggt_mem_available()
 	msize result=0;
 	if (::isInitialized)
 	{
-		result=::cache.available();
+		result=::cache.available_mem();
 	}
 	return result;
 }
@@ -66,7 +65,7 @@ void dggt_mem_free()
 	if (::isInitialized)
 	{
 		blk_free(::cacheBlock);
-		::cache.block=blk<void>();
+		::cache.buffer=blk<void>();
 		::isInitialized=0;
 	}
 }
@@ -92,8 +91,13 @@ b32 dggt_mem_is_initialized()
 	return ::isInitialized;
 }
 
-allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize)
+allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize)
 {
 	blk<void> block=blk_alloc(size);
-	return allocator<alloc_t::POOL>(block,blockSize);
+	return allocator(type,block,blockSize);
+}
+
+void dggt_mem_destroy_alloc(allocator& alloc)
+{
+	blk_free(alloc.buffer);
 }

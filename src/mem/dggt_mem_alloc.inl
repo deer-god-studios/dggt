@@ -8,7 +8,8 @@ blk<T> allocator::alloc(u32 count)
 template <typename T>
 b32 allocator::free(blk<T>& block)
 {
-	return free(blk<void>(block));
+	blk<void> b=blk<void>(block);
+	return free(b);
 }
 
 template <typename T>

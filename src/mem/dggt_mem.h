@@ -4,10 +4,6 @@
 // TODO: comments and docs!
 
 #include "dggt_mem_alloc.h"
-#include "dggt_mem_linear_alloc.h"
-#include "dggt_mem_stack_alloc.h"
-#include "dggt_mem_free_list_alloc.h"
-#include "dggt_mem_pool_alloc.h"
 
 void dggt_mem_init(msize cacheSize);
 void dggt_mem_free();
@@ -22,13 +18,12 @@ blk<void> dggt_mem_cache_alloc(msize size);
 
 template <typename T>
 blk<T> dggt_mem_cache_alloc(u32 count);
+template <typename T>
+void dggt_mem_cache_free(blk<T>& block);
 
-template <alloc_t A>
-allocator<A> create_alloc(msize size);
-template <alloc_t A>
-void free_alloc(allocator<A>& alloc);
+allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize=0);
+void dggt_mem_free_alloc(allocator& alloc);
 
-allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
 
 #include "dggt_mem.inl"
 #define _DGGT_MEM_H_

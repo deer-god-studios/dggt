@@ -15,9 +15,9 @@ namespace
 	blk<void> alloc_ptr_add(allocator* alloc,msize size)
 	{
 		blk<void> result;
-		if (alloc->used+size<=alloc->block.size)
+		if (alloc->used+size<=alloc->buffer.size)
 		{
-			void* ptr=ptr_add(alloc->block.mem,alloc->used);
+			void* ptr=ptr_add(alloc->buffer.mem,alloc->used);
 			result=blk<void>(ptr,size);
 			alloc->used+=size;
 		}
@@ -28,7 +28,7 @@ namespace
 	{
 		b32 result=0;
 		void* allocEndAddr=ptr_add(
-				alloc->block.mem,
+				alloc->buffer.mem,
 				alloc->used);
 		void* blkEndAddr=ptr_add(block.mem,block.size);
 		if (allocEndAddr==blkEndAddr)
@@ -67,7 +67,7 @@ namespace
 	{
 		stack_state result=alloc->used;
 		alloc->prevState=result;
-		++alloc->savedCount;
+		++alloc->stateCount;
 		return result;
 	}
 	b32 restore_stack(allocator* alloc,stack_state state)
@@ -76,13 +76,13 @@ namespace
 		if (result)
 		{
 			alloc->used=state;
-			--alloc->savedCount;
+			--alloc->stateCount;
 		}
 		return result;
 	}
-	b32 is_stack_balanced(allocator* alloc)
+	b32 is_stack_balanced(const allocator* alloc)
 	{
-		return alloc->savedCount==0;
+		return alloc->stateCount==0;
 	}
 	void clear_stack(allocator* alloc)
 	{
@@ -96,13 +96,13 @@ namespace
 		{
 			blockSize=sizeof(pool_block);
 		}
-		alloc->block=block;
+		alloc->buffer=block;
 		alloc->blockSize=blockSize;
 		alloc->blockCount=(u32)(block.size/blockSize);
 		alloc->pool=(pool_block*)block.mem;
 		for (u32 i=0;i<alloc->blockCount;++i)
 		{
-			pool_block* current=pool+i;
+			pool_block* current=alloc->pool+i;
 			current->next=
 				i==alloc->blockCount-1?0:current+1;
 
@@ -122,20 +122,23 @@ namespace
 	}
 	b32 free_pool(allocator* alloc,blk<void>& block)
 	{
+		b32 result=0;
 		if (alloc->owns(block))
 		{
 			pool_block* newBlock=(pool_block*)block.mem;
 			newBlock->next=alloc->pool;
 			alloc->pool=newBlock;
 			alloc->used-=alloc->blockSize;
+			result=1;
 		}
+		return result;
 	}
 	void clear_pool(allocator* alloc)
 	{
-		alloc->pool=(pool_block*)block.mem;
+		alloc->pool=(pool_block*)alloc->buffer.mem;
 		for (u32 i=0;i<alloc->blockCount;++i)
 		{
-			pool_block* current=pool+i;
+			pool_block* current=alloc->pool+i;
 			current->next=i==alloc->blockCount-1?0:current+1;
 
 		}
@@ -186,7 +189,7 @@ namespace
 
 	void init_free_list(allocator* alloc, blk<void>& block)
 	{
-		alloc->block=block;
+		alloc->buffer=block;
 
 		alloc->freeList=(free_block*)block.mem;
 		alloc->freeList->next=0;
@@ -200,7 +203,7 @@ namespace
 			size=sizeof(free_block);
 		}
 		blk<void> result;
-		if (alloc->used+size<=block.size)
+		if (alloc->used+size<=alloc->buffer.size)
 		{
 			best_fit_result bestFit=
 				best_fit(alloc->freeList,size);
@@ -242,13 +245,14 @@ namespace
 	b32 free_free_list(allocator* alloc,
 			blk<void>& blockToFree)
 	{
+		b32 result=0;
 		free_block* toFree=(free_block*)blockToFree.mem;
 		toFree->size=blockToFree.size;
 		if (toFree->size<sizeof(free_block))
 		{
 			toFree->size=sizeof(free_block);
 		}
-		if (alloc->owns(block))
+		if (alloc->owns(blockToFree))
 		{
 			free_block* current=alloc->freeList;
 			free_block* prev=0;
@@ -322,13 +326,15 @@ namespace
 				}
 			}
 
+			result=1;
 			alloc->used-=sizeToFree;
 		}
+		return result;
 	}
 	void clear_free_list(allocator* alloc)
 	{
-		alloc->freeList=(free_block*)block.mem;
-		alloc->freeList->size=block.size;
+		alloc->freeList=(free_block*)alloc->buffer.mem;
+		alloc->freeList->size=alloc->buffer.size;
 		alloc->used=0;
 	}
 }
@@ -353,10 +359,11 @@ allocator::allocator(alloc_t type,msize blockSize)
 	this->blockSize=blockSize;
 }
 
-allocator::allocator(alloc_t type,blk<void>& block,
+allocator::allocator(alloc_t type,void* ptr,msize size,
 		msize blockSize)
 	: allocator(type,blockSize)
 {
+	blk<void> block=blk<void>(ptr,size);
 	switch (type)
 	{
 		case alloc_t::POOL:
@@ -369,20 +376,22 @@ allocator::allocator(alloc_t type,blk<void>& block,
 			} break;
 		default:
 			{
-				this->block=block;
+				this->buffer=block;
 			} break;
 	}
 }
 
-allocator::allocator(alloc_t type,void* ptr,msize size,
+
+allocator::allocator(alloc_t type,blk<void>& block,
 		msize blockSize)
-	: allocator(type,blk<void>(ptr,size),blockSize)
+	: allocator(type,block.mem,block.size,blockSize)
 {
+
 }
 
 msize allocator::available_mem() const
 {
-	return block.size-used;
+	return buffer.size-used;
 }
 
 msize allocator::used_mem() const
@@ -463,10 +472,10 @@ void allocator::clear()
 	}
 }
 
-b32 allocator::owns(blk<void>& block) const
+b32 allocator::owns(const blk<void>& block) const
 {
-	return block.mem>=this->block.mem&&
-		block.mem<=this->block.mem;
+	return block.mem>=this->buffer.mem&&
+		block.mem<=this->buffer.mem;
 }
 
 stack_state allocator::save_stack()

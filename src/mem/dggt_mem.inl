@@ -1,30 +1,15 @@
 
 
 template <typename T>
-blk<T> xmem_cache_alloc(u32 count)
+blk<T> dggt_mem_cache_alloc(u32 count)
 {
-	blk<void> block=xmem_cache_alloc(count*sizeof(T));
+	blk<void> block=dggt_mem_cache_alloc(count*sizeof(T));
 	return blk<T>(block.mem,block.mem?count:0);
 }
 
-template <alloc_t A>
-allocator<A> create_alloc(msize size)
+template <typename T>
+void dggt_mem_cache_free(blk<T>& block)
 {
-	allocator<A> result=allocator<A>();
-	if (xmem_is_initialized())
-	{
-		blk<void> allocBlock=xmem_cache_alloc(size);
-		result=allocator<A>(allocBlock);
-	}
-	return result;
-}
-
-template <alloc_t A>
-void free_alloc(allocator<A>& alloc)
-{
-	if (xmem_is_initialized())
-	{
-		xmem_cache_free(alloc.block);
-		alloc=allocator<A>();
-	}
+	blk<void> b=blk<void>(block);
+	dggt_mem_cache_free(b);
 }

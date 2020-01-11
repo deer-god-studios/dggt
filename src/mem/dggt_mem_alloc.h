@@ -12,7 +12,7 @@ enum alloc_t:u32
 };
 
 struct pool_block;
-struct free_list;
+struct free_block;
 typedef msize stack_state;
 
 struct allocator
@@ -49,7 +49,7 @@ struct allocator
 	b32 free(blk<T>& block);
 	void clear();
 
-	b32 owns(const blk<T>& block) const;
+	b32 owns(const blk<void>& block) const;
 	template <typename T>
 	b32 owns(const blk<T>& block) const;
 

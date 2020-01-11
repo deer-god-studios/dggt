@@ -75,7 +75,7 @@ struct blk<void>
 };
 
 template <typename T>
-static const NULL_BLK=blk<T>();
+static const blk<T> NULL_BLK=blk<T>();
 
 blk<void> blk_alloc(msize size);
 void blk_free(blk<void>& block);
