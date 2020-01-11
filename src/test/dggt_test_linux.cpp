@@ -1,12 +1,17 @@
 #include <cstdio>
 #include "dggt.h"
 
+using namespace dggt;
+
 int main(int argc, char* argv[])
 {
-	dggt_mem_init(4096);
+	printf("cache_init");
+	cache_init(4096);
 
-	allocator linAlloc=dggt_mem_create_alloc(alloc_t::LINEAR,1024);
+	printf("create_alloc");
+	allocator linAlloc=create_alloc(alloc_t::LINEAR,1024);
 
+	printf("linAlloc.alloc<real32>");
 	blk<real32> realBlock=linAlloc.alloc<real32>(10);
 	for (u32 i=0;i<realBlock.count;++i)
 	{
@@ -17,6 +22,10 @@ int main(int argc, char* argv[])
 	{
 		printf("%f\n",realBlock[i]);
 	}
-	dggt_mem_free();
+
+	printf("destroy_alloc");
+	destroy_alloc(linAlloc);
+	cache_shutdown();
+
 	return 0;
 }

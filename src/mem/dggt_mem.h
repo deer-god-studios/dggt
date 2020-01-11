@@ -6,24 +6,27 @@
 #include "dggt_mem_free_list.h"
 #include "dggt_mem_alloc.h"
 
-void dggt_mem_init(msize cacheSize);
-void dggt_mem_free();
-void dggt_mem_reinit(msize cacheSize);
-msize dggt_mem_available();
-msize dggt_mem_used();
-msize dggt_mem_cache_size();
-void dggt_mem_cache_clear();
-void dggt_mem_cache_free(blk<void>& block);
-b32 dggt_mem_is_initialized();
-blk<void> dggt_mem_cache_alloc(msize size);
+namespace dggt
+{
+	void cache_init(msize cacheSize);
+	b32 cache_is_initialized();
+	void cache_shutdown();
+	void cache_reinit(msize cacheSize);
+	msize available_cache_mem();
+	msize used_cache_mem();
+	msize cache_size();
+	void cache_clear();
+	void cache_free(blk<void>& block);
+	blk<void> cache_alloc(msize size);
 
-template <typename T>
-blk<T> dggt_mem_cache_alloc(u32 count);
-template <typename T>
-void dggt_mem_cache_free(blk<T>& block);
+	template <typename T>
+	blk<T> cache_alloc(u32 count);
+	template <typename T>
+	void cache_free(blk<T>& block);
 
-allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize=0);
-void dggt_mem_free_alloc(allocator& alloc);
+	allocator create_alloc(alloc_t type,msize size,msize blockSize=0);
+	void destroy_alloc(allocator& alloc);
+}
 
 
 #include "dggt_mem.inl"

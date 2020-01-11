@@ -429,15 +429,15 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_blk.cpp \
 						src/mem/dggt_mem_alloc.h \
 						src/mem/dggt_mem_alloc.inl \
-						src/mem/dggt_mem_alloc.cpp \
-						src/mem/dggt_free_list.h
+						src/mem/dggt_mem_alloc.cpp
 
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
 dggt_test_linux_SOURCES = src/test/dggt_test_linux.cpp
-dggt_test_linux_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
+dggt_test_linux_CPPFLAGS = -O0
+dggt_test_linux_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src -g -DDEBUG
 #dggt_test_linux_LIBADD = libdggtmem.la
 dggt_test_linux_LDADD = -ldggtmem
-dggt_test_linux_LDFLAGS = -Wl,-rpath=. -L$(libdir)
+dggt_test_linux_LDFLAGS = -Wl,-rpath=. -Wl,-rpath=./.libs -L$(libdir)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -639,18 +639,18 @@ src/mem/libdggtmem_la-dggt_mem_alloc.lo: src/mem/dggt_mem_alloc.cpp
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -c -o src/mem/libdggtmem_la-dggt_mem_alloc.lo `test -f 'src/mem/dggt_mem_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_alloc.cpp
 
 src/test/dggt_test_linux-dggt_test_linux.o: src/test/dggt_test_linux.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.o -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dggt_test_linux_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.o -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/test/dggt_test_linux.cpp' object='src/test/dggt_test_linux-dggt_test_linux.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dggt_test_linux_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
 
 src/test/dggt_test_linux-dggt_test_linux.obj: src/test/dggt_test_linux.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.obj -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dggt_test_linux_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.obj -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/test/dggt_test_linux.cpp' object='src/test/dggt_test_linux-dggt_test_linux.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dggt_test_linux_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -c -o src/test/dggt_test_linux-dggt_test_linux.obj `if test -f 'src/test/dggt_test_linux.cpp'; then $(CYGPATH_W) 'src/test/dggt_test_linux.cpp'; else $(CYGPATH_W) '$(srcdir)/src/test/dggt_test_linux.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
