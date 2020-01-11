@@ -1,17 +1,21 @@
 #include "mem/dggt_mem_alloc.h"
 
-struct pool_block
+namespace dggt
 {
-	pool_block* next;
-};
-struct free_block
-{
-	msize size;
-	free_block* next;
-};
+	struct pool_block
+	{
+		pool_block* next;
+	};
+	struct free_block
+	{
+		msize size;
+		free_block* next;
+	};
+}
 
-namespace
+namespace dggt_internal_
 {
+	using namespace dggt;
 	blk<void> alloc_ptr_add(allocator* alloc,msize size)
 	{
 		blk<void> result;
@@ -339,171 +343,179 @@ namespace
 	}
 }
 
-allocator::allocator()
+namespace dggt
 {
-	type=alloc_t::NONE;
-	buffer=blk<void>();
-	used=0;
-	stateCount=0;
-	prevState=0;
-	blockSize=0;
-	blockCount=0;
-	pool=0;
-	freeList=0;
-}
-
-allocator::allocator(alloc_t type,msize blockSize)
-	: allocator()
-{
-	this->type=type;
-	this->blockSize=blockSize;
-}
-
-allocator::allocator(alloc_t type,void* ptr,msize size,
-		msize blockSize)
-	: allocator(type,blockSize)
-{
-	blk<void> block=blk<void>(ptr,size);
-	switch (type)
+	allocator::allocator()
 	{
-		case alloc_t::POOL:
-			{
-				::init_pool(this,block,blockSize);
-			} break;
-		case alloc_t::FREE_LIST:
-			{
-				::init_free_list(this,block);
-			} break;
-		default:
-			{
-				this->buffer=block;
-			} break;
+		type=alloc_t::NONE;
+		buffer=blk<void>();
+		used=0;
+		stateCount=0;
+		prevState=0;
+		blockSize=0;
+		blockCount=0;
+		pool=0;
+		freeList=0;
 	}
-}
 
-
-allocator::allocator(alloc_t type,blk<void>& block,
-		msize blockSize)
-	: allocator(type,block.mem,block.size,blockSize)
-{
-
-}
-
-msize allocator::available_mem() const
-{
-	return buffer.size-used;
-}
-
-msize allocator::used_mem() const
-{
-	return used;
-}
-
-blk<void> allocator::alloc(msize size)
-{
-	blk<void> result=NULL_BLK<void>;
-	switch (type)
+	allocator::allocator(alloc_t type,msize blockSize)
+		: allocator()
 	{
-		case alloc_t::LINEAR:
-			{
-				result=::alloc_linear(this,size);
-			} break;
-		case alloc_t::STACK:
-			{
-				result=::alloc_stack(this,size);
-			} break;
-		case alloc_t::POOL:
-			{
-				result=::alloc_pool(this);
-			} break;
-		case alloc_t::FREE_LIST:
-			{
-				result=::alloc_free_list(this,size);
-			} break;
+		this->type=type;
+		this->blockSize=blockSize;
 	}
-	return result;
-}
 
-b32 allocator::free(blk<void>& block)
-{
-	b32 result=owns(block);
-	switch (type)
+	allocator::allocator(alloc_t type,void* ptr,msize size,
+			msize blockSize)
+		: allocator(type,blockSize)
 	{
-		case alloc_t::LINEAR:
-			{
-				result=false;
-			} break;
-		case alloc_t::STACK:
-			{
-				result=::free_stack(this,block);
-			} break;
-		case alloc_t::POOL:
-			{
-				result=::free_pool(this,block);
-			} break;
-		case alloc_t::FREE_LIST:
-			{
-				result=::free_free_list(this,block);
-			} break;
+		blk<void> block=blk<void>(ptr,size);
+		switch (type)
+		{
+			case alloc_t::POOL:
+				{
+					dggt_internal_::init_pool(this,block,blockSize);
+				} break;
+			case alloc_t::FREE_LIST:
+				{
+					dggt_internal_::init_free_list(this,block);
+				} break;
+			default:
+				{
+					this->buffer=block;
+				} break;
+		}
 	}
-	return result;
-}
 
-void allocator::clear()
-{
-	switch (type)
+
+	allocator::allocator(alloc_t type,blk<void>& block,
+			msize blockSize)
+		: allocator(type,block.mem,block.size,blockSize)
 	{
-		case alloc_t::LINEAR:
-			{
-				::clear_linear(this);
-			} break;
-		case alloc_t::STACK:
-			{
-				::clear_stack(this);
-			} break;
-		case alloc_t::POOL:
-			{
-				::clear_pool(this);
-			} break;
-		case alloc_t::FREE_LIST:
-			{
-				::clear_free_list(this);
-			} break;
+
 	}
-}
 
-b32 allocator::owns(const blk<void>& block) const
-{
-	return block.mem>=this->buffer.mem&&
-		block.mem<=this->buffer.mem;
-}
-
-stack_state allocator::save_stack()
-{
-	stack_state result=0;
-	if (type==alloc_t::STACK)
+	msize allocator::available_mem() const
 	{
-		result=::save_stack(this);
+		return buffer.size-used;
 	}
-	return result;
-}
 
-b32 allocator::restore_stack(stack_state state)
-{
-	b32 result=0;
-	if (type==alloc_t::STACK)
+	msize allocator::used_mem() const
 	{
-		result==::restore_stack(this,state);
+		return used;
 	}
-	return result;
-}
 
-b32 allocator::is_stack_balanced() const
-{
-	b32 result=0;
-	if (type==alloc_t::STACK)
+	blk<void> allocator::alloc(msize size)
 	{
-		result==::is_stack_balanced(this);
+		blk<void> result=NULL_BLK<void>;
+		switch (type)
+		{
+			case alloc_t::LINEAR:
+				{
+					result=dggt_internal_::alloc_linear(this,size);
+				} break;
+			case alloc_t::STACK:
+				{
+					result=dggt_internal_::alloc_stack(this,size);
+				} break;
+			case alloc_t::POOL:
+				{
+					result=dggt_internal_::alloc_pool(this);
+				} break;
+			case alloc_t::FREE_LIST:
+				{
+					result=dggt_internal_::alloc_free_list(this,size);
+				} break;
+		}
+		return result;
 	}
-	return result;
+
+	b32 allocator::free(blk<void>& block)
+	{
+		b32 result=owns(block);
+		switch (type)
+		{
+			case alloc_t::LINEAR:
+				{
+					result=false;
+				} break;
+			case alloc_t::STACK:
+				{
+					result=dggt_internal_::free_stack(this,block);
+				} break;
+			case alloc_t::POOL:
+				{
+					result=dggt_internal_::free_pool(this,block);
+				} break;
+			case alloc_t::FREE_LIST:
+				{
+					result=dggt_internal_::free_free_list(this,block);
+				} break;
+		}
+		return result;
+	}
+
+	b32 allocator::free(void* ptr,msize size)
+	{
+		return free(blk<void>(ptr,size));
+	}
+
+	void allocator::clear()
+	{
+		switch (type)
+		{
+			case alloc_t::LINEAR:
+				{
+					dggt_internal_::clear_linear(this);
+				} break;
+			case alloc_t::STACK:
+				{
+					dggt_internal_::clear_stack(this);
+				} break;
+			case alloc_t::POOL:
+				{
+					dggt_internal_::clear_pool(this);
+				} break;
+			case alloc_t::FREE_LIST:
+				{
+					dggt_internal_::clear_free_list(this);
+				} break;
+		}
+	}
+
+	b32 allocator::owns(const blk<void>& block) const
+	{
+		return block.mem>=this->buffer.mem&&
+			block.mem<=this->buffer.mem;
+	}
+
+	stack_state allocator::save_stack()
+	{
+		stack_state result=0;
+		if (type==alloc_t::STACK)
+		{
+			result=::save_stack(this);
+		}
+		return result;
+	}
+
+	b32 allocator::restore_stack(stack_state state)
+	{
+		b32 result=0;
+		if (type==alloc_t::STACK)
+		{
+			result==dggt_internal_::restore_stack(this,state);
+		}
+		return result;
+	}
+
+	b32 allocator::is_stack_balanced() const
+	{
+		b32 result=0;
+		if (type==alloc_t::STACK)
+		{
+			result==dggt_internal_::is_stack_balanced(this);
+		}
+		return result;
+	}
 }

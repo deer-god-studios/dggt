@@ -7,97 +7,100 @@ namespace
 	static allocator cache=allocator();
 }
 
-void dggt_mem_init(msize cacheSize)
+namespace dggt
 {
-	::cacheBlock=blk_alloc(cacheSize);
-	::cache=allocator(alloc_t::FREE_LIST,cacheBlock);
-	::isInitialized=1;
-}
-
-msize dggt_mem_available()
-{
-	msize result=0;
-	if (::isInitialized)
+	void cache_init(msize cacheSize)
 	{
-		result=::cache.available_mem();
+		::cacheBlock=cache_alloc(cacheSize);
+		::cache=allocator(alloc_t::FREE_LIST,cacheBlock);
+		::isInitialized=1;
 	}
-	return result;
-}
 
-msize dggt_mem_used()
-{
-	msize result=0;
-	if (::isInitialized)
+	b32 cache_is_initialized()
 	{
-		result=::cache.used;
+		return ::isInitialized;
 	}
-	return result;
-}
 
-msize dggt_mem_cache_size()
-{
-	msize result=0;
-	if (::isInitialized)
+	void cache_shutdown()
 	{
-		result=::cacheBlock.size;
+		if (::isInitialized)
+		{
+			blk_free(::cacheBlock);
+			::cache.buffer=blk<void>();
+			::isInitialized=0;
+		}
 	}
-	return result;
-}
 
-void dggt_mem_cache_clear()
-{
-	if (::isInitialized)
+	void cache_reinit(msize cacheSize)
 	{
-		::cache.clear();
+		cache_shutdown();
+		cache_init(cacheSize);
 	}
-}
 
-void dggt_mem_cache_free(blk<void>& block)
-{
-	if (::isInitialized)
+	msize available_cache_mem()
 	{
-		::cache.free(block);
+		msize result=0;
+		if (::isInitialized)
+		{
+			result=::cache.available_mem();
+		}
+		return result;
 	}
-}
 
-void dggt_mem_free()
-{
-	if (::isInitialized)
+	msize used_cache_mem()
 	{
-		blk_free(::cacheBlock);
-		::cache.buffer=blk<void>();
-		::isInitialized=0;
+		msize result=0;
+		if (::isInitialized)
+		{
+			result=::cache.used;
+		}
+		return result;
 	}
-}
 
-void dggt_mem_reinit(msize cacheSize)
-{
-	dggt_mem_free();
-	dggt_mem_init(cacheSize);
-}
-
-blk<void> dggt_mem_cache_alloc(msize size)
-{
-	blk<void> result;
-	if (::isInitialized)
+	msize cache_size()
 	{
-		result=::cache.alloc(size);
+		msize result=0;
+		if (::isInitialized)
+		{
+			result=::cacheBlock.size;
+		}
+		return result;
 	}
-	return result;
-}
 
-b32 dggt_mem_is_initialized()
-{
-	return ::isInitialized;
-}
+	void cache_clear()
+	{
+		if (::isInitialized)
+		{
+			::cache.clear();
+		}
+	}
 
-allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize)
-{
-	blk<void> block=blk_alloc(size);
-	return allocator(type,block,blockSize);
-}
+	void cache_free(blk<void>& block)
+	{
+		if (::isInitialized)
+		{
+			::cache.free(block);
+		}
+	}
 
-void dggt_mem_destroy_alloc(allocator& alloc)
-{
-	blk_free(alloc.buffer);
+	blk<void> dggt_mem_cache_alloc(msize size)
+	{
+		blk<void> result;
+		if (::isInitialized)
+		{
+			result=::cache.alloc(size);
+		}
+		return result;
+	}
+
+	allocator dggt_mem_create_alloc(alloc_t type,msize size,msize blockSize)
+	{
+		blk<void> block=blk_alloc(size);
+		return allocator(type,block,blockSize);
+	}
+
+	void dggt_mem_destroy_alloc(allocator& alloc)
+	{
+		blk_free(alloc.buffer);
+	}
 }
