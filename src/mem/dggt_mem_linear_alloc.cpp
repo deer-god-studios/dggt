@@ -13,7 +13,7 @@ namespace dggt
 		buff.mem=ptr;
 		buff.size=size;
 	}
-	allocator<alloc_t::LINEAR>::allocator(blk<void>& buffer)
+	allocator<alloc_t::LINEAR>::allocator(blk<void> buffer)
 		: allocator(buffer.mem,buffer.size) { }
 
 	void* allocator<alloc_t::LINEAR>::alloc(msize* size)
@@ -61,7 +61,7 @@ namespace dggt
 			ptr<=ptr_add(buff.mem,buff.size);
 	}
 
-	b32 allocator<alloc_t::LINEAR>::owns(const blk<void>& block) const
+	b32 allocator<alloc_t::LINEAR>::owns(const blk<void> block) const
 	{
 		return owns(block.mem)&&
 			// also check block end address (?)

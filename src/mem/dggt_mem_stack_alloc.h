@@ -9,11 +9,11 @@ namespace dggt
 	{
 		static const alloc_t TYPE=alloc_t::STACK;
 		blk<void> buff;
-		u32 used;
+		msize used;
 		u32 stateCount;
 		stack_state prevState;
 
-		allocator(blk<void>& buffer);
+		allocator(blk<void> buffer);
 		allocator(void* buffPtr,msize buffSize);
 
 		blk<void> alloc(msize size=4);
@@ -22,10 +22,10 @@ namespace dggt
 		blk<T> alloc(u32 count=1);
 		template <typename T>
 		T* alloc(u32* count);
-		b32 free(blk<void>& block);
+		b32 free(blk<void> block);
 		b32 free(void* ptr,msize size);
 		template <typename T>
-		b32 free(blk<T>& block);
+		b32 free(blk<T> block);
 		template <typename T>
 		b32 free(T* ptr,u32 count);
 
@@ -36,11 +36,11 @@ namespace dggt
 		void clear();
 
 		b32 owns(const void* ptr) const;
-		b32 owns(const blk<void>& block) const;
+		b32 owns(const blk<void> block) const;
 		template <typename T>
 		b32 owns(const T* ptr) const;
 		template <typename T>
-		b32 owns(blk<T>& block) const;
+		b32 owns(blk<T> block) const;
 
 		msize available_mem() const;
 		msize used_mem() const;

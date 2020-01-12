@@ -13,7 +13,7 @@ namespace dggt
 		T* result=0;
 		if (count&&*count)
 		{
-			msize size=*size*sizeof(T);
+			msize size=*count*sizeof(T);
 			result=(T*)alloc(&size);
 			if (result)
 			{
@@ -28,9 +28,10 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::LINEAR>::owns(const blk<T>& block) const
+	b32 allocator<alloc_t::LINEAR>::owns(const blk<T> block) const
 	{
-		return owns(block.mem);
+		return owns(block.mem)&&
+			block.mem+block.count<=ptr_add(buff.mem,buff.size);
 	}
 
 	template <typename T>

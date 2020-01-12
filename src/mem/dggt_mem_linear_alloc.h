@@ -9,9 +9,9 @@ namespace dggt
 	{
 		static const alloc_t TYPE=alloc_t::LINEAR;
 		blk<void> buff;
-		u32 used;
+		msize used;
 
-		allocator(blk<void>& buffer);
+		allocator(blk<void> buffer);
 		allocator(void* buffPtr,msize buffSize);
 
 		blk<void> alloc(msize size=4);
@@ -23,13 +23,13 @@ namespace dggt
 
 		void clear();
 
-		msize availabe_mem() const;
+		msize available_mem() const;
 		msize used_mem() const;
 
-		b32 owns(const blk<void>& block) const;
+		b32 owns(const blk<void> block) const;
 		b32 owns(const void* ptr) const;
 		template <typename T>
-		b32 owns(const blk<T>& block) const;
+		b32 owns(const blk<T> block) const;
 		template <typename T>
 		b32 owns(const T* ptr) const;
 
