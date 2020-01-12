@@ -25,6 +25,12 @@ T pow(T val,uint32 p)
 	}
 }
 
+template <typename T>
+T pow2(uint32 p)
+{
+	return T(1<<p);
+}
+
 inline real32 sqrt(real32 val)
 {
 	return std::sqrt(val);
