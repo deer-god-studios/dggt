@@ -14,13 +14,14 @@ int main(int argc, char* argv[])
 		create_alloc<alloc_t::LINEAR>(1024);
 
 	printf("linAlloc->alloc<real32>\n");
-	blk<real32> realBlock=linAlloc->alloc<real32>(10);
-	for (u32 i=0;i<realBlock.count;++i)
+	u32 realCount=10;
+	real32* realBlock=linAlloc->alloc<real32>(&realCount);
+	for (u32 i=0;i<realCount;++i)
 	{
 		realBlock[i]=(real32)i/21.43f;
 	}
 
-	for (u32 i=0;i<realBlock.count;++i)
+	for (u32 i=0;i<realCount;++i)
 	{
 		printf("%f\n",realBlock[i]);
 	}
