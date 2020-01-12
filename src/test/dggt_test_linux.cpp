@@ -1,5 +1,6 @@
 #include <cstdio>
 #include "dggt.h"
+#include "coll/dggt_coll_linked_list.h"
 
 using namespace dggt;
 
@@ -27,6 +28,10 @@ int main(int argc, char* argv[])
 	}
 
 	printf("destroy_alloc\n");
+
+	linked_list<real32> realList;
+	push(&realList,5.0f,linAlloc);
+
 	destroy_alloc(linAlloc);
 	cache_shutdown();
 
