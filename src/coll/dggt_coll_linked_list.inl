@@ -18,6 +18,7 @@ namespace dggt
 			}
 			return result;
 		}
+
 		template <typename T>
 		list_node<T>* alloc_node(allocator<alloc_t::POOL>* alloc)
 		{
@@ -41,6 +42,7 @@ namespace dggt
 			}
 			return result;
 		}
+
 		template <typename T>
 		b32 free_node(allocator<alloc_t::POOL>* alloc,list_node<T>* node)
 		{
@@ -51,10 +53,18 @@ namespace dggt
 			}
 			return result;
 		}
+
 		template <typename T>
 		b32 free_node(allocator<alloc_t::LINEAR>* alloc,list_node<T>* node)
 		{
 			return 0;
+		}
+
+		template  <typename T>
+		b32 free_node(free_store<list_node<T>>* freeStore,list_node<T>* node)
+		{
+			freeStore->push(node);
+			return 1;
 		}
 
 		template <typename T,alloc_t A>
@@ -79,13 +89,13 @@ namespace dggt
 				list_node<T>* node)
 		{
 			b32 result=0;
-			if (store)
+			if (alloc)
 			{
-				store->push(node);
+				result=free_node(alloc,node);
 			}
-			else if (alloc)
+			if (!result)
 			{
-				return alloc->free(node,sizeof(list_node<T>));
+				result=free_node(store,node);
 			}
 			return result;
 		}
@@ -154,13 +164,14 @@ namespace dggt
 	}
 
 	template <typename T,alloc_t A>
-	list_iter<T> push(linked_list<T>* list,allocator<A>* alloc)
+	list_iter<T> push(linked_list<T>* list,allocator<A>* alloc,
+			free_store<list_node<T>>* freeStore)
 	{
 		list_iter<T> result=list_iter<T>();
 		if (list)
 		{
 			list_node<T>* newNode=
-				dggt_internal_::alloc_node(alloc,&list->freeStore);
+				dggt_internal_::alloc_node(alloc,freeStore);
 			if (newNode)
 			{
 				zero_struct<T>(&newNode->val);
@@ -175,15 +186,17 @@ namespace dggt
 
 	template <typename T,alloc_t A>
 	list_iter<T> push(linked_list<T>* list,
-			const T& val,allocator<A>* alloc)
+			const T& val,allocator<A>* alloc,
+			free_store<list_node<T>>* freeStore)
 	{
-		list_iter<T> result=push(list,alloc);
+		list_iter<T> result=push(list,alloc,freeStore);
 		result.get()=val;
 		return result;
 	}
 
 	template <typename T,alloc_t A>
-	list_iter<T> pop(linked_list<T>* list,allocator<A>* alloc)
+	list_iter<T> pop(linked_list<T>* list,allocator<A>* alloc,
+			free_store<list_node<T>>* freeStore)
 	{
 		list_iter<T> result=list_iter<T>();
 		if (list)
@@ -194,7 +207,7 @@ namespace dggt
 				result=list_iter<T>(toFree);
 				list->head=toFree->next;
 				--list->count;
-				if (dggt_internal_::free_node(alloc,&list->freeStore,toFree))
+				if (dggt_internal_::free_node(alloc,freeStore,toFree))
 				{
 					result=list_iter<T>(list->head);
 				}
@@ -204,9 +217,10 @@ namespace dggt
 	}
 
 	template <typename T>
-	list_iter<T> pop(linked_list<T>* list)
+	list_iter<T> pop(linked_list<T>* list,
+			free_store<list_node<T>>* freeStore)
 	{
-		return pop(list,0);
+		return pop(list,0,freeStore);
 	}
 
 	template <typename T>
