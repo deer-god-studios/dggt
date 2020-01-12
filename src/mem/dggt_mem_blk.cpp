@@ -68,8 +68,18 @@ namespace dggt
 		return blk<void>(ptr,size);
 	}
 
-	void blk_free(blk<void>& block)
+	void blk_free(blk<void> block)
 	{
 		mem_free(block.mem,block.size);
+	}
+
+	void blk_cpy(blk<void> dest,blk<void> src,msize size)
+	{
+		if (size>dest.size||
+				size>src.size)
+		{
+			size=dest.size<src.size?dest.size:src.size;
+		}
+		mem_cpy(dest.mem,src.mem,size);
 	}
 }

@@ -78,8 +78,18 @@ namespace dggt
 	template <typename T>
 	static const blk<T> NULL_BLK=blk<T>();
 
+	template <typename T>
+	blk<T> blk_alloc(u32 count);
+	template <typename T>
+	void blk_free(blk<T> block);
+
 	blk<void> blk_alloc(msize size);
-	void blk_free(blk<void>& block);
+	void blk_free(blk<void> block);
+
+	template <typename T>
+	void blk_cpy(blk<T> dest,blk<T> src,u32 count);
+
+	void blk_cpy(blk<void> dest,blk<void> src,msize size);
 }
 
 #include "dggt_mem_blk.inl"

@@ -130,9 +130,14 @@ namespace dggt
 	}
 
 	template <typename T>
-	void blk_free(blk<T>& block)
+	void blk_free(blk<T> block)
 	{
 		mem_free(block.ptr,block.size*sizeof(T));
 	}
 
+	template <typename T>
+	void blk_cpy(blk<T> dest,blk<T> src,u32 count)
+	{
+		blk_cpy(blk<void>(dest),blk<void>(src),sizeof(T)*count);
+	}
 }

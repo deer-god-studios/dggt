@@ -27,4 +27,12 @@ namespace dggt
 	{
 		munmap(mem,size);
 	}
+
+	void mem_cpy(void* dest,void* src,msize size)
+	{
+		for (msize b=0;b<size;++b)
+		{
+			*((ubyte*)dest+b)=*((ubyte*)src+b);
+		}
+	}
 }
