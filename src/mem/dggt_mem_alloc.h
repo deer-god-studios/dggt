@@ -17,6 +17,13 @@ namespace dggt
 	struct free_block;
 	typedef msize stack_state;
 
+	template <alloc_t A>
+	struct allocator
+	{
+		static const alloc_t TYPE=alloc_t::NONE;
+	}
+
+
 	struct allocator
 	{
 		alloc_t type;
