@@ -5,6 +5,11 @@
 
 #include "dggt_mem_free_list.h"
 #include "dggt_mem_alloc.h"
+#include "dggt_mem_linear_alloc.h"
+#include "dggt_mem_stack_alloc.h"
+#include "dggt_mem_pool_alloc.h"
+#include "dggt_mem_free_list_alloc.h"
+
 #include "dggt_mem_free_store.h"
 
 namespace dggt
@@ -16,17 +21,28 @@ namespace dggt
 	msize available_cache_mem();
 	msize used_cache_mem();
 	msize cache_size();
-	void cache_clear();
-	void cache_free(blk<void>& block);
+	void* cache_alloc(msize* size);
 	blk<void> cache_alloc(msize size);
+	b32 cache_free(void* ptr,msize size);
+	b32 cache_free(blk<void> block);
+	void cache_clear();
 
+	template <typename T>
+	T* cache_alloc(u32* count);
 	template <typename T>
 	blk<T> cache_alloc(u32 count);
 	template <typename T>
-	void cache_free(blk<T>& block);
+	b32 cache_free(blk<T> block);
+	template <typename T>
+	b32 cache_free(T* ptr,u32 count);
 
-	allocator create_alloc(alloc_t type,msize size,msize blockSize=0);
-	void destroy_alloc(allocator& alloc);
+	template <alloc_t A>
+	allocator<A>* create_alloc(msize size);
+
+	allocator<alloc_t::POOL>* create_alloc(msize size,msize blockSize);
+
+	template <alloc_t A>
+	b32 destroy_alloc(allocator<A>* alloc);
 }
 
 

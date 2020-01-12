@@ -9,10 +9,11 @@ int main(int argc, char* argv[])
 	cache_init(4096);
 
 	printf("create_alloc");
-	allocator linAlloc=create_alloc(alloc_t::LINEAR,1024);
+	allocator<alloc_t::LINEAR>* linAlloc=
+		create_alloc<alloc_t::LINEAR>(1024);
 
-	printf("linAlloc.alloc<real32>");
-	blk<real32> realBlock=linAlloc.alloc<real32>(10);
+	printf("linAlloc->alloc<real32>");
+	blk<real32> realBlock=linAlloc->alloc<real32>(10);
 	for (u32 i=0;i<realBlock.count;++i)
 	{
 		realBlock[i]=(real32)i/21.43f;
