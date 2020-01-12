@@ -40,15 +40,24 @@ namespace dggt
 		u32 count;
 	};
 
+	template <typename T>
+	linked_list<T> create_list();
+
 	// NOTE: If a free_store<list_node<T>>* if supplied, push attempts to
 	// 		allocate from the freeStore first before trying the allocator<A>
 	// 		if neither work list_iter points to null (one-past-last item).
 	template <typename T,alloc_t A>
 	list_iter<T> push(linked_list<T>* list,allocator<A>* alloc,
 			free_store<list_node<T>>* freeStore=0);
+	template <typename T>
+	list_iter<T> push(linked_list<T>* list,
+			free_store<list_node<T>>* freeStore);
 	template <typename T,alloc_t A>
 	list_iter<T> push(linked_list<T>* list,const T& val,allocator<A>* alloc,
 			free_store<list_node<T>>* freeStore=0);
+	template <typename T>
+	list_iter<T> push(linked_list<T>* list,const T& val,
+			free_store<list_node<T>>* freeStore);
 
 	// NOTE: If any pop function fails to free the head node
 	// 		pop still removes the node but returns a list_iter to the
@@ -77,6 +86,8 @@ namespace dggt
 	template <typename T>
 	b32 is_begin_iter(linked_list<T>* list,list_iter<T> iter);
 
+	template <typename T>
+	b32 is_end_iter(linked_list<T>* list,list_iter<T> iter);
 }
 #include "dggt_coll_linked_list.inl"
 

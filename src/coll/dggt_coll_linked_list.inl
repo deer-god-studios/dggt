@@ -163,6 +163,12 @@ namespace dggt
 		return current;
 	}
 
+	template <typename T>
+	linked_list<T> create_list()
+	{
+		return linked_list<T>{};
+	}
+
 	template <typename T,alloc_t A>
 	list_iter<T> push(linked_list<T>* list,allocator<A>* alloc,
 			free_store<list_node<T>>* freeStore)
@@ -184,14 +190,31 @@ namespace dggt
 		return result;
 	}
 
+	template <typename T>
+	list_iter<T> push(linked_list<T>* list,
+			free_store<list_node<T>>* freeStore)
+	{
+		return push(list,0,freeStore);
+	}
+
 	template <typename T,alloc_t A>
 	list_iter<T> push(linked_list<T>* list,
 			const T& val,allocator<A>* alloc,
 			free_store<list_node<T>>* freeStore)
 	{
 		list_iter<T> result=push(list,alloc,freeStore);
-		result.get()=val;
+		if (!result.is_end())
+		{
+			result.get()=val;
+		}
 		return result;
+	}
+
+	template <typename T>
+	list_iter<T> push(linked_list<T>* list, const T& val,
+			free_store<list_node<T>>* freeStore)
+	{
+		return push(list,val,0,freeStore);
 	}
 
 	template <typename T,alloc_t A>
@@ -260,5 +283,11 @@ namespace dggt
 	b32 is_begin_iter(linked_list<T>* list,list_iter<T> iter)
 	{
 		return (list&&iter.current==list->head);
+	}
+
+	template <typename T>
+	b32 is_end_iter(linked_list<T>* list,list_iter<T> iter)
+	{
+		return iter.is_end();
 	}
 }
