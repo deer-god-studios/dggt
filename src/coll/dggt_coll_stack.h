@@ -37,7 +37,7 @@ namespace dggt
 	template <typename T>
 	stack<T> create_stack(blk<T> mem);
 	template <typename T,alloc_t A>
-	stack<T> create_stack(allocator<A>* alloc,u32=2);
+	stack<T> create_stack(allocator<A>* alloc,u32 capacity=2);
 
 	template <typename T,alloc_t A>
 	stack_iter<T> push(stack<T>* stk,allocator<A>* alloc=0);
