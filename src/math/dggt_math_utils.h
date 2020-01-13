@@ -3,8 +3,20 @@
 #include <cmath>
 #include "types/dggt_types.h"
 
-static const real32 PI32=3.14159265;
-static const real64 PI64=3.141592653589793238;
+template <typename T>
+static const T PI=T(3.141592653589793238);
+
+template <typename T>
+T max(const T& val0,const T& val1)
+{
+	return val0>val1?val0:val1;
+}
+
+template <typename T>
+T min(const T& val0,const T& val1)
+{
+	return val0<val1?val0:val1;
+}
 
 template <typename T>
 T sq(T val)
