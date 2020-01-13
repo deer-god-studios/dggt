@@ -43,6 +43,63 @@ T pow2(uint32 p)
 	return T(1<<p);
 }
 
+template <typename T>
+b32 is_pow2(T val)
+{
+	if (val)
+	{
+		return val&(val-T(1))==T(0);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+template <typename T>
+T next_gt_pow2(T val)
+{
+	if (is_pow2(val))
+	{
+		return val<<T(1);
+	}
+	else
+	{
+		T count=T(0);
+		while (val>T(0))
+		{
+			val>>T(1);
+			++count;
+		}
+		return T(1)<<count;
+	}
+}
+
+template <typename T>
+T sum_pow2(u32 k)
+{
+	return pow2<T>(k+1)-T(1);
+}
+
+template <typename T>
+b32 is_sum_pow2(T val)
+{
+	return is_pow2(val+T(1));
+}
+
+template <typename T>
+T next_ge_sum_pow2(T val)
+{
+	if (is_sum_pow2(val))
+	{
+		return val;
+	}
+	else
+	{
+		return next_gt_pow2(val)-T(1);
+	}
+}
+
 inline real32 sqrt(real32 val)
 {
 	return std::sqrt(val);
