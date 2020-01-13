@@ -57,12 +57,14 @@ namespace dggt
 	template <typename T>
 	stack<T> create_stack(blk<T> mem)
 	{
+		ASSERT(is_pow2(mem.count));
 		return stack<T>{mem,0,mem.count};
 	}
 
 	template <typename T,alloc_t A>
 	stack<T> create_stack(allocator<A>* alloc,u32 capacity)
 	{
+		ASSERT(is_pow2(capacity));
 		blk<T> mem=alloc->alloc<T>(capacity);
 		return create_stack<T>(mem);
 	}
