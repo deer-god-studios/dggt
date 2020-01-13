@@ -9,8 +9,7 @@
 #include "dggt_mem_stack_alloc.h"
 #include "dggt_mem_pool_alloc.h"
 #include "dggt_mem_free_list_alloc.h"
-
-#include "dggt_mem_free_store.h"
+#include "dggt_mem_store_alloc.h"
 
 namespace dggt
 {
@@ -40,6 +39,7 @@ namespace dggt
 	allocator<A>* create_alloc(msize size);
 
 	allocator<alloc_t::POOL>* create_alloc(msize size,msize blockSize);
+	allocator<alloc_t::STORE>* create_alloc(msize blockSize);
 
 	template <alloc_t A>
 	b32 destroy_alloc(allocator<A>* alloc);

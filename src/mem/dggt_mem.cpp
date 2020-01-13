@@ -127,4 +127,16 @@ namespace dggt
 		}
 		return result;
 	}
+
+	allocator<alloc_t::STORE>* create_alloc(msize blockSize)
+	{
+		u32 allocCount=1;
+		allocator<alloc_t::STORE>* result=
+			cache_alloc<allocator<alloc_t::STORE>>(&allocCount);
+		if (result)
+		{
+			*result=allocator<alloc_t::STORE>(blockSize);
+		}
+		return result;
+	}
 }

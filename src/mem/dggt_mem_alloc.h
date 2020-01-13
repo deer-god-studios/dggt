@@ -9,11 +9,13 @@ namespace dggt
 		NONE,
 		LINEAR,
 		STACK,
+		POOL,
 		FREE_LIST,
-		POOL
+		STORE,
 	};
 
 	struct pool_block;
+	struct store_block;
 	struct free_block;
 	typedef msize stack_state;
 

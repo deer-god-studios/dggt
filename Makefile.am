@@ -48,7 +48,9 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_free_list_alloc.h \
 						src/mem/dggt_mem_free_list_alloc.inl \
 						src/mem/dggt_mem_free_list_alloc.cpp \
-						src/mem/dggt_mem_free_store.h
+						src/mem/dggt_mem_store_alloc.h \
+						src/mem/dggt_mem_store_alloc.inl \
+						src/mem/dggt_mem_store_alloc.cpp
 libdggtmem_la_CPPFLAGS = -O0 -g -DDEBUG
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
 check_PROGRAMS = dggt_test_linux
