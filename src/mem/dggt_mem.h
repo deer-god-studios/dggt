@@ -39,6 +39,8 @@ namespace dggt
 
 	template <alloc_t A>
 	allocator<A> create_alloc(msize size);
+	template <alloc_t A,u32 SIZE>
+	allocator<A,SIZE> create_alloc();
 
 	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
 	allocator<alloc_t::STORE> create_alloc(msize blockSize);

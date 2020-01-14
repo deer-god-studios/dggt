@@ -3,14 +3,6 @@ namespace dggt
 {
 
 	template <typename T>
-	allocator<alloc_t::POOL>::allocator(T* ptr,u32 count)
-		: allocator(ptr,sizeof(T)*count,sizeof(T)) { }
-
-	template <typename T>
-	allocator<alloc_t::POOL>::allocator(blk<T> buffer)
-		: allocator(buffer.mem,buffer.count) { }
-
-	template <typename T>
 	blk<T> allocator<alloc_t::POOL>::alloc()
 	{
 		return (T*)alloc<void>();

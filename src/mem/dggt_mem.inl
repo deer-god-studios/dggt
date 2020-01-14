@@ -51,6 +51,12 @@ namespace dggt
 		return result;
 	}
 
+	template <alloc_t A,u32 SIZE>
+	allocator<A,SIZE> create_alloc()
+	{
+		return allocator<A,SIZE>();
+	}
+
 	template <alloc_t A>
 	b32 destroy_alloc(allocator<A>* alloc)
 	{

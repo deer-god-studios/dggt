@@ -21,11 +21,8 @@ namespace dggt
 	struct free_block;
 	typedef msize stack_state;
 
-	template <alloc_t A>
-	struct allocator
-	{
-		static const alloc_t TYPE=alloc_t::NONE;
-	};
+	template <alloc_t A,u32 SIZE=0>
+	struct allocator;
 }
 
 #define _DGGT_MEM_ALLOC_H_
