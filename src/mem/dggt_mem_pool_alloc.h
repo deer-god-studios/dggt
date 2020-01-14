@@ -48,7 +48,6 @@ namespace dggt
 		u32 available_blocks() const;
 		u32 used_blocks() const;
 
-		private:
 		allocator();
 	};
 

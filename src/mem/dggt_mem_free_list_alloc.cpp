@@ -82,52 +82,50 @@ namespace dggt
 	void* allocator<alloc_t::FREE_LIST>::alloc(msize* size)
 	{
 		void* result=0;
-		if (size&&*size)
+		msize s=size?*size:4;
+		if (s<sizeof(free_block))
 		{
-			if (*size<sizeof(free_block))
+			s=sizeof(free_block);
+		}
+		if (used+s<=buff.size)
+		{
+			dggt_internal_::best_fit_result bestFit=
+				dggt_internal_::best_fit(freeList,s);
+			if (bestFit.best)
 			{
-				*size=sizeof(free_block);
-			}
-			if (used+*size<=buff.size)
-			{
-				dggt_internal_::best_fit_result bestFit=
-					dggt_internal_::best_fit(freeList,*size);
-				if (bestFit.best)
+
+				free_block* best=bestFit.best;
+				free_block* prev=bestFit.prev;
+
+				msize sizeDiff=best->size-s;
+				if (sizeDiff<sizeof(free_block))
 				{
-
-					free_block* best=bestFit.best;
-					free_block* prev=bestFit.prev;
-
-					msize sizeDiff=best->size-*size;
-					if (sizeDiff<sizeof(free_block))
+					s+=sizeDiff;
+					sizeDiff=0;
+				}
+				if (sizeDiff>=sizeof(free_block))
+				{
+					msize newSize=sizeDiff;
+					free_block* newBlock=
+						(free_block*)ptr_add(best,s);
+					newBlock->size=sizeDiff;
+					newBlock->next=best->next;
+					if (prev)
 					{
-						*size+=sizeDiff;
-						sizeDiff=0;
+						prev->next=newBlock;
 					}
-					if (sizeDiff>=sizeof(free_block))
+					else
 					{
-						msize newSize=sizeDiff;
-						free_block* newBlock=
-							(free_block*)ptr_add(best,*size);
-						newBlock->size=sizeDiff;
-						newBlock->next=best->next;
-						if (prev)
-						{
-							prev->next=newBlock;
-						}
-						else
-						{
-							freeList=newBlock;
-						}
+						freeList=newBlock;
 					}
-					result=best;
-					used+=*size;
+				}
+				result=best;
+				used+=s;
+				if (size)
+				{
+					*size=s;
 				}
 			}
-		}
-		else
-		{
-			*size=0;
 		}
 		return result;
 	}

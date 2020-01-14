@@ -112,31 +112,35 @@ namespace dggt
 		return result;
 	}
 
-	allocator<alloc_t::POOL>* create_alloc(msize size,msize blockSize)
+	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize)
 	{
-		u32 allocCount=1;
-		allocator<alloc_t::POOL>* result=
-			cache_alloc<allocator<alloc_t::POOL>>(&allocCount);
-		if (result)
+		allocator<alloc_t::POOL> result=allocator<alloc_t::POOL>();
+		void* buffPtr=cache_alloc(&size);
+		if (buffPtr)
 		{
-			void* buffPtr=cache_alloc(&size);
-			if (buffPtr)
-			{
-				*result=allocator<alloc_t::POOL>(buffPtr,size,blockSize);
-			}
+			result=allocator<alloc_t::POOL>(buffPtr,size,blockSize);
 		}
 		return result;
 	}
 
-	allocator<alloc_t::STORE>* create_alloc(msize blockSize)
+	allocator<alloc_t::STORE> create_alloc(msize blockSize)
 	{
-		u32 allocCount=1;
-		allocator<alloc_t::STORE>* result=
-			cache_alloc<allocator<alloc_t::STORE>>(&allocCount);
-		if (result)
-		{
-			*result=allocator<alloc_t::STORE>(blockSize);
-		}
+		allocator<alloc_t::STORE> result=
+			allocator<alloc_t::STORE>(blockSize)
 		return result;
+	}
+
+	allocator<alloc_t::LINEAR_STORE> create_alloc(
+			allocator<alloc_t::STORE>* store,
+			allocator<alloc_t::LINEAR>* linear)
+	{
+		return allocator<alloc_t::LINEAR_STORE>(store,linear);
+	}
+
+	allocator<alloc_t::STACK_STORE> create_alloc(
+			allocator<alloc_t::STORE>* store,
+			allocator<alloc_t::STACK>* stk)
+	{
+		return allocator<alloc_t::STACK_STORE>(store,stk);
 	}
 }

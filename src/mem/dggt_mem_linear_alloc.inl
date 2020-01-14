@@ -24,6 +24,15 @@ namespace dggt
 				*count=0;
 			}
 		}
+		else
+		{
+			msize size=sizeof(T);
+			result=(T*)alloc(&size);
+			if (result&&count)
+			{
+				*count=size/sizeof(T);
+			}
+		}
 		return result;
 	}
 

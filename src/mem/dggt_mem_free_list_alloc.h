@@ -16,12 +16,12 @@ namespace dggt
 		allocator(void* ptr,msize size);
 		allocator(blk<void> buffer);
 
-		void* alloc(msize* size);
-		blk<void> alloc(msize size);
+		void* alloc(msize* size=0);
+		blk<void> alloc(msize size=4);
 		template <typename T>
-		T* alloc(u32* count);
+		T* alloc(u32* count=0);
 		template <typename T>
-		blk<T> alloc(u32 count);
+		blk<T> alloc(u32 count=1);
 
 		b32 free(void* ptr,msize size);
 		b32 free(blk<void> block);
@@ -41,7 +41,6 @@ namespace dggt
 		
 		msize available_mem() const;
 		msize used_mem() const;
-		private:
 		allocator();
 	};
 }

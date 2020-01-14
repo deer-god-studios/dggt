@@ -40,25 +40,13 @@ namespace dggt
 	}
 
 	template <alloc_t A>
-	allocator<A>* create_alloc(msize size)
+	allocator<A> create_alloc(msize size)
 	{
-		u32 allocCount=1;
-		allocator<A>* result=cache_alloc<allocator<A>>(&allocCount);
-		if (result)
+		void* buffPtr=cache_alloc(&size);
+		allocator<A> result=allocator<A>();
+		if (buffPtr)
 		{
-			void* buffPtr=cache_alloc(&size);
-			if (buffPtr)
-			{
-				if (A==alloc_t::POOL)
-				{
-					*((allocator<alloc_t::POOL>*)result)
-						=allocator<alloc_t::POOL>(buffPtr,size,8);
-				}
-				else
-				{
-					*result=allocator<A>(buffPtr,size);
-				}
-			}
+			result=allocator<A>(buffPtr,size);
 		}
 		return result;
 	}
@@ -66,8 +54,6 @@ namespace dggt
 	template <alloc_t A>
 	b32 destroy_alloc(allocator<A>* alloc)
 	{
-		return alloc&&
-			cache_free(alloc->buff.mem,alloc->buff.size)&&
-			cache_free(alloc,1);
+		return alloc&&cache_free(alloc->buff.mem,alloc->buff.size);
 	}
 }

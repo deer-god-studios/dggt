@@ -15,11 +15,11 @@ namespace dggt
 		allocator(void* buffPtr,msize buffSize);
 
 		blk<void> alloc(msize size=4);
-		void* alloc(msize* size);
+		void* alloc(msize* size=0);
 		template <typename T>
 		blk<T> alloc(u32 count=1);
 		template <typename T>
-		T* alloc(u32* count);
+		T* alloc(u32* count=0);
 
 		void clear();
 
@@ -33,7 +33,6 @@ namespace dggt
 		template <typename T>
 		b32 owns(const T* ptr) const;
 
-		private:
 		allocator();
 	};
 }

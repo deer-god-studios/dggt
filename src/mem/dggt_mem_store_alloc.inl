@@ -19,7 +19,7 @@ namespace dggt
 	template <typename T>
 	b32 allocator<alloc_t::STORE>::free(T* ptr)
 	{
-		return free((void*)ptr);
+		return free(blk<T>(ptr,1);
 	}
 
 	template <typename T>
