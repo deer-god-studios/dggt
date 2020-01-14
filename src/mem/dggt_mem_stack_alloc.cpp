@@ -42,7 +42,7 @@ namespace dggt
 		}
 		else
 		{
-			msize s=sizeof(T);
+			msize s=4;
 			if (used+s<=buff.size)
 			{
 				result=ptr_add(buff.mem,used);

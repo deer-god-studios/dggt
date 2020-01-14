@@ -23,15 +23,15 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::LINEAR_STORE>::free(T* ptr)
+	b32 allocator<alloc_t::LINEAR_STORE>::free(T* ptr,u32 count)
 	{
-		return free(blk<T>(ptr,1));
+		return free(blk<T>(ptr,count));
 	}
 
 	template <typename T>
 	b32 allocator<alloc_t::LINEAR_STORE>::free(blk<T> block)
 	{
-		return free(blk<void>(block,block.size*sizeof(T));
+		return free(blk<void>(block,block.size*sizeof(T)));
 	}
 	template <typename T>
 	b32 allocator<alloc_t::LINEAR_STORE>::owns(const T* ptr) const

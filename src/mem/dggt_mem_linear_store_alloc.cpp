@@ -1,4 +1,4 @@
-#include "dggt_mem_linear_store_alloc.cpp"
+#include "dggt_mem_linear_store_alloc.h"
 
 namespace dggt
 {
@@ -117,7 +117,7 @@ namespace dggt
 		return result;
 	}
 
-	b32 allocator<alloc_t::LINEAR_STORE>::owns(void* ptr) const
+	b32 allocator<alloc_t::LINEAR_STORE>::owns(const void* ptr) const
 	{
 		b32 result=1;
 		if (store)

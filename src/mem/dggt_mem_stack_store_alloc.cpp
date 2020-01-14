@@ -25,7 +25,7 @@ namespace dggt
 		{
 			result=store->alloc();
 		}
-		if (result==NULL_BLK<void>&&stk&&
+		if (result.mem==0&&stk&&
 				stk->available_mem()>=size)
 		{
 			result=stk->alloc(size);
@@ -42,10 +42,10 @@ namespace dggt
 		{
 			result=store->alloc();
 		}
-		if (result==NULL_BLK<void>&&stk&&
-				stk->available_mem()>=size)
+		if (result==0&&stk&&
+				stk->available_mem()>=s)
 		{
-			result=store->alloc(&s);
+			result=stk->alloc(&s);
 			if (size)
 			{
 				*size=s;
@@ -153,7 +153,7 @@ namespace dggt
 		return result;
 	}
 
-	b32 allocator<alloc_t::STACK_STORE>::owns(void* ptr) const
+	b32 allocator<alloc_t::STACK_STORE>::owns(const void* ptr) const
 	{
 		b32 result=1;
 		if (store)

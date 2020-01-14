@@ -144,7 +144,9 @@ am_libdggtmem_la_OBJECTS = src/mem/libdggtmem_la-dggt_mem.lo \
 	src/mem/libdggtmem_la-dggt_mem_stack_alloc.lo \
 	src/mem/libdggtmem_la-dggt_mem_pool_alloc.lo \
 	src/mem/libdggtmem_la-dggt_mem_free_list_alloc.lo \
-	src/mem/libdggtmem_la-dggt_mem_store_alloc.lo
+	src/mem/libdggtmem_la-dggt_mem_store_alloc.lo \
+	src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo \
+	src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo
 libdggtmem_la_OBJECTS = $(am_libdggtmem_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -181,9 +183,11 @@ am__depfiles_remade = src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_free_list_alloc.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_alloc.Plo \
+	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_pool_alloc.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_alloc.Plo \
+	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Plo \
 	src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_store_alloc.Plo \
 	src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 am__mv = mv -f
@@ -425,9 +429,7 @@ include_HEADERS = src/dggt.h \
 				  src/math/dggt_math_mat2.h \
 				  src/math/dggt_math_mat3.h \
 				  src/math/dggt_math_mat4.h \
-				  src/math/dggt_math.h \
-				  src/coll/dggt_coll_linked_list.h \
-				  src/coll/dggt_coll_linked_list.inl
+				  src/math/dggt_math.h
 
 libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_defines.h \
@@ -454,7 +456,13 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_free_list_alloc.cpp \
 						src/mem/dggt_mem_store_alloc.h \
 						src/mem/dggt_mem_store_alloc.inl \
-						src/mem/dggt_mem_store_alloc.cpp
+						src/mem/dggt_mem_store_alloc.cpp \
+						src/mem/dggt_mem_linear_store_alloc.h \
+						src/mem/dggt_mem_linear_store_alloc.inl \
+						src/mem/dggt_mem_linear_store_alloc.cpp \
+						src/mem/dggt_mem_stack_store_alloc.h \
+						src/mem/dggt_mem_stack_store_alloc.inl \
+						src/mem/dggt_mem_stack_store_alloc.cpp
 
 libdggtmem_la_CPPFLAGS = -O0 -g -DDEBUG
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
@@ -583,6 +591,10 @@ src/mem/libdggtmem_la-dggt_mem_free_list_alloc.lo:  \
 	src/mem/$(am__dirstamp) src/mem/$(DEPDIR)/$(am__dirstamp)
 src/mem/libdggtmem_la-dggt_mem_store_alloc.lo:  \
 	src/mem/$(am__dirstamp) src/mem/$(DEPDIR)/$(am__dirstamp)
+src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo:  \
+	src/mem/$(am__dirstamp) src/mem/$(DEPDIR)/$(am__dirstamp)
+src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo:  \
+	src/mem/$(am__dirstamp) src/mem/$(DEPDIR)/$(am__dirstamp)
 
 libdggtmem.la: $(libdggtmem_la_OBJECTS) $(libdggtmem_la_DEPENDENCIES) $(EXTRA_libdggtmem_la_DEPENDENCIES) 
 	$(AM_V_CXXLD)$(libdggtmem_la_LINK) -rpath $(libdir) $(libdggtmem_la_OBJECTS) $(libdggtmem_la_LIBADD) $(LIBS)
@@ -612,9 +624,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_free_list_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_alloc.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_pool_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_alloc.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_store_alloc.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po@am__quote@ # am--include-marker
 
@@ -703,6 +717,20 @@ src/mem/libdggtmem_la-dggt_mem_store_alloc.lo: src/mem/dggt_mem_store_alloc.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/mem/dggt_mem_store_alloc.cpp' object='src/mem/libdggtmem_la-dggt_mem_store_alloc.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdggtmem_la_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -c -o src/mem/libdggtmem_la-dggt_mem_store_alloc.lo `test -f 'src/mem/dggt_mem_store_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_store_alloc.cpp
+
+src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo: src/mem/dggt_mem_linear_store_alloc.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdggtmem_la_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -MT src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo -MD -MP -MF src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Tpo -c -o src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo `test -f 'src/mem/dggt_mem_linear_store_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_linear_store_alloc.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Tpo src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/mem/dggt_mem_linear_store_alloc.cpp' object='src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdggtmem_la_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -c -o src/mem/libdggtmem_la-dggt_mem_linear_store_alloc.lo `test -f 'src/mem/dggt_mem_linear_store_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_linear_store_alloc.cpp
+
+src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo: src/mem/dggt_mem_stack_store_alloc.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdggtmem_la_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -MT src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo -MD -MP -MF src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Tpo -c -o src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo `test -f 'src/mem/dggt_mem_stack_store_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_stack_store_alloc.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Tpo src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/mem/dggt_mem_stack_store_alloc.cpp' object='src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdggtmem_la_CPPFLAGS) $(CPPFLAGS) $(libdggtmem_la_CXXFLAGS) $(CXXFLAGS) -c -o src/mem/libdggtmem_la-dggt_mem_stack_store_alloc.lo `test -f 'src/mem/dggt_mem_stack_store_alloc.cpp' || echo '$(srcdir)/'`src/mem/dggt_mem_stack_store_alloc.cpp
 
 src/test/dggt_test_linux-dggt_test_linux.o: src/test/dggt_test_linux.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dggt_test_linux_CPPFLAGS) $(CPPFLAGS) $(dggt_test_linux_CXXFLAGS) $(CXXFLAGS) -MT src/test/dggt_test_linux-dggt_test_linux.o -MD -MP -MF src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Tpo -c -o src/test/dggt_test_linux-dggt_test_linux.o `test -f 'src/test/dggt_test_linux.cpp' || echo '$(srcdir)/'`src/test/dggt_test_linux.cpp
@@ -1027,9 +1055,11 @@ distclean: distclean-am
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_free_list_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_alloc.Plo
+	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_pool_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_alloc.Plo
+	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_store_alloc.Plo
 	-rm -f src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 	-rm -f Makefile
@@ -1083,9 +1113,11 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_blk.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_free_list_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_alloc.Plo
+	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_linear_store_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_mem_linux.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_pool_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_alloc.Plo
+	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_stack_store_alloc.Plo
 	-rm -f src/mem/$(DEPDIR)/libdggtmem_la-dggt_mem_store_alloc.Plo
 	-rm -f src/test/$(DEPDIR)/dggt_test_linux-dggt_test_linux.Po
 	-rm -f Makefile

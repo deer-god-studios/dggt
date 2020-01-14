@@ -126,7 +126,7 @@ namespace dggt
 	allocator<alloc_t::STORE> create_alloc(msize blockSize)
 	{
 		allocator<alloc_t::STORE> result=
-			allocator<alloc_t::STORE>(blockSize)
+			allocator<alloc_t::STORE>(blockSize);
 		return result;
 	}
 
@@ -134,13 +134,13 @@ namespace dggt
 			allocator<alloc_t::STORE>* store,
 			allocator<alloc_t::LINEAR>* linear)
 	{
-		return allocator<alloc_t::LINEAR_STORE>(store,linear);
+		return allocator<alloc_t::LINEAR_STORE>(linear,store);
 	}
 
 	allocator<alloc_t::STACK_STORE> create_alloc(
 			allocator<alloc_t::STORE>* store,
 			allocator<alloc_t::STACK>* stk)
 	{
-		return allocator<alloc_t::STACK_STORE>(store,stk);
+		return allocator<alloc_t::STACK_STORE>(stk,store);
 	}
 }

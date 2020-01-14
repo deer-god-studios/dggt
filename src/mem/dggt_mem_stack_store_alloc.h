@@ -26,7 +26,7 @@ namespace dggt
 		b32 free(blk<void> block);
 		template <typename T>
 		b32 free(T* ptr,u32 count=1);
-		template typename T>
+		template <typename T>
 		b32 free(blk<T> block);
 
 		void clear();

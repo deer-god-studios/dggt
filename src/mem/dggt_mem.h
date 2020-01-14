@@ -45,7 +45,7 @@ namespace dggt
 	allocator<alloc_t::LINEAR_STORE> create_alloc(
 			allocator<alloc_t::STORE>* store,
 			allocator<alloc_t::LINEAR>* linear);
-	allocator<alloc_t::LINEAR_STACK> create_alloc(
+	allocator<alloc_t::STACK_STORE> create_alloc(
 			allocator<alloc_t::STORE>* store,
 			allocator<alloc_t::STACK>* stk);
 
