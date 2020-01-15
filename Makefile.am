@@ -50,13 +50,7 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_store_alloc.inl \
 						src/mem/dggt_mem_store_alloc.cpp \
 						src/mem/dggt_mem_store_table_alloc.h \
-						src/mem/dggt_mem_store_table_alloc.inl \
-						src/mem/dggt_mem_linear_store_alloc.h \
-						src/mem/dggt_mem_linear_store_alloc.inl \
-						src/mem/dggt_mem_linear_store_alloc.cpp \
-						src/mem/dggt_mem_stack_store_alloc.h \
-						src/mem/dggt_mem_stack_store_alloc.inl \
-						src/mem/dggt_mem_stack_store_alloc.cpp
+						src/mem/dggt_mem_store_table_alloc.inl
 libdggtmem_la_CPPFLAGS = -O0 -g -DDEBUG
 libdggtmem_la_CXXFLAGS = -std=c++17 -I$(top_srcdir)/src
 check_PROGRAMS = dggt_test_linux

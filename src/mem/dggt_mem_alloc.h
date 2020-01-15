@@ -13,8 +13,6 @@ namespace dggt
 		FREE_LIST,
 		STORE,
 		STORE_TABLE,
-		LINEAR_STORE,
-		STACK_STORE,
 	};
 
 	struct pool_block;
