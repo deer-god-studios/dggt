@@ -1,5 +1,8 @@
 #ifndef _DGGT_DEFINES_H_
 
+#include <climits>
+#include <cfloat>
+
 #ifdef DGGT_DEBUG
 #ifdef ASSERT
 #undef ASSERT(P)
@@ -11,6 +14,9 @@
 #endif
 #define ASSERT(P)
 #endif
+
+#define MAX_UINT32 ULONG_MAX
+#define MAX_MSIZE ULLONG_MAX
 
 #define _DGGT_DEFINES_H_
 #endif

@@ -12,6 +12,7 @@ namespace dggt
 		POOL,
 		FREE_LIST,
 		STORE,
+		STORE_TABLE,
 		LINEAR_STORE,
 		STACK_STORE,
 	};

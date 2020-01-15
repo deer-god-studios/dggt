@@ -10,6 +10,7 @@
 #include "dggt_mem_pool_alloc.h"
 #include "dggt_mem_free_list_alloc.h"
 #include "dggt_mem_store_alloc.h"
+#include "dggt_mem_store_table_alloc.h"
 #include "dggt_mem_linear_store_alloc.h"
 #include "dggt_mem_stack_store_alloc.h"
 
@@ -44,6 +45,7 @@ namespace dggt
 
 	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
 	allocator<alloc_t::STORE> create_alloc(msize blockSize);
+	template <u32 BLOCKSIZE>
 	allocator<alloc_t::LINEAR_STORE> create_alloc(
 			allocator<alloc_t::STORE>* store,
 			allocator<alloc_t::LINEAR>* linear);

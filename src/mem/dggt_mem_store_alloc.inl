@@ -2,10 +2,6 @@
 namespace dggt
 {
 	template <typename T>
-	allocator<alloc_t::STORE>::allocator()
-		: allocator(sizeof(T)) { }
-
-	template <typename T>
 	blk<T> allocator<alloc_t::STORE>::alloc()
 	{
 		blk<T> result=NULL_BLK<T>;
