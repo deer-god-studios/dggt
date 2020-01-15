@@ -11,8 +11,6 @@
 #include "dggt_mem_free_list_alloc.h"
 #include "dggt_mem_store_alloc.h"
 #include "dggt_mem_store_table_alloc.h"
-#include "dggt_mem_linear_store_alloc.h"
-#include "dggt_mem_stack_store_alloc.h"
 
 namespace dggt
 {

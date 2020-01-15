@@ -42,7 +42,6 @@ namespace dggt
 		u32 available_blocks() const;
 		u32 used_blocks() const;
 	};
-
 }
 
 #include "dggt_mem_store_table_alloc.inl"

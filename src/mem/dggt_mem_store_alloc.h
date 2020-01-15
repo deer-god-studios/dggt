@@ -71,8 +71,6 @@ namespace dggt
 		msize used_mem() const { return a.used_mem(); }
 		u32 available_blocks() const { return a.available_blocks(); }
 		u32 used_blocks() const { return a.used_blocks(); }
-
-
 	};
 }
 #include "dggt_mem_store_alloc.inl"
