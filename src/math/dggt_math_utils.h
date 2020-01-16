@@ -1,6 +1,6 @@
 #ifndef _DGGT_MATH_UTILS_H_
 
-#include <cmath>
+#include <cmath> // TODO: get rid of this!
 #include "types/dggt_types.h"
 
 template <typename T>

@@ -1,6 +1,6 @@
 #ifndef _DGGT_MATH_VEC_H_
 
-#include "dggt_math_utils.h"
+#include "math/dggt_math_utils.h"
 
 template <uint32 D,typename T>
 struct vec
