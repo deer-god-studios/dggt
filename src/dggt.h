@@ -3,6 +3,7 @@
 // TODO: template metaprogramming:
 // 		* typelist
 // 		* enable_if
+// 		* tuples!
 // TODO: composite allocator!!
 // TODO: collections
 // 		* iterators
@@ -23,6 +24,10 @@
 // TODO: memory
 //		* add set_block/free_block(?) functions to allocators.
 // TODO: comments and docs!
+// TODO: AI
+// 		* state machine
+// 		* 'goal-oriented' AI
+// 		* path-finding (A*)
 
 #include "defines/dggt_defines.h"
 #include "math/dggt_math.h"
