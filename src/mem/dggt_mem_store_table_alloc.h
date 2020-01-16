@@ -46,11 +46,5 @@ namespace dggt
 
 #include "dggt_mem_store_table_alloc.inl"
 
-namespace dggt
-{
-	template <u32 S=0>
-	using store_table_alloc=allocator<alloc_t::STORE_TABLE,S>;
-}
-
 #define _DGGT_MEM_STORE_TABLE_ALLOC_H_
 #endif

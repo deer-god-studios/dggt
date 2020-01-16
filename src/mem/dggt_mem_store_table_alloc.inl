@@ -130,9 +130,9 @@ namespace dggt
 				u32 i=0;
 				if (store_table_hash_insert<TABLESIZE>(alloc,size,&i))
 				{
-					allocator<alloc_t::STORE_TABLE>* a=
+					allocator<alloc_t::STORE_TABLE,TABLESIZE>* a=
 						get_store_alloc<TABLESIZE>(alloc,i);
-					*a=allocator<alloc_t::STORE_TABLE>(size);
+					*a=allocator<alloc_t::STORE_TABLE,TABLESIZE>(size);
 					++a->storeCount;
 				}
 			}

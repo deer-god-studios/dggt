@@ -89,12 +89,5 @@ namespace dggt
 }
 
 #include "dggt_mem_stack_alloc.inl"
-
-namespace dggt
-{
-	template <u32 S=0>
-	using stack_alloc=allocator<alloc_t::STACK,S>;
-}
-
 #define _DGGT_MEM_STACK_ALLOC_H_
 #endif

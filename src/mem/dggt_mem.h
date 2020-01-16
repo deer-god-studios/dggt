@@ -8,9 +8,39 @@
 #include "dggt_mem_free_list_alloc.h"
 #include "dggt_mem_store_alloc.h"
 #include "dggt_mem_store_table_alloc.h"
+#include "dggt_mem_fallback_alloc.h"
 
 namespace dggt
 {
+	template <u32 SIZE=0>
+	using lin_alloc=allocator<alloc_t::LINEAR,SIZE>;
+
+	template <u32 SIZE=0>
+	using stack_alloc=allocator<alloc_t::STACK,SIZE>;
+
+	template <u32 SIZE=0>
+	using pool_alloc=allocator<alloc_t::POOL,SIZE>;
+
+	template <u32 SIZE=0>
+	using free_list_alloc=allocator<alloc_t::FREE_LIST,SIZE>;
+
+	template <u32 SIZE=0>
+	using store_alloc=allocator<alloc_t::STORE,SIZE>;
+
+	template <u32 SIZE=0>
+	using store_table_alloc=allocator<alloc_t::STORE_TABLE,SIZE>;
+
+	// TODO: these names...
+	template <u32 P=alloc_t::LINEAR,u32 F=alloc_t::STORE_TABLE>
+	using fallback_alloc=allocator<alloc_t::FALLBACK,P,F>;
+
+	template <u32 P=alloc_t::LINEAR,u32 SIZE=0,u32 F=alloc_t::STORE_TABLE>
+	using temp_fallback_alloc=allocator<alloc_t::FALLBACK,P,SIZE,F>;
+
+	template <u32 P=alloc_t::STACK,u32 PSIZE=0,
+			 u32 F=alloc_t::STORE_TABLE,u32 FSIZE=0>
+	using scratch_alloc=allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>;
+
 	void cache_init(msize cacheSize);
 	b32 cache_is_initialized();
 	void cache_shutdown();
@@ -37,6 +67,21 @@ namespace dggt
 	allocator<A> create_alloc(msize size);
 	template <alloc_t A,u32 SIZE>
 	allocator<A,SIZE> create_alloc();
+
+	template <alloc_t P,alloc_t F>
+	allocator<alloc_t::FALLBACK,P,F> create_alloc(
+			allocator<P>* primaryAlloc,
+			allocator<F>* fallbackAlloc);
+
+	template <alloc_t P,u32 SIZE,alloc_t F>
+	allocator<alloc_t::FALLBACK,P,SIZE,F> create_alloc(
+			allocator<P,SIZE>* primaryAlloc,
+			allocator<F>* fallbackAlloc);
+
+	template <alloc_t P,u32 PSIZE,alloc_t F,u32 FSIZE>
+	allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE> create_alloc(
+			allocator<P,PSIZE>* primaryAlloc,
+			allocator<F,FSIZE>* fallbackAlloc);
 
 	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
 	allocator<alloc_t::STORE> create_alloc(msize blockSize);

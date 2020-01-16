@@ -75,11 +75,5 @@ namespace dggt
 }
 #include "dggt_mem_store_alloc.inl"
 
-namespace dggt
-{
-	template <u32 S=0>
-	using store_alloc=allocator<alloc_t::STORE,S>;
-}
-
 #define _DGGT_MEM_STORE_ALLOC_H_
 #endif

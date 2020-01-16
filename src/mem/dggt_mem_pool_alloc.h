@@ -87,11 +87,5 @@ namespace dggt
 
 #include "dggt_mem_pool_alloc.inl"
 
-namespace dggt
-{
-	template <u32 S=0>
-	using pool_alloc=allocator<alloc_t::POOL,S>;
-}
-
 #define _DGGT_MEM_POOL_ALLOC_H_
 #endif

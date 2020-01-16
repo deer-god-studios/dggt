@@ -1,5 +1,6 @@
 #include "dggt_mem_store_alloc.h"
 #include "math/dggt_math_utils.h"
+#include "defines/dggt_defines.h"
 
 namespace dggt
 {
@@ -87,7 +88,7 @@ namespace dggt
 		}
 		else
 		{
-			return 0xFFFFFFFFFFFFFFFF;
+			return MAX_MSIZE;
 		}
 	}
 
@@ -104,7 +105,7 @@ namespace dggt
 		}
 		else
 		{
-			return 0xFFFFFFFF;
+			return MAX_UINT32;
 		}
 	}
 }

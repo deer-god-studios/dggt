@@ -21,7 +21,7 @@ namespace dggt
 			best_fit_result result={};
 			free_block* best=0;
 			free_block* bestPrev=0;
-			msize minDiff=0xFFFFFFFFFFFFFFFF;
+			msize minDiff=MAX_MSIZE;
 			free_block* current=freeList;
 			free_block* prev=0;
 			while (current)

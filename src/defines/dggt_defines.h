@@ -15,7 +15,7 @@
 #define ASSERT(P)
 #endif
 
-#define MAX_UINT32 ULONG_MAX
+#define MAX_UINT32 UINT_MAX
 #define MAX_MSIZE ULLONG_MAX
 #define MAX_FLOAT32 FLT_MAX
 #define MIN_FLOAT32 FLT_MIN

@@ -84,11 +84,5 @@ namespace dggt
 
 #include "dggt_mem_free_list_alloc.inl"
 
-namespace dggt
-{
-	template <u32 S=0>
-	using free_list_alloc=allocator<alloc_t::FREE_LIST,S>;
-}
-
 #define _DGGT_MEM_FREE_LIST_ALLOC_H_
 #endif

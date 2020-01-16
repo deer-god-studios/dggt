@@ -82,11 +82,5 @@ namespace dggt
 
 #include "dggt_mem_linear_alloc.inl"
 
-namespace dggt
-{
-	template <u32 S=0>
-	using lin_alloc=allocator<alloc_t::LINEAR,S>;
-}
-
 #define _DGGT_MEM_LINEAR_ALLOC_H_
 #endif

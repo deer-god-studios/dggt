@@ -57,6 +57,37 @@ namespace dggt
 		return allocator<A,SIZE>();
 	}
 
+	template <alloc_t P,alloc_t F>
+	allocator<alloc_t::FALLBACK,P,F> create_alloc(
+			allocator<P>* primaryAlloc,
+			allocator<F>* fallbackAlloc)
+	{
+		return allocator<alloc_t::FALLBACK,P,F>(
+				primaryAlloc,
+				fallbackAlloc);
+	}
+
+	template <alloc_t P,u32 SIZE,alloc_t F>
+	allocator<alloc_t::FALLBACK,P,SIZE,F> create_alloc(
+			allocator<P,SIZE>* primaryAlloc,
+			allocator<F>* fallbackAlloc)
+	{
+		return allocator<alloc_t::FALLBACK,P,SIZE,F>(
+				primaryAlloc,
+				fallbackAlloc);
+	}
+
+	template <alloc_t P,u32 PSIZE,alloc_t F,u32 FSIZE>
+	allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE> create_alloc(
+			allocator<P,PSIZE>* primaryAlloc,
+			allocator<F,FSIZE>* fallbackAlloc)
+	{
+		return allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>(
+				primaryAlloc,
+				fallbackAlloc);
+	}
+
+
 	template <alloc_t A>
 	b32 destroy_alloc(allocator<A>* alloc)
 	{
