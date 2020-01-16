@@ -1,8 +1,5 @@
 #ifndef _DGGT_MEM_H_
 
-// TODO: add set_block functions to allocators.
-// TODO: comments and docs!
-
 #include "dggt_mem_defines.h"
 #include "dggt_mem_alloc.h"
 #include "dggt_mem_linear_alloc.h"
