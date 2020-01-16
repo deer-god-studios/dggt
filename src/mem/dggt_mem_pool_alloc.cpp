@@ -53,7 +53,7 @@ namespace dggt
 		return result;
 	}
 
-	b32 allocator<alloc_t::POOL>::free(void* ptr)
+	b32 allocator<alloc_t::POOL>::free(void* ptr,msize size)
 	{
 		b32 result=0;
 		if (owns(ptr))
@@ -78,7 +78,7 @@ namespace dggt
 		return result;
 	}
 
-	void allocator<alloc_t::POOL>::clear()
+	b32 allocator<alloc_t::POOL>::clear()
 	{
 		pool=(pool_block*)buff.mem;
 		for (u32 i=0;i<blockCount;++i)
@@ -89,6 +89,7 @@ namespace dggt
 		}
 		used=0;
 		blocksUsed=0;
+		return 1;
 	}
 
 	b32 allocator<alloc_t::POOL>::owns(const void* ptr) const

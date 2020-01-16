@@ -46,9 +46,22 @@ namespace dggt
 		return result;
 	}
 
-	b32 allocator<alloc_t::STORE>::free(void* ptr)
+	b32 allocator<alloc_t::STORE>::free(void* ptr,msize size)
 	{
-		return free(blk<void>(ptr,blockSize));
+		b32 result=1;
+		if (size)
+		{
+			u32 blockCount=size/blockSize;
+			for (u32 i=0;i<blockCount;++i)
+			{
+				result=result&&free(blk<void>(ptr,blockSize));
+			}
+		}
+		else
+		{
+			result=free(blk<void>(ptr,blockSize));
+		}
+		return result;
 	}
 
 	b32 allocator<alloc_t::STORE>::owns(const void* ptr) const

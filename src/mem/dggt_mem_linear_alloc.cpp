@@ -49,9 +49,10 @@ namespace dggt
 		return blk<void>(ptr,size);
 	}
 
-	void allocator<alloc_t::LINEAR>::clear()
+	b32 allocator<alloc_t::LINEAR>::clear()
 	{
 		used=0;
+		return 1;
 	}
 
 	msize allocator<alloc_t::LINEAR>::available_mem() const

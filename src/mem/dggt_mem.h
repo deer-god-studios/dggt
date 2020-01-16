@@ -43,13 +43,6 @@ namespace dggt
 
 	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
 	allocator<alloc_t::STORE> create_alloc(msize blockSize);
-	template <u32 BLOCKSIZE>
-	allocator<alloc_t::LINEAR_STORE> create_alloc(
-			allocator<alloc_t::STORE>* store,
-			allocator<alloc_t::LINEAR>* linear);
-	allocator<alloc_t::STACK_STORE> create_alloc(
-			allocator<alloc_t::STORE>* store,
-			allocator<alloc_t::STACK>* stk);
 
 	template <alloc_t A>
 	b32 destroy_alloc(allocator<A>* alloc);

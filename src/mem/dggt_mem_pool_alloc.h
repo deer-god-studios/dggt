@@ -24,14 +24,14 @@ namespace dggt
 		blk<T> alloc();
 		blk<void> alloc();
 
-		b32 free(void* ptr);
+		b32 free(void* ptr,msize size=0);
 		b32 free(blk<void> block);
 		template <typename T>
-		b32 free(T* ptr);
+		b32 free(T* ptr,u32 count=0);
 		template <typename T>
 		b32 free(blk<T> block);
 
-		void clear();
+		b32 clear();
 
 		b32 owns(const void* ptr) const;
 		b32 owns(const blk<void> block) const;
@@ -69,7 +69,7 @@ namespace dggt
 		template <typename T>
 		b32 free(blk<T> block) { return internalAlloc.free<T>(block); }
 
-		void clear() { internalAlloc.clear(); }
+		b32 clear() { return internalAlloc.clear(); }
 
 		b32 owns(const void* ptr) const { return internalAlloc.owns(ptr); }
 		b32 owns(const blk<void> block) const { return internalAlloc.owns(block); }
@@ -84,7 +84,14 @@ namespace dggt
 		u32 used_blocks() const { return internalAlloc.used_blocks(); }
 	};
 }
+
 #include "dggt_mem_pool_alloc.inl"
+
+namespace dggt
+{
+	template <u32 S=0>
+	using pool_alloc=allocator<alloc_t::POOL,S>;
+}
 
 #define _DGGT_MEM_POOL_ALLOC_H_
 #endif

@@ -22,7 +22,14 @@ namespace dggt
 		template <typename T>
 		T* alloc(u32* count=0);
 
-		void clear();
+		b32 free(void* ptr,msize size) { return 0; }
+		b32 free(blk<void> block) { return 0; }
+		template <typename T>
+		b32 free(T* ptr,u32 count) { return 0; }
+		template <typename T>
+		b32 free(blk<T> block) { return 0; }
+
+		b32 clear();
 
 		msize available_mem() const;
 		msize used_mem() const;
@@ -52,7 +59,14 @@ namespace dggt
 		template <typename T>
 		T* alloc(u32* count=0) { return a.alloc<T>(count); }
 
-		void clear() { a.clear(); }
+		b32 free(void* ptr,msize size) { return a.free(ptr,size); }
+		b32 free(blk<void> block) { return a.free(block); }
+		template <typename T>
+		b32 free(T* ptr,u32 count) { return a.free(ptr,count); }
+		template <typename T>
+		b32 free(blk<T> block) { return a.free(block); }
+
+		b32 clear() { return a.clear(); }
 
 		msize available_mem() const { return a.available_mem(); }
 		msize used_mem() const { return a.used_mem(); }
@@ -65,7 +79,14 @@ namespace dggt
 		b32 owns(const T* ptr) const { return a.owns(ptr); }
 	};
 }
+
 #include "dggt_mem_linear_alloc.inl"
+
+namespace dggt
+{
+	template <u32 S=0>
+	using lin_alloc=allocator<alloc_t::LINEAR,S>;
+}
 
 #define _DGGT_MEM_LINEAR_ALLOC_H_
 #endif

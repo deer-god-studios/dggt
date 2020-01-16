@@ -34,7 +34,7 @@ namespace dggt
 		b32 restore_stack(stack_state state);
 		b32 is_stack_balanced() const;
 
-		void clear();
+		b32 clear();
 
 		b32 owns(const void* ptr) const;
 		b32 owns(const blk<void> block) const;
@@ -74,7 +74,7 @@ namespace dggt
 		b32 restore_stack(stack_state state) { return internalAlloc.restore_stack(state); }
 		b32 is_stack_balanced() const { return internalAlloc.is_stack_balanced(); }
 
-		void clear() { internalAlloc.clear(); }
+		b32 clear() { return internalAlloc.clear(); }
 
 		b32 owns(const void* ptr) const { return internalAlloc.owns(ptr); }
 		b32 owns(const blk<void> block) const { return internalAlloc.owns(block); }
@@ -89,5 +89,12 @@ namespace dggt
 }
 
 #include "dggt_mem_stack_alloc.inl"
+
+namespace dggt
+{
+	template <u32 S=0>
+	using stack_alloc=allocator<alloc_t::STACK,S>;
+}
+
 #define _DGGT_MEM_STACK_ALLOC_H_
 #endif

@@ -32,5 +32,6 @@ int main(int argc, char* argv[])
 	printf("\n%x, %d\n",realPtr,realCount);
 	cache_shutdown();
 
+	foo<real32,0,u32,bool> t;
 	return 0;
 }

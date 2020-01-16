@@ -31,7 +31,7 @@ namespace dggt
 		template <typename T>
 		b32 free(blk<T> block);
 
-		void clear();
+		b32 clear();
 
 		b32 owns(const void* ptr) const;
 		b32 owns(const blk<void> block) const;
@@ -68,7 +68,7 @@ namespace dggt
 		template <typename T>
 		b32 free(blk<T> block) { return internalAlloc.free(block); }
 
-		void clear() { internalAlloc.clear(); }
+		b32 clear() { return internalAlloc.clear(); }
 
 		b32 owns(const void* ptr) const { return internalAlloc.owns(ptr); }
 		b32 owns(const blk<void> block) const { return internalAlloc.owns(block); }
@@ -83,6 +83,12 @@ namespace dggt
 }
 
 #include "dggt_mem_free_list_alloc.inl"
+
+namespace dggt
+{
+	template <u32 S=0>
+	using free_list_alloc=allocator<alloc_t::FREE_LIST,S>;
+}
 
 #define _DGGT_MEM_FREE_LIST_ALLOC_H_
 #endif

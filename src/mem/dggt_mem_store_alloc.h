@@ -19,10 +19,10 @@ namespace dggt
 		template <typename T>
 		blk<T> alloc();
 
-		b32 free(void* ptr);
+		b32 free(void* ptr,msize size=0);
 		b32 free(blk<void> block);
 		template <typename T>
-		b32 free(T* ptr); // TODO: add count for freeing count blocks?
+		b32 free(T* ptr,u32 count=0);
 		template <typename T>
 		b32 free(blk<T> block);
 
@@ -53,10 +53,10 @@ namespace dggt
 		template <typename T>
 		blk<T> alloc() { return a.alloc<T>(); }
 
-		b32 free(void* ptr) { return a.free(ptr); }
+		b32 free(void* ptr,msize size=BLOCKSIZE) { return a.free(ptr,size); }
 		b32 free(blk<void> block) { return a.free(block); }
 		template <typename T>
-		b32 free(T* ptr) { return a.free(ptr); }
+		b32 free(T* ptr,u32 count=1) { return a.free(ptr,1); }
 		template <typename T>
 		b32 free(blk<T> block) { return a.free(block); }
 
@@ -74,6 +74,12 @@ namespace dggt
 	};
 }
 #include "dggt_mem_store_alloc.inl"
+
+namespace dggt
+{
+	template <u32 S=0>
+	using store_alloc=allocator<alloc_t::STORE,S>;
+}
 
 #define _DGGT_MEM_STORE_ALLOC_H_
 #endif

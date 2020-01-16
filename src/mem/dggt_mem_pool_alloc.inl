@@ -9,7 +9,7 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::POOL>::free(T* ptr)
+	b32 allocator<alloc_t::POOL>::free(T* ptr,u32 count)
 	{
 		return free((void*)ptr);
 	}

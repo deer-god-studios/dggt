@@ -235,11 +235,12 @@ namespace dggt
 		return free(block.mem,block.size);
 	}
 
-	void allocator<alloc_t::FREE_LIST>::clear()
+	b32 allocator<alloc_t::FREE_LIST>::clear()
 	{
 		freeList=(free_block*)buff.mem;
 		freeList->size=buff.size;
 		used=0;
+		return 1;
 	}
 
 	b32 allocator<alloc_t::FREE_LIST>::owns(const void* ptr) const

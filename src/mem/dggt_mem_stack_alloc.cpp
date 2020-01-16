@@ -94,11 +94,12 @@ namespace dggt
 		return result;
 	}
 
-	void allocator<alloc_t::STACK>::clear()
+	b32 allocator<alloc_t::STACK>::clear()
 	{
 		used=0;
 		stateCount=0;
 		prevState=0;
+		return 1;
 	}
 
 	b32 allocator<alloc_t::STACK>::is_stack_balanced() const

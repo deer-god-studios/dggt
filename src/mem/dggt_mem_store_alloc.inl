@@ -13,9 +13,14 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::STORE>::free(T* ptr)
+	b32 allocator<alloc_t::STORE>::free(T* ptr,u32 count)
 	{
-		return free(blk<T>(ptr,1));
+		b32 result=1;
+		for (u32 i=0;i<count;++i)
+		{
+			result=result&&free(blk<T>(ptr,1));
+		}
+		return result;
 	}
 
 	template <typename T>
