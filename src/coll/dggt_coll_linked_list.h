@@ -19,9 +19,9 @@ namespace dggt
 	using list_iter=iter<T,linked_list<T>>;
 
 	template <typename T>
-	struct list_iter<T>
+	struct iter<T,linked_list<T>>
 	{
-		slnode* current;
+		slnode<T>* current;
 		linked_list<T>* list;
 
 		b32 is_end() const;
@@ -44,7 +44,7 @@ namespace dggt
 	template <typename T>
 	linked_list<T> create_linked_list()
 	{
-		return linked_list{};
+		return linked_list<T>{};
 	}
 
 	// if push succeeds it returns an iterator to the list's new head node

@@ -33,6 +33,7 @@
 #include "math/dggt_math.h"
 #include "types/dggt_types.h"
 #include "mem/dggt_mem.h"
+#include "coll/dggt_coll.h"
 
 #define _DGGT_H_
 #endif

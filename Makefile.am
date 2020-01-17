@@ -23,6 +23,11 @@ include_HEADERS = src/dggt.h \
 				  src/math/lin/dggt_math_mat3.h \
 				  src/math/lin/dggt_math_mat4.h \
 				  src/math/dggt_math.h
+				  src/coll/dggt_coll_linked_list.h \
+				  src/coll/dggt_coll_linked_list.inl \
+				  src/coll/dggt_coll_stack.h \
+				  src/coll/dggt_coll_stack.inl \
+				  src/coll/dggt_coll.h
 libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_defines.h \
 						src/mem/dggt_mem.cpp \

@@ -1,6 +1,7 @@
 #ifndef _DGGT_COLL_STACK_H_
 
 #include "dggt_coll_iter.h"
+
 namespace dggt
 {
 	template <typename T>
@@ -10,7 +11,7 @@ namespace dggt
 	using stack_iter=iter<T,stack<T>>;
 
 	template <typename T>
-	struct stack_iter<T>
+	struct iter<T,stack<T>>
 	{
 		u32 current;
 		u32 capacity;

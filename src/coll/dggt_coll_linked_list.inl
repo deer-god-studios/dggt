@@ -59,7 +59,7 @@ namespace dggt
 		if (list&&alloc)
 		{
 			u32 nodeCount=1;
-			slnode<T>* newNode=alloc->alloc<slnode<T>>(&nodeCount);
+			slnode<T>* newNode=alloc->template alloc<slnode<T>>(&nodeCount);
 			if (newNode)
 			{
 				newNode->next=list->head;
