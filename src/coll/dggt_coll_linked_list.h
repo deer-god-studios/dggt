@@ -1,6 +1,7 @@
 #ifndef _DGGT_COLL_LINKED_LIST_H_
 
 #include "types/dggt_types.h"
+#include "dggt_coll_iter.h"
 
 namespace dggt
 {
