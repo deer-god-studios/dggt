@@ -65,6 +65,9 @@ namespace dggt
 	list_iter<T> peek(linked_list<T>* list);
 
 	template <typename T>
+	list_iter<T> get(linked_list<T>* list,u32 index);
+
+	template <typename T>
 	u32 get_count(const linked_list<T>* list);
 	
 	template <typename T>

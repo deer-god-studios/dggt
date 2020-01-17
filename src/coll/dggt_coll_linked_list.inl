@@ -108,7 +108,23 @@ namespace dggt
 	{
 		return list_iter<T>{list?list->current:0,list};
 	}
-
+	template <typename T>
+	list_iter<T> get(linked_list<T>* list,u32 index)
+	{
+		list_iter<T> result=list_iter<T>{0,list};
+		list_iter<T> it=get_iter(list);
+		u32 i=0;
+		while (!is_end(it)&&i<index)
+		{
+			++i;
+			next(it);
+		}
+		if (!is_end(it))
+		{
+			result=it;
+		}
+		return result;
+	}
 	template <typename T>
 	list_iter<T> get_iter(linked_list<T>* list)
 	{
