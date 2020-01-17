@@ -1,5 +1,6 @@
 #ifndef _DGGT_COLL_ITER_H_
 
+#include "types/dggt_types.h"
 namespace dggt
 {
 	template <typename T,typename C>
