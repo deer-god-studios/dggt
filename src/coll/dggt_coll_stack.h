@@ -40,6 +40,9 @@ namespace dggt
 		const T& operator[](u32 index) const;
 	};
 
+	template <typename T,typename A>
+	stack<T> create_stack(A* alloc) { return stack<T>{alloc->template alloc<T>(2),0}; }
+
 	// NOTE: To see if the push succeeded use, is_coll_valid(iter).
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc);

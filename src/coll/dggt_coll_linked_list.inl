@@ -88,7 +88,7 @@ namespace dggt
 			if (newNode)
 			{
 				newNode->next=list->head;
-				zero_struct<T>(&newNode.val);
+				zero_struct<T>(&newNode->val);
 				result.current=newNode;
 				result.list=list;
 				result.memIsValid=1;
@@ -121,7 +121,7 @@ namespace dggt
 			result.memIsValid=0;
 			list->head=nodeToFree->next;
 			--list->count;
-			if (alloc->free(nodeToFree))
+			if (alloc->free(nodeToFree,1))
 			{
 				result.current=list->head;
 				result.list=list;
@@ -134,7 +134,7 @@ namespace dggt
 	template <typename T>
 	list_iter<T> peek(linked_list<T>* list)
 	{
-		return list_iter<T>{list?list->current:0,list};
+		return list_iter<T>{list?list->head:0,list};
 	}
 
 	template <typename T>

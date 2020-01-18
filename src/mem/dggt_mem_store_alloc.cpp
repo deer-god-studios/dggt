@@ -43,6 +43,7 @@ namespace dggt
 			newBlock->next=head;
 			head=newBlock;
 			++blockCount;
+			result=1;
 		}
 		return result;
 	}
@@ -71,7 +72,7 @@ namespace dggt
 	}
 	b32 allocator<alloc_t::STORE>::owns(const blk<void> block) const
 	{
-		return owns(block)&&
+		return owns(block.mem)&&
 			block.size==blockSize;
 	}
 

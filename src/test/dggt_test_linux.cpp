@@ -24,6 +24,33 @@ int main(int argc, char* argv[])
 	*storeTableAlloc=create_alloc<alloc_t::STORE_TABLE,2048>();
 
 	printf("\n%x, %d\n",realPtr,realCount);
+
+	linked_list<float32> list=create_linked_list<float32>();
+	push(&list,1.24f,linAlloc);
+	push(&list,2.354f,linAlloc);
+	push(&list,5.24f,linAlloc);
+
+	for (list_iter<float32> it=get_iter(&list);!it.is_end();it.next())
+	{
+		printf("\n%f\n",it.get());
+	}
+
+	while (get_count(&list))
+	{
+		list_iter<float32> popResult=pop(&list,storeTableAlloc);
+		printf("\nis_mem_valid(): %d\n",is_mem_valid(popResult));
+		if (is_mem_valid(popResult))
+		{
+			if (!is_end(popResult))
+			{
+				printf("\nnext to pop: %f\n",popResult.get());
+			}
+			else
+			{
+				printf("\niterator points to nothing.\n");
+			}
+		}
+	}
 	cache_shutdown();
 
 	return 0;

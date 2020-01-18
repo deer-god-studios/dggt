@@ -1,4 +1,4 @@
-
+// TODO: This is all terrible.  Fix.
 #include "defines/dggt_defines.h"
 namespace dggt
 {
@@ -42,9 +42,16 @@ namespace dggt
 			u32 sizeKey=(u32)size; // TODO: fix
 			u32 trial=0;
 			u32 hashTrial=0;
-			for (u32 trial=0;trial<TABLESIZE;++trial)
+			hashTrial=store_table_hash<TABLESIZE>(sizeKey,trial++);
+			if (alloc->flagTable[hashTrial]==STORE_TABLE_EMPTY||
+					alloc->flagTable[hashTrial]==STORE_TABLE_DELETED)
 			{
-				hashTrial=store_table_hash<TABLESIZE>(sizeKey,trial);
+				result=1;
+				*indexOut=hashTrial;
+			}
+			while (trial<TABLESIZE&&
+					alloc->flagTable[hashTrial]==STORE_TABLE_OCCUPIED)
+			{
 				if (alloc->flagTable[hashTrial]==STORE_TABLE_EMPTY||
 						alloc->flagTable[hashTrial]==STORE_TABLE_DELETED)
 				{
@@ -52,6 +59,7 @@ namespace dggt
 					*indexOut=hashTrial;
 					break;
 				}
+				hashTrial=store_table_hash<TABLESIZE>(sizeKey,trial++);
 			}
 			return result;
 		}
@@ -85,18 +93,14 @@ namespace dggt
 		}
 
 		template <u32 TABLESIZE>
-		allocator<alloc_t::STORE_TABLE>* get_store_alloc(
+		allocator<alloc_t::STORE>* get_store_alloc(
 				allocator<alloc_t::STORE_TABLE,TABLESIZE>* alloc,u32 index)
 		{
-			allocator<alloc_t::STORE_TABLE>* result=0;
+			allocator<alloc_t::STORE>* result=0;
 			if (alloc)
 			{
-				flag32 f=alloc->flagTable[index];
-				if (f==STORE_TABLE_OCCUPIED)
-				{
-					result=
-						(allocator<alloc_t::STORE_TABLE>*)alloc->storeTable+index;
-				}
+				result=
+					(allocator<alloc_t::STORE>*)alloc->storeTable+index;
 			}
 			return result;
 		}
@@ -130,10 +134,12 @@ namespace dggt
 				u32 i=0;
 				if (store_table_hash_insert<TABLESIZE>(alloc,size,&i))
 				{
-					allocator<alloc_t::STORE_TABLE,TABLESIZE>* a=
+					allocator<alloc_t::STORE>* a=
 						get_store_alloc<TABLESIZE>(alloc,i);
-					*a=allocator<alloc_t::STORE_TABLE,TABLESIZE>(size);
-					++a->storeCount;
+					*a=allocator<alloc_t::STORE>(size);
+					alloc->flagTable[i]=STORE_TABLE_OCCUPIED;
+					++alloc->storeCount;
+					result=1;
 				}
 			}
 			return result;
@@ -212,7 +218,16 @@ namespace dggt
 		if (ptr&&owns(blk<void>(ptr,size)))
 		{
 			u32 i=0;
-			if (dggt_internal_::store_table_hash_insert<TABLESIZE>(
+			if (dggt_internal_::store_table_hash_search<TABLESIZE>(
+						this,size,&i))
+			{
+				allocator<alloc_t::STORE>* storeAlloc=
+					dggt_internal_::search_store_table_alloc<TABLESIZE>(
+							this,size);
+				ASSERT(storeAlloc);
+				result=storeAlloc->free(ptr);
+			}
+			else if (dggt_internal_::store_table_hash_insert<TABLESIZE>(
 						this,size,&i))
 			{
 				if (dggt_internal_::insert_store_alloc<TABLESIZE>(this,size))
@@ -221,7 +236,7 @@ namespace dggt
 						dggt_internal_::search_store_table_alloc<TABLESIZE>(
 								this,size);
 					ASSERT(storeAlloc);
-					storeAlloc->free(ptr);
+					result=storeAlloc->free(ptr);
 				}
 			}
 		}

@@ -27,6 +27,8 @@ include_HEADERS = src/dggt.h \
 				  src/coll/dggt_coll_linked_list.inl \
 				  src/coll/dggt_coll_stack.h \
 				  src/coll/dggt_coll_stack.inl \
+				  src/coll/dggt_coll_queue.h \
+				  src/coll/dggt_coll_queue.inl \
 				  src/coll/dggt_coll.h
 libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_defines.h \

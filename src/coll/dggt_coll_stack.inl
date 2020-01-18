@@ -98,16 +98,18 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc)
 	{
-		stack_iter<T> result=stack_iter<T>{0,0,stk};
+		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
 		if (stk)
 		{
 			u32 count=get_count(stk);
-			if (count>=get_capacity(stk)) // needs resizing.
+			u32 capacity=get_capacity(stk);
+			if (count+1>=capacity) // needs resizing.
 			{
-				result=resize(stk,2*count,alloc);
+				result=resize(stk,2*capacity,alloc);
 			}
 			if (is_coll_valid(result))
 			{
+				zero_struct<T>(stk->block.mem+count);
 				++stk->count;
 				result.current=get_head(stk);
 				if (is_mem_valid(result))
@@ -134,15 +136,16 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> pop(stack<T>* stk,A* alloc)
 	{
-		stack_iter<T> result=stack_iter<T>{0,0,stk};
+		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
 		u32 count=get_count(stk);
 		if (stk&&count)
 		{
 			--stk->count;
 			count=get_count(stk);
-			if (get_load_factor<real32>(stk)<0.25f)
+			u32 capacity=get_capacity(stk);
+			if (count&&get_load_factor<real32>(stk)<0.25f)
 			{
-				result=resize(stk,count/2,alloc);
+				result=resize(stk,capacity/2,alloc);
 			}
 			if (is_mem_valid(stk))
 			{
@@ -155,14 +158,7 @@ namespace dggt
 	template <typename T>
 	stack_iter<T> get(stack<T>* stk,u32 index)
 	{
-		stack_iter<T> result=stack_iter<T>{0,0,stk};
-		if (stk)
-		{
-			result.current=get_head(stk)-index;
-			result.stk=stk;
-			result.table=stk->table;
-		}
-		return result;
+		return get_iter(stk,index);
 	}
 
 	template <typename T>

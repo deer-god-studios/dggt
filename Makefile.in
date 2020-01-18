@@ -1136,6 +1136,8 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES
 				  src/coll/dggt_coll_linked_list.inl \
 				  src/coll/dggt_coll_stack.h \
 				  src/coll/dggt_coll_stack.inl \
+				  src/coll/dggt_coll_queue.h \
+				  src/coll/dggt_coll_queue.inl \
 				  src/coll/dggt_coll.h
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
