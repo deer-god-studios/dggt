@@ -3,14 +3,15 @@ namespace dggt
 {
 
 	template <typename T>
-	b32 iter<T,stack<T>>::is_end() const
+	b32 iter<T,stack<T>,blk<T>>::is_end() const
 	{
-		return stk==0||(stk&&current>=stk->table.count)||
-			(stk&&stk->table==table);
+		return !is_coll_valid()||
+			(is_coll_valid()&&current>=stk->table.count)||
+			(is_coll_valid()&&!is_mem_valid());
 	}
 
 	template <typename T>
-	b32 iter<T,stack<T>>::next()
+	b32 iter<T,stack<T>,blk<T>>::next()
 	{
 		b32 result=0;
 		if (!is_end())
@@ -21,39 +22,77 @@ namespace dggt
 	}
 
 	template <typename T>
-	T& iter<T,stack<T>>::get()
+	T& iter<T,stack<T>,blk<T>>::get()
 	{
 		return table[current];
 	}
 
 	template <typename T>
-	const T& iter<T,stack<T>>::get() const
+	const T& iter<T,stack<T>,blk<T>>::get() const
 	{
 		return table[current];
 	}
 
 	template <typename T>
-	T* iter<T,stack<T>>::get_ptr()
+	T* iter<T,stack<T>,blk<T>>::get_ptr()
 	{
 		return table.mem+current;
 	}
 
 	template <typename T>
-	const T* iter<T,stack<T>>::get_ptr() const
+	const T* iter<T,stack<T>,blk<T>>::get_ptr() const
 	{
 		return table.mem+current;
 	}
 
 	template <typename T>
-	blk<T> iter<T,stack<T>>::get_table()
+	blk<T> iter<T,stack<T>,blk<T>>::get_mem()
 	{
 		return table;
 	}
 
 	template <typename T>
-	const blk<T> iter<T,stack<T>>::get_table() const
+	const blk<T> iter<T,stack<T>,blk<T>>::get_mem() const
 	{
 		return table;
+	}
+
+	template <typename T>
+	b32 iter<T,stack<T>,blk<T>>::is_coll_valid() const
+	{
+		return stk;
+	}
+
+	template <typename T>
+	b32 iter<T,stack<T>,blk<T>>::is_mem_valid() const
+	{
+		return is_coll_valid()&&
+			table==stk->table;
+	}
+
+	template <typename T>
+	b32 iter<T,stack<T>,blk<T>>::vindicate_mem()
+	{
+		b32 result=0;
+		if (!is_mem_valid()&&
+				is_coll_valid())
+		{
+			table=stk->table;
+			result=1;
+		}
+		return result;
+	}
+
+	template <typename T>
+	T& stack<T>::operator[](u32 index)
+	{
+		return table[index];
+	}
+
+	template <typename T>
+	const T& stack<T>::operator[](u32 index) const
+	{
+		return table[index];
 	}
 
 	template <typename T,typename A>
@@ -68,8 +107,8 @@ namespace dggt
 			if (count>=get_capacity(stk)) // needs resizing.
 			{
 				result=resize(stk,2*count,alloc);
-				resized=result.stk; // resize succeeded. :/
-				freedOld=result.table==stk->table; // freed old table :/
+				resized=is_coll_valid(result);
+				freedOld=is_mem_valid(result);
 			}
 			if (resized)
 			{
@@ -109,8 +148,8 @@ namespace dggt
 			if (get_load_factor<real32>(stk)<0.25f)
 			{
 				result=resize(stk,count/2,alloc);
-				resized=result.stk; // resize succeeded. :/
-				freedOld=result.table==stk->table; // freed old table :/
+				resized=is_coll_valid(result);
+				freedOld=is_mem_valid(result);
 			}
 			if (freedOld)
 			{
@@ -168,7 +207,7 @@ namespace dggt
 			blk<T> newTable=alloc->alloc(newCapacity);
 			if (newTable.mem)
 			{
-				blk<T> oldTable=stk->oldTable;
+				blk<T> oldTable=stk->table;
 				u32 copyCount=min<u32>(oldCapacity,newCapacity);
 				blk_cpy(newTable,oldTable,copyCount);
 				if (alloc->free(oldTable))

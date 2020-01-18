@@ -8,10 +8,10 @@ namespace dggt
 	struct stack;
 
 	template <typename T>
-	using stack_iter=iter<T,stack<T>>;
+	using stack_iter=iter<T,stack<T>,blk<T>>;
 
 	template <typename T>
-	struct iter<T,stack<T>>
+	struct iter<T,stack<T>,blk<T>>
 	{
 		u32 current;
 		blk<T> table;
@@ -23,8 +23,11 @@ namespace dggt
 		const T& get() const;
 		T* get_ptr();
 		const T* get_ptr() const;
-		blk<T> get_table();
-		const blk<T> get_table() const;
+		blk<T> get_mem();
+		const blk<T> get_mem() const;
+		b32 is_coll_valid() const;
+		b32 is_mem_valid() const;
+		b32 vindicate_mem();
 	};
 
 	template <typename T>
@@ -37,12 +40,16 @@ namespace dggt
 		const T& operator[](u32 index) const;
 	};
 
+	// NOTE: To see if the push succeeded use, is_coll_valid(iter).
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc);
 	
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,const T& val,A* alloc);
 
+	// NOTE: To see if there is a possible memory leak use,
+	// 		is_mem_valid(iter).  If it fails, free the memory (or not)
+	// 		and call vindicate_mem(iter).
 	template <typename T,typename A>
 	stack_iter<T> pop(stack<T>* stk,A* alloc);
 
