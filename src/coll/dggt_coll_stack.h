@@ -14,7 +14,7 @@ namespace dggt
 	struct iter<T,stack<T>>
 	{
 		u32 current;
-		u32 capacity;
+		blk<T> table;
 		stack<T>* stk;
 
 		b32 is_end() const;
@@ -43,6 +43,9 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,const T& val,A* alloc);
 
+	template <typename T,typename A>
+	stack_iter<T> pop(stack<T>* stk,A* alloc);
+
 	template <typename T>
 	stack_iter<T> get(stack<T>* stk,u32 index);
 
@@ -58,8 +61,15 @@ namespace dggt
 	template <typename T,typename F=float32>
 	F get_load_factor(const stack<T>* stk);
 
+	// NOTE: If the allocator fails to free the stack's old table, resize
+	// 		returns an iterator pointing to the old table which may still
+	// 		need to be freed but still points to the stack.  Otherwise, the 
+	// 		iterator it returns points to the head of the stack and points 
+	// 		to the newly resized table.  Please note in either case the 
+	// 		stack's table is resized as long as the allocator succeeds in 
+	// 		allocating the new table.
 	template <typename T,typename A>
-	b32 resize(const stack<T>* stk,u32 newCapacity,A* alloc);
+	stack_iter<T> resize(stack<T>* stk,u32 newCapacity,A* alloc);
 }
 
 #include "dggt_coll_stack.inl"

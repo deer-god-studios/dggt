@@ -4,7 +4,7 @@ namespace dggt
 	template <typename T>
 	b32 iter<T,linked_list<T>>::is_end() const
 	{
-		return current&&list;
+		return current&&list&&list->head==current;
 	}
 
 	template <typename T>
@@ -108,6 +108,7 @@ namespace dggt
 	{
 		return list_iter<T>{list?list->current:0,list};
 	}
+
 	template <typename T>
 	list_iter<T> get(linked_list<T>* list,u32 index)
 	{
@@ -125,6 +126,7 @@ namespace dggt
 		}
 		return result;
 	}
+
 	template <typename T>
 	list_iter<T> get_iter(linked_list<T>* list)
 	{
