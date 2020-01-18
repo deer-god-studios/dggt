@@ -34,7 +34,14 @@ namespace dggt
 		const T& operator[](uint32_t index) const;
 
 		operator T*();
-
+		bool32 operator==(const blk<T>& rhs)
+		{
+			return rhs.mem==mem&&rhs.count==count;
+		}
+		bool32 operator!=(const blk<T>& rhs)
+		{
+			return !(*this==rhs);
+		}
 		template <typename S>
 		explicit operator blk<S>();
 	};
@@ -72,6 +79,15 @@ namespace dggt
 		explicit operator blk<S>()
 		{
 			return blk<S>((S*)mem,size/sizeof(S));
+		}
+
+		bool32 operator==(const blk<void>& rhs)
+		{
+			return mem==rhs.mem&&size==rhs.size;
+		}
+		bool32 operator!=(const blk<void>& rhs)
+		{
+			return !(*this==rhs);
 		}
 	};
 
