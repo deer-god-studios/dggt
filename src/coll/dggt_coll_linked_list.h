@@ -16,13 +16,14 @@ namespace dggt
 	struct linked_list;
 
 	template <typename T>
-	using list_iter=iter<T,linked_list<T>>;
+	using list_iter=iter<T,linked_list<T>,slnode<T>*>;
 
 	template <typename T>
-	struct iter<T,linked_list<T>>
+	struct iter<T,linked_list<T>,slnode<T>*>
 	{
 		slnode<T>* current;
 		linked_list<T>* list;
+		b32 memIsValid;
 
 		b32 is_end() const;
 		b32 next();
@@ -30,8 +31,11 @@ namespace dggt
 		const T& get() const;
 		T* get_ptr();
 		const T* get_ptr() const;
-		slnode<T>* get_node();
-		const slnode<T>* get_node() const;
+		slnode<T>* get_mem();
+		const slnode<T>* get_mem() const;
+		b32 is_coll_valid() const;
+		b32 is_mem_valid() const;
+		b32 vindicate_mem();
 	};
 
 	template <typename T>

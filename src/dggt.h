@@ -1,5 +1,11 @@
 #ifndef _DGGT_H_
 
+// TODO: errors!
+// 		* error logging.
+// 		* warnings
+// 		* get_error()
+// 		* error messages.
+// 		* etc.
 // TODO: template metaprogramming:
 // 		* typelist
 // 		* enable_if

@@ -2,13 +2,13 @@
 namespace dggt
 {
 	template <typename T>
-	b32 iter<T,linked_list<T>>::is_end() const
+	b32 iter<T,linked_list<T>,slnode<T>*>::is_end() const
 	{
-		return current&&list&&list->head==current;
+		return current==0;
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>>::next()
+	b32 iter<T,linked_list<T>,slnode<T>*>::next()
 	{
 		if (!is_end())
 		{
@@ -19,43 +19,68 @@ namespace dggt
 	}
 
 	template <typename T>
-	T& iter<T,linked_list<T>>::get()
+	T& iter<T,linked_list<T>,slnode<T>*>::get()
 	{
 		return current->val;
 	}
 
 	template <typename T>
-	const T& iter<T,linked_list<T>>::get() const
+	const T& iter<T,linked_list<T>,slnode<T>*>::get() const
 	{
 		return current->val;
 	}
 	template <typename T>
-	T* iter<T,linked_list<T>>::get_ptr()
+	T* iter<T,linked_list<T>,slnode<T>*>::get_ptr()
 	{
 		return &current->val;
 	}
 
 	template <typename T>
-	const T* iter<T,linked_list<T>>::get_ptr() const
+	const T* iter<T,linked_list<T>,slnode<T>*>::get_ptr() const
 	{
 		return &current->val;
 	}
 
 	template <typename T>
-	slnode<T>* iter<T,linked_list<T>>::get_node()
+	slnode<T>* iter<T,linked_list<T>,slnode<T>*>::get_mem()
 	{
 		return current;
 	}
 	template <typename T>
-	const slnode<T>* iter<T,linked_list<T>>::get_node() const
+	const slnode<T>* iter<T,linked_list<T>,slnode<T>*>::get_mem() const
 	{
 		return current;
+	}
+
+	template <typename T>
+	b32 iter<T,linked_list<T>,slnode<T>*>::is_coll_valid() const
+	{
+		return list!=0;
+	}
+
+	template <typename T>
+	b32 iter<T,linked_list<T>,slnode<T>*>::is_mem_valid() const
+	{
+		return is_coll_valid()&&memIsValid;
+	}
+
+	template <typename T>
+	b32 iter<T,linked_list<T>,slnode<T>*>::vindicate_mem()
+	{
+		b32 result=0;
+		if (is_coll_valid()&&!is_mem_valid())
+		{
+			current=list->head;
+			memIsValid=1;
+			result=1;
+		}
+		return result;
 	}
 
 	template <typename T,typename A>
 	list_iter<T> push(linked_list<T>* list,A* alloc)
 	{
-		list_iter<T> result=list_iter<T>{0,list};
+		list_iter<T> result=list_iter<T>{0,list,0};
 		if (list&&alloc)
 		{
 			u32 nodeCount=1;
@@ -66,6 +91,7 @@ namespace dggt
 				zero_struct<T>(&newNode.val);
 				result.current=newNode;
 				result.list=list;
+				result.memIsValid=1;
 				list->head=newNode;
 				++list->count;
 			}
@@ -92,12 +118,14 @@ namespace dggt
 		{
 			slnode<T>* nodeToFree=list->head;
 			result.current=nodeToFree;
+			result.memIsValid=0;
 			list->head=nodeToFree->next;
 			--list->count;
 			if (alloc->free(nodeToFree))
 			{
 				result.current=list->head;
 				result.list=list;
+				result.memIsValid=1;
 			}
 		}
 		return result;
