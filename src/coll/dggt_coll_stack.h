@@ -57,7 +57,7 @@ namespace dggt
 	stack_iter<T> get(stack<T>* stk,u32 index);
 
 	template <typename T>
-	stack_iter<T> get_iter(stack<T>* stk);
+	stack_iter<T> get_iter(stack<T>* stk,u32 index=0);
 
 	template <typename T>
 	u32 get_count(const stack<T>* stk);
@@ -77,6 +77,9 @@ namespace dggt
 	// 		allocating the new table.
 	template <typename T,typename A>
 	stack_iter<T> resize(stack<T>* stk,u32 newCapacity,A* alloc);
+
+	template <typename T>
+	u32 get_head(stack<T>* stk);
 }
 
 #include "dggt_coll_stack.inl"

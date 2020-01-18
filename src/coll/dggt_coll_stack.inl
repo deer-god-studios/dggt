@@ -16,7 +16,7 @@ namespace dggt
 		b32 result=0;
 		if (!is_end())
 		{
-			++current;
+			--current;
 		}
 		return result;
 	}
@@ -86,13 +86,13 @@ namespace dggt
 	template <typename T>
 	T& stack<T>::operator[](u32 index)
 	{
-		return table[index];
+		return table[get_head(this)-index];
 	}
 
 	template <typename T>
 	const T& stack<T>::operator[](u32 index) const
 	{
-		return table[index];
+		return table[get_head(this)-index];
 	}
 
 	template <typename T,typename A>
@@ -102,17 +102,14 @@ namespace dggt
 		if (stk)
 		{
 			u32 count=get_count(stk);
-			b32 resized=0;
-			b32 freedOld=0;
 			if (count>=get_capacity(stk)) // needs resizing.
 			{
 				result=resize(stk,2*count,alloc);
-				resized=is_coll_valid(result);
-				freedOld=is_mem_valid(result);
 			}
-			if (resized)
+			if (is_coll_valid(result))
 			{
 				++stk->count;
+				result.current=get_head(stk);
 				if (freedOld)
 				{
 					result=get_iter(stk);
@@ -126,8 +123,8 @@ namespace dggt
 	stack_iter<T> push(stack<T>* stk,const T& val,A* alloc)
 	{
 		stack_iter<T> result=push(stk,alloc);
-		if (result.stk&&
-				result.table==result.stk->table) // yeesh
+		if (is_coll_valid(result)&&
+				is_mem_valid(result))
 		{
 			result.get()=val;
 		}
@@ -143,15 +140,11 @@ namespace dggt
 		{
 			--stk->count;
 			count=get_count(stk);
-			b32 resized=0;
-			b32 freedOld=0;
 			if (get_load_factor<real32>(stk)<0.25f)
 			{
 				result=resize(stk,count/2,alloc);
-				resized=is_coll_valid(result);
-				freedOld=is_mem_valid(result);
 			}
-			if (freedOld)
+			if (is_mem_valid(stk))
 			{
 				result=get_iter(stk);
 			}
@@ -163,17 +156,24 @@ namespace dggt
 	stack_iter<T> get(stack<T>* stk,u32 index)
 	{
 		stack_iter<T> result=stack_iter<T>{0,0,stk};
+		if (stk)
+		{
+			result.current=get_head(stk)-index;
+			result.stk=stk;
+			result.table=stk->table;
+		}
 		return result;
 	}
 
 	template <typename T>
-	stack_iter<T> get_iter(stack<T>* stk)
+	stack_iter<T> get_iter(stack<T>* stk,u32 index)
 	{
-		stack_iter<T> result=stack_iter<T>{0,0,stk};
+		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
 		if (stk)
 		{
-			result.current=0;
+			result.current=get_head(stk)-index;
 			result.table=stk->table;
+			result.stk=stk;
 		}
 		return result;
 	}
@@ -217,5 +217,11 @@ namespace dggt
 			}
 		}
 		return result;
+	}
+
+	template <typename T>
+	u32 get_head(stack<T>* stk)
+	{
+		return stk?get_count(stk)-1:0;
 	}
 }
