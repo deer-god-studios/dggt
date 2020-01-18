@@ -4,6 +4,7 @@
 #include "dggt_mem_alloc.h"
 #include "dggt_mem_linear_alloc.h"
 #include "dggt_mem_stack_alloc.h"
+#include "dggt_mem_autostack_alloc.h"
 #include "dggt_mem_pool_alloc.h"
 #include "dggt_mem_free_list_alloc.h"
 #include "dggt_mem_store_alloc.h"

@@ -444,6 +444,7 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_stack_alloc.h \
 						src/mem/dggt_mem_stack_alloc.inl \
 						src/mem/dggt_mem_stack_alloc.cpp \
+						src/mem/dggt_mem_autostack_alloc.h \
 						src/mem/dggt_mem_pool_alloc.h \
 						src/mem/dggt_mem_pool_alloc.inl \
 						src/mem/dggt_mem_pool_alloc.cpp \

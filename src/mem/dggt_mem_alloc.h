@@ -2,6 +2,7 @@
 
 // TODO: implement is_valid(block) to check if a block has already 
 // 		been 'freed'.
+// TODO: allow pool allocs to free multiple blocks. 
 
 #include "dggt_mem_blk.h"
 
@@ -12,6 +13,7 @@ namespace dggt
 		NONE,
 		LINEAR,
 		STACK,
+		AUTO_STACK,
 		POOL,
 		FREE_LIST,
 		STORE,

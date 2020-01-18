@@ -110,7 +110,7 @@ namespace dggt
 			{
 				++stk->count;
 				result.current=get_head(stk);
-				if (freedOld)
+				if (is_mem_valid(result))
 				{
 					result=get_iter(stk);
 				}
