@@ -57,6 +57,9 @@ namespace dggt
 	stack_iter<T> pop(stack<T>* stk,A* alloc);
 
 	template <typename T>
+	stack_iter<T> peek(stack<T>* stk);
+
+	template <typename T>
 	stack_iter<T> get(stack<T>* stk,u32 index);
 
 	template <typename T>

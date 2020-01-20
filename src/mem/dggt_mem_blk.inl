@@ -119,6 +119,12 @@ namespace dggt
 	}
 
 	template <typename T>
+	blk<T>::operator blk<void>()
+	{
+		return blk<void>(mem,sizeof(T)*count);
+	}
+
+	template <typename T>
 	blk<T> blk_alloc(u32 count)
 	{
 		T* ptr=(T*)mem_alloc(count*sizeof(T));

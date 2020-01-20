@@ -51,6 +51,24 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
+
+	stack<float32> stackF32=create_stack<float32>(linAlloc);
+
+	push(&stackF32,2.5f,linAlloc);
+	push(&stackF32,70.25f,linAlloc);
+	while (get_count(&stackF32))
+	{
+		printf("\n%f\n",peek(&stackF32).get());
+		pop(&stackF32,(lin_alloc<>*)0);
+	}
+
+	queue<float32> queueF32=create_queue<float32>(linAlloc);
+	enqueue(&queueF32,75.0f,linAlloc);
+	enqueue(&queueF32,5.5f,linAlloc);
+
+	printf("\n%f\n",queueF32[0]);
+	printf("\n%f\n",queueF32[1]);
+
 	cache_shutdown();
 
 	return 0;

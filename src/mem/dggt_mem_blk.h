@@ -44,6 +44,7 @@ namespace dggt
 		}
 		template <typename S>
 		explicit operator blk<S>();
+		explicit operator blk<void>();
 	};
 
 	template <typename T>
