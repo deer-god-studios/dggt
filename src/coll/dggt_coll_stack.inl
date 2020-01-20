@@ -111,6 +111,7 @@ namespace dggt
 			{
 				result.table=stk->table;
 			}
+			capacity=get_capacity(stk);
 			if (is_coll_valid(result))
 			{
 				zero_struct<T>(stk->table.mem+count);
