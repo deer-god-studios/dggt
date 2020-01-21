@@ -254,15 +254,7 @@ namespace dggt
 	b32 allocator<alloc_t::STORE_TABLE,TABLESIZE>::free(T* ptr,u32 count)
 	{
 		b32 result=1;
-		while (count)
-		{
-			result=result&&free((void*)ptr,sizeof(T));
-			--count;
-			if (!result)
-			{
-				break;
-			}
-		}
+		result=free((void*)ptr,count*sizeof(T));
 		return result;
 	}
 

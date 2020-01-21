@@ -35,6 +35,12 @@ namespace dggt
 	}
 
 	template <typename T>
+	blk<T>::operator blk<void>()
+	{
+		return blk<void>(mem,sizeof(T)*count);
+	}
+
+	template <typename T>
 	blk<T>& blk<T>::operator=(const blk<T>& rhs)
 	{
 		if (this!=&rhs)
@@ -140,4 +146,6 @@ namespace dggt
 	{
 		blk_cpy(blk<void>(dest),blk<void>(src),sizeof(T)*count);
 	}
+
+
 }

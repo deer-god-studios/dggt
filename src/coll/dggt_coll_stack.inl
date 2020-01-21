@@ -60,7 +60,7 @@ namespace dggt
 	template <typename T>
 	b32 iter<T,stack<T>,blk<T>>::is_coll_valid() const
 	{
-		return stk;
+		return stk!=0;
 	}
 
 	template <typename T>
@@ -103,13 +103,18 @@ namespace dggt
 		{
 			u32 count=get_count(stk);
 			u32 capacity=get_capacity(stk);
-			if (count+1>=capacity) // needs resizing.
+			if (count+1>capacity) // needs resizing.
 			{
 				result=resize(stk,2*capacity,alloc);
+				capacity=get_capacity(stk);
+			}
+			else if (stk)
+			{
+				result.table=stk->table;
 			}
 			if (is_coll_valid(result))
 			{
-				zero_struct<T>(stk->block.mem+count);
+				zero_struct<T>(stk->table.mem+count);
 				++stk->count;
 				result.current=get_head(stk);
 				if (is_mem_valid(result))
@@ -195,17 +200,18 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> resize(stack<T>* stk,u32 newCapacity,A* alloc)
 	{
-		stack_iter<T> result={0,0,stk};
+		stack_iter<T> result={0,blk<T>(),stk};
 		if (stk&&alloc)
 		{
 			result.table=stk->table;
 			u32 oldCapacity=get_capacity(stk);
-			blk<T> newTable=alloc->alloc(newCapacity);
+			blk<T> newTable=alloc->template alloc<T>(newCapacity);
 			if (newTable.mem)
 			{
 				blk<T> oldTable=stk->table;
 				u32 copyCount=min<u32>(oldCapacity,newCapacity);
 				blk_cpy(newTable,oldTable,copyCount);
+				stk->table=newTable;
 				if (alloc->free(oldTable))
 				{
 					result.table=newTable;
@@ -218,6 +224,6 @@ namespace dggt
 	template <typename T>
 	u32 get_head(stack<T>* stk)
 	{
-		return stk?get_count(stk)-1:0;
+		return stk?(get_count(stk)==0?0:get_count(stk)-1):0;
 	}
 }

@@ -92,7 +92,7 @@ namespace dggt
 	template <typename T>
 	b32 iter<T,queue<T>,blk<T>>::is_coll_valid() const
 	{
-		return q;
+		return q!=0;
 	}
 
 	template <typename T>
@@ -130,20 +130,24 @@ namespace dggt
 	template <typename T,typename A>
 	queue_iter<T> enqueue(queue<T>* q,A* alloc)
 	{
-		queue_iter<T> result=queue_iter<T>{0,0,blk<T>(),q};
+		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		if (q)
 		{
 			u32 count=get_count(q);
 			u32 capacity=get_capacity(q);
-			if (count>=capacity) // needs resizing.
+			if (count+1>capacity) // needs resizing.
 			{
 				result=resize(q,2*capacity,alloc);
+			}
+			else if (q)
+			{
+				result.table=q->table;
 			}
 			if (is_coll_valid(result))
 			{
 				q->tail=(q->tail+1)%capacity;
 				++q->count;
-				zero_mem<T>(q->table.mem+q->tail);
+				zero_struct<T>(q->table.mem+q->tail);
 				result.current=q->tail;
 				if (is_mem_valid(result))
 				{
@@ -157,7 +161,7 @@ namespace dggt
 	template <typename T,typename A>
 	queue_iter<T> enqueue(queue<T>* q,const T& val,A* alloc)
 	{
-		queue_iter<T> result=push(q,alloc);
+		queue_iter<T> result=enqueue(q,alloc);
 		if (is_coll_valid(result)&&
 				is_mem_valid(result))
 		{
@@ -169,7 +173,7 @@ namespace dggt
 	template <typename T,typename A>
 	queue_iter<T> dequeue(queue<T>* q,A* alloc)
 	{
-		queue_iter<T> result=queue_iter<T>{0,0,blk<T>(),q};
+		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		u32 count=get_count(q);
 		u32 capacity=get_capacity(q);
 		if (q&&count)
@@ -199,7 +203,7 @@ namespace dggt
 	template <typename T>
 	queue_iter<T> get_iter(queue<T>* q,u32 index)
 	{
-		queue_iter<T> result=queue_iter<T>{0,0,blk<T>(),q};
+		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		if (q&&dggt_internal_::is_index_valid(q,index))
 		{
 			result.current=(q->head+index)%get_capacity(q);
@@ -230,12 +234,12 @@ namespace dggt
 	template <typename T,typename A>
 	queue_iter<T> resize(queue<T>* q,u32 newCapacity,A* alloc)
 	{
-		queue_iter<T> result={0,0,q};
+		queue_iter<T> result={0,0,0,blk<T>(),q};
 		if (q&&alloc)
 		{
 			result.table=q->table;
 			u32 oldCapacity=get_capacity(q);
-			blk<T> newTable=alloc->alloc(newCapacity);
+			blk<T> newTable=alloc->template alloc<T>(newCapacity);
 			if (newTable.mem)
 			{
 				blk<T> oldTable=q->table;
@@ -243,7 +247,8 @@ namespace dggt
 				blk_cpy(newTable,oldTable,copyCount);
 				for (u32 i=0;i<copyCount;++i)
 				{
-					newTable.mem[i]=(oldTable.mem+q->head+i)%oldTable.count;
+					newTable.mem[i]=
+						*(oldTable.mem+((q->head+i)%oldTable.count));
 				}
 				q->head=0;
 				q->tail=q->count-1;
