@@ -52,23 +52,27 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	stack<float32> stackF32=create_stack<float32>(linAlloc);
+	INIT_PTR_TO(stack<float32>,stackF32,create_stack<float32>(linAlloc));
+	push(stackF32,2.1f,linAlloc);
+	push(stackF32,4.1f,linAlloc);
 
-	push(&stackF32,2.5f,linAlloc);
-	push(&stackF32,70.25f,linAlloc);
-	while (get_count(&stackF32))
+	printf("\n%f\n",get(stackF32,0).get());
+	printf("\n%f\n",get(stackF32,1).get());
+
+	stack_iter<float32> stackIt=push(stackF32,50.1f,linAlloc);
+	if (!is_mem_valid(stackIt))
 	{
-		printf("\n%f\n",peek(&stackF32).get());
-		pop(&stackF32,(lin_alloc<>*)0);
+		b32 freeResult=storeTableAlloc->free(stackIt.get_mem());
+		printf("\n%d\n",freeResult);
 	}
 
-	queue<float32> queueF32=create_queue<float32>(linAlloc);
-	enqueue(&queueF32,75.0f,linAlloc);
-	enqueue(&queueF32,5.5f,linAlloc);
+	INIT_PTR_TO(queue<float32>,queueF32,create_queue<float32>(linAlloc));
 
-	printf("\n%f\n",queueF32[0]);
-	printf("\n%f\n",queueF32[1]);
+	enqueue(queueF32,3.3f,linAlloc);
+	enqueue(queueF32,34.3f,linAlloc);
 
+	printf("\n%f\n",get(queueF32,0));
+	printf("\n%f\n",get(queueF32,1));
 	cache_shutdown();
 
 	return 0;

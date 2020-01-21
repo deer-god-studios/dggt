@@ -139,12 +139,12 @@ namespace dggt
 			if (count+1>capacity) // needs resizing.
 			{
 				result=resize(q,2*capacity,alloc);
+				capacity=get_capacity(q);
 			}
-			else if (is_coll_valid(result))
+			else if (q)
 			{
 				result.table=q->table;
 			}
-			capacity=get_capacity(q);
 			if (is_coll_valid(result))
 			{
 				q->tail=(q->tail+1)%capacity;
@@ -177,7 +177,7 @@ namespace dggt
 	template <typename T,typename A>
 	queue_iter<T> dequeue(queue<T>* q,A* alloc)
 	{
-		queue_iter<T> result=queue_iter<T>{0,0,blk<T>(),q};
+		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		u32 count=get_count(q);
 		u32 capacity=get_capacity(q);
 		if (q&&count)
@@ -250,7 +250,8 @@ namespace dggt
 				u32 copyCount=min<u32>(oldCapacity,newCapacity);
 				for (u32 i=0;i<copyCount;++i)
 				{
-					newTable.mem[i]=*(oldTable.mem+(q->head+i)%oldTable.count);
+					newTable.mem[i]=
+						*(oldTable.mem+((q->head+i)%oldTable.count));
 				}
 				q->head=0;
 				q->tail=q->count-1;
