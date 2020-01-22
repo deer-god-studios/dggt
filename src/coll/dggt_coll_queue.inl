@@ -222,7 +222,10 @@ namespace dggt
 	template <typename T>
 	queue_iter<T> get(queue<T>* q,u32 index)
 	{
-		return get_iter(q,index);
+		u32 relIndex=dggt_internal_::get_index_from_head(q->head,
+				get_capacity(q),
+				index);
+		return get_iter(q,relIndex);
 	}
 
 	template <typename T>

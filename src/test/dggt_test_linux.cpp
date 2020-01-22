@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 
 	printf("\n%f\n",get(queueF32,0).get());
 	printf("\n%f\n",get(queueF32,1).get());
-	printf("\n%f\n",get(queueF32,3).get());
+	printf("\n%f\n",get(queueF32,2).get());
 
 	printf("dequeue\n");
 	queue_iter<float32> deqIt=dequeue(queueF32,
