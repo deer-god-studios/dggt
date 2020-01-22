@@ -136,10 +136,9 @@ namespace dggt
 	stack_iter<T> push(stack<T>* stk,const T& val,A* alloc)
 	{
 		stack_iter<T> result=push(stk,alloc);
-		if (is_coll_valid(result)&&
-				is_mem_valid(result))
+		if (stk)
 		{
-			result.get()=val;
+			stk->table.mem[get_head(stk)]=val;
 		}
 		return result;
 	}
@@ -238,7 +237,7 @@ namespace dggt
 	}
 
 	template <typename T>
-	u32 get_head(stack<T>* stk)
+	u32 get_head(const stack<T>* stk)
 	{
 		return stk?(get_count(stk)==0?0:get_count(stk)-1):0;
 	}

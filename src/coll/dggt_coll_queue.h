@@ -65,6 +65,10 @@ namespace dggt
 	queue_iter<T> get_iter(queue<T>* q,u32 index=0);
 	template <typename T,typename F=float32>
 	F get_load_factor(const queue<T>* q);
+	template <typename T>
+	u32 get_head(const queue<T>* q);
+	template <typename T>
+	u32 get_tail(const queue<T>* q);
 
 	// NOTE: If the allocator fails to free the queue's old table, resize
 	// 		returns an iterator pointing to the old table which may still

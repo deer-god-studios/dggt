@@ -85,7 +85,7 @@ namespace dggt
 	stack_iter<T> resize(stack<T>* stk,u32 newCapacity,A* alloc);
 
 	template <typename T>
-	u32 get_head(stack<T>* stk);
+	u32 get_head(const stack<T>* stk);
 }
 
 #include "dggt_coll_stack.inl"

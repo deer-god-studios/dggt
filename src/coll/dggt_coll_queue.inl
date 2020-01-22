@@ -3,6 +3,15 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
+		u32 get_index_from_head(u32 head,u32 cap,u32 index)
+		{
+			return (head+index)%cap;
+		}
+
+		u32 get_index_from_tail(u32 tail,u32 cap,u32 index)
+		{
+			return (tail-index)%cap;
+		}
 
 		template <typename T>
 		b32 is_index_valid(queue<T>* q,u32 index)
@@ -49,7 +58,7 @@ namespace dggt
 		b32 result=0;
 		if (!is_end())
 		{
-			current=(current+1)%table.count;
+			current=(current-1)%table.count;
 		}
 		return result;
 	}
@@ -119,7 +128,7 @@ namespace dggt
 	template <typename T>
 	T& queue<T>::operator[](u32 index)
 	{
-		return table[(head+index)%table.count];
+		return table[(tail-index)%table.count];
 	}
 
 	template <typename T>
@@ -147,7 +156,8 @@ namespace dggt
 			}
 			if (is_coll_valid(result))
 			{
-				q->tail=(q->tail+1)%capacity;
+				q->tail=q->count%capacity;
+				//q->tail=(q->tail+1)%capacity;
 				++q->count;
 				zero_struct<T>(q->table.mem+q->tail);
 				result.current=q->tail;
@@ -166,10 +176,9 @@ namespace dggt
 	queue_iter<T> enqueue(queue<T>* q,const T& val,A* alloc)
 	{
 		queue_iter<T> result=enqueue(q,alloc);
-		if (is_coll_valid(result)&&
-				is_mem_valid(result))
+		if (q)
 		{
-			result.get()=val;
+			q->table.mem[q->tail]=val;
 		}
 		return result;
 	}
@@ -190,12 +199,24 @@ namespace dggt
 			{
 				result=resize(q,capacity/2,alloc);
 			}
-			if (is_mem_valid(q))
+			if (is_mem_valid(result))
 			{
 				result=get_iter(q);
 			}
 		}
 		return result;
+	}
+
+	template <typename T>
+	u32 get_head(const queue<T>* q)
+	{
+		return q?q->head:0;
+	}
+
+	template <typename T>
+	u32 get_tail(const queue<T>* q)
+	{
+		return q?q->tail:0;
 	}
 
 	template <typename T>
@@ -210,7 +231,10 @@ namespace dggt
 		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		if (q&&dggt_internal_::is_index_valid(q,index))
 		{
-			result.current=(q->head+index)%get_capacity(q);
+			result.current=dggt_internal_::get_index_from_tail(
+					q->tail,get_capacity(q),index);
+			result.head=q->head;
+			result.tail=q->tail;
 			result.table=q->table;
 			result.q=q;
 		}
@@ -232,7 +256,7 @@ namespace dggt
 	template <typename T,typename F>
 	F get_load_factor(const queue<T>* q)
 	{
-		return q?F(get_count(q))/F(get_capacity):F(0);
+		return q?F(get_count(q))/F(get_capacity(q)):F(0);
 	}
 
 	template <typename T,typename A>
@@ -251,10 +275,13 @@ namespace dggt
 				for (u32 i=0;i<copyCount;++i)
 				{
 					newTable.mem[i]=
-						*(oldTable.mem+((q->head+i)%oldTable.count));
+						*(oldTable.mem+
+								dggt_internal_::get_index_from_head(
+									q->head,oldTable.count,i));
 				}
 				q->head=0;
-				q->tail=q->count-1;
+				q->tail=q->count?q->count-1:0;
+				q->table=newTable;
 				if (alloc->free(oldTable))
 				{
 					result.table=newTable;

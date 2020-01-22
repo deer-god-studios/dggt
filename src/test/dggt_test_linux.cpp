@@ -68,11 +68,25 @@ int main(int argc, char* argv[])
 
 	INIT_PTR_TO(queue<float32>,queueF32,create_queue<float32>(linAlloc));
 
+	printf("--------------------------------------");
 	enqueue(queueF32,3.3f,linAlloc);
 	enqueue(queueF32,34.3f,linAlloc);
+	queue_iter<float32> qIt=enqueue(queueF32,77.2f,linAlloc);
+	if (!is_mem_valid(qIt))
+	{
+		b32 freeResult=storeTableAlloc->free(qIt.get_mem());
+		printf("\n%f\n",freeResult);
+	}
 
-	printf("\n%f\n",get(queueF32,0));
-	printf("\n%f\n",get(queueF32,1));
+	printf("\n%f\n",get(queueF32,0).get());
+	printf("\n%f\n",get(queueF32,1).get());
+	printf("\n%f\n",get(queueF32,3).get());
+
+	printf("dequeue\n");
+	queue_iter<float32> deqIt=dequeue(queueF32,
+			(lin_alloc<>*)0);
+	printf("\n%f\n",get(queueF32,0).get());
+	printf("\n%f\n",get(queueF32,1).get());
 	cache_shutdown();
 
 	return 0;
