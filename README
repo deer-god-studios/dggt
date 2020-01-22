@@ -2,3 +2,5 @@ DISCLAIMER:
 
 I am a homeless software developer.  As a result of living outside, my laptop is in constant danger of being rained on, stolen, broken or otherwise ruined so
 I make frequent and liberal use of GitHub as a backup for my codebase.  This means many of my commits are simply broken or untested.  You've been warned.
+
+If the library doesn't utilize enough OOP features for you, maybe code review isn't your jam.
