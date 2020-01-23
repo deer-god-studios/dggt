@@ -1,0 +1,81 @@
+#ifndef _DGGT_COLL_HASH_TABLE_H_
+
+#include "dggt_coll_linked_list.h"
+
+namespace dggt
+{
+	template <typename K,typename V>
+	struct tnode
+	{
+		K key;
+		V value;
+	};
+
+	template <typename K,typename V>
+	struct hash_table;
+
+	template <typename K,typename V>
+	using table_iter=iter<tnode<K,V>,hash_table<K,V>,blk<linked_list<tnode<K,V>>>>;
+
+	template <typename K,typename V>
+	struct iter<tnode<K,V>,hash_table<K,V>,blk<linked_list<tnode<K,V>>>> // wtf
+	{
+		u32 currentIndex;
+		linked_list<tnode<K,V>>* currentBucket;
+		slnode<tnode<K,V>>* currentNode;
+		blk<linked_list<tnode<K,V>>> table;
+		hash_table<K,V>* hashTable;
+
+		b32 is_end() const;
+		b32 next();
+		tnode<K,V>& get();
+		const tnode<K,V>& get() const;
+		tnode<K,V>* get_ptr();
+		const tnode<K,V>* get_ptr() const;
+		blk<linked_list<tnode<K,V>>> get_mem();
+		const blk<linked_list<tnode<K,V>>> get_mem() const;
+		b32 is_coll_valid() const;
+		b32 is_mem_valid() const;
+		b32 vindicate_mem();
+
+	};
+
+	template <typename K,typename V>
+	struct hash_table
+	{
+		blk<linked_list<tnode<K,V>>> table;
+		u32 count;
+
+		table_iter<K,V> operator[](u32 index);
+		const table_iter<K,V> operator[](u32 index) const;
+	};
+
+	template <typename K,typename V,typename A>
+	hash_table<K,V> create_hash_table(A* alloc);
+
+	template <typename K,typename V,typename A>
+	table_iter<K,V> insert(hash_table<K,V>* table,const K& key,const V& value,A* alloc);
+
+	template <typename K,typename V>
+	table_iter<K,V> search(hash_table<K,V>* table,const K& key);
+
+	template <typename K,typename V>
+	table_iter<K,V> remove(hash_table<K,V>* table,const K& key);
+
+	template <typename K,typename V,typename F>
+	F get_load_factor(hash_table<K,V>* table);
+
+	template <typename K,typename V>
+	u32 get_count(hash_table<K,V>* table);
+
+	template <typename K,typename V>
+	u32 get_capacity(hash_table<K,V>* table);
+
+	template <typename K,typename V>
+	table_iter<K,V> get_iter(hash_table<K,V>* table);
+}
+
+#include "dggt_coll_hash_table.inl"
+
+#define _DGGT_COLL_HASH_TABLE_H_
+#endif
