@@ -166,4 +166,29 @@ namespace dggt
 	{
 		return list?list->count:0;
 	}
+
+	template <typename T>
+	b32 contains(linked_list<T>* list,const T& item)
+	{
+		b32 result=0;
+		for (list_iter<T> it=get_iter(list);
+				!is_end(it);
+				next(it))
+		{
+			if (it.get()==item)
+			{
+				result=1;
+				break;
+			}
+		}
+		return result;
+	}
+
+	template <typename T>
+	list_iter<T> remove(
+			linked_list<T>* list,
+			slnode<T>* prev,
+			slnode<T>* nodeToRemove)
+	{
+	}
 }

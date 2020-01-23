@@ -1,8 +1,9 @@
 #ifndef _DGGT_COLL_LINKED_LIST_H_
 
-#include "types/dggt_types.h"
 #include "dggt_coll_iter.h"
 
+// TODO: iterator constructors.
+// TODO: list insert and remove.
 namespace dggt
 {
 	template <typename T>
@@ -69,6 +70,12 @@ namespace dggt
 	list_iter<T> peek(linked_list<T>* list);
 
 	template <typename T>
+	list_iter<T> remove(
+			linked_list<T>* list,
+			slnode<T>* prev,
+			slnode<T>* nodeToRemove);
+
+	template <typename T>
 	list_iter<T> get(linked_list<T>* list,u32 index);
 
 	template <typename T>
@@ -76,6 +83,9 @@ namespace dggt
 	
 	template <typename T>
 	list_iter<T> get_iter(linked_list<T>* list);
+
+	template <typename T>
+	b32 contains(linked_list<T>* list,const T& item);
 
 }
 #include "dggt_coll_linked_list.inl"
