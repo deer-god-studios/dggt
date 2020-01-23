@@ -1,6 +1,7 @@
 #ifndef _DGGT_TYPES_H_
 
 #include <cstdint>
+#include <cstddef>
 
 typedef size_t msize;
 typedef uint64_t uint64;

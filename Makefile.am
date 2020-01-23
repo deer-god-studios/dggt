@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-lib_LTLIBRARIES = libdggtmem.la
+lib_LTLIBRARIES = libdggtmem.la libdggtcoll.la
 include_HEADERS = src/dggt.h \
 				  src/math/dggt_math_utils.h \
 				  src/math/lin/dggt_math_mat2.inl \
@@ -23,13 +23,7 @@ include_HEADERS = src/dggt.h \
 				  src/math/lin/dggt_math_mat3.h \
 				  src/math/lin/dggt_math_mat4.h \
 				  src/math/dggt_math.h
-				  src/coll/dggt_coll_linked_list.h \
-				  src/coll/dggt_coll_linked_list.inl \
-				  src/coll/dggt_coll_stack.h \
-				  src/coll/dggt_coll_stack.inl \
-				  src/coll/dggt_coll_queue.h \
-				  src/coll/dggt_coll_queue.inl \
-				  src/coll/dggt_coll.h
+
 libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_defines.h \
 						src/mem/dggt_mem.cpp \
@@ -63,10 +57,23 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_fallback_alloc.inl
 libdggtmem_la_CPPFLAGS = -O0 -g -DDEBUG
 libdggtmem_la_CXXFLAGS = -std=c++2a -I$(top_srcdir)/src
+
+libdggtcoll_la_SOURCES =  src/coll/dggt_coll_linked_list.h \
+						  src/coll/dggt_coll_linked_list.inl \
+						  src/coll/dggt_coll_stack.h \
+						  src/coll/dggt_coll_stack.inl \
+						  src/coll/dggt_coll_queue.h \
+						  src/coll/dggt_coll_queue.inl \
+						  src/coll/dggt_coll_hash_table.h \
+						  src/coll/dggt_coll_hash_table.inl \
+						  src/coll/dggt_coll_hash_table.cpp \
+						  src/coll/dggt_coll.h
+libdggtcoll_la_CXXFLAGS = -std=c++2a -I$(top_srcdir)/src
+libdggtcoll_la_LIBADD = -ldggtmem
+
 check_PROGRAMS = dggt_test_linux
 dggt_test_linux_SOURCES = src/test/dggt_test_linux.cpp
 dggt_test_linux_CPPFLAGS = -O0 -g -DDEBUG
 dggt_test_linux_CXXFLAGS = -std=c++2a -I$(top_srcdir)/src
-#dggt_test_linux_LIBADD = libdggtmem.la
-dggt_test_linux_LDADD = -ldggtmem
+dggt_test_linux_LDADD = -ldggtmem -ldggtcoll
 dggt_test_linux_LDFLAGS = -Wl,-rpath=. -Wl,-rpath=./.libs -L$(libdir)
