@@ -31,7 +31,7 @@ namespace dggt
 	struct iter<tnode<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>> // wtf
 	{
 		u32 currentIndex;
-		table_bucket* currentBucket;
+		table_bucket<K,V>* currentBucket;
 		slnode<tnode<K,V>>* currentNode;
 		blk<table_bucket<K,V>> table;
 		hash_table<K,V>* hashTable;

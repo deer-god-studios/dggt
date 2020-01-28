@@ -134,7 +134,7 @@ namespace dggt
 	}
 
 	template <typename K,typename V,typename A>
-	hash_table<K,V> hash_tabl<K,V>::create_hash_table(A* alloc)
+	hash_table<K,V> create_hash_table(A* alloc)
 	{
 		return hash_table<K,V>{
 			alloc->template alloc<table_bucket<K,V>>(2),
@@ -151,7 +151,7 @@ namespace dggt
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(hashTable));
 			table_bucket<K,V>* bucket=hashTable->table.mem+index;
-			tnode<K,V> newNode=tnode<K,V>{key,T(0)};
+			tnode<K,V> newNode=tnode<K,V>{key,V(0)};
 			++hashTable->count;
 			if (!contains(bucket,newNode))
 			{
@@ -180,7 +180,7 @@ namespace dggt
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(table));
 			table_bucket<K,V>* bucket=table.mem+index;
-			for (list_iter<tnode<K,V>> it=get_iter(list);!is_end(it);
+			for (list_iter<tnode<K,V>> it=get_iter(bucket);!is_end(it);
 					next(it))
 			{
 				tnode<K,V> node=get(it);
@@ -205,7 +205,7 @@ namespace dggt
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(table));
 			table_bucket<K,V>* bucket=table.mem+index;
-			for (list_iter<tnode<K,V>> it=get_iter(list);!is_end(it);
+			for (list_iter<tnode<K,V>> it=get_iter(bucket);!is_end(it);
 					next(it))
 			{
 				tnode<K,V> node=get(it);
@@ -230,10 +230,10 @@ namespace dggt
 		{
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(hashTable));
-			table_bucket<K,V>>* bucket=hashTable->table.mem+index;
+			table_bucket<K,V>* bucket=hashTable->table.mem+index;
 			slnode<tnode<K,V>>* current=0;
 			slnode<tnode<K,V>>* prev=current;
-			for (list_iter<tnode<K,V>> it=get_iter(list);!is_end(it);
+			for (list_iter<tnode<K,V>> it=get_iter(bucket);!is_end(it);
 					next(it))
 			{
 				current=it.get_ptr();
