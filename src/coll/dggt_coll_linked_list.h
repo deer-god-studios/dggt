@@ -3,7 +3,6 @@
 #include "dggt_coll_iter.h"
 
 // TODO: iterator constructors.
-// TODO: list insert and remove.
 namespace dggt
 {
 	template <typename T>
@@ -70,13 +69,15 @@ namespace dggt
 	list_iter<T> peek(linked_list<T>* list);
 
 	template <typename T>
-	list_iter<T> remove(
-			linked_list<T>* list,
-			slnode<T>* prev,
-			slnode<T>* nodeToRemove);
-
-	template <typename T>
 	list_iter<T> get(linked_list<T>* list,u32 index);
+
+	template <typename T,typename A>
+	list_iter<T> remove(linked_list<T>* list,slnode<T>* prev,
+			slnode<T>* toRemove,A* alloc);
+
+	template <typename T,typename A>
+	list_iter<T> insert(linked_list<T>* list,slnode<T>* prev,
+			const T& val,A* alloc);
 
 	template <typename T>
 	u32 get_count(const linked_list<T>* list);

@@ -1,4 +1,5 @@
 #ifndef _DGGT_COLL_ITER_H_
+// TODO: iterator increment and dereference operator overloads
 
 #include "types/dggt_types.h"
 namespace dggt
