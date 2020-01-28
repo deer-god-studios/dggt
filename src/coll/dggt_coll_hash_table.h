@@ -25,12 +25,15 @@ namespace dggt
 	using table_iter=iter<tnode<K,V>,hash_table<K,V>,blk<linked_list<tnode<K,V>>>>;
 
 	template <typename K,typename V>
-	struct iter<tnode<K,V>,hash_table<K,V>,blk<linked_list<tnode<K,V>>>> // wtf
+	using table_bucket=linked_list<tnode<K,V>>;
+
+	template <typename K,typename V>
+	struct iter<tnode<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>> // wtf
 	{
 		u32 currentIndex;
-		linked_list<tnode<K,V>>* currentBucket;
+		table_bucket* currentBucket;
 		slnode<tnode<K,V>>* currentNode;
-		blk<linked_list<tnode<K,V>>> table;
+		blk<table_bucket<K,V>> table;
 		hash_table<K,V>* hashTable;
 
 		b32 is_end() const;
@@ -49,7 +52,7 @@ namespace dggt
 	template <typename K,typename V>
 	struct hash_table
 	{
-		blk<linked_list<tnode<K,V>>> table;
+		blk<table_bucket<K,V>> table;
 		u32 count;
 
 		table_iter<K,V> operator[](const K& key);
@@ -71,8 +74,8 @@ namespace dggt
 	template <typename K,typename V>
 	const table_iter<K,V> search(const hash_table<K,V>* table,const K& key);
 
-	template <typename K,typename V>
-	table_iter<K,V> remove(hash_table<K,V>* table,const K& key);
+	template <typename K,typename V,typename A>
+	table_iter<K,V> remove(hash_table<K,V>* table,const K& key,A* alloc);
 
 	template <typename K,typename V,typename F>
 	F get_load_factor(const hash_table<K,V>* table);
@@ -82,6 +85,9 @@ namespace dggt
 
 	template <typename K,typename V>
 	u32 get_capacity(const hash_table<K,V>* table);
+
+	template <typename K,typename V,typename A>
+	table_iter<K,V> resize(hash_table<K,V>* table,u32 newSize,A* alloc);
 
 	template <typename K,typename V>
 	table_iter<K,V> get_iter(hash_table<K,V>* table);

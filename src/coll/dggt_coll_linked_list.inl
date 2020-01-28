@@ -184,11 +184,65 @@ namespace dggt
 		return result;
 	}
 
-	template <typename T>
+	template <typename T,typename A>
 	list_iter<T> remove(
 			linked_list<T>* list,
 			slnode<T>* prev,
-			slnode<T>* nodeToRemove)
+			slnode<T>* toRemove,A* alloc)
 	{
+		list_iter<T> result={0,list,0};
+		if (list)
+		{
+			if (prev)
+			{
+				ASSERT(toRemove&&prev->next==toRemove);
+				result.current=toRemove;
+				result.memIsValid=0;
+				prev->next=toRemove->next;
+				--list->count;
+				if (alloc->free(toRemove,1))
+				{
+					result.current=prev;
+					result.list=list;
+					result.memIsValid=1;
+				}
+			}
+			else
+			{
+				result=pop(list,alloc);
+			}
+		}
+
+		return result;
+	}
+
+	template <typename T,typename A>
+	list_iter<T> insert(linked_list<T>* list,slnode<T>* prev,
+			const T& val,A* alloc)
+	{
+		list_iter<T> result=list_iter<T>{0,list,0};
+		if (list)
+		{
+			u32 nodeCount=1;
+			slnode<T>* newNode=alloc->template alloc<slnode<T>>(&nodeCount);
+			if (newNode)
+			{
+				result.current=newNode;
+				result.memIsValid=1;
+				newNode->val=val;
+				if (prev)
+				{
+					newNode->next=prev->next;
+					prev->next=newNode;
+				}
+				else
+				{
+					newNode->next=list->head->next;
+					list->head=newNode;
+				}
+				++list->count;
+			}
+		}
+		return result;
 	}
 }
