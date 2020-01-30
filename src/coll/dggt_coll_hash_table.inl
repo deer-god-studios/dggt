@@ -3,8 +3,7 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
-		static const u32 LARGE_PRIME32=2'038'074'743;
-		static const u64 LARGE_PRIME64=19'957'072'636'091;
+
 
 		u32 hash(u32 preh,u32 tableSize)
 		{

@@ -1,5 +1,7 @@
 #ifndef _DGGT_MATH_H_
 
+#include "dggt_math_constants.h"
+#include "dggt_math_utils.h"
 #include "lin/dggt_math_vec.h"
 #include "lin/dggt_math_vec1.h"
 #include "lin/dggt_math_vec2.h"

@@ -3,8 +3,7 @@
 #include <cmath> // TODO: get rid of this!
 #include "types/dggt_types.h"
 
-template <typename T>
-static const T PI=T(3.141592653589793238);
+
 
 template <typename T>
 T max(const T& val0,const T& val1)
