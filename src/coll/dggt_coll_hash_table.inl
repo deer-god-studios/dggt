@@ -157,6 +157,11 @@ namespace dggt
 			{
 				push(bucket,newNode,alloc);
 			}
+			if (get_load_factor<float32>(hashTable)>2.0f)
+			{
+				u32 cap=get_capacity(hashTable);
+				result=resize(hashTable,2.0f*cap,alloc);
+			}
 		}
 		return result;
 	}
@@ -244,6 +249,11 @@ namespace dggt
 					break;
 				}
 				prev=current;
+			}
+			if (get_load_factor<float32>(hashTable)<0.25f)
+			{
+				u32 cap=get_capacity(hashTable);
+				result=resize(hashTable,0.5f*cap,alloc);
 			}
 		}
 	}
