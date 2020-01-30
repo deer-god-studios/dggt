@@ -16,6 +16,11 @@ namespace dggt
 	{
 		K key;
 		V val;
+		b32 operator==(const tnode& other)
+		{
+			return this==&other||
+				(key==other.key&&val==other.val);
+		}
 	};
 
 	template <typename K,typename V>
@@ -68,6 +73,9 @@ namespace dggt
 	template <typename K,typename V,typename A>
 	table_iter<K,V> insert(hash_table<K,V>* table,const K& key,const V& val,A* alloc);
 
+	template <typename K,typename V,typename A>
+	table_iter<K,V> clear(hash_table<K,V>* table,A* alloc);
+
 	template <typename K,typename V>
 	table_iter<K,V> search(hash_table<K,V>* table,const K& key);
 
@@ -77,7 +85,7 @@ namespace dggt
 	template <typename K,typename V,typename A>
 	table_iter<K,V> remove(hash_table<K,V>* table,const K& key,A* alloc);
 
-	template <typename K,typename V,typename F>
+	template <typename F,typename K,typename V>
 	F get_load_factor(const hash_table<K,V>* table);
 
 	template <typename K,typename V>

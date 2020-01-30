@@ -494,11 +494,11 @@ namespace dggt
 		T* result=0;
 		if (p)
 		{
-			result=p->alloc(count);
+			result=p->template alloc<T>(count);
 		}
 		if (!result&&f)
 		{
-			result=f->alloc(count);
+			result=f->template alloc<T>(count);
 		}
 		return result;
 	}
@@ -510,11 +510,11 @@ namespace dggt
 		blk<T> result=blk<T>();
 		if (p)
 		{
-			result=p->alloc(count);
+			result=p->template alloc<T>(count);
 		}
 		if (!result&&f)
 		{
-			result=f->alloc(count);
+			result=f->template alloc<T>(count);
 		}
 		return result;
 	}

@@ -76,6 +76,9 @@ namespace dggt
 			slnode<T>* toRemove,A* alloc);
 
 	template <typename T,typename A>
+	list_iter<T> clear(linked_list<T>* list,A* alloc);
+
+	template <typename T,typename A>
 	list_iter<T> insert(linked_list<T>* list,slnode<T>* prev,
 			const T& val,A* alloc);
 

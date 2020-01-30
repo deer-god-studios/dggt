@@ -31,16 +31,12 @@ namespace dggt
 	template <u32 SIZE=0>
 	using store_table_alloc=allocator<alloc_t::STORE_TABLE,SIZE>;
 
-	// TODO: these names...
-	template <u32 P=alloc_t::LINEAR,u32 F=alloc_t::STORE_TABLE>
-	using fallback_alloc=allocator<alloc_t::FALLBACK,P,F>;
+	template <u32 P=alloc_t::STORE_TABLE,u32 SIZE=2048,
+			 u32 F=alloc_t::LINEAR,u32 FSIZE=0>
+	using fallback_alloc=allocator<alloc_t::FALLBACK,P,SIZE,F,FSIZE>;
 
-	template <u32 P=alloc_t::LINEAR,u32 SIZE=0,u32 F=alloc_t::STORE_TABLE>
-	using temp_fallback_alloc=allocator<alloc_t::FALLBACK,P,SIZE,F>;
-
-	template <u32 P=alloc_t::STACK,u32 PSIZE=0,
-			 u32 F=alloc_t::STORE_TABLE,u32 FSIZE=0>
-	using scratch_alloc=allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>;
+	template <u32 TABLESIZE=2048,u32 LINEARSIZE=KB(10)>
+	using scratch_alloc=allocator<alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE>;
 
 	void cache_init(msize cacheSize);
 	b32 cache_is_initialized();

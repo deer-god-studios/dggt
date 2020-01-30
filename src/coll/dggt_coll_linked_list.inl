@@ -1,6 +1,15 @@
 
 namespace dggt
 {
+	namespace dggt_internal_
+	{
+		template <typename T>
+		list_iter<T> default_iter(linked_list<T>* list)
+		{
+			return list_iter<T>{0,list,0};
+		}
+	}
+
 	template <typename T>
 	b32 iter<T,linked_list<T>,slnode<T>*>::is_end() const
 	{
@@ -213,6 +222,34 @@ namespace dggt
 			}
 		}
 
+		return result;
+	}
+
+	template <typename T,typename A>
+	list_iter<T> clear(linked_list<T>* list,A* alloc)
+	{
+		list_iter<T> result=dggt_internal_::default_iter(list);
+		if (list)
+		{
+			slnode<T>* current=list->head;
+			result.memIsValid=1;
+			while (current)
+			{
+				slnode<T>* nodeToFree=current;
+				current=current->next;
+				if (!alloc->free(nodeToFree,1))
+				{
+					nodeToFree->next=result.current;
+					result.current=nodeToFree;
+					result.memIsValid=0;
+				}
+			}
+			if (result.memIsValid)
+			{
+				result.current=list->head;
+			}
+			list->count=0;
+		}
 		return result;
 	}
 

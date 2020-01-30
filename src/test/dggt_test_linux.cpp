@@ -3,7 +3,8 @@
 
 using namespace dggt;
 
-typedef temp_fallback_alloc<alloc_t::STORE_TABLE,2048,alloc_t::LINEAR> lin_store_table;
+typedef fallback_alloc<> lin_store_table;
+typedef hash_table<u32,float32> f32_table;
 
 static lin_alloc<> linAlloc_;
 static lin_alloc<>* linAlloc;
@@ -29,7 +30,7 @@ void init_test()
 	storeTableAlloc_=create_alloc<alloc_t::STORE_TABLE,2048>();
 	storeTableAlloc=&storeTableAlloc_;
 	alloc_=
-		create_alloc<alloc_t::STORE_TABLE,2048,alloc_t::LINEAR>(
+		create_alloc<alloc_t::STORE_TABLE,2048,alloc_t::LINEAR,0>(
 				storeTableAlloc,linAlloc);
 	alloc=&alloc_;
 }
@@ -69,6 +70,8 @@ void test_linked_list()
 	{
 		printf("pop\n");
 	}
+
+	clear(float32List,alloc);
 }
 
 void print_alloc_info()
@@ -144,6 +147,22 @@ void test_queue()
 	clear(float32Queue,alloc);
 }
 
+void test_hash_table()
+{
+	PTR_TO(f32_table,float32Table);
+	*float32Table=create_hash_table<u32,float32>(alloc);
+
+	u32 tableCount=21;
+	for (u32 i=0;i<tableCount;++i)
+	{
+		insert(float32Table,i,(float32)i/7.0f,alloc);
+	}
+
+	printf("table count: %u",get_count(float32Table));
+	printf("key: 15, val: ",search(float32Table,(u32)15).get().val);
+	clear(float32Table,alloc);
+}
+
 int main(int argc, char* argv[])
 {
 	cache_init(MB(100));
@@ -154,6 +173,7 @@ int main(int argc, char* argv[])
 	test_linked_list();
 	test_stack();
 	test_queue();
+	test_hash_table();
 	print_alloc_info();
 
 	cache_shutdown();
