@@ -3,6 +3,12 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
+		template <typename T>
+		inline queue_iter<T> default_iter(queue<T>* q)
+		{
+			return queue_iter<T>{0,0,0,blk<T>(),q};
+		}
+
 		u32 get_index_from_head(u32 head,u32 cap,u32 index)
 		{
 			return (head+index)%cap;
@@ -58,7 +64,7 @@ namespace dggt
 		b32 result=0;
 		if (!is_end())
 		{
-			current=(current-1)%table.count;
+			current=(current+1)%table.count;
 		}
 		return result;
 	}
@@ -184,15 +190,37 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	queue_iter<T> clear(queue<T>* q,A* alloc)
+	{
+		queue_iter<T> result=dggt_internal_::default_iter(q);
+		if (q)
+		{
+			blk<T> table=q->table;
+			result.table=table;
+			q->table=blk<T>();
+			q->count=0;
+			if (alloc->free(table))
+			{
+				result.table=blk<T>();
+			}
+		}
+		return result;
+	}
+	template <typename T,typename A>
 	queue_iter<T> dequeue(queue<T>* q,A* alloc)
 	{
-		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
+		queue_iter<T> result=dggt_internal_::default_iter(q);
 		u32 count=get_count(q);
 		u32 capacity=get_capacity(q);
 		if (q&&count)
 		{
 			q->head=(q->head+1)%capacity;
 			--q->count;
+			result.current=dggt_internal_::get_index_from_head(q->head,
+					get_capacity(q),0);
+			result.head=q->head;
+			result.tail=q->tail;
+			result.table=q->table;
 			count=get_count(q);
 			u32 capacity=get_capacity(q);
 			if (count&&get_load_factor<real32>(q)<0.25f)
@@ -228,14 +256,13 @@ namespace dggt
 	template <typename T>
 	queue_iter<T> get_iter(queue<T>* q,u32 index)
 	{
-		u32 relIndex=dggt_internal_::get_index_from_head(q->head,
+		queue_iter<T> result=dggt_internal_::default_iter(q);
+		u32 absIndex=dggt_internal_::get_index_from_head(q->head,
 				get_capacity(q),
 				index);
-		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
-		if (q&&dggt_internal_::is_index_valid(q,index))
+		if (q&&dggt_internal_::is_index_valid(q,absIndex))
 		{
-			result.current=dggt_internal_::get_index_from_tail(
-					q->tail,get_capacity(q),index);
+			result.current=absIndex;
 			result.head=q->head;
 			result.tail=q->tail;
 			result.table=q->table;

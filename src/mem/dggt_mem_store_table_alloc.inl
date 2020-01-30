@@ -202,7 +202,7 @@ namespace dggt
 		if (count&&*count)
 		{
 			u32 c=*count;
-			blk<T> b=alloc(c);
+			blk<T> b=alloc<T>(c);
 			result=b.mem;
 			*count=b.count;
 		}
@@ -295,24 +295,41 @@ namespace dggt
 	template <u32 TABLESIZE>
 	msize allocator<alloc_t::STORE_TABLE,TABLESIZE>::available_mem() const
 	{
-		return MAX_MSIZE; // TODO: this shit.
+		msize result=0;
+		for (u32 i=0;i<TABLESIZE;++i)
+		{
+			if (storeTable[i].blockCount)
+			{
+				result+=storeTable[i].blockSize*storeTable[i].blockCount;
+			}
+		}
+		return result;
 	}
 
 	template <u32 TABLESIZE>
 	msize allocator<alloc_t::STORE_TABLE,TABLESIZE>::used_mem() const
 	{
-		return 0;
+		return available_mem()?0:MAX_MSIZE;
 	}
 
 	template <u32 TABLESIZE>
 	u32 allocator<alloc_t::STORE_TABLE,TABLESIZE>::available_blocks() const
 	{
-		return MAX_UINT32;
+		msize result=0;
+		for (u32 i=0;i<TABLESIZE;++i)
+		{
+			if (storeTable[i].blockCount)
+			{
+				result+=storeTable[i].blockCount;
+			}
+		}
+		return result;
 	}
 	template <u32 TABLESIZE>
 	u32 allocator<alloc_t::STORE_TABLE,TABLESIZE>::used_blocks() const
 	{
-		return 0;
+
+		return available_blocks()?0:MAX_UINT32;
 	}
 }
 

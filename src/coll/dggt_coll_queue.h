@@ -55,6 +55,8 @@ namespace dggt
 	queue_iter<T> enqueue(queue<T>* q,const T& val,A* alloc);
 	template <typename T,typename A>
 	queue_iter<T> dequeue(queue<T>* q,A* alloc);
+	template <typename T,typename A>
+	queue_iter<T> clear(queue<T>* q,A* alloc);
 	template <typename T>
 	queue_iter<T> get(queue<T>* q,u32 index=0);
 	template <typename T>

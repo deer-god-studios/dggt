@@ -71,6 +71,9 @@ namespace dggt
 	template <typename T>
 	u32 get_capacity(const stack<T>* stk);
 
+	template <typename T,typename A>
+	stack_iter<T> clear(stack<T>* stk,A* alloc);
+
 	template <typename T,typename F=float32>
 	F get_load_factor(const stack<T>* stk);
 

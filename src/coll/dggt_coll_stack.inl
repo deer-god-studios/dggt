@@ -2,6 +2,15 @@
 namespace dggt
 {
 
+	namespace dggt_internal_
+	{
+		template <typename T>
+		inline stack_iter<T> default_iter(stack<T>* stk)
+		{
+			return stack_iter<T>{0,blk<T>(),stk};
+		}
+	}
+
 	template <typename T>
 	b32 iter<T,stack<T>,blk<T>>::is_end() const
 	{
@@ -98,7 +107,7 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc)
 	{
-		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
+		stack_iter<T> result=dggt_internal_::default_iter(stk);
 		if (stk)
 		{
 			u32 count=get_count(stk);
@@ -122,7 +131,6 @@ namespace dggt
 				zero_struct<T>(stk->table.mem+count);
 				++stk->count;
 				result.current=get_head(stk);
-				++stk->count;
 				if (is_mem_valid(result))
 				{
 					result=get_iter(stk);
@@ -146,7 +154,7 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> pop(stack<T>* stk,A* alloc)
 	{
-		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
+		stack_iter<T> result=dggt_internal_::default_iter(stk);
 		u32 count=get_count(stk);
 		if (stk&&count)
 		{
@@ -184,7 +192,7 @@ namespace dggt
 	template <typename T>
 	stack_iter<T> get_iter(stack<T>* stk,u32 index)
 	{
-		stack_iter<T> result=stack_iter<T>{0,blk<T>(),stk};
+		stack_iter<T> result=dggt_internal_::default_iter(stk);
 		if (stk)
 		{
 			result.current=get_head(stk)-index;
@@ -198,6 +206,24 @@ namespace dggt
 	u32 get_count(const stack<T>* stk)
 	{
 		return stk?stk->count:0;
+	}
+
+	template <typename T,typename A>
+	stack_iter<T> clear(stack<T>* stk,A* alloc)
+	{
+		stack_iter<T> result=dggt_internal_::default_iter(stk);
+		if (stk)
+		{
+			blk<T> table=stk->table;
+			result.table=table;
+			stk->table=blk<T>();
+			stk->count=0;
+			if (alloc->free(table))
+			{
+				result.table=blk<T>();
+			}
+		}
+		return result;
 	}
 
 	template <typename T>
