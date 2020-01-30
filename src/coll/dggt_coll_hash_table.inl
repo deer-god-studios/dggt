@@ -1,10 +1,8 @@
-
+#include "math/dggt_math_constants.h"
 namespace dggt
 {
 	namespace dggt_internal_
 	{
-
-
 		u32 hash(u32 preh,u32 tableSize)
 		{
 			u32 a=5;

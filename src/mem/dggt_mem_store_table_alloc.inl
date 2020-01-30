@@ -1,5 +1,6 @@
 // TODO: This is all terrible.  Fix.
 #include "defines/dggt_defines.h"
+#include "math/dggt_math_constants.h"
 namespace dggt
 {
 	static const flag32 STORE_TABLE_EMPTY=0;
@@ -8,9 +9,6 @@ namespace dggt
 
 	namespace dggt_internal_
 	{
-		static const u32 LARGE_PRIME32=2'038'074'743;
-		static const u64 LARGE_PRIME64=19'957'072'636'091;
-
 		template <u32 TABLESIZE>
 		u32 store_table_hash0(u32 sizeKey)
 		{

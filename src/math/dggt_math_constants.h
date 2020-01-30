@@ -1,5 +1,5 @@
 #ifndef _DGGT_MATH_CONSTANTS_H_
-
+#include "types/dggt_types.h"
 namespace dggt
 {
 	template <typename T>
