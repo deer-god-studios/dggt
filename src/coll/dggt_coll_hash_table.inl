@@ -172,7 +172,7 @@ namespace dggt
 			if (get_load_factor<float32>(hashTable)>2.0f)
 			{
 				u32 cap=get_capacity(hashTable);
-				table_iter<K,V> resultResult=resize(hashTable,2.0f*cap,alloc);
+				table_iter<K,V> resizeResult=resize(hashTable,2.0f*cap,alloc);
 				result=search(hashTable,key);
 			}
 		}
