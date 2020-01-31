@@ -181,8 +181,8 @@ namespace dggt
 	{
 		b32 result=0;
 		for (list_iter<T> it=get_iter(list);
-				!is_end(it);
-				next(it))
+				!it.is_end();
+				it.next())
 		{
 			if (it.get()==item)
 			{

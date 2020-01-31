@@ -160,7 +160,7 @@ namespace dggt
 			{
 				result.table=q->table;
 			}
-			if (is_coll_valid(result))
+			if (result.is_coll_valid())
 			{
 				q->tail=q->count%capacity;
 				//q->tail=(q->tail+1)%capacity;
@@ -169,7 +169,7 @@ namespace dggt
 				result.current=q->tail;
 				result.head=q->head;
 				result.tail=q->tail;
-				if (is_mem_valid(result))
+				if (result.is_mem_valid())
 				{
 					result=get_iter(q);
 				}
@@ -227,7 +227,7 @@ namespace dggt
 			{
 				result=resize(q,capacity/2,alloc);
 			}
-			if (is_mem_valid(result))
+			if (result.is_mem_valid())
 			{
 				result=get_iter(q);
 			}

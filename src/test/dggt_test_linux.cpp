@@ -98,7 +98,7 @@ void test_stack()
 	for (stack_iter<float32> it=get_iter(float32Stack);
 			!it.is_end();it.next())
 	{
-		if (it.current==stackCount-1)
+		if (it.current==0)
 		{
 			printf("%f\n",it.get());
 		}
@@ -158,8 +158,8 @@ void test_hash_table()
 		insert(float32Table,i,(float32)i/7.0f,alloc);
 	}
 
-	printf("table count: %u",get_count(float32Table));
-	printf("key: 15, val: ",search(float32Table,(u32)15).get().val);
+	printf("table count: %u\n",get_count(float32Table));
+	printf("key: 15, val: %f\n",search(float32Table,(u32)15).get().get_val());
 	clear(float32Table,alloc);
 }
 
@@ -174,6 +174,7 @@ int main(int argc, char* argv[])
 	test_stack();
 	test_queue();
 	test_hash_table();
+	// TODO: seems like there might be a memory leak in the fallback alloc.
 	print_alloc_info();
 
 	cache_shutdown();

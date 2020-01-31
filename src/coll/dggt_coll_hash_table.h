@@ -12,14 +12,22 @@ namespace dggt
 	u32 prehash(const u32& key);
 
 	template <typename K,typename V>
-	struct tnode
+	struct table_pair
 	{
-		K key;
-		V val;
-		b32 operator==(const tnode& other)
+		K key_;
+		V val_;
+
+		table_pair() { }
+		table_pair(K key,V val)
+			: key_(key),val_(val) { }
+
+		const K& get_key() { return key_; }
+		V& get_val() { return val_;}
+		const V& get_val() const { return val_;}
+
+		b32 operator==(const table_pair& other)
 		{
-			return this==&other||
-				(key==other.key&&val==other.val);
+			return key_==other.key_;
 		}
 	};
 
@@ -27,37 +35,48 @@ namespace dggt
 	struct hash_table;
 
 	template <typename K,typename V>
-	using table_iter=iter<tnode<K,V>,hash_table<K,V>,blk<linked_list<tnode<K,V>>>>;
+	using table_bucket=linked_list<table_pair<K,V>>;
 
 	template <typename K,typename V>
-	using table_bucket=linked_list<tnode<K,V>>;
+	using bucket_iter=list_iter<table_pair<K,V>>;
 
 	template <typename K,typename V>
-	struct iter<tnode<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>> // wtf
+	using table_blk=blk<table_bucket<K,V>>;
+
+	template <typename K,typename V>
+	using table_node=slnode<table_pair<K,V>>;
+
+	template <typename K,typename V>
+	using table_iter=iter<table_pair<K,V>,hash_table<K,V>,table_blk<K,V>>;
+
+	template <typename K,typename V>
+	struct iter<table_pair<K,V>,hash_table<K,V>,table_blk<K,V>> // wtf
 	{
 		u32 currentIndex;
 		table_bucket<K,V>* currentBucket;
-		slnode<tnode<K,V>>* currentNode;
-		blk<table_bucket<K,V>> table;
+		table_node<K,V>* currentNode;
+		table_blk<K,V> table;
 		hash_table<K,V>* hashTable;
 
 		b32 is_end() const;
 		b32 next();
-		tnode<K,V>& get();
-		const tnode<K,V>& get() const;
-		tnode<K,V>* get_ptr();
-		const tnode<K,V>* get_ptr() const;
-		blk<linked_list<tnode<K,V>>> get_mem();
-		const blk<linked_list<tnode<K,V>>> get_mem() const;
+		table_pair<K,V>& get();
+		const table_pair<K,V>& get() const;
+		table_pair<K,V>* get_ptr();
+		const table_pair<K,V>* get_ptr() const;
+		table_blk<K,V> get_mem();
+		const table_blk<K,V> get_mem() const;
 		b32 is_coll_valid() const;
 		b32 is_mem_valid() const;
 		b32 vindicate_mem();
 	};
 
+ 
+
 	template <typename K,typename V>
 	struct hash_table
 	{
-		blk<table_bucket<K,V>> table;
+		table_blk<K,V> table;
 		u32 count;
 
 		table_iter<K,V> operator[](const K& key);

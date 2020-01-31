@@ -121,17 +121,17 @@ namespace dggt
 			{
 				result.table=stk->table;
 			}
-			else if (is_coll_valid(result))
+			else if (result.is_coll_valid())
 			{
 				result.table=stk->table;
 			}
 			capacity=get_capacity(stk);
-			if (is_coll_valid(result))
+			if (result.is_coll_valid())
 			{
 				zero_struct<T>(stk->table.mem+count);
 				++stk->count;
 				result.current=get_head(stk);
-				if (is_mem_valid(result))
+				if (result.is_mem_valid())
 				{
 					result=get_iter(stk);
 				}
@@ -165,11 +165,11 @@ namespace dggt
 			{
 				result=resize(stk,capacity/2,alloc);
 			}
-			else if (is_coll_valid(result))
+			else if (result.is_coll_valid())
 			{
 				result.table=stk->table;
 			}
-			if (is_mem_valid(result))
+			if (result.is_mem_valid())
 			{
 				result=get_iter(stk);
 			}
