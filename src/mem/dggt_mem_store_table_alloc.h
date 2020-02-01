@@ -11,6 +11,8 @@ namespace dggt
 		static const alloc_t TYPE=alloc_t::STORE;
 		static const u32 S=TABLESIZE;
 		u32 storeCount;
+		u32 availableMem;
+		u32 availableBlocks;
 		flag32 flagTable[TABLESIZE];
 		allocator<alloc_t::STORE> storeTable[TABLESIZE];
 

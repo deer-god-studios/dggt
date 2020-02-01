@@ -3,6 +3,7 @@
 #include <climits>
 #include <cfloat>
 
+// debug.
 #ifdef DGGT_DEBUG
 #ifdef ASSERT
 #undef ASSERT(P)
@@ -15,6 +16,9 @@
 #define ASSERT(P)
 #endif
 
+#define ARRAY_COUNT(X) (sizeof((X)))/(sizeof((X)[0]))
+
+// limits.
 #define MAX_UINT32 UINT_MAX
 #define MAX_MSIZE ULLONG_MAX
 #define MAX_FLOAT32 FLT_MAX
