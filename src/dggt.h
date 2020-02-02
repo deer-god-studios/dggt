@@ -1,3 +1,13 @@
+/*!
+ * @file dggt.h
+ * @brief Includes all public interface files. 
+ *
+ * This file acts as the public interface and should be what's included in your project if the entire library is used.  It simply includes all headers
+ * that act as a public interface to the library.
+ * @author Benjamin Briggs
+ * @version 0.1 alpha
+*/
+
 #ifndef _DGGT_H_
 
 // TODO: errors!

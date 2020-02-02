@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 lib_LTLIBRARIES = libdggtmem.la libdggtcoll.la
-include_HEADERS = src/dggt.h \
+nobase_include_HEADERS = src/dggt.h \
 				  src/math/dggt_math_utils.h \
 				  src/math/lin/dggt_math_mat2.inl \
 				  src/math/lin/dggt_math_mat3.inl \

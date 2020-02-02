@@ -1,0 +1,83 @@
+\hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4}{}\doxysection{dggt\+::allocator$<$ alloc\+\_\+t\+::F\+A\+L\+L\+B\+A\+CK, P, F $>$ Struct Template Reference}
+\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4}\index{dggt::allocator$<$ alloc\_t::FALLBACK, P, F $>$@{dggt::allocator$<$ alloc\_t::FALLBACK, P, F $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_aa7b53bf2830cedeb687887ea547da7b1}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_aa7b53bf2830cedeb687887ea547da7b1}} 
+typedef \mbox{\hyperlink{structdggt_1_1allocator}{allocator}}$<$(alloc\+\_\+t) P $>$ {\bfseries palloc}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_af5592fc6f634eedabe6ed5e46073f66b}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_af5592fc6f634eedabe6ed5e46073f66b}} 
+typedef \mbox{\hyperlink{structdggt_1_1allocator}{allocator}}$<$(alloc\+\_\+t) F $>$ {\bfseries falloc}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_af7a310a63693d5bc5ffc407f31c56c36}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_af7a310a63693d5bc5ffc407f31c56c36}} 
+{\bfseries allocator} (\mbox{\hyperlink{structdggt_1_1allocator}{palloc}} $\ast$primary\+Alloc, \mbox{\hyperlink{structdggt_1_1allocator}{falloc}} $\ast$fallback\+Alloc)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a3bec9bde563cc6fc65adaefeda163f66}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a3bec9bde563cc6fc65adaefeda163f66}} 
+void $\ast$ {\bfseries alloc} (\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} $\ast$size=0)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a0c6bfa554fe33a9db3dab0b0cfb0575b}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a0c6bfa554fe33a9db3dab0b0cfb0575b}} 
+\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ {\bfseries alloc} (\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} size=4)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a97ce7dbedbb7d646d65dc196529e88be}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a97ce7dbedbb7d646d65dc196529e88be}} 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bfseries alloc} (u32 $\ast$count=0)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ace3689622d667e47084ecb3c08655a8d}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ace3689622d667e47084ecb3c08655a8d}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ {\bfseries alloc} (u32 count=1)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a0037b1c95e0b92215c03ea4081e66539}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a0037b1c95e0b92215c03ea4081e66539}} 
+b32 {\bfseries free} (void $\ast$ptr, \mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} size=4)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a4ed47c697faebd868ecffb7ab5154773}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a4ed47c697faebd868ecffb7ab5154773}} 
+b32 {\bfseries free} (\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ block)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ac04fbc7806aaf71c7196cbfa4df5b456}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ac04fbc7806aaf71c7196cbfa4df5b456}} 
+{\footnotesize template$<$typename T $>$ }\\b32 {\bfseries free} (T $\ast$ptr, u32 count)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a682f3a5eea226ebae739ad24a62cfe87}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a682f3a5eea226ebae739ad24a62cfe87}} 
+{\footnotesize template$<$typename T $>$ }\\b32 {\bfseries free} (\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ block)
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a331d84bd90a133b92614537aacb9684a}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a331d84bd90a133b92614537aacb9684a}} 
+b32 {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a9482343f45e6b32300872bc78f85f938}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a9482343f45e6b32300872bc78f85f938}} 
+b32 {\bfseries owns} (const void $\ast$ptr) const
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_aa58b8d5a28ac9d50cb79d9b07c715a24}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_aa58b8d5a28ac9d50cb79d9b07c715a24}} 
+b32 {\bfseries owns} (const \mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ block) const
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ad80deac2aec98d52b99ae955934165a1}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ad80deac2aec98d52b99ae955934165a1}} 
+{\footnotesize template$<$typename T $>$ }\\b32 {\bfseries owns} (const T $\ast$ptr) const
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ab77525a69261dfc614a4e209cc15c08c}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_ab77525a69261dfc614a4e209cc15c08c}} 
+{\footnotesize template$<$typename T $>$ }\\b32 {\bfseries owns} (const \mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ block) const
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a2ab1b799398920e71754a02cea6805e1}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a2ab1b799398920e71754a02cea6805e1}} 
+\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} {\bfseries available\+\_\+mem} () const
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a90c87f243a5df5b6be2e6ca8a435be7d}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a90c87f243a5df5b6be2e6ca8a435be7d}} 
+\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} {\bfseries used\+\_\+mem} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a86cfbe78dee521dc88a6d278679e2379}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a86cfbe78dee521dc88a6d278679e2379}} 
+\mbox{\hyperlink{structdggt_1_1allocator}{palloc}} $\ast$ {\bfseries p}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a30900a6ac2ceeb8b3a097de497af0b41}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a30900a6ac2ceeb8b3a097de497af0b41}} 
+\mbox{\hyperlink{structdggt_1_1allocator}{falloc}} $\ast$ {\bfseries f}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a1e9751b109cf409880c5e825ceecd405}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4_a1e9751b109cf409880c5e825ceecd405}} 
+static const alloc\+\_\+t {\bfseries T\+Y\+PE} =alloc\+\_\+t\+::\+F\+A\+L\+L\+B\+A\+CK
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dggt\+\_\+mem\+\_\+fallback\+\_\+alloc.\+h\item 
+dggt\+\_\+mem\+\_\+fallback\+\_\+alloc.\+inl\end{DoxyCompactItemize}

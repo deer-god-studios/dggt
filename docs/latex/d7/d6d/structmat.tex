@@ -1,0 +1,89 @@
+\hypertarget{structmat}{}\doxysection{mat$<$ C, R, T $>$ Struct Template Reference}
+\label{structmat}\index{mat$<$ C, R, T $>$@{mat$<$ C, R, T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmat_a8f7f79dd7a523b927c86132508709d5d}\label{structmat_a8f7f79dd7a523b927c86132508709d5d}} 
+{\bfseries mat} (const T e\mbox{[}C $\ast$R\mbox{]})
+\item 
+\mbox{\Hypertarget{structmat_a8431124875cecc3d71d60a2b7144f4ba}\label{structmat_a8431124875cecc3d71d60a2b7144f4ba}} 
+{\bfseries mat} (const \mbox{\hyperlink{structmat}{mat}} \&other)
+\item 
+\mbox{\Hypertarget{structmat_abc6a8214a785d18dca4f6c773205c75a}\label{structmat_abc6a8214a785d18dca4f6c773205c75a}} 
+\mbox{\hyperlink{structmat}{mat}} {\bfseries operator+} (const \mbox{\hyperlink{structmat}{mat}} \&rhs) const
+\item 
+\mbox{\Hypertarget{structmat_a8331f7c13673b522676231cee165c76d}\label{structmat_a8331f7c13673b522676231cee165c76d}} 
+\mbox{\hyperlink{structmat}{mat}} {\bfseries operator-\/} (const \mbox{\hyperlink{structmat}{mat}} \&rhs) const
+\item 
+\mbox{\Hypertarget{structmat_a9a914e61d1c6eaddfb4215e01357a3fa}\label{structmat_a9a914e61d1c6eaddfb4215e01357a3fa}} 
+\mbox{\hyperlink{structmat}{mat}} {\bfseries operator$\ast$} (const T \&scalar) const
+\item 
+\mbox{\Hypertarget{structmat_aaf9d62792eae2213c3a11170822737d5}\label{structmat_aaf9d62792eae2213c3a11170822737d5}} 
+{\footnotesize template$<$uint32 M$>$ }\\\mbox{\hyperlink{structmat}{mat}}$<$ C, M, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structmat}{mat}}$<$ R, M, T $>$ \&rhs) const
+\item 
+\mbox{\Hypertarget{structmat_abd0055a4d6035439ed30ab0d3f269ef1}\label{structmat_abd0055a4d6035439ed30ab0d3f269ef1}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries operator=} (const \mbox{\hyperlink{structmat}{mat}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmat_a56f539fa2d14396e8655fb8657f65264}\label{structmat_a56f539fa2d14396e8655fb8657f65264}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries operator+=} (const \mbox{\hyperlink{structmat}{mat}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmat_aeb5db03d8e52b1c5147a3570aad543d2}\label{structmat_aeb5db03d8e52b1c5147a3570aad543d2}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{structmat}{mat}} \&rhs)
+\item 
+\mbox{\Hypertarget{structmat_a1f3e975f0c6425bcc27bef9ede6b942c}\label{structmat_a1f3e975f0c6425bcc27bef9ede6b942c}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries operator$\ast$=} (const T \&scalar)
+\item 
+\mbox{\Hypertarget{structmat_a2cb69a972bcbe64de69984853499ed57}\label{structmat_a2cb69a972bcbe64de69984853499ed57}} 
+{\footnotesize template$<$uint32 M$>$ }\\\mbox{\hyperlink{structmat}{mat}}$<$ C, M, T $>$ \& {\bfseries operator$\ast$=} (const \mbox{\hyperlink{structmat}{mat}}$<$ R, M, T $>$ \&rhs)
+\item 
+\mbox{\Hypertarget{structmat_a01c507dcdfd6559efb50060980eb1bdd}\label{structmat_a01c507dcdfd6559efb50060980eb1bdd}} 
+\mbox{\hyperlink{structvec}{vec}}$<$ R, T $>$ {\bfseries transform} (const \mbox{\hyperlink{structvec}{vec}}$<$ C, T $>$ \&vector) const
+\item 
+\mbox{\Hypertarget{structmat_ab2befe13baaccf9413b7f02a8ecddfda}\label{structmat_ab2befe13baaccf9413b7f02a8ecddfda}} 
+T $\ast$ {\bfseries data} ()
+\item 
+\mbox{\Hypertarget{structmat_aff4f62d1588ab38cf986f87582bc4a35}\label{structmat_aff4f62d1588ab38cf986f87582bc4a35}} 
+const T $\ast$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{structmat_a0824b7ad649ece27ccd37fa10186f507}\label{structmat_a0824b7ad649ece27ccd37fa10186f507}} 
+\mbox{\hyperlink{structmat}{mat}}$<$ R, C, T $>$ {\bfseries transpose} () const
+\item 
+\mbox{\Hypertarget{structmat_a3cc2c658e9c25cd996d2289992805eee}\label{structmat_a3cc2c658e9c25cd996d2289992805eee}} 
+T \& {\bfseries get} (uint32 column, uint32 row)
+\item 
+\mbox{\Hypertarget{structmat_a904a63c9d5bb838ebfe6bcc0b9cf0846}\label{structmat_a904a63c9d5bb838ebfe6bcc0b9cf0846}} 
+const T \& {\bfseries get} (uint32 column, uint32 row) const
+\item 
+\mbox{\Hypertarget{structmat_a8e8c917f133f70fc9db1a9bba5be30f6}\label{structmat_a8e8c917f133f70fc9db1a9bba5be30f6}} 
+\mbox{\hyperlink{structvec}{vec}}$<$ R, T $>$ {\bfseries get\+\_\+column} (uint32 index) const
+\item 
+\mbox{\Hypertarget{structmat_ae94272edb527724e51d25c342ed301bd}\label{structmat_ae94272edb527724e51d25c342ed301bd}} 
+\mbox{\hyperlink{structvec}{vec}}$<$ C, T $>$ {\bfseries get\+\_\+row} (uint32 index) const
+\item 
+\mbox{\Hypertarget{structmat_afe9b201dab3f35843374f3e8566f3ab8}\label{structmat_afe9b201dab3f35843374f3e8566f3ab8}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries set\+\_\+column} (uint32 column, const \mbox{\hyperlink{structvec}{vec}}$<$ R, T $>$ \&val)
+\item 
+\mbox{\Hypertarget{structmat_a588a5a2a1b3d4729aac9a19857405016}\label{structmat_a588a5a2a1b3d4729aac9a19857405016}} 
+\mbox{\hyperlink{structmat}{mat}} \& {\bfseries set\+\_\+row} (uint32 row, const \mbox{\hyperlink{structvec}{vec}}$<$ C, T $>$ \&val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmat_a69cc68c32d430ca88a5edd5085ff9cd1}\label{structmat_a69cc68c32d430ca88a5edd5085ff9cd1}} 
+T {\bfseries e} \mbox{[}C $\ast$R\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmat_ac60a7466b81487adba1ccbc90be5fc6d}\label{structmat_ac60a7466b81487adba1ccbc90be5fc6d}} 
+static const uint32 {\bfseries C\+O\+L\+U\+M\+NS} =C
+\item 
+\mbox{\Hypertarget{structmat_a5a5e29248f835dbcf35638acfd186b99}\label{structmat_a5a5e29248f835dbcf35638acfd186b99}} 
+static const uint32 {\bfseries R\+O\+WS} =R
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dggt\+\_\+math\+\_\+mat.\+h\item 
+dggt\+\_\+math\+\_\+mat.\+inl\end{DoxyCompactItemize}
