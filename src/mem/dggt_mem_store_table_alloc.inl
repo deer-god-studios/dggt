@@ -148,6 +148,8 @@ namespace dggt
 	allocator<alloc_t::STORE_TABLE,TABLESIZE>::allocator()
 	{
 		storeCount=0;
+		availableMem=0;
+		availableBlocks=0;
 		for (u32 i=0;i<TABLESIZE;++i)
 		{
 			flagTable[i]=STORE_TABLE_EMPTY;
@@ -169,6 +171,11 @@ namespace dggt
 					a->available_mem())
 			{
 				result=a->alloc();
+				if (result)
+				{
+					availableMem+=s;
+					++availableBlocks;
+				}
 			}
 		}
 		return result;
@@ -224,6 +231,11 @@ namespace dggt
 							this,size);
 				ASSERT(storeAlloc);
 				result=storeAlloc->free(ptr);
+				if (result)
+				{
+					availableMem+=size;
+					availableBlocks++;
+				}
 			}
 			else if (dggt_internal_::store_table_hash_insert<TABLESIZE>(
 						this,size,&i))
@@ -235,6 +247,11 @@ namespace dggt
 								this,size);
 					ASSERT(storeAlloc);
 					result=storeAlloc->free(ptr);
+					if (result)
+					{
+						availableMem+=size;
+						availableBlocks++;
+					}
 				}
 			}
 		}
@@ -295,15 +312,7 @@ namespace dggt
 	template <u32 TABLESIZE>
 	msize allocator<alloc_t::STORE_TABLE,TABLESIZE>::available_mem() const
 	{
-		msize result=0;
-		for (u32 i=0;i<TABLESIZE;++i)
-		{
-			if (storeTable[i].blockCount)
-			{
-				result+=storeTable[i].blockSize*storeTable[i].blockCount;
-			}
-		}
-		return result;
+		return availableMem;
 	}
 
 	template <u32 TABLESIZE>
@@ -315,16 +324,9 @@ namespace dggt
 	template <u32 TABLESIZE>
 	u32 allocator<alloc_t::STORE_TABLE,TABLESIZE>::available_blocks() const
 	{
-		msize result=0;
-		for (u32 i=0;i<TABLESIZE;++i)
-		{
-			if (storeTable[i].blockCount)
-			{
-				result+=storeTable[i].blockCount;
-			}
-		}
-		return result;
+		return availableBlocks;
 	}
+
 	template <u32 TABLESIZE>
 	u32 allocator<alloc_t::STORE_TABLE,TABLESIZE>::used_blocks() const
 	{

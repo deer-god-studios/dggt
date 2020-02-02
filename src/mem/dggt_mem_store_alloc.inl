@@ -7,7 +7,7 @@ namespace dggt
 		blk<T> result=NULL_BLK<T>;
 		if (head)
 		{
-			blk<T> result=blk<T>((T*)head,sizeof(T));
+			result=blk<T>((T*)head,sizeof(T));
 		}
 		return result;
 	}

@@ -1,0 +1,70 @@
+\hypertarget{dggt__defines_8h}{}\doxysection{dggt\+\_\+defines.\+h File Reference}
+\label{dggt__defines_8h}\index{dggt\_defines.h@{dggt\_defines.h}}
+
+
+Contains useful preprocessor defines.  
+
+
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dggt__defines_8h_a838546edcc8bf8f21c2dcb4132510789}\label{dggt__defines_8h_a838546edcc8bf8f21c2dcb4132510789}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_a838546edcc8bf8f21c2dcb4132510789}{A\+S\+S\+E\+RT}}(P)
+\begin{DoxyCompactList}\small\item\em Halts (ie. crashes) the program if the given predicate evaluates to false. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dggt__defines_8h_a10b5328392dbace92fce49d1c4c7d02b}{A\+R\+R\+A\+Y\+\_\+\+C\+O\+U\+NT}}(X)~(sizeof((X)))/(sizeof((X)\mbox{[}0\mbox{]}))
+\begin{DoxyCompactList}\small\item\em Resolves to the number of elements in a stack array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dggt__defines_8h_a26248174abf27973b9edfa9b70ba4c93}\label{dggt__defines_8h_a26248174abf27973b9edfa9b70ba4c93}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_a26248174abf27973b9edfa9b70ba4c93}{M\+A\+X\+\_\+\+U\+I\+N\+T32}}~U\+I\+N\+T\+\_\+\+M\+AX
+\begin{DoxyCompactList}\small\item\em Maximum 32-\/bit unsigned integer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{dggt__defines_8h_a0b042dd278f57788dcb509ce9e8ccc58}{M\+A\+X\+\_\+\+M\+S\+I\+ZE}}~U\+L\+L\+O\+N\+G\+\_\+\+M\+AX
+\begin{DoxyCompactList}\small\item\em Maximum memory size integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dggt__defines_8h_a9adcee815220ec9db98062213806ed04}\label{dggt__defines_8h_a9adcee815220ec9db98062213806ed04}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_a9adcee815220ec9db98062213806ed04}{M\+A\+X\+\_\+\+F\+L\+O\+A\+T32}}~F\+L\+T\+\_\+\+M\+AX
+\begin{DoxyCompactList}\small\item\em Maximum 32-\/bit floating point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dggt__defines_8h_abc11e6e108402d93b1ce7b9ddadc78ab}\label{dggt__defines_8h_abc11e6e108402d93b1ce7b9ddadc78ab}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_abc11e6e108402d93b1ce7b9ddadc78ab}{M\+I\+N\+\_\+\+F\+L\+O\+A\+T32}}~F\+L\+T\+\_\+\+M\+IN
+\begin{DoxyCompactList}\small\item\em Minimum positive 32-\/bit floating point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dggt__defines_8h_adedcd47b0ca02c213ebe0446571ef133}\label{dggt__defines_8h_adedcd47b0ca02c213ebe0446571ef133}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_adedcd47b0ca02c213ebe0446571ef133}{M\+A\+X\+\_\+\+R\+E\+A\+L32}}~\mbox{\hyperlink{dggt__defines_8h_a9adcee815220ec9db98062213806ed04}{M\+A\+X\+\_\+\+F\+L\+O\+A\+T32}}
+\begin{DoxyCompactList}\small\item\em A different way of representing M\+A\+X\+\_\+\+R\+E\+A\+L32. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dggt__defines_8h_a006ba826c8aa90a643c1328c5cfe8024}\label{dggt__defines_8h_a006ba826c8aa90a643c1328c5cfe8024}} 
+\#define \mbox{\hyperlink{dggt__defines_8h_a006ba826c8aa90a643c1328c5cfe8024}{M\+I\+N\+\_\+\+R\+E\+A\+L32}}~M\+I\+N\+\_\+\+R\+E\+A\+L32
+\begin{DoxyCompactList}\small\item\em A different way of representing M\+I\+N\+\_\+\+R\+E\+A\+L32. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains useful preprocessor defines. 
+
+This file defines some useful preprocessor macro definitions for both debugging and general utility. They will probably be split into separate, more specialized files as it grows. (eg. debug defines vs. limits, etc.) \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]M\+A\+X\+\_\+\+M\+S\+I\+ZE macro always returns max unsigned long long (64-\/bit unsigned integer) which will be wrong on 32-\/bit systems. \end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dggt__defines_8h_a10b5328392dbace92fce49d1c4c7d02b}\label{dggt__defines_8h_a10b5328392dbace92fce49d1c4c7d02b}} 
+\index{dggt\_defines.h@{dggt\_defines.h}!ARRAY\_COUNT@{ARRAY\_COUNT}}
+\index{ARRAY\_COUNT@{ARRAY\_COUNT}!dggt\_defines.h@{dggt\_defines.h}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_COUNT}{ARRAY\_COUNT}}
+{\footnotesize\ttfamily \#define A\+R\+R\+A\+Y\+\_\+\+C\+O\+U\+NT(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(sizeof((X)))/(sizeof((X)\mbox{[}0\mbox{]}))}
+
+
+
+Resolves to the number of elements in a stack array. 
+
+\begin{DoxyWarning}{Warning}
+Only works with arrays defined with the syntax\+: type array\+Name\mbox{[}\#\mbox{]} 
+\end{DoxyWarning}
+\mbox{\Hypertarget{dggt__defines_8h_a0b042dd278f57788dcb509ce9e8ccc58}\label{dggt__defines_8h_a0b042dd278f57788dcb509ce9e8ccc58}} 
+\index{dggt\_defines.h@{dggt\_defines.h}!MAX\_MSIZE@{MAX\_MSIZE}}
+\index{MAX\_MSIZE@{MAX\_MSIZE}!dggt\_defines.h@{dggt\_defines.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MSIZE}{MAX\_MSIZE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+M\+S\+I\+ZE~U\+L\+L\+O\+N\+G\+\_\+\+M\+AX}
+
+
+
+Maximum memory size integer. 
+
+\begin{DoxyWarning}{Warning}
+Always returns max unsigned long long (64-\/bit unsigned integer) which will be wrong on 32-\/bit systems. 
+\end{DoxyWarning}

@@ -23,9 +23,21 @@ void line_break()
 	printf("---------------------------------------------------------------\n");
 }
 
+void print_alloc_info()
+{
+	line_break();
+	printf("primary used: %u\n",alloc->p->used_mem());
+	printf("primary available: %u\n", alloc->p->available_mem());
+	printf("primary available blocks: %u\n", alloc->p->available_blocks());
+	new_line();
+	printf("fallback used: %d\n",alloc->f->used_mem());
+	printf("fallback available: %d\n", alloc->f->available_mem());
+	line_break();
+}
+
 void init_test()
 {
-	linAlloc_=create_alloc<alloc_t::LINEAR>(KB(2));
+	linAlloc_=create_alloc<alloc_t::LINEAR>(KB(100));
 	linAlloc=&linAlloc_;
 	storeTableAlloc_=create_alloc<alloc_t::STORE_TABLE,2048>();
 	storeTableAlloc=&storeTableAlloc_;
@@ -35,21 +47,26 @@ void init_test()
 	alloc=&alloc_;
 }
 
+template <u32 BLOCKS>
 void test_alloc()
 {
-	u32 float32Count=20;
-	float32* float32Arr=alloc->alloc<float32>(&float32Count);
-	for (u32 i=0;i<float32Count;++i)
+	blk<float32> blockArr[BLOCKS]={};
+	for (u32 i=0;i<ARRAY_COUNT(blockArr);++i)
 	{
-		float32Arr[i]=(float32)i/7.7f;
+		u32 floatCount=i+1;
+		printf("allocating block of %d floats...\n",floatCount);
+		blockArr[i]=alloc->alloc<float32>(floatCount);
+		printf("allocated %d floats at %x.\n",
+				blockArr[i].count,blockArr[i].mem);
 	}
 
-	for (u32 i=0;i<float32Count;++i)
+	for (u32 i=0;i<ARRAY_COUNT(blockArr);++i)
 	{
-		printf("%f\n",float32Arr[i]);
+		printf("freeing a block of %d floats at %x.\n",
+				blockArr[i].count,blockArr[i].mem);
+		b32 freeResult=alloc->free(blockArr[i]);
+		printf("free result: %d\n",freeResult);
 	}
-	b32 freeResult=alloc->free(float32Arr,20);
-	printf("freed block: %d\n",freeResult);
 }
 
 void test_linked_list()
@@ -72,16 +89,6 @@ void test_linked_list()
 	}
 
 	clear(float32List,alloc);
-}
-
-void print_alloc_info()
-{
-	printf("primary used: %u\n",alloc->p->used_mem());
-	printf("primary available: %u\n", alloc->p->available_mem());
-	printf("primary available blocks: %u\n", alloc->p->available_blocks());
-	new_line();
-	printf("fallback used: %d\n",alloc->f->used_mem());
-	printf("fallback available: %d\n", alloc->f->available_mem());
 }
 
 void test_stack()
@@ -165,16 +172,15 @@ void test_hash_table()
 
 int main(int argc, char* argv[])
 {
-	cache_init(MB(100));
+	cache_init(GB(2));
 
 	init_test();
-	test_alloc();
-	new_line();
-	test_linked_list();
-	test_stack();
-	test_queue();
-	test_hash_table();
-	// TODO: seems like there might be a memory leak in the fallback alloc.
+
+	test_alloc<1>();
+	//new_line();
+	//test_linked_list();
+	//test_stack();
+	//test_queue();
 	print_alloc_info();
 
 	cache_shutdown();
