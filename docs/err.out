@@ -1,0 +1,1062 @@
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:45: warning: Compound dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:9: warning: Compound dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:53: warning: Compound dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:47: warning: Compound dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:9: warning: Compound dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:49: warning: Compound dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:9: warning: Compound dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:10: warning: Compound dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:9: warning: Compound dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:15: warning: Compound dggt::dggt_internal_::best_fit_result is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:143: warning: Compound dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:15: warning: Compound dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:7: warning: Compound dggt::free_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:7: warning: Compound vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:52: warning: Compound dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:7: warning: Compound vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:9: warning: Compound dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:8: warning: Compound dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:23: warning: Compound dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:10: warning: Compound dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:8: warning: Compound dggt::stack is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:52: warning: Compound dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:16: warning: Compound dggt::linked_list is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:59: warning: Compound dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:7: warning: Compound mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.cpp:8: warning: Compound dggt::store_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.cpp:6: warning: Compound dggt::pool_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:35: warning: Compound dggt::hash_table is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:95: warning: Compound dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:15: warning: Compound dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:7: warning: Compound mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:7: warning: Compound vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:9: warning: Compound dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:54: warning: Compound dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:9: warning: Compound dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:10: warning: Compound dggt::slnode is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:7: warning: Compound mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:16: warning: Compound dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:7: warning: Compound vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:7: warning: Compound mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:7: warning: Compound mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:5: warning: Compound vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:23: warning: no uniquely matching class member found for 
+  template < K, V >
+  b32 dggt::iter< K, V >::is_end() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:30: warning: no uniquely matching class member found for 
+  template < K, V >
+  b32 dggt::iter< K, V >::next()
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:62: warning: no uniquely matching class member found for 
+  template < K, V >
+  table_pair< K, V > & dggt::iter< K, V >::get()
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:69: warning: no uniquely matching class member found for 
+  template < K, V >
+  const table_pair< K, V > & dggt::iter< K, V >::get() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:76: warning: no uniquely matching class member found for 
+  template < K, V >
+  table_pair< K, V > * dggt::iter< K, V >::get_ptr()
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:82: warning: no uniquely matching class member found for 
+  template < K, V >
+  const table_pair< K, V > * dggt::iter< K, V >::get_ptr() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:89: warning: no uniquely matching class member found for 
+  template < K, V >
+  blk< table_bucket< K, V > > dggt::iter< K, V >::get_mem()
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:96: warning: no uniquely matching class member found for 
+  template < K, V >
+  const blk< table_bucket< K, V > > dggt::iter< K, V >::get_mem() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:103: warning: no uniquely matching class member found for 
+  template < K, V >
+  b32 dggt::iter< K, V >::is_coll_valid() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:110: warning: no uniquely matching class member found for 
+  template < K, V >
+  b32 dggt::iter< K, V >::is_mem_valid() const
+
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.inl:117: warning: no uniquely matching class member found for 
+  template < K, V >
+  b32 dggt::iter< K, V >::vindicate_mem()
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.inl:34: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 2, 2, T >::mat(const mat< 2, 2, T > &other)
+Possible candidates:
+  'mat< 2, 2, T >::mat(const T e[4])' at line 14 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat< 2, 2, T >::mat(const T &diagonal)' at line 15 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat< 2, 2, T >::mat(const mat &other)' at line 16 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat< 2, 2, T >::mat()' at line 17 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat< 2, 2, T >::mat(const T &m00, const T &m01, const T &m10, const T &m11)' at line 18 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.inl:76: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 2, 2, T > mat< 2, 2, T >::operator*(const mat< 2, 2, T > &rhs) const
+Possible candidates:
+  'mat mat< 2, 2, T >::operator*(const T &scalar) const' at line 22 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat mat< 2, 2, T >::operator*(const mat &rhs) const' at line 23 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.inl:126: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 2, 2, T > & mat< 2, 2, T >::operator*=(const mat< 2, 2, T > &rhs)
+Possible candidates:
+  'mat & mat< 2, 2, T >::operator*=(const T &scalar)' at line 28 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+  'mat & mat< 2, 2, T >::operator*=(const mat &rhs)' at line 29 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.inl:32: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 3, 3, T >::mat(const mat< 3, 3, T > &other)
+Possible candidates:
+  'mat< 3, 3, T >::mat(const T e[9])' at line 19 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat< 3, 3, T >::mat(const T &diagonal)' at line 20 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat< 3, 3, T >::mat(const mat &other)' at line 21 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat< 3, 3, T >::mat()' at line 22 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat< 3, 3, T >::mat(const T &m00, const T &m01, const T &m02, const T &m10, const T &m11, const T &m12, const T &m20, const T &m21, const T &m22)' at line 23 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.inl:114: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 3, 3, T > mat< 3, 3, T >::operator*(const mat< 3, 3, T > &rhs) const
+Possible candidates:
+  'mat mat< 3, 3, T >::operator*(const T &scalar) const' at line 31 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat mat< 3, 3, T >::operator*(const mat &rhs) const' at line 32 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.inl:193: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 3, 3, T > & mat< 3, 3, T >::operator*=(const mat< 3, 3, T > &rhs)
+Possible candidates:
+  'mat & mat< 3, 3, T >::operator*=(const T &scalar)' at line 37 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+  'mat & mat< 3, 3, T >::operator*=(const mat &rhs)' at line 38 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.inl:50: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 4, 4, T >::mat(const mat< 4, 4, T > &other)
+Possible candidates:
+  'mat< 4, 4, T >::mat(const T e[16])' at line 29 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat< 4, 4, T >::mat(const T &diagonal)' at line 30 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat< 4, 4, T >::mat(const mat &other)' at line 31 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat< 4, 4, T >::mat()' at line 32 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat< 4, 4, T >::mat(const T &m00, const T &m01, const T &m02, const T &m03, const T &m10, const T &m11, const T &m12, const T &m13, const T &m20, const T &m21, const T &m22, const T &m23, const T &m30, const T &m31, const T &m32, const T &m33)' at line 33 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.inl:234: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 4, 4, T > mat< 4, 4, T >::operator*(const mat< 4, 4, T > &rhs) const
+Possible candidates:
+  'mat mat< 4, 4, T >::operator*(const T &scalar) const' at line 42 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat mat< 4, 4, T >::operator*(const mat &rhs) const' at line 43 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.inl:345: warning: no uniquely matching class member found for 
+  template < T >
+  mat< 4, 4, T > & mat< 4, 4, T >::operator*=(const mat< 4, 4, T > &rhs)
+Possible candidates:
+  'mat & mat< 4, 4, T >::operator*=(const T &scalar)' at line 48 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+  'mat & mat< 4, 4, T >::operator*=(const mat &rhs)' at line 49 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.inl:24: warning: no uniquely matching class member found for 
+  template < N, T >
+  mat< N, N, T >::mat(const mat< N, N, T > &other)
+Possible candidates:
+  'mat< N, N, T >::mat(const T e[N *N])' at line 12 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+  'mat< N, N, T >::mat(const T &diagonal)' at line 13 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+  'mat< N, N, T >::mat(const mat &other)' at line 14 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+  'mat< N, N, T >::mat()' at line 15 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.inl:70: warning: no uniquely matching class member found for 
+  template < N, T >
+  mat< N, N, T > mat< N, N, T >::operator*(const mat< N, N, T > &rhs) const
+Possible candidates:
+  'mat mat< N, N, T >::operator*(const T &scalar) const' at line 19 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+  'mat mat< N, N, T >::operator*(const mat &rhs) const' at line 20 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.inl:120: warning: no uniquely matching class member found for 
+  template < N, T >
+  mat< N, N, T > & mat< N, N, T >::operator*=(const mat< N, N, T > &rhs)
+Possible candidates:
+  'mat & mat< N, N, T >::operator*=(const T &scalar)' at line 25 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+  'mat & mat< N, N, T >::operator*=(const mat &rhs)' at line 26 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.inl:37: warning: no uniquely matching class member found for 
+  template < T >
+  vec< 1, T > vec< 1, T >::operator-(const vec< 1, T > &rhs) const
+Possible candidates:
+  'vec vec< 1, T >::operator-(const vec &rhs) const' at line 17 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h
+  'vec vec< 1, T >::operator-() const' at line 18 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.inl:56: warning: no uniquely matching class member found for 
+  template < T >
+  vec< 2, T > vec< 2, T >::operator-(const vec< 2, T > &rhs) const
+Possible candidates:
+  'vec vec< 2, T >::operator-(const vec &rhs) const' at line 22 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h
+  'vec vec< 2, T >::operator-() const' at line 23 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.inl:69: warning: no uniquely matching class member found for 
+  template < T >
+  vec< 3, T > vec< 3, T >::operator-(const vec< 3, T > &rhs) const
+Possible candidates:
+  'vec vec< 3, T >::operator-(const vec &rhs) const' at line 23 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h
+  'vec vec< 3, T >::operator-() const' at line 24 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.inl:83: warning: no uniquely matching class member found for 
+  template < T >
+  vec< 4, T > vec< 4, T >::operator-(const vec< 4, T > &rhs) const
+Possible candidates:
+  'vec vec< 4, T >::operator-(const vec &rhs) const' at line 24 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h
+  'vec vec< 4, T >::operator-() const' at line 25 of file /usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.h:64: warning: no matching file member found for 
+allocator< A > dggt::create_alloc(msize size)
+Possible candidates:
+ 'allocator< alloc_t::POOL > create_alloc(msize size, msize blockSize)' at line 115 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.cpp
+ 'allocator< alloc_t::STORE > create_alloc(msize blockSize)' at line 126 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.cpp
+ 'allocator< A, SIZE > create_alloc()' at line 55 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, F > create_alloc(allocator< P > *primaryAlloc, allocator< F > *fallbackAlloc)' at line 61 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, SIZE, F > create_alloc(allocator< P, SIZE > *primaryAlloc, allocator< F > *fallbackAlloc)' at line 71 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > create_alloc(allocator< P, PSIZE > *primaryAlloc, allocator< F, FSIZE > *fallbackAlloc)' at line 81 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl:43: warning: no matching file member found for 
+allocator< A > dggt::create_alloc(msize size)
+Possible candidates:
+ 'allocator< alloc_t::POOL > create_alloc(msize size, msize blockSize)' at line 115 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.cpp
+ 'allocator< alloc_t::STORE > create_alloc(msize blockSize)' at line 126 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.cpp
+ 'allocator< A, SIZE > create_alloc()' at line 55 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, F > create_alloc(allocator< P > *primaryAlloc, allocator< F > *fallbackAlloc)' at line 61 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, SIZE, F > create_alloc(allocator< P, SIZE > *primaryAlloc, allocator< F > *fallbackAlloc)' at line 71 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+ 'allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > create_alloc(allocator< P, PSIZE > *primaryAlloc, allocator< F, FSIZE > *fallbackAlloc)' at line 81 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem.inl
+
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.cpp:17: warning: no uniquely matching class member found for 
+  dggt::blk< void >::blk(const blk< void > &other)
+Possible candidates:
+  'dggt::blk< void >::blk()' at line 63 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+  'dggt::blk< void >::blk(void *mem, msize size)' at line 64 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+  'dggt::blk< void >::blk(const blk &other)' at line 65 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+  'template < T >
+  dggt::blk< void >::blk(const blk< T > &other)' at line 67 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.cpp:44: warning: no uniquely matching class member found for 
+  uint32_t dggt::blk< void >::operator==(const blk< void > &rhs) const
+Possible candidates:
+  'uint32_t dggt::blk< void >::operator==(const blk &rhs) const' at line 74 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+  'bool32 dggt::blk< void >::operator==(const blk< void > &rhs)' at line 85 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.cpp:50: warning: no uniquely matching class member found for 
+  uint32_t dggt::blk< void >::operator!=(const blk< void > &rhs) const
+Possible candidates:
+  'uint32_t dggt::blk< void >::operator!=(const blk &rhs) const' at line 75 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+  'bool32 dggt::blk< void >::operator!=(const blk< void > &rhs)' at line 89 of file /usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h
+
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:40: warning: Member flag64 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:41: warning: Member fl64 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:42: warning: Member uint32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:43: warning: Member u32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:44: warning: Member bool32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:45: warning: Member b32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:46: warning: Member flag32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:47: warning: Member fl32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:48: warning: Member float64 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:49: warning: Member real64 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:50: warning: Member f64 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:51: warning: Member float32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:52: warning: Member real32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:53: warning: Member f32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:54: warning: Member uint8 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:55: warning: Member u8 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:56: warning: Member ubyte (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:57: warning: Member i32 (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/types/dggt_types.h:58: warning: Member sbyte (typedef) of file dggt_types.h is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:13: warning: Member mat(const T e[C *R]) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:14: warning: Member mat(const mat &other) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:17: warning: Member operator+(const mat &rhs) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:18: warning: Member operator-(const mat &rhs) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:19: warning: Member operator*(const T &scalar) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:21: warning: Member operator*(const mat< R, M, T > &rhs) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:23: warning: Member operator=(const mat &rhs) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:24: warning: Member operator+=(const mat &rhs) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:25: warning: Member operator-=(const mat &rhs) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:26: warning: Member operator*=(const T &scalar) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:28: warning: Member operator*=(const mat< R, M, T > &rhs) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:30: warning: Member transform(const vec< C, T > &vector) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:32: warning: Member data() (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:33: warning: Member data() const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:35: warning: Member transpose() const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:37: warning: Member get(uint32 column, uint32 row) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:38: warning: Member get(uint32 column, uint32 row) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:39: warning: Member get_column(uint32 index) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:40: warning: Member get_row(uint32 index) const (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:41: warning: Member set_column(uint32 column, const vec< R, T > &val) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:42: warning: Member set_row(uint32 row, const vec< C, T > &val) (function) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:11: warning: Member e[C *R] (variable) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:8: warning: Member COLUMNS (variable) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat.h:9: warning: Member ROWS (variable) of class mat is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:14: warning: Member mat(const T e[4]) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:15: warning: Member mat(const T &diagonal) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:16: warning: Member mat(const mat &other) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:18: warning: Member mat(const T &m00, const T &m01, const T &m10, const T &m11) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:20: warning: Member operator+(const mat &rhs) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:21: warning: Member operator-(const mat &rhs) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:22: warning: Member operator*(const T &scalar) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:23: warning: Member operator*(const mat &rhs) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:25: warning: Member operator=(const mat &rhs) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:26: warning: Member operator+=(const mat &rhs) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:27: warning: Member operator-=(const mat &rhs) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:28: warning: Member operator*=(const T &scalar) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:29: warning: Member operator*=(const mat &rhs) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:31: warning: Member transform(const vec< 2, T > &vector) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:33: warning: Member data() (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:34: warning: Member data() const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:36: warning: Member transpose() const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:37: warning: Member determinant() const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:38: warning: Member det() const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:39: warning: Member inverse() const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:40: warning: Member invert() (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:42: warning: Member get(uint32 column, uint32 row) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:43: warning: Member get(uint32 column, uint32 row) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:44: warning: Member get_column(uint32 index) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:45: warning: Member get_row(uint32 index) const (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:46: warning: Member set_column(uint32 column, const vec< 2, T > &val) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:47: warning: Member set_row(uint32 row, const vec< 2, T > &val) (function) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:9: warning: Member m00 (variable) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:10: warning: Member m01 (variable) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:11: warning: Member m10 (variable) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:12: warning: Member m11 (variable) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat2.h:8: warning: Member DIM (variable) of class mat< 2, 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:19: warning: Member mat(const T e[9]) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:20: warning: Member mat(const T &diagonal) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:21: warning: Member mat(const mat &other) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:23: warning: Member mat(const T &m00, const T &m01, const T &m02, const T &m10, const T &m11, const T &m12, const T &m20, const T &m21, const T &m22) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:27: warning: Member minor(uint32 column, uint32 row) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:28: warning: Member comatrix() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:29: warning: Member operator+(const mat &rhs) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:30: warning: Member operator-(const mat &rhs) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:31: warning: Member operator*(const T &scalar) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:32: warning: Member operator*(const mat &rhs) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:34: warning: Member operator=(const mat &rhs) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:35: warning: Member operator+=(const mat &rhs) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:36: warning: Member operator-=(const mat &rhs) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:37: warning: Member operator*=(const T &scalar) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:38: warning: Member operator*=(const mat &rhs) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:40: warning: Member transform(const vec< 3, T > &vector) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:42: warning: Member data() (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:43: warning: Member data() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:45: warning: Member transpose() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:46: warning: Member determinant() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:47: warning: Member det() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:48: warning: Member inverse() const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:49: warning: Member invert() (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:51: warning: Member get(uint32 column, uint32 row) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:52: warning: Member get(uint32 column, uint32 row) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:53: warning: Member get_column(uint32 index) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:54: warning: Member get_row(uint32 index) const (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:55: warning: Member set_column(uint32 column, const vec< 3, T > &val) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:56: warning: Member set_row(uint32 row, const vec< 3, T > &val) (function) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:9: warning: Member m00 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:10: warning: Member m01 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:11: warning: Member m02 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:12: warning: Member m10 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:13: warning: Member m11 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:14: warning: Member m12 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:15: warning: Member m20 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:16: warning: Member m21 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:17: warning: Member m22 (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat3.h:8: warning: Member DIM (variable) of class mat< 3, 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:29: warning: Member mat(const T e[16]) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:30: warning: Member mat(const T &diagonal) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:31: warning: Member mat(const mat &other) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:33: warning: Member mat(const T &m00, const T &m01, const T &m02, const T &m03, const T &m10, const T &m11, const T &m12, const T &m13, const T &m20, const T &m21, const T &m22, const T &m23, const T &m30, const T &m31, const T &m32, const T &m33) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:38: warning: Member minor(uint32 column, uint32 row) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:39: warning: Member comatrix() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:40: warning: Member operator+(const mat &rhs) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:41: warning: Member operator-(const mat &rhs) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:42: warning: Member operator*(const T &scalar) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:43: warning: Member operator*(const mat &rhs) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:45: warning: Member operator=(const mat &rhs) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:46: warning: Member operator+=(const mat &rhs) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:47: warning: Member operator-=(const mat &rhs) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:48: warning: Member operator*=(const T &scalar) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:49: warning: Member operator*=(const mat &rhs) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:51: warning: Member transform(const vec< 4, T > &vector) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:53: warning: Member data() (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:54: warning: Member data() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:56: warning: Member transpose() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:57: warning: Member determinant() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:58: warning: Member det() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:59: warning: Member inverse() const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:60: warning: Member invert() (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:62: warning: Member get(uint32 column, uint32 row) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:63: warning: Member get(uint32 column, uint32 row) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:64: warning: Member get_column(uint32 index) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:65: warning: Member get_row(uint32 index) const (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:66: warning: Member set_column(uint32 column, const vec< 4, T > &val) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:67: warning: Member set_row(uint32 row, const vec< 4, T > &val) (function) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:9: warning: Member m00 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:10: warning: Member m01 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:11: warning: Member m02 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:12: warning: Member m03 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:14: warning: Member m10 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:15: warning: Member m11 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:16: warning: Member m12 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:17: warning: Member m13 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:19: warning: Member m20 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:20: warning: Member m21 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:21: warning: Member m22 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:22: warning: Member m23 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:24: warning: Member m30 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:25: warning: Member m31 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:26: warning: Member m32 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:27: warning: Member m33 (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_mat4.h:8: warning: Member DIM (variable) of class mat< 4, 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:12: warning: Member mat(const T e[N *N]) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:13: warning: Member mat(const T &diagonal) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:14: warning: Member mat(const mat &other) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:17: warning: Member operator+(const mat &rhs) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:18: warning: Member operator-(const mat &rhs) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:19: warning: Member operator*(const T &scalar) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:20: warning: Member operator*(const mat &rhs) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:22: warning: Member operator=(const mat &rhs) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:23: warning: Member operator+=(const mat &rhs) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:24: warning: Member operator-=(const mat &rhs) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:25: warning: Member operator*=(const T &scalar) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:26: warning: Member operator*=(const mat &rhs) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:28: warning: Member transform(const vec< N, T > &vector) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:30: warning: Member data() (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:31: warning: Member data() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:33: warning: Member minor(uint32 columnToRemove, uint32 rowToRemove) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:34: warning: Member comatrix() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:35: warning: Member transpose() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:36: warning: Member determinant() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:37: warning: Member det() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:38: warning: Member inverse() const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:39: warning: Member invert() (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:41: warning: Member get(uint32 column, uint32 row) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:42: warning: Member get(uint32 column, uint32 row) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:43: warning: Member get_column(uint32 index) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:44: warning: Member get_row(uint32 index) const (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:45: warning: Member set_column(uint32 column, const vec< N, T > &val) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:46: warning: Member set_row(uint32 row, const vec< N, T > &val) (function) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:10: warning: Member e[N *N] (variable) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_matn.h:8: warning: Member DIM (variable) of class mat< N, N, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:11: warning: Member vec(const T elements[D]) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:12: warning: Member vec(const T &val) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:14: warning: Member vec(const vec &other) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:15: warning: Member vec(const vec< D-1, T > &other, T last=T(1)) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:17: warning: Member vec(const vec< D2, T > &other) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:19: warning: Member operator+(const vec &rhs) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:20: warning: Member operator-(const vec &rhs) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:21: warning: Member operator-() const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:22: warning: Member operator*(const T &scalar) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:23: warning: Member operator/(const T &scalar) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:24: warning: Member operator==(const vec &rhs) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:25: warning: Member operator!=(const vec &rhs) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:26: warning: Member operator=(const vec &rhs) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:27: warning: Member operator-=(const vec &rhs) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:28: warning: Member operator+=(const vec &rhs) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:29: warning: Member operator*=(const T &scalar) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:30: warning: Member operator/=(const T &scalar) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:32: warning: Member operator[](uint32 index) (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:33: warning: Member operator[](uint32 index) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:35: warning: Member dot(const vec &rhs) const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:37: warning: Member data() (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:38: warning: Member data() const (function) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:9: warning: Member e[D] (variable) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec.h:8: warning: Member DIM (variable) of class vec is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:9: warning: Member vec(const T element[1]) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:10: warning: Member vec(const T &val) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:12: warning: Member vec(const vec &other) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:14: warning: Member vec(const vec< D, T > &other) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:16: warning: Member operator+(const vec &rhs) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:17: warning: Member operator-(const vec &rhs) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:18: warning: Member operator-() const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:19: warning: Member operator*(const T &scalar) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:20: warning: Member operator/(const T &scalar) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:21: warning: Member operator==(const vec &rhs) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:22: warning: Member operator!=(const vec &rhs) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:23: warning: Member operator=(const vec &rhs) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:24: warning: Member operator-=(const vec &rhs) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:25: warning: Member operator+=(const vec &rhs) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:26: warning: Member operator*=(const T &scalar) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:27: warning: Member operator/=(const T &scalar) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:29: warning: Member operator T() const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:30: warning: Member operator T&() (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:31: warning: Member operator[](uint32 index) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:32: warning: Member operator[](uint32 index) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:34: warning: Member dot(const vec &rhs) const (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.inl:18: warning: Member vec(const vec< 1, T > &other) (function) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:7: warning: Member x (variable) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec1.h:6: warning: Member DIM (variable) of class vec< 1, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:13: warning: Member vec(const T elements[2]) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:14: warning: Member vec(const T &val) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:16: warning: Member vec(const T &x, const T &y) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:17: warning: Member vec(const vec &other) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:19: warning: Member vec(const vec< D, T > &other) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:21: warning: Member operator+(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:22: warning: Member operator-(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:23: warning: Member operator-() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:24: warning: Member operator*(const T &scalar) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:25: warning: Member operator/(const T &scalar) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:26: warning: Member operator==(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:27: warning: Member operator!=(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:28: warning: Member operator=(const vec &rhs) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:29: warning: Member operator-=(const vec &rhs) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:30: warning: Member operator+=(const vec &rhs) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:31: warning: Member operator*=(const T &scalar) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:32: warning: Member operator/=(const T &scalar) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:34: warning: Member operator[](uint32 index) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:35: warning: Member operator[](uint32 index) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:37: warning: Member len_sq() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:38: warning: Member len() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:40: warning: Member normal() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:41: warning: Member normalize() (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:43: warning: Member dot(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:44: warning: Member perp() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:45: warning: Member hadamard(const vec &rhs) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:47: warning: Member lerp(const T &t, const vec &b) const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:49: warning: Member data() (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:50: warning: Member data() const (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.inl:20: warning: Member vec(const vec< 2, T > &other) (function) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:10: warning: Member x (variable) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:11: warning: Member y (variable) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec2.h:8: warning: Member DIM (variable) of class vec< 2, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:14: warning: Member vec(const T elements[3]) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:15: warning: Member vec(const T &val) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:17: warning: Member vec(const T &x, const T &y, const T &z) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:18: warning: Member vec(const vec &other) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:20: warning: Member vec(const vec< D, T > &other) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:22: warning: Member operator+(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:23: warning: Member operator-(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:24: warning: Member operator-() const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:25: warning: Member operator*(const T &scalar) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:26: warning: Member operator/(const T &scalar) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:27: warning: Member operator==(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:28: warning: Member operator!=(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:29: warning: Member operator=(const vec &rhs) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:30: warning: Member operator-=(const vec &rhs) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:31: warning: Member operator+=(const vec &rhs) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:32: warning: Member operator*=(const T &scalar) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:33: warning: Member operator/=(const T &scalar) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:35: warning: Member operator[](uint32 index) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:36: warning: Member operator[](uint32 index) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:38: warning: Member dot(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:39: warning: Member cross(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:41: warning: Member len_sq() const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:42: warning: Member len() const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:44: warning: Member normal() const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:45: warning: Member normalize() (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:46: warning: Member hadamard(const vec &rhs) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:47: warning: Member lerp(const T &t, const vec &b) const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:48: warning: Member data() (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:49: warning: Member data() const (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.inl:23: warning: Member vec(const vec< 3, T > &other) (function) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:10: warning: Member x (variable) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:11: warning: Member y (variable) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:12: warning: Member z (variable) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec3.h:8: warning: Member DIM (variable) of class vec< 3, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:15: warning: Member vec(const T elements[4]) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:16: warning: Member vec(const T &val) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:18: warning: Member vec(const T &x, const T &y, const T &z, const T &w) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:19: warning: Member vec(const vec &other) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:21: warning: Member vec(const vec< D, T > &other) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:23: warning: Member operator+(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:24: warning: Member operator-(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:25: warning: Member operator-() const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:26: warning: Member operator*(const T &scalar) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:27: warning: Member operator/(const T &scalar) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:28: warning: Member operator==(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:29: warning: Member operator!=(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:30: warning: Member operator=(const vec &rhs) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:31: warning: Member operator-=(const vec &rhs) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:32: warning: Member operator+=(const vec &rhs) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:33: warning: Member operator*=(const T &scalar) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:34: warning: Member operator/=(const T &scalar) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:36: warning: Member operator[](uint32 index) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:37: warning: Member operator[](uint32 index) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:39: warning: Member len_sq() const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:40: warning: Member len() const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:42: warning: Member normal() const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:43: warning: Member normalize() (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:45: warning: Member dot(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:46: warning: Member hadamard(const vec &rhs) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:47: warning: Member lerp(const T &t, const vec &b) const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:48: warning: Member data() (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:49: warning: Member data() const (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.inl:25: warning: Member vec(const vec< 4, T > &other) (function) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:10: warning: Member x (variable) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:11: warning: Member y (variable) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:12: warning: Member z (variable) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:13: warning: Member w (variable) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/math/lin/dggt_math_vec4.h:8: warning: Member DIM (variable) of class vec< 4, T > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:16: warning: Member allocator(allocator< alloc_t::STACK > *stackAlloc) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:22: warning: Member allocator(allocator< alloc_t::AUTO_STACK > &other) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:28: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:33: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:38: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:43: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:48: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:52: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:57: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:62: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:67: warning: Member save_stack() (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:71: warning: Member restore_stack(stack_state state) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:75: warning: Member is_stack_balanced() const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:80: warning: Member clear() (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:85: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:89: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:94: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:99: warning: Member owns(blk< T > block) const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:104: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:108: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:113: warning: Member operator=(allocator< alloc_t::AUTO_STACK > &rhs) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:123: warning: Member operator=(allocator< alloc_t::STACK > &rhs) (function) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:11: warning: Member savedState (variable) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:12: warning: Member a (variable) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::AUTO_STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:151: warning: Member allocator(allocator< alloc_t::STACK, SIZE > *stackAlloc) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:157: warning: Member allocator(allocator< alloc_t::AUTO_STACK, SIZE > &other) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:163: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:168: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:173: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:178: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:183: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:187: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:192: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:197: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:202: warning: Member save_stack() (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:206: warning: Member restore_stack(stack_state state) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:210: warning: Member is_stack_balanced() const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:215: warning: Member clear() (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:220: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:224: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:229: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:234: warning: Member owns(blk< T > block) const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:239: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:243: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:248: warning: Member operator=(allocator< alloc_t::AUTO_STACK, SIZE > &rhs) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:258: warning: Member operator=(allocator< alloc_t::STACK, SIZE > &rhs) (function) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:146: warning: Member savedState (variable) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:147: warning: Member a (variable) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:144: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_autostack_alloc.h:145: warning: Member S (variable) of class dggt::allocator< alloc_t::AUTO_STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:12: warning: Member palloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:13: warning: Member falloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:19: warning: Member allocator(palloc *primaryAlloc, falloc *fallbackAlloc) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:23: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:24: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:26: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:28: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:30: warning: Member free(void *ptr, msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:31: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:33: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:35: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:37: warning: Member clear() (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:39: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:40: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:42: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:44: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:46: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:47: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:15: warning: Member p (variable) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:16: warning: Member f (variable) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:11: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::FALLBACK, P, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:99: warning: Member palloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:100: warning: Member falloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:106: warning: Member allocator(palloc *primaryAlloc, falloc *fallbackAlloc) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:110: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:111: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:113: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:115: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:117: warning: Member free(void *ptr, msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:118: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:120: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:122: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:124: warning: Member clear() (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:126: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:127: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:129: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:131: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:133: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:134: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:102: warning: Member p (variable) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:103: warning: Member f (variable) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:96: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:97: warning: Member PS (variable) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:98: warning: Member FS (variable) of class dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:55: warning: Member palloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:56: warning: Member falloc (typedef) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:62: warning: Member allocator(palloc *primaryAlloc, falloc *fallbackAlloc) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:66: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:67: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:69: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:71: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:73: warning: Member free(void *ptr, msize size=4) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:74: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:76: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:78: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:80: warning: Member clear() (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:82: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:83: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:85: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:87: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:89: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:90: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:58: warning: Member p (variable) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:59: warning: Member f (variable) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:53: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_fallback_alloc.h:54: warning: Member S (variable) of class dggt::allocator< alloc_t::FALLBACK, P, SIZE, F > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:17: warning: Member allocator(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:18: warning: Member allocator(blk< void > buffer) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:20: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:21: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:23: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:25: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:27: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:28: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:30: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:32: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:34: warning: Member clear() (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:36: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:37: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:39: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:41: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:43: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:44: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:12: warning: Member buff (variable) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:13: warning: Member used (variable) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:14: warning: Member freeList (variable) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::FREE_LIST > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:57: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:58: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:60: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:62: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:64: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:65: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:67: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:69: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:71: warning: Member clear() (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:73: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:74: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:76: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:78: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:80: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:81: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:52: warning: Member buff[SIZE] (variable) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:53: warning: Member internalAlloc (variable) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:50: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.h:51: warning: Member S (variable) of class dggt::allocator< alloc_t::FREE_LIST, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:15: warning: Member allocator(blk< void > buffer) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:16: warning: Member allocator(void *buffPtr, msize buffSize) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:18: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:19: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:21: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:23: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:25: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:26: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:28: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:30: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:32: warning: Member clear() (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:34: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:35: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:37: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:38: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:40: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:42: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:11: warning: Member buff (variable) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:12: warning: Member used (variable) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::LINEAR > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:55: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:56: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:58: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:60: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:62: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:63: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:65: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:67: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:69: warning: Member clear() (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:71: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:72: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:74: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:75: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:77: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:79: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:50: warning: Member buff[SIZE] (variable) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:51: warning: Member a (variable) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:48: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_linear_alloc.h:49: warning: Member S (variable) of class dggt::allocator< alloc_t::LINEAR, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:20: warning: Member allocator(void *ptr, msize size, msize blockSize) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:21: warning: Member allocator(blk< void > buffer, msize blockSize) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:24: warning: Member alloc() (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:25: warning: Member alloc() (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:27: warning: Member free(void *ptr, msize size=0) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:28: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:30: warning: Member free(T *ptr, u32 count=0) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:32: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:34: warning: Member clear() (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:36: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:37: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:39: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:41: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:43: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:44: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:45: warning: Member available_blocks() const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:46: warning: Member used_blocks() const (function) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:12: warning: Member buff (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:13: warning: Member used (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:14: warning: Member blockSize (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:15: warning: Member blockCount (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:16: warning: Member blocksUsed (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:17: warning: Member pool (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::POOL > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:59: warning: Member allocator(msize blockSize) (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:62: warning: Member alloc() (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:63: warning: Member alloc() (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:65: warning: Member free(void *ptr) (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:66: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:68: warning: Member free(T *ptr) (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:70: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:72: warning: Member clear() (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:74: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:75: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:77: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:79: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:81: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:82: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:83: warning: Member available_blocks() const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:84: warning: Member used_blocks() const (function) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:55: warning: Member buff[SIZE] (variable) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:56: warning: Member internalAlloc (variable) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:53: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.h:54: warning: Member S (variable) of class dggt::allocator< alloc_t::POOL, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:17: warning: Member allocator(blk< void > buffer) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:18: warning: Member allocator(void *buffPtr, msize buffSize) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:20: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:21: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:23: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:25: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:26: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:27: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:29: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:31: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:33: warning: Member save_stack() (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:34: warning: Member restore_stack(stack_state state) (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:35: warning: Member is_stack_balanced() const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:37: warning: Member clear() (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:39: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:40: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:42: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:44: warning: Member owns(blk< T > block) const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:46: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:47: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:11: warning: Member buff (variable) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:12: warning: Member used (variable) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:13: warning: Member stateCount (variable) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:14: warning: Member prevState (variable) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::STACK > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:60: warning: Member alloc(msize size=4) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:61: warning: Member alloc(msize *size=0) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:63: warning: Member alloc(u32 count=1) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:65: warning: Member alloc(u32 *count=0) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:66: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:67: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:69: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:71: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:73: warning: Member save_stack() (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:74: warning: Member restore_stack(stack_state state) (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:75: warning: Member is_stack_balanced() const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:77: warning: Member clear() (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:79: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:80: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:82: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:84: warning: Member owns(blk< T > block) const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:86: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:87: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:56: warning: Member buff[SIZE] (variable) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:57: warning: Member internalAlloc (variable) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:54: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_stack_alloc.h:55: warning: Member S (variable) of class dggt::allocator< alloc_t::STACK, SIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:16: warning: Member allocator(msize blockSize) (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:18: warning: Member alloc() (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:20: warning: Member alloc() (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:22: warning: Member free(void *ptr, msize size=0) (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:23: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:25: warning: Member free(T *ptr, u32 count=0) (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:27: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:29: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:30: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:32: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:34: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:36: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:37: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:38: warning: Member available_blocks() const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:39: warning: Member used_blocks() const (function) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:11: warning: Member blockSize (variable) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:12: warning: Member head (variable) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:13: warning: Member blockCount (variable) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:10: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::STORE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:52: warning: Member alloc() (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:54: warning: Member alloc() (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:56: warning: Member free(void *ptr, msize size=BLOCKSIZE) (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:57: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:59: warning: Member free(T *ptr, u32 count=1) (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:61: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:63: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:64: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:66: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:68: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:70: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:71: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:72: warning: Member available_blocks() const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:73: warning: Member used_blocks() const (function) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:48: warning: Member a (variable) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:46: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.h:47: warning: Member S (variable) of class dggt::allocator< alloc_t::STORE, BLOCKSIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:21: warning: Member alloc(msize *size) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:22: warning: Member alloc(msize size) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:24: warning: Member alloc(u32 *count) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:26: warning: Member alloc(u32 count) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:28: warning: Member free(void *ptr, msize size) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:29: warning: Member free(blk< void > block) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:31: warning: Member free(T *ptr, u32 count) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:33: warning: Member free(blk< T > block) (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:35: warning: Member owns(const void *ptr) const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:36: warning: Member owns(const blk< void > block) const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:38: warning: Member owns(const T *ptr) const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:40: warning: Member owns(const blk< T > block) const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:42: warning: Member available_mem() const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:43: warning: Member used_mem() const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:44: warning: Member available_blocks() const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:45: warning: Member used_blocks() const (function) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:13: warning: Member storeCount (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:14: warning: Member availableMem (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:15: warning: Member availableBlocks (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:16: warning: Member flagTable[TABLESIZE] (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:17: warning: Member storeTable[TABLESIZE] (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:11: warning: Member TYPE (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_table_alloc.h:12: warning: Member S (variable) of class dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:14: warning: Member blk(T *mem, msize count) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:15: warning: Member blk(const blk &other) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:17: warning: Member operator+(uint32_t offset) const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:18: warning: Member operator-(uint32_t offset) const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:20: warning: Member operator=(const blk &rhs) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:22: warning: Member operator==(const blk &rhs) const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:23: warning: Member operator!=(const blk &rhs) const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:25: warning: Member data() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:26: warning: Member data() const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:28: warning: Member operator->() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:29: warning: Member operator->() const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:30: warning: Member operator*() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:31: warning: Member operator*() const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:33: warning: Member operator[](uint32_t index) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:34: warning: Member operator[](uint32_t index) const (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:36: warning: Member operator T*() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:37: warning: Member operator==(const blk< T > &rhs) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:41: warning: Member operator!=(const blk< T > &rhs) (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:46: warning: Member operator blk< S >() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:47: warning: Member operator blk< void >() (function) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:10: warning: Member mem (variable) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:11: warning: Member count (variable) of class dggt::blk is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:64: warning: Member blk(void *mem, msize size) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:65: warning: Member blk(const blk &other) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:67: warning: Member blk(const blk< T > &other) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:70: warning: Member operator+(uint32_t offset) const (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:71: warning: Member operator-(uint32_t offset) const (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:72: warning: Member operator=(const blk &other) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:74: warning: Member operator==(const blk &rhs) const (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:75: warning: Member operator!=(const blk &rhs) const (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:77: warning: Member operator void *() (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:80: warning: Member operator blk< S >() (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:85: warning: Member operator==(const blk< void > &rhs) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:89: warning: Member operator!=(const blk< void > &rhs) (function) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:60: warning: Member mem (variable) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_blk.h:61: warning: Member size (variable) of class dggt::blk< void > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:8: warning: Member size (variable) of class dggt::free_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:9: warning: Member next (variable) of class dggt::free_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:82: warning: Member operator[](const K &key) (function) of class dggt::hash_table is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:83: warning: Member operator[](const K &key) const (function) of class dggt::hash_table is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:79: warning: Member table (variable) of class dggt::hash_table is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:80: warning: Member count (variable) of class dggt::hash_table is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:28: warning: Member is_end() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:29: warning: Member next() (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:30: warning: Member get() (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:31: warning: Member get() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:32: warning: Member get_ptr() (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:33: warning: Member get_ptr() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:34: warning: Member get_mem() (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:35: warning: Member get_mem() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:36: warning: Member is_coll_valid() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:37: warning: Member is_mem_valid() const (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:38: warning: Member vindicate_mem() (function) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:24: warning: Member current (variable) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:25: warning: Member list (variable) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:26: warning: Member memIsValid (variable) of class dggt::iter< T, linked_list< T >, slnode< T > * > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:22: warning: Member is_end() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:23: warning: Member next() (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:24: warning: Member get() (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:25: warning: Member get() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:26: warning: Member get_ptr() (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:27: warning: Member get_ptr() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:28: warning: Member get_mem() (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:29: warning: Member get_mem() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:30: warning: Member is_coll_valid() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:31: warning: Member is_mem_valid() const (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:32: warning: Member vindicate_mem() (function) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:16: warning: Member current (variable) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:17: warning: Member head (variable) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:18: warning: Member tail (variable) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:19: warning: Member table (variable) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:20: warning: Member q (variable) of class dggt::iter< T, queue< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:20: warning: Member is_end() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:21: warning: Member next() (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:22: warning: Member get() (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:23: warning: Member get() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:24: warning: Member get_ptr() (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:25: warning: Member get_ptr() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:26: warning: Member get_mem() (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:27: warning: Member get_mem() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:28: warning: Member is_coll_valid() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:29: warning: Member is_mem_valid() const (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:30: warning: Member vindicate_mem() (function) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:16: warning: Member current (variable) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:17: warning: Member table (variable) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:18: warning: Member stk (variable) of class dggt::iter< T, stack< T >, blk< T > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:61: warning: Member is_end() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:62: warning: Member next() (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:63: warning: Member get() (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:64: warning: Member get() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:65: warning: Member get_ptr() (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:66: warning: Member get_ptr() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:67: warning: Member get_mem() (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:68: warning: Member get_mem() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:69: warning: Member is_coll_valid() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:70: warning: Member is_mem_valid() const (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:71: warning: Member vindicate_mem() (function) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:55: warning: Member currentIndex (variable) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:56: warning: Member currentBucket (variable) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:57: warning: Member currentNode (variable) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:58: warning: Member table (variable) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:59: warning: Member hashTable (variable) of class dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > > is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:44: warning: Member head (variable) of class dggt::linked_list is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:45: warning: Member count (variable) of class dggt::linked_list is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_pool_alloc.cpp:7: warning: Member next (variable) of class dggt::pool_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:43: warning: Member operator[](u32 index) (function) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:44: warning: Member operator[](u32 index) const (function) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:38: warning: Member table (variable) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:39: warning: Member count (variable) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:40: warning: Member head (variable) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_queue.h:41: warning: Member tail (variable) of class dggt::queue is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:11: warning: Member val (variable) of class dggt::slnode is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_linked_list.h:12: warning: Member next (variable) of class dggt::slnode is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:39: warning: Member operator[](u32 index) (function) of class dggt::stack is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:40: warning: Member operator[](u32 index) const (function) of class dggt::stack is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:36: warning: Member table (variable) of class dggt::stack is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_stack.h:37: warning: Member count (variable) of class dggt::stack is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_store_alloc.cpp:9: warning: Member next (variable) of class dggt::store_block is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:21: warning: Member table_pair(K key, V val) (function) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:24: warning: Member get_key() (function) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:25: warning: Member get_val() (function) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:26: warning: Member get_val() const (function) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:28: warning: Member operator==(const table_pair &other) (function) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:17: warning: Member key_ (variable) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/coll/dggt_coll_hash_table.h:18: warning: Member val_ (variable) of class dggt::table_pair is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:16: warning: Member prev (variable) of class dggt::dggt_internal_::best_fit_result is not documented.
+/usr/share/sto/code/bwbriggs/dggt/src/mem/dggt_mem_free_list_alloc.cpp:17: warning: Member best (variable) of class dggt::dggt_internal_::best_fit_result is not documented.
