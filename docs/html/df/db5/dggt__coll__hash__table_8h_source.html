@@ -75,7 +75,7 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_linked_list.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;mem/dggt_mem_blk.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>dggt</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K&gt;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    u32 prehash(<span class="keyword">const</span> K&amp; key);</div>
@@ -84,97 +84,127 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    u32 prehash(<span class="keyword">const</span> u32&amp; key);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d4/d56/structdggt_1_1tnode.html">   15</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d5/d13/structdggt_1_1table__pair.html">   15</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        K key;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        V val;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d0e/structdggt_1_1hash__table.html">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        K key_;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        V val_;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>() { }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>(K key,V val)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            : key_(key),val_(val) { }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../de/da8/structdggt_1_1iter.html">table_iter</a>=<a class="code" href="../../de/da8/structdggt_1_1iter.html">iter&lt;tnode&lt;K,V&gt;</a>,<a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table&lt;K,V&gt;</a>,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;linked_list&lt;tnode&lt;K,V&gt;</a>&gt;&gt;&gt;;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket</a>=<a class="code" href="../../df/d86/structdggt_1_1linked__list.html">linked_list&lt;tnode&lt;K,V&gt;</a>&gt;;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d1/d6b/structdggt_1_1iter_3_01tnode_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01blk_3_01t0a88b61a63c73d8bb95292cd5a0511fb.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../de/da8/structdggt_1_1iter.html">iter</a>&lt;<a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode</a>&lt;K,V&gt;,<a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a>&lt;K,V&gt;,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt;<a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket</a>&lt;K,V&gt;&gt;&gt; <span class="comment">// wtf</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        u32 currentIndex;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket&lt;K,V&gt;</a>* currentBucket;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="../../d7/d69/structdggt_1_1slnode.html">slnode&lt;tnode&lt;K,V&gt;</a>&gt;* currentNode;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;table_bucket&lt;K,V&gt;</a>&gt; table;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table&lt;K,V&gt;</a>* hashTable;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        b32 is_end() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        b32 next();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode&lt;K,V&gt;</a>&amp; get();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode&lt;K,V&gt;</a>&amp; get() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode&lt;K,V&gt;</a>* get_ptr();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/d56/structdggt_1_1tnode.html">tnode&lt;K,V&gt;</a>* get_ptr() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;linked_list&lt;tnode&lt;K,V&gt;</a>&gt;&gt; get_mem();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;linked_list&lt;tnode&lt;K,V&gt;</a>&gt;&gt; get_mem() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        b32 is_coll_valid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        b32 is_mem_valid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        b32 vindicate_mem();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> K&amp; get_key() { <span class="keywordflow">return</span> key_; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        V&amp; get_val() { <span class="keywordflow">return</span> val_;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> V&amp; get_val()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> val_;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        b32 operator==(<span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>&amp; other)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> key_==other.key_;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d0/d0e/structdggt_1_1hash__table.html">   35</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket</a>=<a class="code" href="../../df/d86/structdggt_1_1linked__list.html">linked_list&lt;table_pair&lt;K,V&gt;</a>&gt;;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html">bucket_iter</a>=<a class="code" href="../../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html">list_iter&lt;table_pair&lt;K,V&gt;</a>&gt;;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk</a>=<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;table_bucket&lt;K,V&gt;</a>&gt;;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d7/d69/structdggt_1_1slnode.html">table_node</a>=<a class="code" href="../../d7/d69/structdggt_1_1slnode.html">slnode&lt;table_pair&lt;K,V&gt;</a>&gt;;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">table_iter</a>=<a class="code" href="../../de/da8/structdggt_1_1iter.html">iter&lt;table_pair&lt;K,V&gt;</a>,<a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table&lt;K,V&gt;</a>,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a>&gt;;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">   53</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../de/da8/structdggt_1_1iter.html">iter</a>&lt;<a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>&lt;K,V&gt;,<a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a>&lt;K,V&gt;,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk</a>&lt;K,V&gt;&gt; <span class="comment">// wtf</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;table_bucket&lt;K,V&gt;</a>&gt; table;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        u32 count;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../de/da8/structdggt_1_1iter.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../de/da8/structdggt_1_1iter.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    hash_table&lt;K,V&gt; create_hash_table(A* alloc);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    table_iter&lt;K,V&gt; insert(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    table_iter&lt;K,V&gt; insert(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key,<span class="keyword">const</span> V&amp; val,A* alloc);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    table_iter&lt;K,V&gt; search(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        u32 currentIndex;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket&lt;K,V&gt;</a>* currentBucket;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d7/d69/structdggt_1_1slnode.html">table_node&lt;K,V&gt;</a>* currentNode;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> table;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table&lt;K,V&gt;</a>* hashTable;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        b32 is_end() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        b32 next();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>&amp; get();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>&amp; get() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>* get_ptr();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>* get_ptr() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> get_mem();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> get_mem() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        b32 is_coll_valid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        b32 is_mem_valid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        b32 vindicate_mem();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> table_iter&lt;K,V&gt; search(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    table_iter&lt;K,V&gt; remove(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key,A* alloc);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    F get_load_factor(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    u32 get_count(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> table;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        u32 count;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    u32 get_capacity(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    hash_table&lt;K,V&gt; create_hash_table(A* alloc);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    table_iter&lt;K,V&gt; resize(hash_table&lt;K,V&gt;* table,u32 newSize,A* alloc);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    table_iter&lt;K,V&gt; insert(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    table_iter&lt;K,V&gt; get_iter(hash_table&lt;K,V&gt;* table);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_hash_table.inl&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    table_iter&lt;K,V&gt; insert(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key,<span class="keyword">const</span> V&amp; val,A* alloc);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    table_iter&lt;K,V&gt; clear(hash_table&lt;K,V&gt;* table,A* alloc);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#define _DGGT_COLL_HASH_TABLE_H_</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    table_iter&lt;K,V&gt; search(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> table_iter&lt;K,V&gt; search(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    table_iter&lt;K,V&gt; remove(hash_table&lt;K,V&gt;* table,<span class="keyword">const</span> K&amp; key,A* alloc);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F,<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    F get_load_factor(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    u32 get_count(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    u32 get_capacity(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    table_iter&lt;K,V&gt; resize(hash_table&lt;K,V&gt;* table,u32 newSize,A* alloc);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    table_iter&lt;K,V&gt; get_iter(hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_hash_table.inl&quot;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#define _DGGT_COLL_HASH_TABLE_H_</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="astructdggt_1_1table__pair_html"><div class="ttname"><a href="../../d5/d13/structdggt_1_1table__pair.html">dggt::table_pair</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:15</div></div>
 <div class="ttc" id="astructdggt_1_1slnode_html"><div class="ttname"><a href="../../d7/d69/structdggt_1_1slnode.html">dggt::slnode</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:9</div></div>
-<div class="ttc" id="astructdggt_1_1hash__table_html"><div class="ttname"><a href="../../d0/d0e/structdggt_1_1hash__table.html">dggt::hash_table</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:22</div></div>
+<div class="ttc" id="astructdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4_html"><div class="ttname"><a href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">dggt::iter&lt; table_pair&lt; K, V &gt;, hash_table&lt; K, V &gt;, table_blk&lt; K, V &gt; &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:53</div></div>
+<div class="ttc" id="astructdggt_1_1hash__table_html"><div class="ttname"><a href="../../d0/d0e/structdggt_1_1hash__table.html">dggt::hash_table</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:35</div></div>
 <div class="ttc" id="astructdggt_1_1blk_html"><div class="ttname"><a href="../../d0/d39/structdggt_1_1blk.html">dggt::blk</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:8</div></div>
 <div class="ttc" id="astructdggt_1_1linked__list_html"><div class="ttname"><a href="../../df/d86/structdggt_1_1linked__list.html">dggt::linked_list</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:16</div></div>
-<div class="ttc" id="astructdggt_1_1tnode_html"><div class="ttname"><a href="../../d4/d56/structdggt_1_1tnode.html">dggt::tnode</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:15</div></div>
+<div class="ttc" id="astructdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4_html"><div class="ttname"><a href="../../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html">dggt::iter&lt; T, linked_list&lt; T &gt;, slnode&lt; T &gt; * &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:22</div></div>
 <div class="ttc" id="astructdggt_1_1iter_html"><div class="ttname"><a href="../../de/da8/structdggt_1_1iter.html">dggt::iter</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_iter.h:13</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

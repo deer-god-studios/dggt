@@ -75,7 +75,7 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_iter.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// TODO: iterator constructors.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>dggt</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d7/d69/structdggt_1_1slnode.html">    9</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d7/d69/structdggt_1_1slnode.html">slnode</a></div>
@@ -148,23 +148,27 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            slnode&lt;T&gt;* toRemove,A* alloc);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    list_iter&lt;T&gt; insert(linked_list&lt;T&gt;* list,slnode&lt;T&gt;* prev,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">const</span> T&amp; val,A* alloc);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    u32 get_count(<span class="keyword">const</span> linked_list&lt;T&gt;* list);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    list_iter&lt;T&gt; clear(linked_list&lt;T&gt;* list,A* alloc);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    list_iter&lt;T&gt; insert(linked_list&lt;T&gt;* list,slnode&lt;T&gt;* prev,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">const</span> T&amp; val,A* alloc);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    list_iter&lt;T&gt; get_iter(linked_list&lt;T&gt;* list);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    u32 get_count(<span class="keyword">const</span> linked_list&lt;T&gt;* list);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    b32 contains(linked_list&lt;T&gt;* list,<span class="keyword">const</span> T&amp; item);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    list_iter&lt;T&gt; get_iter(linked_list&lt;T&gt;* list);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_linked_list.inl&quot;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define _DGGT_COLL_LINKED_LIST_H_</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    b32 contains(linked_list&lt;T&gt;* list,<span class="keyword">const</span> T&amp; item);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#include &quot;dggt_coll_linked_list.inl&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define _DGGT_COLL_LINKED_LIST_H_</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
 <div class="ttc" id="astructdggt_1_1slnode_html"><div class="ttname"><a href="../../d7/d69/structdggt_1_1slnode.html">dggt::slnode</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:9</div></div>
 <div class="ttc" id="astructdggt_1_1linked__list_html"><div class="ttname"><a href="../../df/d86/structdggt_1_1linked__list.html">dggt::linked_list</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:16</div></div>
 <div class="ttc" id="astructdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4_html"><div class="ttname"><a href="../../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html">dggt::iter&lt; T, linked_list&lt; T &gt;, slnode&lt; T &gt; * &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:22</div></div>

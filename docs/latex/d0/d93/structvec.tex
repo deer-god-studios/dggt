@@ -1,32 +1,33 @@
 \hypertarget{structvec}{}\doxysection{vec$<$ D, T $>$ Struct Template Reference}
 \label{structvec}\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+
+
+A vector struct of dimension, D and type T.  
+
+
+
+
+{\ttfamily \#include $<$dggt\+\_\+math\+\_\+vec.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structvec_ae7dc14cf4218498eaf7379d355c4ae29}\label{structvec_ae7dc14cf4218498eaf7379d355c4ae29}} 
-{\bfseries vec} (const T elements\mbox{[}D\mbox{]})
-\item 
-\mbox{\Hypertarget{structvec_a113681892d4e52da2c6878405a70f3fe}\label{structvec_a113681892d4e52da2c6878405a70f3fe}} 
-{\bfseries vec} (const T \&val)
-\item 
-\mbox{\Hypertarget{structvec_a689a1ca11d1995d1664506e0b854b06e}\label{structvec_a689a1ca11d1995d1664506e0b854b06e}} 
-{\bfseries vec} (const \mbox{\hyperlink{structvec}{vec}} \&other)
-\item 
-\mbox{\Hypertarget{structvec_aab97f22af90ed26778ab5fc41bb7a03f}\label{structvec_aab97f22af90ed26778ab5fc41bb7a03f}} 
-{\bfseries vec} (const \mbox{\hyperlink{structvec}{vec}}$<$ D-\/1, T $>$ \&other, T last=T(1))
-\item 
-\mbox{\Hypertarget{structvec_ae8b868fdc89dba0cf5fadff0bd091d79}\label{structvec_ae8b868fdc89dba0cf5fadff0bd091d79}} 
-{\footnotesize template$<$uint32 D2$>$ }\\{\bfseries vec} (const \mbox{\hyperlink{structvec}{vec}}$<$ D2, T $>$ \&other)
-\item 
-\mbox{\Hypertarget{structvec_a16b642e385c2b6a24136aa12403393e0}\label{structvec_a16b642e385c2b6a24136aa12403393e0}} 
-\mbox{\hyperlink{structvec}{vec}} {\bfseries operator+} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structvec_abca9dfe15245bfa54c03dc406b8e9fbd}\label{structvec_abca9dfe15245bfa54c03dc406b8e9fbd}} 
-\mbox{\hyperlink{structvec}{vec}} {\bfseries operator-\/} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structvec_a3d779dac27edba512bffceb96d6c679f}\label{structvec_a3d779dac27edba512bffceb96d6c679f}} 
-\mbox{\hyperlink{structvec}{vec}} {\bfseries operator-\/} () const
-\item 
+\mbox{\hyperlink{structvec_a11adae36b2220e419e4fbe22260ab437}{vec}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec_a113681892d4e52da2c6878405a70f3fe}{vec}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em An explicit constructor which initializes every element to a given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec_a689a1ca11d1995d1664506e0b854b06e}{vec}} (const \mbox{\hyperlink{structvec}{vec}} \&other)
+\begin{DoxyCompactList}\small\item\em Basic copy constructor. Will copy every element in a given vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec_aab97f22af90ed26778ab5fc41bb7a03f}{vec}} (const \mbox{\hyperlink{structvec}{vec}}$<$ D-\/1, T $>$ \&other, T last=T(1))
+\begin{DoxyCompactList}\small\item\em A constructor for instantiating vectors from a vector of a dimension one less than D. \end{DoxyCompactList}\item 
+{\footnotesize template$<$uint32 D2$>$ }\\\mbox{\hyperlink{structvec_ae8b868fdc89dba0cf5fadff0bd091d79}{vec}} (const \mbox{\hyperlink{structvec}{vec}}$<$ D2, T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em A copy constructor for instantiating vectors from a vector of any other dimension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_a16b642e385c2b6a24136aa12403393e0}{operator+}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Addition operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_abca9dfe15245bfa54c03dc406b8e9fbd}{operator-\/}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Subtraction operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_a3d779dac27edba512bffceb96d6c679f}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Unary negation operator. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structvec_af564b10e51901ba20347d763f9f4793e}\label{structvec_af564b10e51901ba20347d763f9f4793e}} 
 \mbox{\hyperlink{structvec}{vec}} {\bfseries operator$\ast$} (const T \&scalar) const
 \item 
@@ -73,14 +74,173 @@ const T $\ast$ {\bfseries data} () const
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structvec_a12f34df011396935a20c955c123b7971}\label{structvec_a12f34df011396935a20c955c123b7971}} 
-T {\bfseries e} \mbox{[}D\mbox{]}
-\end{DoxyCompactItemize}
+T \mbox{\hyperlink{structvec_a12f34df011396935a20c955c123b7971}{e}} \mbox{[}D\mbox{]}
+\begin{DoxyCompactList}\small\item\em The underlying array containing the vector\textquotesingle{}s elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structvec_aaff26a1575f57378296cab2514b5e0ff}\label{structvec_aaff26a1575f57378296cab2514b5e0ff}} 
-static const uint32 {\bfseries D\+IM} =D
-\end{DoxyCompactItemize}
+static const uint32 \mbox{\hyperlink{structvec_aaff26a1575f57378296cab2514b5e0ff}{D\+IM}} =D
+\begin{DoxyCompactList}\small\item\em A static const integer representing the vector\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$uint32 D, typename T$>$\newline
+struct vec$<$ D, T $>$}
+
+A vector struct of dimension, D and type T. 
+
+A vector is a mathematical construct consisting of an ordered list of elements along with operations on it. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D} & An integer representing the dimension of the vector. (ie. The number of elements in the ordered list) \\
+\hline
+{\em T} & A type, usually a numeric type. Each element in the vector will be of this type. T must be a type that overloads basic arithmetic operations. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structvec_a11adae36b2220e419e4fbe22260ab437}\label{structvec_a11adae36b2220e419e4fbe22260ab437}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structvec}{vec}}}
+
+
+
+Default constructor. 
+
+Initializes all elements to T(0). \mbox{\Hypertarget{structvec_a113681892d4e52da2c6878405a70f3fe}\label{structvec_a113681892d4e52da2c6878405a70f3fe}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structvec}{vec}} (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+An explicit constructor which initializes every element to a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value each element will be initialized to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is explicit so one can\textquotesingle{}t simply write something like, vec$<$2,float32$>$ v=5.\+0f, a seemingly nonsensical and confusing mathematical statement. 
+\end{DoxyNote}
+\mbox{\Hypertarget{structvec_a689a1ca11d1995d1664506e0b854b06e}\label{structvec_a689a1ca11d1995d1664506e0b854b06e}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structvec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Basic copy constructor. Will copy every element in a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A vector of the same type and dimension to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structvec_aab97f22af90ed26778ab5fc41bb7a03f}\label{structvec_aab97f22af90ed26778ab5fc41bb7a03f}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structvec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D-\/1, T $>$ \&}]{other,  }\item[{T}]{last = {\ttfamily T(1)} }\end{DoxyParamCaption})}
+
+
+
+A constructor for instantiating vectors from a vector of a dimension one less than D. 
+
+One occasionally needs to instatiate a vector from a vector of a lower dimension. The last element will default to one to be in accordance with homogeneous coordinates used in rendering. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A vector with a dimension one less than the instantiated vector. \\
+\hline
+{\em last} & The last element in the new vector. Defaults to T(1). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structvec_ae8b868fdc89dba0cf5fadff0bd091d79}\label{structvec_ae8b868fdc89dba0cf5fadff0bd091d79}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+template$<$uint32 D2$>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structvec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D2, T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+A copy constructor for instantiating vectors from a vector of any other dimension. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D2} & The dimension of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A vector of any other dimension. If D2 is less than D then it will copy everything in other, followed by setting further elements to T(0) except for the last element which will be set to T(1). If D2 is greater than D then everything that can be copied will effectively truncating the vector. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structvec_a16b642e385c2b6a24136aa12403393e0}\label{structvec_a16b642e385c2b6a24136aa12403393e0}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Addition operator. 
+
+Adds two vectors by adding each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}+\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector where every element is the sum of the corresponding elements in the vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a3d779dac27edba512bffceb96d6c679f}\label{structvec_a3d779dac27edba512bffceb96d6c679f}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator-\/}
+
+
+
+Unary negation operator. 
+
+Negates a vector by negating every element resulting in a vector pointing in the opposite direction. \begin{DoxyReturn}{Returns}
+The negative of the vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_abca9dfe15245bfa54c03dc406b8e9fbd}\label{structvec_abca9dfe15245bfa54c03dc406b8e9fbd}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Subtraction operator. 
+
+Subtracts two vectors by subtracting each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}-\/\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector where every element is the difference of the corresponding elements in the vector difference. 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}

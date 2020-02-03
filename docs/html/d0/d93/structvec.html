@@ -71,33 +71,38 @@ $(function() {
 <div class="title">vec&lt; D, T &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A vector struct of dimension, D and type T.  
+ <a href="../../d0/d93/structvec.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/de1/dggt__math__vec_8h_source.html">dggt_math_vec.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7dc14cf4218498eaf7379d355c4ae29"><td class="memItemLeft" align="right" valign="top"><a id="ae7dc14cf4218498eaf7379d355c4ae29"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>vec</b> (const T elements[D])</td></tr>
-<tr class="separator:ae7dc14cf4218498eaf7379d355c4ae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a113681892d4e52da2c6878405a70f3fe"><td class="memItemLeft" align="right" valign="top"><a id="a113681892d4e52da2c6878405a70f3fe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>vec</b> (const T &amp;val)</td></tr>
+<tr class="memitem:a11adae36b2220e419e4fbe22260ab437"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a> ()</td></tr>
+<tr class="memdesc:a11adae36b2220e419e4fbe22260ab437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">More...</a><br /></td></tr>
+<tr class="separator:a11adae36b2220e419e4fbe22260ab437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113681892d4e52da2c6878405a70f3fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a113681892d4e52da2c6878405a70f3fe">vec</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a113681892d4e52da2c6878405a70f3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">An explicit constructor which initializes every element to a given value.  <a href="../../d0/d93/structvec.html#a113681892d4e52da2c6878405a70f3fe">More...</a><br /></td></tr>
 <tr class="separator:a113681892d4e52da2c6878405a70f3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a689a1ca11d1995d1664506e0b854b06e"><td class="memItemLeft" align="right" valign="top"><a id="a689a1ca11d1995d1664506e0b854b06e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>vec</b> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;other)</td></tr>
+<tr class="memitem:a689a1ca11d1995d1664506e0b854b06e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a689a1ca11d1995d1664506e0b854b06e">vec</a> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;other)</td></tr>
+<tr class="memdesc:a689a1ca11d1995d1664506e0b854b06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic copy constructor. Will copy every element in a given vector.  <a href="../../d0/d93/structvec.html#a689a1ca11d1995d1664506e0b854b06e">More...</a><br /></td></tr>
 <tr class="separator:a689a1ca11d1995d1664506e0b854b06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab97f22af90ed26778ab5fc41bb7a03f"><td class="memItemLeft" align="right" valign="top"><a id="aab97f22af90ed26778ab5fc41bb7a03f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>vec</b> (const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D-1, T &gt; &amp;other, T last=T(1))</td></tr>
+<tr class="memitem:aab97f22af90ed26778ab5fc41bb7a03f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#aab97f22af90ed26778ab5fc41bb7a03f">vec</a> (const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D-1, T &gt; &amp;other, T last=T(1))</td></tr>
+<tr class="memdesc:aab97f22af90ed26778ab5fc41bb7a03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constructor for instantiating vectors from a vector of a dimension one less than D.  <a href="../../d0/d93/structvec.html#aab97f22af90ed26778ab5fc41bb7a03f">More...</a><br /></td></tr>
 <tr class="separator:aab97f22af90ed26778ab5fc41bb7a03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="memTemplParams" colspan="2"><a id="ae8b868fdc89dba0cf5fadff0bd091d79"></a>
-template&lt;uint32 D2&gt; </td></tr>
-<tr class="memitem:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vec</b> (const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D2, T &gt; &amp;other)</td></tr>
+<tr class="memitem:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="memTemplParams" colspan="2">template&lt;uint32 D2&gt; </td></tr>
+<tr class="memitem:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#ae8b868fdc89dba0cf5fadff0bd091d79">vec</a> (const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D2, T &gt; &amp;other)</td></tr>
+<tr class="memdesc:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">A copy constructor for instantiating vectors from a vector of any other dimension.  <a href="../../d0/d93/structvec.html#ae8b868fdc89dba0cf5fadff0bd091d79">More...</a><br /></td></tr>
 <tr class="separator:ae8b868fdc89dba0cf5fadff0bd091d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16b642e385c2b6a24136aa12403393e0"><td class="memItemLeft" align="right" valign="top"><a id="a16b642e385c2b6a24136aa12403393e0"></a>
-<a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a16b642e385c2b6a24136aa12403393e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0">operator+</a> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a16b642e385c2b6a24136aa12403393e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition operator.  <a href="../../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0">More...</a><br /></td></tr>
 <tr class="separator:a16b642e385c2b6a24136aa12403393e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca9dfe15245bfa54c03dc406b8e9fbd"><td class="memItemLeft" align="right" valign="top"><a id="abca9dfe15245bfa54c03dc406b8e9fbd"></a>
-<a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;rhs) const</td></tr>
+<tr class="memitem:abca9dfe15245bfa54c03dc406b8e9fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#abca9dfe15245bfa54c03dc406b8e9fbd">operator-</a> (const <a class="el" href="../../d0/d93/structvec.html">vec</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:abca9dfe15245bfa54c03dc406b8e9fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtraction operator.  <a href="../../d0/d93/structvec.html#abca9dfe15245bfa54c03dc406b8e9fbd">More...</a><br /></td></tr>
 <tr class="separator:abca9dfe15245bfa54c03dc406b8e9fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d779dac27edba512bffceb96d6c679f"><td class="memItemLeft" align="right" valign="top"><a id="a3d779dac27edba512bffceb96d6c679f"></a>
-<a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> () const</td></tr>
+<tr class="memitem:a3d779dac27edba512bffceb96d6c679f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f">operator-</a> () const</td></tr>
+<tr class="memdesc:a3d779dac27edba512bffceb96d6c679f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary negation operator.  <a href="../../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f">More...</a><br /></td></tr>
 <tr class="separator:a3d779dac27edba512bffceb96d6c679f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af564b10e51901ba20347d763f9f4793e"><td class="memItemLeft" align="right" valign="top"><a id="af564b10e51901ba20347d763f9f4793e"></a>
 <a class="el" href="../../d0/d93/structvec.html">vec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar) const</td></tr>
@@ -145,15 +150,267 @@ const T *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> () cons
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a12f34df011396935a20c955c123b7971"><td class="memItemLeft" align="right" valign="top"><a id="a12f34df011396935a20c955c123b7971"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>e</b> [D]</td></tr>
+T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#a12f34df011396935a20c955c123b7971">e</a> [D]</td></tr>
+<tr class="memdesc:a12f34df011396935a20c955c123b7971"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying array containing the vector's elements. <br /></td></tr>
 <tr class="separator:a12f34df011396935a20c955c123b7971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aaff26a1575f57378296cab2514b5e0ff"><td class="memItemLeft" align="right" valign="top"><a id="aaff26a1575f57378296cab2514b5e0ff"></a>
-static const uint32&#160;</td><td class="memItemRight" valign="bottom"><b>DIM</b> =D</td></tr>
+static const uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d93/structvec.html#aaff26a1575f57378296cab2514b5e0ff">DIM</a> =D</td></tr>
+<tr class="memdesc:aaff26a1575f57378296cab2514b5e0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A static const integer representing the vector's dimension. <br /></td></tr>
 <tr class="separator:aaff26a1575f57378296cab2514b5e0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;uint32 D, typename T&gt;<br />
+struct vec&lt; D, T &gt;</h3>
+
+<p>A vector struct of dimension, D and type T. </p>
+<p>A vector is a mathematical construct consisting of an ordered list of elements along with operations on it. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">D</td><td>An integer representing the dimension of the vector. (ie. The number of elements in the ordered list) </td></tr>
+    <tr><td class="paramname">T</td><td>A type, usually a numeric type. Each element in the vector will be of this type. T must be a type that overloads basic arithmetic operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a11adae36b2220e419e4fbe22260ab437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11adae36b2220e419e4fbe22260ab437">&#9670;&nbsp;</a></span>vec() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::<a class="el" href="../../d0/d93/structvec.html">vec</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor. </p>
+<p>Initializes all elements to T(0). </p>
+
+</div>
+</div>
+<a id="a113681892d4e52da2c6878405a70f3fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113681892d4e52da2c6878405a70f3fe">&#9670;&nbsp;</a></span>vec() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::<a class="el" href="../../d0/d93/structvec.html">vec</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An explicit constructor which initializes every element to a given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The value each element will be initialized to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This constructor is explicit so one can't simply write something like, vec&lt;2,float32&gt; v=5.0f, a seemingly nonsensical and confusing mathematical statement. </dd></dl>
+
+</div>
+</div>
+<a id="a689a1ca11d1995d1664506e0b854b06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a689a1ca11d1995d1664506e0b854b06e">&#9670;&nbsp;</a></span>vec() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::<a class="el" href="../../d0/d93/structvec.html">vec</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Basic copy constructor. Will copy every element in a given vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A vector of the same type and dimension to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab97f22af90ed26778ab5fc41bb7a03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab97f22af90ed26778ab5fc41bb7a03f">&#9670;&nbsp;</a></span>vec() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::<a class="el" href="../../d0/d93/structvec.html">vec</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D-1, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>last</em> = <code>T(1)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A constructor for instantiating vectors from a vector of a dimension one less than D. </p>
+<p>One occasionally needs to instatiate a vector from a vector of a lower dimension. The last element will default to one to be in accordance with homogeneous coordinates used in rendering. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A vector with a dimension one less than the instantiated vector. </td></tr>
+    <tr><td class="paramname">last</td><td>The last element in the new vector. Defaults to T(1). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8b868fdc89dba0cf5fadff0bd091d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b868fdc89dba0cf5fadff0bd091d79">&#9670;&nbsp;</a></span>vec() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+<div class="memtemplate">
+template&lt;uint32 D2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::<a class="el" href="../../d0/d93/structvec.html">vec</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A copy constructor for instantiating vectors from a vector of any other dimension. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">D2</td><td>The dimension of the other vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A vector of any other dimension. If D2 is less than D then it will copy everything in other, followed by setting further elements to T(0) except for the last element which will be set to T(1). If D2 is greater than D then everything that can be copied will effectively truncating the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a16b642e385c2b6a24136aa12403393e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b642e385c2b6a24136aa12403393e0">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Addition operator. </p>
+<p>Adds two vectors by adding each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '+' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector where every element is the sum of the corresponding elements in the vector sum. </dd></dl>
+
+</div>
+</div>
+<a id="a3d779dac27edba512bffceb96d6c679f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d779dac27edba512bffceb96d6c679f">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::operator-</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unary negation operator. </p>
+<p>Negates a vector by negating every element resulting in a vector pointing in the opposite direction. </p><dl class="section return"><dt>Returns</dt><dd>The negative of the vector. </dd></dl>
+
+</div>
+</div>
+<a id="abca9dfe15245bfa54c03dc406b8e9fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca9dfe15245bfa54c03dc406b8e9fbd">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 D, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d93/structvec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction operator. </p>
+<p>Subtracts two vectors by subtracting each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '-' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector where every element is the difference of the corresponding elements in the vector difference. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="../../d1/de1/dggt__math__vec_8h_source.html">dggt_math_vec.h</a></li>
 <li>dggt_math_vec.inl</li>

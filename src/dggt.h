@@ -8,7 +8,9 @@
  * @version 0.1 alpha
 */
 
+/// @cond IncludeGuard
 #ifndef _DGGT_H_
+/// @endcond
 
 // TODO: errors!
 // 		* error logging.
@@ -51,5 +53,7 @@
 #include "mem/dggt_mem.h"
 #include "coll/dggt_coll.h"
 
+/// @cond IncludeGuard
 #define _DGGT_H_
 #endif
+/// @endcond

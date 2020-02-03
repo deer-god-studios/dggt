@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_5ftable_30',['hash_table',['../d0/d0e/structdggt_1_1hash__table.html',1,'dggt']]]
+  ['free_5fblock_35',['free_block',['../d0/d88/structdggt_1_1free__block.html',1,'dggt']]]
 ];

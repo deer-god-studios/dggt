@@ -1,9 +1,15 @@
+/*!
+ * @file dggt_math_utils.h
+ * @brief Some common math functions.
+ * @todo Intrinsics
+ * */
+
+/// @cond IncludeGuard
 #ifndef _DGGT_MATH_UTILS_H_
+/// @endconf
 
 #include <cmath> // TODO: get rid of this!
 #include "types/dggt_types.h"
-
-
 
 template <typename T>
 T max(const T& val0,const T& val1)
@@ -201,5 +207,7 @@ inline bool32 intvl_unit_disk(T val,intvl_ends ends=CLSD_INTVL)
 	return intvl_centered(val,T(1),ends);
 }
 
+/// @cond IncludeGuard
 #define _DGGT_MATH_UTILS_H_
 #endif
+/// @endcond
