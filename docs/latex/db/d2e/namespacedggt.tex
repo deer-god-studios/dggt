@@ -62,6 +62,8 @@ struct \mbox{\hyperlink{structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_
 \item 
 struct \mbox{\hyperlink{structdggt_1_1linked__list}{linked\+\_\+list}}
 \item 
+struct \mbox{\hyperlink{structdggt_1_1mat}{mat}}
+\begin{DoxyCompactList}\small\item\em A matrix struct with C columns and R rows of elements of type T. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4}{mat$<$ 2, 2, T $>$}}
 \item 
 struct \mbox{\hyperlink{structdggt_1_1mat_3_013_00_013_00_01T_01_4}{mat$<$ 3, 3, T $>$}}
@@ -83,7 +85,7 @@ struct \mbox{\hyperlink{structdggt_1_1store__block}{store\+\_\+block}}
 struct \mbox{\hyperlink{structdggt_1_1table__pair}{table\+\_\+pair}}
 \item 
 struct \mbox{\hyperlink{structdggt_1_1vec}{vec}}
-\item 
+\begin{DoxyCompactList}\small\item\em A vector struct. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdggt_1_1vec_3_011_00_01T_01_4}{vec$<$ 1, T $>$}}
 \item 
 struct \mbox{\hyperlink{structdggt_1_1vec_3_012_00_01T_01_4}{vec$<$ 2, T $>$}}
@@ -120,25 +122,25 @@ struct \mbox{\hyperlink{structdggt_1_1vec_3_014_00_01T_01_4}{vec$<$ 4, T $>$}}
 {\footnotesize template$<$typename T $>$ }\\using {\bfseries stack\+\_\+iter} = \mbox{\hyperlink{structdggt_1_1iter}{iter}}$<$ T, \mbox{\hyperlink{structdggt_1_1stack}{stack}}$<$ T $>$, \mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ $>$
 \item 
 \mbox{\Hypertarget{namespacedggt_a65e5310c6a171538dcef6128ad796991}\label{namespacedggt_a65e5310c6a171538dcef6128ad796991}} 
-{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat2} = mat$<$ 2, 2, T $>$
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat2} = \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$
 \item 
 \mbox{\Hypertarget{namespacedggt_a7c45193d7d91b9a7a6159c352ab27267}\label{namespacedggt_a7c45193d7d91b9a7a6159c352ab27267}} 
 typedef \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4}{mat2}}$<$ real32 $>$ {\bfseries mat2f}
 \item 
 \mbox{\Hypertarget{namespacedggt_a4c5a5a9f46d5cfb144f8186c3cb7b359}\label{namespacedggt_a4c5a5a9f46d5cfb144f8186c3cb7b359}} 
-{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat3} = mat$<$ 3, 3, T $>$
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat3} = \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 3, 3, T $>$
 \item 
 \mbox{\Hypertarget{namespacedggt_a823ea941860a7b40998b5fab57031f82}\label{namespacedggt_a823ea941860a7b40998b5fab57031f82}} 
 typedef \mbox{\hyperlink{structdggt_1_1mat_3_013_00_013_00_01T_01_4}{mat3}}$<$ real32 $>$ {\bfseries mat3f}
 \item 
 \mbox{\Hypertarget{namespacedggt_a94c01a4554b67dafcd5c23463f9cd0e2}\label{namespacedggt_a94c01a4554b67dafcd5c23463f9cd0e2}} 
-{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat4} = mat$<$ 4, 4, T $>$
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries mat4} = \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$
 \item 
 \mbox{\Hypertarget{namespacedggt_a20b5a93f1fa14a5e7ba29b1e09decf2a}\label{namespacedggt_a20b5a93f1fa14a5e7ba29b1e09decf2a}} 
 typedef \mbox{\hyperlink{structdggt_1_1mat_3_014_00_014_00_01T_01_4}{mat4}}$<$ real32 $>$ {\bfseries mat4f}
 \item 
 \mbox{\Hypertarget{namespacedggt_a7a499a90cdbbda11dec61b8df93e707d}\label{namespacedggt_a7a499a90cdbbda11dec61b8df93e707d}} 
-{\footnotesize template$<$uint32 N, typename T $>$ }\\using {\bfseries matn} = mat$<$ N, N, T $>$
+{\footnotesize template$<$uint32 N, typename T $>$ }\\using {\bfseries matn} = \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$
 \item 
 \mbox{\Hypertarget{namespacedggt_a2c128dcd91ad2ff85470b5015b46d41e}\label{namespacedggt_a2c128dcd91ad2ff85470b5015b46d41e}} 
 {\footnotesize template$<$typename T $>$ }\\using {\bfseries vec1} = \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 1, T $>$
@@ -371,84 +373,73 @@ template$<$$>$ u32 {\bfseries prehash} (const u32 \&key)
 \mbox{\Hypertarget{namespacedggt_acfbfe88558d37806b76d97c133d1c7f8}\label{namespacedggt_acfbfe88558d37806b76d97c133d1c7f8}} 
 {\footnotesize template$<$typename T $>$ }\\u32 {\bfseries get\+\_\+head} (const \mbox{\hyperlink{structdggt_1_1stack}{stack}}$<$ T $>$ $\ast$stk)
 \item 
-\mbox{\Hypertarget{namespacedggt_a4135c2533467aee48f689c9782abde34}\label{namespacedggt_a4135c2533467aee48f689c9782abde34}} 
-{\footnotesize template$<$uint32 C, uint32 R, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ R, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ C, T $>$ \&vector, const mat$<$ C, R, T $>$ \&matrix)
-\item 
-\mbox{\Hypertarget{namespacedggt_a7f9cb2f3a2a0faab8fcad6100d253ccc}\label{namespacedggt_a7f9cb2f3a2a0faab8fcad6100d253ccc}} 
-{\footnotesize template$<$uint32 C, uint32 R, typename T $>$ }\\mat$<$ C, R, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const mat$<$ C, R, T $>$ \&matrix)
-\item 
+{\footnotesize template$<$uint32 C, uint32 R, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ R, T $>$ \mbox{\hyperlink{namespacedggt_a1c8a048bfe1c5df6073b4165302ce197}{operator$\ast$}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ C, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&matrix)
+\begin{DoxyCompactList}\small\item\em Vector/matrix multiplication operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$uint32 C, uint32 R, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \mbox{\hyperlink{namespacedggt_a5252e3b09051185338b46cabeb52cec0}{operator$\ast$}} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&matrix)
+\begin{DoxyCompactList}\small\item\em Matrix scaling operator. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}\label{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}} 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector, const mat$<$ 2, 2, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_a274fb765ce2747f6b1a118f013723d26}\label{namespacedggt_a274fb765ce2747f6b1a118f013723d26}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 2, 2, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const mat$<$ 2, 2, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_ade3e439e95987ac2fd26fb78ff13f165}\label{namespacedggt_ade3e439e95987ac2fd26fb78ff13f165}} 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&vector, const mat$<$ 3, 3, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 3, 3, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_a2ad4d8e41e5d897bf11d92bb49f84299}\label{namespacedggt_a2ad4d8e41e5d897bf11d92bb49f84299}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 3, 3, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const mat$<$ 3, 3, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 3, 3, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 3, 3, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_a7f11163f2a3fcfdf26cd26e7223b486c}\label{namespacedggt_a7f11163f2a3fcfdf26cd26e7223b486c}} 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 4, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 4, T $>$ \&vector, const mat$<$ 4, 4, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 4, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 4, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_ab12ce93c1562a6735de081c2d3478f44}\label{namespacedggt_ab12ce93c1562a6735de081c2d3478f44}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const mat$<$ 4, 4, T $>$ \&matrix)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_a25a5518c67f1d603d8334793f338ee2c}\label{namespacedggt_a25a5518c67f1d603d8334793f338ee2c}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries translation\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&translation)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries translation\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&translation)
 \item 
 \mbox{\Hypertarget{namespacedggt_a9af492389cd8ccbc8c61b5983edeeb3d}\label{namespacedggt_a9af492389cd8ccbc8c61b5983edeeb3d}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries translation\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&translation)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries translation\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&translation)
 \item 
 \mbox{\Hypertarget{namespacedggt_a2167be0ce62bf64147c6c820f34581cb}\label{namespacedggt_a2167be0ce62bf64147c6c820f34581cb}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&scale)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&scale)
 \item 
 \mbox{\Hypertarget{namespacedggt_a0545843f76ac069ec5d1151b7c170260}\label{namespacedggt_a0545843f76ac069ec5d1151b7c170260}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&scale)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&scale)
 \item 
 \mbox{\Hypertarget{namespacedggt_a9aa4407349520a0a9fda03fcf8ba16c4}\label{namespacedggt_a9aa4407349520a0a9fda03fcf8ba16c4}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const T \&scalar)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries scale\+\_\+mat} (const T \&scalar)
 \item 
 \mbox{\Hypertarget{namespacedggt_aab3ad6d28147077942ca4c4dfba37ac5}\label{namespacedggt_aab3ad6d28147077942ca4c4dfba37ac5}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries axis\+\_\+angle\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&axis, const T \&angle)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries axis\+\_\+angle\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&axis, const T \&angle)
 \item 
 \mbox{\Hypertarget{namespacedggt_a7c1c57d8d1f7aa08247fab5ee9114ce6}\label{namespacedggt_a7c1c57d8d1f7aa08247fab5ee9114ce6}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries view\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Pos, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Forward, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Up, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Right)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries view\+\_\+mat} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Pos, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Forward, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Up, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&camera\+Right)
 \item 
 \mbox{\Hypertarget{namespacedggt_a8e5168faf12ff324fa4926ab655b497a}\label{namespacedggt_a8e5168faf12ff324fa4926ab655b497a}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries ortho\+\_\+mat} (const T \&left, const T \&right, const T \&bottom, const T \&top, const T \&near, const T \&far)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries ortho\+\_\+mat} (const T \&left, const T \&right, const T \&bottom, const T \&top, const T \&near, const T \&far)
 \item 
 \mbox{\Hypertarget{namespacedggt_a9c7037d0030a8b8a370247b229c5b515}\label{namespacedggt_a9c7037d0030a8b8a370247b229c5b515}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries ortho\+\_\+mat} (const T \&width, const T \&height, const T \&near, const T \&far)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries ortho\+\_\+mat} (const T \&width, const T \&height, const T \&near, const T \&far)
 \item 
 \mbox{\Hypertarget{namespacedggt_a133b3578d1a79c4fe08cf5fa75d62d72}\label{namespacedggt_a133b3578d1a79c4fe08cf5fa75d62d72}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries proj\+\_\+mat} (const T \&left, const T \&right, const T \&bottom, const T \&top, const T \&near, const T \&far)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries proj\+\_\+mat} (const T \&left, const T \&right, const T \&bottom, const T \&top, const T \&near, const T \&far)
 \item 
 \mbox{\Hypertarget{namespacedggt_abfb4e26bef24408e00e8981c2317cc97}\label{namespacedggt_abfb4e26bef24408e00e8981c2317cc97}} 
-{\footnotesize template$<$typename T $>$ }\\mat$<$ 4, 4, T $>$ {\bfseries proj\+\_\+mat} (const T \&width, const T \&height, const T \&near, const T \&far)
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 4, 4, T $>$ {\bfseries proj\+\_\+mat} (const T \&width, const T \&height, const T \&near, const T \&far)
 \item 
 \mbox{\Hypertarget{namespacedggt_a08bc55cb89fd129e55ca8f894c934ad7}\label{namespacedggt_a08bc55cb89fd129e55ca8f894c934ad7}} 
-{\footnotesize template$<$uint32 N, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ \&vector, const mat$<$ N, N, T $>$ \&matrix)
+{\footnotesize template$<$uint32 N, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \&matrix)
 \item 
 \mbox{\Hypertarget{namespacedggt_aaf0fa7c0306f4d197249e8ae811c62bd}\label{namespacedggt_aaf0fa7c0306f4d197249e8ae811c62bd}} 
-{\footnotesize template$<$uint32 N, typename T $>$ }\\mat$<$ N, N, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const mat$<$ N, N, T $>$ \&matrix)
+{\footnotesize template$<$uint32 N, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \&matrix)
 \item 
-\mbox{\hyperlink{namespacedggt_ae8f110c341c83df73838b0c9a28c0f1e}{vec}} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacedggt_aeeecbba1c3d449b27b3830030c1a234d}{vec}} (const T \&val)
-\begin{DoxyCompactList}\small\item\em An explicit constructor which initializes every element to a given value. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacedggt_a28fcd4313786fd4d4f762082f792ce7b}{vec}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&other)
-\begin{DoxyCompactList}\small\item\em Basic copy constructor. Will copy every element in a given vector. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{namespacedggt_adb6ee8e1e8941079a862b891d334630e}\label{namespacedggt_adb6ee8e1e8941079a862b891d334630e}} 
-{\footnotesize template$<$uint32 D, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&vector)
-\item 
-\mbox{\Hypertarget{namespacedggt_aadb27c686677c9fcb62fd125afe912f4}\label{namespacedggt_aadb27c686677c9fcb62fd125afe912f4}} 
-{\footnotesize template$<$uint32 D, typename T $>$ }\\T {\bfseries dot} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&lhs, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&rhs)
-\item 
-\mbox{\Hypertarget{namespacedggt_a77c9e76e20b7812f7d65d70169c910ec}\label{namespacedggt_a77c9e76e20b7812f7d65d70169c910ec}} 
-{\footnotesize template$<$uint32 D, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ {\bfseries dot} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&lhs, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&rhs)
-\item 
+{\footnotesize template$<$uint32 D, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{namespacedggt_adb6ee8e1e8941079a862b891d334630e}{operator$\ast$}} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em left-\/scaling operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$uint32 D, typename T $>$ }\\T \mbox{\hyperlink{namespacedggt_aadb27c686677c9fcb62fd125afe912f4}{dot}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&lhs, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em The dot product. \end{DoxyCompactList}\item 
+{\footnotesize template$<$uint32 D, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{namespacedggt_a77c9e76e20b7812f7d65d70169c910ec}{dot}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&lhs, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em The dot product. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{namespacedggt_a2661e914ee9b6635ae38254cf5ab03bc}\label{namespacedggt_a2661e914ee9b6635ae38254cf5ab03bc}} 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 1, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 1, T $>$ \&vector)
 \item 
@@ -647,58 +638,128 @@ void {\bfseries zero\+\_\+mem} (void $\ast$mem, \mbox{\hyperlink{dggt__types_8h_
 \mbox{\Hypertarget{namespacedggt_a19dd9c9b5496c73e519aca825a069b15}\label{namespacedggt_a19dd9c9b5496c73e519aca825a069b15}} 
 {\footnotesize template$<$typename T $>$ }\\void {\bfseries zero\+\_\+struct} (T $\ast$ptr)
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{namespacedggt_a6a864db853e1d893f068e7d944a9290c}\label{namespacedggt_a6a864db853e1d893f068e7d944a9290c}} 
-T \mbox{\hyperlink{namespacedggt_a6a864db853e1d893f068e7d944a9290c}{e}} \mbox{[}D\mbox{]}
-\begin{DoxyCompactList}\small\item\em The underlying array containing the vector\textquotesingle{}s elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The library\textquotesingle{}s main namespace. 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespacedggt_ae8f110c341c83df73838b0c9a28c0f1e}\label{namespacedggt_ae8f110c341c83df73838b0c9a28c0f1e}} 
-\index{dggt@{dggt}!vec@{vec}}
-\index{vec@{vec}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacedggt_a77c9e76e20b7812f7d65d70169c910ec}\label{namespacedggt_a77c9e76e20b7812f7d65d70169c910ec}} 
+\index{dggt@{dggt}!dot@{dot}}
+\index{dot@{dot}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$D,T$>$ dggt\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
 
 
 
-Default constructor. 
+The dot product. 
 
-Initializes all elements to T(0). \mbox{\Hypertarget{namespacedggt_aeeecbba1c3d449b27b3830030c1a234d}\label{namespacedggt_aeeecbba1c3d449b27b3830030c1a234d}} 
-\index{dggt@{dggt}!vec@{vec}}
-\index{vec@{vec}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}} (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-An explicit constructor which initializes every element to a given value. 
-
-
+Finds the dot product of two vectors. 
 \begin{DoxyParams}{Parameters}
-{\em val} & The value each element will be initialized to. \\
+{\em lhs} & The vector on the left hand side of the dot product. \\
+\hline
+{\em rhs} & The vector on the right hand side of the dot product. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyNote}{Note}
-This constructor is explicit so one can\textquotesingle{}t simply write something like, vec$<$2,float32$>$ v=5.\+0f, a seemingly nonsensical and confusing mathematical statement. 
-\end{DoxyNote}
-\mbox{\Hypertarget{namespacedggt_a28fcd4313786fd4d4f762082f792ce7b}\label{namespacedggt_a28fcd4313786fd4d4f762082f792ce7b}} 
-\index{dggt@{dggt}!vec@{vec}}
-\index{vec@{vec}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&}]{other }\end{DoxyParamCaption})}
+\begin{DoxyReturn}{Returns}
+The dot product of the given vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_aadb27c686677c9fcb62fd125afe912f4}\label{namespacedggt_aadb27c686677c9fcb62fd125afe912f4}} 
+\index{dggt@{dggt}!dot@{dot}}
+\index{dot@{dot}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T dggt\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
 
 
 
-Basic copy constructor. Will copy every element in a given vector. 
+The dot product. 
 
-
+Finds the dot product of two vectors. 
 \begin{DoxyParams}{Parameters}
-{\em other} & A vector of the same type and dimension to copy. \\
+{\em lhs} & The vector on the left hand side of the dot product. \\
+\hline
+{\em rhs} & The vector on the right hand side of the dot product. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the given vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_a5252e3b09051185338b46cabeb52cec0}\label{namespacedggt_a5252e3b09051185338b46cabeb52cec0}} 
+\index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$uint32 C, uint32 R, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Matrix scaling operator. 
+
+Scales a matrix by a scalar. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A const reference to a scalar of type T representing the scaling factor. \\
+\hline
+{\em matrix} & A const reference to the matrix to scale. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_adb6ee8e1e8941079a862b891d334630e}\label{namespacedggt_adb6ee8e1e8941079a862b891d334630e}} 
+\index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+left-\/scaling operator. 
+
+Scales a vector by a scalar by left-\/multiplying the scalar by every element. (ie. The scalar appear on the left hand side of the multiplication.). 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D} & The dimension of the vector. \\
+\hline
+{\em T} & The element type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to scale the vector by. \\
+\hline
+{\em vector} & The vector to scale. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_a1c8a048bfe1c5df6073b4165302ce197}\label{namespacedggt_a1c8a048bfe1c5df6073b4165302ce197}} 
+\index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$uint32 C, uint32 R, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ R, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ C, T $>$ \&}]{vector,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Vector/matrix multiplication operator. 
+
+Transforms a vector by a matrix. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & A u32 representing the dimension of the vector and the number of columns of the transformation matrix. \\
+\hline
+{\em R} & A u32 representing the dimension of the resulting vector and the number of rows of the transformation matrix. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em matrix} & The transformation matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector. 
+\end{DoxyReturn}

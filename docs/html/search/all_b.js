@@ -1,8 +1,15 @@
 var searchData=
 [
-  ['slnode_57',['slnode',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
-  ['slnode_3c_20k_20_3e_58',['slnode&lt; K &gt;',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
-  ['slnode_3c_20k_2c_20v_20_3e_59',['slnode&lt; K, V &gt;',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
-  ['stack_60',['stack',['../d0/d0b/structdggt_1_1stack.html',1,'dggt']]],
-  ['store_5fblock_61',['store_block',['../d7/d79/structdggt_1_1store__block.html',1,'dggt']]]
+  ['operator_21_3d_62',['operator!=',['../d3/dab/structdggt_1_1vec.html#ab72b1cb08dc14a5857c0d5c1edbb137a',1,'dggt::vec']]],
+  ['operator_2a_63',['operator*',['../d8/de1/structdggt_1_1mat.html#a81a1512fe474a6c895736f58fdf933fa',1,'dggt::mat::operator*(const T &amp;scalar) const'],['../d8/de1/structdggt_1_1mat.html#a8d44e1ee95d0d8a0230001a3bfc960be',1,'dggt::mat::operator*(const mat&lt; R, M, T &gt; &amp;rhs) const'],['../d3/dab/structdggt_1_1vec.html#a35714d704cfd763157b6a44da95be352',1,'dggt::vec::operator*()'],['../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197',1,'dggt::operator*(const vec&lt; C, T &gt; &amp;vector, const mat&lt; C, R, T &gt; &amp;matrix)'],['../db/d2e/namespacedggt.html#a5252e3b09051185338b46cabeb52cec0',1,'dggt::operator*(const T &amp;scalar, const mat&lt; C, R, T &gt; &amp;matrix)'],['../db/d2e/namespacedggt.html#adb6ee8e1e8941079a862b891d334630e',1,'dggt::operator*(const T &amp;scalar, const vec&lt; D, T &gt; &amp;vector)']]],
+  ['operator_2a_3d_64',['operator*=',['../d8/de1/structdggt_1_1mat.html#ad8b741a80715fc9b7d66b69ebef58414',1,'dggt::mat::operator*=(const T &amp;scalar)'],['../d8/de1/structdggt_1_1mat.html#a9b52247c7abaa7dca95a82587c775615',1,'dggt::mat::operator*=(const mat&lt; R, M, T &gt; &amp;rhs)'],['../d3/dab/structdggt_1_1vec.html#a323308c11acfe355764feda68183d81e',1,'dggt::vec::operator*=()']]],
+  ['operator_2b_65',['operator+',['../d8/de1/structdggt_1_1mat.html#a5d04b65b866bcb2112a44e9315806e04',1,'dggt::mat::operator+()'],['../d3/dab/structdggt_1_1vec.html#aa8e87a643d5abcf30ef5b5d2f6b031ed',1,'dggt::vec::operator+()']]],
+  ['operator_2b_3d_66',['operator+=',['../d8/de1/structdggt_1_1mat.html#ad64daa4e0d973cdcc326ec8238dc1476',1,'dggt::mat::operator+=()'],['../d3/dab/structdggt_1_1vec.html#a63c784fe6548e5760ebe4549fddf8279',1,'dggt::vec::operator+=()']]],
+  ['operator_2d_67',['operator-',['../d8/de1/structdggt_1_1mat.html#a4542f47695aca29bda098e202dad2f1d',1,'dggt::mat::operator-()'],['../d3/dab/structdggt_1_1vec.html#a21146af528080e8e280aa28aba120699',1,'dggt::vec::operator-(const vec &amp;rhs) const'],['../d3/dab/structdggt_1_1vec.html#a3ea6cadd8ca9d2273afdc4a81dbcf608',1,'dggt::vec::operator-() const']]],
+  ['operator_2d_3d_68',['operator-=',['../d8/de1/structdggt_1_1mat.html#a990d0344c0cf762ae93a04da37318873',1,'dggt::mat::operator-=()'],['../d3/dab/structdggt_1_1vec.html#a5e73817cb6961e6a38bd94036ad9b441',1,'dggt::vec::operator-=()']]],
+  ['operator_2f_69',['operator/',['../d3/dab/structdggt_1_1vec.html#a248470746d3868709b8857e7df9217c4',1,'dggt::vec']]],
+  ['operator_2f_3d_70',['operator/=',['../d3/dab/structdggt_1_1vec.html#ac6e93a916547141b6931b1ccc790772f',1,'dggt::vec']]],
+  ['operator_3d_71',['operator=',['../d8/de1/structdggt_1_1mat.html#adaa7c83159c46bfed17bc0a675fba4cd',1,'dggt::mat::operator=()'],['../d3/dab/structdggt_1_1vec.html#a0688acb894e5440c2b6a2d61ef395912',1,'dggt::vec::operator=()']]],
+  ['operator_3d_3d_72',['operator==',['../d3/dab/structdggt_1_1vec.html#ad83a29c5181a169d17015f761a9178dc',1,'dggt::vec']]],
+  ['operator_5b_5d_73',['operator[]',['../d3/dab/structdggt_1_1vec.html#a4d5d1995cd4a02ab109dc662fc7a83c1',1,'dggt::vec::operator[](uint32 index)'],['../d3/dab/structdggt_1_1vec.html#ab2c0c329d1dce82edd7cb795071018d9',1,'dggt::vec::operator[](uint32 index) const']]]
 ];

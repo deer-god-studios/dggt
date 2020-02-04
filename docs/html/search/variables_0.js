@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dim_126',['DIM',['../d3/dab/structdggt_1_1vec.html#a82c9999e46c0979710fdefbc33f8b607',1,'dggt::vec']]]
+  ['columns_173',['COLUMNS',['../d8/de1/structdggt_1_1mat.html#aded8ee8e40e70c60b95d2c7dd74f98fd',1,'dggt::mat']]]
 ];

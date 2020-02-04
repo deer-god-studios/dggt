@@ -6,6 +6,13 @@
 
 namespace dggt
 {
+	/*!
+	 * @brief A vector struct.
+	 *
+	 * Represents a vector of dimension D and having elements of type T.
+	 * @tparam D Dimension of the vector.
+	 * @tparam T Type of elements contained in the vector, usually a numeric type.
+	 * */
 	template <uint32 D,typename T>
 	struct vec
 	{
@@ -13,6 +20,7 @@ namespace dggt
 		 * @brief A static const unsigned integer representing the vector's dimension.
 		 * */
 		static const uint32 DIM=D;
+
 		/*!
 		 * @brief The underlying array containing the vector's elements.
 		 * */
@@ -24,17 +32,28 @@ namespace dggt
 		 * Initializes all elements to T(0).
 		 * */
 		vec();
+
 		/*!
 		 * @brief An explicit constructor which initializes every element to a given value.
 		 * @param val The value each element will be initialized to.
 		 * @note This constructor is explicit so one can't simply write something like, vec<2,float32> v=5.0f, a seemingly nonsensical and confusing mathematical statement.
 		 * */
 		explicit vec(const T& val);
+
+		/*!
+		 * @brief A constructor taking an array of elements of type T.
+		 *
+		 * Instantiates every element with it's respective element in the array.
+		 * @param elements A stack array of size D.
+		 * */
+		vec(const T elements[D]);
+
 		/*!
 		 * @brief Basic copy constructor.  Will copy every element in a given vector.
 		 * @param other A vector of the same type and dimension to copy.
 		 * */
 		vec(const vec& other);
+
 		/*!
 		 * @brief A constructor for instantiating vectors from a vector of a dimension one less than D.
 		 *
@@ -42,15 +61,8 @@ namespace dggt
 		 * @tparam D An integer representing the dimension of the vector. (ie. The number of elements in the ordered list)
 		 * @tparam T A type, usually a numeric type.  Each element in the vector will be of this type.  T must be a type that overloads basic arithmetic operations.
 		 * */
-
-		/*!
-		 * @brief A constructor for instantiating vectors from a vector of a dimension one less than D.
-		 *
-		 * One occasionally needs to instatiate a vector from a vector of a lower dimension.  The last element will default to one to be in accordance with homogeneous coordinates used in rendering. 
-		 * @param other A vector with a dimension one less than the instantiated vector.
-		 * @param last The last element in the new vector.  Defaults to T(1).
-		 * */
 		vec(const vec<D-1,T>& other, T last=T(1));
+
 		/*!
 		 * @brief A copy constructor for instantiating vectors from a vector of any other dimension.
 		 * @tparam D2 The dimension of the other vector.
@@ -58,8 +70,7 @@ namespace dggt
 		 * except for the last element which will be set to T(1).  If D2 is greater than D then everything that can be copied will effectively truncating the vector.
 		 * */
 		template <uint32 D2>
-			vec(const vec<D2,T>& other);
-
+		vec(const vec<D2,T>& other);
 
 		/*!
 		 * @brief Addition operator.

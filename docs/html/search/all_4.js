@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['free_5fblock_35',['free_block',['../d0/d88/structdggt_1_1free__block.html',1,'dggt']]]
+  ['e_37',['e',['../d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17',1,'dggt::mat::e()'],['../d3/dab/structdggt_1_1vec.html#a5b726ac6186d7ad05dbc81aaa7745d40',1,'dggt::vec::e()']]]
 ];

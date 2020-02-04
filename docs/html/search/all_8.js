@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['mat_3c_202_2c_202_2c_20t_20_3e_44',['mat&lt; 2, 2, T &gt;',['../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html',1,'dggt']]],
-  ['mat_3c_203_2c_203_2c_20t_20_3e_45',['mat&lt; 3, 3, T &gt;',['../dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html',1,'dggt']]],
-  ['mat_3c_204_2c_204_2c_20t_20_3e_46',['mat&lt; 4, 4, T &gt;',['../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html',1,'dggt']]],
-  ['mat_3c_20n_2c_20n_2c_20t_20_3e_47',['mat&lt; N, N, T &gt;',['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html',1,'dggt']]],
-  ['max_5ffloat32_48',['MAX_FLOAT32',['../d1/d20/dggt__defines_8h.html#a9adcee815220ec9db98062213806ed04',1,'dggt_defines.h']]],
-  ['max_5fmsize_49',['MAX_MSIZE',['../d1/d20/dggt__defines_8h.html#a0b042dd278f57788dcb509ce9e8ccc58',1,'dggt_defines.h']]],
-  ['max_5freal32_50',['MAX_REAL32',['../d1/d20/dggt__defines_8h.html#adedcd47b0ca02c213ebe0446571ef133',1,'dggt_defines.h']]],
-  ['max_5fuint32_51',['MAX_UINT32',['../d1/d20/dggt__defines_8h.html#a26248174abf27973b9edfa9b70ba4c93',1,'dggt_defines.h']]],
-  ['min_5ffloat32_52',['MIN_FLOAT32',['../d1/d20/dggt__defines_8h.html#abc11e6e108402d93b1ce7b9ddadc78ab',1,'dggt_defines.h']]],
-  ['min_5freal32_53',['MIN_REAL32',['../d1/d20/dggt__defines_8h.html#a006ba826c8aa90a643c1328c5cfe8024',1,'dggt_defines.h']]],
-  ['msize_54',['msize',['../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716',1,'dggt_types.h']]]
+  ['iter_43',['iter',['../de/da8/structdggt_1_1iter.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20linked_5flist_3c_20t_20_3e_2c_20slnode_3c_20t_20_3e_20_2a_20_3e_44',['iter&lt; T, linked_list&lt; T &gt;, slnode&lt; T &gt; * &gt;',['../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20queue_3c_20t_20_3e_2c_20blk_3c_20t_20_3e_20_3e_45',['iter&lt; T, queue&lt; T &gt;, blk&lt; T &gt; &gt;',['../d7/df4/structdggt_1_1iter_3_01T_00_01queue_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20stack_3c_20t_20_3e_2c_20blk_3c_20t_20_3e_20_3e_46',['iter&lt; T, stack&lt; T &gt;, blk&lt; T &gt; &gt;',['../d3/d28/structdggt_1_1iter_3_01T_00_01stack_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html',1,'dggt']]],
+  ['iter_3c_20table_5fpair_3c_20k_2c_20v_20_3e_2c_20hash_5ftable_3c_20k_2c_20v_20_3e_2c_20table_5fblk_3c_20k_2c_20v_20_3e_20_3e_47',['iter&lt; table_pair&lt; K, V &gt;, hash_table&lt; K, V &gt;, table_blk&lt; K, V &gt; &gt;',['../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html',1,'dggt']]]
 ];

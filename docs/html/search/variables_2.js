@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['e_175',['e',['../d7/d6d/structmat.html#a69cc68c32d430ca88a5edd5085ff9cd1',1,'mat::e()'],['../d0/d93/structvec.html#a12f34df011396935a20c955c123b7971',1,'vec::e()']]]
+  ['e_175',['e',['../d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17',1,'dggt::mat::e()'],['../d3/dab/structdggt_1_1vec.html#a5b726ac6186d7ad05dbc81aaa7745d40',1,'dggt::vec::e()']]]
 ];

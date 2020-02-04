@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['vec_90',['vec',['../d0/d93/structvec.html',1,'vec&lt; D, T &gt;'],['../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437',1,'vec::vec()'],['../d0/d93/structvec.html#a113681892d4e52da2c6878405a70f3fe',1,'vec::vec(const T &amp;val)'],['../d0/d93/structvec.html#a689a1ca11d1995d1664506e0b854b06e',1,'vec::vec(const vec &amp;other)'],['../d0/d93/structvec.html#aab97f22af90ed26778ab5fc41bb7a03f',1,'vec::vec(const vec&lt; D-1, T &gt; &amp;other, T last=T(1))'],['../d0/d93/structvec.html#ae8b868fdc89dba0cf5fadff0bd091d79',1,'vec::vec(const vec&lt; D2, T &gt; &amp;other)']]],
-  ['vec_3c_201_2c_20t_20_3e_91',['vec&lt; 1, T &gt;',['../d1/d7a/structvec_3_011_00_01T_01_4.html',1,'']]],
-  ['vec_3c_202_2c_20t_20_3e_92',['vec&lt; 2, T &gt;',['../d3/db0/structvec_3_012_00_01T_01_4.html',1,'']]],
-  ['vec_3c_203_2c_20t_20_3e_93',['vec&lt; 3, T &gt;',['../d6/d64/structvec_3_013_00_01T_01_4.html',1,'']]],
-  ['vec_3c_204_2c_20t_20_3e_94',['vec&lt; 4, T &gt;',['../d1/dc1/structvec_3_014_00_01T_01_4.html',1,'']]]
+  ['vec_90',['vec',['../d3/dab/structdggt_1_1vec.html',1,'dggt::vec&lt; D, T &gt;'],['../d3/dab/structdggt_1_1vec.html#ad34f6c210cc0ca3c32cf281479290064',1,'dggt::vec::vec()'],['../d3/dab/structdggt_1_1vec.html#aa2fc50574e30013ad058faba819256bd',1,'dggt::vec::vec(const T &amp;val)'],['../d3/dab/structdggt_1_1vec.html#a619498b3d8fb84dc85ab79d587209c71',1,'dggt::vec::vec(const T elements[D])'],['../d3/dab/structdggt_1_1vec.html#ae17b2e8b1af7ce0098e270c7640e0303',1,'dggt::vec::vec(const vec &amp;other)'],['../d3/dab/structdggt_1_1vec.html#a49eda571a0161d43578db56e32f0dbc1',1,'dggt::vec::vec(const vec&lt; D-1, T &gt; &amp;other, T last=T(1))'],['../d3/dab/structdggt_1_1vec.html#ac41fc17507fea97ce49e26e76c3f54c7',1,'dggt::vec::vec(const vec&lt; D2, T &gt; &amp;other)']]],
+  ['vec_3c_201_2c_20t_20_3e_91',['vec&lt; 1, T &gt;',['../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html',1,'dggt']]],
+  ['vec_3c_202_2c_20t_20_3e_92',['vec&lt; 2, T &gt;',['../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html',1,'dggt']]],
+  ['vec_3c_203_2c_20t_20_3e_93',['vec&lt; 3, T &gt;',['../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html',1,'dggt']]],
+  ['vec_3c_204_2c_20t_20_3e_94',['vec&lt; 4, T &gt;',['../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html',1,'dggt']]]
 ];
