@@ -2,7 +2,7 @@
 \label{structdggt_1_1vec}\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
 
 
-A vector struct of dimension, D and type T.  
+A vector struct.  
 
 
 
@@ -13,53 +13,76 @@ A vector struct of dimension, D and type T.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structdggt_1_1vec_ad34f6c210cc0ca3c32cf281479290064}{vec}} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec_aa2fc50574e30013ad058faba819256bd}{vec}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em An explicit constructor which initializes every element to a given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec_a619498b3d8fb84dc85ab79d587209c71}{vec}} (const T elements\mbox{[}D\mbox{]})
+\begin{DoxyCompactList}\small\item\em A constructor taking an array of elements of type T. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec_ae17b2e8b1af7ce0098e270c7640e0303}{vec}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&other)
+\begin{DoxyCompactList}\small\item\em Basic copy constructor. Will copy every element in a given vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec_a49eda571a0161d43578db56e32f0dbc1}{vec}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D-\/1, T $>$ \&other, T last=T(1))
+\begin{DoxyCompactList}\small\item\em A constructor for instantiating vectors from a vector of a dimension one less than D. \end{DoxyCompactList}\item 
+{\footnotesize template$<$uint32 D2$>$ }\\\mbox{\hyperlink{structdggt_1_1vec_ac41fc17507fea97ce49e26e76c3f54c7}{vec}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D2, T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em A copy constructor for instantiating vectors from a vector of any other dimension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \mbox{\hyperlink{structdggt_1_1vec_aa8e87a643d5abcf30ef5b5d2f6b031ed}{operator+}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Addition operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \mbox{\hyperlink{structdggt_1_1vec_a21146af528080e8e280aa28aba120699}{operator-\/}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Subtraction operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \mbox{\hyperlink{structdggt_1_1vec_a3ea6cadd8ca9d2273afdc4a81dbcf608}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Unary negation operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \mbox{\hyperlink{structdggt_1_1vec_a35714d704cfd763157b6a44da95be352}{operator$\ast$}} (const T \&scalar) const
+\begin{DoxyCompactList}\small\item\em right-\/scaling operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \mbox{\hyperlink{structdggt_1_1vec_a248470746d3868709b8857e7df9217c4}{operator/}} (const T \&scalar) const
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Contraction\textquotesingle{} operator. \end{DoxyCompactList}\item 
+bool32 \mbox{\hyperlink{structdggt_1_1vec_ad83a29c5181a169d17015f761a9178dc}{operator==}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Equality check operator. \end{DoxyCompactList}\item 
+bool32 \mbox{\hyperlink{structdggt_1_1vec_ab72b1cb08dc14a5857c0d5c1edbb137a}{operator!=}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Non-\/equality check operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \& \mbox{\hyperlink{structdggt_1_1vec_a0688acb894e5440c2b6a2d61ef395912}{operator=}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \& \mbox{\hyperlink{structdggt_1_1vec_a5e73817cb6961e6a38bd94036ad9b441}{operator-\/=}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Subtract and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \& \mbox{\hyperlink{structdggt_1_1vec_a63c784fe6548e5760ebe4549fddf8279}{operator+=}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Add and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \& \mbox{\hyperlink{structdggt_1_1vec_a323308c11acfe355764feda68183d81e}{operator$\ast$=}} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Scale and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}} \& \mbox{\hyperlink{structdggt_1_1vec_ac6e93a916547141b6931b1ccc790772f}{operator/=}} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Contract and assign operator. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{structdggt_1_1vec_a4d5d1995cd4a02ab109dc662fc7a83c1}{operator\mbox{[}$\,$\mbox{]}}} (uint32 index)
+\begin{DoxyCompactList}\small\item\em Index operator. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{structdggt_1_1vec_ab2c0c329d1dce82edd7cb795071018d9}{operator\mbox{[}$\,$\mbox{]}}} (uint32 index) const
+\begin{DoxyCompactList}\small\item\em Index operator (const version). \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structdggt_1_1vec_a718c349e63e55c9bfdf81d83521a98c3}{dot}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Dot product operator. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{structdggt_1_1vec_ad3e99734682e895bfe2ebe843e83bdff}{data}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the element array. \end{DoxyCompactList}\item 
+const T $\ast$ \mbox{\hyperlink{structdggt_1_1vec_a3a72a0d47a5401180a21b0a326dbd5d1}{data}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const pointer to the element array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdggt_1_1vec_acafdf23362d919f68bccdcdae77b71d9}\label{structdggt_1_1vec_acafdf23362d919f68bccdcdae77b71d9}} 
-T \mbox{\hyperlink{structdggt_1_1vec_acafdf23362d919f68bccdcdae77b71d9}{e}} \mbox{[}D\mbox{]}
+\mbox{\Hypertarget{structdggt_1_1vec_a5b726ac6186d7ad05dbc81aaa7745d40}\label{structdggt_1_1vec_a5b726ac6186d7ad05dbc81aaa7745d40}} 
+T \mbox{\hyperlink{structdggt_1_1vec_a5b726ac6186d7ad05dbc81aaa7745d40}{e}} \mbox{[}D\mbox{]}
 \begin{DoxyCompactList}\small\item\em The underlying array containing the vector\textquotesingle{}s elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint32 \mbox{\hyperlink{structdggt_1_1vec_aeaa25d104b2dd7fdd1d8e5784804561c}{D\+IM}} =D
-\begin{DoxyCompactList}\small\item\em A static const integer representing the vector\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{structdggt_1_1vec_a82c9999e46c0979710fdefbc33f8b607}\label{structdggt_1_1vec_a82c9999e46c0979710fdefbc33f8b607}} 
+static const uint32 \mbox{\hyperlink{structdggt_1_1vec_a82c9999e46c0979710fdefbc33f8b607}{D\+IM}} =D
+\begin{DoxyCompactList}\small\item\em A static const unsigned integer representing the vector\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$uint32 D, typename T$>$\newline
 struct dggt\+::vec$<$ D, T $>$}
 
-A vector struct of dimension, D and type T. 
-
-$<$$<$$<$$<$$<$$<$$<$ H\+E\+AD A vector is a mathematical construct consisting of an ordered list of elements along with operations on it. 
-\begin{DoxyTemplParams}{Template Parameters}
-{\em D} & An integer representing the dimension of the vector. (ie. The number of elements in the ordered list) \\
-\hline
-\end{DoxyTemplParams}
-\hypertarget{structdggt_1_1vec_autotoc_md0}{}\doxysubsection{@tparam T A type, usually a numeric type.  Each element in the vector will be of this type.  T must be a type that overloads basic arithmetic operations.}\label{structdggt_1_1vec_autotoc_md0}
-A vector struct.
+A vector struct. 
 
 Represents a vector of dimension D and having elements of type T. 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em D} & Dimension of the vector. \\
 \hline
-{\em T} & Type of elements contained in the vector, usually a numeric type. \begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-dev \end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\\
+{\em T} & Type of elements contained in the vector, usually a numeric type. \\
 \hline
 \end{DoxyTemplParams}
 
@@ -68,7 +91,7 @@ dev \end{quote}
 \mbox{\Hypertarget{structdggt_1_1vec_ad34f6c210cc0ca3c32cf281479290064}\label{structdggt_1_1vec_ad34f6c210cc0ca3c32cf281479290064}} 
 \index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
 \index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
-\doxysubsubsection{\texorpdfstring{vec()}{vec()}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
 {\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}}}
 
@@ -76,40 +99,409 @@ dev \end{quote}
 
 Default constructor. 
 
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-dev \end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-Initializes all elements to T(0). 
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structdggt_1_1vec_aeaa25d104b2dd7fdd1d8e5784804561c}\label{structdggt_1_1vec_aeaa25d104b2dd7fdd1d8e5784804561c}} 
-\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!DIM@{DIM}}
-\index{DIM@{DIM}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
-\doxysubsubsection{\texorpdfstring{DIM}{DIM}}
+Initializes all elements to T(0). \mbox{\Hypertarget{structdggt_1_1vec_aa2fc50574e30013ad058faba819256bd}\label{structdggt_1_1vec_aa2fc50574e30013ad058faba819256bd}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
 {\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
-static const uint32 \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::D\+IM =D\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}} (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
-A static const integer representing the vector\textquotesingle{}s dimension. 
+An explicit constructor which initializes every element to a given value. 
 
-A static const unsigned integer representing the vector\textquotesingle{}s dimension.
 
-$<$$<$$<$$<$$<$$<$$<$ H\+E\+AD
+\begin{DoxyParams}{Parameters}
+{\em val} & The value each element will be initialized to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is explicit so one can\textquotesingle{}t simply write something like, vec$<$2,float32$>$ v=5.\+0f, a seemingly nonsensical and confusing statement. 
+\end{DoxyNote}
+\mbox{\Hypertarget{structdggt_1_1vec_a619498b3d8fb84dc85ab79d587209c71}\label{structdggt_1_1vec_a619498b3d8fb84dc85ab79d587209c71}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}} (\begin{DoxyParamCaption}\item[{const T}]{elements\mbox{[}\+D\mbox{]} }\end{DoxyParamCaption})}
 
-\DoxyHorRuler{0}
- 
+
+
+A constructor taking an array of elements of type T. 
+
+Instantiates every element with it\textquotesingle{}s respective element in the array. 
+\begin{DoxyParams}{Parameters}
+{\em elements} & A stack array of size D. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdggt_1_1vec_ae17b2e8b1af7ce0098e270c7640e0303}\label{structdggt_1_1vec_ae17b2e8b1af7ce0098e270c7640e0303}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Basic copy constructor. Will copy every element in a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A vector of the same type and dimension to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdggt_1_1vec_a49eda571a0161d43578db56e32f0dbc1}\label{structdggt_1_1vec_a49eda571a0161d43578db56e32f0dbc1}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D-\/1, T $>$ \&}]{other,  }\item[{T}]{last = {\ttfamily T(1)} }\end{DoxyParamCaption})}
+
+
+
+A constructor for instantiating vectors from a vector of a dimension one less than D. 
+
+A vector is a mathematical construct consisting of an ordered list of elements along with operations on it. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D} & An integer representing the dimension of the vector. (ie. The number of elements in the ordered list) \\
+\hline
+{\em T} & A type, usually a numeric type. Each element in the vector will be of this type. T must be a type that overloads basic arithmetic operations. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{structdggt_1_1vec_ac41fc17507fea97ce49e26e76c3f54c7}\label{structdggt_1_1vec_ac41fc17507fea97ce49e26e76c3f54c7}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!vec@{vec}}
+\index{vec@{vec}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{vec()}{vec()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+template$<$uint32 D2$>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::\mbox{\hyperlink{structdggt_1_1vec}{vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D2, T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+A copy constructor for instantiating vectors from a vector of any other dimension. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em D2} & The dimension of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A vector of any other dimension. If D2 is less than D then it will copy everything in other, followed by setting further elements to T(0) except for the last element which will be set to T(1). If D2 is greater than D then everything that can be copied will effectively truncating the vector. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdggt_1_1vec_ad3e99734682e895bfe2ebe843e83bdff}\label{structdggt_1_1vec_ad3e99734682e895bfe2ebe843e83bdff}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!data@{data}}
+\index{data@{data}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the element array. 
+
+Used for passing the vector\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a3a72a0d47a5401180a21b0a326dbd5d1}\label{structdggt_1_1vec_a3a72a0d47a5401180a21b0a326dbd5d1}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!data@{data}}
+\index{data@{data}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+const T$\ast$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a const pointer to the element array. 
+
+Used for passing the vector\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A const pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a718c349e63e55c9bfdf81d83521a98c3}\label{structdggt_1_1vec_a718c349e63e55c9bfdf81d83521a98c3}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!dot@{dot}}
+\index{dot@{dot}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Dot product operator. 
+
+Returns a scalar value which is equal to the dot product of this vector and the parameter. (eg. Given v0=\mbox{[}1,2\mbox{]} and v1=\mbox{[}2,2\mbox{]} then v0.\+dot(v1)=(1$\ast$2)+(2$\ast$2)=2+4=6. 
+\begin{DoxyParams}{Parameters}
+{\em A} & vector which will be the right hand side of the dot product. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A scalar quantity representing the dot product of the two vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_ab72b1cb08dc14a5857c0d5c1edbb137a}\label{structdggt_1_1vec_ab72b1cb08dc14a5857c0d5c1edbb137a}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+bool32 \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Non-\/equality check operator. 
+
+Two vectors are unequal if there is at least one element that does not equal it\textquotesingle{}s corresponding element in the other vector. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}!=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool32 which is non-\/zero if the two vectors are not equal and zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a35714d704cfd763157b6a44da95be352}\label{structdggt_1_1vec_a35714d704cfd763157b6a44da95be352}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+right-\/scaling operator. 
+
+Scales a vector by right-\/multiplying every element by a scalar. (ie. the scalar appears on the right hand side of the multiplication. Normally this does not matter as multiplication is normally commutative.). 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A scalar (ie. non-\/vector or a mathematical construct with only magnitude) of type T. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a323308c11acfe355764feda68183d81e}\label{structdggt_1_1vec_a323308c11acfe355764feda68183d81e}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Scale and assign operator. 
+
+Scales a vector and assigns the result to the vector on the left hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. (ie. Short hand for v0=v0$\ast$scalar.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The scalar on the right hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the scaled and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_aa8e87a643d5abcf30ef5b5d2f6b031ed}\label{structdggt_1_1vec_aa8e87a643d5abcf30ef5b5d2f6b031ed}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Addition operator. 
+
+Adds two vectors by adding each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}+\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector where every element is the sum of the corresponding elements in the vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a63c784fe6548e5760ebe4549fddf8279}\label{structdggt_1_1vec_a63c784fe6548e5760ebe4549fddf8279}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Add and assign operator. 
+
+Finds the sum of two vectors and assigns the result to the vector on the left hand side of the \textquotesingle{}+=\textquotesingle{} symbol. (ie. Short hand for v0=v0+v1.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}+=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the added and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a3ea6cadd8ca9d2273afdc4a81dbcf608}\label{structdggt_1_1vec_a3ea6cadd8ca9d2273afdc4a81dbcf608}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator-\/}
+
+
+
+Unary negation operator. 
+
+Negates a vector by negating every element resulting in a vector pointing in the opposite direction. \begin{DoxyReturn}{Returns}
+The negative of the vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a21146af528080e8e280aa28aba120699}\label{structdggt_1_1vec_a21146af528080e8e280aa28aba120699}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Subtraction operator. 
+
+Subtracts two vectors by subtracting each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}-\/\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector where every element is the difference of the corresponding elements in the vector difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a5e73817cb6961e6a38bd94036ad9b441}\label{structdggt_1_1vec_a5e73817cb6961e6a38bd94036ad9b441}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Subtract and assign operator. 
+
+Finds the difference of two vectors and assigns the result to the vector on the left hand side of the \textquotesingle{}-\/=\textquotesingle{} symbol. (ie. Short hand for v0=v0-\/v1.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}-\/=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the subtracted and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a248470746d3868709b8857e7df9217c4}\label{structdggt_1_1vec_a248470746d3868709b8857e7df9217c4}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+\textquotesingle{}Contraction\textquotesingle{} operator. 
+
+The \textquotesingle{}inverse\textquotesingle{} of the scaling operator. The vector this operator returns is still a scaled by the parameter but through the division of every element in the vector by scalar. (ie. It\textquotesingle{}s contracted.) 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A scalar of type T. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contracted vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_ac6e93a916547141b6931b1ccc790772f}\label{structdggt_1_1vec_ac6e93a916547141b6931b1ccc790772f}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Contract and assign operator. 
+
+Contracts a vector and assigns the result to the vector on the left hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. (ie. Short hand for v0=v0/scalar.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The scalar on the right hand side of the \textquotesingle{}/=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the contracted and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a0688acb894e5440c2b6a2d61ef395912}\label{structdggt_1_1vec_a0688acb894e5440c2b6a2d61ef395912}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+Assigns every element of a given vector to another. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The source vector in the assignment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_ad83a29c5181a169d17015f761a9178dc}\label{structdggt_1_1vec_ad83a29c5181a169d17015f761a9178dc}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+bool32 \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Equality check operator. 
+
+Two vectors are equal if each of their elements are equal. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}==\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool32 which is non-\/zero if the two vectors are equal and zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_a4d5d1995cd4a02ab109dc662fc7a83c1}\label{structdggt_1_1vec_a4d5d1995cd4a02ab109dc662fc7a83c1}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption})}
+
+
+
+Index operator. 
+
+Can access any element in the vector by integer index (eg. vector\mbox{[}0\mbox{]} will return the zeroth element in the vector or the x-\/value.). 
+\begin{DoxyParams}{Parameters}
+{\em index} & An integer from 0 to D-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the corresponding element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1vec_ab2c0c329d1dce82edd7cb795071018d9}\label{structdggt_1_1vec_ab2c0c329d1dce82edd7cb795071018d9}} 
+\index{dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!dggt::vec$<$ D, T $>$@{dggt::vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+const T \& \mbox{\hyperlink{structdggt_1_1vec}{dggt\+::vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Index operator (const version). 
+
+Can access any element in the vector by integer index (eg. vector\mbox{[}0\mbox{]} will return the zeroth element in the vector or the x-\/value.). 
+\begin{DoxyParams}{Parameters}
+{\em index} & An integer from 0 to D-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const reference to the corresponding element. 
+\end{DoxyReturn}
+
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

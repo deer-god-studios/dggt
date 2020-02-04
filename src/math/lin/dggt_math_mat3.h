@@ -63,6 +63,7 @@ namespace dggt
 	template <typename T>
 	mat<3,3,T> operator*(const T& scalar,const mat<3,3,T>& matrix);
 }
+
 #include "dggt_math_mat3.inl"
 
 namespace dggt

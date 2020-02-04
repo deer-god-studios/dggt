@@ -251,6 +251,7 @@ namespace dggt
 	template <uint32 D, typename T>
 	T dot(const vec<D,T>& lhs,const vec<D,T>& rhs);
 }
+
 #include "dggt_math_vec.inl"
 
 /*! @cond IncludeGuard */
