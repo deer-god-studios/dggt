@@ -80,7 +80,7 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d0/d39/structdggt_1_1blk.html">    8</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        T* mem;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        u32 count; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk</a>(T* mem,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> count);</div>
@@ -106,11 +106,11 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> T&amp; operator[](uint32_t index) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">operator</span> T*();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        bool32 operator==(<span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a> operator==(<span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> rhs.mem==mem&amp;&amp;rhs.count==count;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        bool32 operator!=(<span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a> operator!=(<span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> !(*<span class="keyword">this</span>==rhs);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> blk_alloc(u32 count);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> blk_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> blk_free(<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>&amp; block);</div>
@@ -154,11 +154,11 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;S&gt;</a>((S*)mem,size/<span class="keyword">sizeof</span>(S));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        bool32 operator==(<span class="keyword">const</span> <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a> operator==(<span class="keyword">const</span> <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> mem==rhs.mem&amp;&amp;size==rhs.size;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        bool32 operator!=(<span class="keyword">const</span> <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a> operator!=(<span class="keyword">const</span> <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> !(*<span class="keyword">this</span>==rhs);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
@@ -168,7 +168,7 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> NULL_BLK=<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a>();</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> blk_alloc(u32 count);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> blk_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> blk_free(<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> block);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
@@ -176,7 +176,7 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> blk_free(<a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> block);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> blk_cpy(<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> dest,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> src,u32 count);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> blk_cpy(<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> dest,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">blk&lt;T&gt;</a> src,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> blk_cpy(<a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> dest,<a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> src,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
@@ -185,9 +185,11 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define _DGGT_MEM_BLK_H_</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The main namespace for the dggt library.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html_a1cb9475fb797a94ee38186ae6300e320"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">dggt::bool32</a></div><div class="ttdeci">uint32_t bool32</div><div class="ttdoc">A 32-bit integer type for use in boolean expressions.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:63</div></div>
 <div class="ttc" id="astructdggt_1_1blk_3_01void_01_4_html"><div class="ttname"><a href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">dggt::blk&lt; void &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:58</div></div>
-<div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:23</div></div>
+<div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:14</div></div>
+<div class="ttc" id="anamespacedggt_html_a17a0c2407511b699e5d933ec2989d2a4"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">dggt::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdoc">Short hand for uint32.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:56</div></div>
 <div class="ttc" id="astructdggt_1_1blk_html"><div class="ttname"><a href="../../d0/d39/structdggt_1_1blk.html">dggt::blk</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:8</div></div>
 <div class="ttc" id="anamespacedggt_html_a1c8a048bfe1c5df6073b4165302ce197"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">dggt::operator*</a></div><div class="ttdeci">vec&lt; R, T &gt; operator*(const vec&lt; C, T &gt; &amp;vector, const mat&lt; C, R, T &gt; &amp;matrix)</div><div class="ttdoc">Vector/matrix multiplication operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:213</div></div>
 <!-- start footer part -->

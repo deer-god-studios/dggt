@@ -1,13 +1,3 @@
-/*!
- * @file dggt.h
- * @brief Includes all public interface files. 
- *
- * This file acts as the public interface and should be what's included in your project if the entire library is used.  It simply includes all headers
- * that act as a public interface to the library.
- * @author Benjamin Briggs
- * @version 0.1 alpha
-*/
-
 /// @cond IncludeGuard
 #ifndef _DGGT_H_
 /// @endcond
@@ -46,6 +36,11 @@
 // 		* state machine
 // 		* 'goal-oriented' AI
 // 		* path-finding (A*)
+
+/*!
+ * @brief The main namespace for the dggt library.
+ * */
+namespace dggt { }
 
 #include "defines/dggt_defines.h"
 #include "math/dggt_math.h"

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['u64_202',['u64',['../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4',1,'dggt']]],
-  ['uint64_203',['uint64',['../db/d2e/namespacedggt.html#aa4dc7823f711e3467aaabf2c449575ef',1,'dggt']]]
+  ['i32_233',['i32',['../db/d2e/namespacedggt.html#a093e4bbfb3ec219fc914f3f41b725ab7',1,'dggt']]]
 ];

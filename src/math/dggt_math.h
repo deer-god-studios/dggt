@@ -1,9 +1,3 @@
-/*!
- * @file dggt_math.h
- * @brief Public interface for the math library.
- *
- * Includes all public interface headers for the math library.
- * */
 /// @cond IncludeGuard
 #ifndef _DGGT_MATH_H_
 /// @endcond

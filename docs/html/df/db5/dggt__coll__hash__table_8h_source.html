@@ -78,10 +78,10 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    u32 prehash(<span class="keyword">const</span> K&amp; key);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> prehash(<span class="keyword">const</span> K&amp; key);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    u32 prehash(<span class="keyword">const</span> u32&amp; key);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> prehash(<span class="keyword">const</span> <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a>&amp; key);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d5/d13/structdggt_1_1table__pair.html">   15</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a></div>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        V&amp; get_val() { <span class="keywordflow">return</span> val_;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> V&amp; get_val()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> val_;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        b32 operator==(<span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>&amp; other)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> operator==(<span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>&amp; other)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> key_==other.key_;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
@@ -124,23 +124,23 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">   53</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../de/da8/structdggt_1_1iter.html">iter</a>&lt;<a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a>&lt;K,V&gt;,<a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a>&lt;K,V&gt;,<a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk</a>&lt;K,V&gt;&gt; <span class="comment">// wtf</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        u32 currentIndex;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> currentIndex;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../df/d86/structdggt_1_1linked__list.html">table_bucket&lt;K,V&gt;</a>* currentBucket;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d7/d69/structdggt_1_1slnode.html">table_node&lt;K,V&gt;</a>* currentNode;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> table;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table&lt;K,V&gt;</a>* hashTable;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        b32 is_end() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        b32 next();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> is_end() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> next();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>&amp; get();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>&amp; get() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>* get_ptr();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair&lt;K,V&gt;</a>* get_ptr() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> get_mem();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> get_mem() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        b32 is_coll_valid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        b32 is_mem_valid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        b32 vindicate_mem();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> is_coll_valid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> is_mem_valid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> vindicate_mem();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -149,7 +149,7 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d0/d39/structdggt_1_1blk.html">table_blk&lt;K,V&gt;</a> table;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        u32 count;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">table_iter&lt;K,V&gt;</a> operator[](<span class="keyword">const</span> K&amp; key) <span class="keyword">const</span>;</div>
@@ -180,13 +180,13 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    F get_load_factor(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    u32 get_count(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> get_count(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    u32 get_capacity(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> get_capacity(<span class="keyword">const</span> hash_table&lt;K,V&gt;* table);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V,<span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    table_iter&lt;K,V&gt; resize(hash_table&lt;K,V&gt;* table,u32 newSize,A* alloc);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    table_iter&lt;K,V&gt; resize(hash_table&lt;K,V&gt;* table,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> newSize,A* alloc);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> K,<span class="keyword">typename</span> V&gt;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    table_iter&lt;K,V&gt; get_iter(hash_table&lt;K,V&gt;* table);</div>
@@ -197,11 +197,13 @@ $(function() {
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#define _DGGT_COLL_HASH_TABLE_H_</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The main namespace for the dggt library.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html_a17a0c2407511b699e5d933ec2989d2a4"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">dggt::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdoc">Short hand for uint32.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:56</div></div>
 <div class="ttc" id="astructdggt_1_1table__pair_html"><div class="ttname"><a href="../../d5/d13/structdggt_1_1table__pair.html">dggt::table_pair</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:15</div></div>
 <div class="ttc" id="astructdggt_1_1slnode_html"><div class="ttname"><a href="../../d7/d69/structdggt_1_1slnode.html">dggt::slnode</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:9</div></div>
 <div class="ttc" id="astructdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4_html"><div class="ttname"><a href="../../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html">dggt::iter&lt; table_pair&lt; K, V &gt;, hash_table&lt; K, V &gt;, table_blk&lt; K, V &gt; &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:53</div></div>
 <div class="ttc" id="astructdggt_1_1hash__table_html"><div class="ttname"><a href="../../d0/d0e/structdggt_1_1hash__table.html">dggt::hash_table</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.h:35</div></div>
+<div class="ttc" id="anamespacedggt_html_a871ff622137b86e29987fa9d956a5c3a"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">dggt::b32</a></div><div class="ttdeci">uint32_t b32</div><div class="ttdoc">Short hand for bool32.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:68</div></div>
 <div class="ttc" id="astructdggt_1_1blk_html"><div class="ttname"><a href="../../d0/d39/structdggt_1_1blk.html">dggt::blk</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:8</div></div>
 <div class="ttc" id="astructdggt_1_1linked__list_html"><div class="ttname"><a href="../../df/d86/structdggt_1_1linked__list.html">dggt::linked_list</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:16</div></div>
 <div class="ttc" id="astructdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4_html"><div class="ttname"><a href="../../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html">dggt::iter&lt; T, linked_list&lt; T &gt;, slnode&lt; T &gt; * &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_coll_linked_list.h:22</div></div>

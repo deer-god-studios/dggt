@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['u64_99',['u64',['../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4',1,'dggt']]],
-  ['uint64_100',['uint64',['../db/d2e/namespacedggt.html#aa4dc7823f711e3467aaabf2c449575ef',1,'dggt']]]
+  ['table_5fpair_107',['table_pair',['../d5/d13/structdggt_1_1table__pair.html',1,'dggt']]],
+  ['transform_108',['transform',['../d8/de1/structdggt_1_1mat.html#ad50f9b02dd89267b7d9788e498103e3c',1,'dggt::mat::transform()'],['../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#abbbd7758ba6b5bd9798db508d22f6e6f',1,'dggt::mat&lt; 2, 2, T &gt;::transform()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a4e01b1713d2bbf8d0cf88aa14d823b76',1,'dggt::mat&lt; N, N, T &gt;::transform()']]],
+  ['transpose_109',['transpose',['../d8/de1/structdggt_1_1mat.html#aa8d820b77d52684b41f05e2eb20a7af4',1,'dggt::mat::transpose()'],['../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a74a6f0853918b5b917d2c77ebd0da5bd',1,'dggt::mat&lt; 2, 2, T &gt;::transpose()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ab1f539254dbcf6cee40466e2ea51d4f2',1,'dggt::mat&lt; N, N, T &gt;::transpose()']]]
 ];

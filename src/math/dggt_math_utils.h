@@ -1,37 +1,58 @@
-/*!
- * @file dggt_math_utils.h
- * @brief Some common math functions.
- * @todo Intrinsics
- * */
-
-/// @cond IncludeGuard
+/*! @cond IncludeGuard */
 #ifndef _DGGT_MATH_UTILS_H_
-/// @endconf
+/*! @endcond */
 
 #include <cmath> // TODO: get rid of this!
+
 #include "types/dggt_types.h"
 
 namespace dggt
 {
-
+	/*!
+	 * @brief Finds the maximum of two values.
+	 * @tparam T Any type that overloads the greater-than operator.
+	 * @param val0 A value to compare.
+	 * @param val1 A value to compare.
+	 * @return If val0 is strictly greater-than val1 then val0 is returned, otherwise if val0 is less-than or equal to val1 then val1 is returned.
+	 * */
 	template <typename T>
 	T max(const T& val0,const T& val1)
 	{
 		return val0>val1?val0:val1;
 	}
 
+	/*!
+	 * @brief Finds the minimum of two values.
+	 * @tparam T Any type that overloads the less-than operator.
+	 * @param val0 A value to compare.
+	 * @param val1 A value to compare.
+	 * @return If val0 is strictly less-than val1 then val0 is returned, otherwise if val0 is greater-than or equal to val1 then val1 is returned.
+	 * */
 	template <typename T>
 	T min(const T& val0,const T& val1)
 	{
 		return val0<val1?val0:val1;
 	}
 
+	/*!
+	 * @brief Squares a number.
+	 * @tparam T Any type that overloads multiplication.
+	 * @param val The value to square.
+	 * @return The square of the passed value.
+	 * */
 	template <typename T>
 	T sq(T val)
 	{
 		return val*val;
 	}
 
+	/*!
+	 * @brief Raises a value to a power.
+	 * @tparam T Any type that can initialize itself from 1 and overloads multiplication.
+	 * @param val The value to raise to a power.
+	 * @param p The unsigned integer power to raise the value by.
+	 * @return val raised to the power, p.
+	 * */
 	template <typename T>
 	T pow(T val,uint32 p)
 	{
@@ -45,12 +66,24 @@ namespace dggt
 		}
 	}
 
+	/*!
+	 * @brief Calculates powers of two.
+	 * @tparam T An integer type.
+	 * @param p The power to raise two.
+	 * @return Two raised to the p power.
+	 * */
 	template <typename T>
 	T pow2(uint32 p)
 	{
 		return T(1<<p);
 	}
 
+	/*!
+	 * @brief Determines if a number is a power of two.
+	 * @tparam T An integer type.
+	 * @param val The value to check.
+	 * @return Returns nonzero if val is a power of two and zero otherwise.
+	 * */
 	template <typename T>
 	b32 is_pow2(T val)
 	{
@@ -64,6 +97,12 @@ namespace dggt
 		}
 	}
 
+	/*!
+	 * @brief Calculates the next power of two larger than a given value.
+	 * @tparam T An integer type.
+	 * @param val The value used to find the next power of two.
+	 * @return The next power of two greater than val.  If val is a power of two next_gt_pow2 still returns the next greater power of two.
+	 * */
 	template <typename T>
 	T next_gt_pow2(T val)
 	{
@@ -83,18 +122,36 @@ namespace dggt
 		}
 	}
 
+	/*!
+	 * @brief Sums the first k powers of two.
+	 *
+	 * Given k, sum_pow2 will calculate 1+2+4+8+16+...+2^k
+	 * @tparam T An integer type.
+	 * @param k The highest power of two in the sum.
+	 * @return The summation of the first k powers of two.
+	 * */
 	template <typename T>
 	T sum_pow2(u32 k)
 	{
 		return pow2<T>(k+1)-T(1);
 	}
 
+	/*!
+	 * @brief Determines if a value is a sum of consecutive powers of two.
+	 * @tparam T An integer type.
+	 * @param val The value to check.
+	 * @return A nonzero value if val is the result of sum_pow2(k) for some k, otherwise returns zero.
+	 * */
 	template <typename T>
 	b32 is_sum_pow2(T val)
 	{
 		return is_pow2(val+T(1));
 	}
 
+	/*!
+	 * @brief Finds the next summation of consecutive powers of two which is greater or equal to a given value.
+	 * @tparam T An integer type.
+	 * */
 	template <typename T>
 	T next_ge_sum_pow2(T val)
 	{
@@ -211,7 +268,7 @@ namespace dggt
 	}
 }
 
-/// @cond IncludeGuard
+/*! @cond IncludeGuard */
 #define _DGGT_MATH_UTILS_H_
 #endif
-/// @endcond
+/*! @endcond */
