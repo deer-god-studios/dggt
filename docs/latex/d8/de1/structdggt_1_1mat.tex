@@ -302,6 +302,11 @@ template$<$uint32 M$>$ \\
 Multiply and assignment operator. 
 
 Multiplies and assigns the result. (ie. short hand for A=A$\ast$B.). 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em M} & A u32 representing the number of rows of the right hand side of the multiplication. \\
+\hline
+\end{DoxyTemplParams}
+
 \begin{DoxyParams}{Parameters}
 {\em rhs} & The matrix to multiply. \\
 \hline
@@ -477,7 +482,15 @@ A reference to the newly transformed matrix.
 Transformation operator. 
 
 Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v\textquotesingle{}=A$\ast$v where A is a transformation matrix, v is a vector and v\textquotesingle{} is a vector such that\+: ~\newline
- v\textquotesingle{}\mbox{[}i\mbox{]}=v.\+dot(mat\+\_\+row\mbox{[}i\mbox{]}) where mat\+\_\+row\mbox{[}i\mbox{]} is the i\textquotesingle{}th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). \mbox{\Hypertarget{structdggt_1_1mat_ace42ee3491175e1d51a9dde093ce81b9}\label{structdggt_1_1mat_ace42ee3491175e1d51a9dde093ce81b9}} 
+ v\textquotesingle{}\mbox{[}i\mbox{]}=v.\+dot(mat\+\_\+row\mbox{[}i\mbox{]}) where mat\+\_\+row\mbox{[}i\mbox{]} is the i\textquotesingle{}th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). 
+\begin{DoxyParams}{Parameters}
+{\em vector} & A vector of dimension C. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector of dimension R. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_ace42ee3491175e1d51a9dde093ce81b9}\label{structdggt_1_1mat_ace42ee3491175e1d51a9dde093ce81b9}} 
 \index{dggt::mat$<$ C, R, T $>$@{dggt::mat$<$ C, R, T $>$}!transpose@{transpose}}
 \index{transpose@{transpose}!dggt::mat$<$ C, R, T $>$@{dggt::mat$<$ C, R, T $>$}}
 \doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}

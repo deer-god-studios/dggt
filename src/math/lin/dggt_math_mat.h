@@ -134,6 +134,7 @@ namespace dggt
 		 * @brief Multiply and assignment operator.
 		 *
 		 * Multiplies and assigns the result.  (ie. short hand for A=A*B.).
+		 * @tparam M A u32 representing the number of rows of the right hand side of the multiplication.
 		 * @param rhs The matrix to multiply.
 		 * @return A reference to the multiplied and assigned matrix.
 		 * */
@@ -149,6 +150,8 @@ namespace dggt
 		 * v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector
 		 * of A.  We can also say the transformed vector is a linear combination
 		 * of all the columns of A where the elements of v are scaling factors).
+		 * @param vector A vector of dimension C.
+		 * @return The transformed vector of dimension R. 
 		 * */
 		vec<R,T> transform(const vec<C,T>& vector) const;
 
@@ -233,6 +236,7 @@ namespace dggt
 	 * Transforms a vector by a matrix.
 	 * @tparam C A u32 representing the dimension of the vector and the number of columns of the transformation matrix.
 	 * @tparam R A u32 representing the dimension of the resulting vector and the number of rows of the transformation matrix.
+	 * @tparam T The type of the vector's and matrix's elements.
 	 * @param vector The vector to transform.
 	 * @param matrix The transformation matrix.
 	 * @return The transformed vector.
@@ -244,6 +248,9 @@ namespace dggt
 	 * @brief Matrix scaling operator.
 	 *
 	 * Scales a matrix by a scalar.
+	 * @tparam C A u32 representing the number of columns.
+	 * @tparam R A u32 representing the number of row.
+	 * @tparam T The type of the scalar and the matrix's elements.
 	 * @param scalar A const reference to a scalar of type T representing the scaling factor.
 	 * @param matrix A const reference to the matrix to scale.
 	 * @return The scaled matrix.

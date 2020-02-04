@@ -36,7 +36,7 @@ namespace dggt
 		/*!
 		 * @brief An explicit constructor which initializes every element to a given value.
 		 * @param val The value each element will be initialized to.
-		 * @note This constructor is explicit so one can't simply write something like, vec<2,float32> v=5.0f, a seemingly nonsensical and confusing mathematical statement.
+		 * @note This constructor is explicit so one can't simply write something like, vec<2,float32> v=5.0f, a seemingly nonsensical and confusing statement.
 		 * */
 		explicit vec(const T& val);
 

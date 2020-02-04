@@ -543,7 +543,13 @@ template&lt;uint32 M&gt; </div>
 </div><div class="memdoc">
 
 <p>Multiply and assignment operator. </p>
-<p>Multiplies and assigns the result. (ie. short hand for A=A*B.). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Multiplies and assigns the result. (ie. short hand for A=A*B.). </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">M</td><td>A u32 representing the number of rows of the right hand side of the multiplication. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rhs</td><td>The matrix to multiply. </td></tr>
   </table>
@@ -827,7 +833,13 @@ template&lt;uint32 C, uint32 R, typename T &gt; </div>
 
 <p>Transformation operator. </p>
 <p>Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v'=A*v where A is a transformation matrix, v is a vector and v' is a vector such that: <br  />
- v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). </p>
+ v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>A vector of dimension C. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformed vector of dimension R. </dd></dl>
 
 </div>
 </div>

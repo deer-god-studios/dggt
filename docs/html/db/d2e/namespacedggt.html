@@ -141,6 +141,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt; 4, 4, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html">mat&lt; N, N, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An N-by-N square matrix.  <a href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8a/structdggt_1_1pool__block.html">pool_block</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +224,8 @@ typedef <a class="el" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_0
 <tr class="separator:a20b5a93f1fa14a5e7ba29b1e09decf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplParams" colspan="2"><a id="a7a499a90cdbbda11dec61b8df93e707d"></a>
 template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>matn</b> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;</td></tr>
+<tr class="memitem:a7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a7a499a90cdbbda11dec61b8df93e707d">matn</a> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;</td></tr>
+<tr class="memdesc:a7a499a90cdbbda11dec61b8df93e707d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html" title="An N-by-N square matrix.">mat&lt;N,N,T&gt;</a> <br /></td></tr>
 <tr class="separator:a7a499a90cdbbda11dec61b8df93e707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c128dcd91ad2ff85470b5015b46d41e"><td class="memTemplParams" colspan="2"><a id="a2c128dcd91ad2ff85470b5015b46d41e"></a>
 template&lt;typename T &gt; </td></tr>
@@ -597,13 +599,13 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abfb4e26bef24408e00e8981c2317cc97"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 4, 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>proj_mat</b> (const T &amp;width, const T &amp;height, const T &amp;near, const T &amp;far)</td></tr>
 <tr class="separator:abfb4e26bef24408e00e8981c2317cc97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08bc55cb89fd129e55ca8f894c934ad7"><td class="memTemplParams" colspan="2"><a id="a08bc55cb89fd129e55ca8f894c934ad7"></a>
-template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a08bc55cb89fd129e55ca8f894c934ad7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memitem:a08bc55cb89fd129e55ca8f894c934ad7"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:a08bc55cb89fd129e55ca8f894c934ad7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a08bc55cb89fd129e55ca8f894c934ad7">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:a08bc55cb89fd129e55ca8f894c934ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/d2e/namespacedggt.html#a08bc55cb89fd129e55ca8f894c934ad7">More...</a><br /></td></tr>
 <tr class="separator:a08bc55cb89fd129e55ca8f894c934ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="memTemplParams" colspan="2"><a id="aaf0fa7c0306f4d197249e8ae811c62bd"></a>
-template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memitem:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#aaf0fa7c0306f4d197249e8ae811c62bd">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/d2e/namespacedggt.html#aaf0fa7c0306f4d197249e8ae811c62bd">More...</a><br /></td></tr>
 <tr class="separator:aaf0fa7c0306f4d197249e8ae811c62bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb6ee8e1e8941079a862b891d334630e"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
 <tr class="memitem:adb6ee8e1e8941079a862b891d334630e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#adb6ee8e1e8941079a862b891d334630e">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;vector)</td></tr>
@@ -941,7 +943,7 @@ template&lt;uint32 D, typename T &gt; </div>
 </div>
 </div>
 <a id="a5252e3b09051185338b46cabeb52cec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5252e3b09051185338b46cabeb52cec0">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5252e3b09051185338b46cabeb52cec0">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +971,62 @@ template&lt;uint32 C, uint32 R, typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Matrix scaling operator. </p>
-<p>Scales a matrix by a scalar. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Scales a matrix by a scalar. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>A u32 representing the number of columns. </td></tr>
+    <tr><td class="paramname">R</td><td>A u32 representing the number of row. </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the scalar and the matrix's elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>A const reference to a scalar of type T representing the scaling factor. </td></tr>
+    <tr><td class="paramname">matrix</td><td>A const reference to the matrix to scale. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
+
+</div>
+</div>
+<a id="aaf0fa7c0306f4d197249e8ae811c62bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0fa7c0306f4d197249e8ae811c62bd">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt; dggt::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Matrix scaling operator. </p>
+<p>Scales a matrix by a scalar. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the matrix. </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the scalar and the matrix's elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scalar</td><td>A const reference to a scalar of type T representing the scaling factor. </td></tr>
     <tr><td class="paramname">matrix</td><td>A const reference to the matrix to scale. </td></tr>
@@ -981,7 +1038,7 @@ template&lt;uint32 C, uint32 R, typename T &gt; </div>
 </div>
 </div>
 <a id="adb6ee8e1e8941079a862b891d334630e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb6ee8e1e8941079a862b891d334630e">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6ee8e1e8941079a862b891d334630e">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1028,7 +1085,7 @@ template&lt;uint32 D, typename T &gt; </div>
 </div>
 </div>
 <a id="a1c8a048bfe1c5df6073b4165302ce197"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8a048bfe1c5df6073b4165302ce197">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8a048bfe1c5df6073b4165302ce197">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1060,6 +1117,54 @@ template&lt;uint32 C, uint32 R, typename T &gt; </div>
   <table class="tparams">
     <tr><td class="paramname">C</td><td>A u32 representing the dimension of the vector and the number of columns of the transformation matrix. </td></tr>
     <tr><td class="paramname">R</td><td>A u32 representing the dimension of the resulting vector and the number of rows of the transformation matrix. </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the vector's and matrix's elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
+    <tr><td class="paramname">matrix</td><td>The transformation matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
+
+</div>
+</div>
+<a id="a08bc55cb89fd129e55ca8f894c934ad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08bc55cb89fd129e55ca8f894c934ad7">&#9670;&nbsp;</a></span>operator*() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;N,T&gt; dggt::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vector/matrix multiplication operator. </p>
+<p>Transforms a vector by a matrix. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the vector and the number of columns of the transformation matrix. </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the vector's and matrix's elements. </td></tr>
   </table>
   </dd>
 </dl>
