@@ -28,48 +28,34 @@ A vector struct of dimension, D and type T.
 \begin{DoxyCompactList}\small\item\em Subtraction operator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_a3d779dac27edba512bffceb96d6c679f}{operator-\/}} () const
 \begin{DoxyCompactList}\small\item\em Unary negation operator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structvec_af564b10e51901ba20347d763f9f4793e}\label{structvec_af564b10e51901ba20347d763f9f4793e}} 
-\mbox{\hyperlink{structvec}{vec}} {\bfseries operator$\ast$} (const T \&scalar) const
-\item 
-\mbox{\Hypertarget{structvec_ad6ae9c3dd32562b49dd37b353b27b1f8}\label{structvec_ad6ae9c3dd32562b49dd37b353b27b1f8}} 
-\mbox{\hyperlink{structvec}{vec}} {\bfseries operator/} (const T \&scalar) const
-\item 
-\mbox{\Hypertarget{structvec_a030fcd539e3928a8fff951213dae6fbc}\label{structvec_a030fcd539e3928a8fff951213dae6fbc}} 
-bool32 {\bfseries operator==} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structvec_acac69cc7d90208b68122527351f21c39}\label{structvec_acac69cc7d90208b68122527351f21c39}} 
-bool32 {\bfseries operator!=} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structvec_adec4ddc5ce172ba4337158a30e78b185}\label{structvec_adec4ddc5ce172ba4337158a30e78b185}} 
-\mbox{\hyperlink{structvec}{vec}} \& {\bfseries operator=} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
-\item 
-\mbox{\Hypertarget{structvec_a5f9440983155a9be1ed87a7fdb8fe8bb}\label{structvec_a5f9440983155a9be1ed87a7fdb8fe8bb}} 
-\mbox{\hyperlink{structvec}{vec}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
-\item 
-\mbox{\Hypertarget{structvec_a3a457131cd3eb17de82495084f5894f2}\label{structvec_a3a457131cd3eb17de82495084f5894f2}} 
-\mbox{\hyperlink{structvec}{vec}} \& {\bfseries operator+=} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
-\item 
-\mbox{\Hypertarget{structvec_afd0a9119391a689c4fe6dc551298f64e}\label{structvec_afd0a9119391a689c4fe6dc551298f64e}} 
-\mbox{\hyperlink{structvec}{vec}} \& {\bfseries operator$\ast$=} (const T \&scalar)
-\item 
-\mbox{\Hypertarget{structvec_a505a67f1efd7764bbdf7328d01a718d6}\label{structvec_a505a67f1efd7764bbdf7328d01a718d6}} 
-\mbox{\hyperlink{structvec}{vec}} \& {\bfseries operator/=} (const T \&scalar)
-\item 
-\mbox{\Hypertarget{structvec_a6193efb3ffe27c302a5bbbd52f337c2e}\label{structvec_a6193efb3ffe27c302a5bbbd52f337c2e}} 
-T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (uint32 index)
-\item 
-\mbox{\Hypertarget{structvec_a0b1002ae5639e07d050f67195656efc8}\label{structvec_a0b1002ae5639e07d050f67195656efc8}} 
-const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (uint32 index) const
-\item 
-\mbox{\Hypertarget{structvec_aa8a963fe6190a59f9886c7647bb914f1}\label{structvec_aa8a963fe6190a59f9886c7647bb914f1}} 
-T {\bfseries dot} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structvec_a974c68e39cbb093e637774efe0f52ef8}\label{structvec_a974c68e39cbb093e637774efe0f52ef8}} 
-T $\ast$ {\bfseries data} ()
-\item 
-\mbox{\Hypertarget{structvec_a8c1be9324b828f9c95e6346ef1c02637}\label{structvec_a8c1be9324b828f9c95e6346ef1c02637}} 
-const T $\ast$ {\bfseries data} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_af564b10e51901ba20347d763f9f4793e}{operator$\ast$}} (const T \&scalar) const
+\begin{DoxyCompactList}\small\item\em right-\/scaling operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \mbox{\hyperlink{structvec_ad6ae9c3dd32562b49dd37b353b27b1f8}{operator/}} (const T \&scalar) const
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Contraction\textquotesingle{} operator. \end{DoxyCompactList}\item 
+bool32 \mbox{\hyperlink{structvec_a030fcd539e3928a8fff951213dae6fbc}{operator==}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Equality check operator. \end{DoxyCompactList}\item 
+bool32 \mbox{\hyperlink{structvec_acac69cc7d90208b68122527351f21c39}{operator!=}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Non-\/equality check operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \& \mbox{\hyperlink{structvec_adec4ddc5ce172ba4337158a30e78b185}{operator=}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \& \mbox{\hyperlink{structvec_a5f9440983155a9be1ed87a7fdb8fe8bb}{operator-\/=}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Subtract and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \& \mbox{\hyperlink{structvec_a3a457131cd3eb17de82495084f5894f2}{operator+=}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Add and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \& \mbox{\hyperlink{structvec_afd0a9119391a689c4fe6dc551298f64e}{operator$\ast$=}} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Scale and assign operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvec}{vec}} \& \mbox{\hyperlink{structvec_a505a67f1efd7764bbdf7328d01a718d6}{operator/=}} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Contract and assign operator. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{structvec_a6193efb3ffe27c302a5bbbd52f337c2e}{operator\mbox{[}$\,$\mbox{]}}} (uint32 index)
+\begin{DoxyCompactList}\small\item\em Index operator. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{structvec_a0b1002ae5639e07d050f67195656efc8}{operator\mbox{[}$\,$\mbox{]}}} (uint32 index) const
+\begin{DoxyCompactList}\small\item\em Index operator (const version). \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structvec_aa8a963fe6190a59f9886c7647bb914f1}{dot}} (const \mbox{\hyperlink{structvec}{vec}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Dot product operator. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{structvec_a974c68e39cbb093e637774efe0f52ef8}{data}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the element array. \end{DoxyCompactList}\item 
+const T $\ast$ \mbox{\hyperlink{structvec_a8c1be9324b828f9c95e6346ef1c02637}{data}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const pointer to the element array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -81,7 +67,7 @@ T \mbox{\hyperlink{structvec_a12f34df011396935a20c955c123b7971}{e}} \mbox{[}D\mb
 \item 
 \mbox{\Hypertarget{structvec_aaff26a1575f57378296cab2514b5e0ff}\label{structvec_aaff26a1575f57378296cab2514b5e0ff}} 
 static const uint32 \mbox{\hyperlink{structvec_aaff26a1575f57378296cab2514b5e0ff}{D\+IM}} =D
-\begin{DoxyCompactList}\small\item\em A static const integer representing the vector\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A static const unsigned integer representing the vector\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -189,6 +175,110 @@ A copy constructor for instantiating vectors from a vector of any other dimensio
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structvec_a974c68e39cbb093e637774efe0f52ef8}\label{structvec_a974c68e39cbb093e637774efe0f52ef8}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!data@{data}}
+\index{data@{data}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the element array. 
+
+Used for passing the vector\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a8c1be9324b828f9c95e6346ef1c02637}\label{structvec_a8c1be9324b828f9c95e6346ef1c02637}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!data@{data}}
+\index{data@{data}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+const T$\ast$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a const pointer to the element array. 
+
+Used for passing the vector\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A const pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_aa8a963fe6190a59f9886c7647bb914f1}\label{structvec_aa8a963fe6190a59f9886c7647bb914f1}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!dot@{dot}}
+\index{dot@{dot}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Dot product operator. 
+
+Returns a scalar value which is equal to the dot product of this vector and the parameter. (eg. Given v0=\mbox{[}1,2\mbox{]} and v1=\mbox{[}2,2\mbox{]} then v0.\+dot(v1)=(1$\ast$2)+(2$\ast$2)=2+4=6. 
+\begin{DoxyParams}{Parameters}
+{\em A} & vector which will be the right hand side of the dot product. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A scalar quantity representing the dot product of the two vectors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_acac69cc7d90208b68122527351f21c39}\label{structvec_acac69cc7d90208b68122527351f21c39}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+bool32 \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Non-\/equality check operator. 
+
+Two vectors are unequal if there is at least one element that does not equal it\textquotesingle{}s corresponding element in the other vector. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}!=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool32 which is non-\/zero if the two vectors are not equal and zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_af564b10e51901ba20347d763f9f4793e}\label{structvec_af564b10e51901ba20347d763f9f4793e}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+right-\/scaling operator. 
+
+Scales a vector by right-\/multiplying every element by a scalar. (ie. the scalar appears on the right hand side of the multiplication. Normally this does not matter as multiplication is normally commutative.). 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A scalar (ie. non-\/vector or a mathematical construct with only magnitude) of type T. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_afd0a9119391a689c4fe6dc551298f64e}\label{structvec_afd0a9119391a689c4fe6dc551298f64e}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Scale and assign operator. 
+
+Scales a vector and assigns the result to the vector on the left hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. (ie. Short hand for v0=v0$\ast$scalar.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The scalar on the right hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the scaled and assigned vector. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structvec_a16b642e385c2b6a24136aa12403393e0}\label{structvec_a16b642e385c2b6a24136aa12403393e0}} 
 \index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator+@{operator+}}
 \index{operator+@{operator+}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
@@ -207,6 +297,25 @@ Adds two vectors by adding each corresponding element.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A vector where every element is the sum of the corresponding elements in the vector sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a3a457131cd3eb17de82495084f5894f2}\label{structvec_a3a457131cd3eb17de82495084f5894f2}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Add and assign operator. 
+
+Finds the sum of two vectors and assigns the result to the vector on the left hand side of the \textquotesingle{}+=\textquotesingle{} symbol. (ie. Short hand for v0=v0+v1.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}+=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the added and assigned vector. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structvec_a3d779dac27edba512bffceb96d6c679f}\label{structvec_a3d779dac27edba512bffceb96d6c679f}} 
 \index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator-\/@{operator-\/}}
@@ -240,6 +349,139 @@ Subtracts two vectors by subtracting each corresponding element.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A vector where every element is the difference of the corresponding elements in the vector difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a5f9440983155a9be1ed87a7fdb8fe8bb}\label{structvec_a5f9440983155a9be1ed87a7fdb8fe8bb}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Subtract and assign operator. 
+
+Finds the difference of two vectors and assigns the result to the vector on the left hand side of the \textquotesingle{}-\/=\textquotesingle{} symbol. (ie. Short hand for v0=v0-\/v1.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}-\/=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the subtracted and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_ad6ae9c3dd32562b49dd37b353b27b1f8}\label{structvec_ad6ae9c3dd32562b49dd37b353b27b1f8}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+\textquotesingle{}Contraction\textquotesingle{} operator. 
+
+The \textquotesingle{}inverse\textquotesingle{} of the scaling operator. The vector this operator returns is still a scaled by the parameter but through the division of every element in the vector by scalar. (ie. It\textquotesingle{}s contracted.) 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A scalar of type T. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contracted vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a505a67f1efd7764bbdf7328d01a718d6}\label{structvec_a505a67f1efd7764bbdf7328d01a718d6}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Contract and assign operator. 
+
+Contracts a vector and assigns the result to the vector on the left hand side of the \textquotesingle{}$\ast$=\textquotesingle{} symbol. (ie. Short hand for v0=v0/scalar.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The scalar on the right hand side of the \textquotesingle{}/=\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the contracted and assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_adec4ddc5ce172ba4337158a30e78b185}\label{structvec_adec4ddc5ce172ba4337158a30e78b185}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+\mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+Assigns every element of a given vector to another. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The source vector in the assignment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the assigned vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a030fcd539e3928a8fff951213dae6fbc}\label{structvec_a030fcd539e3928a8fff951213dae6fbc}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+bool32 \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Equality check operator. 
+
+Two vectors are equal if each of their elements are equal. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}==\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool32 which is non-\/zero if the two vectors are equal and zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a6193efb3ffe27c302a5bbbd52f337c2e}\label{structvec_a6193efb3ffe27c302a5bbbd52f337c2e}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+T \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption})}
+
+
+
+Index operator. 
+
+Can access any element in the vector by integer index (eg. vector\mbox{[}0\mbox{]} will return the zeroth element in the vector or the x-\/value.). 
+\begin{DoxyParams}{Parameters}
+{\em index} & An integer from 0 to D-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the corresponding element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structvec_a0b1002ae5639e07d050f67195656efc8}\label{structvec_a0b1002ae5639e07d050f67195656efc8}} 
+\index{vec$<$ D, T $>$@{vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vec$<$ D, T $>$@{vec$<$ D, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
+const T \& \mbox{\hyperlink{structvec}{vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Index operator (const version). 
+
+Can access any element in the vector by integer index (eg. vector\mbox{[}0\mbox{]} will return the zeroth element in the vector or the x-\/value.). 
+\begin{DoxyParams}{Parameters}
+{\em index} & An integer from 0 to D-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const reference to the corresponding element. 
 \end{DoxyReturn}
 
 

@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['vec_69',['vec',['../d0/d93/structvec.html',1,'vec&lt; D, T &gt;'],['../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437',1,'vec::vec()'],['../d0/d93/structvec.html#a113681892d4e52da2c6878405a70f3fe',1,'vec::vec(const T &amp;val)'],['../d0/d93/structvec.html#a689a1ca11d1995d1664506e0b854b06e',1,'vec::vec(const vec &amp;other)'],['../d0/d93/structvec.html#aab97f22af90ed26778ab5fc41bb7a03f',1,'vec::vec(const vec&lt; D-1, T &gt; &amp;other, T last=T(1))'],['../d0/d93/structvec.html#ae8b868fdc89dba0cf5fadff0bd091d79',1,'vec::vec(const vec&lt; D2, T &gt; &amp;other)']]],
-  ['vec_3c_201_2c_20t_20_3e_70',['vec&lt; 1, T &gt;',['../d1/d7a/structvec_3_011_00_01T_01_4.html',1,'']]],
-  ['vec_3c_202_2c_20t_20_3e_71',['vec&lt; 2, T &gt;',['../d3/db0/structvec_3_012_00_01T_01_4.html',1,'']]],
-  ['vec_3c_203_2c_20t_20_3e_72',['vec&lt; 3, T &gt;',['../d6/d64/structvec_3_013_00_01T_01_4.html',1,'']]],
-  ['vec_3c_204_2c_20t_20_3e_73',['vec&lt; 4, T &gt;',['../d1/dc1/structvec_3_014_00_01T_01_4.html',1,'']]]
+  ['set_5fcolumn_73',['set_column',['../d8/de1/structdggt_1_1mat.html#ad1bb01422377fa9a0e4fa9e91b7e7906',1,'dggt::mat::set_column()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a36b901ab55cc57b29e40122b9a1ce110',1,'dggt::mat&lt; N, N, T &gt;::set_column()']]],
+  ['set_5frow_74',['set_row',['../d8/de1/structdggt_1_1mat.html#a9e9bebdccaa3217fd6907b99e595594d',1,'dggt::mat::set_row()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a89b5d940bc463d1a19f829232672f1d7',1,'dggt::mat&lt; N, N, T &gt;::set_row()']]],
+  ['slnode_75',['slnode',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
+  ['slnode_3c_20k_20_3e_76',['slnode&lt; K &gt;',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
+  ['slnode_3c_20k_2c_20v_20_3e_77',['slnode&lt; K, V &gt;',['../d7/d69/structdggt_1_1slnode.html',1,'dggt']]],
+  ['stack_78',['stack',['../d0/d0b/structdggt_1_1stack.html',1,'dggt']]],
+  ['store_5fblock_79',['store_block',['../d7/d79/structdggt_1_1store__block.html',1,'dggt']]]
 ];

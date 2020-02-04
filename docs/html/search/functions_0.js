@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_2b_129',['operator+',['../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0',1,'vec']]],
-  ['operator_2d_130',['operator-',['../d0/d93/structvec.html#abca9dfe15245bfa54c03dc406b8e9fbd',1,'vec::operator-(const vec &amp;rhs) const'],['../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f',1,'vec::operator-() const']]]
+  ['data_146',['data',['../d8/de1/structdggt_1_1mat.html#ae33e17d14f851a73be6c84334b69d761',1,'dggt::mat::data()'],['../d8/de1/structdggt_1_1mat.html#a2ac97e08d1b8f99ee299fd08352370b9',1,'dggt::mat::data() const'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#aaeb5cbbc7ff75db83221b89b5ca8adb4',1,'dggt::mat&lt; N, N, T &gt;::data()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ae71c2d8de2599448230bfec514540c5d',1,'dggt::mat&lt; N, N, T &gt;::data() const']]]
 ];

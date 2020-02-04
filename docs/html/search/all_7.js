@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['linked_5flist_42',['linked_list',['../df/d86/structdggt_1_1linked__list.html',1,'dggt']]],
-  ['linked_5flist_3c_20k_2c_20v_20_3e_43',['linked_list&lt; K, V &gt;',['../df/d86/structdggt_1_1linked__list.html',1,'dggt']]]
+  ['hash_5ftable_41',['hash_table',['../d0/d0e/structdggt_1_1hash__table.html',1,'dggt']]]
 ];
