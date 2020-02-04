@@ -65,7 +65,7 @@ struct \mbox{\hyperlink{structdggt_1_1linked__list}{linked\+\_\+list}}
 struct \mbox{\hyperlink{structdggt_1_1mat}{mat}}
 \begin{DoxyCompactList}\small\item\em A matrix struct with C columns and R rows of elements of type T. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4}{mat$<$ 2, 2, T $>$}}
-\item 
+\begin{DoxyCompactList}\small\item\em A 2-\/by-\/2 matrix struct. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdggt_1_1mat_3_013_00_013_00_01T_01_4}{mat$<$ 3, 3, T $>$}}
 \item 
 struct \mbox{\hyperlink{structdggt_1_1mat_3_014_00_014_00_01T_01_4}{mat$<$ 4, 4, T $>$}}
@@ -377,12 +377,10 @@ template$<$$>$ u32 {\bfseries prehash} (const u32 \&key)
 \begin{DoxyCompactList}\small\item\em Vector/matrix multiplication operator. \end{DoxyCompactList}\item 
 {\footnotesize template$<$uint32 C, uint32 R, typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \mbox{\hyperlink{namespacedggt_a5252e3b09051185338b46cabeb52cec0}{operator$\ast$}} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&matrix)
 \begin{DoxyCompactList}\small\item\em Matrix scaling operator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}\label{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}} 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
-\item 
-\mbox{\Hypertarget{namespacedggt_a274fb765ce2747f6b1a118f013723d26}\label{namespacedggt_a274fb765ce2747f6b1a118f013723d26}} 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ {\bfseries operator$\ast$} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
-\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}{operator$\ast$}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
+\begin{DoxyCompactList}\small\item\em Vector/matrix multiplication operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{namespacedggt_a274fb765ce2747f6b1a118f013723d26}{operator$\ast$}} (const T \&scalar, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&matrix)
+\begin{DoxyCompactList}\small\item\em Matrix scaling operator. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{namespacedggt_ade3e439e95987ac2fd26fb78ff13f165}\label{namespacedggt_ade3e439e95987ac2fd26fb78ff13f165}} 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 3, T $>$ \&vector, const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 3, 3, T $>$ \&matrix)
 \item 
@@ -684,10 +682,38 @@ Finds the dot product of two vectors.
 \begin{DoxyReturn}{Returns}
 The dot product of the given vectors. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_a274fb765ce2747f6b1a118f013723d26}\label{namespacedggt_a274fb765ce2747f6b1a118f013723d26}} 
+\index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Matrix scaling operator. 
+
+Scales a matrix by a scalar. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & A u32 representing the dimension of the matrix. \\
+\hline
+{\em T} & The type of the scalar and the matrix\textquotesingle{}s elements. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & A const reference to a scalar of type T representing the scaling factor. \\
+\hline
+{\em matrix} & A const reference to the matrix to scale. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled matrix. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacedggt_a5252e3b09051185338b46cabeb52cec0}\label{namespacedggt_a5252e3b09051185338b46cabeb52cec0}} 
 \index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily template$<$uint32 C, uint32 R, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
 
@@ -717,7 +743,7 @@ The scaled matrix.
 \mbox{\Hypertarget{namespacedggt_a6cabfae196f93d341a94a19e65e95252}\label{namespacedggt_a6cabfae196f93d341a94a19e65e95252}} 
 \index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
 
@@ -745,7 +771,7 @@ The scaled matrix.
 \mbox{\Hypertarget{namespacedggt_adb6ee8e1e8941079a862b891d334630e}\label{namespacedggt_adb6ee8e1e8941079a862b891d334630e}} 
 \index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily template$<$uint32 D, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ D, T $>$ \&}]{vector }\end{DoxyParamCaption})}
 
@@ -770,10 +796,38 @@ Scales a vector by a scalar by left-\/multiplying the scalar by every element. (
 \begin{DoxyReturn}{Returns}
 The scaled vector. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}\label{namespacedggt_a73dd0e1a1a114b8f18f97f44a1a9e024}} 
+\index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&}]{vector,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Vector/matrix multiplication operator. 
+
+Transforms a vector by a matrix. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & A u32 representing the dimension of the vector and the number of columns of the transformation matrix. \\
+\hline
+{\em T} & The type of the vector\textquotesingle{}s and matrix\textquotesingle{}s elements. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+{\em matrix} & The transformation matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacedggt_a1c8a048bfe1c5df6073b4165302ce197}\label{namespacedggt_a1c8a048bfe1c5df6073b4165302ce197}} 
 \index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
 {\footnotesize\ttfamily template$<$uint32 C, uint32 R, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ R, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ C, T $>$ \&}]{vector,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ C, R, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
 
@@ -803,7 +857,7 @@ The transformed vector.
 \mbox{\Hypertarget{namespacedggt_a23b6e739d12095b3c3d10a844e294d80}\label{namespacedggt_a23b6e739d12095b3c3d10a844e294d80}} 
 \index{dggt@{dggt}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt@{dggt}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
 \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ dggt\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ N, T $>$ \&}]{vector,  }\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \&}]{matrix }\end{DoxyParamCaption})}
 

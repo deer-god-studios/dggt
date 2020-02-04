@@ -145,6 +145,8 @@ namespace dggt
 		 * v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector
 		 * of A.  We can also say the transformed vector is a linear combination
 		 * of all the columns of A where the elements of v are scaling factors).
+		 * @param vector The vector to transform.
+		 * @return The transformed vector.
 		 * */
 		vec<N,T> transform(const vec<N,T>& vector) const;
 
@@ -166,8 +168,23 @@ namespace dggt
 
 		/*!
 		 * @brief The minor of a matrix.
+		 *
+		 * The matrix minor is the matrix after removing a row and column.
+		 * @param columnToRemove a u32 representing the column to remove ranging from 0 to N-1.
+		 * @param rowToRemove a u32 representing the row to remove ranging from 0 to N-1.
 		 * */
 		mat<N-1,N-1,T> minor(uint32 columnToRemove,uint32 rowToRemove) const;
+
+		/*!
+		 * @brief A matrix's comatrix.
+		 *
+		 * A comatrix is a matrix comprising of elements equal to the
+		 * determinant of the minor after removing that row and column.  Each
+		 * element also follows a +/- sign checkerboard pattern given by
+		 * (-1)^(i+j).  They are used in calculating the matrix's inverse (if
+		 * such an inverse exists.).
+		 * @return The comatrix of this matrix.
+		 * */
 		mat comatrix() const;
 
 		/*!
@@ -177,9 +194,41 @@ namespace dggt
 		 * @return A matrix with N columns and N rows which is the transpose of original matrix.
 		 * */
 		mat transpose() const;
+
+		/*!
+		 * @brief The determinant operator.
+		 *
+		 * A matrix's determinant is a value used in finding a matrix's inverse
+		 * and if the inverse exists (An N-by-N matrix is invertable if and
+		 * only if it's determinant is nonzero.).
+		 * @return The determinant of type T.
+		 * */
 		T determinant() const;
+
+		/*!
+		 * @brief An alternate way to write determinant.
+		 * @return The determinant of type T.
+		 * */
 		T det() const;
+
+		/*!
+		 * @brief The inverse operator.
+		 *
+		 * If the matrix's determinant is nonzero then this returns a matrix
+		 * whose elements are defined and
+		 * mat*mat.inverse()=mat.inverse*mat=MATN_IDENTITY<N,T>.  If the
+		 * determinant is zero, it's elements are NaN (if T supports NaN.).
+		 * @return The inverse.
+		 * */
 		mat inverse() const;
+
+		/*!
+		 * @brief Inverts the matrix.
+		 *
+		 * This function will change the matrix you call it on setting it's
+		 * elements to that of it's inverse (if it exists.).
+		 * @return A reference to the now inverted matrix.
+		 * */
 		mat& invert();
 
 		/*!

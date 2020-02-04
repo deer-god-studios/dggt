@@ -1,110 +1,615 @@
 \hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4}{}\doxysection{dggt\+::mat$<$ 2, 2, T $>$ Struct Template Reference}
 \label{structdggt_1_1mat_3_012_00_012_00_01T_01_4}\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+
+
+A 2-\/by-\/2 matrix struct.  
+
+
+
+
+{\ttfamily \#include $<$dggt\+\_\+math\+\_\+mat2.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7ea40a858887ae95bd83968ca85d3184}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7ea40a858887ae95bd83968ca85d3184}} 
-{\bfseries mat} (const T e\mbox{[}4\mbox{]})
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab9fedfb2c69e4f5c6d56f4c556847b0d}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab9fedfb2c69e4f5c6d56f4c556847b0d}} 
-{\bfseries mat} (const T \&diagonal)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab68d2dbb9dcfd893cc0f0241ab327ec6}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab68d2dbb9dcfd893cc0f0241ab327ec6}} 
-{\bfseries mat} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&other)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8ac4fab5ee513b266f0c493729f2b04c}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8ac4fab5ee513b266f0c493729f2b04c}} 
-{\bfseries mat} (const T \&m00, const T \&m01, const T \&m10, const T \&m11)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7c58c3aac545c606e2296006fe88929c}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7c58c3aac545c606e2296006fe88929c}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries operator+} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aceab7829b72f13b60cd0743a95182bff}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aceab7829b72f13b60cd0743a95182bff}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries operator-\/} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afdf159159dab900f592c22c918c365aa}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afdf159159dab900f592c22c918c365aa}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries operator$\ast$} (const T \&scalar) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_adf9c9793eda15c3370d4264402cae7a5}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_adf9c9793eda15c3370d4264402cae7a5}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries operator$\ast$} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a435b808ee3d750ed5f385d1ebc41f38f}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a435b808ee3d750ed5f385d1ebc41f38f}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries operator=} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aae309f6dc75b3aa3f755377385c73530}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aae309f6dc75b3aa3f755377385c73530}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries operator+=} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a869f00cfc4f7ecfc823b9a1a119a4ca0}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a869f00cfc4f7ecfc823b9a1a119a4ca0}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries operator-\/=} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_af4a5734b34e62599ebee4ebee023c012}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_af4a5734b34e62599ebee4ebee023c012}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries operator$\ast$=} (const T \&scalar)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9a5ef0b72b8788bd510db4188eed12df}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9a5ef0b72b8788bd510db4188eed12df}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries operator$\ast$=} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_abbbd7758ba6b5bd9798db508d22f6e6f}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_abbbd7758ba6b5bd9798db508d22f6e6f}} 
-\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries transform} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab73ff3e6f3b314b1d6cfe953e4b112fd}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab73ff3e6f3b314b1d6cfe953e4b112fd}} 
-T $\ast$ {\bfseries data} ()
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0131d4a011e65cb6688ddd7ee46e95db}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0131d4a011e65cb6688ddd7ee46e95db}} 
-const T $\ast$ {\bfseries data} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a74a6f0853918b5b917d2c77ebd0da5bd}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a74a6f0853918b5b917d2c77ebd0da5bd}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries transpose} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a301f2930202078be99a74adcae735261}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a301f2930202078be99a74adcae735261}} 
-T {\bfseries determinant} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a24c5f6c3e1d30d57fee0f1db5721b6c6}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a24c5f6c3e1d30d57fee0f1db5721b6c6}} 
-T {\bfseries det} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries inverse} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ac4553adecdb976c26a08fb2bcf7d7760}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ac4553adecdb976c26a08fb2bcf7d7760}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries invert} ()
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0a45cf53efe82405b7220f6b5e35c3cb}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0a45cf53efe82405b7220f6b5e35c3cb}} 
-T \& {\bfseries get} (uint32 column, uint32 row)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad3c98c5e1c4fa2376a1fc7840cf271fb}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad3c98c5e1c4fa2376a1fc7840cf271fb}} 
-const T \& {\bfseries get} (uint32 column, uint32 row) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aa66667b33cfc7a91e61c9d973620308a}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aa66667b33cfc7a91e61c9d973620308a}} 
-\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries get\+\_\+column} (uint32 index) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a715f1b5674452033c2e4ddf6c8edc9ec}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a715f1b5674452033c2e4ddf6c8edc9ec}} 
-\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ {\bfseries get\+\_\+row} (uint32 index) const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a806369911d63527460ef614e84a6c592}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a806369911d63527460ef614e84a6c592}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries set\+\_\+column} (uint32 column, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&val)
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a287379f59271a52d6d86bc9ae82bfdb9}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a287379f59271a52d6d86bc9ae82bfdb9}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries set\+\_\+row} (uint32 row, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&val)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afb3264374e69d8a805b962f09ccb08d3}{mat}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7ea40a858887ae95bd83968ca85d3184}{mat}} (const T e\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em A constructor taking an array of 4 elements to be copied column-\/major-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab9fedfb2c69e4f5c6d56f4c556847b0d}{mat}} (const T \&diagonal)
+\begin{DoxyCompactList}\small\item\em An explicit constructor taking a scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab68d2dbb9dcfd893cc0f0241ab327ec6}{mat}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&other)
+\begin{DoxyCompactList}\small\item\em The copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8ac4fab5ee513b266f0c493729f2b04c}{mat}} (const T \&\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7d0f1232320004274066a172be030516}{m00}}, const T \&\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a741ff50a09498d06f1c486e936326663}{m01}}, const T \&\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a5ac760796ca8d255fbac16ef6e207c74}{m10}}, const T \&\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8cad0312c76b2b546a299f216a6337d5}{m11}})
+\begin{DoxyCompactList}\small\item\em A constructor taking each element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7c58c3aac545c606e2296006fe88929c}{operator+}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Addition operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aceab7829b72f13b60cd0743a95182bff}{operator-\/}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Subtraction operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afdf159159dab900f592c22c918c365aa}{operator$\ast$}} (const T \&scalar) const
+\begin{DoxyCompactList}\small\item\em Scaling operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_adf9c9793eda15c3370d4264402cae7a5}{operator$\ast$}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Matrix multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a435b808ee3d750ed5f385d1ebc41f38f}{operator=}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aae309f6dc75b3aa3f755377385c73530}{operator+=}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Addition assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a869f00cfc4f7ecfc823b9a1a119a4ca0}{operator-\/=}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Subtraction assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_af4a5734b34e62599ebee4ebee023c012}{operator$\ast$=}} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Scale assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9a5ef0b72b8788bd510db4188eed12df}{operator$\ast$=}} (const \mbox{\hyperlink{structdggt_1_1mat}{mat}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Multiply and assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_abbbd7758ba6b5bd9798db508d22f6e6f}{transform}} (const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&vector) const
+\begin{DoxyCompactList}\small\item\em Transformation operator. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab73ff3e6f3b314b1d6cfe953e4b112fd}{data}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the element array. \end{DoxyCompactList}\item 
+const T $\ast$ \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0131d4a011e65cb6688ddd7ee46e95db}{data}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const pointer to the element array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a74a6f0853918b5b917d2c77ebd0da5bd}{transpose}} () const
+\begin{DoxyCompactList}\small\item\em Transpose operator. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a301f2930202078be99a74adcae735261}{determinant}} () const
+\begin{DoxyCompactList}\small\item\em The determinant operator. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a24c5f6c3e1d30d57fee0f1db5721b6c6}{det}} () const
+\begin{DoxyCompactList}\small\item\em An alternate way to write determinant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}{inverse}} () const
+\begin{DoxyCompactList}\small\item\em The inverse operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ac4553adecdb976c26a08fb2bcf7d7760}{invert}} ()
+\begin{DoxyCompactList}\small\item\em Inverts the matrix. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0a45cf53efe82405b7220f6b5e35c3cb}{get}} (uint32 column, uint32 row)
+\begin{DoxyCompactList}\small\item\em Gets an element. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad3c98c5e1c4fa2376a1fc7840cf271fb}{get}} (uint32 column, uint32 row) const
+\begin{DoxyCompactList}\small\item\em Gets a const reference to an element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aa66667b33cfc7a91e61c9d973620308a}{get\+\_\+column}} (uint32 index) const
+\begin{DoxyCompactList}\small\item\em Gets a column vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a715f1b5674452033c2e4ddf6c8edc9ec}{get\+\_\+row}} (uint32 index) const
+\begin{DoxyCompactList}\small\item\em Gets a row vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a806369911d63527460ef614e84a6c592}{set\+\_\+column}} (uint32 column, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&val)
+\begin{DoxyCompactList}\small\item\em Sets a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a287379f59271a52d6d86bc9ae82bfdb9}{set\+\_\+row}} (uint32 row, const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&val)
+\begin{DoxyCompactList}\small\item\em Sets a row. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7d0f1232320004274066a172be030516}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7d0f1232320004274066a172be030516}} 
-T {\bfseries m00}
-\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7d0f1232320004274066a172be030516}{m00}}
+\begin{DoxyCompactList}\small\item\em The (0,0)\textquotesingle{}th element, columns written first. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a741ff50a09498d06f1c486e936326663}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a741ff50a09498d06f1c486e936326663}} 
-T {\bfseries m01}
-\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a741ff50a09498d06f1c486e936326663}{m01}}
+\begin{DoxyCompactList}\small\item\em The (0,1)\textquotesingle{}th element, columns written first. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a5ac760796ca8d255fbac16ef6e207c74}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a5ac760796ca8d255fbac16ef6e207c74}} 
-T {\bfseries m10}
-\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a5ac760796ca8d255fbac16ef6e207c74}{m10}}
+\begin{DoxyCompactList}\small\item\em The (1,0)\textquotesingle{}th element, columns written first. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8cad0312c76b2b546a299f216a6337d5}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8cad0312c76b2b546a299f216a6337d5}} 
-T {\bfseries m11}
-\end{DoxyCompactItemize}
+T \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8cad0312c76b2b546a299f216a6337d5}{m11}}
+\begin{DoxyCompactList}\small\item\em The (1,1)\textquotesingle{}th element, columns written first. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9725e43ca0295ee9eca0bb4831a20970}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9725e43ca0295ee9eca0bb4831a20970}} 
-static const uint32 {\bfseries D\+IM} =2
-\end{DoxyCompactItemize}
+static const uint32 \mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9725e43ca0295ee9eca0bb4831a20970}{D\+IM}} =2
+\begin{DoxyCompactList}\small\item\em A static const u32 representing the matrix\textquotesingle{}s dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct dggt\+::mat$<$ 2, 2, T $>$}
+
+A 2-\/by-\/2 matrix struct. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The matrix element\textquotesingle{}s type. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afb3264374e69d8a805b962f09ccb08d3}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afb3264374e69d8a805b962f09ccb08d3}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!mat@{mat}}
+\index{mat@{mat}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::\mbox{\hyperlink{structdggt_1_1mat}{mat}}}
+
+
+
+The default constructor. 
+
+Each element in the main diagonal is set to T(1) (ie. the 2x2 identity matrix.). \mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7ea40a858887ae95bd83968ca85d3184}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7ea40a858887ae95bd83968ca85d3184}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!mat@{mat}}
+\index{mat@{mat}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::\mbox{\hyperlink{structdggt_1_1mat}{mat}} (\begin{DoxyParamCaption}\item[{const T}]{e\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+A constructor taking an array of 4 elements to be copied column-\/major-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & array to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab9fedfb2c69e4f5c6d56f4c556847b0d}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab9fedfb2c69e4f5c6d56f4c556847b0d}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!mat@{mat}}
+\index{mat@{mat}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::\mbox{\hyperlink{structdggt_1_1mat}{mat}} (\begin{DoxyParamCaption}\item[{const T \&}]{diagonal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+An explicit constructor taking a scalar value. 
+
+Sets the main diagonal to the desired value. 
+\begin{DoxyParams}{Parameters}
+{\em diagonal} & The value to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This constructor is explicit to avoid seemingly nonsensical and confusing statements like mat$<$2,2,real32$>$ matrix=5.\+0f. 
+\end{DoxyNote}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab68d2dbb9dcfd893cc0f0241ab327ec6}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab68d2dbb9dcfd893cc0f0241ab327ec6}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!mat@{mat}}
+\index{mat@{mat}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::\mbox{\hyperlink{structdggt_1_1mat}{mat}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+The copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8ac4fab5ee513b266f0c493729f2b04c}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a8ac4fab5ee513b266f0c493729f2b04c}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!mat@{mat}}
+\index{mat@{mat}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::\mbox{\hyperlink{structdggt_1_1mat}{mat}} (\begin{DoxyParamCaption}\item[{const T \&}]{m00,  }\item[{const T \&}]{m01,  }\item[{const T \&}]{m10,  }\item[{const T \&}]{m11 }\end{DoxyParamCaption})}
+
+
+
+A constructor taking each element. 
+
+The parameters have their subscript with column written first. 
+\begin{DoxyParams}{Parameters}
+{\em m00} & The (0,0)\textquotesingle{}th element. \\
+\hline
+{\em m01} & The (0,1)\textquotesingle{}th element. \\
+\hline
+{\em m10} & The (1,0)\textquotesingle{}th element. \\
+\hline
+{\em m11} & The (1,1)\textquotesingle{}th element. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab73ff3e6f3b314b1d6cfe953e4b112fd}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ab73ff3e6f3b314b1d6cfe953e4b112fd}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!data@{data}}
+\index{data@{data}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the element array. 
+
+Used for passing the matrix\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0131d4a011e65cb6688ddd7ee46e95db}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0131d4a011e65cb6688ddd7ee46e95db}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!data@{data}}
+\index{data@{data}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T$\ast$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a const pointer to the element array. 
+
+Used for passing the matrix\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
+A const pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a24c5f6c3e1d30d57fee0f1db5721b6c6}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a24c5f6c3e1d30d57fee0f1db5721b6c6}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!det@{det}}
+\index{det@{det}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::det}
+
+
+
+An alternate way to write determinant. 
+
+\begin{DoxyReturn}{Returns}
+The determinant of type T. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a301f2930202078be99a74adcae735261}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a301f2930202078be99a74adcae735261}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::determinant}
+
+
+
+The determinant operator. 
+
+A matrix\textquotesingle{}s determinant is a value used in finding a matrix\textquotesingle{}s inverse and if the inverse exists (An 2-\/by-\/N matrix is invertable if and only if it\textquotesingle{}s determinant is nonzero.). In the 2-\/by-\/2 case where A = ~\newline
+ \mbox{[} a b \mbox{]} ~\newline
+ \mbox{[} c d \mbox{]} ~\newline
+ then det(\+A)=a$\ast$d-\/b$\ast$c. \begin{DoxyReturn}{Returns}
+The determinant of type T. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0a45cf53efe82405b7220f6b5e35c3cb}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a0a45cf53efe82405b7220f6b5e35c3cb}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!get@{get}}
+\index{get@{get}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::get (\begin{DoxyParamCaption}\item[{uint32}]{column,  }\item[{uint32}]{row }\end{DoxyParamCaption})}
+
+
+
+Gets an element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em An} & unsigned integer representing the desired column equal to 0 or 1. \\
+\hline
+{\em An} & unsigned integer representing he desired row equal to 0 or 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the matrix\textquotesingle{}s column\textquotesingle{}th, row\textquotesingle{}th element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad3c98c5e1c4fa2376a1fc7840cf271fb}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad3c98c5e1c4fa2376a1fc7840cf271fb}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!get@{get}}
+\index{get@{get}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::get (\begin{DoxyParamCaption}\item[{uint32}]{column,  }\item[{uint32}]{row }\end{DoxyParamCaption}) const}
+
+
+
+Gets a const reference to an element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em An} & unsigned integer representing the desired column equal to 0 or 1. \\
+\hline
+{\em An} & unsigned integer representing he desired row from equal to 0 to 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const reference to the matrix\textquotesingle{}s column\textquotesingle{}th, row\textquotesingle{}th element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aa66667b33cfc7a91e61c9d973620308a}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aa66667b33cfc7a91e61c9d973620308a}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!get\_column@{get\_column}}
+\index{get\_column@{get\_column}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_column()}{get\_column()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::get\+\_\+column (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets a column vector. 
+
+The elements of the vector are copies of the matrix\textquotesingle{}s corresponding column\textquotesingle{}s elements. 
+\begin{DoxyParams}{Parameters}
+{\em index} & A u32 representing the desired column equal to 0 or 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A column vector containing copies of the matrix\textquotesingle{}s corresponding index\textquotesingle{}th column\textquotesingle{}s elements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a715f1b5674452033c2e4ddf6c8edc9ec}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a715f1b5674452033c2e4ddf6c8edc9ec}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!get\_row@{get\_row}}
+\index{get\_row@{get\_row}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_row()}{get\_row()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::get\+\_\+row (\begin{DoxyParamCaption}\item[{uint32}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets a row vector. 
+
+The elements of the vector are copies of the matrix\textquotesingle{}s corresponding row\textquotesingle{}s elements. 
+\begin{DoxyParams}{Parameters}
+{\em index} & A u32 representing the desired row ranging from 0 to N-\/1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A row vector containing copies of the matrix\textquotesingle{}s corresponding index\textquotesingle{}th row\textquotesingle{}s elements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!inverse@{inverse}}
+\index{inverse@{inverse}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::inverse}
+
+
+
+The inverse operator. 
+
+If the matrix\textquotesingle{}s determinant is nonzero then this returns a matrix whose elements are defined and mat$\ast$mat.\mbox{\hyperlink{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ad9cc1a2c408231c8bfdfaeb0dbe40595}{inverse()}}=mat.\+inverse$\ast$mat=M\+A\+T2\+\_\+\+I\+D\+E\+N\+T\+I\+T\+Y$<$\+T$>$. If the determinant is zero, it\textquotesingle{}s elements are NaN (if T supports NaN.). In the 2-\/by-\/2 case where A = ~\newline
+ \mbox{[} a b \mbox{]} ~\newline
+ \mbox{[} c d \mbox{]} ~\newline
+ and det(\+A)=m then A$^\wedge$(-\/1)= ~\newline
+ \mbox{[} d/m -\/b/m \mbox{]} ~\newline
+ \mbox{[} -\/c/m a/m \mbox{]} ~\newline
+ \begin{DoxyReturn}{Returns}
+The inverse. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ac4553adecdb976c26a08fb2bcf7d7760}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_ac4553adecdb976c26a08fb2bcf7d7760}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!invert@{invert}}
+\index{invert@{invert}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::invert}
+
+
+
+Inverts the matrix. 
+
+This function will change the matrix you call it on setting it\textquotesingle{}s elements to that of it\textquotesingle{}s inverse (if it exists.). \begin{DoxyReturn}{Returns}
+A reference to the now inverted matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_adf9c9793eda15c3370d4264402cae7a5}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_adf9c9793eda15c3370d4264402cae7a5}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Matrix multiplication. 
+
+Multiplies two 2-\/by-\/2 matrices, lhs and rhs, to produce a product, S where S=lhs$\ast$rhs. Matrix multiplication is defined such that the i\textquotesingle{}th row and the j\textquotesingle{}th element of the product is equal to the dot product of the left hand side\textquotesingle{}s row vectors with the right hand side\textquotesingle{}s column vectors. (ie. S\mbox{[}j,i\mbox{]} (columns written first) is equal to lhs\+\_\+row\mbox{[}i\mbox{]}.dot(rhs\+\_\+col\mbox{[}j\mbox{]}) where lhs\+\_\+row and rhs\+\_\+col are the i\textquotesingle{}th row of the left hand matrix and the j\textquotesingle{}th column of the right hand matrix, respectively.). \begin{DoxyNote}{Note}
+In general A$\ast$\+B!=B$\ast$A for matrices A and B. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The matrix product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afdf159159dab900f592c22c918c365aa}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_afdf159159dab900f592c22c918c365aa}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+Scaling operator. 
+
+Scales a matrix by multiplying every element with a scalar value. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The value of type T used to scale the matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9a5ef0b72b8788bd510db4188eed12df}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a9a5ef0b72b8788bd510db4188eed12df}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}\& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Multiply and assignment operator. 
+
+Multiplies and assigns the result. (ie. short hand for A=A$\ast$B.). 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The matrix to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the multiplied and assigned matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_af4a5734b34e62599ebee4ebee023c012}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_af4a5734b34e62599ebee4ebee023c012}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Scale assignment operator. 
+
+Scales a matrix then assigns the result. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar of type to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the scaled and assigned matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7c58c3aac545c606e2296006fe88929c}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a7c58c3aac545c606e2296006fe88929c}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Addition operator. 
+
+Adds two matrices together by adding each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}+\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix where every element is the sum of the corresponding elements in the matrix sum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aae309f6dc75b3aa3f755377385c73530}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aae309f6dc75b3aa3f755377385c73530}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Addition assignment operator. 
+
+Adds a matrix then assigns the result. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the added and assigned matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aceab7829b72f13b60cd0743a95182bff}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_aceab7829b72f13b60cd0743a95182bff}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Subtraction operator. 
+
+Subtracts two matrices together by subtracting each corresponding element. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The right hand side of the \textquotesingle{}-\/\textquotesingle{} symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A matrix where every element is the difference of the corresponding elements in the matrix difference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a869f00cfc4f7ecfc823b9a1a119a4ca0}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a869f00cfc4f7ecfc823b9a1a119a4ca0}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Subtraction assignment operator. 
+
+Subtracts a matrix then assigns the result. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the subtracted and assigned matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a435b808ee3d750ed5f385d1ebc41f38f}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a435b808ee3d750ed5f385d1ebc41f38f}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The source matrix in the assignment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the assigned matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a806369911d63527460ef614e84a6c592}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a806369911d63527460ef614e84a6c592}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!set\_column@{set\_column}}
+\index{set\_column@{set\_column}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_column()}{set\_column()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::set\+\_\+column (\begin{DoxyParamCaption}\item[{uint32}]{column,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Sets a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & A u32 representing the column to set ranging from 0 to N-\/1. \\
+\hline
+{\em val} & A const reference to a vector of type vec$<$\+N,\+T$>$ (N elements of type T) representing the desired column to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the newly transformed matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a287379f59271a52d6d86bc9ae82bfdb9}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a287379f59271a52d6d86bc9ae82bfdb9}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!set\_row@{set\_row}}
+\index{set\_row@{set\_row}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_row()}{set\_row()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::set\+\_\+row (\begin{DoxyParamCaption}\item[{uint32}]{row,  }\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Sets a row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & A u32 representing the row to set ranging from 0 to N-\/1. \\
+\hline
+{\em val} & A const reference to a vector of type vec$<$\+N,\+T$>$ (N elements of type T) representing the desired row to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the newly transformed matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_abbbd7758ba6b5bd9798db508d22f6e6f}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_abbbd7758ba6b5bd9798db508d22f6e6f}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!transform@{transform}}
+\index{transform@{transform}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structdggt_1_1vec}{vec}}$<$ 2, T $>$ \&}]{vector }\end{DoxyParamCaption}) const}
+
+
+
+Transformation operator. 
+
+Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v\textquotesingle{}=A$\ast$v where A is a transformation matrix, v is a vector and v\textquotesingle{} is a vector such that\+: ~\newline
+ v\textquotesingle{}\mbox{[}i\mbox{]}=v.\+dot(mat\+\_\+row\mbox{[}i\mbox{]}) where mat\+\_\+row\mbox{[}i\mbox{]} is the i\textquotesingle{}th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). 
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a74a6f0853918b5b917d2c77ebd0da5bd}\label{structdggt_1_1mat_3_012_00_012_00_01T_01_4_a74a6f0853918b5b917d2c77ebd0da5bd}} 
+\index{dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!dggt::mat$<$ 2, 2, T $>$@{dggt::mat$<$ 2, 2, T $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ 2, 2, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ 2, 2, T $>$\+::transpose}
+
+
+
+Transpose operator. 
+
+The transpose of a matrix simply switches rows for columns. \begin{DoxyReturn}{Returns}
+A 2-\/by-\/2 matrix which is the transpose of original matrix. 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}

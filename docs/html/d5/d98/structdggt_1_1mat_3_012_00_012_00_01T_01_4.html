@@ -75,112 +75,971 @@ $(function() {
 <div class="title">dggt::mat&lt; 2, 2, T &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A 2-by-2 matrix struct.  
+ <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d54/dggt__math__mat2_8h_source.html">dggt_math_mat2.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7ea40a858887ae95bd83968ca85d3184"><td class="memItemLeft" align="right" valign="top"><a id="a7ea40a858887ae95bd83968ca85d3184"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mat</b> (const T e[4])</td></tr>
+<tr class="memitem:afb3264374e69d8a805b962f09ccb08d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#afb3264374e69d8a805b962f09ccb08d3">mat</a> ()</td></tr>
+<tr class="memdesc:afb3264374e69d8a805b962f09ccb08d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#afb3264374e69d8a805b962f09ccb08d3">More...</a><br /></td></tr>
+<tr class="separator:afb3264374e69d8a805b962f09ccb08d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea40a858887ae95bd83968ca85d3184"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7ea40a858887ae95bd83968ca85d3184">mat</a> (const T e[4])</td></tr>
+<tr class="memdesc:a7ea40a858887ae95bd83968ca85d3184"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constructor taking an array of 4 elements to be copied column-major-wise.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7ea40a858887ae95bd83968ca85d3184">More...</a><br /></td></tr>
 <tr class="separator:a7ea40a858887ae95bd83968ca85d3184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9fedfb2c69e4f5c6d56f4c556847b0d"><td class="memItemLeft" align="right" valign="top"><a id="ab9fedfb2c69e4f5c6d56f4c556847b0d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mat</b> (const T &amp;diagonal)</td></tr>
+<tr class="memitem:ab9fedfb2c69e4f5c6d56f4c556847b0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab9fedfb2c69e4f5c6d56f4c556847b0d">mat</a> (const T &amp;diagonal)</td></tr>
+<tr class="memdesc:ab9fedfb2c69e4f5c6d56f4c556847b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An explicit constructor taking a scalar value.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab9fedfb2c69e4f5c6d56f4c556847b0d">More...</a><br /></td></tr>
 <tr class="separator:ab9fedfb2c69e4f5c6d56f4c556847b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab68d2dbb9dcfd893cc0f0241ab327ec6"><td class="memItemLeft" align="right" valign="top"><a id="ab68d2dbb9dcfd893cc0f0241ab327ec6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mat</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;other)</td></tr>
+<tr class="memitem:ab68d2dbb9dcfd893cc0f0241ab327ec6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab68d2dbb9dcfd893cc0f0241ab327ec6">mat</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;other)</td></tr>
+<tr class="memdesc:ab68d2dbb9dcfd893cc0f0241ab327ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The copy constructor.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab68d2dbb9dcfd893cc0f0241ab327ec6">More...</a><br /></td></tr>
 <tr class="separator:ab68d2dbb9dcfd893cc0f0241ab327ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac4fab5ee513b266f0c493729f2b04c"><td class="memItemLeft" align="right" valign="top"><a id="a8ac4fab5ee513b266f0c493729f2b04c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>mat</b> (const T &amp;m00, const T &amp;m01, const T &amp;m10, const T &amp;m11)</td></tr>
+<tr class="memitem:a8ac4fab5ee513b266f0c493729f2b04c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a8ac4fab5ee513b266f0c493729f2b04c">mat</a> (const T &amp;<a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7d0f1232320004274066a172be030516">m00</a>, const T &amp;<a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a741ff50a09498d06f1c486e936326663">m01</a>, const T &amp;<a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a5ac760796ca8d255fbac16ef6e207c74">m10</a>, const T &amp;<a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a8cad0312c76b2b546a299f216a6337d5">m11</a>)</td></tr>
+<tr class="memdesc:a8ac4fab5ee513b266f0c493729f2b04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constructor taking each element.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a8ac4fab5ee513b266f0c493729f2b04c">More...</a><br /></td></tr>
 <tr class="separator:a8ac4fab5ee513b266f0c493729f2b04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c58c3aac545c606e2296006fe88929c"><td class="memItemLeft" align="right" valign="top"><a id="a7c58c3aac545c606e2296006fe88929c"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a7c58c3aac545c606e2296006fe88929c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7c58c3aac545c606e2296006fe88929c">operator+</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a7c58c3aac545c606e2296006fe88929c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7c58c3aac545c606e2296006fe88929c">More...</a><br /></td></tr>
 <tr class="separator:a7c58c3aac545c606e2296006fe88929c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceab7829b72f13b60cd0743a95182bff"><td class="memItemLeft" align="right" valign="top"><a id="aceab7829b72f13b60cd0743a95182bff"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memitem:aceab7829b72f13b60cd0743a95182bff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aceab7829b72f13b60cd0743a95182bff">operator-</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:aceab7829b72f13b60cd0743a95182bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtraction operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aceab7829b72f13b60cd0743a95182bff">More...</a><br /></td></tr>
 <tr class="separator:aceab7829b72f13b60cd0743a95182bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdf159159dab900f592c22c918c365aa"><td class="memItemLeft" align="right" valign="top"><a id="afdf159159dab900f592c22c918c365aa"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar) const</td></tr>
+<tr class="memitem:afdf159159dab900f592c22c918c365aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#afdf159159dab900f592c22c918c365aa">operator*</a> (const T &amp;scalar) const</td></tr>
+<tr class="memdesc:afdf159159dab900f592c22c918c365aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#afdf159159dab900f592c22c918c365aa">More...</a><br /></td></tr>
 <tr class="separator:afdf159159dab900f592c22c918c365aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9c9793eda15c3370d4264402cae7a5"><td class="memItemLeft" align="right" valign="top"><a id="adf9c9793eda15c3370d4264402cae7a5"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memitem:adf9c9793eda15c3370d4264402cae7a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#adf9c9793eda15c3370d4264402cae7a5">operator*</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:adf9c9793eda15c3370d4264402cae7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix multiplication.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#adf9c9793eda15c3370d4264402cae7a5">More...</a><br /></td></tr>
 <tr class="separator:adf9c9793eda15c3370d4264402cae7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a435b808ee3d750ed5f385d1ebc41f38f"><td class="memItemLeft" align="right" valign="top"><a id="a435b808ee3d750ed5f385d1ebc41f38f"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memitem:a435b808ee3d750ed5f385d1ebc41f38f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a435b808ee3d750ed5f385d1ebc41f38f">operator=</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a435b808ee3d750ed5f385d1ebc41f38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a435b808ee3d750ed5f385d1ebc41f38f">More...</a><br /></td></tr>
 <tr class="separator:a435b808ee3d750ed5f385d1ebc41f38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae309f6dc75b3aa3f755377385c73530"><td class="memItemLeft" align="right" valign="top"><a id="aae309f6dc75b3aa3f755377385c73530"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memitem:aae309f6dc75b3aa3f755377385c73530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aae309f6dc75b3aa3f755377385c73530">operator+=</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memdesc:aae309f6dc75b3aa3f755377385c73530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition assignment operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aae309f6dc75b3aa3f755377385c73530">More...</a><br /></td></tr>
 <tr class="separator:aae309f6dc75b3aa3f755377385c73530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a869f00cfc4f7ecfc823b9a1a119a4ca0"><td class="memItemLeft" align="right" valign="top"><a id="a869f00cfc4f7ecfc823b9a1a119a4ca0"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memitem:a869f00cfc4f7ecfc823b9a1a119a4ca0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a869f00cfc4f7ecfc823b9a1a119a4ca0">operator-=</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a869f00cfc4f7ecfc823b9a1a119a4ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtraction assignment operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a869f00cfc4f7ecfc823b9a1a119a4ca0">More...</a><br /></td></tr>
 <tr class="separator:a869f00cfc4f7ecfc823b9a1a119a4ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a5734b34e62599ebee4ebee023c012"><td class="memItemLeft" align="right" valign="top"><a id="af4a5734b34e62599ebee4ebee023c012"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const T &amp;scalar)</td></tr>
+<tr class="memitem:af4a5734b34e62599ebee4ebee023c012"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#af4a5734b34e62599ebee4ebee023c012">operator*=</a> (const T &amp;scalar)</td></tr>
+<tr class="memdesc:af4a5734b34e62599ebee4ebee023c012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale assignment operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#af4a5734b34e62599ebee4ebee023c012">More...</a><br /></td></tr>
 <tr class="separator:af4a5734b34e62599ebee4ebee023c012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5ef0b72b8788bd510db4188eed12df"><td class="memItemLeft" align="right" valign="top"><a id="a9a5ef0b72b8788bd510db4188eed12df"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memitem:a9a5ef0b72b8788bd510db4188eed12df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a9a5ef0b72b8788bd510db4188eed12df">operator*=</a> (const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a9a5ef0b72b8788bd510db4188eed12df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply and assignment operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a9a5ef0b72b8788bd510db4188eed12df">More...</a><br /></td></tr>
 <tr class="separator:a9a5ef0b72b8788bd510db4188eed12df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbbd7758ba6b5bd9798db508d22f6e6f"><td class="memItemLeft" align="right" valign="top"><a id="abbbd7758ba6b5bd9798db508d22f6e6f"></a>
-<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>transform</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector) const</td></tr>
+<tr class="memitem:abbbd7758ba6b5bd9798db508d22f6e6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#abbbd7758ba6b5bd9798db508d22f6e6f">transform</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector) const</td></tr>
+<tr class="memdesc:abbbd7758ba6b5bd9798db508d22f6e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#abbbd7758ba6b5bd9798db508d22f6e6f">More...</a><br /></td></tr>
 <tr class="separator:abbbd7758ba6b5bd9798db508d22f6e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab73ff3e6f3b314b1d6cfe953e4b112fd"><td class="memItemLeft" align="right" valign="top"><a id="ab73ff3e6f3b314b1d6cfe953e4b112fd"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> ()</td></tr>
+<tr class="memitem:ab73ff3e6f3b314b1d6cfe953e4b112fd"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab73ff3e6f3b314b1d6cfe953e4b112fd">data</a> ()</td></tr>
+<tr class="memdesc:ab73ff3e6f3b314b1d6cfe953e4b112fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the element array.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ab73ff3e6f3b314b1d6cfe953e4b112fd">More...</a><br /></td></tr>
 <tr class="separator:ab73ff3e6f3b314b1d6cfe953e4b112fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0131d4a011e65cb6688ddd7ee46e95db"><td class="memItemLeft" align="right" valign="top"><a id="a0131d4a011e65cb6688ddd7ee46e95db"></a>
-const T *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> () const</td></tr>
+<tr class="memitem:a0131d4a011e65cb6688ddd7ee46e95db"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a0131d4a011e65cb6688ddd7ee46e95db">data</a> () const</td></tr>
+<tr class="memdesc:a0131d4a011e65cb6688ddd7ee46e95db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const pointer to the element array.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a0131d4a011e65cb6688ddd7ee46e95db">More...</a><br /></td></tr>
 <tr class="separator:a0131d4a011e65cb6688ddd7ee46e95db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a6f0853918b5b917d2c77ebd0da5bd"><td class="memItemLeft" align="right" valign="top"><a id="a74a6f0853918b5b917d2c77ebd0da5bd"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>transpose</b> () const</td></tr>
+<tr class="memitem:a74a6f0853918b5b917d2c77ebd0da5bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a74a6f0853918b5b917d2c77ebd0da5bd">transpose</a> () const</td></tr>
+<tr class="memdesc:a74a6f0853918b5b917d2c77ebd0da5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a74a6f0853918b5b917d2c77ebd0da5bd">More...</a><br /></td></tr>
 <tr class="separator:a74a6f0853918b5b917d2c77ebd0da5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a301f2930202078be99a74adcae735261"><td class="memItemLeft" align="right" valign="top"><a id="a301f2930202078be99a74adcae735261"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>determinant</b> () const</td></tr>
+<tr class="memitem:a301f2930202078be99a74adcae735261"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a301f2930202078be99a74adcae735261">determinant</a> () const</td></tr>
+<tr class="memdesc:a301f2930202078be99a74adcae735261"><td class="mdescLeft">&#160;</td><td class="mdescRight">The determinant operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a301f2930202078be99a74adcae735261">More...</a><br /></td></tr>
 <tr class="separator:a301f2930202078be99a74adcae735261"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c5f6c3e1d30d57fee0f1db5721b6c6"><td class="memItemLeft" align="right" valign="top"><a id="a24c5f6c3e1d30d57fee0f1db5721b6c6"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>det</b> () const</td></tr>
+<tr class="memitem:a24c5f6c3e1d30d57fee0f1db5721b6c6"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a24c5f6c3e1d30d57fee0f1db5721b6c6">det</a> () const</td></tr>
+<tr class="memdesc:a24c5f6c3e1d30d57fee0f1db5721b6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alternate way to write determinant.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a24c5f6c3e1d30d57fee0f1db5721b6c6">More...</a><br /></td></tr>
 <tr class="separator:a24c5f6c3e1d30d57fee0f1db5721b6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cc1a2c408231c8bfdfaeb0dbe40595"><td class="memItemLeft" align="right" valign="top"><a id="ad9cc1a2c408231c8bfdfaeb0dbe40595"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inverse</b> () const</td></tr>
+<tr class="memitem:ad9cc1a2c408231c8bfdfaeb0dbe40595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad9cc1a2c408231c8bfdfaeb0dbe40595">inverse</a> () const</td></tr>
+<tr class="memdesc:ad9cc1a2c408231c8bfdfaeb0dbe40595"><td class="mdescLeft">&#160;</td><td class="mdescRight">The inverse operator.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad9cc1a2c408231c8bfdfaeb0dbe40595">More...</a><br /></td></tr>
 <tr class="separator:ad9cc1a2c408231c8bfdfaeb0dbe40595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4553adecdb976c26a08fb2bcf7d7760"><td class="memItemLeft" align="right" valign="top"><a id="ac4553adecdb976c26a08fb2bcf7d7760"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>invert</b> ()</td></tr>
+<tr class="memitem:ac4553adecdb976c26a08fb2bcf7d7760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ac4553adecdb976c26a08fb2bcf7d7760">invert</a> ()</td></tr>
+<tr class="memdesc:ac4553adecdb976c26a08fb2bcf7d7760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts the matrix.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ac4553adecdb976c26a08fb2bcf7d7760">More...</a><br /></td></tr>
 <tr class="separator:ac4553adecdb976c26a08fb2bcf7d7760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a45cf53efe82405b7220f6b5e35c3cb"><td class="memItemLeft" align="right" valign="top"><a id="a0a45cf53efe82405b7220f6b5e35c3cb"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (uint32 column, uint32 row)</td></tr>
+<tr class="memitem:a0a45cf53efe82405b7220f6b5e35c3cb"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a0a45cf53efe82405b7220f6b5e35c3cb">get</a> (uint32 column, uint32 row)</td></tr>
+<tr class="memdesc:a0a45cf53efe82405b7220f6b5e35c3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an element.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a0a45cf53efe82405b7220f6b5e35c3cb">More...</a><br /></td></tr>
 <tr class="separator:a0a45cf53efe82405b7220f6b5e35c3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c98c5e1c4fa2376a1fc7840cf271fb"><td class="memItemLeft" align="right" valign="top"><a id="ad3c98c5e1c4fa2376a1fc7840cf271fb"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (uint32 column, uint32 row) const</td></tr>
+<tr class="memitem:ad3c98c5e1c4fa2376a1fc7840cf271fb"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad3c98c5e1c4fa2376a1fc7840cf271fb">get</a> (uint32 column, uint32 row) const</td></tr>
+<tr class="memdesc:ad3c98c5e1c4fa2376a1fc7840cf271fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const reference to an element.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad3c98c5e1c4fa2376a1fc7840cf271fb">More...</a><br /></td></tr>
 <tr class="separator:ad3c98c5e1c4fa2376a1fc7840cf271fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa66667b33cfc7a91e61c9d973620308a"><td class="memItemLeft" align="right" valign="top"><a id="aa66667b33cfc7a91e61c9d973620308a"></a>
-<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_column</b> (uint32 index) const</td></tr>
+<tr class="memitem:aa66667b33cfc7a91e61c9d973620308a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aa66667b33cfc7a91e61c9d973620308a">get_column</a> (uint32 index) const</td></tr>
+<tr class="memdesc:aa66667b33cfc7a91e61c9d973620308a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a column vector.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aa66667b33cfc7a91e61c9d973620308a">More...</a><br /></td></tr>
 <tr class="separator:aa66667b33cfc7a91e61c9d973620308a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a715f1b5674452033c2e4ddf6c8edc9ec"><td class="memItemLeft" align="right" valign="top"><a id="a715f1b5674452033c2e4ddf6c8edc9ec"></a>
-<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_row</b> (uint32 index) const</td></tr>
+<tr class="memitem:a715f1b5674452033c2e4ddf6c8edc9ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a715f1b5674452033c2e4ddf6c8edc9ec">get_row</a> (uint32 index) const</td></tr>
+<tr class="memdesc:a715f1b5674452033c2e4ddf6c8edc9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a row vector.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a715f1b5674452033c2e4ddf6c8edc9ec">More...</a><br /></td></tr>
 <tr class="separator:a715f1b5674452033c2e4ddf6c8edc9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a806369911d63527460ef614e84a6c592"><td class="memItemLeft" align="right" valign="top"><a id="a806369911d63527460ef614e84a6c592"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_column</b> (uint32 column, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;val)</td></tr>
+<tr class="memitem:a806369911d63527460ef614e84a6c592"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a806369911d63527460ef614e84a6c592">set_column</a> (uint32 column, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;val)</td></tr>
+<tr class="memdesc:a806369911d63527460ef614e84a6c592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a column.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a806369911d63527460ef614e84a6c592">More...</a><br /></td></tr>
 <tr class="separator:a806369911d63527460ef614e84a6c592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a287379f59271a52d6d86bc9ae82bfdb9"><td class="memItemLeft" align="right" valign="top"><a id="a287379f59271a52d6d86bc9ae82bfdb9"></a>
-<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>set_row</b> (uint32 row, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;val)</td></tr>
+<tr class="memitem:a287379f59271a52d6d86bc9ae82bfdb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a287379f59271a52d6d86bc9ae82bfdb9">set_row</a> (uint32 row, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;val)</td></tr>
+<tr class="memdesc:a287379f59271a52d6d86bc9ae82bfdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a row.  <a href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a287379f59271a52d6d86bc9ae82bfdb9">More...</a><br /></td></tr>
 <tr class="separator:a287379f59271a52d6d86bc9ae82bfdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7d0f1232320004274066a172be030516"><td class="memItemLeft" align="right" valign="top"><a id="a7d0f1232320004274066a172be030516"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>m00</b></td></tr>
+T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7d0f1232320004274066a172be030516">m00</a></td></tr>
+<tr class="memdesc:a7d0f1232320004274066a172be030516"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (0,0)'th element, columns written first. <br /></td></tr>
 <tr class="separator:a7d0f1232320004274066a172be030516"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a741ff50a09498d06f1c486e936326663"><td class="memItemLeft" align="right" valign="top"><a id="a741ff50a09498d06f1c486e936326663"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>m01</b></td></tr>
+T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a741ff50a09498d06f1c486e936326663">m01</a></td></tr>
+<tr class="memdesc:a741ff50a09498d06f1c486e936326663"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (0,1)'th element, columns written first. <br /></td></tr>
 <tr class="separator:a741ff50a09498d06f1c486e936326663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac760796ca8d255fbac16ef6e207c74"><td class="memItemLeft" align="right" valign="top"><a id="a5ac760796ca8d255fbac16ef6e207c74"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>m10</b></td></tr>
+T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a5ac760796ca8d255fbac16ef6e207c74">m10</a></td></tr>
+<tr class="memdesc:a5ac760796ca8d255fbac16ef6e207c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (1,0)'th element, columns written first. <br /></td></tr>
 <tr class="separator:a5ac760796ca8d255fbac16ef6e207c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cad0312c76b2b546a299f216a6337d5"><td class="memItemLeft" align="right" valign="top"><a id="a8cad0312c76b2b546a299f216a6337d5"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>m11</b></td></tr>
+T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a8cad0312c76b2b546a299f216a6337d5">m11</a></td></tr>
+<tr class="memdesc:a8cad0312c76b2b546a299f216a6337d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (1,1)'th element, columns written first. <br /></td></tr>
 <tr class="separator:a8cad0312c76b2b546a299f216a6337d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a9725e43ca0295ee9eca0bb4831a20970"><td class="memItemLeft" align="right" valign="top"><a id="a9725e43ca0295ee9eca0bb4831a20970"></a>
-static const uint32&#160;</td><td class="memItemRight" valign="bottom"><b>DIM</b> =2</td></tr>
+static const uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a9725e43ca0295ee9eca0bb4831a20970">DIM</a> =2</td></tr>
+<tr class="memdesc:a9725e43ca0295ee9eca0bb4831a20970"><td class="mdescLeft">&#160;</td><td class="mdescRight">A static const u32 representing the matrix's dimension. <br /></td></tr>
 <tr class="separator:a9725e43ca0295ee9eca0bb4831a20970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct dggt::mat&lt; 2, 2, T &gt;</h3>
+
+<p>A 2-by-2 matrix struct. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The matrix element's type. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afb3264374e69d8a805b962f09ccb08d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3264374e69d8a805b962f09ccb08d3">&#9670;&nbsp;</a></span>mat() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The default constructor. </p>
+<p>Each element in the main diagonal is set to T(1) (ie. the 2x2 identity matrix.). </p>
+
+</div>
+</div>
+<a id="a7ea40a858887ae95bd83968ca85d3184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea40a858887ae95bd83968ca85d3184">&#9670;&nbsp;</a></span>mat() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>e</em>[4]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A constructor taking an array of 4 elements to be copied column-major-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">The</td><td>array to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab9fedfb2c69e4f5c6d56f4c556847b0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9fedfb2c69e4f5c6d56f4c556847b0d">&#9670;&nbsp;</a></span>mat() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>diagonal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An explicit constructor taking a scalar value. </p>
+<p>Sets the main diagonal to the desired value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">diagonal</td><td>The value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This constructor is explicit to avoid seemingly nonsensical and confusing statements like mat&lt;2,2,real32&gt; matrix=5.0f. </dd></dl>
+
+</div>
+</div>
+<a id="ab68d2dbb9dcfd893cc0f0241ab327ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68d2dbb9dcfd893cc0f0241ab327ec6">&#9670;&nbsp;</a></span>mat() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ac4fab5ee513b266f0c493729f2b04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac4fab5ee513b266f0c493729f2b04c">&#9670;&nbsp;</a></span>mat() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>m00</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>m01</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>m10</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>m11</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A constructor taking each element. </p>
+<p>The parameters have their subscript with column written first. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m00</td><td>The (0,0)'th element. </td></tr>
+    <tr><td class="paramname">m01</td><td>The (0,1)'th element. </td></tr>
+    <tr><td class="paramname">m10</td><td>The (1,0)'th element. </td></tr>
+    <tr><td class="paramname">m11</td><td>The (1,1)'th element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab73ff3e6f3b314b1d6cfe953e4b112fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73ff3e6f3b314b1d6cfe953e4b112fd">&#9670;&nbsp;</a></span>data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the element array. </p>
+<p>Used for passing the matrix's element array to other libraries. </p><dl class="section return"><dt>Returns</dt><dd>A pointer to the first element in the array. </dd></dl>
+
+</div>
+</div>
+<a id="a0131d4a011e65cb6688ddd7ee46e95db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0131d4a011e65cb6688ddd7ee46e95db">&#9670;&nbsp;</a></span>data() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T* <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a const pointer to the element array. </p>
+<p>Used for passing the matrix's element array to other libraries. </p><dl class="section return"><dt>Returns</dt><dd>A const pointer to the first element in the array. </dd></dl>
+
+</div>
+</div>
+<a id="a24c5f6c3e1d30d57fee0f1db5721b6c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24c5f6c3e1d30d57fee0f1db5721b6c6">&#9670;&nbsp;</a></span>det()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::det</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An alternate way to write determinant. </p>
+<dl class="section return"><dt>Returns</dt><dd>The determinant of type T. </dd></dl>
+
+</div>
+</div>
+<a id="a301f2930202078be99a74adcae735261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a301f2930202078be99a74adcae735261">&#9670;&nbsp;</a></span>determinant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::determinant</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The determinant operator. </p>
+<p>A matrix's determinant is a value used in finding a matrix's inverse and if the inverse exists (An 2-by-N matrix is invertable if and only if it's determinant is nonzero.). In the 2-by-2 case where A = <br  />
+ [ a b ] <br  />
+ [ c d ] <br  />
+ then det(A)=a*d-b*c. </p><dl class="section return"><dt>Returns</dt><dd>The determinant of type T. </dd></dl>
+
+</div>
+</div>
+<a id="a0a45cf53efe82405b7220f6b5e35c3cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a45cf53efe82405b7220f6b5e35c3cb">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets an element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">An</td><td>unsigned integer representing the desired column equal to 0 or 1. </td></tr>
+    <tr><td class="paramname">An</td><td>unsigned integer representing he desired row equal to 0 or 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the matrix's column'th, row'th element. </dd></dl>
+
+</div>
+</div>
+<a id="ad3c98c5e1c4fa2376a1fc7840cf271fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c98c5e1c4fa2376a1fc7840cf271fb">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a const reference to an element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">An</td><td>unsigned integer representing the desired column equal to 0 or 1. </td></tr>
+    <tr><td class="paramname">An</td><td>unsigned integer representing he desired row from equal to 0 to 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the matrix's column'th, row'th element. </dd></dl>
+
+</div>
+</div>
+<a id="aa66667b33cfc7a91e61c9d973620308a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66667b33cfc7a91e61c9d973620308a">&#9670;&nbsp;</a></span>get_column()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::get_column </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a column vector. </p>
+<p>The elements of the vector are copies of the matrix's corresponding column's elements. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>A u32 representing the desired column equal to 0 or 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A column vector containing copies of the matrix's corresponding index'th column's elements. </dd></dl>
+
+</div>
+</div>
+<a id="a715f1b5674452033c2e4ddf6c8edc9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715f1b5674452033c2e4ddf6c8edc9ec">&#9670;&nbsp;</a></span>get_row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::get_row </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a row vector. </p>
+<p>The elements of the vector are copies of the matrix's corresponding row's elements. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>A u32 representing the desired row ranging from 0 to N-1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A row vector containing copies of the matrix's corresponding index'th row's elements. </dd></dl>
+
+</div>
+</div>
+<a id="ad9cc1a2c408231c8bfdfaeb0dbe40595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9cc1a2c408231c8bfdfaeb0dbe40595">&#9670;&nbsp;</a></span>inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::inverse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The inverse operator. </p>
+<p>If the matrix's determinant is nonzero then this returns a matrix whose elements are defined and mat*mat.<a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad9cc1a2c408231c8bfdfaeb0dbe40595" title="The inverse operator.">inverse()</a>=mat.inverse*mat=MAT2_IDENTITY&lt;T&gt;. If the determinant is zero, it's elements are NaN (if T supports NaN.). In the 2-by-2 case where A = <br  />
+ [ a b ] <br  />
+ [ c d ] <br  />
+ and det(A)=m then A^(-1)= <br  />
+ [ d/m -b/m ] <br  />
+ [ -c/m a/m ] <br  />
+ </p><dl class="section return"><dt>Returns</dt><dd>The inverse. </dd></dl>
+
+</div>
+</div>
+<a id="ac4553adecdb976c26a08fb2bcf7d7760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4553adecdb976c26a08fb2bcf7d7760">&#9670;&nbsp;</a></span>invert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::invert</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverts the matrix. </p>
+<p>This function will change the matrix you call it on setting it's elements to that of it's inverse (if it exists.). </p><dl class="section return"><dt>Returns</dt><dd>A reference to the now inverted matrix. </dd></dl>
+
+</div>
+</div>
+<a id="adf9c9793eda15c3370d4264402cae7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9c9793eda15c3370d4264402cae7a5">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Matrix multiplication. </p>
+<p>Multiplies two 2-by-2 matrices, lhs and rhs, to produce a product, S where S=lhs*rhs. Matrix multiplication is defined such that the i'th row and the j'th element of the product is equal to the dot product of the left hand side's row vectors with the right hand side's column vectors. (ie. S[j,i] (columns written first) is equal to lhs_row[i].dot(rhs_col[j]) where lhs_row and rhs_col are the i'th row of the left hand matrix and the j'th column of the right hand matrix, respectively.). </p><dl class="section note"><dt>Note</dt><dd>In general A*B!=B*A for matrices A and B. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The matrix product. </dd></dl>
+
+</div>
+</div>
+<a id="afdf159159dab900f592c22c918c365aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf159159dab900f592c22c918c365aa">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scaling operator. </p>
+<p>Scales a matrix by multiplying every element with a scalar value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The value of type T used to scale the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a9a5ef0b72b8788bd510db4188eed12df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a5ef0b72b8788bd510db4188eed12df">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiply and assignment operator. </p>
+<p>Multiplies and assigns the result. (ie. short hand for A=A*B.). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the multiplied and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="af4a5734b34e62599ebee4ebee023c012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a5734b34e62599ebee4ebee023c012">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scale assignment operator. </p>
+<p>Scales a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar of type to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the scaled and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a7c58c3aac545c606e2296006fe88929c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c58c3aac545c606e2296006fe88929c">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Addition operator. </p>
+<p>Adds two matrices together by adding each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '+' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the sum of the corresponding elements in the matrix sum. </dd></dl>
+
+</div>
+</div>
+<a id="aae309f6dc75b3aa3f755377385c73530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae309f6dc75b3aa3f755377385c73530">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Addition assignment operator. </p>
+<p>Adds a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the added and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="aceab7829b72f13b60cd0743a95182bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceab7829b72f13b60cd0743a95182bff">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction operator. </p>
+<p>Subtracts two matrices together by subtracting each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '-' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the difference of the corresponding elements in the matrix difference. </dd></dl>
+
+</div>
+</div>
+<a id="a869f00cfc4f7ecfc823b9a1a119a4ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869f00cfc4f7ecfc823b9a1a119a4ca0">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction assignment operator. </p>
+<p>Subtracts a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to subtract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the subtracted and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a435b808ee3d750ed5f385d1ebc41f38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a435b808ee3d750ed5f385d1ebc41f38f">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The source matrix in the assignment. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a806369911d63527460ef614e84a6c592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806369911d63527460ef614e84a6c592">&#9670;&nbsp;</a></span>set_column()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::set_column </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a column. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column</td><td>A u32 representing the column to set ranging from 0 to N-1. </td></tr>
+    <tr><td class="paramname">val</td><td>A const reference to a vector of type vec&lt;N,T&gt; (N elements of type T) representing the desired column to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the newly transformed matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a287379f59271a52d6d86bc9ae82bfdb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287379f59271a52d6d86bc9ae82bfdb9">&#9670;&nbsp;</a></span>set_row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::set_row </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>A u32 representing the row to set ranging from 0 to N-1. </td></tr>
+    <tr><td class="paramname">val</td><td>A const reference to a vector of type vec&lt;N,T&gt; (N elements of type T) representing the desired row to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the newly transformed matrix. </dd></dl>
+
+</div>
+</div>
+<a id="abbbd7758ba6b5bd9798db508d22f6e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbd7758ba6b5bd9798db508d22f6e6f">&#9670;&nbsp;</a></span>transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::transform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transformation operator. </p>
+<p>Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v'=A*v where A is a transformation matrix, v is a vector and v' is a vector such that: <br  />
+ v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
+
+</div>
+</div>
+<a id="a74a6f0853918b5b917d2c77ebd0da5bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a6f0853918b5b917d2c77ebd0da5bd">&#9670;&nbsp;</a></span>transpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; 2, 2, T &gt;::transpose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transpose operator. </p>
+<p>The transpose of a matrix simply switches rows for columns. </p><dl class="section return"><dt>Returns</dt><dd>A 2-by-2 matrix which is the transpose of original matrix. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="../../d2/d54/dggt__math__mat2_8h_source.html">dggt_math_mat2.h</a></li>
 <li>dggt_math_mat2.inl</li>

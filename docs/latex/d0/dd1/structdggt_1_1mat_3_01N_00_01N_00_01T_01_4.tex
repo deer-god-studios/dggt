@@ -44,26 +44,20 @@ T $\ast$ \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_aaeb5cbbc7f
 \begin{DoxyCompactList}\small\item\em Returns a pointer to the element array. \end{DoxyCompactList}\item 
 const T $\ast$ \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae71c2d8de2599448230bfec514540c5d}{data}} () const
 \begin{DoxyCompactList}\small\item\em Returns a const pointer to the element array. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_afc1c5630cd8a24934fd7cd27a94f1ce1}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_afc1c5630cd8a24934fd7cd27a94f1ce1}} 
 \mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N-\/1, N-\/1, T $>$ \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_afc1c5630cd8a24934fd7cd27a94f1ce1}{minor}} (uint32 column\+To\+Remove, uint32 row\+To\+Remove) const
 \begin{DoxyCompactList}\small\item\em The minor of a matrix. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a028e0d5ea6e194645e30abfb5df851fb}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a028e0d5ea6e194645e30abfb5df851fb}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries comatrix} () const
-\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a028e0d5ea6e194645e30abfb5df851fb}{comatrix}} () const
+\begin{DoxyCompactList}\small\item\em A matrix\textquotesingle{}s comatrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab1f539254dbcf6cee40466e2ea51d4f2}{transpose}} () const
 \begin{DoxyCompactList}\small\item\em Transpose operator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a957c934e015c66c9774d094339aa603d}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a957c934e015c66c9774d094339aa603d}} 
-T {\bfseries determinant} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae93416f040b2035107468aaaf80cba87}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae93416f040b2035107468aaaf80cba87}} 
-T {\bfseries det} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} {\bfseries inverse} () const
-\item 
-\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ace96aa352f37543d888f5a4c382671a1}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ace96aa352f37543d888f5a4c382671a1}} 
-\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& {\bfseries invert} ()
-\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a957c934e015c66c9774d094339aa603d}{determinant}} () const
+\begin{DoxyCompactList}\small\item\em The determinant operator. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae93416f040b2035107468aaaf80cba87}{det}} () const
+\begin{DoxyCompactList}\small\item\em An alternate way to write determinant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}{inverse}} () const
+\begin{DoxyCompactList}\small\item\em The inverse operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdggt_1_1mat}{mat}} \& \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ace96aa352f37543d888f5a4c382671a1}{invert}} ()
+\begin{DoxyCompactList}\small\item\em Inverts the matrix. \end{DoxyCompactList}\item 
 T \& \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a1b88744c0e640e34c2314caef3b78593}{get}} (uint32 column, uint32 row)
 \begin{DoxyCompactList}\small\item\em Gets an element. \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab288d605746099022e109fc6b46472cb}{get}} (uint32 column, uint32 row) const
@@ -171,6 +165,20 @@ Copy constructor.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a028e0d5ea6e194645e30abfb5df851fb}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a028e0d5ea6e194645e30abfb5df851fb}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!comatrix@{comatrix}}
+\index{comatrix@{comatrix}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{comatrix()}{comatrix()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::comatrix}
+
+
+
+A matrix\textquotesingle{}s comatrix. 
+
+A comatrix is a matrix comprising of elements equal to the determinant of the minor after removing that row and column. Each element also follows a +/-\/ sign checkerboard pattern given by (-\/1)$^\wedge$(i+j). They are used in calculating the matrix\textquotesingle{}s inverse (if such an inverse exists.). \begin{DoxyReturn}{Returns}
+The comatrix of this matrix. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_aaeb5cbbc7ff75db83221b89b5ca8adb4}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_aaeb5cbbc7ff75db83221b89b5ca8adb4}} 
 \index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!data@{data}}
 \index{data@{data}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
@@ -198,6 +206,34 @@ Returns a const pointer to the element array.
 
 Used for passing the matrix\textquotesingle{}s element array to other libraries. \begin{DoxyReturn}{Returns}
 A const pointer to the first element in the array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae93416f040b2035107468aaaf80cba87}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ae93416f040b2035107468aaaf80cba87}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!det@{det}}
+\index{det@{det}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+T \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::det}
+
+
+
+An alternate way to write determinant. 
+
+\begin{DoxyReturn}{Returns}
+The determinant of type T. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a957c934e015c66c9774d094339aa603d}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a957c934e015c66c9774d094339aa603d}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+T \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::determinant}
+
+
+
+The determinant operator. 
+
+A matrix\textquotesingle{}s determinant is a value used in finding a matrix\textquotesingle{}s inverse and if the inverse exists (An N-\/by-\/N matrix is invertable if and only if it\textquotesingle{}s determinant is nonzero.). \begin{DoxyReturn}{Returns}
+The determinant of type T. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a1b88744c0e640e34c2314caef3b78593}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a1b88744c0e640e34c2314caef3b78593}} 
 \index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!get@{get}}
@@ -279,6 +315,52 @@ The elements of the vector are copies of the matrix\textquotesingle{}s correspon
 \begin{DoxyReturn}{Returns}
 A row vector containing copies of the matrix\textquotesingle{}s corresponding index\textquotesingle{}th row\textquotesingle{}s elements. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!inverse@{inverse}}
+\index{inverse@{inverse}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::inverse}
+
+
+
+The inverse operator. 
+
+If the matrix\textquotesingle{}s determinant is nonzero then this returns a matrix whose elements are defined and mat$\ast$mat.\mbox{\hyperlink{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_a0ae0c0bb10d5fb8dff09802824bad008}{inverse()}}=mat.\+inverse$\ast$mat=M\+A\+T\+N\+\_\+\+I\+D\+E\+N\+T\+I\+T\+Y$<$\+N,\+T$>$. If the determinant is zero, it\textquotesingle{}s elements are NaN (if T supports NaN.). \begin{DoxyReturn}{Returns}
+The inverse. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ace96aa352f37543d888f5a4c382671a1}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ace96aa352f37543d888f5a4c382671a1}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!invert@{invert}}
+\index{invert@{invert}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N, N, T $>$ \& \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::invert}
+
+
+
+Inverts the matrix. 
+
+This function will change the matrix you call it on setting it\textquotesingle{}s elements to that of it\textquotesingle{}s inverse (if it exists.). \begin{DoxyReturn}{Returns}
+A reference to the now inverted matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_afc1c5630cd8a24934fd7cd27a94f1ce1}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_afc1c5630cd8a24934fd7cd27a94f1ce1}} 
+\index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!minor@{minor}}
+\index{minor@{minor}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
+\doxysubsubsection{\texorpdfstring{minor()}{minor()}}
+{\footnotesize\ttfamily template$<$uint32 N, typename T $>$ \\
+\mbox{\hyperlink{structdggt_1_1mat}{mat}}$<$ N-\/1, N-\/1, T $>$ \mbox{\hyperlink{structdggt_1_1mat}{dggt\+::mat}}$<$ N, N, T $>$\+::minor (\begin{DoxyParamCaption}\item[{uint32}]{column\+To\+Remove,  }\item[{uint32}]{row\+To\+Remove }\end{DoxyParamCaption}) const}
+
+
+
+The minor of a matrix. 
+
+The matrix minor is the matrix after removing a row and column. 
+\begin{DoxyParams}{Parameters}
+{\em column\+To\+Remove} & a u32 representing the column to remove ranging from 0 to N-\/1. \\
+\hline
+{\em row\+To\+Remove} & a u32 representing the row to remove ranging from 0 to N-\/1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_affb0b18d7c3da3e3362d46bd743cb130}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_affb0b18d7c3da3e3362d46bd743cb130}} 
 \index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
@@ -502,7 +584,15 @@ A reference to the newly transformed matrix.
 Transformation operator. 
 
 Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v\textquotesingle{}=A$\ast$v where A is a transformation matrix, v is a vector and v\textquotesingle{} is a vector such that\+: ~\newline
- v\textquotesingle{}\mbox{[}i\mbox{]}=v.\+dot(mat\+\_\+row\mbox{[}i\mbox{]}) where mat\+\_\+row\mbox{[}i\mbox{]} is the i\textquotesingle{}th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). \mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab1f539254dbcf6cee40466e2ea51d4f2}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab1f539254dbcf6cee40466e2ea51d4f2}} 
+ v\textquotesingle{}\mbox{[}i\mbox{]}=v.\+dot(mat\+\_\+row\mbox{[}i\mbox{]}) where mat\+\_\+row\mbox{[}i\mbox{]} is the i\textquotesingle{}th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). 
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab1f539254dbcf6cee40466e2ea51d4f2}\label{structdggt_1_1mat_3_01N_00_01N_00_01T_01_4_ab1f539254dbcf6cee40466e2ea51d4f2}} 
 \index{dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}!transpose@{transpose}}
 \index{transpose@{transpose}!dggt::mat$<$ N, N, T $>$@{dggt::mat$<$ N, N, T $>$}}
 \doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
