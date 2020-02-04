@@ -125,6 +125,11 @@ namespace dggt
 	/*!
 	 * @brief A 32-bit signed integer type.
 	 * */
+	typedef int32_t int32;
+
+	/*!
+	 * @brief Short hand for int32.
+	 * */
 	typedef int32_t i32;
 
 	/*!
