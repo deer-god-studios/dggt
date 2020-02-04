@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table_5fpair_65',['table_pair',['../d5/d13/structdggt_1_1table__pair.html',1,'dggt']]],
-  ['todo_20list_66',['Todo List',['../dd/da0/todo.html',1,'']]]
+  ['u64_64',['u64',['../da/da3/dggt__types_8h.html#a91ee3b6e2425e78feef03fb5c69d63e5',1,'dggt_types.h']]],
+  ['uint64_65',['uint64',['../da/da3/dggt__types_8h.html#a6ff40d695ba97a9cabbf48b34af1a6e3',1,'dggt_types.h']]]
 ];

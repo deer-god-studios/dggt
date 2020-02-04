@@ -72,67 +72,74 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _DGGT_MATH_VEC1_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">    4</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/d93/structvec.html">vec</a>&lt;1,T&gt;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint32 <a class="code" href="../../d0/d93/structvec.html#aaff26a1575f57378296cab2514b5e0ff">DIM</a>=1;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    T x;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a>(<span class="keyword">const</span> T element[1]);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a>(<span class="keyword">const</span> T&amp; val);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; other);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>32 D&gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec&lt;D,T&gt;</a>&amp; other);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a> <a class="code" href="../../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0">operator+</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a> <a class="code" href="../../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f">operator-</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a> <a class="code" href="../../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f">operator-</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a> operator*(<span class="keyword">const</span> T&amp; scalar) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a> operator/(<span class="keyword">const</span> T&amp; scalar) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    bool32 operator==(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    bool32 operator!=(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; operator-=(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; operator*=(<span class="keyword">const</span> T&amp; scalar);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; operator/=(<span class="keyword">const</span> T&amp; scalar);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">operator</span> T() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">operator</span> T&amp;();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    T&amp; operator[](uint32 index);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> T&amp; operator[](uint32 index) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    T dot(<span class="keyword">const</span> <a class="code" href="../../d0/d93/structvec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> VEC1_ONE=<a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>(T(1));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> VEC1_XAXIS=<a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>(T(1));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> operator*(<span class="keyword">const</span> T&amp; scalar,<span class="keyword">const</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; vector);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;T dot(<span class="keyword">const</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; lhs,<span class="keyword">const</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; rhs);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;dggt_math_vec1.inl&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec1</a>=<a class="code" href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;dggt_math_vec.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">    8</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;1,T&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint32 <a class="code" href="../../d3/dab/structdggt_1_1vec.html#a82c9999e46c0979710fdefbc33f8b607">DIM</a>=1;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        T x;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">vec</a>(<span class="keyword">const</span> T element[1]);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">vec</a>(<span class="keyword">const</span> T&amp; val);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">vec</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">vec</a>(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; other);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">template</span> &lt;u<span class="keywordtype">int</span>32 D&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">vec</a>(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec&lt;D,T&gt;</a>&amp; other);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a> operator+(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a> operator-(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a> operator-() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a> operator*(<span class="keyword">const</span> T&amp; scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a> operator/(<span class="keyword">const</span> T&amp; scalar) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        bool32 operator==(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        bool32 operator!=(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; operator-=(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; operator*=(<span class="keyword">const</span> T&amp; scalar);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; operator/=(<span class="keyword">const</span> T&amp; scalar);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">operator</span> T() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">operator</span> T&amp;();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        T&amp; operator[](uint32 index);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> T&amp; operator[](uint32 index) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        T dot(<span class="keyword">const</span> <a class="code" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> VEC1_ONE=<a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>(T(1));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> VEC1_XAXIS=<a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>(T(1));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a> operator*(<span class="keyword">const</span> T&amp; scalar,<span class="keyword">const</span> <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; vector);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    T dot(<span class="keyword">const</span> <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; lhs,<span class="keyword">const</span> <a class="code" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt;1,T&gt;</a>&amp; rhs);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d0/d93/structvec.html">vec&lt;1,real32&gt;</a> <a class="code" href="../../d0/d93/structvec.html">vec1f</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;dggt_math_vec1.inl&quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define _DGGT_MATH_VEC1_H_</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">using</span> vec1=vec&lt;1,T&gt;;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">typedef</span> vec&lt;1,real32&gt; vec1f;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define _DGGT_MATH_VEC1_H_</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructvec_html_a16b642e385c2b6a24136aa12403393e0"><div class="ttname"><a href="../../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0">vec::operator+</a></div><div class="ttdeci">vec operator+(const vec &amp;rhs) const</div><div class="ttdoc">Addition operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.inl:71</div></div>
-<div class="ttc" id="astructvec_html_aaff26a1575f57378296cab2514b5e0ff"><div class="ttname"><a href="../../d0/d93/structvec.html#aaff26a1575f57378296cab2514b5e0ff">vec::DIM</a></div><div class="ttdeci">static const uint32 DIM</div><div class="ttdoc">A static const integer representing the vector's dimension.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.h:20</div></div>
-<div class="ttc" id="astructvec_3_011_00_01T_01_4_html"><div class="ttname"><a href="../../d1/d7a/structvec_3_011_00_01T_01_4.html">vec&lt; 1, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec1.h:4</div></div>
-<div class="ttc" id="astructvec_html_a11adae36b2220e419e4fbe22260ab437"><div class="ttname"><a href="../../d0/d93/structvec.html#a11adae36b2220e419e4fbe22260ab437">vec::vec</a></div><div class="ttdeci">vec()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.inl:21</div></div>
-<div class="ttc" id="astructvec_html"><div class="ttname"><a href="../../d0/d93/structvec.html">vec</a></div><div class="ttdoc">A vector struct of dimension, D and type T.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.h:15</div></div>
-<div class="ttc" id="astructvec_html_a3d779dac27edba512bffceb96d6c679f"><div class="ttname"><a href="../../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f">vec::operator-</a></div><div class="ttdeci">vec operator-() const</div><div class="ttdoc">Unary negation operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.inl:90</div></div>
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html_ae8f110c341c83df73838b0c9a28c0f1e"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e">dggt::vec</a></div><div class="ttdeci">vec()</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="astructdggt_1_1vec_html"><div class="ttname"><a href="../../d3/dab/structdggt_1_1vec.html">dggt::vec</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec.h:47</div></div>
+<div class="ttc" id="astructdggt_1_1vec_3_011_00_01T_01_4_html"><div class="ttname"><a href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">dggt::vec&lt; 1, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec1.h:8</div></div>
+<div class="ttc" id="astructdggt_1_1vec_html_a82c9999e46c0979710fdefbc33f8b607"><div class="ttname"><a href="../../d3/dab/structdggt_1_1vec.html#a82c9999e46c0979710fdefbc33f8b607">dggt::vec::DIM</a></div><div class="ttdeci">static const uint32 DIM</div><div class="ttdoc">A static const integer representing the vector's dimension.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec.h:52</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

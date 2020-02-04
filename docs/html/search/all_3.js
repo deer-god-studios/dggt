@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['e_34',['e',['../d0/d93/structvec.html#a12f34df011396935a20c955c123b7971',1,'vec']]]
+  ['e_34',['e',['../d3/dab/structdggt_1_1vec.html#a5b726ac6186d7ad05dbc81aaa7745d40',1,'dggt::vec::e()'],['../db/d2e/namespacedggt.html#a6a864db853e1d893f068e7d944a9290c',1,'dggt::e()']]]
 ];

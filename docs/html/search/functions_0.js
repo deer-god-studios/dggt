@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_2b_129',['operator+',['../d0/d93/structvec.html#a16b642e385c2b6a24136aa12403393e0',1,'vec']]],
-  ['operator_2d_130',['operator-',['../d0/d93/structvec.html#abca9dfe15245bfa54c03dc406b8e9fbd',1,'vec::operator-(const vec &amp;rhs) const'],['../d0/d93/structvec.html#a3d779dac27edba512bffceb96d6c679f',1,'vec::operator-() const']]]
+  ['vec_125',['vec',['../db/d2e/namespacedggt.html#ae8f110c341c83df73838b0c9a28c0f1e',1,'dggt::vec()'],['../db/d2e/namespacedggt.html#aeeecbba1c3d449b27b3830030c1a234d',1,'dggt::vec(const T &amp;val)'],['../db/d2e/namespacedggt.html#a28fcd4313786fd4d4f762082f792ce7b',1,'dggt::vec(const vec &amp;other)']]]
 ];

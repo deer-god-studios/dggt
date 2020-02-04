@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pool_5fblock_58',['pool_block',['../d6/d8a/structdggt_1_1pool__block.html',1,'dggt']]]
+  ['queue_56',['queue',['../d7/d26/structdggt_1_1queue.html',1,'dggt']]]
 ];
