@@ -76,46 +76,50 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">size_t</span> <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../da/da3/dggt__types_8h.html#a6ff40d695ba97a9cabbf48b34af1a6e3">   24</a></span>&#160;<span class="keyword">typedef</span> uint64_t <a class="code" href="../../da/da3/dggt__types_8h.html#a6ff40d695ba97a9cabbf48b34af1a6e3">uint64</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../da/da3/dggt__types_8h.html#a91ee3b6e2425e78feef03fb5c69d63e5">   28</a></span>&#160;<span class="keyword">typedef</span> uint64_t <a class="code" href="../../da/da3/dggt__types_8h.html#a91ee3b6e2425e78feef03fb5c69d63e5">u64</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">   23</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">size_t</span> <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/d2e/namespacedggt.html#aa4dc7823f711e3467aaabf2c449575ef">   28</a></span>&#160;    <span class="keyword">typedef</span> uint64_t <a class="code" href="../../db/d2e/namespacedggt.html#aa4dc7823f711e3467aaabf2c449575ef">uint64</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../da/da3/dggt__types_8h.html#ad0289fc0fdb756a4b76d75abe02d1833">   34</a></span>&#160;<span class="keyword">typedef</span> uint64_t <a class="code" href="../../da/da3/dggt__types_8h.html#ad0289fc0fdb756a4b76d75abe02d1833">bool64</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../da/da3/dggt__types_8h.html#ac9a99bb45b29c85c8adf05481f4f04f2">   38</a></span>&#160;<span class="keyword">typedef</span> uint64_t <a class="code" href="../../da/da3/dggt__types_8h.html#ac9a99bb45b29c85c8adf05481f4f04f2">b64</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">typedef</span> uint64_t flag64;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">typedef</span> uint64_t fl64;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">typedef</span> uint32_t uint32;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">typedef</span> uint32_t u32;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">typedef</span> uint32_t bool32;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">typedef</span> uint32_t b32;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">typedef</span> uint32_t flag32;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">typedef</span> uint32_t fl32;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> float64;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> real64;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> f64;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span> float32;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span> real32;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span> f32;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">typedef</span> uint8_t uint8;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">typedef</span> uint8_t u8;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">typedef</span> uint8_t ubyte;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">typedef</span> int32_t i32;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">typedef</span> int8_t sbyte; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define _DGGT_TYPES_H_</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4">   33</a></span>&#160;    <span class="keyword">typedef</span> uint64_t <a class="code" href="../../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4">u64</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../db/d2e/namespacedggt.html#a0ab0e290216fa717f10953036daa84b1">   40</a></span>&#160;    <span class="keyword">typedef</span> uint64_t <a class="code" href="../../db/d2e/namespacedggt.html#a0ab0e290216fa717f10953036daa84b1">bool64</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../db/d2e/namespacedggt.html#ac735c982ee6ad8d5ddfdfd564c67574e">   45</a></span>&#160;    <span class="keyword">typedef</span> uint64_t <a class="code" href="../../db/d2e/namespacedggt.html#ac735c982ee6ad8d5ddfdfd564c67574e">b64</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">typedef</span> uint64_t flag64;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">typedef</span> uint64_t fl64;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">typedef</span> uint32_t uint32;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">typedef</span> uint32_t u32;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> uint32_t bool32;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">typedef</span> uint32_t b32;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">typedef</span> uint32_t flag32;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">typedef</span> uint32_t fl32;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> float64;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> real64;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> f64;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">float</span> float32;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">float</span> real32;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">float</span> f32;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">typedef</span> uint8_t uint8;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">typedef</span> uint8_t u8;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">typedef</span> uint8_t ubyte;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">typedef</span> int32_t i32;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">typedef</span> int8_t sbyte; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define _DGGT_TYPES_H_</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="adggt__types_8h_html_ad4253b5be520a3d40794590fd5d51716"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:20</div></div>
-<div class="ttc" id="adggt__types_8h_html_a6ff40d695ba97a9cabbf48b34af1a6e3"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#a6ff40d695ba97a9cabbf48b34af1a6e3">uint64</a></div><div class="ttdeci">uint64_t uint64</div><div class="ttdoc">Unsigned 64-bit integer type.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:24</div></div>
-<div class="ttc" id="adggt__types_8h_html_ac9a99bb45b29c85c8adf05481f4f04f2"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#ac9a99bb45b29c85c8adf05481f4f04f2">b64</a></div><div class="ttdeci">uint64_t b64</div><div class="ttdoc">A shortened version of bool64.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:38</div></div>
-<div class="ttc" id="adggt__types_8h_html_a91ee3b6e2425e78feef03fb5c69d63e5"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#a91ee3b6e2425e78feef03fb5c69d63e5">u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdoc">A shortened version on uint64.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:28</div></div>
-<div class="ttc" id="adggt__types_8h_html_ad0289fc0fdb756a4b76d75abe02d1833"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#ad0289fc0fdb756a4b76d75abe02d1833">bool64</a></div><div class="ttdeci">uint64_t bool64</div><div class="ttdoc">A 64-bit integer type for use in boolean expressions.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:34</div></div>
+<div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
+<div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:23</div></div>
+<div class="ttc" id="anamespacedggt_html_ac735c982ee6ad8d5ddfdfd564c67574e"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#ac735c982ee6ad8d5ddfdfd564c67574e">dggt::b64</a></div><div class="ttdeci">uint64_t b64</div><div class="ttdoc">A shortened version of bool64.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:45</div></div>
+<div class="ttc" id="anamespacedggt_html_aa4dc7823f711e3467aaabf2c449575ef"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#aa4dc7823f711e3467aaabf2c449575ef">dggt::uint64</a></div><div class="ttdeci">uint64_t uint64</div><div class="ttdoc">Unsigned 64-bit integer type.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:28</div></div>
+<div class="ttc" id="anamespacedggt_html_a0ab0e290216fa717f10953036daa84b1"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a0ab0e290216fa717f10953036daa84b1">dggt::bool64</a></div><div class="ttdeci">uint64_t bool64</div><div class="ttdoc">A 64-bit integer type for use in boolean expressions.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:40</div></div>
+<div class="ttc" id="anamespacedggt_html_a8a8995b5a209860c830ba5d6c68dcaf4"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4">dggt::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdoc">A shortened version on uint64.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:33</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

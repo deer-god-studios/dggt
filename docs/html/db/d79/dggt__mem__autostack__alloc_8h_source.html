@@ -97,12 +97,12 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            savedState=a-&gt;save_stack();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size=4)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size=4)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;alloc(size):<a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span>* alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a>* size=0)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span>* alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>* size=0)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;alloc(size):0;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
@@ -121,7 +121,7 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;free(block):0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        b32 free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        b32 free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;free(ptr,size):0;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
@@ -173,11 +173,11 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;owns(block):0;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> available_mem()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> available_mem()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;available_mem():0;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> used_mem()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> used_mem()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;used_mem():0;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
@@ -232,12 +232,12 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            savedState=a-&gt;save_stack();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size=4)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a> alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size=4)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;alloc(size):<a class="code" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt;void&gt;</a>();</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">void</span>* alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a>* size=0)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">void</span>* alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>* size=0)</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;alloc(size):0;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
@@ -256,7 +256,7 @@ $(function() {
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;free(block):0;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        b32 free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        b32 free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;free(ptr,size):0;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
@@ -308,11 +308,11 @@ $(function() {
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;owns(block):0;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> available_mem()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> available_mem()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;available_mem():0;</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> used_mem()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> used_mem()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">return</span> a?a-&gt;used_mem():0;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
@@ -354,7 +354,7 @@ $(function() {
 <div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
 <div class="ttc" id="astructdggt_1_1blk_3_01void_01_4_html"><div class="ttname"><a href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">dggt::blk&lt; void &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:58</div></div>
 <div class="ttc" id="astructdggt_1_1allocator_3_01alloc__t_1_1STACK_00_01SIZE_01_4_html"><div class="ttname"><a href="../../d9/dc4/structdggt_1_1allocator_3_01alloc__t_1_1STACK_00_01SIZE_01_4.html">dggt::allocator&lt; alloc_t::STACK, SIZE &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_stack_alloc.h:52</div></div>
-<div class="ttc" id="adggt__types_8h_html_ad4253b5be520a3d40794590fd5d51716"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:20</div></div>
+<div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:23</div></div>
 <div class="ttc" id="astructdggt_1_1allocator_html"><div class="ttname"><a href="../../d0/d23/structdggt_1_1allocator.html">dggt::allocator</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_alloc.h:31</div></div>
 <div class="ttc" id="astructdggt_1_1blk_html"><div class="ttname"><a href="../../d0/d39/structdggt_1_1blk.html">dggt::blk</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_blk.h:8</div></div>
 <div class="ttc" id="astructdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_00_01SIZE_01_4_html"><div class="ttname"><a href="../../dc/d74/structdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_00_01SIZE_01_4.html">dggt::allocator&lt; alloc_t::AUTO_STACK, SIZE &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_autostack_alloc.h:142</div></div>

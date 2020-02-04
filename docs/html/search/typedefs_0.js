@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['b64_198',['b64',['../da/da3/dggt__types_8h.html#ac9a99bb45b29c85c8adf05481f4f04f2',1,'dggt_types.h']]],
-  ['bool64_199',['bool64',['../da/da3/dggt__types_8h.html#ad0289fc0fdb756a4b76d75abe02d1833',1,'dggt_types.h']]]
+  ['b64_198',['b64',['../db/d2e/namespacedggt.html#ac735c982ee6ad8d5ddfdfd564c67574e',1,'dggt']]],
+  ['bool64_199',['bool64',['../db/d2e/namespacedggt.html#a0ab0e290216fa717f10953036daa84b1',1,'dggt']]]
 ];

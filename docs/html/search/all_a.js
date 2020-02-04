@@ -17,5 +17,5 @@ var searchData=
   ['min_5ffloat32_69',['MIN_FLOAT32',['../d1/d20/dggt__defines_8h.html#abc11e6e108402d93b1ce7b9ddadc78ab',1,'dggt_defines.h']]],
   ['min_5freal32_70',['MIN_REAL32',['../d1/d20/dggt__defines_8h.html#a006ba826c8aa90a643c1328c5cfe8024',1,'dggt_defines.h']]],
   ['minor_71',['minor',['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#afc1c5630cd8a24934fd7cd27a94f1ce1',1,'dggt::mat&lt; N, N, T &gt;']]],
-  ['msize_72',['msize',['../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716',1,'dggt_types.h']]]
+  ['msize_72',['msize',['../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca',1,'dggt']]]
 ];

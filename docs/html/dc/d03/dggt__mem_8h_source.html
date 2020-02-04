@@ -110,16 +110,16 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;u32 TABLESIZE=2048,u32 LINEARSIZE=KB(10)&gt;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">using</span> scratch_alloc=allocator&lt;alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE&gt;;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> cache_init(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> cacheSize);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> cache_init(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    b32 cache_is_initialized();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> cache_shutdown();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> cache_reinit(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> cacheSize);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> available_cache_mem();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> used_cache_mem();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> cache_size();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span>* cache_alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a>* size);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    blk&lt;void&gt; cache_alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    b32 cache_free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> cache_reinit(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> available_cache_mem();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> used_cache_mem();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cache_size();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span>* cache_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>* size);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    blk&lt;void&gt; cache_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    b32 cache_free(<span class="keywordtype">void</span>* ptr,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    b32 cache_free(blk&lt;void&gt; block);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> cache_clear();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    b32 cache_free(T* ptr,u32 count);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span> &lt;alloc_t A&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    allocator&lt;A&gt; create_alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    allocator&lt;A&gt; create_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt;alloc_t A,u32 SIZE&gt;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    allocator&lt;A,SIZE&gt; create_alloc();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -152,8 +152,8 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            allocator&lt;P,PSIZE&gt;* primaryAlloc,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            allocator&lt;F,FSIZE&gt;* fallbackAlloc);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    allocator&lt;alloc_t::POOL&gt; create_alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> size,<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> blockSize);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    allocator&lt;alloc_t::STORE&gt; create_alloc(<a class="code" href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a> blockSize);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    allocator&lt;alloc_t::POOL&gt; create_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size,<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> blockSize);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    allocator&lt;alloc_t::STORE&gt; create_alloc(<a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> blockSize);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span> &lt;alloc_t A&gt;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    b32 destroy_alloc(allocator&lt;A&gt;* alloc);</div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The library's main namespace.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
-<div class="ttc" id="adggt__types_8h_html_ad4253b5be520a3d40794590fd5d51716"><div class="ttname"><a href="../../da/da3/dggt__types_8h.html#ad4253b5be520a3d40794590fd5d51716">msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:20</div></div>
+<div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:23</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -16,10 +16,10 @@ typedef \mbox{\hyperlink{structdggt_1_1allocator}{allocator}}$<$(alloc\+\_\+t) F
 {\bfseries allocator} (\mbox{\hyperlink{structdggt_1_1allocator}{palloc}} $\ast$primary\+Alloc, \mbox{\hyperlink{structdggt_1_1allocator}{falloc}} $\ast$fallback\+Alloc)
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a5622f36086d58b2b60421a7e0ee7c9be}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a5622f36086d58b2b60421a7e0ee7c9be}} 
-void $\ast$ {\bfseries alloc} (\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} $\ast$size=0)
+void $\ast$ {\bfseries alloc} (\mbox{\hyperlink{namespacedggt_a1b476a6645bf671ff29f633871769eca}{msize}} $\ast$size=0)
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a63ce99677e319189fa926115d0725659}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a63ce99677e319189fa926115d0725659}} 
-\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ {\bfseries alloc} (\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} size=4)
+\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ {\bfseries alloc} (\mbox{\hyperlink{namespacedggt_a1b476a6645bf671ff29f633871769eca}{msize}} size=4)
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_af0de70faf4753fb76bd9e1ecee4f0296}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_af0de70faf4753fb76bd9e1ecee4f0296}} 
 {\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bfseries alloc} (u32 $\ast$count=0)
@@ -28,7 +28,7 @@ void $\ast$ {\bfseries alloc} (\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d4
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ {\bfseries alloc} (u32 count=1)
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a4e8c48e84a43921cde236436e0ef7099}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a4e8c48e84a43921cde236436e0ef7099}} 
-b32 {\bfseries free} (void $\ast$ptr, \mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} size=4)
+b32 {\bfseries free} (void $\ast$ptr, \mbox{\hyperlink{namespacedggt_a1b476a6645bf671ff29f633871769eca}{msize}} size=4)
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_ab81b82016e0088601644d416d2cb224e}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_ab81b82016e0088601644d416d2cb224e}} 
 b32 {\bfseries free} (\mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>$ block)
@@ -55,10 +55,10 @@ b32 {\bfseries owns} (const \mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ void $>
 {\footnotesize template$<$typename T $>$ }\\b32 {\bfseries owns} (const \mbox{\hyperlink{structdggt_1_1blk}{blk}}$<$ T $>$ block) const
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a36aec14cd3c76ab5c8779d89f52329ba}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_a36aec14cd3c76ab5c8779d89f52329ba}} 
-\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} {\bfseries available\+\_\+mem} () const
+\mbox{\hyperlink{namespacedggt_a1b476a6645bf671ff29f633871769eca}{msize}} {\bfseries available\+\_\+mem} () const
 \item 
 \mbox{\Hypertarget{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_aa99e9f21e0bf6114919dacb93ac1094f}\label{structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4_aa99e9f21e0bf6114919dacb93ac1094f}} 
-\mbox{\hyperlink{dggt__types_8h_ad4253b5be520a3d40794590fd5d51716}{msize}} {\bfseries used\+\_\+mem} () const
+\mbox{\hyperlink{namespacedggt_a1b476a6645bf671ff29f633871769eca}{msize}} {\bfseries used\+\_\+mem} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
