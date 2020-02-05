@@ -10,6 +10,7 @@ namespace dggt
 	 * @addtogroup lin
 	 * @{
 	 * */
+
 	/*!
 	 * @brief A 2-by-2 matrix struct.
 	 * @tparam T The matrix element's type.

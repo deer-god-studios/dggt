@@ -1,9 +1,9 @@
 var structdggt_1_1mat_3_013_00_013_00_01T_01_4 =
 [
+    [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#a7d514a8876db0b0880dfd4ed297c14eb", null ],
     [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#ae9ad04255925d8a509abf60cdb5d9cc4", null ],
     [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#ad0311636151806d31f946dda565d6360", null ],
     [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#ac8f260dbcccc344087609d327fe88952", null ],
-    [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#a7d514a8876db0b0880dfd4ed297c14eb", null ],
     [ "mat", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#af7b592b5e6d9109c0bb9feed3f90133f", null ],
     [ "minor", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#a84b27bcc2b0a9a640443b6ec463f5a7e", null ],
     [ "comatrix", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html#a84ff6a205df23df40b02f2439c0be505", null ],

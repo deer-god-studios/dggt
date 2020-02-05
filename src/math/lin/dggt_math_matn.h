@@ -177,6 +177,7 @@ namespace dggt
 		 * The matrix minor is the matrix after removing a row and column.
 		 * @param columnToRemove a u32 representing the column to remove ranging from 0 to N-1.
 		 * @param rowToRemove a u32 representing the row to remove ranging from 0 to N-1.
+		 * @return The matrix's minor.
 		 * */
 		mat<N-1,N-1,T> minor(uint32 columnToRemove,uint32 rowToRemove) const;
 
