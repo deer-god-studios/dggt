@@ -1,0 +1,28 @@
+var structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4 =
+[
+    [ "allocator", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a4b0cdd2f1a54fa90c3afe86d4f6e3260", null ],
+    [ "allocator", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#ac52da3dcc361114ea542d40157c65128", null ],
+    [ "allocator", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a8ff0be32b19436f1df1939f266d14a27", null ],
+    [ "alloc", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a35f0bc706247b8e8bc4f96b93885a331", null ],
+    [ "alloc", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a0ff3a598167d13473427125083ff44ca", null ],
+    [ "free", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a0465ec95e38fd8f8b0b99d695a768c5f", null ],
+    [ "free", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a6fbf8c7a0148450d6c9fb3809186f939", null ],
+    [ "free", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#abb04fd84913c0576012c099df1656900", null ],
+    [ "free", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a5f2a407c2ee6cf01ac391dcde9cca6f4", null ],
+    [ "clear", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a1f20a3641c6222941dbe642f4dd4378f", null ],
+    [ "owns", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a26d8bda9543bd852f456ddf1f69070eb", null ],
+    [ "owns", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#ad2e4395f4693f55aee22651abe5202cf", null ],
+    [ "owns", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#af58954930edf64a5c0e6a5525fa8d2a3", null ],
+    [ "owns", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a7c7cca6e07c1396f8d0517388ce1c9e9", null ],
+    [ "available_mem", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a3cdddb99c5eda3c0bb481e1d3685351f", null ],
+    [ "used_mem", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#aa0555f2e00dc3c1af4b815bc491dd1df", null ],
+    [ "available_blocks", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#ac28ac33fca7fbc94e8c24bbfce5a17ae", null ],
+    [ "used_blocks", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a9d008b58e965a4143570497d853314be", null ],
+    [ "TYPE", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#aeeb13b085f4baad25e0a7bd6fe3dfc8d", null ],
+    [ "buff", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a880ce7e2354ee55f7e564444d52a1b5f", null ],
+    [ "used", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a6a42cee680f286fec6b22e5d6f4d4093", null ],
+    [ "blockSize", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a4aee22499a828ce9ec91c90181179198", null ],
+    [ "blockCount", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#af3eb4a013a6ebb2c8b65a47654205b1c", null ],
+    [ "blocksUsed", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a576771831bd8786876feb454f4ab4db8", null ],
+    [ "pool", "d1/d61/structdggt_1_1allocator_3_01alloc__t_1_1POOL_01_4.html#a40ce45f32cf238b55040bfbae12575ac", null ]
+];

@@ -7,6 +7,10 @@
 namespace dggt
 {
 	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+	/*!
 	 * @brief A 2-by-2 matrix struct.
 	 * @tparam T The matrix element's type.
 	 * */
@@ -321,19 +325,42 @@ namespace dggt
 	 * */
 	template <typename T>
 	mat<2,2,T> operator*(const T& scalar,const mat<2,2,T>& matrix);
+	/*!
+	 * @}
+	 * */
 }
 
 #include "dggt_math_mat2.inl"
 
 namespace dggt
 {
+	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
+	/*!
+	 * @brief A 2-by-2 identity matrix.
+	 * @tparam T The matrix's underlying type.
+	 * */
 	template <typename T>
 	static const mat<2,2,T> MAT2_IDENTITY=mat<2,2,T>(T(1));
 
+	/*!
+	 * @brief Short hand for mat<2,2,T>.
+	 * @tparam T The matrix's underlying type.
+	 * */
 	template <typename T>
 	using mat2=mat<2,2,T>;
 
+	/*!
+	 * @brief Another way to write mat<2,2,real32>.
+	 * */
 	typedef mat2<real32> mat2f;
+
+	/*!
+	 * @}
+	 * */
 }
 
 /*! @cond IncludeGuard */

@@ -7,6 +7,11 @@
 namespace dggt
 {
 	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
+	/*!
 	 * @brief An N-by-N square matrix.
 	 * @tparam N The dimension of the matrix.
 	 * @tparam T The type of the elements in the matrix.
@@ -308,12 +313,20 @@ namespace dggt
 	template <uint32 N,typename T>
 	mat<N,N,T> operator*(const T& scalar,const mat<N,N,T>& matrix);
 
+	/*!
+	 * @}
+	 * */
 }
 
 #include "dggt_math_matn.inl"
 
 namespace dggt
 {
+	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
 	/*!
 	 * @brief Square matrix identity.
 	 * @tparam N The dimension of the identity matrix.
@@ -335,6 +348,10 @@ namespace dggt
 	 * */
 	template <uint32 N,typename T>
 	using matn=mat<N,N,T>;
+
+	/*!
+	 * @}
+	 * */
 }
 
 /*! @cond IncludeGuard */

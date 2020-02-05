@@ -9,9 +9,18 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +60,23 @@
 var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('../../',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('d8/d1c/dggt__math__mat4_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +91,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ae9a93452e2a84339148a16bcf2eb561.html">math</a></li><li class="navelem"><a class="el" href="../../dir_5d9bc4da88b6add5415aa941782c7441.html">lin</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">dggt_math_mat4.h</div>  </div>
@@ -142,9 +168,9 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec&lt;4,T&gt;</a> <a class="code" href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">operator*</a>(<span class="keyword">const</span> <a class="code" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec&lt;4,T&gt;</a>&amp; vector,<span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>&amp; matrix);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec&lt;4,T&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">operator*</a>(<span class="keyword">const</span> <a class="code" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec&lt;4,T&gt;</a>&amp; vector,<span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>&amp; matrix);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a> <a class="code" href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">operator*</a>(<span class="keyword">const</span> T&amp; scalar,<span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>&amp; matrix);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">operator*</a>(<span class="keyword">const</span> T&amp; scalar,<span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>&amp; matrix);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -201,37 +227,41 @@ $(function() {
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#define _DGGT_MATH_MAT4_H_</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The main namespace for the dggt library.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a3a263033ce4e7559c32f0c8c34679e7d"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a3a263033ce4e7559c32f0c8c34679e7d">dggt::mat::operator-</a></div><div class="ttdeci">mat operator-(const mat &amp;rhs) const</div><div class="ttdoc">Subtraction operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:44</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a4d8a4e4e819e55f559a261f97b319854"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a4d8a4e4e819e55f559a261f97b319854">dggt::mat::operator+</a></div><div class="ttdeci">mat operator+(const mat &amp;rhs) const</div><div class="ttdoc">Addition operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:33</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_aa2766ef9df0b6d44c47cee5b53f50d69"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#aa2766ef9df0b6d44c47cee5b53f50d69">dggt::mat::get_row</a></div><div class="ttdeci">vec&lt; C, T &gt; get_row(uint32 index) const</div><div class="ttdoc">Gets a row vector.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:182</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a77b8b609afbf0674394b55682a79e355"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a77b8b609afbf0674394b55682a79e355">dggt::mat::operator*=</a></div><div class="ttdeci">mat &amp; operator*=(const T &amp;scalar)</div><div class="ttdoc">Scale assignment operator.</div></div>
+<div class="ttc" id="agroup__lin_html_ga1c8a048bfe1c5df6073b4165302ce197"><div class="ttname"><a href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">dggt::operator*</a></div><div class="ttdeci">vec&lt; R, T &gt; operator*(const vec&lt; C, T &gt; &amp;vector, const mat&lt; C, R, T &gt; &amp;matrix)</div><div class="ttdoc">Vector/matrix multiplication operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:213</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">dggt::mat&lt; 4, 4, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:8</div></div>
-<div class="ttc" id="astructdggt_1_1mat_html_afa700898236638c8c2834ab370c6dc17"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17">dggt::mat::e</a></div><div class="ttdeci">T e[C *R]</div><div class="ttdoc">The underlying array containing all the matrix's elements.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:34</div></div>
+<div class="ttc" id="astructdggt_1_1mat_html_afa700898236638c8c2834ab370c6dc17"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17">dggt::mat::e</a></div><div class="ttdeci">T e[C *R]</div><div class="ttdoc">The underlying array containing all the matrix's elements.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:39</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a6b539f7158836f9ae0e9be162a385a8a"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a6b539f7158836f9ae0e9be162a385a8a">dggt::mat::operator-=</a></div><div class="ttdeci">mat &amp; operator-=(const mat &amp;rhs)</div><div class="ttdoc">Subtraction assignment operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:107</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_abac0b826222f31eb6bc3eaa967b577ac"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#abac0b826222f31eb6bc3eaa967b577ac">dggt::mat::get</a></div><div class="ttdeci">T &amp; get(uint32 column, uint32 row)</div><div class="ttdoc">Gets an element.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:159</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_ac4d7e43250bf2b474b37438429f78f7a"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#ac4d7e43250bf2b474b37438429f78f7a">dggt::mat::get_column</a></div><div class="ttdeci">vec&lt; R, T &gt; get_column(uint32 index) const</div><div class="ttdoc">Gets a column vector.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:171</div></div>
-<div class="ttc" id="astructdggt_1_1vec_3_012_00_01T_01_4_html"><div class="ttname"><a href="../../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html">dggt::vec&lt; 2, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec2.h:8</div></div>
-<div class="ttc" id="astructdggt_1_1vec_3_014_00_01T_01_4_html"><div class="ttname"><a href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">dggt::vec&lt; 4, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec4.h:8</div></div>
+<div class="ttc" id="astructdggt_1_1vec_3_012_00_01T_01_4_html"><div class="ttname"><a href="../../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html">dggt::vec&lt; 2, T &gt;</a></div><div class="ttdoc">A 2D vector struct.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec2.h:21</div></div>
+<div class="ttc" id="astructdggt_1_1vec_3_014_00_01T_01_4_html"><div class="ttname"><a href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">dggt::vec&lt; 4, T &gt;</a></div><div class="ttdoc">A 4D vector struct.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec4.h:22</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a9f5e8d793de7633c559c43c5c3d8585e"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a9f5e8d793de7633c559c43c5c3d8585e">dggt::mat::mat</a></div><div class="ttdeci">mat()</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:24</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a954e6ff8e3710824b635dc1e5874d1c6"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a954e6ff8e3710824b635dc1e5874d1c6">dggt::mat::operator*</a></div><div class="ttdeci">mat operator*(const T &amp;scalar) const</div><div class="ttdoc">Scaling operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:55</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_ad50f9b02dd89267b7d9788e498103e3c"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#ad50f9b02dd89267b7d9788e498103e3c">dggt::mat::transform</a></div><div class="ttdeci">vec&lt; R, T &gt; transform(const vec&lt; C, T &gt; &amp;vector) const</div><div class="ttdoc">Transformation operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:135</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_acdaf9b04ff6f5c69309341556ad8f4ae"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#acdaf9b04ff6f5c69309341556ad8f4ae">dggt::mat::set_column</a></div><div class="ttdeci">mat &amp; set_column(uint32 column, const vec&lt; R, T &gt; &amp;val)</div><div class="ttdoc">Sets a column.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:193</div></div>
-<div class="ttc" id="astructdggt_1_1mat_html_ae33e17d14f851a73be6c84334b69d761"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#ae33e17d14f851a73be6c84334b69d761">dggt::mat::data</a></div><div class="ttdeci">T * data()</div><div class="ttdoc">Returns a pointer to the element array.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:164</div></div>
+<div class="ttc" id="astructdggt_1_1mat_html_ae33e17d14f851a73be6c84334b69d761"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#ae33e17d14f851a73be6c84334b69d761">dggt::mat::data</a></div><div class="ttdeci">T * data()</div><div class="ttdoc">Returns a pointer to the element array.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:169</div></div>
 <div class="ttc" id="anamespacedggt_html_ad8f2c6bf8a2bcf734ec3546c57d55c04"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">dggt::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">An unsigned 32-bit integer type. Short hand for uint32_t.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:51</div></div>
-<div class="ttc" id="anamespacedggt_html_a1c8a048bfe1c5df6073b4165302ce197"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">dggt::operator*</a></div><div class="ttdeci">vec&lt; R, T &gt; operator*(const vec&lt; C, T &gt; &amp;vector, const mat&lt; C, R, T &gt; &amp;matrix)</div><div class="ttdoc">Vector/matrix multiplication operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:213</div></div>
-<div class="ttc" id="astructdggt_1_1vec_3_013_00_01T_01_4_html"><div class="ttname"><a href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_vec3.h:8</div></div>
+<div class="ttc" id="astructdggt_1_1vec_3_013_00_01T_01_4_html"><div class="ttname"><a href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></div><div class="ttdoc">A 3D vector struct.</div><div class="ttdef"><b>Definition:</b> dggt_math_vec3.h:22</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_aa8d820b77d52684b41f05e2eb20a7af4"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#aa8d820b77d52684b41f05e2eb20a7af4">dggt::mat::transpose</a></div><div class="ttdeci">mat&lt; R, C, T &gt; transpose() const</div><div class="ttdoc">Transpose operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:147</div></div>
-<div class="ttc" id="astructdggt_1_1mat_3_013_00_013_00_01T_01_4_html"><div class="ttname"><a href="../../dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html">dggt::mat&lt; 3, 3, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_mat3.h:8</div></div>
+<div class="ttc" id="astructdggt_1_1mat_3_013_00_013_00_01T_01_4_html"><div class="ttname"><a href="../../dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html">dggt::mat&lt; 3, 3, T &gt;</a></div><div class="ttdef"><b>Definition:</b> dggt_math_mat3.h:13</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_abfc359a23d4164228987dca7831559f7"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#abfc359a23d4164228987dca7831559f7">dggt::mat::set_row</a></div><div class="ttdeci">mat &amp; set_row(uint32 row, const vec&lt; C, T &gt; &amp;val)</div><div class="ttdoc">Sets a row.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:203</div></div>
-<div class="ttc" id="astructdggt_1_1mat_html"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a></div><div class="ttdoc">A matrix struct with C columns and R rows of elements of type T.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:17</div></div>
+<div class="ttc" id="astructdggt_1_1mat_html"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a></div><div class="ttdoc">A matrix struct with C columns and R rows of elements of type T.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.h:22</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_aaca763b02f12acbf114c325510c31b22"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#aaca763b02f12acbf114c325510c31b22">dggt::mat::operator=</a></div><div class="ttdeci">mat &amp; operator=(const mat &amp;rhs)</div><div class="ttdoc">Assignment operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:84</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a07180cef59e2aef66ff18c220312f658"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a07180cef59e2aef66ff18c220312f658">dggt::mat::operator+=</a></div><div class="ttdeci">mat &amp; operator+=(const mat &amp;rhs)</div><div class="ttdoc">Addition assignment operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:97</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ae9a93452e2a84339148a16bcf2eb561.html">math</a></li><li class="navelem"><a class="el" href="../../dir_5d9bc4da88b6add5415aa941782c7441.html">lin</a></li><li class="navelem"><b>dggt_math_mat4.h</b></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

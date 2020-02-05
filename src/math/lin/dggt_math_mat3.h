@@ -4,6 +4,11 @@
 
 namespace dggt
 {
+	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
 	template <typename T>
 	struct mat<3,3,T>
 	{
@@ -62,12 +67,21 @@ namespace dggt
 	vec<3,T> operator*(const vec<3,T>& vector,const mat<3,3,T>& matrix);
 	template <typename T>
 	mat<3,3,T> operator*(const T& scalar,const mat<3,3,T>& matrix);
+
+	/*!
+	 * @}
+	 * */
 }
 
 #include "dggt_math_mat3.inl"
 
 namespace dggt
 {
+	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
 	template <typename T>
 	static const mat<3,3,T> MAT3_IDENTITY=mat<3,3,T>(T(1));
 
@@ -75,6 +89,10 @@ namespace dggt
 	using mat3=mat<3,3,T>;
 
 	typedef mat3<real32> mat3f;
+
+	/*!
+	 * @}
+	 * */
 }
 #define _DGGT_MATH_MAT3_H_
 #endif

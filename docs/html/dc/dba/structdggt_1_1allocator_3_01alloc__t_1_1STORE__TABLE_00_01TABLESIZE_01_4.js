@@ -1,0 +1,27 @@
+var structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4 =
+[
+    [ "allocator", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a8589a557ebfd68ef1f075c078365e36f", null ],
+    [ "alloc", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a80d0034ff539793868f9b7bbffbfc41c", null ],
+    [ "alloc", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#acb687c1808118c53a6458790fc107065", null ],
+    [ "alloc", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a0d96d0769963d488c05d63d3adb59c9d", null ],
+    [ "alloc", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a41ffcaf77f02fb6fd2c8eabdcae4c580", null ],
+    [ "free", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a6ff600b3d662b55ba1b205ffeadd9a2d", null ],
+    [ "free", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a3f9d4293de741f709a50a488aed496c3", null ],
+    [ "free", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#add67dace20ef81cc022ca1e3676b087f", null ],
+    [ "free", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a5a4820403182a320648e73cfb2f74c64", null ],
+    [ "owns", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a138e03bd08c37fd749f8f122538396ca", null ],
+    [ "owns", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a297bd71ca879f026eb7f14b9f9a4ec34", null ],
+    [ "owns", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a9e4b7a8200d3c8e43d9a78b73af7fed2", null ],
+    [ "owns", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a27d1636bbb6f163867b7d11e40fa94dc", null ],
+    [ "available_mem", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a0eb3753b28acf1d16ede8840f76fa725", null ],
+    [ "used_mem", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a10163b0d3bf9cc0d4e96cb8926ce9959", null ],
+    [ "available_blocks", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a622cb53545e3199eae714bfdbc3d7728", null ],
+    [ "used_blocks", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a4f3a37ec82aa80596342d2490d2027eb", null ],
+    [ "TYPE", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a4ff629a274f7fbbf312626e915a59d75", null ],
+    [ "S", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a635d6df9e7e6e326e97d4056d6070b88", null ],
+    [ "storeCount", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a5d539636f43ade386beeaa77d3758be4", null ],
+    [ "availableMem", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#add7903f7777fa99b7ddc1d61b97e52e9", null ],
+    [ "availableBlocks", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#ac4f87b965115062c4dc90e07fa798f79", null ],
+    [ "flagTable", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#ac793838fbfb2347f53d008bbfe2133ad", null ],
+    [ "storeTable", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html#a247042f38d08505d564bab93ee20928c", null ]
+];

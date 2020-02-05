@@ -8,6 +8,11 @@
 namespace dggt
 {
 	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
+	/*!
 	 * @brief A matrix struct with C columns and R rows of elements of type T.
 	 * @tparam C An integer representing the number of columns.
 	 * @tparam R An integer representing the  number of rows.
@@ -257,6 +262,10 @@ namespace dggt
 	 * */
 	template <uint32 C,uint32 R,typename T>
 	mat<C,R,T> operator*(const T& scalar,const mat<C,R,T>& matrix);
+
+	/*!
+	 * @}
+	 * */
 }
 
 #include "dggt_math_mat.inl"

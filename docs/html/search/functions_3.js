@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['inverse_179',['inverse',['../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad9cc1a2c408231c8bfdfaeb0dbe40595',1,'dggt::mat&lt; 2, 2, T &gt;::inverse()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0ae0c0bb10d5fb8dff09802824bad008',1,'dggt::mat&lt; N, N, T &gt;::inverse()']]],
-  ['invert_180',['invert',['../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ac4553adecdb976c26a08fb2bcf7d7760',1,'dggt::mat&lt; 2, 2, T &gt;::invert()'],['../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ace96aa352f37543d888f5a4c382671a1',1,'dggt::mat&lt; N, N, T &gt;::invert()']]],
-  ['is_5fpow2_181',['is_pow2',['../db/d2e/namespacedggt.html#a57d2f15a0a24ef937a77a29d179d9cb4',1,'dggt']]],
-  ['is_5fsum_5fpow2_182',['is_sum_pow2',['../db/d2e/namespacedggt.html#a156e10a12f8828635da39302419c72a2',1,'dggt']]]
+  ['hadamard_226',['hadamard',['../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a2c59ed97fb5eebe8afbfec8e20f65066',1,'dggt::vec&lt; 2, T &gt;::hadamard()'],['../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aea1ea28b79b23cb34bc2c0dc51280e7d',1,'dggt::vec&lt; 3, T &gt;::hadamard()'],['../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#afcca96e0d42eb6c38156535d79752719',1,'dggt::vec&lt; 4, T &gt;::hadamard()'],['../db/da0/group__lin.html#gaf61625e2950cdd107d3190bece80628d',1,'dggt::hadamard(const vec&lt; 2, T &gt; &amp;lhs, vec&lt; 2, T &gt; &amp;rhs)'],['../db/da0/group__lin.html#ga3adb482a08efaf165568f4682f771be3',1,'dggt::hadamard(const vec&lt; 4, T &gt; &amp;lhs, vec&lt; 4, T &gt; &amp;rhs)']]]
 ];

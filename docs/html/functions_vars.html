@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,17 +60,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions_vars.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,6 +100,10 @@ $(function() {
 : <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a9725e43ca0295ee9eca0bb4831a20970">dggt::mat&lt; 2, 2, T &gt;</a>
 , <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#aec003cdd88b0d8c9f1294c495f3b9e2f">dggt::mat&lt; N, N, T &gt;</a>
 , <a class="el" href="d3/dab/structdggt_1_1vec.html#a82c9999e46c0979710fdefbc33f8b607">dggt::vec&lt; D, T &gt;</a>
+, <a class="el" href="db/da0/group__lin.html#ga0e76bde34206e721d2937e3386fc85d1">dggt::vec&lt; 1, T &gt;</a>
+, <a class="el" href="df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a15da50179658d726446bf21f8fbf303e">dggt::vec&lt; 2, T &gt;</a>
+, <a class="el" href="df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a0bcb5c1a272cc7766324fed65542c3c4">dggt::vec&lt; 3, T &gt;</a>
+, <a class="el" href="de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#a0f3e8d22bf2913bf0d585ad7597227b2">dggt::vec&lt; 4, T &gt;</a>
 </li>
 <li>e
 : <a class="el" href="d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17">dggt::mat&lt; C, R, T &gt;</a>
@@ -91,13 +125,34 @@ $(function() {
 <li>ROWS
 : <a class="el" href="d8/de1/structdggt_1_1mat.html#ae85b5d5435c3f4f3ee648520339c894d">dggt::mat&lt; C, R, T &gt;</a>
 </li>
+<li>w
+: <a class="el" href="de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#a25339b8c63aef3c6f6cd276ca4f9be8e">dggt::vec&lt; 4, T &gt;</a>
+</li>
+<li>x
+: <a class="el" href="db/da0/group__lin.html#gacefe0f2a5228fd3acbf30b39b6e9fc96">dggt::vec&lt; 1, T &gt;</a>
+, <a class="el" href="df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a3dc038a150214418afa976f2509122c7">dggt::vec&lt; 2, T &gt;</a>
+, <a class="el" href="df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a4944c1908fbe55781909d77f068a7226">dggt::vec&lt; 3, T &gt;</a>
+, <a class="el" href="de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#a8e640ea9b54a6ada0589ec2b3facf54c">dggt::vec&lt; 4, T &gt;</a>
+</li>
+<li>y
+: <a class="el" href="df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a909fc5098d4930deffa09403adc282c1">dggt::vec&lt; 2, T &gt;</a>
+, <a class="el" href="df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a589e9226fcb2e70749b44c87f1753487">dggt::vec&lt; 3, T &gt;</a>
+, <a class="el" href="de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#a6dee67a8f90f1a8609ad09a76e6efe3c">dggt::vec&lt; 4, T &gt;</a>
+</li>
+<li>z
+: <a class="el" href="df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a6a17b1224ed36d503428eca6aeb65054">dggt::vec&lt; 3, T &gt;</a>
+, <a class="el" href="de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#a15452d1e3cf8286368751a16ba8ffccd">dggt::vec&lt; 4, T &gt;</a>
+</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

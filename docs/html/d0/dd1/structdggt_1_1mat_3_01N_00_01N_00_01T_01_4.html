@@ -9,9 +9,18 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +60,23 @@
 var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('../../',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +91,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../db/d2e/namespacedggt.html">dggt</a></li><li class="navelem"><a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html">mat&lt; N, N, T &gt;</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,14 +98,12 @@ $(function() {
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../d7/dfe/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dggt::mat&lt; N, N, T &gt; Struct Template Reference</div>  </div>
+<div class="title">dggt::mat&lt; N, N, T &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../de/df1/group__math.html">Math Library</a> &raquo; <a class="el" href="../../db/da0/group__lin.html">Linear Algebra</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>An N-by-N square matrix.  
  <a href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../d8/d43/dggt__math__matn_8h_source.html">dggt_math_matn.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -311,8 +335,8 @@ template&lt;uint32 N, typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a028e0d5ea6e194645e30abfb5df851fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028e0d5ea6e194645e30abfb5df851fb">&#9670;&nbsp;</a></span>comatrix()</h2>
+<a id="a3de3beaab01a24f1ce64866f3214d672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de3beaab01a24f1ce64866f3214d672">&#9670;&nbsp;</a></span>operator+()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,13 +344,280 @@ template&lt;uint32 N, typename T &gt; </div>
 template&lt;uint32 N, typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::comatrix</td>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A matrix's comatrix. </p>
-<p>A comatrix is a matrix comprising of elements equal to the determinant of the minor after removing that row and column. Each element also follows a +/- sign checkerboard pattern given by (-1)^(i+j). They are used in calculating the matrix's inverse (if such an inverse exists.). </p><dl class="section return"><dt>Returns</dt><dd>The comatrix of this matrix. </dd></dl>
+<p>Addition operator. </p>
+<p>Adds two matrices together by adding each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '+' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the sum of the corresponding elements in the matrix sum. </dd></dl>
+
+</div>
+</div>
+<a id="a0768600865aed5caee2c633bf97d6ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0768600865aed5caee2c633bf97d6ba0">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction operator. </p>
+<p>Subtracts two matrices together by subtracting each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The right hand side of the '-' symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the difference of the corresponding elements in the matrix difference. </dd></dl>
+
+</div>
+</div>
+<a id="a2494ebe50f958c56d3f1935265ec3244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2494ebe50f958c56d3f1935265ec3244">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scaling operator. </p>
+<p>Scales a matrix by multiplying every element with a scalar value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The value of type T used to scale the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
+
+</div>
+</div>
+<a id="affb0b18d7c3da3e3362d46bd743cb130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb0b18d7c3da3e3362d46bd743cb130">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Matrix multiplication. </p>
+<p>Multiplies two square matrices, lhs&lt;N,N,T&gt; and rhs&lt;N,N,T&gt;, to produce a product, S&lt;N,N,T&gt; where S=lhs*rhs. Matrix multiplication is defined such that the i'th row and the j'th element of the product is equal to the dot product of the left hand side's row vectors with the right hand side's column vectors. (ie. S[j,i] (columns written first) is equal to lhs_row[i].dot(rhs_col[j]) where lhs_row and rhs_col are the i'th row of the left hand matrix and the j'th column of the right hand matrix, respectively.). </p><dl class="section note"><dt>Note</dt><dd>In general A*B!=B*A for matrices A and B. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The matrix product. </dd></dl>
+
+</div>
+</div>
+<a id="a1e4a4f0f8224aa122116333429168639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4a4f0f8224aa122116333429168639">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Assignment operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The source matrix in the assignment. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a896073ea066cb6723ada3819cd6e3c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a896073ea066cb6723ada3819cd6e3c68">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Addition assignment operator. </p>
+<p>Adds a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the added and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a1800adc876f6b4a373b5641ca55d71d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1800adc876f6b4a373b5641ca55d71d1">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subtraction assignment operator. </p>
+<p>Subtracts a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to subtract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the subtracted and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a00a95bc131201793379efd632e743828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a95bc131201793379efd632e743828">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scale assignment operator. </p>
+<p>Scales a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar of type to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the scaled and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="aed55dcf576ea5c768506e5a0f4ce06d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed55dcf576ea5c768506e5a0f4ce06d6">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiply and assignment operator. </p>
+<p>Multiplies and assigns the result. (ie. short hand for A=A*B.). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The matrix to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the multiplied and assigned matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a4e01b1713d2bbf8d0cf88aa14d823b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e01b1713d2bbf8d0cf88aa14d823b76">&#9670;&nbsp;</a></span>transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::transform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transformation operator. </p>
+<p>Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v'=A*v where A is a transformation matrix, v is a vector and v' is a vector such that: <br  />
+ v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
 
 </div>
 </div>
@@ -390,8 +681,8 @@ template&lt;uint32 N, typename T &gt; </div>
 
 </div>
 </div>
-<a id="ae93416f040b2035107468aaaf80cba87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae93416f040b2035107468aaaf80cba87">&#9670;&nbsp;</a></span>det()</h2>
+<a id="afc1c5630cd8a24934fd7cd27a94f1ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1c5630cd8a24934fd7cd27a94f1ce1">&#9670;&nbsp;</a></span>minor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,13 +690,71 @@ template&lt;uint32 N, typename T &gt; </div>
 template&lt;uint32 N, typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::det</td>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N-1, N-1, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::minor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
+          <td class="paramname"><em>columnToRemove</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
+          <td class="paramname"><em>rowToRemove</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>An alternate way to write determinant. </p>
-<dl class="section return"><dt>Returns</dt><dd>The determinant of type T. </dd></dl>
+<p>The minor of a matrix. </p>
+<p>The matrix minor is the matrix after removing a row and column. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">columnToRemove</td><td>a u32 representing the column to remove ranging from 0 to N-1. </td></tr>
+    <tr><td class="paramname">rowToRemove</td><td>a u32 representing the row to remove ranging from 0 to N-1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a028e0d5ea6e194645e30abfb5df851fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028e0d5ea6e194645e30abfb5df851fb">&#9670;&nbsp;</a></span>comatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::comatrix</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A matrix's comatrix. </p>
+<p>A comatrix is a matrix comprising of elements equal to the determinant of the minor after removing that row and column. Each element also follows a +/- sign checkerboard pattern given by (-1)^(i+j). They are used in calculating the matrix's inverse (if such an inverse exists.). </p><dl class="section return"><dt>Returns</dt><dd>The comatrix of this matrix. </dd></dl>
+
+</div>
+</div>
+<a id="ab1f539254dbcf6cee40466e2ea51d4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f539254dbcf6cee40466e2ea51d4f2">&#9670;&nbsp;</a></span>transpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::transpose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transpose operator. </p>
+<p>The transpose of a matrix simply switches rows for columns. </p><dl class="section return"><dt>Returns</dt><dd>A matrix with N columns and N rows which is the transpose of original matrix. </dd></dl>
 
 </div>
 </div>
@@ -425,6 +774,63 @@ template&lt;uint32 N, typename T &gt; </div>
 
 <p>The determinant operator. </p>
 <p>A matrix's determinant is a value used in finding a matrix's inverse and if the inverse exists (An N-by-N matrix is invertable if and only if it's determinant is nonzero.). </p><dl class="section return"><dt>Returns</dt><dd>The determinant of type T. </dd></dl>
+
+</div>
+</div>
+<a id="ae93416f040b2035107468aaaf80cba87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93416f040b2035107468aaaf80cba87">&#9670;&nbsp;</a></span>det()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::det</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An alternate way to write determinant. </p>
+<dl class="section return"><dt>Returns</dt><dd>The determinant of type T. </dd></dl>
+
+</div>
+</div>
+<a id="a0ae0c0bb10d5fb8dff09802824bad008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae0c0bb10d5fb8dff09802824bad008">&#9670;&nbsp;</a></span>inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::inverse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The inverse operator. </p>
+<p>If the matrix's determinant is nonzero then this returns a matrix whose elements are defined and mat*mat.<a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0ae0c0bb10d5fb8dff09802824bad008" title="The inverse operator.">inverse()</a>=mat.inverse*mat=MATN_IDENTITY&lt;N,T&gt;. If the determinant is zero, it's elements are NaN (if T supports NaN.). </p><dl class="section return"><dt>Returns</dt><dd>The inverse. </dd></dl>
+
+</div>
+</div>
+<a id="ace96aa352f37543d888f5a4c382671a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace96aa352f37543d888f5a4c382671a1">&#9670;&nbsp;</a></span>invert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint32 N, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::invert</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverts the matrix. </p>
+<p>This function will change the matrix you call it on setting it's elements to that of it's inverse (if it exists.). </p><dl class="section return"><dt>Returns</dt><dd>A reference to the now inverted matrix. </dd></dl>
 
 </div>
 </div>
@@ -566,339 +972,6 @@ template&lt;uint32 N, typename T &gt; </div>
 
 </div>
 </div>
-<a id="a0ae0c0bb10d5fb8dff09802824bad008"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ae0c0bb10d5fb8dff09802824bad008">&#9670;&nbsp;</a></span>inverse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::inverse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The inverse operator. </p>
-<p>If the matrix's determinant is nonzero then this returns a matrix whose elements are defined and mat*mat.<a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0ae0c0bb10d5fb8dff09802824bad008" title="The inverse operator.">inverse()</a>=mat.inverse*mat=MATN_IDENTITY&lt;N,T&gt;. If the determinant is zero, it's elements are NaN (if T supports NaN.). </p><dl class="section return"><dt>Returns</dt><dd>The inverse. </dd></dl>
-
-</div>
-</div>
-<a id="ace96aa352f37543d888f5a4c382671a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace96aa352f37543d888f5a4c382671a1">&#9670;&nbsp;</a></span>invert()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::invert</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Inverts the matrix. </p>
-<p>This function will change the matrix you call it on setting it's elements to that of it's inverse (if it exists.). </p><dl class="section return"><dt>Returns</dt><dd>A reference to the now inverted matrix. </dd></dl>
-
-</div>
-</div>
-<a id="afc1c5630cd8a24934fd7cd27a94f1ce1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc1c5630cd8a24934fd7cd27a94f1ce1">&#9670;&nbsp;</a></span>minor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N-1, N-1, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::minor </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
-          <td class="paramname"><em>columnToRemove</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
-          <td class="paramname"><em>rowToRemove</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The minor of a matrix. </p>
-<p>The matrix minor is the matrix after removing a row and column. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">columnToRemove</td><td>a u32 representing the column to remove ranging from 0 to N-1. </td></tr>
-    <tr><td class="paramname">rowToRemove</td><td>a u32 representing the row to remove ranging from 0 to N-1. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="affb0b18d7c3da3e3362d46bd743cb130"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affb0b18d7c3da3e3362d46bd743cb130">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a> <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Matrix multiplication. </p>
-<p>Multiplies two square matrices, lhs&lt;N,N,T&gt; and rhs&lt;N,N,T&gt;, to produce a product, S&lt;N,N,T&gt; where S=lhs*rhs. Matrix multiplication is defined such that the i'th row and the j'th element of the product is equal to the dot product of the left hand side's row vectors with the right hand side's column vectors. (ie. S[j,i] (columns written first) is equal to lhs_row[i].dot(rhs_col[j]) where lhs_row and rhs_col are the i'th row of the left hand matrix and the j'th column of the right hand matrix, respectively.). </p><dl class="section note"><dt>Note</dt><dd>In general A*B!=B*A for matrices A and B. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The matrix product. </dd></dl>
-
-</div>
-</div>
-<a id="a2494ebe50f958c56d3f1935265ec3244"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2494ebe50f958c56d3f1935265ec3244">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Scaling operator. </p>
-<p>Scales a matrix by multiplying every element with a scalar value. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>The value of type T used to scale the matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
-
-</div>
-</div>
-<a id="aed55dcf576ea5c768506e5a0f4ce06d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed55dcf576ea5c768506e5a0f4ce06d6">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator*= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Multiply and assignment operator. </p>
-<p>Multiplies and assigns the result. (ie. short hand for A=A*B.). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The matrix to multiply. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the multiplied and assigned matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a00a95bc131201793379efd632e743828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a95bc131201793379efd632e743828">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator*= </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Scale assignment operator. </p>
-<p>Scales a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>The scalar of type to. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the scaled and assigned matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a3de3beaab01a24f1ce64866f3214d672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3de3beaab01a24f1ce64866f3214d672">&#9670;&nbsp;</a></span>operator+()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Addition operator. </p>
-<p>Adds two matrices together by adding each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The right hand side of the '+' symbol. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the sum of the corresponding elements in the matrix sum. </dd></dl>
-
-</div>
-</div>
-<a id="a896073ea066cb6723ada3819cd6e3c68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a896073ea066cb6723ada3819cd6e3c68">&#9670;&nbsp;</a></span>operator+=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator+= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Addition assignment operator. </p>
-<p>Adds a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The matrix to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the added and assigned matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a0768600865aed5caee2c633bf97d6ba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0768600865aed5caee2c633bf97d6ba0">&#9670;&nbsp;</a></span>operator-()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Subtraction operator. </p>
-<p>Subtracts two matrices together by subtracting each corresponding element. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The right hand side of the '-' symbol. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A matrix where every element is the difference of the corresponding elements in the matrix difference. </dd></dl>
-
-</div>
-</div>
-<a id="a1800adc876f6b4a373b5641ca55d71d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1800adc876f6b4a373b5641ca55d71d1">&#9670;&nbsp;</a></span>operator-=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator-= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Subtraction assignment operator. </p>
-<p>Subtracts a matrix then assigns the result. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The matrix to subtract. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the subtracted and assigned matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a1e4a4f0f8224aa122116333429168639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e4a4f0f8224aa122116333429168639">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>The source matrix in the assignment. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the assigned matrix. </dd></dl>
-
-</div>
-</div>
 <a id="a544a169d6599d51e286a44c4bd2d2ba1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a544a169d6599d51e286a44c4bd2d2ba1">&#9670;&nbsp;</a></span>set_column()</h2>
 
@@ -979,65 +1052,16 @@ template&lt;uint32 N, typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4e01b1713d2bbf8d0cf88aa14d823b76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e01b1713d2bbf8d0cf88aa14d823b76">&#9670;&nbsp;</a></span>transform()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::transform </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Transformation operator. </p>
-<p>Transforms a vector by a matrix and returns the transformed vector. Vector/matrix multiplication (ie. v'=A*v where A is a transformation matrix, v is a vector and v' is a vector such that: <br  />
- v'[i]=v.dot(mat_row[i]) where mat_row[i] is the i'th row vector of A. We can also say the transformed vector is a linear combination of all the columns of A where the elements of v are scaling factors). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
-
-</div>
-</div>
-<a id="ab1f539254dbcf6cee40466e2ea51d4f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1f539254dbcf6cee40466e2ea51d4f2">&#9670;&nbsp;</a></span>transpose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; <a class="el" href="../../d8/de1/structdggt_1_1mat.html">dggt::mat</a>&lt; N, N, T &gt;::transpose</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Transpose operator. </p>
-<p>The transpose of a matrix simply switches rows for columns. </p><dl class="section return"><dt>Returns</dt><dd>A matrix with N columns and N rows which is the transpose of original matrix. </dd></dl>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li><a class="el" href="../../d8/d43/dggt__math__matn_8h_source.html">dggt_math_matn.h</a></li>
-<li>dggt_math_matn.inl</li>
-</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../db/d2e/namespacedggt.html">dggt</a></li><li class="navelem"><a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html">mat&lt; N, N, T &gt;</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

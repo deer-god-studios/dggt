@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,17 +60,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('namespacemembers_type.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +92,9 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a id="index_b"></a>- b -</h3><ul>
 <li>b32
 : <a class="el" href="db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">dggt</a>
 </li>
@@ -75,6 +107,10 @@ $(function() {
 <li>bool64
 : <a class="el" href="db/d2e/namespacedggt.html#a0ab0e290216fa717f10953036daa84b1">dggt</a>
 </li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
 <li>f32
 : <a class="el" href="db/d2e/namespacedggt.html#a1395af07ee453bc11c3bd9fba768d203">dggt</a>
 </li>
@@ -99,24 +135,53 @@ $(function() {
 <li>float64
 : <a class="el" href="db/d2e/namespacedggt.html#a82ff54fbfdfc3382b676d892523740db">dggt</a>
 </li>
+</ul>
+
+
+<h3><a id="index_i"></a>- i -</h3><ul>
 <li>i32
 : <a class="el" href="db/d2e/namespacedggt.html#a093e4bbfb3ec219fc914f3f41b725ab7">dggt</a>
 </li>
+<li>int32
+: <a class="el" href="db/d2e/namespacedggt.html#a1eadf5c9290c2fb6dc0048189835173b">dggt</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>mat2
+: <a class="el" href="db/da0/group__lin.html#ga65e5310c6a171538dcef6128ad796991">dggt</a>
+</li>
+<li>mat2f
+: <a class="el" href="db/da0/group__lin.html#ga7c45193d7d91b9a7a6159c352ab27267">dggt</a>
+</li>
 <li>matn
-: <a class="el" href="db/d2e/namespacedggt.html#a7a499a90cdbbda11dec61b8df93e707d">dggt</a>
+: <a class="el" href="db/da0/group__lin.html#ga7a499a90cdbbda11dec61b8df93e707d">dggt</a>
 </li>
 <li>msize
 : <a class="el" href="db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt</a>
 </li>
+</ul>
+
+
+<h3><a id="index_r"></a>- r -</h3><ul>
 <li>real32
 : <a class="el" href="db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">dggt</a>
 </li>
 <li>real64
 : <a class="el" href="db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">dggt</a>
 </li>
+</ul>
+
+
+<h3><a id="index_s"></a>- s -</h3><ul>
 <li>sbyte
 : <a class="el" href="db/d2e/namespacedggt.html#afaf2c9e3033f1773842e8c8f63f907c0">dggt</a>
 </li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
 <li>u32
 : <a class="el" href="db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">dggt</a>
 </li>
@@ -139,12 +204,43 @@ $(function() {
 : <a class="el" href="db/d2e/namespacedggt.html#a7a034ae73ad936411979b1696d1844e9">dggt</a>
 </li>
 </ul>
+
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>vec1
+: <a class="el" href="db/da0/group__lin.html#ga2c128dcd91ad2ff85470b5015b46d41e">dggt</a>
+</li>
+<li>vec1f
+: <a class="el" href="db/da0/group__lin.html#gabec6071e2d3102f39b7511b03bc859d7">dggt</a>
+</li>
+<li>vec2
+: <a class="el" href="db/da0/group__lin.html#ga001a190f0a796a40bd749b093158c3a2">dggt</a>
+</li>
+<li>vec2f
+: <a class="el" href="db/da0/group__lin.html#ga73cda787e6f0667a8d5ba1a3801d4fa9">dggt</a>
+</li>
+<li>vec3
+: <a class="el" href="db/da0/group__lin.html#ga66d1f2d0a4b0d7cfd09fe561e1444316">dggt</a>
+</li>
+<li>vec3f
+: <a class="el" href="db/da0/group__lin.html#ga2fb33234d3ca4edf95cc5290f70d034c">dggt</a>
+</li>
+<li>vec4
+: <a class="el" href="db/da0/group__lin.html#gab034ac9df339698e9966093b5930ab0c">dggt</a>
+</li>
+<li>vec4f
+: <a class="el" href="db/da0/group__lin.html#gabaff4ec2c540403308721db6529ef889">dggt</a>
+</li>
+</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

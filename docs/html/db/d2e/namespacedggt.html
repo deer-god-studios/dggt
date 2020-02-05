@@ -9,9 +9,18 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +60,23 @@
 var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('../../',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('db/d2e/namespacedggt.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +91,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -116,8 +146,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddf/structdggt_1_1blk_3_01void_01_4.html">blk&lt; void &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d88/structdggt_1_1free__block.html">free_block</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0e/structdggt_1_1hash__table.html">hash_table</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da8/structdggt_1_1iter.html">iter</a></td></tr>
@@ -145,15 +173,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html">mat&lt; N, N, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An N-by-N square matrix.  <a href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8a/structdggt_1_1pool__block.html">pool_block</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d26/structdggt_1_1queue.html">queue</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d69/structdggt_1_1slnode.html">slnode</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0b/structdggt_1_1stack.html">stack</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d79/structdggt_1_1store__block.html">store_block</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d13/structdggt_1_1table__pair.html">table_pair</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,12 +185,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector struct.  <a href="../../d3/dab/structdggt_1_1vec.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html">vec&lt; 1, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vec&lt;D,T&gt; specialization with a single element.  <a href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html">vec&lt; 2, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 2D vector struct.  <a href="../../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">vec&lt; 3, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector struct.  <a href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec&lt; 4, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector struct.  <a href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -203,20 +231,21 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7690384b5a2b3ebf91386a1b091186dd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>stack_iter</b> = <a class="el" href="../../de/da8/structdggt_1_1iter.html">iter</a>&lt; T, <a class="el" href="../../d0/d0b/structdggt_1_1stack.html">stack</a>&lt; T &gt;, <a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; T &gt; &gt;</td></tr>
 <tr class="separator:a7690384b5a2b3ebf91386a1b091186dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e5310c6a171538dcef6128ad796991"><td class="memTemplParams" colspan="2"><a id="a65e5310c6a171538dcef6128ad796991"></a>
+<tr class="memitem:ga65e5310c6a171538dcef6128ad796991"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga65e5310c6a171538dcef6128ad796991"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga65e5310c6a171538dcef6128ad796991">mat2</a> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;</td></tr>
+<tr class="memdesc:ga65e5310c6a171538dcef6128ad796991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for <a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html" title="A 2-by-2 matrix struct.">mat&lt;2,2,T&gt;</a>.  <a href="../../db/da0/group__lin.html#ga65e5310c6a171538dcef6128ad796991">More...</a><br /></td></tr>
+<tr class="separator:ga65e5310c6a171538dcef6128ad796991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c45193d7d91b9a7a6159c352ab27267"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="../../db/da0/group__lin.html#ga65e5310c6a171538dcef6128ad796991">mat2</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga7c45193d7d91b9a7a6159c352ab27267">mat2f</a></td></tr>
+<tr class="memdesc:ga7c45193d7d91b9a7a6159c352ab27267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write mat&lt;2,2,real32&gt;. <br /></td></tr>
+<tr class="separator:ga7c45193d7d91b9a7a6159c352ab27267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a65e5310c6a171538dcef6128ad796991"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat2</b> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;</td></tr>
-<tr class="separator:a65e5310c6a171538dcef6128ad796991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c45193d7d91b9a7a6159c352ab27267"><td class="memItemLeft" align="right" valign="top"><a id="a7c45193d7d91b9a7a6159c352ab27267"></a>
-typedef <a class="el" href="../../d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html">mat2</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mat2f</b></td></tr>
-<tr class="separator:a7c45193d7d91b9a7a6159c352ab27267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memTemplParams" colspan="2"><a id="a4c5a5a9f46d5cfb144f8186c3cb7b359"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat3</b> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;</td></tr>
-<tr class="separator:a4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a823ea941860a7b40998b5fab57031f82"><td class="memItemLeft" align="right" valign="top"><a id="a823ea941860a7b40998b5fab57031f82"></a>
+<tr class="memitem:ga4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat3</b> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;</td></tr>
+<tr class="separator:ga4c5a5a9f46d5cfb144f8186c3cb7b359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga823ea941860a7b40998b5fab57031f82"><td class="memItemLeft" align="right" valign="top">
 typedef <a class="el" href="../../dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html">mat3</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mat3f</b></td></tr>
-<tr class="separator:a823ea941860a7b40998b5fab57031f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ga823ea941860a7b40998b5fab57031f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94c01a4554b67dafcd5c23463f9cd0e2"><td class="memTemplParams" colspan="2"><a id="a94c01a4554b67dafcd5c23463f9cd0e2"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a94c01a4554b67dafcd5c23463f9cd0e2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mat4</b> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 4, 4, T &gt;</td></tr>
@@ -224,39 +253,46 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a20b5a93f1fa14a5e7ba29b1e09decf2a"><td class="memItemLeft" align="right" valign="top"><a id="a20b5a93f1fa14a5e7ba29b1e09decf2a"></a>
 typedef <a class="el" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat4</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mat4f</b></td></tr>
 <tr class="separator:a20b5a93f1fa14a5e7ba29b1e09decf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplParams" colspan="2"><a id="a7a499a90cdbbda11dec61b8df93e707d"></a>
+<tr class="memitem:ga7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplParams" colspan="2">
 template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a7a499a90cdbbda11dec61b8df93e707d">matn</a> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;</td></tr>
-<tr class="memdesc:a7a499a90cdbbda11dec61b8df93e707d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html" title="An N-by-N square matrix.">mat&lt;N,N,T&gt;</a> <br /></td></tr>
-<tr class="separator:a7a499a90cdbbda11dec61b8df93e707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c128dcd91ad2ff85470b5015b46d41e"><td class="memTemplParams" colspan="2"><a id="a2c128dcd91ad2ff85470b5015b46d41e"></a>
+<tr class="memitem:ga7a499a90cdbbda11dec61b8df93e707d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga7a499a90cdbbda11dec61b8df93e707d">matn</a> = <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;</td></tr>
+<tr class="memdesc:ga7a499a90cdbbda11dec61b8df93e707d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html" title="An N-by-N square matrix.">mat&lt;N,N,T&gt;</a> <br /></td></tr>
+<tr class="separator:ga7a499a90cdbbda11dec61b8df93e707d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c128dcd91ad2ff85470b5015b46d41e"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c128dcd91ad2ff85470b5015b46d41e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vec1</b> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;</td></tr>
-<tr class="separator:a2c128dcd91ad2ff85470b5015b46d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abec6071e2d3102f39b7511b03bc859d7"><td class="memItemLeft" align="right" valign="top"><a id="abec6071e2d3102f39b7511b03bc859d7"></a>
-typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vec1f</b></td></tr>
-<tr class="separator:abec6071e2d3102f39b7511b03bc859d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a001a190f0a796a40bd749b093158c3a2"><td class="memTemplParams" colspan="2"><a id="a001a190f0a796a40bd749b093158c3a2"></a>
+<tr class="memitem:ga2c128dcd91ad2ff85470b5015b46d41e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga2c128dcd91ad2ff85470b5015b46d41e">vec1</a> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;</td></tr>
+<tr class="memdesc:ga2c128dcd91ad2ff85470b5015b46d41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for <a class="el" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html" title="A vec&lt;D,T&gt; specialization with a single element.">vec&lt;1,T&gt;</a>. <br /></td></tr>
+<tr class="separator:ga2c128dcd91ad2ff85470b5015b46d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabec6071e2d3102f39b7511b03bc859d7"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gabec6071e2d3102f39b7511b03bc859d7">vec1f</a></td></tr>
+<tr class="memdesc:gabec6071e2d3102f39b7511b03bc859d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for vec&lt;1,real32&gt;. <br /></td></tr>
+<tr class="separator:gabec6071e2d3102f39b7511b03bc859d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga001a190f0a796a40bd749b093158c3a2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga001a190f0a796a40bd749b093158c3a2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga001a190f0a796a40bd749b093158c3a2">vec2</a> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;</td></tr>
+<tr class="memdesc:ga001a190f0a796a40bd749b093158c3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for <a class="el" href="../../df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html" title="A 2D vector struct.">vec&lt;2,T&gt;</a>.  <a href="../../db/da0/group__lin.html#ga001a190f0a796a40bd749b093158c3a2">More...</a><br /></td></tr>
+<tr class="separator:ga001a190f0a796a40bd749b093158c3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73cda787e6f0667a8d5ba1a3801d4fa9"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga73cda787e6f0667a8d5ba1a3801d4fa9">vec2f</a></td></tr>
+<tr class="memdesc:ga73cda787e6f0667a8d5ba1a3801d4fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for vec&lt;2,real32&gt;. <br /></td></tr>
+<tr class="separator:ga73cda787e6f0667a8d5ba1a3801d4fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a001a190f0a796a40bd749b093158c3a2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vec2</b> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;</td></tr>
-<tr class="separator:a001a190f0a796a40bd749b093158c3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73cda787e6f0667a8d5ba1a3801d4fa9"><td class="memItemLeft" align="right" valign="top"><a id="a73cda787e6f0667a8d5ba1a3801d4fa9"></a>
-typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vec2f</b></td></tr>
-<tr class="separator:a73cda787e6f0667a8d5ba1a3801d4fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memTemplParams" colspan="2"><a id="a66d1f2d0a4b0d7cfd09fe561e1444316"></a>
+<tr class="memitem:ga66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga66d1f2d0a4b0d7cfd09fe561e1444316">vec3</a> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;</td></tr>
+<tr class="memdesc:ga66d1f2d0a4b0d7cfd09fe561e1444316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to express the type <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html" title="A 3D vector struct.">vec&lt;3,T&gt;</a>. <br /></td></tr>
+<tr class="separator:ga66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fb33234d3ca4edf95cc5290f70d034c"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga2fb33234d3ca4edf95cc5290f70d034c">vec3f</a></td></tr>
+<tr class="memdesc:ga2fb33234d3ca4edf95cc5290f70d034c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to express the type vec&lt;3,real32&gt;. <br /></td></tr>
+<tr class="separator:ga2fb33234d3ca4edf95cc5290f70d034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab034ac9df339698e9966093b5930ab0c"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vec3</b> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;</td></tr>
-<tr class="separator:a66d1f2d0a4b0d7cfd09fe561e1444316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fb33234d3ca4edf95cc5290f70d034c"><td class="memItemLeft" align="right" valign="top"><a id="a2fb33234d3ca4edf95cc5290f70d034c"></a>
-typedef <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vec3f</b></td></tr>
-<tr class="separator:a2fb33234d3ca4edf95cc5290f70d034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab034ac9df339698e9966093b5930ab0c"><td class="memTemplParams" colspan="2"><a id="ab034ac9df339698e9966093b5930ab0c"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab034ac9df339698e9966093b5930ab0c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vec4</b> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;</td></tr>
-<tr class="separator:ab034ac9df339698e9966093b5930ab0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaff4ec2c540403308721db6529ef889"><td class="memItemLeft" align="right" valign="top"><a id="abaff4ec2c540403308721db6529ef889"></a>
-typedef <a class="el" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html">vec4</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vec4f</b></td></tr>
-<tr class="separator:abaff4ec2c540403308721db6529ef889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab034ac9df339698e9966093b5930ab0c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gab034ac9df339698e9966093b5930ab0c">vec4</a> = <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;</td></tr>
+<tr class="memdesc:gab034ac9df339698e9966093b5930ab0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to express the type <a class="el" href="../../de/db9/structdggt_1_1vec_3_014_00_01T_01_4.html" title="A 4D vector struct.">vec&lt;4,T&gt;</a>. <br /></td></tr>
+<tr class="separator:gab034ac9df339698e9966093b5930ab0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabaff4ec2c540403308721db6529ef889"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="../../db/da0/group__lin.html#gab034ac9df339698e9966093b5930ab0c">vec4</a>&lt; <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gabaff4ec2c540403308721db6529ef889">vec4f</a></td></tr>
+<tr class="memdesc:gabaff4ec2c540403308721db6529ef889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to express the type vec&lt;4,real32&gt;. <br /></td></tr>
+<tr class="separator:gabaff4ec2c540403308721db6529ef889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38eec63211e105d0b9168e650a7c5ac5"><td class="memTemplParams" colspan="2"><a id="a38eec63211e105d0b9168e650a7c5ac5"></a>
 template&lt;u32 SIZE = 0&gt; </td></tr>
 <tr class="memitem:a38eec63211e105d0b9168e650a7c5ac5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lin_alloc</b> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::LINEAR, SIZE &gt;</td></tr>
@@ -377,9 +413,13 @@ typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#ad92f2b7ca6408e4cf9593cb428984565">ubyte</a></td></tr>
 <tr class="memdesc:ad92f2b7ca6408e4cf9593cb428984565"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned 8-bit integer type. <br /></td></tr>
 <tr class="separator:ad92f2b7ca6408e4cf9593cb428984565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eadf5c9290c2fb6dc0048189835173b"><td class="memItemLeft" align="right" valign="top"><a id="a1eadf5c9290c2fb6dc0048189835173b"></a>
+typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a1eadf5c9290c2fb6dc0048189835173b">int32</a></td></tr>
+<tr class="memdesc:a1eadf5c9290c2fb6dc0048189835173b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 32-bit signed integer type. <br /></td></tr>
+<tr class="separator:a1eadf5c9290c2fb6dc0048189835173b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a093e4bbfb3ec219fc914f3f41b725ab7"><td class="memItemLeft" align="right" valign="top"><a id="a093e4bbfb3ec219fc914f3f41b725ab7"></a>
 typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a093e4bbfb3ec219fc914f3f41b725ab7">i32</a></td></tr>
-<tr class="memdesc:a093e4bbfb3ec219fc914f3f41b725ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 32-bit signed integer type. <br /></td></tr>
+<tr class="memdesc:a093e4bbfb3ec219fc914f3f41b725ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short hand for int32. <br /></td></tr>
 <tr class="separator:a093e4bbfb3ec219fc914f3f41b725ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaf2c9e3033f1773842e8c8f63f907c0"><td class="memItemLeft" align="right" valign="top"><a id="afaf2c9e3033f1773842e8c8f63f907c0"></a>
 typedef int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#afaf2c9e3033f1773842e8c8f63f907c0">sbyte</a></td></tr>
@@ -388,7 +428,7 @@ typedef int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a7041ce4ea9536dd8fa3adea0d356149e"><td class="memItemLeft" align="right" valign="top"><a id="a7041ce4ea9536dd8fa3adea0d356149e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>intvl_ends</b> { <br />
+<tr class="memitem:ga7041ce4ea9536dd8fa3adea0d356149e"><td class="memItemLeft" align="right" valign="top"><a id="ga7041ce4ea9536dd8fa3adea0d356149e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>intvl_ends</b> { <br />
 &#160;&#160;<b>OPN_INTVL</b> =0, 
 <b>CLSD_INTVL</b> =1, 
 <b>L_CLSD_INTVL</b> =2, 
@@ -398,7 +438,7 @@ Enumerations</h2></td></tr>
 <b>R_OPN_INTVL</b> =L_CLSD_INTVL
 <br />
  }</td></tr>
-<tr class="separator:a7041ce4ea9536dd8fa3adea0d356149e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ga7041ce4ea9536dd8fa3adea0d356149e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7163554e1c14e03c14f999d529a3a3c"><td class="memItemLeft" align="right" valign="top"><a id="ae7163554e1c14e03c14f999d529a3a3c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>alloc_t</b> : u32 { <br />
 &#160;&#160;<b>NONE</b>, 
 <b>LINEAR</b>, 
@@ -629,116 +669,116 @@ template&lt;typename T , typename A &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acfbfe88558d37806b76d97c133d1c7f8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_head</b> (const <a class="el" href="../../d0/d0b/structdggt_1_1stack.html">stack</a>&lt; T &gt; *stk)</td></tr>
 <tr class="separator:acfbfe88558d37806b76d97c133d1c7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a855ca6b31776b11b1a572744191cf53d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a855ca6b31776b11b1a572744191cf53d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a855ca6b31776b11b1a572744191cf53d">max</a> (const T &amp;val0, const T &amp;val1)</td></tr>
-<tr class="memdesc:a855ca6b31776b11b1a572744191cf53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the maximum of two values.  <a href="../../db/d2e/namespacedggt.html#a855ca6b31776b11b1a572744191cf53d">More...</a><br /></td></tr>
-<tr class="separator:a855ca6b31776b11b1a572744191cf53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdd7ebe7d15af49dd6ebeef2a74290df"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abdd7ebe7d15af49dd6ebeef2a74290df"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#abdd7ebe7d15af49dd6ebeef2a74290df">min</a> (const T &amp;val0, const T &amp;val1)</td></tr>
-<tr class="memdesc:abdd7ebe7d15af49dd6ebeef2a74290df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the minimum of two values.  <a href="../../db/d2e/namespacedggt.html#abdd7ebe7d15af49dd6ebeef2a74290df">More...</a><br /></td></tr>
-<tr class="separator:abdd7ebe7d15af49dd6ebeef2a74290df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#aa18e6371a2aa4a3dc0c9eee94d9111dc">sq</a> (T val)</td></tr>
-<tr class="memdesc:aa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Squares a number.  <a href="../../db/d2e/namespacedggt.html#aa18e6371a2aa4a3dc0c9eee94d9111dc">More...</a><br /></td></tr>
-<tr class="separator:aa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d27b03cee5b19618dc779223983e453"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a0d27b03cee5b19618dc779223983e453"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a0d27b03cee5b19618dc779223983e453">pow</a> (T val, <a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a> p)</td></tr>
-<tr class="memdesc:a0d27b03cee5b19618dc779223983e453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises a value to a power.  <a href="../../db/d2e/namespacedggt.html#a0d27b03cee5b19618dc779223983e453">More...</a><br /></td></tr>
-<tr class="separator:a0d27b03cee5b19618dc779223983e453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47f30d8cf085e6903a29f21ca0613ed2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a47f30d8cf085e6903a29f21ca0613ed2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a47f30d8cf085e6903a29f21ca0613ed2">pow2</a> (<a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a> p)</td></tr>
-<tr class="memdesc:a47f30d8cf085e6903a29f21ca0613ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates powers of two.  <a href="../../db/d2e/namespacedggt.html#a47f30d8cf085e6903a29f21ca0613ed2">More...</a><br /></td></tr>
-<tr class="separator:a47f30d8cf085e6903a29f21ca0613ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d2f15a0a24ef937a77a29d179d9cb4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a57d2f15a0a24ef937a77a29d179d9cb4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a57d2f15a0a24ef937a77a29d179d9cb4">is_pow2</a> (T val)</td></tr>
-<tr class="memdesc:a57d2f15a0a24ef937a77a29d179d9cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a number is a power of two.  <a href="../../db/d2e/namespacedggt.html#a57d2f15a0a24ef937a77a29d179d9cb4">More...</a><br /></td></tr>
-<tr class="separator:a57d2f15a0a24ef937a77a29d179d9cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa34fb32adf83b39450c4a6b134a996e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afa34fb32adf83b39450c4a6b134a996e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#afa34fb32adf83b39450c4a6b134a996e">next_gt_pow2</a> (T val)</td></tr>
-<tr class="memdesc:afa34fb32adf83b39450c4a6b134a996e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the next power of two larger than a given value.  <a href="../../db/d2e/namespacedggt.html#afa34fb32adf83b39450c4a6b134a996e">More...</a><br /></td></tr>
-<tr class="separator:afa34fb32adf83b39450c4a6b134a996e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4426904e521ec6f53bcfd14f971c1ca3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4426904e521ec6f53bcfd14f971c1ca3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a4426904e521ec6f53bcfd14f971c1ca3">sum_pow2</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> k)</td></tr>
-<tr class="memdesc:a4426904e521ec6f53bcfd14f971c1ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums the first k powers of two.  <a href="../../db/d2e/namespacedggt.html#a4426904e521ec6f53bcfd14f971c1ca3">More...</a><br /></td></tr>
-<tr class="separator:a4426904e521ec6f53bcfd14f971c1ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156e10a12f8828635da39302419c72a2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a156e10a12f8828635da39302419c72a2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a156e10a12f8828635da39302419c72a2">is_sum_pow2</a> (T val)</td></tr>
-<tr class="memdesc:a156e10a12f8828635da39302419c72a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a value is a sum of consecutive powers of two.  <a href="../../db/d2e/namespacedggt.html#a156e10a12f8828635da39302419c72a2">More...</a><br /></td></tr>
-<tr class="separator:a156e10a12f8828635da39302419c72a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e5020a3deebe7a74134715665169f6f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4e5020a3deebe7a74134715665169f6f"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a4e5020a3deebe7a74134715665169f6f">next_ge_sum_pow2</a> (T val)</td></tr>
-<tr class="memdesc:a4e5020a3deebe7a74134715665169f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the next summation of consecutive powers of two which is greater or equal to a given value.  <a href="../../db/d2e/namespacedggt.html#a4e5020a3deebe7a74134715665169f6f">More...</a><br /></td></tr>
-<tr class="separator:a4e5020a3deebe7a74134715665169f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9763eb30a58518e7cd3ff204d64f8db6"><td class="memItemLeft" align="right" valign="top"><a id="a9763eb30a58518e7cd3ff204d64f8db6"></a>
+<tr class="memitem:ga855ca6b31776b11b1a572744191cf53d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga855ca6b31776b11b1a572744191cf53d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga855ca6b31776b11b1a572744191cf53d">max</a> (const T &amp;val0, const T &amp;val1)</td></tr>
+<tr class="memdesc:ga855ca6b31776b11b1a572744191cf53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the maximum of two values.  <a href="../../de/df1/group__math.html#ga855ca6b31776b11b1a572744191cf53d">More...</a><br /></td></tr>
+<tr class="separator:ga855ca6b31776b11b1a572744191cf53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdd7ebe7d15af49dd6ebeef2a74290df"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gabdd7ebe7d15af49dd6ebeef2a74290df"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#gabdd7ebe7d15af49dd6ebeef2a74290df">min</a> (const T &amp;val0, const T &amp;val1)</td></tr>
+<tr class="memdesc:gabdd7ebe7d15af49dd6ebeef2a74290df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the minimum of two values.  <a href="../../de/df1/group__math.html#gabdd7ebe7d15af49dd6ebeef2a74290df">More...</a><br /></td></tr>
+<tr class="separator:gabdd7ebe7d15af49dd6ebeef2a74290df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#gaa18e6371a2aa4a3dc0c9eee94d9111dc">sq</a> (T val)</td></tr>
+<tr class="memdesc:gaa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Squares a number.  <a href="../../de/df1/group__math.html#gaa18e6371a2aa4a3dc0c9eee94d9111dc">More...</a><br /></td></tr>
+<tr class="separator:gaa18e6371a2aa4a3dc0c9eee94d9111dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d27b03cee5b19618dc779223983e453"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga0d27b03cee5b19618dc779223983e453"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga0d27b03cee5b19618dc779223983e453">pow</a> (T val, <a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a> p)</td></tr>
+<tr class="memdesc:ga0d27b03cee5b19618dc779223983e453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises a value to a power.  <a href="../../de/df1/group__math.html#ga0d27b03cee5b19618dc779223983e453">More...</a><br /></td></tr>
+<tr class="separator:ga0d27b03cee5b19618dc779223983e453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47f30d8cf085e6903a29f21ca0613ed2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga47f30d8cf085e6903a29f21ca0613ed2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga47f30d8cf085e6903a29f21ca0613ed2">pow2</a> (<a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a> p)</td></tr>
+<tr class="memdesc:ga47f30d8cf085e6903a29f21ca0613ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates powers of two.  <a href="../../de/df1/group__math.html#ga47f30d8cf085e6903a29f21ca0613ed2">More...</a><br /></td></tr>
+<tr class="separator:ga47f30d8cf085e6903a29f21ca0613ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57d2f15a0a24ef937a77a29d179d9cb4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga57d2f15a0a24ef937a77a29d179d9cb4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga57d2f15a0a24ef937a77a29d179d9cb4">is_pow2</a> (T val)</td></tr>
+<tr class="memdesc:ga57d2f15a0a24ef937a77a29d179d9cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a number is a power of two.  <a href="../../de/df1/group__math.html#ga57d2f15a0a24ef937a77a29d179d9cb4">More...</a><br /></td></tr>
+<tr class="separator:ga57d2f15a0a24ef937a77a29d179d9cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa34fb32adf83b39450c4a6b134a996e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gafa34fb32adf83b39450c4a6b134a996e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#gafa34fb32adf83b39450c4a6b134a996e">next_gt_pow2</a> (T val)</td></tr>
+<tr class="memdesc:gafa34fb32adf83b39450c4a6b134a996e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the next power of two larger than a given value.  <a href="../../de/df1/group__math.html#gafa34fb32adf83b39450c4a6b134a996e">More...</a><br /></td></tr>
+<tr class="separator:gafa34fb32adf83b39450c4a6b134a996e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4426904e521ec6f53bcfd14f971c1ca3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4426904e521ec6f53bcfd14f971c1ca3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga4426904e521ec6f53bcfd14f971c1ca3">sum_pow2</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> k)</td></tr>
+<tr class="memdesc:ga4426904e521ec6f53bcfd14f971c1ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums the first k powers of two.  <a href="../../de/df1/group__math.html#ga4426904e521ec6f53bcfd14f971c1ca3">More...</a><br /></td></tr>
+<tr class="separator:ga4426904e521ec6f53bcfd14f971c1ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga156e10a12f8828635da39302419c72a2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga156e10a12f8828635da39302419c72a2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga156e10a12f8828635da39302419c72a2">is_sum_pow2</a> (T val)</td></tr>
+<tr class="memdesc:ga156e10a12f8828635da39302419c72a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a value is a sum of consecutive powers of two.  <a href="../../de/df1/group__math.html#ga156e10a12f8828635da39302419c72a2">More...</a><br /></td></tr>
+<tr class="separator:ga156e10a12f8828635da39302419c72a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e5020a3deebe7a74134715665169f6f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4e5020a3deebe7a74134715665169f6f"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df1/group__math.html#ga4e5020a3deebe7a74134715665169f6f">next_ge_sum_pow2</a> (T val)</td></tr>
+<tr class="memdesc:ga4e5020a3deebe7a74134715665169f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the next summation of consecutive powers of two which is greater or equal to a given value.  <a href="../../de/df1/group__math.html#ga4e5020a3deebe7a74134715665169f6f">More...</a><br /></td></tr>
+<tr class="separator:ga4e5020a3deebe7a74134715665169f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9763eb30a58518e7cd3ff204d64f8db6"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sqrt</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> val)</td></tr>
-<tr class="separator:a9763eb30a58518e7cd3ff204d64f8db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c6ff1c583a7fbbac2d72207f3ac453a"><td class="memItemLeft" align="right" valign="top"><a id="a1c6ff1c583a7fbbac2d72207f3ac453a"></a>
+<tr class="separator:ga9763eb30a58518e7cd3ff204d64f8db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c6ff1c583a7fbbac2d72207f3ac453a"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sqrt</b> (<a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a> val)</td></tr>
-<tr class="separator:a1c6ff1c583a7fbbac2d72207f3ac453a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c083df15789aebc62447c82badbe4d"><td class="memItemLeft" align="right" valign="top"><a id="a24c083df15789aebc62447c82badbe4d"></a>
+<tr class="separator:ga1c6ff1c583a7fbbac2d72207f3ac453a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24c083df15789aebc62447c82badbe4d"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cosine</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> val)</td></tr>
-<tr class="separator:a24c083df15789aebc62447c82badbe4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468e8df6a633707e27b3181577255135"><td class="memItemLeft" align="right" valign="top"><a id="a468e8df6a633707e27b3181577255135"></a>
+<tr class="separator:ga24c083df15789aebc62447c82badbe4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga468e8df6a633707e27b3181577255135"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sine</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a2667d3b8faf5cf231bb3ff318b460454">real32</a> val)</td></tr>
-<tr class="separator:a468e8df6a633707e27b3181577255135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300103e7bb20ebe4c44a94408b301743"><td class="memItemLeft" align="right" valign="top"><a id="a300103e7bb20ebe4c44a94408b301743"></a>
+<tr class="separator:ga468e8df6a633707e27b3181577255135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga300103e7bb20ebe4c44a94408b301743"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cosine</b> (<a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a> val)</td></tr>
-<tr class="separator:a300103e7bb20ebe4c44a94408b301743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c0b769f95c54d7a942c5f0928796022"><td class="memTemplParams" colspan="2"><a id="a2c0b769f95c54d7a942c5f0928796022"></a>
+<tr class="separator:ga300103e7bb20ebe4c44a94408b301743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c0b769f95c54d7a942c5f0928796022"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c0b769f95c54d7a942c5f0928796022"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cosine</b> (T val)</td></tr>
-<tr class="separator:a2c0b769f95c54d7a942c5f0928796022"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96350e7ba00f2d0648f51873366dd74f"><td class="memItemLeft" align="right" valign="top"><a id="a96350e7ba00f2d0648f51873366dd74f"></a>
+<tr class="memitem:ga2c0b769f95c54d7a942c5f0928796022"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cosine</b> (T val)</td></tr>
+<tr class="separator:ga2c0b769f95c54d7a942c5f0928796022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96350e7ba00f2d0648f51873366dd74f"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sine</b> (<a class="el" href="../../db/d2e/namespacedggt.html#aa38e965c08af54e6a4b0289c29148cad">real64</a> val)</td></tr>
-<tr class="separator:a96350e7ba00f2d0648f51873366dd74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44e5cdae8488f020e15b9f600a345d4"><td class="memTemplParams" colspan="2"><a id="ad44e5cdae8488f020e15b9f600a345d4"></a>
+<tr class="separator:ga96350e7ba00f2d0648f51873366dd74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad44e5cdae8488f020e15b9f600a345d4"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad44e5cdae8488f020e15b9f600a345d4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sine</b> (T val)</td></tr>
-<tr class="separator:ad44e5cdae8488f020e15b9f600a345d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf3c891b6916e88f058824cefd40f31"><td class="memTemplParams" colspan="2"><a id="afaf3c891b6916e88f058824cefd40f31"></a>
+<tr class="memitem:gad44e5cdae8488f020e15b9f600a345d4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sine</b> (T val)</td></tr>
+<tr class="separator:gad44e5cdae8488f020e15b9f600a345d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafaf3c891b6916e88f058824cefd40f31"><td class="memTemplParams" colspan="2">
 template&lt;typename T  = real32&gt; </td></tr>
-<tr class="memitem:afaf3c891b6916e88f058824cefd40f31"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl</b> (T val, T leftP, T rightP, intvl_ends ends=CLSD_INTVL)</td></tr>
-<tr class="separator:afaf3c891b6916e88f058824cefd40f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5151f6a2c124f2b289dc1148afda31c7"><td class="memTemplParams" colspan="2"><a id="a5151f6a2c124f2b289dc1148afda31c7"></a>
+<tr class="memitem:gafaf3c891b6916e88f058824cefd40f31"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl</b> (T val, T leftP, T rightP, intvl_ends ends=CLSD_INTVL)</td></tr>
+<tr class="separator:gafaf3c891b6916e88f058824cefd40f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5151f6a2c124f2b289dc1148afda31c7"><td class="memTemplParams" colspan="2">
 template&lt;typename T  = real32&gt; </td></tr>
-<tr class="memitem:a5151f6a2c124f2b289dc1148afda31c7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_0n</b> (T val, T n, intvl_ends ends=CLSD_INTVL)</td></tr>
-<tr class="separator:a5151f6a2c124f2b289dc1148afda31c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf34c573c423aa2b1cab111bf8eac527"><td class="memTemplParams" colspan="2"><a id="aaf34c573c423aa2b1cab111bf8eac527"></a>
+<tr class="memitem:ga5151f6a2c124f2b289dc1148afda31c7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_0n</b> (T val, T n, intvl_ends ends=CLSD_INTVL)</td></tr>
+<tr class="separator:ga5151f6a2c124f2b289dc1148afda31c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf34c573c423aa2b1cab111bf8eac527"><td class="memTemplParams" colspan="2">
 template&lt;typename T  = real32&gt; </td></tr>
-<tr class="memitem:aaf34c573c423aa2b1cab111bf8eac527"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_01</b> (T val, intvl_ends ends=CLSD_INTVL)</td></tr>
-<tr class="separator:aaf34c573c423aa2b1cab111bf8eac527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab804880c2d4307427b736f3a0f0a542b"><td class="memTemplParams" colspan="2"><a id="ab804880c2d4307427b736f3a0f0a542b"></a>
+<tr class="memitem:gaaf34c573c423aa2b1cab111bf8eac527"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_01</b> (T val, intvl_ends ends=CLSD_INTVL)</td></tr>
+<tr class="separator:gaaf34c573c423aa2b1cab111bf8eac527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab804880c2d4307427b736f3a0f0a542b"><td class="memTemplParams" colspan="2">
 template&lt;typename T  = real32&gt; </td></tr>
-<tr class="memitem:ab804880c2d4307427b736f3a0f0a542b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_centered</b> (T val, T n, intvl_ends ends=CLSD_INTVL)</td></tr>
-<tr class="separator:ab804880c2d4307427b736f3a0f0a542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65633a2d3125f739ace0fc56ac2864e9"><td class="memTemplParams" colspan="2"><a id="a65633a2d3125f739ace0fc56ac2864e9"></a>
+<tr class="memitem:gab804880c2d4307427b736f3a0f0a542b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_centered</b> (T val, T n, intvl_ends ends=CLSD_INTVL)</td></tr>
+<tr class="separator:gab804880c2d4307427b736f3a0f0a542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65633a2d3125f739ace0fc56ac2864e9"><td class="memTemplParams" colspan="2">
 template&lt;typename T  = real32&gt; </td></tr>
-<tr class="memitem:a65633a2d3125f739ace0fc56ac2864e9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_unit_disk</b> (T val, intvl_ends ends=CLSD_INTVL)</td></tr>
-<tr class="separator:a65633a2d3125f739ace0fc56ac2864e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c8a048bfe1c5df6073b4165302ce197"><td class="memTemplParams" colspan="2">template&lt;uint32 C, uint32 R, typename T &gt; </td></tr>
-<tr class="memitem:a1c8a048bfe1c5df6073b4165302ce197"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; R, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; C, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a1c8a048bfe1c5df6073b4165302ce197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/d2e/namespacedggt.html#a1c8a048bfe1c5df6073b4165302ce197">More...</a><br /></td></tr>
-<tr class="separator:a1c8a048bfe1c5df6073b4165302ce197"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5252e3b09051185338b46cabeb52cec0"><td class="memTemplParams" colspan="2">template&lt;uint32 C, uint32 R, typename T &gt; </td></tr>
-<tr class="memitem:a5252e3b09051185338b46cabeb52cec0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a5252e3b09051185338b46cabeb52cec0">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a5252e3b09051185338b46cabeb52cec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/d2e/namespacedggt.html#a5252e3b09051185338b46cabeb52cec0">More...</a><br /></td></tr>
-<tr class="separator:a5252e3b09051185338b46cabeb52cec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a73dd0e1a1a114b8f18f97f44a1a9e024">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a73dd0e1a1a114b8f18f97f44a1a9e024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/d2e/namespacedggt.html#a73dd0e1a1a114b8f18f97f44a1a9e024">More...</a><br /></td></tr>
-<tr class="separator:a73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274fb765ce2747f6b1a118f013723d26"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a274fb765ce2747f6b1a118f013723d26"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a274fb765ce2747f6b1a118f013723d26">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a274fb765ce2747f6b1a118f013723d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/d2e/namespacedggt.html#a274fb765ce2747f6b1a118f013723d26">More...</a><br /></td></tr>
-<tr class="separator:a274fb765ce2747f6b1a118f013723d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade3e439e95987ac2fd26fb78ff13f165"><td class="memTemplParams" colspan="2"><a id="ade3e439e95987ac2fd26fb78ff13f165"></a>
+<tr class="memitem:ga65633a2d3125f739ace0fc56ac2864e9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">bool32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>intvl_unit_disk</b> (T val, intvl_ends ends=CLSD_INTVL)</td></tr>
+<tr class="separator:ga65633a2d3125f739ace0fc56ac2864e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c8a048bfe1c5df6073b4165302ce197"><td class="memTemplParams" colspan="2">template&lt;uint32 C, uint32 R, typename T &gt; </td></tr>
+<tr class="memitem:ga1c8a048bfe1c5df6073b4165302ce197"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; R, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; C, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga1c8a048bfe1c5df6073b4165302ce197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">More...</a><br /></td></tr>
+<tr class="separator:ga1c8a048bfe1c5df6073b4165302ce197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5252e3b09051185338b46cabeb52cec0"><td class="memTemplParams" colspan="2">template&lt;uint32 C, uint32 R, typename T &gt; </td></tr>
+<tr class="memitem:ga5252e3b09051185338b46cabeb52cec0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga5252e3b09051185338b46cabeb52cec0">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga5252e3b09051185338b46cabeb52cec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/da0/group__lin.html#ga5252e3b09051185338b46cabeb52cec0">More...</a><br /></td></tr>
+<tr class="separator:ga5252e3b09051185338b46cabeb52cec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga73dd0e1a1a114b8f18f97f44a1a9e024">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga73dd0e1a1a114b8f18f97f44a1a9e024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/da0/group__lin.html#ga73dd0e1a1a114b8f18f97f44a1a9e024">More...</a><br /></td></tr>
+<tr class="separator:ga73dd0e1a1a114b8f18f97f44a1a9e024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga274fb765ce2747f6b1a118f013723d26"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga274fb765ce2747f6b1a118f013723d26"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga274fb765ce2747f6b1a118f013723d26">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga274fb765ce2747f6b1a118f013723d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/da0/group__lin.html#ga274fb765ce2747f6b1a118f013723d26">More...</a><br /></td></tr>
+<tr class="separator:ga274fb765ce2747f6b1a118f013723d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade3e439e95987ac2fd26fb78ff13f165"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ade3e439e95987ac2fd26fb78ff13f165"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt; &amp;matrix)</td></tr>
-<tr class="separator:ade3e439e95987ac2fd26fb78ff13f165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ad4d8e41e5d897bf11d92bb49f84299"><td class="memTemplParams" colspan="2"><a id="a2ad4d8e41e5d897bf11d92bb49f84299"></a>
+<tr class="memitem:gade3e439e95987ac2fd26fb78ff13f165"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt; &amp;matrix)</td></tr>
+<tr class="separator:gade3e439e95987ac2fd26fb78ff13f165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ad4d8e41e5d897bf11d92bb49f84299"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2ad4d8e41e5d897bf11d92bb49f84299"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt; &amp;matrix)</td></tr>
-<tr class="separator:a2ad4d8e41e5d897bf11d92bb49f84299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ad4d8e41e5d897bf11d92bb49f84299"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt; &amp;matrix)</td></tr>
+<tr class="separator:ga2ad4d8e41e5d897bf11d92bb49f84299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f11163f2a3fcfdf26cd26e7223b486c"><td class="memTemplParams" colspan="2"><a id="a7f11163f2a3fcfdf26cd26e7223b486c"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7f11163f2a3fcfdf26cd26e7223b486c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 4, 4, T &gt; &amp;matrix)</td></tr>
@@ -791,86 +831,86 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abfb4e26bef24408e00e8981c2317cc97"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 4, 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>proj_mat</b> (const T &amp;width, const T &amp;height, const T &amp;near, const T &amp;far)</td></tr>
 <tr class="separator:abfb4e26bef24408e00e8981c2317cc97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b6e739d12095b3c3d10a844e294d80"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a23b6e739d12095b3c3d10a844e294d80"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a23b6e739d12095b3c3d10a844e294d80">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a23b6e739d12095b3c3d10a844e294d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/d2e/namespacedggt.html#a23b6e739d12095b3c3d10a844e294d80">More...</a><br /></td></tr>
-<tr class="separator:a23b6e739d12095b3c3d10a844e294d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cabfae196f93d341a94a19e65e95252"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a6cabfae196f93d341a94a19e65e95252"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a6cabfae196f93d341a94a19e65e95252">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
-<tr class="memdesc:a6cabfae196f93d341a94a19e65e95252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/d2e/namespacedggt.html#a6cabfae196f93d341a94a19e65e95252">More...</a><br /></td></tr>
-<tr class="separator:a6cabfae196f93d341a94a19e65e95252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb6ee8e1e8941079a862b891d334630e"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
-<tr class="memitem:adb6ee8e1e8941079a862b891d334630e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#adb6ee8e1e8941079a862b891d334630e">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;vector)</td></tr>
-<tr class="memdesc:adb6ee8e1e8941079a862b891d334630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">left-scaling operator.  <a href="../../db/d2e/namespacedggt.html#adb6ee8e1e8941079a862b891d334630e">More...</a><br /></td></tr>
-<tr class="separator:adb6ee8e1e8941079a862b891d334630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb27c686677c9fcb62fd125afe912f4"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
-<tr class="memitem:aadb27c686677c9fcb62fd125afe912f4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#aadb27c686677c9fcb62fd125afe912f4">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;rhs)</td></tr>
-<tr class="memdesc:aadb27c686677c9fcb62fd125afe912f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/d2e/namespacedggt.html#aadb27c686677c9fcb62fd125afe912f4">More...</a><br /></td></tr>
-<tr class="separator:aadb27c686677c9fcb62fd125afe912f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77c9e76e20b7812f7d65d70169c910ec"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
-<tr class="memitem:a77c9e76e20b7812f7d65d70169c910ec"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a77c9e76e20b7812f7d65d70169c910ec">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;rhs)</td></tr>
-<tr class="memdesc:a77c9e76e20b7812f7d65d70169c910ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/d2e/namespacedggt.html#a77c9e76e20b7812f7d65d70169c910ec">More...</a><br /></td></tr>
-<tr class="separator:a77c9e76e20b7812f7d65d70169c910ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2661e914ee9b6635ae38254cf5ab03bc"><td class="memTemplParams" colspan="2"><a id="a2661e914ee9b6635ae38254cf5ab03bc"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2661e914ee9b6635ae38254cf5ab03bc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a2661e914ee9b6635ae38254cf5ab03bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2509f557124e696fb04f783e0caa3b"><td class="memTemplParams" colspan="2"><a id="a3a2509f557124e696fb04f783e0caa3b"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3a2509f557124e696fb04f783e0caa3b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a3a2509f557124e696fb04f783e0caa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f30baca248cb55bee30949ca64f524e"><td class="memTemplParams" colspan="2"><a id="a3f30baca248cb55bee30949ca64f524e"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3f30baca248cb55bee30949ca64f524e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a3f30baca248cb55bee30949ca64f524e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad994b8b5289d34bd3077bda0c3113c1"><td class="memTemplParams" colspan="2"><a id="aad994b8b5289d34bd3077bda0c3113c1"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aad994b8b5289d34bd3077bda0c3113c1"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:aad994b8b5289d34bd3077bda0c3113c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memTemplParams" colspan="2"><a id="a060e34dfdfa282cf7a8bd40fa60ee7ec"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>len_sq</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memTemplParams" colspan="2"><a id="a3cd9091c15a9ee6a6adf4d81f97bc8fc"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>len</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1528804223e1af97c97c9f380917e3fc"><td class="memTemplParams" colspan="2"><a id="a1528804223e1af97c97c9f380917e3fc"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1528804223e1af97c97c9f380917e3fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>normal</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a1528804223e1af97c97c9f380917e3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d7ebf4c7b917a5963cf561f49381cf"><td class="memTemplParams" colspan="2"><a id="a46d7ebf4c7b917a5963cf561f49381cf"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a46d7ebf4c7b917a5963cf561f49381cf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>normalize</b> (<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a46d7ebf4c7b917a5963cf561f49381cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c928998652e4cd531d41183421c94d7"><td class="memTemplParams" colspan="2"><a id="a3c928998652e4cd531d41183421c94d7"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3c928998652e4cd531d41183421c94d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>perp</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a3c928998652e4cd531d41183421c94d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af61625e2950cdd107d3190bece80628d"><td class="memTemplParams" colspan="2"><a id="af61625e2950cdd107d3190bece80628d"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af61625e2950cdd107d3190bece80628d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hadamard</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;lhs, <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:af61625e2950cdd107d3190bece80628d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memTemplParams" colspan="2"><a id="a06349dd23a8ea9db9f7cf748c01d4cc1"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lerp</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;a, const T &amp;t, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;b)</td></tr>
-<tr class="separator:a06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23b6e739d12095b3c3d10a844e294d80"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:ga23b6e739d12095b3c3d10a844e294d80"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga23b6e739d12095b3c3d10a844e294d80">operator*</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;vector, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga23b6e739d12095b3c3d10a844e294d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector/matrix multiplication operator.  <a href="../../db/da0/group__lin.html#ga23b6e739d12095b3c3d10a844e294d80">More...</a><br /></td></tr>
+<tr class="separator:ga23b6e739d12095b3c3d10a844e294d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cabfae196f93d341a94a19e65e95252"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:ga6cabfae196f93d341a94a19e65e95252"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga6cabfae196f93d341a94a19e65e95252">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga6cabfae196f93d341a94a19e65e95252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix scaling operator.  <a href="../../db/da0/group__lin.html#ga6cabfae196f93d341a94a19e65e95252">More...</a><br /></td></tr>
+<tr class="separator:ga6cabfae196f93d341a94a19e65e95252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb6ee8e1e8941079a862b891d334630e"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
+<tr class="memitem:gadb6ee8e1e8941079a862b891d334630e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gadb6ee8e1e8941079a862b891d334630e">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:gadb6ee8e1e8941079a862b891d334630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">left-scaling operator.  <a href="../../db/da0/group__lin.html#gadb6ee8e1e8941079a862b891d334630e">More...</a><br /></td></tr>
+<tr class="separator:gadb6ee8e1e8941079a862b891d334630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadb27c686677c9fcb62fd125afe912f4"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
+<tr class="memitem:gaadb27c686677c9fcb62fd125afe912f4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaadb27c686677c9fcb62fd125afe912f4">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:gaadb27c686677c9fcb62fd125afe912f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#gaadb27c686677c9fcb62fd125afe912f4">More...</a><br /></td></tr>
+<tr class="separator:gaadb27c686677c9fcb62fd125afe912f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaadb27c686677c9fcb62fd125afe912f4"><td class="memTemplParams" colspan="2">template&lt;uint32 D, typename T &gt; </td></tr>
+<tr class="memitem:gaadb27c686677c9fcb62fd125afe912f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaadb27c686677c9fcb62fd125afe912f4">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:gaadb27c686677c9fcb62fd125afe912f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#gaadb27c686677c9fcb62fd125afe912f4">More...</a><br /></td></tr>
+<tr class="separator:gaadb27c686677c9fcb62fd125afe912f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2661e914ee9b6635ae38254cf5ab03bc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga2661e914ee9b6635ae38254cf5ab03bc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga2661e914ee9b6635ae38254cf5ab03bc">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga2661e914ee9b6635ae38254cf5ab03bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">left-scaling operator.  <a href="../../db/da0/group__lin.html#ga2661e914ee9b6635ae38254cf5ab03bc">More...</a><br /></td></tr>
+<tr class="separator:ga2661e914ee9b6635ae38254cf5ab03bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a2509f557124e696fb04f783e0caa3b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3a2509f557124e696fb04f783e0caa3b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3a2509f557124e696fb04f783e0caa3b">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:ga3a2509f557124e696fb04f783e0caa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#ga3a2509f557124e696fb04f783e0caa3b">More...</a><br /></td></tr>
+<tr class="separator:ga3a2509f557124e696fb04f783e0caa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f30baca248cb55bee30949ca64f524e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3f30baca248cb55bee30949ca64f524e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3f30baca248cb55bee30949ca64f524e">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga3f30baca248cb55bee30949ca64f524e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling operator.  <a href="../../db/da0/group__lin.html#ga3f30baca248cb55bee30949ca64f524e">More...</a><br /></td></tr>
+<tr class="separator:ga3f30baca248cb55bee30949ca64f524e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad994b8b5289d34bd3077bda0c3113c1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaad994b8b5289d34bd3077bda0c3113c1"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaad994b8b5289d34bd3077bda0c3113c1">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:gaad994b8b5289d34bd3077bda0c3113c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#gaad994b8b5289d34bd3077bda0c3113c1">More...</a><br /></td></tr>
+<tr class="separator:gaad994b8b5289d34bd3077bda0c3113c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga060e34dfdfa282cf7a8bd40fa60ee7ec">len_sq</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the length of a vector squared.  <a href="../../db/da0/group__lin.html#ga060e34dfdfa282cf7a8bd40fa60ee7ec">More...</a><br /></td></tr>
+<tr class="separator:ga060e34dfdfa282cf7a8bd40fa60ee7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3cd9091c15a9ee6a6adf4d81f97bc8fc">len</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a vector's length.  <a href="../../db/da0/group__lin.html#ga3cd9091c15a9ee6a6adf4d81f97bc8fc">More...</a><br /></td></tr>
+<tr class="separator:ga3cd9091c15a9ee6a6adf4d81f97bc8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1528804223e1af97c97c9f380917e3fc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga1528804223e1af97c97c9f380917e3fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga1528804223e1af97c97c9f380917e3fc">normal</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga1528804223e1af97c97c9f380917e3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the normal of a vector.  <a href="../../db/da0/group__lin.html#ga1528804223e1af97c97c9f380917e3fc">More...</a><br /></td></tr>
+<tr class="separator:ga1528804223e1af97c97c9f380917e3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46d7ebf4c7b917a5963cf561f49381cf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga46d7ebf4c7b917a5963cf561f49381cf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga46d7ebf4c7b917a5963cf561f49381cf">normalize</a> (<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga46d7ebf4c7b917a5963cf561f49381cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a vector.  <a href="../../db/da0/group__lin.html#ga46d7ebf4c7b917a5963cf561f49381cf">More...</a><br /></td></tr>
+<tr class="separator:ga46d7ebf4c7b917a5963cf561f49381cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c928998652e4cd531d41183421c94d7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3c928998652e4cd531d41183421c94d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3c928998652e4cd531d41183421c94d7">perp</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga3c928998652e4cd531d41183421c94d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a vector's perpendicular.  <a href="../../db/da0/group__lin.html#ga3c928998652e4cd531d41183421c94d7">More...</a><br /></td></tr>
+<tr class="separator:ga3c928998652e4cd531d41183421c94d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf61625e2950cdd107d3190bece80628d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaf61625e2950cdd107d3190bece80628d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaf61625e2950cdd107d3190bece80628d">hadamard</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;lhs, <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:gaf61625e2950cdd107d3190bece80628d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hadamard product.  <a href="../../db/da0/group__lin.html#gaf61625e2950cdd107d3190bece80628d">More...</a><br /></td></tr>
+<tr class="separator:gaf61625e2950cdd107d3190bece80628d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga06349dd23a8ea9db9f7cf748c01d4cc1">lerp</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;a, const T &amp;t, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;b)</td></tr>
+<tr class="memdesc:ga06349dd23a8ea9db9f7cf748c01d4cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolates two vectors weighted by t.  <a href="../../db/da0/group__lin.html#ga06349dd23a8ea9db9f7cf748c01d4cc1">More...</a><br /></td></tr>
+<tr class="separator:ga06349dd23a8ea9db9f7cf748c01d4cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90d3be1d43fa0dc883c943879f36953d"><td class="memTemplParams" colspan="2"><a id="a90d3be1d43fa0dc883c943879f36953d"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a90d3be1d43fa0dc883c943879f36953d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hadamard</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;rhs)</td></tr>
 <tr class="separator:a90d3be1d43fa0dc883c943879f36953d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5fecfba23e2d0a2d5f8c7d549695752"><td class="memTemplParams" colspan="2"><a id="ac5fecfba23e2d0a2d5f8c7d549695752"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac5fecfba23e2d0a2d5f8c7d549695752"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;vector)</td></tr>
-<tr class="separator:ac5fecfba23e2d0a2d5f8c7d549695752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29b086830b9d32db4b1aba3dd2ed70f8"><td class="memTemplParams" colspan="2"><a id="a29b086830b9d32db4b1aba3dd2ed70f8"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a29b086830b9d32db4b1aba3dd2ed70f8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a29b086830b9d32db4b1aba3dd2ed70f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memTemplParams" colspan="2"><a id="ab9c6a6afbcc14b777c2a162e7e1071b5"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cross</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:ab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5fecfba23e2d0a2d5f8c7d549695752"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gac5fecfba23e2d0a2d5f8c7d549695752"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gac5fecfba23e2d0a2d5f8c7d549695752">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:gac5fecfba23e2d0a2d5f8c7d549695752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling operator.  <a href="../../db/da0/group__lin.html#gac5fecfba23e2d0a2d5f8c7d549695752">More...</a><br /></td></tr>
+<tr class="separator:gac5fecfba23e2d0a2d5f8c7d549695752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29b086830b9d32db4b1aba3dd2ed70f8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga29b086830b9d32db4b1aba3dd2ed70f8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga29b086830b9d32db4b1aba3dd2ed70f8">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:ga29b086830b9d32db4b1aba3dd2ed70f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#ga29b086830b9d32db4b1aba3dd2ed70f8">More...</a><br /></td></tr>
+<tr class="separator:ga29b086830b9d32db4b1aba3dd2ed70f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gab9c6a6afbcc14b777c2a162e7e1071b5">cross</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:gab9c6a6afbcc14b777c2a162e7e1071b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross product.  <a href="../../db/da0/group__lin.html#gab9c6a6afbcc14b777c2a162e7e1071b5">More...</a><br /></td></tr>
+<tr class="separator:gab9c6a6afbcc14b777c2a162e7e1071b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2f62057f45a2fc9a9a8a4fa0a27e4a"><td class="memTemplParams" colspan="2"><a id="afb2f62057f45a2fc9a9a8a4fa0a27e4a"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:afb2f62057f45a2fc9a9a8a4fa0a27e4a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>len_sq</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;vector)</td></tr>
@@ -891,30 +931,30 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a721de5875dd918d3ef780cdb537beeee"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lerp</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;a, const T &amp;t, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt; &amp;b)</td></tr>
 <tr class="separator:a721de5875dd918d3ef780cdb537beeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89d2ce631c7fd52d0a35c962f79d344f"><td class="memTemplParams" colspan="2"><a id="a89d2ce631c7fd52d0a35c962f79d344f"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a89d2ce631c7fd52d0a35c962f79d344f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a89d2ce631c7fd52d0a35c962f79d344f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a05aa3dd696a682de4975bbd93f2077"><td class="memTemplParams" colspan="2"><a id="a1a05aa3dd696a682de4975bbd93f2077"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1a05aa3dd696a682de4975bbd93f2077"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a1a05aa3dd696a682de4975bbd93f2077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a901ebc9a8b270bb6ea007bdfa446489e"><td class="memTemplParams" colspan="2"><a id="a901ebc9a8b270bb6ea007bdfa446489e"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a901ebc9a8b270bb6ea007bdfa446489e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>len_sq</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a901ebc9a8b270bb6ea007bdfa446489e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36983567ad0a6a74376c8ad31a6e4553"><td class="memTemplParams" colspan="2"><a id="a36983567ad0a6a74376c8ad31a6e4553"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a36983567ad0a6a74376c8ad31a6e4553"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>len</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
-<tr class="separator:a36983567ad0a6a74376c8ad31a6e4553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3adb482a08efaf165568f4682f771be3"><td class="memTemplParams" colspan="2"><a id="a3adb482a08efaf165568f4682f771be3"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3adb482a08efaf165568f4682f771be3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hadamard</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;lhs, <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a3adb482a08efaf165568f4682f771be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ba0a41d021f01581a29633589be3312"><td class="memTemplParams" colspan="2"><a id="a3ba0a41d021f01581a29633589be3312"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ba0a41d021f01581a29633589be3312"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lerp</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;a, const T &amp;t, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;b)</td></tr>
-<tr class="separator:a3ba0a41d021f01581a29633589be3312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89d2ce631c7fd52d0a35c962f79d344f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga89d2ce631c7fd52d0a35c962f79d344f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga89d2ce631c7fd52d0a35c962f79d344f">operator*</a> (const T &amp;scalar, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga89d2ce631c7fd52d0a35c962f79d344f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling operator.  <a href="../../db/da0/group__lin.html#ga89d2ce631c7fd52d0a35c962f79d344f">More...</a><br /></td></tr>
+<tr class="separator:ga89d2ce631c7fd52d0a35c962f79d344f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a05aa3dd696a682de4975bbd93f2077"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga1a05aa3dd696a682de4975bbd93f2077"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga1a05aa3dd696a682de4975bbd93f2077">dot</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:ga1a05aa3dd696a682de4975bbd93f2077"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dot product.  <a href="../../db/da0/group__lin.html#ga1a05aa3dd696a682de4975bbd93f2077">More...</a><br /></td></tr>
+<tr class="separator:ga1a05aa3dd696a682de4975bbd93f2077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga901ebc9a8b270bb6ea007bdfa446489e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga901ebc9a8b270bb6ea007bdfa446489e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga901ebc9a8b270bb6ea007bdfa446489e">len_sq</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga901ebc9a8b270bb6ea007bdfa446489e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the length of a vector squared.  <a href="../../db/da0/group__lin.html#ga901ebc9a8b270bb6ea007bdfa446489e">More...</a><br /></td></tr>
+<tr class="separator:ga901ebc9a8b270bb6ea007bdfa446489e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36983567ad0a6a74376c8ad31a6e4553"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga36983567ad0a6a74376c8ad31a6e4553"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga36983567ad0a6a74376c8ad31a6e4553">len</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;vector)</td></tr>
+<tr class="memdesc:ga36983567ad0a6a74376c8ad31a6e4553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a vector's length.  <a href="../../db/da0/group__lin.html#ga36983567ad0a6a74376c8ad31a6e4553">More...</a><br /></td></tr>
+<tr class="separator:ga36983567ad0a6a74376c8ad31a6e4553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3adb482a08efaf165568f4682f771be3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3adb482a08efaf165568f4682f771be3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3adb482a08efaf165568f4682f771be3">hadamard</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;lhs, <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:ga3adb482a08efaf165568f4682f771be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hadamard product.  <a href="../../db/da0/group__lin.html#ga3adb482a08efaf165568f4682f771be3">More...</a><br /></td></tr>
+<tr class="separator:ga3adb482a08efaf165568f4682f771be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ba0a41d021f01581a29633589be3312"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3ba0a41d021f01581a29633589be3312"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3ba0a41d021f01581a29633589be3312">lerp</a> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;a, const T &amp;t, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;b)</td></tr>
+<tr class="memdesc:ga3ba0a41d021f01581a29633589be3312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolates two vectors weighted by t.  <a href="../../db/da0/group__lin.html#ga3ba0a41d021f01581a29633589be3312">More...</a><br /></td></tr>
+<tr class="separator:ga3ba0a41d021f01581a29633589be3312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a871bae9eddcd5bfd99fc04d8fa86e400"><td class="memTemplParams" colspan="2"><a id="a871bae9eddcd5bfd99fc04d8fa86e400"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a871bae9eddcd5bfd99fc04d8fa86e400"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hadamard</b> (const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;lhs, const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt; &amp;rhs)</td></tr>
@@ -1064,102 +1104,112 @@ static const <a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b6
 <tr class="memitem:aff6bd3cbf9110348152d0e4be5ee9dd3"><td class="memItemLeft" align="right" valign="top"><a id="aff6bd3cbf9110348152d0e4be5ee9dd3"></a>
 static const <a class="el" href="../../db/d2e/namespacedggt.html#a8a8995b5a209860c830ba5d6c68dcaf4">u64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LARGE_PRIME64</b> =19'957'072'636'091</td></tr>
 <tr class="separator:aff6bd3cbf9110348152d0e4be5ee9dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3793c623f1d2fe85e925e5e3430218c"><td class="memTemplParams" colspan="2"><a id="ae3793c623f1d2fe85e925e5e3430218c"></a>
+<tr class="memitem:gae3793c623f1d2fe85e925e5e3430218c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gae3793c623f1d2fe85e925e5e3430218c"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gae3793c623f1d2fe85e925e5e3430218c">MAT2_IDENTITY</a> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;2,2,T&gt;(T(1))</td></tr>
+<tr class="memdesc:gae3793c623f1d2fe85e925e5e3430218c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 2-by-2 identity matrix.  <a href="../../db/da0/group__lin.html#gae3793c623f1d2fe85e925e5e3430218c">More...</a><br /></td></tr>
+<tr class="separator:gae3793c623f1d2fe85e925e5e3430218c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1864b2c2ff5701efbe664364a0330b35"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae3793c623f1d2fe85e925e5e3430218c"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MAT2_IDENTITY</b> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;2,2,T&gt;(T(1))</td></tr>
-<tr class="separator:ae3793c623f1d2fe85e925e5e3430218c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1864b2c2ff5701efbe664364a0330b35"><td class="memTemplParams" colspan="2"><a id="a1864b2c2ff5701efbe664364a0330b35"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1864b2c2ff5701efbe664364a0330b35"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MAT3_IDENTITY</b> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;3,3,T&gt;(T(1))</td></tr>
-<tr class="separator:a1864b2c2ff5701efbe664364a0330b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1864b2c2ff5701efbe664364a0330b35"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 3, 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MAT3_IDENTITY</b> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;3,3,T&gt;(T(1))</td></tr>
+<tr class="separator:ga1864b2c2ff5701efbe664364a0330b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e19a016f966789ad2690e42411a2434"><td class="memTemplParams" colspan="2"><a id="a5e19a016f966789ad2690e42411a2434"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5e19a016f966789ad2690e42411a2434"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 4, 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MAT4_IDENTITY</b> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;4,4,T&gt;(T(1))</td></tr>
 <tr class="separator:a5e19a016f966789ad2690e42411a2434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce4d58567562c14448cd7c39058fe38"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:a8ce4d58567562c14448cd7c39058fe38"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#a8ce4d58567562c14448cd7c39058fe38">MATN_IDENTITY</a> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td></tr>
-<tr class="memdesc:a8ce4d58567562c14448cd7c39058fe38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square matrix identity.  <a href="../../db/d2e/namespacedggt.html#a8ce4d58567562c14448cd7c39058fe38">More...</a><br /></td></tr>
-<tr class="separator:a8ce4d58567562c14448cd7c39058fe38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
-<tr class="memitem:adfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d2e/namespacedggt.html#adfcd0b57bbe871b656ab7eaf49b19cf5">MAT_IDENTITY</a> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td></tr>
-<tr class="memdesc:adfcd0b57bbe871b656ab7eaf49b19cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write a square matrix's identity matrix.  <a href="../../db/d2e/namespacedggt.html#adfcd0b57bbe871b656ab7eaf49b19cf5">More...</a><br /></td></tr>
-<tr class="separator:adfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9d739408918da47928fc6afc1899e03"><td class="memTemplParams" colspan="2"><a id="ae9d739408918da47928fc6afc1899e03"></a>
+<tr class="memitem:ga8ce4d58567562c14448cd7c39058fe38"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:ga8ce4d58567562c14448cd7c39058fe38"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga8ce4d58567562c14448cd7c39058fe38">MATN_IDENTITY</a> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td></tr>
+<tr class="memdesc:ga8ce4d58567562c14448cd7c39058fe38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square matrix identity.  <a href="../../db/da0/group__lin.html#ga8ce4d58567562c14448cd7c39058fe38">More...</a><br /></td></tr>
+<tr class="separator:ga8ce4d58567562c14448cd7c39058fe38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memTemplParams" colspan="2">template&lt;uint32 N, typename T &gt; </td></tr>
+<tr class="memitem:gadfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gadfcd0b57bbe871b656ab7eaf49b19cf5">MAT_IDENTITY</a> =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td></tr>
+<tr class="memdesc:gadfcd0b57bbe871b656ab7eaf49b19cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write a square matrix's identity matrix.  <a href="../../db/da0/group__lin.html#gadfcd0b57bbe871b656ab7eaf49b19cf5">More...</a><br /></td></tr>
+<tr class="separator:gadfcd0b57bbe871b656ab7eaf49b19cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9d739408918da47928fc6afc1899e03"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gae9d739408918da47928fc6afc1899e03"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gae9d739408918da47928fc6afc1899e03">VEC1_ONE</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;1,T&gt;(T(1))</td></tr>
+<tr class="memdesc:gae9d739408918da47928fc6afc1899e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html" title="A vec&lt;D,T&gt; specialization with a single element.">vec&lt;1,T&gt;</a> whose x value is equal to T(1).  <a href="../../db/da0/group__lin.html#gae9d739408918da47928fc6afc1899e03">More...</a><br /></td></tr>
+<tr class="separator:gae9d739408918da47928fc6afc1899e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92f30ed0d66bdd3f60554460c43057e5"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae9d739408918da47928fc6afc1899e03"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC1_ONE</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;1,T&gt;(T(1))</td></tr>
-<tr class="separator:ae9d739408918da47928fc6afc1899e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92f30ed0d66bdd3f60554460c43057e5"><td class="memTemplParams" colspan="2"><a id="a92f30ed0d66bdd3f60554460c43057e5"></a>
+<tr class="memitem:ga92f30ed0d66bdd3f60554460c43057e5"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga92f30ed0d66bdd3f60554460c43057e5">VEC1_XAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;1,T&gt;(T(1))</td></tr>
+<tr class="memdesc:ga92f30ed0d66bdd3f60554460c43057e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write VEC1_ONE&lt;T&gt;. <br /></td></tr>
+<tr class="separator:ga92f30ed0d66bdd3f60554460c43057e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2238f91829f0a1dc362fb593ef30f22"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a92f30ed0d66bdd3f60554460c43057e5"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 1, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC1_XAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;1,T&gt;(T(1))</td></tr>
-<tr class="separator:a92f30ed0d66bdd3f60554460c43057e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58651747942bcda217745b9a9dcd4052"><td class="memTemplParams" colspan="2"><a id="a58651747942bcda217745b9a9dcd4052"></a>
+<tr class="memitem:gad2238f91829f0a1dc362fb593ef30f22"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gad2238f91829f0a1dc362fb593ef30f22">VEC2_ZERO</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;()</td></tr>
+<tr class="memdesc:gad2238f91829f0a1dc362fb593ef30f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 2D vector with both elements set to T(0). <br /></td></tr>
+<tr class="separator:gad2238f91829f0a1dc362fb593ef30f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6529675b46d9fbb3dd9f68a54d8a8b6e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga6529675b46d9fbb3dd9f68a54d8a8b6e"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga6529675b46d9fbb3dd9f68a54d8a8b6e">VEC2_ONE</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(1))</td></tr>
+<tr class="memdesc:ga6529675b46d9fbb3dd9f68a54d8a8b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 2D vector with both x and y set to T(1).  <a href="../../db/da0/group__lin.html#ga6529675b46d9fbb3dd9f68a54d8a8b6e">More...</a><br /></td></tr>
+<tr class="separator:ga6529675b46d9fbb3dd9f68a54d8a8b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga228cadea38583703a274d2af48b19edc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga228cadea38583703a274d2af48b19edc"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga228cadea38583703a274d2af48b19edc">VEC2_XAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(1),T(0))</td></tr>
+<tr class="memdesc:ga228cadea38583703a274d2af48b19edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector with just it's x value set to T(1).  <a href="../../db/da0/group__lin.html#ga228cadea38583703a274d2af48b19edc">More...</a><br /></td></tr>
+<tr class="separator:ga228cadea38583703a274d2af48b19edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac6b34d62a65af0d9b6d0167b44bb516"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaac6b34d62a65af0d9b6d0167b44bb516"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaac6b34d62a65af0d9b6d0167b44bb516">VEC2_YAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(0),T(1))</td></tr>
+<tr class="memdesc:gaac6b34d62a65af0d9b6d0167b44bb516"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector with just it's y value set to T(1).  <a href="../../db/da0/group__lin.html#gaac6b34d62a65af0d9b6d0167b44bb516">More...</a><br /></td></tr>
+<tr class="separator:gaac6b34d62a65af0d9b6d0167b44bb516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90734d02b933619a24dc3280d9bf057e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga90734d02b933619a24dc3280d9bf057e"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga90734d02b933619a24dc3280d9bf057e">VEC3_XAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1),T(0),T(0))</td></tr>
+<tr class="memdesc:ga90734d02b933619a24dc3280d9bf057e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector with just it's x value set to T(1).  <a href="../../db/da0/group__lin.html#ga90734d02b933619a24dc3280d9bf057e">More...</a><br /></td></tr>
+<tr class="separator:ga90734d02b933619a24dc3280d9bf057e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cf0e3cac3b989c4f190e1dcf72b6116"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga7cf0e3cac3b989c4f190e1dcf72b6116"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga7cf0e3cac3b989c4f190e1dcf72b6116">VEC3_YAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(1),T(0))</td></tr>
+<tr class="memdesc:ga7cf0e3cac3b989c4f190e1dcf72b6116"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector with just it's y value set to T(1).  <a href="../../db/da0/group__lin.html#ga7cf0e3cac3b989c4f190e1dcf72b6116">More...</a><br /></td></tr>
+<tr class="separator:ga7cf0e3cac3b989c4f190e1dcf72b6116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad81583ca8b46731b7fbba3e972c3d008"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gad81583ca8b46731b7fbba3e972c3d008"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gad81583ca8b46731b7fbba3e972c3d008">VEC3_ZAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(0),T(1))</td></tr>
+<tr class="memdesc:gad81583ca8b46731b7fbba3e972c3d008"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector with just it's z value set to T(1).  <a href="../../db/da0/group__lin.html#gad81583ca8b46731b7fbba3e972c3d008">More...</a><br /></td></tr>
+<tr class="separator:gad81583ca8b46731b7fbba3e972c3d008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5415129702ed8dee2a4854b6a42ed7ff"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a58651747942bcda217745b9a9dcd4052"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC2_ONE</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(1))</td></tr>
-<tr class="separator:a58651747942bcda217745b9a9dcd4052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19bc4dcbbe71431dd65518fcc83f3fff"><td class="memTemplParams" colspan="2"><a id="a19bc4dcbbe71431dd65518fcc83f3fff"></a>
+<tr class="memitem:ga5415129702ed8dee2a4854b6a42ed7ff"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga5415129702ed8dee2a4854b6a42ed7ff">VEC3_UP</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(1),T(0))</td></tr>
+<tr class="memdesc:ga5415129702ed8dee2a4854b6a42ed7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write VEC3_YAXIS. <br /></td></tr>
+<tr class="separator:ga5415129702ed8dee2a4854b6a42ed7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5149c2cb83d37befa003d4ed0635a6c7"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a19bc4dcbbe71431dd65518fcc83f3fff"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC2_XAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(1),T(0))</td></tr>
-<tr class="separator:a19bc4dcbbe71431dd65518fcc83f3fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75ebc43d6323f74b6b9204005a2ee3c0"><td class="memTemplParams" colspan="2"><a id="a75ebc43d6323f74b6b9204005a2ee3c0"></a>
+<tr class="memitem:ga5149c2cb83d37befa003d4ed0635a6c7"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga5149c2cb83d37befa003d4ed0635a6c7">VEC3_RIGHT</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1),T(0),T(0))</td></tr>
+<tr class="memdesc:ga5149c2cb83d37befa003d4ed0635a6c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write VEC3_XAXIS. <br /></td></tr>
+<tr class="separator:ga5149c2cb83d37befa003d4ed0635a6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed0a0ef7f4d750e49da108cf03c688b6"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a75ebc43d6323f74b6b9204005a2ee3c0"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC2_YAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;(T(0),T(1))</td></tr>
-<tr class="separator:a75ebc43d6323f74b6b9204005a2ee3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2238f91829f0a1dc362fb593ef30f22"><td class="memTemplParams" colspan="2"><a id="ad2238f91829f0a1dc362fb593ef30f22"></a>
+<tr class="memitem:gaed0a0ef7f4d750e49da108cf03c688b6"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaed0a0ef7f4d750e49da108cf03c688b6">VEC3_FORWARD</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(0),T(1))</td></tr>
+<tr class="memdesc:gaed0a0ef7f4d750e49da108cf03c688b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another way to write VEC3_ZAXIS. <br /></td></tr>
+<tr class="separator:gaed0a0ef7f4d750e49da108cf03c688b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab38bce3255d7a05c3395aad8e40206ba"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gab38bce3255d7a05c3395aad8e40206ba"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gab38bce3255d7a05c3395aad8e40206ba">VEC3_ONE</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1),T(1),T(1))</td></tr>
+<tr class="memdesc:gab38bce3255d7a05c3395aad8e40206ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector with x, y and z set to T(1).  <a href="../../db/da0/group__lin.html#gab38bce3255d7a05c3395aad8e40206ba">More...</a><br /></td></tr>
+<tr class="separator:gab38bce3255d7a05c3395aad8e40206ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad214bb0c241f7d55893723348d91d2a9"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad2238f91829f0a1dc362fb593ef30f22"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC2_ZERO</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;2,T&gt;()</td></tr>
-<tr class="separator:ad2238f91829f0a1dc362fb593ef30f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d2f76a7da36af7a138a6b615763a5e"><td class="memTemplParams" colspan="2"><a id="a25d2f76a7da36af7a138a6b615763a5e"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a25d2f76a7da36af7a138a6b615763a5e"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_ONE</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1))</td></tr>
-<tr class="separator:a25d2f76a7da36af7a138a6b615763a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab564ca383aa93a9841517333ce337ace"><td class="memTemplParams" colspan="2"><a id="ab564ca383aa93a9841517333ce337ace"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab564ca383aa93a9841517333ce337ace"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_XAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1),T(0),T(0))</td></tr>
-<tr class="separator:ab564ca383aa93a9841517333ce337ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ff3b0cb70d716f6a3da9cb2d11804f"><td class="memTemplParams" colspan="2"><a id="a00ff3b0cb70d716f6a3da9cb2d11804f"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a00ff3b0cb70d716f6a3da9cb2d11804f"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_YAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(1),T(0))</td></tr>
-<tr class="separator:a00ff3b0cb70d716f6a3da9cb2d11804f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2273e1fafccdce18e95ca269e0cf1a27"><td class="memTemplParams" colspan="2"><a id="a2273e1fafccdce18e95ca269e0cf1a27"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2273e1fafccdce18e95ca269e0cf1a27"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_ZAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(0),T(1))</td></tr>
-<tr class="separator:a2273e1fafccdce18e95ca269e0cf1a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5415129702ed8dee2a4854b6a42ed7ff"><td class="memTemplParams" colspan="2"><a id="a5415129702ed8dee2a4854b6a42ed7ff"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5415129702ed8dee2a4854b6a42ed7ff"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_UP</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(1),T(0))</td></tr>
-<tr class="separator:a5415129702ed8dee2a4854b6a42ed7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5149c2cb83d37befa003d4ed0635a6c7"><td class="memTemplParams" colspan="2"><a id="a5149c2cb83d37befa003d4ed0635a6c7"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5149c2cb83d37befa003d4ed0635a6c7"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_RIGHT</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(1),T(0),T(0))</td></tr>
-<tr class="separator:a5149c2cb83d37befa003d4ed0635a6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed0a0ef7f4d750e49da108cf03c688b6"><td class="memTemplParams" colspan="2"><a id="aed0a0ef7f4d750e49da108cf03c688b6"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aed0a0ef7f4d750e49da108cf03c688b6"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_FORWARD</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;(T(0),T(0),T(1))</td></tr>
-<tr class="separator:aed0a0ef7f4d750e49da108cf03c688b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad214bb0c241f7d55893723348d91d2a9"><td class="memTemplParams" colspan="2"><a id="ad214bb0c241f7d55893723348d91d2a9"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad214bb0c241f7d55893723348d91d2a9"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC3_ZERO</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;()</td></tr>
-<tr class="separator:ad214bb0c241f7d55893723348d91d2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b0123d81862b52ec72d9473785ad696"><td class="memTemplParams" colspan="2"><a id="a7b0123d81862b52ec72d9473785ad696"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7b0123d81862b52ec72d9473785ad696"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC4_ONE</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(1))</td></tr>
-<tr class="separator:a7b0123d81862b52ec72d9473785ad696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ab8430e3a24447e9a98a57d272891d7"><td class="memTemplParams" colspan="2"><a id="a3ab8430e3a24447e9a98a57d272891d7"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ab8430e3a24447e9a98a57d272891d7"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC4_XAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(1),T(0),T(0),T(0))</td></tr>
-<tr class="separator:a3ab8430e3a24447e9a98a57d272891d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de24228798ebcc605d6dbe6b09fd268"><td class="memTemplParams" colspan="2"><a id="a4de24228798ebcc605d6dbe6b09fd268"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4de24228798ebcc605d6dbe6b09fd268"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC4_YAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(1),T(0),T(0))</td></tr>
-<tr class="separator:a4de24228798ebcc605d6dbe6b09fd268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09d44dccd48b50c39034ae25207ffbd2"><td class="memTemplParams" colspan="2"><a id="a09d44dccd48b50c39034ae25207ffbd2"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a09d44dccd48b50c39034ae25207ffbd2"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC4_ZAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(0),T(1),T(0))</td></tr>
-<tr class="separator:a09d44dccd48b50c39034ae25207ffbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa939af2ab0286d31215c87f5837b1ab0"><td class="memTemplParams" colspan="2"><a id="aa939af2ab0286d31215c87f5837b1ab0"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa939af2ab0286d31215c87f5837b1ab0"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>VEC4_WAXIS</b> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(0),T(0),T(1))</td></tr>
-<tr class="separator:aa939af2ab0286d31215c87f5837b1ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad214bb0c241f7d55893723348d91d2a9"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 3, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gad214bb0c241f7d55893723348d91d2a9">VEC3_ZERO</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;3,T&gt;()</td></tr>
+<tr class="memdesc:gad214bb0c241f7d55893723348d91d2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D vector with both elements set to T(0). <br /></td></tr>
+<tr class="separator:gad214bb0c241f7d55893723348d91d2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b0123d81862b52ec72d9473785ad696"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga7b0123d81862b52ec72d9473785ad696"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga7b0123d81862b52ec72d9473785ad696">VEC4_ONE</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(1))</td></tr>
+<tr class="memdesc:ga7b0123d81862b52ec72d9473785ad696"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with x, y, z and w set to T(1).  <a href="../../db/da0/group__lin.html#ga7b0123d81862b52ec72d9473785ad696">More...</a><br /></td></tr>
+<tr class="separator:ga7b0123d81862b52ec72d9473785ad696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac371a7d71dd1780b8acc4f5c5ec23172"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gac371a7d71dd1780b8acc4f5c5ec23172"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gac371a7d71dd1780b8acc4f5c5ec23172">VEC4_ZERO</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;()</td></tr>
+<tr class="memdesc:gac371a7d71dd1780b8acc4f5c5ec23172"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with x, y, z and w set to T(0).  <a href="../../db/da0/group__lin.html#gac371a7d71dd1780b8acc4f5c5ec23172">More...</a><br /></td></tr>
+<tr class="separator:gac371a7d71dd1780b8acc4f5c5ec23172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ab8430e3a24447e9a98a57d272891d7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga3ab8430e3a24447e9a98a57d272891d7"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga3ab8430e3a24447e9a98a57d272891d7">VEC4_XAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(1),T(0),T(0),T(0))</td></tr>
+<tr class="memdesc:ga3ab8430e3a24447e9a98a57d272891d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with just it's x value set to T(1).  <a href="../../db/da0/group__lin.html#ga3ab8430e3a24447e9a98a57d272891d7">More...</a><br /></td></tr>
+<tr class="separator:ga3ab8430e3a24447e9a98a57d272891d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4de24228798ebcc605d6dbe6b09fd268"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4de24228798ebcc605d6dbe6b09fd268"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga4de24228798ebcc605d6dbe6b09fd268">VEC4_YAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(1),T(0),T(0))</td></tr>
+<tr class="memdesc:ga4de24228798ebcc605d6dbe6b09fd268"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with just it's y value set to T(1).  <a href="../../db/da0/group__lin.html#ga4de24228798ebcc605d6dbe6b09fd268">More...</a><br /></td></tr>
+<tr class="separator:ga4de24228798ebcc605d6dbe6b09fd268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09d44dccd48b50c39034ae25207ffbd2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga09d44dccd48b50c39034ae25207ffbd2"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#ga09d44dccd48b50c39034ae25207ffbd2">VEC4_ZAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(0),T(1),T(0))</td></tr>
+<tr class="memdesc:ga09d44dccd48b50c39034ae25207ffbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with just it's z value set to T(1).  <a href="../../db/da0/group__lin.html#ga09d44dccd48b50c39034ae25207ffbd2">More...</a><br /></td></tr>
+<tr class="separator:ga09d44dccd48b50c39034ae25207ffbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa939af2ab0286d31215c87f5837b1ab0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaa939af2ab0286d31215c87f5837b1ab0"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 4, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da0/group__lin.html#gaa939af2ab0286d31215c87f5837b1ab0">VEC4_WAXIS</a> =<a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;4,T&gt;(T(0),T(0),T(0),T(1))</td></tr>
+<tr class="memdesc:gaa939af2ab0286d31215c87f5837b1ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 4D vector with just it's w value set to T(1).  <a href="../../db/da0/group__lin.html#gaa939af2ab0286d31215c87f5837b1ab0">More...</a><br /></td></tr>
+<tr class="separator:gaa939af2ab0286d31215c87f5837b1ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb37b3ae6ed14e64c3016bc03bdffc9f"><td class="memTemplParams" colspan="2"><a id="acb37b3ae6ed14e64c3016bc03bdffc9f"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acb37b3ae6ed14e64c3016bc03bdffc9f"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>NULL_BLK</b> =<a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt;T&gt;()</td></tr>
@@ -1177,20 +1227,20 @@ static const <a class="el" href="../../db/d2e/namespacedggt.html#a47636e0a292ea2
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The main namespace for the dggt library. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a1cb9475fb797a94ee38186ae6300e320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb9475fb797a94ee38186ae6300e320">&#9670;&nbsp;</a></span>bool32</h2>
+<a id="a1b476a6645bf671ff29f633871769eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b476a6645bf671ff29f633871769eca">&#9670;&nbsp;</a></span>msize</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint32_t <a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">dggt::bool32</a></td>
+          <td class="memname">typedef size_t <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A 32-bit integer type for use in boolean expressions. </p>
-<p>This 32-bit integer type can be used as a boolean value or as 64 boolean values. Used in place of bool for memory alignment considerations. </p>
+<p>Represents memory size. </p>
+<p>This is an integer type that always represents a memory size and is the same type returned by sizeof and is platform dependent. </p>
 
 </div>
 </div>
@@ -1211,884 +1261,33 @@ static const <a class="el" href="../../db/d2e/namespacedggt.html#a47636e0a292ea2
 
 </div>
 </div>
-<a id="a1b476a6645bf671ff29f633871769eca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b476a6645bf671ff29f633871769eca">&#9670;&nbsp;</a></span>msize</h2>
+<a id="a1cb9475fb797a94ee38186ae6300e320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb9475fb797a94ee38186ae6300e320">&#9670;&nbsp;</a></span>bool32</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef size_t <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></td>
+          <td class="memname">typedef uint32_t <a class="el" href="../../db/d2e/namespacedggt.html#a1cb9475fb797a94ee38186ae6300e320">dggt::bool32</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents memory size. </p>
-<p>This is an integer type that always represents a memory size and is the same type returned by sizeof and is platform dependent. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a77c9e76e20b7812f7d65d70169c910ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77c9e76e20b7812f7d65d70169c910ec">&#9670;&nbsp;</a></span>dot() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 D, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt;D,T&gt; dggt::dot </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The dot product. </p>
-<p>Finds the dot product of two vectors. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The vector on the left hand side of the dot product. </td></tr>
-    <tr><td class="paramname">rhs</td><td>The vector on the right hand side of the dot product. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The dot product of the given vectors. </dd></dl>
-
-</div>
-</div>
-<a id="aadb27c686677c9fcb62fd125afe912f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadb27c686677c9fcb62fd125afe912f4">&#9670;&nbsp;</a></span>dot() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 D, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::dot </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The dot product. </p>
-<p>Finds the dot product of two vectors. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The vector on the left hand side of the dot product. </td></tr>
-    <tr><td class="paramname">rhs</td><td>The vector on the right hand side of the dot product. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The dot product of the given vectors. </dd></dl>
-
-</div>
-</div>
-<a id="a57d2f15a0a24ef937a77a29d179d9cb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57d2f15a0a24ef937a77a29d179d9cb4">&#9670;&nbsp;</a></span>is_pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> dggt::is_pow2 </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Determines if a number is a power of two. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>The value to check. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns nonzero if val is a power of two and zero otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a156e10a12f8828635da39302419c72a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a156e10a12f8828635da39302419c72a2">&#9670;&nbsp;</a></span>is_sum_pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> dggt::is_sum_pow2 </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Determines if a value is a sum of consecutive powers of two. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>The value to check. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A nonzero value if val is the result of sum_pow2(k) for some k, otherwise returns zero. </dd></dl>
-
-</div>
-</div>
-<a id="a855ca6b31776b11b1a572744191cf53d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a855ca6b31776b11b1a572744191cf53d">&#9670;&nbsp;</a></span>max()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::max </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>val0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>val1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Finds the maximum of two values. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Any type that overloads the greater-than operator. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val0</td><td>A value to compare. </td></tr>
-    <tr><td class="paramname">val1</td><td>A value to compare. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>If val0 is strictly greater-than val1 then val0 is returned, otherwise if val0 is less-than or equal to val1 then val1 is returned. </dd></dl>
-
-</div>
-</div>
-<a id="abdd7ebe7d15af49dd6ebeef2a74290df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdd7ebe7d15af49dd6ebeef2a74290df">&#9670;&nbsp;</a></span>min()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::min </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>val0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>val1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Finds the minimum of two values. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Any type that overloads the less-than operator. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val0</td><td>A value to compare. </td></tr>
-    <tr><td class="paramname">val1</td><td>A value to compare. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>If val0 is strictly less-than val1 then val0 is returned, otherwise if val0 is greater-than or equal to val1 then val1 is returned. </dd></dl>
-
-</div>
-</div>
-<a id="a4e5020a3deebe7a74134715665169f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e5020a3deebe7a74134715665169f6f">&#9670;&nbsp;</a></span>next_ge_sum_pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::next_ge_sum_pow2 </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Finds the next summation of consecutive powers of two which is greater or equal to a given value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afa34fb32adf83b39450c4a6b134a996e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa34fb32adf83b39450c4a6b134a996e">&#9670;&nbsp;</a></span>next_gt_pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::next_gt_pow2 </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculates the next power of two larger than a given value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>The value used to find the next power of two. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The next power of two greater than val. If val is a power of two next_gt_pow2 still returns the next greater power of two. </dd></dl>
-
-</div>
-</div>
-<a id="a274fb765ce2747f6b1a118f013723d26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a274fb765ce2747f6b1a118f013723d26">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Matrix scaling operator. </p>
-<p>Scales a matrix by a scalar. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the scalar and the matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>A const reference to a scalar of type T representing the scaling factor. </td></tr>
-    <tr><td class="paramname">matrix</td><td>A const reference to the matrix to scale. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a5252e3b09051185338b46cabeb52cec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5252e3b09051185338b46cabeb52cec0">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 C, uint32 R, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Matrix scaling operator. </p>
-<p>Scales a matrix by a scalar. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>A u32 representing the number of columns. </td></tr>
-    <tr><td class="paramname">R</td><td>A u32 representing the number of row. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the scalar and the matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>A const reference to a scalar of type T representing the scaling factor. </td></tr>
-    <tr><td class="paramname">matrix</td><td>A const reference to the matrix to scale. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
-
-</div>
-</div>
-<a id="a6cabfae196f93d341a94a19e65e95252"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cabfae196f93d341a94a19e65e95252">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Matrix scaling operator. </p>
-<p>Scales a matrix by a scalar. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the scalar and the matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>A const reference to a scalar of type T representing the scaling factor. </td></tr>
-    <tr><td class="paramname">matrix</td><td>A const reference to the matrix to scale. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled matrix. </dd></dl>
-
-</div>
-</div>
-<a id="adb6ee8e1e8941079a862b891d334630e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb6ee8e1e8941079a862b891d334630e">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 D, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; D, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>left-scaling operator. </p>
-<p>Scales a vector by a scalar by left-multiplying the scalar by every element. (ie. The scalar appear on the left hand side of the multiplication.). </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">D</td><td>The dimension of the vector. </td></tr>
-    <tr><td class="paramname">T</td><td>The element type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scalar</td><td>The scalar to scale the vector by. </td></tr>
-    <tr><td class="paramname">vector</td><td>The vector to scale. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled vector. </dd></dl>
-
-</div>
-</div>
-<a id="a73dd0e1a1a114b8f18f97f44a1a9e024"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73dd0e1a1a114b8f18f97f44a1a9e024">&#9670;&nbsp;</a></span>operator*() <span class="overload">[5/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; 2, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; 2, 2, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Vector/matrix multiplication operator. </p>
-<p>Transforms a vector by a matrix. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the vector and the number of columns of the transformation matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the vector's and matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
-    <tr><td class="paramname">matrix</td><td>The transformation matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
-
-</div>
-</div>
-<a id="a1c8a048bfe1c5df6073b4165302ce197"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8a048bfe1c5df6073b4165302ce197">&#9670;&nbsp;</a></span>operator*() <span class="overload">[6/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 C, uint32 R, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; R, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; C, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; C, R, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Vector/matrix multiplication operator. </p>
-<p>Transforms a vector by a matrix. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">C</td><td>A u32 representing the dimension of the vector and the number of columns of the transformation matrix. </td></tr>
-    <tr><td class="paramname">R</td><td>A u32 representing the dimension of the resulting vector and the number of rows of the transformation matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the vector's and matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
-    <tr><td class="paramname">matrix</td><td>The transformation matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
-
-</div>
-</div>
-<a id="a23b6e739d12095b3c3d10a844e294d80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23b6e739d12095b3c3d10a844e294d80">&#9670;&nbsp;</a></span>operator*() <span class="overload">[7/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; dggt::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/dab/structdggt_1_1vec.html">vec</a>&lt; N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt; N, N, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Vector/matrix multiplication operator. </p>
-<p>Transforms a vector by a matrix. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>A u32 representing the dimension of the vector and the number of columns of the transformation matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the vector's and matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vector</td><td>The vector to transform. </td></tr>
-    <tr><td class="paramname">matrix</td><td>The transformation matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The transformed vector. </dd></dl>
-
-</div>
-</div>
-<a id="a0d27b03cee5b19618dc779223983e453"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d27b03cee5b19618dc779223983e453">&#9670;&nbsp;</a></span>pow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::pow </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Raises a value to a power. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Any type that can initialize itself from 1 and overloads multiplication. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>The value to raise to a power. </td></tr>
-    <tr><td class="paramname">p</td><td>The unsigned integer power to raise the value by. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>val raised to the power, p. </dd></dl>
-
-</div>
-</div>
-<a id="a47f30d8cf085e6903a29f21ca0613ed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f30d8cf085e6903a29f21ca0613ed2">&#9670;&nbsp;</a></span>pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::pow2 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">uint32</a>&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculates powers of two. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>The power to raise two. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Two raised to the p power. </dd></dl>
-
-</div>
-</div>
-<a id="aa18e6371a2aa4a3dc0c9eee94d9111dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa18e6371a2aa4a3dc0c9eee94d9111dc">&#9670;&nbsp;</a></span>sq()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::sq </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Squares a number. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Any type that overloads multiplication. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>The value to square. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The square of the passed value. </dd></dl>
-
-</div>
-</div>
-<a id="a4426904e521ec6f53bcfd14f971c1ca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4426904e521ec6f53bcfd14f971c1ca3">&#9670;&nbsp;</a></span>sum_pow2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T dggt::sum_pow2 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a>&#160;</td>
-          <td class="paramname"><em>k</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sums the first k powers of two. </p>
-<p>Given k, sum_pow2 will calculate 1+2+4+8+16+...+2^k </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>An integer type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">k</td><td>The highest power of two in the sum. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The summation of the first k powers of two. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="adfcd0b57bbe871b656ab7eaf49b19cf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfcd0b57bbe871b656ab7eaf49b19cf5">&#9670;&nbsp;</a></span>MAT_IDENTITY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt; dggt::MAT_IDENTITY =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Another way to write a square matrix's identity matrix. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>The dimension of the identity matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the identity matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8ce4d58567562c14448cd7c39058fe38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ce4d58567562c14448cd7c39058fe38">&#9670;&nbsp;</a></span>MATN_IDENTITY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;uint32 N, typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt; dggt::MATN_IDENTITY =<a class="el" href="../../d8/de1/structdggt_1_1mat.html">mat</a>&lt;N,N,T&gt;(T(1))</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Square matrix identity. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">N</td><td>The dimension of the identity matrix. </td></tr>
-    <tr><td class="paramname">T</td><td>The type of the identity matrix's elements. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>A 32-bit integer type for use in boolean expressions. </p>
+<p>This 32-bit integer type can be used as a boolean value or as 64 boolean values. Used in place of bool for memory alignment considerations. </p>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../db/d2e/namespacedggt.html">dggt</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

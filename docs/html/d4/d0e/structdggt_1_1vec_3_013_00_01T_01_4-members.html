@@ -9,9 +9,18 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,16 +60,23 @@
 var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('../../',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +91,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../db/d2e/namespacedggt.html">dggt</a></li><li class="navelem"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">vec&lt; 3, T &gt;</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">dggt::vec&lt; 3, T &gt; Member List</div>  </div>
@@ -73,47 +99,50 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>cross</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>data</b>() (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>data</b>() const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>DIM</b> (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>dot</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>hadamard</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>len</b>() const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>len_sq</b>() const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>lerp</b>(const T &amp;t, const vec &amp;b) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>normal</b>() const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>normalize</b>() (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator!=</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator*</b>(const T &amp;scalar) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator*=</b>(const T &amp;scalar) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator+</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator+=</b>(const vec &amp;rhs) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator-</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator-</b>() const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator-=</b>(const vec &amp;rhs) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator/</b>(const T &amp;scalar) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator/=</b>(const T &amp;scalar) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator=</b>(const vec &amp;rhs) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator==</b>(const vec &amp;rhs) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator[]</b>(uint32 index) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator[]</b>(uint32 index) const (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>vec</b>(const T elements[3]) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>vec</b>(const T &amp;val) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>vec</b>() (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>vec</b>(const T &amp;x, const T &amp;y, const T &amp;z) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>vec</b>(const vec &amp;other) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>vec</b>(const vec&lt; D, T &gt; &amp;other) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#ac101ef930d47b38f9e22bf6f67c509cf">cross</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aaca124e1f821a16fa1d7d79b06d3dd81">data</a>()</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#afb05facab384b4056af47cd9fbf40d87">data</a>() const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a0bcb5c1a272cc7766324fed65542c3c4">DIM</a></td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a18f189366432ec317428865a3f419168">dot</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aea1ea28b79b23cb34bc2c0dc51280e7d">hadamard</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aa6a09f4fe05a8ad086d7b1ea768d08cb">len</a>() const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a3c842e3dc610aec7affeb0bacfb3542d">len_sq</a>() const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a2b49eff4243daaf0240759db39c58af3">lerp</a>(const T &amp;t, const vec &amp;b) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aecfa08501453d7f7054d73d3cd67d066">normal</a>() const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a6c91c9d427456d6c3ab80561d075a168">normalize</a>()</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a9514ff97083a700089c3b8002b2c3a89">operator!=</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a61585aa8e71ef4850c04a6052b2de3ad">operator*</a>(const T &amp;scalar) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a59ef48957e2baf0bf398a1a3ab478702">operator*=</a>(const T &amp;scalar)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a8bc6febe7e4993fb1e84beebdf4bec8f">operator+</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a0a427f9a0edd3714aae0aa52aaac40cb">operator+=</a>(const vec &amp;rhs)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#afc67f29ddf6e59900a8543e6b88ea97a">operator-</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a1b0158ba22145d3e2472495615ac0139">operator-</a>() const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a8c74bb32e48c564a9832671e8450c4cd">operator-=</a>(const vec &amp;rhs)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a40aeb8f594f60a95555e397304448645">operator/</a>(const T &amp;scalar) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a9631b57b33c9dcbbdc5e86ac9d66c2a5">operator/=</a>(const T &amp;scalar)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a07d2ee3a4c61e4789eb8dbf156bd5191">operator=</a>(const vec &amp;rhs)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a3b76fd40837f47a37c484a8a5669a3ff">operator==</a>(const vec &amp;rhs) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a5d8e40a1cdbedfa876c8eedddd2b4e36">operator[]</a>(uint32 index)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a429da897cc906876db14abb482b07d20">operator[]</a>(uint32 index) const</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a4ec0d0dbf66ffbc7ccc143fae87aec3f">vec</a>()</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aa91689dbf7b0cf40f38e25781174a508">vec</a>(const T elements[3])</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a65bb412e8971b11fba65e1f98ff6f82e">vec</a>(const T &amp;val)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a23ca9228a5d62f0ba3d91d1ebf2a588c">vec</a>(const T &amp;x, const T &amp;y, const T &amp;z)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#aea134391a39c2a550884ddb4e80e1789">vec</a>(const vec &amp;other)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#affebdefd1d3a1b1252e9cc8bc5167369">vec</a>(const vec&lt; D, T &gt; &amp;other)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>vec</b>(const vec&lt; 3, T &gt; &amp;other) (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>x</b> (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>y</b> (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>z</b> (defined in <a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a>)</td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a4944c1908fbe55781909d77f068a7226">x</a></td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a589e9226fcb2e70749b44c87f1753487">y</a></td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#a6a17b1224ed36d503428eca6aeb65054">z</a></td><td class="entry"><a class="el" href="../../df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html">dggt::vec&lt; 3, T &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

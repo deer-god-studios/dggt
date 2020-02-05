@@ -7,6 +7,16 @@
 namespace dggt
 {
 	/*!
+	 * @addtogroup math
+	 * @{
+	 * */
+
+	/*!
+	 * @addtogroup lin
+	 * @{
+	 * */
+
+	/*!
 	 * @brief A vector struct.
 	 *
 	 * Represents a vector of dimension D and having elements of type T.
@@ -112,7 +122,7 @@ namespace dggt
 		/*!
 		 * @brief 'Contraction' operator.
 		 *
-		 * The 'inverse' of the scaling operator.  The vector this operator returns is still a scaled by the parameter but through the division of every element
+		 * The 'inverse' of the scaling operator.  The vector this operator returns is still scaled by the parameter but through the division of every element
 		 * in the vector by scalar.  (ie. It's contracted.)
 		 * @param scalar A scalar of type T.
 		 * @return The contracted vector.
@@ -204,7 +214,7 @@ namespace dggt
 		 * @brief Dot product operator.
 		 *
 		 * Returns a scalar value which is equal to the dot product of this vector and the parameter.  (eg. Given v0=[1,2] and v1=[2,2] then
-		 * v0.dot(v1)=(1*2)+(2*2)=2+4=6.
+		 * v0.dot(v1)=(1*2)+(2*2)=2+4=6.).
 		 * @param A vector which will be the right hand side of the dot product.
 		 * @return A scalar quantity representing the dot product of the two vectors.
 		 * */
@@ -250,6 +260,14 @@ namespace dggt
 	 * */
 	template <uint32 D, typename T>
 	T dot(const vec<D,T>& lhs,const vec<D,T>& rhs);
+
+	/*!
+	 * @}
+	 * */
+
+	/*!
+	 * @}
+	 * */
 }
 
 #include "dggt_math_vec.inl"

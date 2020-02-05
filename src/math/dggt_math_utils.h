@@ -9,6 +9,11 @@
 namespace dggt
 {
 	/*!
+	 * @addtogroup math
+	 * @{
+	 * */
+
+	/*!
 	 * @brief Finds the maximum of two values.
 	 * @tparam T Any type that overloads the greater-than operator.
 	 * @param val0 A value to compare.
@@ -266,6 +271,10 @@ namespace dggt
 	{
 		return intvl_centered(val,T(1),ends);
 	}
+
+	/*!
+	 * @}
+	 * */
 }
 
 /*! @cond IncludeGuard */

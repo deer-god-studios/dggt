@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,17 +60,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -71,206 +101,19 @@ $(function() {
 <li>comatrix()
 : <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a028e0d5ea6e194645e30abfb5df851fb">dggt::mat&lt; N, N, T &gt;</a>
 </li>
-</ul>
-
-
-<h3><a id="index_d"></a>- d -</h3><ul>
-<li>data()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#ae33e17d14f851a73be6c84334b69d761">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a0131d4a011e65cb6688ddd7ee46e95db">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#aaeb5cbbc7ff75db83221b89b5ca8adb4">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a3a72a0d47a5401180a21b0a326dbd5d1">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>det()
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a24c5f6c3e1d30d57fee0f1db5721b6c6">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ae93416f040b2035107468aaaf80cba87">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>determinant()
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a301f2930202078be99a74adcae735261">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a957c934e015c66c9774d094339aa603d">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>DIM
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a9725e43ca0295ee9eca0bb4831a20970">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#aec003cdd88b0d8c9f1294c495f3b9e2f">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a82c9999e46c0979710fdefbc33f8b607">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>dot()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#a718c349e63e55c9bfdf81d83521a98c3">dggt::vec&lt; D, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_e"></a>- e -</h3><ul>
-<li>e
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#afa700898236638c8c2834ab370c6dc17">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#acba3a63fdcaec4cce62e678c7e79f302">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a5b726ac6186d7ad05dbc81aaa7745d40">dggt::vec&lt; D, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>get()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#abac0b826222f31eb6bc3eaa967b577ac">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad3c98c5e1c4fa2376a1fc7840cf271fb">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a1b88744c0e640e34c2314caef3b78593">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>get_column()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#ac4d7e43250bf2b474b37438429f78f7a">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aa66667b33cfc7a91e61c9d973620308a">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a6f2991d75ab9a08db7b6a43c1ec652da">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>get_row()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#aa2766ef9df0b6d44c47cee5b53f50d69">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a715f1b5674452033c2e4ddf6c8edc9ec">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0218fd6ccc06279509cfd371f0fb36c2">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_i"></a>- i -</h3><ul>
-<li>inverse()
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ad9cc1a2c408231c8bfdfaeb0dbe40595">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0ae0c0bb10d5fb8dff09802824bad008">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>invert()
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#ac4553adecdb976c26a08fb2bcf7d7760">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ace96aa352f37543d888f5a4c382671a1">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_m"></a>- m -</h3><ul>
-<li>m00
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7d0f1232320004274066a172be030516">dggt::mat&lt; 2, 2, T &gt;</a>
-</li>
-<li>m01
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a741ff50a09498d06f1c486e936326663">dggt::mat&lt; 2, 2, T &gt;</a>
-</li>
-<li>m10
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a5ac760796ca8d255fbac16ef6e207c74">dggt::mat&lt; 2, 2, T &gt;</a>
-</li>
-<li>m11
-: <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a8cad0312c76b2b546a299f216a6337d5">dggt::mat&lt; 2, 2, T &gt;</a>
-</li>
-<li>mat()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a9f5e8d793de7633c559c43c5c3d8585e">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7ea40a858887ae95bd83968ca85d3184">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#afd82ecf4a60bc7524b99b9fe0bdd7113">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>minor()
-: <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#afc1c5630cd8a24934fd7cd27a94f1ce1">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_o"></a>- o -</h3><ul>
-<li>operator!=()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#ab72b1cb08dc14a5857c0d5c1edbb137a">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator*()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a954e6ff8e3710824b635dc1e5874d1c6">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#afdf159159dab900f592c22c918c365aa">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a2494ebe50f958c56d3f1935265ec3244">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a35714d704cfd763157b6a44da95be352">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator*=()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a77b8b609afbf0674394b55682a79e355">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#af4a5734b34e62599ebee4ebee023c012">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a00a95bc131201793379efd632e743828">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a323308c11acfe355764feda68183d81e">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator+()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a4d8a4e4e819e55f559a261f97b319854">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a7c58c3aac545c606e2296006fe88929c">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a3de3beaab01a24f1ce64866f3214d672">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#aa8e87a643d5abcf30ef5b5d2f6b031ed">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator+=()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a07180cef59e2aef66ff18c220312f658">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aae309f6dc75b3aa3f755377385c73530">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a896073ea066cb6723ada3819cd6e3c68">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a63c784fe6548e5760ebe4549fddf8279">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator-()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a3a263033ce4e7559c32f0c8c34679e7d">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#aceab7829b72f13b60cd0743a95182bff">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a0768600865aed5caee2c633bf97d6ba0">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a21146af528080e8e280aa28aba120699">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator-=()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#a6b539f7158836f9ae0e9be162a385a8a">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a869f00cfc4f7ecfc823b9a1a119a4ca0">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a1800adc876f6b4a373b5641ca55d71d1">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a5e73817cb6961e6a38bd94036ad9b441">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator/()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#a248470746d3868709b8857e7df9217c4">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator/=()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#ac6e93a916547141b6931b1ccc790772f">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator=()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#aaca763b02f12acbf114c325510c31b22">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a435b808ee3d750ed5f385d1ebc41f38f">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a1e4a4f0f8224aa122116333429168639">dggt::mat&lt; N, N, T &gt;</a>
-, <a class="el" href="d3/dab/structdggt_1_1vec.html#a0688acb894e5440c2b6a2d61ef395912">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator==()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#ad83a29c5181a169d17015f761a9178dc">dggt::vec&lt; D, T &gt;</a>
-</li>
-<li>operator[]()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#a4d5d1995cd4a02ab109dc662fc7a83c1">dggt::vec&lt; D, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_r"></a>- r -</h3><ul>
-<li>ROWS
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#ae85b5d5435c3f4f3ee648520339c894d">dggt::mat&lt; C, R, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_s"></a>- s -</h3><ul>
-<li>set_column()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#acdaf9b04ff6f5c69309341556ad8f4ae">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a806369911d63527460ef614e84a6c592">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a544a169d6599d51e286a44c4bd2d2ba1">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>set_row()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#abfc359a23d4164228987dca7831559f7">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a287379f59271a52d6d86bc9ae82bfdb9">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a5acc9d37f027722361c146ca3b024779">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_t"></a>- t -</h3><ul>
-<li>transform()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#ad50f9b02dd89267b7d9788e498103e3c">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#abbbd7758ba6b5bd9798db508d22f6e6f">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#a4e01b1713d2bbf8d0cf88aa14d823b76">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-<li>transpose()
-: <a class="el" href="d8/de1/structdggt_1_1mat.html#aa8d820b77d52684b41f05e2eb20a7af4">dggt::mat&lt; C, R, T &gt;</a>
-, <a class="el" href="d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a74a6f0853918b5b917d2c77ebd0da5bd">dggt::mat&lt; 2, 2, T &gt;</a>
-, <a class="el" href="d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html#ab1f539254dbcf6cee40466e2ea51d4f2">dggt::mat&lt; N, N, T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_v"></a>- v -</h3><ul>
-<li>vec()
-: <a class="el" href="d3/dab/structdggt_1_1vec.html#ad34f6c210cc0ca3c32cf281479290064">dggt::vec&lt; D, T &gt;</a>
+<li>cross()
+: <a class="el" href="df/d84/structdggt_1_1vec_3_013_00_01T_01_4.html#ac101ef930d47b38f9e22bf6f67c509cf">dggt::vec&lt; 3, T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

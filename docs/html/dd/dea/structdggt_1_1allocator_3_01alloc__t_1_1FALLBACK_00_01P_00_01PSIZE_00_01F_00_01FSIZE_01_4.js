@@ -1,0 +1,27 @@
+var structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4 =
+[
+    [ "palloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a9fbcb01cd35adab9b2f9280641b1b693", null ],
+    [ "falloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a3a1cf39160cd34117c4f0f66dfc05443", null ],
+    [ "allocator", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a96c35c0d4be4d85d891c190001c6d600", null ],
+    [ "allocator", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a1911b728004fd13b0185d6c4614be640", null ],
+    [ "alloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a5622f36086d58b2b60421a7e0ee7c9be", null ],
+    [ "alloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a63ce99677e319189fa926115d0725659", null ],
+    [ "alloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#af0de70faf4753fb76bd9e1ecee4f0296", null ],
+    [ "alloc", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a1fc05057ad7cc20d1e83a81697e527e1", null ],
+    [ "free", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a4e8c48e84a43921cde236436e0ef7099", null ],
+    [ "free", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#ab81b82016e0088601644d416d2cb224e", null ],
+    [ "free", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a4f65132d6dedeee8066271e383ddad94", null ],
+    [ "free", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a2a6d681b1af2fb5873ae5d55bd2a2f6f", null ],
+    [ "clear", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a41925dd074db885693377ffc4fda22a5", null ],
+    [ "owns", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#ad2149220d4901b21b359540bf090527a", null ],
+    [ "owns", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a1fcd3a8094cbc79ae90d9e0184af95cc", null ],
+    [ "owns", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#afe567de8a39fcc5a1b48cc6624bd735a", null ],
+    [ "owns", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#ad6308fd99e35b7705857e02d79c70a15", null ],
+    [ "available_mem", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a36aec14cd3c76ab5c8779d89f52329ba", null ],
+    [ "used_mem", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#aa99e9f21e0bf6114919dacb93ac1094f", null ],
+    [ "TYPE", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#ac21d9f14d0d1ebf1a61bdc129f90e543", null ],
+    [ "PS", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a20b2394732adaf1961d0665013637673", null ],
+    [ "FS", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#ac22bfa712104baf78275ad5944718055", null ],
+    [ "p", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#a0ceced79bcad560dc35c76cd1a0529c7", null ],
+    [ "f", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html#adb406a57f5cbca8be40311a04d7fce6d", null ]
+];
