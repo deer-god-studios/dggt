@@ -16,5 +16,6 @@ var searchData=
   ['allocator_3c_20alloc_5ft_3a_3astack_2c_20size_20_3e_13',['allocator&lt; alloc_t::STACK, SIZE &gt;',['../d9/dc4/structdggt_1_1allocator_3_01alloc__t_1_1STACK_00_01SIZE_01_4.html',1,'dggt']]],
   ['allocator_3c_20alloc_5ft_3a_3astore_20_3e_14',['allocator&lt; alloc_t::STORE &gt;',['../d4/d0d/structdggt_1_1allocator_3_01alloc__t_1_1STORE_01_4.html',1,'dggt']]],
   ['allocator_3c_20alloc_5ft_3a_3astore_2c_20blocksize_20_3e_15',['allocator&lt; alloc_t::STORE, BLOCKSIZE &gt;',['../dd/d2b/structdggt_1_1allocator_3_01alloc__t_1_1STORE_00_01BLOCKSIZE_01_4.html',1,'dggt']]],
-  ['allocator_3c_20alloc_5ft_3a_3astore_5ftable_2c_20tablesize_20_3e_16',['allocator&lt; alloc_t::STORE_TABLE, TABLESIZE &gt;',['../dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html',1,'dggt']]]
+  ['allocator_3c_20alloc_5ft_3a_3astore_5ftable_2c_20tablesize_20_3e_16',['allocator&lt; alloc_t::STORE_TABLE, TABLESIZE &gt;',['../dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html',1,'dggt']]],
+  ['axis_5fangle_5fmat_17',['axis_angle_mat',['../db/da0/group__lin.html#gaab3ad6d28147077942ca4c4dfba37ac5',1,'dggt']]]
 ];

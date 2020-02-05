@@ -96,9 +96,11 @@ $(document).ready(function(){initNavTree('d8/d1c/dggt__math__mat4_8h_source.html
 <div class="title">dggt_math_mat4.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _DGGT_MATH_MAT4_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;dggt_math_matn.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef _DGGT_MATH_MAT4_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;dggt_math_matn.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -208,62 +210,25 @@ $(document).ready(function(){initNavTree('d8/d1c/dggt__math__mat4_8h_source.html
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    mat&lt;4,4,T&gt; <a class="code" href="../../db/da0/group__lin.html#ga1c8a048bfe1c5df6073b4165302ce197">operator*</a>(<span class="keyword">const</span> T&amp; scalar,<span class="keyword">const</span> mat&lt;4,4,T&gt;&amp; matrix);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    mat&lt;4,4,T&gt; translation_mat(<span class="keyword">const</span> vec&lt;3,T&gt;&amp; translation);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    mat&lt;4,4,T&gt; translation_mat(<span class="keyword">const</span> vec&lt;2,T&gt;&amp; translation);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    mat&lt;4,4,T&gt; scale_mat(<span class="keyword">const</span> vec&lt;3,T&gt;&amp; scale);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    mat&lt;4,4,T&gt; scale_mat(<span class="keyword">const</span> vec&lt;2,T&gt;&amp; scale);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    mat&lt;4,4,T&gt; scale_mat(<span class="keyword">const</span> T&amp; scalar);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    mat&lt;4,4,T&gt; axis_angle_mat(<span class="keyword">const</span> vec&lt;3,T&gt;&amp; axis,<span class="keyword">const</span> T&amp; angle);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    mat&lt;4,4,T&gt; view_mat(<span class="keyword">const</span> vec&lt;3,T&gt;&amp; cameraPos,</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keyword">const</span> vec&lt;3,T&gt;&amp; cameraForward,</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <span class="keyword">const</span> vec&lt;3,T&gt;&amp; cameraUp,</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keyword">const</span> vec&lt;3,T&gt;&amp; cameraRight);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    mat&lt;4,4,T&gt; ortho_mat(<span class="keyword">const</span> T&amp; left,<span class="keyword">const</span> T&amp; right,</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keyword">const</span> T&amp; bottom,<span class="keyword">const</span> T&amp; top,</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keyword">const</span> T&amp; near,<span class="keyword">const</span> T&amp; far);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    mat&lt;4,4,T&gt; ortho_mat(<span class="keyword">const</span> T&amp; width,<span class="keyword">const</span> T&amp; height,</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <span class="keyword">const</span> T&amp; near,<span class="keyword">const</span> T&amp; far);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    mat&lt;4,4,T&gt; proj_mat(<span class="keyword">const</span> T&amp; left,<span class="keyword">const</span> T&amp; right,</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keyword">const</span> T&amp; bottom,<span class="keyword">const</span> T&amp; top,</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <span class="keyword">const</span> T&amp; near,<span class="keyword">const</span> T&amp; far);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    mat&lt;4,4,T&gt; proj_mat(<span class="keyword">const</span> T&amp; width,<span class="keyword">const</span> T&amp; height,</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keyword">const</span> T&amp; near,<span class="keyword">const</span> T&amp; far);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor">#include &quot;dggt_math_mat4.inl&quot;</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">  436</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">MAT4_IDENTITY</a>=<a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>(T(1));</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00442"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga94c01a4554b67dafcd5c23463f9cd0e2">  442</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat4</a>=<a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">  447</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat4&lt;real32&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">mat4f</a>;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="preprocessor">#include &quot;dggt_math_mat4.inl&quot;</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;{</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00473"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">  473</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">MAT4_IDENTITY</a>=<a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>(T(1));</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00479"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga94c01a4554b67dafcd5c23463f9cd0e2">  479</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat4</a>=<a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat&lt;4,4,T&gt;</a>;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
-<div class="line"><a name="l00484"></a><span class="lineno"><a class="line" href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">  484</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html">mat4&lt;real32&gt;</a> <a class="code" href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">mat4f</a>;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="preprocessor">#define _DGGT_MATH_MAT4_H_</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="preprocessor">#define _DGGT_MATH_MAT4_H_</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The main namespace for the dggt library.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
@@ -292,14 +257,14 @@ $(document).ready(function(){initNavTree('d8/d1c/dggt__math__mat4_8h_source.html
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html_a03725c285f299fe2538d52dda7594982"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html#a03725c285f299fe2538d52dda7594982">dggt::mat&lt; 4, 4, T &gt;::m22</a></div><div class="ttdeci">T m22</div><div class="ttdoc">The (2,2)'nd element, column written first.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:81</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html_a10ade4846807626f2ba9e73a2532f82b"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html#a10ade4846807626f2ba9e73a2532f82b">dggt::mat&lt; 4, 4, T &gt;::m31</a></div><div class="ttdeci">T m31</div><div class="ttdoc">The (3,1)'th element, column written first.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:96</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a9f5e8d793de7633c559c43c5c3d8585e"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a9f5e8d793de7633c559c43c5c3d8585e">dggt::mat::mat</a></div><div class="ttdeci">mat()</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:24</div></div>
-<div class="ttc" id="agroup__lin_html_ga20b5a93f1fa14a5e7ba29b1e09decf2a"><div class="ttname"><a href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">dggt::mat4f</a></div><div class="ttdeci">mat4&lt; real32 &gt; mat4f</div><div class="ttdoc">A short way to write mat&lt;4,4,real32&gt;.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:484</div></div>
+<div class="ttc" id="agroup__lin_html_ga20b5a93f1fa14a5e7ba29b1e09decf2a"><div class="ttname"><a href="../../db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a">dggt::mat4f</a></div><div class="ttdeci">mat4&lt; real32 &gt; mat4f</div><div class="ttdoc">A short way to write mat&lt;4,4,real32&gt;.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:447</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_a954e6ff8e3710824b635dc1e5874d1c6"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#a954e6ff8e3710824b635dc1e5874d1c6">dggt::mat::operator*</a></div><div class="ttdeci">mat operator*(const T &amp;scalar) const</div><div class="ttdoc">Scaling operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:55</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_ad50f9b02dd89267b7d9788e498103e3c"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#ad50f9b02dd89267b7d9788e498103e3c">dggt::mat::transform</a></div><div class="ttdeci">vec&lt; R, T &gt; transform(const vec&lt; C, T &gt; &amp;vector) const</div><div class="ttdoc">Transformation operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:135</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_acdaf9b04ff6f5c69309341556ad8f4ae"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#acdaf9b04ff6f5c69309341556ad8f4ae">dggt::mat::set_column</a></div><div class="ttdeci">mat &amp; set_column(uint32 column, const vec&lt; R, T &gt; &amp;val)</div><div class="ttdoc">Sets a column.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:193</div></div>
 <div class="ttc" id="anamespacedggt_html_ad8f2c6bf8a2bcf734ec3546c57d55c04"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#ad8f2c6bf8a2bcf734ec3546c57d55c04">dggt::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">An unsigned 32-bit integer type. Short hand for uint32_t.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:51</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html_a837d614a1ce8e2f995ed8671cdc4326f"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html#a837d614a1ce8e2f995ed8671cdc4326f">dggt::mat&lt; 4, 4, T &gt;::m01</a></div><div class="ttdeci">T m01</div><div class="ttdoc">The (0,1)'th element, column written first.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:36</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html_a222a4ed69944114e9a4584f32921eb3e"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html#a222a4ed69944114e9a4584f32921eb3e">dggt::mat&lt; 4, 4, T &gt;::m33</a></div><div class="ttdeci">T m33</div><div class="ttdoc">The (3,3)'rd element, column written first.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:106</div></div>
-<div class="ttc" id="agroup__lin_html_ga5e19a016f966789ad2690e42411a2434"><div class="ttname"><a href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">dggt::MAT4_IDENTITY</a></div><div class="ttdeci">static const mat&lt; 4, 4, T &gt; MAT4_IDENTITY</div><div class="ttdoc">4-by-2 identity matrix.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:473</div></div>
+<div class="ttc" id="agroup__lin_html_ga5e19a016f966789ad2690e42411a2434"><div class="ttname"><a href="../../db/da0/group__lin.html#ga5e19a016f966789ad2690e42411a2434">dggt::MAT4_IDENTITY</a></div><div class="ttdeci">static const mat&lt; 4, 4, T &gt; MAT4_IDENTITY</div><div class="ttdoc">4-by-2 identity matrix.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:436</div></div>
 <div class="ttc" id="astructdggt_1_1mat_html_aa8d820b77d52684b41f05e2eb20a7af4"><div class="ttname"><a href="../../d8/de1/structdggt_1_1mat.html#aa8d820b77d52684b41f05e2eb20a7af4">dggt::mat::transpose</a></div><div class="ttdeci">mat&lt; R, C, T &gt; transpose() const</div><div class="ttdoc">Transpose operator.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat.inl:147</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_013_00_013_00_01T_01_4_html"><div class="ttname"><a href="../../dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html">dggt::mat&lt; 3, 3, T &gt;</a></div><div class="ttdoc">A 3-by-3 matrix struct.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat3.h:21</div></div>
 <div class="ttc" id="astructdggt_1_1mat_3_014_00_014_00_01T_01_4_html_afb0c8c0eeffb37945e4effc2753c6b73"><div class="ttname"><a href="../../d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html#afb0c8c0eeffb37945e4effc2753c6b73">dggt::mat&lt; 4, 4, T &gt;::m02</a></div><div class="ttdeci">T m02</div><div class="ttdoc">The (0,2)'nd element, column written first.</div><div class="ttdef"><b>Definition:</b> dggt_math_mat4.h:41</div></div>
