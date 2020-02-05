@@ -1,8 +1,8 @@
-#ifndef _DGGT_MATH_MAT4_H_
-
 /*! @cond IncludeGuard */
-#include "dggt_math_matn.h"
+#ifndef _DGGT_MATH_MAT4_H_
 /*! @endcond */
+
+#include "dggt_math_matn.h"
 
 namespace dggt
 {
@@ -413,43 +413,6 @@ namespace dggt
 	 * */
 	template <typename T>
 	mat<4,4,T> operator*(const T& scalar,const mat<4,4,T>& matrix);
-
-
-	template <typename T>
-	mat<4,4,T> translation_mat(const vec<3,T>& translation);
-	template <typename T>
-	mat<4,4,T> translation_mat(const vec<2,T>& translation);
-	template <typename T>
-	mat<4,4,T> scale_mat(const vec<3,T>& scale);
-	template <typename T>
-	mat<4,4,T> scale_mat(const vec<2,T>& scale);
-	template <typename T>
-	mat<4,4,T> scale_mat(const T& scalar);
-	template <typename T>
-	mat<4,4,T> axis_angle_mat(const vec<3,T>& axis,const T& angle);
-
-	template <typename T>
-	mat<4,4,T> view_mat(const vec<3,T>& cameraPos,
-			const vec<3,T>& cameraForward,
-			const vec<3,T>& cameraUp,
-			const vec<3,T>& cameraRight);
-
-	template <typename T>
-	mat<4,4,T> ortho_mat(const T& left,const T& right,
-			const T& bottom,const T& top,
-			const T& near,const T& far);
-
-	template <typename T>
-	mat<4,4,T> ortho_mat(const T& width,const T& height,
-			const T& near,const T& far);
-
-	template <typename T>
-	mat<4,4,T> proj_mat(const T& left,const T& right,
-			const T& bottom,const T& top,
-			const T& near,const T& far);
-	template <typename T>
-	mat<4,4,T> proj_mat(const T& width,const T& height,
-			const T& near,const T& far);
 
 	/*!
 	 * @}
