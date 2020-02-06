@@ -13,6 +13,12 @@ static store_table_alloc<2048>* storeTableAlloc;
 static lin_store_table alloc_;
 static lin_store_table* alloc;
 
+void pause_output()
+{
+	printf("-- press Enter to continue --\n");
+	std::getchar();
+}
+
 void new_line()
 {
 	printf("\n");
@@ -176,12 +182,21 @@ int main(int argc, char* argv[])
 
 	init_test();
 
-	test_alloc<1>();
-	//new_line();
-	//test_linked_list();
-	//test_stack();
-	//test_queue();
 	print_alloc_info();
+	pause_output();
+	test_alloc<1>();
+	print_alloc_info();
+	pause_output();
+	new_line();
+	test_linked_list();
+	print_alloc_info();
+	pause_output();
+	test_stack();
+	print_alloc_info();
+	pause_output();
+	test_queue();
+	print_alloc_info();
+	pause_output();
 
 	cache_shutdown();
 
