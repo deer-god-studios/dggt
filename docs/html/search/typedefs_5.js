@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sbyte_370',['sbyte',['../db/d2e/namespacedggt.html#afaf2c9e3033f1773842e8c8f63f907c0',1,'dggt']]]
+  ['pool_5falloc_408',['pool_alloc',['../da/d08/group__mem.html#ga261657728fcfa7b1212cfbf5e79e26ed',1,'dggt']]]
 ];

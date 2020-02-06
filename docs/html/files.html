@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,6 +34,21 @@
    </div>
    <div id="projectbrief">A c++ game development toolkit</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -36,17 +60,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('files.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +98,7 @@ $(function() {
 <div class="contents">
 <div class="textblock">Here is a list of all documented files with brief descriptions:</div><div class="directory">
 <table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d9/d2b/dggt_8h_source.html"><span class="icondoc"></span></a><b>dggt.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d9/d2b/dggt_8h_source.html"><span class="icondoc"></span></a><a class="el" href="d9/d2b/dggt_8h.html" target="_self">dggt.h</a></td><td class="desc">The public interface of the <a class="el" href="d6/d77/group__dggt.html">DGGT Library</a> </td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="da/d63/dggt__coll_8h_source.html"><span class="icondoc"></span></a><b>dggt_coll.h</b></td><td class="desc"></td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="df/db5/dggt__coll__hash__table_8h_source.html"><span class="icondoc"></span></a><b>dggt_coll_hash_table.h</b></td><td class="desc"></td></tr>
 <tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d6/d4f/dggt__coll__iter_8h_source.html"><span class="icondoc"></span></a><b>dggt_coll_iter.h</b></td><td class="desc"></td></tr>
@@ -76,41 +106,45 @@ $(function() {
 <tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="da/d0e/dggt__coll__queue_8h_source.html"><span class="icondoc"></span></a><b>dggt_coll_queue.h</b></td><td class="desc"></td></tr>
 <tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d02/dggt__coll__stack_8h_source.html"><span class="icondoc"></span></a><b>dggt_coll_stack.h</b></td><td class="desc"></td></tr>
 <tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/d20/dggt__defines_8h_source.html"><span class="icondoc"></span></a><b>dggt_defines.h</b></td><td class="desc"></td></tr>
-<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d41/dggt__math_8h_source.html"><span class="icondoc"></span></a><b>dggt_math.h</b></td><td class="desc"></td></tr>
+<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d41/dggt__math_8h_source.html"><span class="icondoc"></span></a><a class="el" href="d8/d41/dggt__math_8h.html" target="_self">dggt_math.h</a></td><td class="desc">The public interface of the <a class="el" href="de/df1/group__math.html">Math Library</a> </td></tr>
 <tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d5/d80/dggt__math__constants_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_constants.h</b></td><td class="desc"></td></tr>
 <tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/db7/dggt__math__mat_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_mat.h</b></td><td class="desc"></td></tr>
 <tr id="row_11_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d2/d54/dggt__math__mat2_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_mat2.h</b></td><td class="desc"></td></tr>
 <tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/de8/dggt__math__mat3_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_mat3.h</b></td><td class="desc"></td></tr>
 <tr id="row_13_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d1c/dggt__math__mat4_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_mat4.h</b></td><td class="desc"></td></tr>
 <tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d43/dggt__math__matn_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_matn.h</b></td><td class="desc"></td></tr>
-<tr id="row_15_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/d93/dggt__math__utils_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_utils.h</b></td><td class="desc"></td></tr>
-<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/de1/dggt__math__vec_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec.h</b></td><td class="desc"></td></tr>
-<tr id="row_17_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d2/ddd/dggt__math__vec1_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec1.h</b></td><td class="desc"></td></tr>
-<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dd/db3/dggt__math__vec2_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec2.h</b></td><td class="desc"></td></tr>
-<tr id="row_19_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d0/d1b/dggt__math__vec3_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec3.h</b></td><td class="desc"></td></tr>
-<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d2/dc3/dggt__math__vec4_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec4.h</b></td><td class="desc"></td></tr>
-<tr id="row_21_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/d03/dggt__mem_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem.h</b></td><td class="desc"></td></tr>
-<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/dad/dggt__mem__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_23_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d79/dggt__mem__autostack__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_autostack_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="de/db6/dggt__mem__blk_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_blk.h</b></td><td class="desc"></td></tr>
-<tr id="row_25_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/d70/dggt__mem__defines_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_defines.h</b></td><td class="desc"></td></tr>
-<tr id="row_26_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d9/d7e/dggt__mem__fallback__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_fallback_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_27_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d39/dggt__mem__free__list__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_free_list_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_28_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d7a/dggt__mem__linear__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_linear_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_29_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d0b/dggt__mem__mem_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_mem.h</b></td><td class="desc"></td></tr>
-<tr id="row_30_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dd/dcc/dggt__mem__pool__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_pool_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_31_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="df/d63/dggt__mem__stack__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_stack_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_32_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d6/d64/dggt__mem__store__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_store_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_33_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/dc3/dggt__mem__store__table__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_store_table_alloc.h</b></td><td class="desc"></td></tr>
-<tr id="row_34_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="da/da3/dggt__types_8h_source.html"><span class="icondoc"></span></a><b>dggt_types.h</b></td><td class="desc"></td></tr>
+<tr id="row_15_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/dd0/dggt__math__transforms_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_transforms.h</b></td><td class="desc"></td></tr>
+<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/d93/dggt__math__utils_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_utils.h</b></td><td class="desc"></td></tr>
+<tr id="row_17_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d1/de1/dggt__math__vec_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec.h</b></td><td class="desc"></td></tr>
+<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d2/ddd/dggt__math__vec1_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec1.h</b></td><td class="desc"></td></tr>
+<tr id="row_19_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dd/db3/dggt__math__vec2_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec2.h</b></td><td class="desc"></td></tr>
+<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d0/d1b/dggt__math__vec3_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec3.h</b></td><td class="desc"></td></tr>
+<tr id="row_21_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d2/dc3/dggt__math__vec4_8h_source.html"><span class="icondoc"></span></a><b>dggt_math_vec4.h</b></td><td class="desc"></td></tr>
+<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/d03/dggt__mem_8h_source.html"><span class="icondoc"></span></a><a class="el" href="dc/d03/dggt__mem_8h.html" target="_self">dggt_mem.h</a></td><td class="desc">The public interface of the <a class="el" href="da/d08/group__mem.html">Memory Management Library</a> </td></tr>
+<tr id="row_23_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/dad/dggt__mem__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d79/dggt__mem__autostack__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_autostack_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_25_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="de/db6/dggt__mem__blk_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_blk.h</b></td><td class="desc"></td></tr>
+<tr id="row_26_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dc/d70/dggt__mem__defines_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_defines.h</b></td><td class="desc"></td></tr>
+<tr id="row_27_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d9/d7e/dggt__mem__fallback__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_fallback_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_28_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d39/dggt__mem__free__list__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_free_list_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_29_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/d7a/dggt__mem__linear__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_linear_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_30_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="db/d0b/dggt__mem__mem_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_mem.h</b></td><td class="desc"></td></tr>
+<tr id="row_31_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="dd/dcc/dggt__mem__pool__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_pool_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_32_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="df/d63/dggt__mem__stack__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_stack_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_33_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d6/d64/dggt__mem__store__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_store_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_34_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="d8/dc3/dggt__mem__store__table__alloc_8h_source.html"><span class="icondoc"></span></a><b>dggt_mem_store_table_alloc.h</b></td><td class="desc"></td></tr>
+<tr id="row_35_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a href="da/da3/dggt__types_8h_source.html"><span class="icondoc"></span></a><b>dggt_types.h</b></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,3 +1,7 @@
+/*!
+ * @file dggt.h
+ * @brief The public interface of the @ref dggt.
+ * */
 /// @cond IncludeGuard
 #ifndef _DGGT_H_
 /// @endcond
@@ -14,8 +18,9 @@
 // 		* typelist
 // 		* enable_if
 // 		* tuples!
-// TODO: composite allocator!!
 // TODO: collections
+// 		* trees
+// 		* graphs
 // 		* iterators
 // 		* nodes
 // 		* search

@@ -170,55 +170,114 @@ namespace dggt
 		}
 	}
 
+	/*!
+	 * @brief Calculates the square root of a 32-bit floating point value.
+	 * @param val The value to calculate it's square root.
+	 * @return The square root.
+	 * */
 	inline real32 sqrt(real32 val)
 	{
 		return std::sqrt(val);
 	}
 
+	/*!
+	 * @brief Calculates the square root of a 64-bit floating point value.
+	 * @param val The value to calculate it's square root.
+	 * @return The square root.
+	 * */
 	inline real64 sqrt(real64 val)
 	{
 		return std::sqrt(val);
 	}
 
+	/*!
+	 * @brief Calculates the cosine of a 32-bit floating point value.
+	 * @param val The value to calculate it's cosine.
+	 * @return The cosine.
+	 * */
 	inline real32 cosine(real32 val)
 	{
 		return (real32)cos((real64)val);
 	}
+
+	/*!
+	 * @brief Calculates the sine of a 32-bit floating point value.
+	 * @param val The value to calculate it's sine.
+	 * @return The sine.
+	 * */
 	inline real32 sine(real32 val)
 	{
 		return (real32)sin((real64)val);
 	}
+
+	/*!
+	 * @brief Calculates the cosine of a 64-bit floating point value.
+	 * @param val The value to calculate it's cosine.
+	 * @return The cosine.
+	 * */
 	inline real64 cosine(real64 val)
 	{
 		return cos(val);
 	}
+
+	/*!
+	 * @brief Calculates the cosine of a numerical type.
+	 * @param val The value to calculate it's cosine.
+	 * @return The cosine.
+	 * */
 	template <typename T>
 	T cosine(T val)
 	{
 		return T(cosine(real64(val))); 
 	}
 
+	/*!
+	 * @brief Calculates the sine of a 64-bit floating point value.
+	 * @param val The value to calculate it's sine.
+	 * @return The sine.
+	 * */
 	inline real64 sine(real64 val)
 	{
 		return sin(val);
 	}
 
+	/*!
+	 * @brief Calculate the sine of a numerical type.
+	 * @param val The value to calculate it's sine.
+	 * @return The sine.
+	 * */
 	template <typename T>
 	T sine(T val)
 	{
 		return T(sine(real64(val))); 
 	}
 
+	/*!
+	 * @brief An enum representing different types of intervals.
+	 *
+	 * Used as parameters in utility functions.  An open interval is a range of numbers where the endpoints are not included (eg. (5, 7) in mathematical
+	 * notation.), a closed interval is one where the endpoints are included (eg. [2, 5].), a left-closed interval has the left side of the interval closed while
+	 * the right is open (eg. [5, 7).), and finally a right closed interval is closed on the right side (eg. (1, 7].).
+	 * */
 	enum intvl_ends
 	{
-		OPN_INTVL=0,
-		CLSD_INTVL=1,
-		L_CLSD_INTVL=2,
-		R_CLSD_INTVL=3,
-		L_OPN_INTVL=R_CLSD_INTVL,
-		R_OPN_INTVL=L_CLSD_INTVL,
+		OPN_INTVL=0, ///< Open interval (eg. (a, b).).
+		CLSD_INTVL=1, ///< Closed interval (eg. [a, b].).
+		L_CLSD_INTVL=2, ///< Left-closed interval (eg. [a, b).).
+		R_CLSD_INTVL=3, ///< Right-closed interval (eg. (a, b].).
+		L_OPN_INTVL=R_CLSD_INTVL, ///< Left-open interval.  Same as @ref R_CLSD_INTVL.
+		R_OPN_INTVL=L_CLSD_INTVL, ///< Right-open interval.  Same as @ref L_CLSD_INTVL.
 	};
 
+	/*!
+	 * @brief Determines if a value is within an interval with end-point inclusion is determined by an intvl_ends enum value.
+	 * @tparam Any type with a total ordering on it.
+	 * @param val The value to test for interval inclusion.
+	 * @param leftP The left endpoint in the interval.
+	 * @param rightP The right endpoint in the interval.
+	 * @param ends Interval endpoint inclusion.
+	 * @return A b32 which is nonzero if val is included in the interval and zero otherwise.
+	 * */
 	template <typename T=real32>
 	inline bool32 intvl(T val,
 			T leftP,T rightP,intvl_ends ends=CLSD_INTVL)
@@ -246,19 +305,41 @@ namespace dggt
 		return result;
 	}
 
+	/*!
+	 * @brief Determines if a value is within an interval starting at zero and ending in a passed value.
+	 * @tparam Any type with a total ordering on it.
+	 * @param val The value to test for interval inclusion.
+	 * @param n The right endpoint of the interval.
+	 * @param ends Interval endpoint inclusion enum.
+	 * @return A b32 which is nonzero if val is included in the interval and zero otherwise.
+	 * */
 	template <typename T=real32>
 	inline bool32 intvl_0n(T val,T n,intvl_ends ends=CLSD_INTVL)
 	{
 		return intvl(val,T(0),n,ends);
 	}
 
-
+	/*!
+	 * @brief Determines if a value is within the interval from zero to one.
+	 * @tparam T Any type with a total ordering on it.
+	 * @param val The value to test for interval inclusion.
+	 * @param ends Interval endpoint inclusion enum.
+	 * @return A b32 which is nonzero if val is included in the interval and zero otherwise.
+	 * */
 	template <typename T=real32>
 	inline bool32 intvl_01(T val,intvl_ends ends=CLSD_INTVL)
 	{
 		return intvl_0n(val,T(1),ends);
 	}
 
+	/*!
+	 * @brief Determines if a value is within an interval ranging from -n to n.
+	 * @tparam T Any type with a total ordering on it. 
+	 * @param val The value to test for interval inclusion.
+	 * @param n The endpoints of the interval.
+	 * @param ends Interval endpoint inclusion enum.
+	 * @return A b32 which is nonzero if val is included in the interval and zero otherwise.
+	 * */
 	template <typename T=real32>
 	inline bool32 intvl_centered(T val,
 			T n,intvl_ends ends=CLSD_INTVL)
@@ -266,6 +347,13 @@ namespace dggt
 		return intvl(val,-n,n,ends);
 	}
 
+	/*!
+	 * @brief Determines if a value is within an interval ranging from -1 to 1.
+	 * @tparam T Any type with a total ordering on it.
+	 * @param val The value to test for interval inclusion.
+	 * @param ends Interval endpoint inclusion enum.
+	 * @return A b32 which is nonzero if val is included in the interval and zero otherwise.
+	 * */
 	template <typename T=real32>
 	inline bool32 intvl_unit_disk(T val,intvl_ends ends=CLSD_INTVL)
 	{

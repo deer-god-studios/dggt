@@ -1,3 +1,7 @@
+/*!
+ * @file math/dggt_math.h
+ * @brief The public interface of the @ref math
+ * */
 /// @cond IncludeGuard
 #ifndef _DGGT_MATH_H_
 /// @endcond

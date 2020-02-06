@@ -1,3 +1,4 @@
+README: docs/README.md
 ACLOCAL_AMFLAGS = -I m4
 lib_LTLIBRARIES = libdggtmem.la libdggtcoll.la
 nobase_include_HEADERS = src/dggt.h \

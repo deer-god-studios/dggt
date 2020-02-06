@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['vec1_378',['vec1',['../db/da0/group__lin.html#ga2c128dcd91ad2ff85470b5015b46d41e',1,'dggt']]],
-  ['vec1f_379',['vec1f',['../db/da0/group__lin.html#gabec6071e2d3102f39b7511b03bc859d7',1,'dggt']]],
-  ['vec2_380',['vec2',['../db/da0/group__lin.html#ga001a190f0a796a40bd749b093158c3a2',1,'dggt']]],
-  ['vec2f_381',['vec2f',['../db/da0/group__lin.html#ga73cda787e6f0667a8d5ba1a3801d4fa9',1,'dggt']]],
-  ['vec3_382',['vec3',['../db/da0/group__lin.html#ga66d1f2d0a4b0d7cfd09fe561e1444316',1,'dggt']]],
-  ['vec3f_383',['vec3f',['../db/da0/group__lin.html#ga2fb33234d3ca4edf95cc5290f70d034c',1,'dggt']]],
-  ['vec4_384',['vec4',['../db/da0/group__lin.html#gab034ac9df339698e9966093b5930ab0c',1,'dggt']]],
-  ['vec4f_385',['vec4f',['../db/da0/group__lin.html#gabaff4ec2c540403308721db6529ef889',1,'dggt']]]
+  ['sbyte_411',['sbyte',['../db/d2e/namespacedggt.html#afaf2c9e3033f1773842e8c8f63f907c0',1,'dggt']]],
+  ['stack_5falloc_412',['stack_alloc',['../da/d08/group__mem.html#ga25e213671003c944c63b9a1c902c2a34',1,'dggt']]],
+  ['store_5falloc_413',['store_alloc',['../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f',1,'dggt']]]
 ];

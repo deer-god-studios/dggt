@@ -31,7 +31,9 @@ var NAVTREE =
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -42,6 +44,9 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
@@ -49,10 +54,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html#ac91685378888b6e87676c7d0eb436718",
-"db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a",
-"dd/d2b/structdggt_1_1allocator_3_01alloc__t_1_1STORE_00_01BLOCKSIZE_01_4.html#a0a79a64eee5d60240aca2a301d66ce49",
-"functions_func_m.html"
+"d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html#a547060e7727caa677d880124c6c5f001",
+"db/d6a/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4.html#a86cfbe78dee521dc88a6d278679e2379",
+"dc/d77/structdggt_1_1allocator_3_01alloc__t_1_1POOL_00_01SIZE_01_4.html",
+"df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a453efed98df92a3caecd3d7ae2ea4636"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
