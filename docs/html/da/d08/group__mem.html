@@ -122,47 +122,48 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga04a8b41b40539abd96c5d495f6128d6f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f">dggt::store_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STORE, SIZE &gt;</td></tr>
 <tr class="memdesc:ga04a8b41b40539abd96c5d495f6128d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html">allocator&lt;alloc_t::FREE_LIST,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f">More...</a><br /></td></tr>
 <tr class="separator:ga04a8b41b40539abd96c5d495f6128d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplParams" colspan="2"><a id="gabe06c7e8496f184df5208e5e1eeaf148"></a>
-template&lt;u32 SIZE = 0&gt; </td></tr>
-<tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::store_table_alloc</b> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STORE_TABLE, SIZE &gt;</td></tr>
+<tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 2048&gt; </td></tr>
+<tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gabe06c7e8496f184df5208e5e1eeaf148">dggt::store_table_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STORE_TABLE, SIZE &gt;</td></tr>
+<tr class="memdesc:gabe06c7e8496f184df5208e5e1eeaf148"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::STORE_TABLE,SIZE&gt;.  <a href="../../da/d08/group__mem.html#gabe06c7e8496f184df5208e5e1eeaf148">More...</a><br /></td></tr>
 <tr class="separator:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="memTemplParams" colspan="2"><a id="gae469f0d4156bd9fb7ea3bb8995a2c3cd"></a>
-template&lt;u32 P = alloc_t::STORE_TABLE, u32 SIZE = 2048, u32 F = alloc_t::LINEAR, u32 FSIZE = 0&gt; </td></tr>
-<tr class="memitem:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::fallback_alloc</b> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FALLBACK, P, SIZE, F, FSIZE &gt;</td></tr>
+<tr class="memitem:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="memTemplParams" colspan="2">template&lt;u32 P = alloc_t::STORE_TABLE, u32 SIZE = 2048, u32 F = alloc_t::LINEAR, u32 FSIZE = 0&gt; </td></tr>
+<tr class="memitem:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gae469f0d4156bd9fb7ea3bb8995a2c3cd">dggt::fallback_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FALLBACK, P, SIZE, F, FSIZE &gt;</td></tr>
+<tr class="memdesc:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::FALLBACK,P,SIZE,F,FSIZE&gt;.  <a href="../../da/d08/group__mem.html#gae469f0d4156bd9fb7ea3bb8995a2c3cd">More...</a><br /></td></tr>
 <tr class="separator:gae469f0d4156bd9fb7ea3bb8995a2c3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memTemplParams" colspan="2"><a id="ga05df2b28b66c42ff05ff5fe73a153dcd"></a>
-template&lt;u32 TABLESIZE = 2048, u32 LINEARSIZE = KB(10)&gt; </td></tr>
-<tr class="memitem:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::scratch_alloc</b> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FALLBACK, alloc_t::STORE_TABLE, TABLESIZE, alloc_t::LINEAR, LINEARSIZE &gt;</td></tr>
+<tr class="memitem:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memTemplParams" colspan="2">template&lt;u32 TABLESIZE = 2048, u32 LINEARSIZE = KB(10)&gt; </td></tr>
+<tr class="memitem:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd">dggt::scratch_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FALLBACK, alloc_t::STORE_TABLE, TABLESIZE, alloc_t::LINEAR, LINEARSIZE &gt;</td></tr>
+<tr class="memdesc:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE&gt;.  <a href="../../da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd">More...</a><br /></td></tr>
 <tr class="separator:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga6ac3e5d0333251e6af3f2083912e1e9f"><td class="memItemLeft" align="right" valign="top"><a id="ga6ac3e5d0333251e6af3f2083912e1e9f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_init</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize)</td></tr>
+<tr class="memitem:ga6ac3e5d0333251e6af3f2083912e1e9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga6ac3e5d0333251e6af3f2083912e1e9f">dggt::cache_init</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize)</td></tr>
+<tr class="memdesc:ga6ac3e5d0333251e6af3f2083912e1e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the library's memory cache.  <a href="../../da/d08/group__mem.html#ga6ac3e5d0333251e6af3f2083912e1e9f">More...</a><br /></td></tr>
 <tr class="separator:ga6ac3e5d0333251e6af3f2083912e1e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8423a9ef0442f16ef90faba75d929b4f"><td class="memItemLeft" align="right" valign="top"><a id="ga8423a9ef0442f16ef90faba75d929b4f"></a>
-<a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_is_initialized</b> ()</td></tr>
+<tr class="memitem:ga8423a9ef0442f16ef90faba75d929b4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga8423a9ef0442f16ef90faba75d929b4f">dggt::cache_is_initialized</a> ()</td></tr>
+<tr class="memdesc:ga8423a9ef0442f16ef90faba75d929b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the library's memory cache has been allocated.  <a href="../../da/d08/group__mem.html#ga8423a9ef0442f16ef90faba75d929b4f">More...</a><br /></td></tr>
 <tr class="separator:ga8423a9ef0442f16ef90faba75d929b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad17ab2dd0aa0683ebfc49eecad4353e0"><td class="memItemLeft" align="right" valign="top"><a id="gad17ab2dd0aa0683ebfc49eecad4353e0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_shutdown</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gad17ab2dd0aa0683ebfc49eecad4353e0">dggt::cache_shutdown</a> ()</td></tr>
+<tr class="memdesc:gad17ab2dd0aa0683ebfc49eecad4353e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all cache memory. <br /></td></tr>
 <tr class="separator:gad17ab2dd0aa0683ebfc49eecad4353e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad4e5c43e50a0aacc6339cd92b88339d5"><td class="memItemLeft" align="right" valign="top"><a id="gad4e5c43e50a0aacc6339cd92b88339d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_reinit</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize)</td></tr>
+<tr class="memitem:gad4e5c43e50a0aacc6339cd92b88339d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gad4e5c43e50a0aacc6339cd92b88339d5">dggt::cache_reinit</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> cacheSize)</td></tr>
+<tr class="memdesc:gad4e5c43e50a0aacc6339cd92b88339d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the currently allocated cache if initialized and initializes a new block of memory.  <a href="../../da/d08/group__mem.html#gad4e5c43e50a0aacc6339cd92b88339d5">More...</a><br /></td></tr>
 <tr class="separator:gad4e5c43e50a0aacc6339cd92b88339d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf0b55f9451b96378d41ac646b5a5534"><td class="memItemLeft" align="right" valign="top"><a id="gaaf0b55f9451b96378d41ac646b5a5534"></a>
-<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::available_cache_mem</b> ()</td></tr>
+<tr class="memitem:gaaf0b55f9451b96378d41ac646b5a5534"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gaaf0b55f9451b96378d41ac646b5a5534">dggt::available_cache_mem</a> ()</td></tr>
+<tr class="memdesc:gaaf0b55f9451b96378d41ac646b5a5534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the amount of cache memory available for allocation.  <a href="../../da/d08/group__mem.html#gaaf0b55f9451b96378d41ac646b5a5534">More...</a><br /></td></tr>
 <tr class="separator:gaaf0b55f9451b96378d41ac646b5a5534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ec9d44b8ab3d48c99f8298e00e16085"><td class="memItemLeft" align="right" valign="top"><a id="ga6ec9d44b8ab3d48c99f8298e00e16085"></a>
-<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::used_cache_mem</b> ()</td></tr>
+<tr class="memitem:ga6ec9d44b8ab3d48c99f8298e00e16085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga6ec9d44b8ab3d48c99f8298e00e16085">dggt::used_cache_mem</a> ()</td></tr>
+<tr class="memdesc:ga6ec9d44b8ab3d48c99f8298e00e16085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the amount of cache memory in use by the library (or user).  <a href="../../da/d08/group__mem.html#ga6ec9d44b8ab3d48c99f8298e00e16085">More...</a><br /></td></tr>
 <tr class="separator:ga6ec9d44b8ab3d48c99f8298e00e16085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae90fcf02810d6610d63c625b68150d4b"><td class="memItemLeft" align="right" valign="top"><a id="gae90fcf02810d6610d63c625b68150d4b"></a>
-<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_size</b> ()</td></tr>
+<tr class="memitem:gae90fcf02810d6610d63c625b68150d4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gae90fcf02810d6610d63c625b68150d4b">dggt::cache_size</a> ()</td></tr>
+<tr class="memdesc:gae90fcf02810d6610d63c625b68150d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total amount of cache memory.  <a href="../../da/d08/group__mem.html#gae90fcf02810d6610d63c625b68150d4b">More...</a><br /></td></tr>
 <tr class="separator:gae90fcf02810d6610d63c625b68150d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78615e0f11ef43a87f900b316c1c2114"><td class="memItemLeft" align="right" valign="top"><a id="ga78615e0f11ef43a87f900b316c1c2114"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_alloc</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> *size)</td></tr>
+<tr class="memitem:ga78615e0f11ef43a87f900b316c1c2114"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga78615e0f11ef43a87f900b316c1c2114">dggt::cache_alloc</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> *size)</td></tr>
+<tr class="memdesc:ga78615e0f11ef43a87f900b316c1c2114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory from the cache.  <a href="../../da/d08/group__mem.html#ga78615e0f11ef43a87f900b316c1c2114">More...</a><br /></td></tr>
 <tr class="separator:ga78615e0f11ef43a87f900b316c1c2114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3f427852793287eea991ebe3a7ce6d96"><td class="memItemLeft" align="right" valign="top"><a id="ga3f427852793287eea991ebe3a7ce6d96"></a>
-<a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_alloc</b> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</td></tr>
+<tr class="memitem:ga3f427852793287eea991ebe3a7ce6d96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga3f427852793287eea991ebe3a7ce6d96">dggt::cache_alloc</a> (<a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</td></tr>
+<tr class="memdesc:ga3f427852793287eea991ebe3a7ce6d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory from the cache.  <a href="../../da/d08/group__mem.html#ga3f427852793287eea991ebe3a7ce6d96">More...</a><br /></td></tr>
 <tr class="separator:ga3f427852793287eea991ebe3a7ce6d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabae9b419e65d8acf1c1eb9510e46d680"><td class="memItemLeft" align="right" valign="top"><a id="gabae9b419e65d8acf1c1eb9510e46d680"></a>
 <a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::cache_free</b> (void *ptr, <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</td></tr>
@@ -335,6 +336,263 @@ template&lt;u32 SIZE = 0&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gabe06c7e8496f184df5208e5e1eeaf148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe06c7e8496f184df5208e5e1eeaf148">&#9670;&nbsp;</a></span>store_table_alloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;u32 SIZE = 2048&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#gabe06c7e8496f184df5208e5e1eeaf148">dggt::store_table_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::STORE_TABLE,SIZE&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A short way to write allocator&lt;alloc_t::STORE_TABLE,SIZE&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SIZE</td><td>The required store table size (ie. The number of different block size's that the allocator can handle.). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae469f0d4156bd9fb7ea3bb8995a2c3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae469f0d4156bd9fb7ea3bb8995a2c3cd">&#9670;&nbsp;</a></span>fallback_alloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;u32 P = alloc_t::STORE_TABLE, u32 SIZE = 2048, u32 F = alloc_t::LINEAR, u32 FSIZE = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#gae469f0d4156bd9fb7ea3bb8995a2c3cd">dggt::fallback_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::FALLBACK,P,SIZE,F,FSIZE&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A short way to write allocator&lt;alloc_t::FALLBACK,P,SIZE,F,FSIZE&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">P</td><td>The primary allocator type. </td></tr>
+    <tr><td class="paramname">SIZE</td><td>The primary allocator size. </td></tr>
+    <tr><td class="paramname">F</td><td>The fallback allocator type. </td></tr>
+    <tr><td class="paramname">FSIZE</td><td>The fallback allocator size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga05df2b28b66c42ff05ff5fe73a153dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05df2b28b66c42ff05ff5fe73a153dcd">&#9670;&nbsp;</a></span>scratch_alloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;u32 TABLESIZE = 2048, u32 LINEARSIZE = KB(10)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd">dggt::scratch_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A short way to write allocator&lt;alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE&gt;. </p>
+<p>This is a type of allocator where all memory comes off of the stack from a linear allocator and is recycled into a store table allocator. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TABLESIZE</td><td>The number of memory recycling slots in the store table allocator. Defaults to 2048. </td></tr>
+    <tr><td class="paramname">LINEARSIZE</td><td>The amount of memory off the stack to allocate from the linear allocator. Defaults to 10 KB. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga6ac3e5d0333251e6af3f2083912e1e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ac3e5d0333251e6af3f2083912e1e9f">&#9670;&nbsp;</a></span>cache_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dggt::cache_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td>
+          <td class="paramname"><em>cacheSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the library's memory cache. </p>
+<p>Most memory requested comes from this memory cache. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cacheSize</td><td>The amount of memory to allocate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8423a9ef0442f16ef90faba75d929b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8423a9ef0442f16ef90faba75d929b4f">&#9670;&nbsp;</a></span>cache_is_initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a> dggt::cache_is_initialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the library's memory cache has been allocated. </p>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero if the cache is initialized, zero otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="gad4e5c43e50a0aacc6339cd92b88339d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4e5c43e50a0aacc6339cd92b88339d5">&#9670;&nbsp;</a></span>cache_reinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dggt::cache_reinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td>
+          <td class="paramname"><em>cacheSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees the currently allocated cache if initialized and initializes a new block of memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cacheSize</td><td>The amount of memory to allocate for the cache. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaaf0b55f9451b96378d41ac646b5a5534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf0b55f9451b96378d41ac646b5a5534">&#9670;&nbsp;</a></span>available_cache_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> dggt::available_cache_mem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the amount of cache memory available for allocation. </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of available cache memory. </dd></dl>
+
+</div>
+</div>
+<a id="ga6ec9d44b8ab3d48c99f8298e00e16085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ec9d44b8ab3d48c99f8298e00e16085">&#9670;&nbsp;</a></span>used_cache_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> dggt::used_cache_mem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the amount of cache memory in use by the library (or user). </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of used cache memory. </dd></dl>
+
+</div>
+</div>
+<a id="gae90fcf02810d6610d63c625b68150d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae90fcf02810d6610d63c625b68150d4b">&#9670;&nbsp;</a></span>cache_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> dggt::cache_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the total amount of cache memory. </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of available cache memory plus the amount of used cache memory. </dd></dl>
+
+</div>
+</div>
+<a id="ga78615e0f11ef43a87f900b316c1c2114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78615e0f11ef43a87f900b316c1c2114">&#9670;&nbsp;</a></span>cache_alloc() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * dggt::cache_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> *&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates memory from the cache. </p>
+<p>If successful, this function is guaranteed to allocate at least the requested amount. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>A pointer to an integer representing the requested memory size. May be set to a larger value if more memory than requested was allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful, this value is a pointer to the beginning of the requested memory block, otherwise it returns a null pointer. </dd></dl>
+
+</div>
+</div>
+<a id="ga3f427852793287eea991ebe3a7ce6d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f427852793287eea991ebe3a7ce6d96">&#9670;&nbsp;</a></span>cache_alloc() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; void &gt; dggt::cache_alloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates memory from the cache. </p>
+<p>If successful, this function is guaranteed to allocate at least the requested amount. </p>
 
 </div>
 </div>
