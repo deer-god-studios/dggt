@@ -65,7 +65,7 @@ namespace dggt
 
 	/*!
 	 * */
-	template <u32 SIZE=0>
+	template <u32 SIZE=2048>
 	using store_table_alloc=allocator<alloc_t::STORE_TABLE,SIZE>;
 
 	template <u32 P=alloc_t::STORE_TABLE,u32 SIZE=2048,
