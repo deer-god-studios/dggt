@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['examples_386',['Examples',['../d2/de5/group__ex.html',1,'']]]
+  ['debug_20library_388',['Debug Library',['../de/db7/group__debug.html',1,'']]]
 ];

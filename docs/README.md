@@ -7,3 +7,5 @@
 @defgroup tmpl Template Library
 @defgroup phy Physics Library
 @defgroup phycoll Collisions
+@defgroup debug Debug Library
+@defgroup log Logging Library

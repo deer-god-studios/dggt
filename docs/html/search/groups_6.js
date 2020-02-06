@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['template_20library_392',['Template Library',['../da/d2f/group__tmpl.html',1,'']]]
+  ['string_20library_395',['String Library',['../d7/d86/group__str.html',1,'']]]
 ];

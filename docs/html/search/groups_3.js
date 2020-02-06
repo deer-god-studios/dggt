@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['math_20library_388',['Math Library',['../de/df1/group__math.html',1,'']]],
-  ['memory_20management_389',['Memory Management',['../da/d08/group__mem.html',1,'']]]
+  ['linear_20algebra_390',['Linear Algebra',['../db/da0/group__lin.html',1,'']]],
+  ['logging_20library_391',['Logging Library',['../d1/dc0/group__log.html',1,'']]]
 ];

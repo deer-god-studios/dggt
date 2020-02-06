@@ -7,5 +7,7 @@ var modules =
     [ "String Library", "d7/d86/group__str.html", null ],
     [ "Template Library", "da/d2f/group__tmpl.html", null ],
     [ "Physics Library", "d5/de5/group__phy.html", null ],
-    [ "Collisions", "d3/d30/group__phycoll.html", null ]
+    [ "Collisions", "d3/d30/group__phycoll.html", null ],
+    [ "Debug Library", "de/db7/group__debug.html", null ],
+    [ "Logging Library", "d1/dc0/group__log.html", null ]
 ];

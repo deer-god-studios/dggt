@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['physics_20library_390',['Physics Library',['../d5/de5/group__phy.html',1,'']]]
+  ['math_20library_392',['Math Library',['../de/df1/group__math.html',1,'']]],
+  ['memory_20management_393',['Memory Management',['../da/d08/group__mem.html',1,'']]]
 ];

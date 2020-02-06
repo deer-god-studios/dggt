@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linear_20algebra_387',['Linear Algebra',['../db/da0/group__lin.html',1,'']]]
+  ['examples_389',['Examples',['../d2/de5/group__ex.html',1,'']]]
 ];
