@@ -1,4 +1,6 @@
+/*! @cond IncludeGuard */
 #ifndef _DGGT_MEM_ALLOC_H_
+/*! @endcond */
 
 // TODO: implement is_valid(block) to check if a block has already 
 // 		been 'freed'.
@@ -6,8 +8,18 @@
 
 #include "dggt_mem_blk.h"
 
+ // TODO: fix allocators!  This enumerator shit sucks.
+
 namespace dggt
 {
+	/*!
+	 * @addtogroup mem
+	 * @{
+	 * */
+
+	/*!
+	 * @brief an enumerator containing all the basic allocators.
+	 * */
 	enum alloc_t:u32
 	{
 		NONE,
@@ -29,7 +41,13 @@ namespace dggt
 	// NOTE: variadic template args are for composite allocator types.
 	template <alloc_t A,u32 SIZE=0,u32... As>
 	struct allocator;
+
+	/*!
+	 * @}
+	 * */
 }
 
+/*! @cond IncludeGuard */
 #define _DGGT_MEM_ALLOC_H_
 #endif
+/*! @endcond */
