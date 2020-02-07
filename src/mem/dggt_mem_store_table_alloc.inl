@@ -173,8 +173,8 @@ namespace dggt
 				result=a->alloc();
 				if (result)
 				{
-					availableMem+=s;
-					++availableBlocks;
+					availableMem-=s;
+					--availableBlocks;
 				}
 			}
 		}

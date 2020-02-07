@@ -56,6 +56,9 @@ void init_test()
 template <u32 BLOCKS>
 void test_alloc()
 {
+	printf("calling test_alloc<%u>\n", BLOCKS);
+	print_alloc_info();
+	pause_output();
 	blk<float32> blockArr[BLOCKS]={};
 	for (u32 i=0;i<ARRAY_COUNT(blockArr);++i)
 	{
@@ -64,15 +67,18 @@ void test_alloc()
 		blockArr[i]=alloc->alloc<float32>(floatCount);
 		printf("allocated %d floats at %x.\n",
 				blockArr[i].count,blockArr[i].mem);
+		print_alloc_info();
 	}
-
+	pause_output();
 	for (u32 i=0;i<ARRAY_COUNT(blockArr);++i)
 	{
 		printf("freeing a block of %d floats at %x.\n",
 				blockArr[i].count,blockArr[i].mem);
 		b32 freeResult=alloc->free(blockArr[i]);
 		printf("free result: %d\n",freeResult);
+		print_alloc_info();
 	}
+	pause_output();
 }
 
 void test_linked_list()
@@ -101,11 +107,18 @@ void test_stack()
 {
 	INIT_PTR_TO(stack<float32>,float32Stack,create_stack<float32>(alloc));
 
-	u32 stackCount=50;
+	print_alloc_info();
+	pause_output();
+
+	u32 stackCount=10;
 	for (u32 i=0;i<stackCount;++i)
 	{
 		push(float32Stack,(float32)i,alloc);
+
 	}
+
+	print_alloc_info();
+	pause_output();
 	stackCount=get_count(float32Stack);
 	printf("stack count: %u\n",stackCount);
 	for (stack_iter<float32> it=get_iter(float32Stack);
@@ -120,13 +133,19 @@ void test_stack()
 			printf("%f, ",it.get());
 		}
 	}
+	print_alloc_info();
+	pause_output();
 	while (!pop(float32Stack,alloc).is_end())
 	{
 		printf("pop ");
+
 	}
+	print_alloc_info();
+	pause_output();
 	new_line();
 	clear(float32Stack,alloc);
-
+	print_alloc_info();
+	pause_output();
 }
 
 void test_queue()
@@ -182,11 +201,10 @@ int main(int argc, char* argv[])
 
 	init_test();
 
-	print_alloc_info();
-	pause_output();
 	test_alloc<1>();
-	print_alloc_info();
-	pause_output();
+	test_alloc<2>();
+	test_alloc<2>();
+	test_alloc<3>();
 	new_line();
 	test_linked_list();
 	print_alloc_info();
@@ -194,6 +212,7 @@ int main(int argc, char* argv[])
 	test_stack();
 	print_alloc_info();
 	pause_output();
+
 	test_queue();
 	print_alloc_info();
 	pause_output();

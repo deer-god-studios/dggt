@@ -8,6 +8,7 @@ namespace dggt
 		if (head)
 		{
 			result=blk<T>((T*)head,sizeof(T));
+			--blockCount;
 		}
 		return result;
 	}
