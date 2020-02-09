@@ -2,10 +2,9 @@
 namespace dggt
 {
 	template <typename D>
-	allocator<D>::allocator(D* derivedAlloc/*,alloc_t allocType*/)
+	allocator<D>::allocator(D* derivedAlloc)
 	{
 		derived=derivedAlloc;
-		//type=allocType;
 	}
 
 	template <typename D>
@@ -78,5 +77,23 @@ namespace dggt
 	b32 owns(const allocator<D>* a,const T* ptr,u32 count)
 	{
 		return owns(a->derived,ptr,count);
+	}
+
+	template <typename D>
+	stack_state save_stack(allocator<D>* a)
+	{
+		return save_stack(a->derived);
+	}
+
+	template <typename D>
+	b32 restore_stack(allocator<D>* a,stack_state state)
+	{
+		return restore_stack(a->derived,state);
+	}
+
+	template <typename D>
+	b32 is_stack_balanced(const allocator<D>* a)
+	{
+		return is_stack_balanced(a->derived);
 	}
 }

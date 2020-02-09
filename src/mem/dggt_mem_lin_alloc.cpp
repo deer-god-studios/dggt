@@ -1,23 +1,23 @@
-#include "dggt_mem_linear_alloc.h"
+#include "dggt_mem_lin_alloc.h"
 
 namespace dggt
 {
-	linear_allocator<0>::linear_allocator()
-		:allocator<linear_allocator<0>>(this)
+	lin_alloc_<0>::lin_alloc_()
+		:allocator<lin_alloc_<0>>(this)
 	{
 		buff=blk<void>();
 		used=0;
 	}
 
-	linear_allocator<0>::linear_allocator(void* ptr,msize size)
-		:linear_allocator()
+	lin_alloc_<0>::lin_alloc_(void* ptr,msize size)
+		:lin_alloc_()
 	{
 		buff.mem=ptr;
 		buff.size=size;
 	}
 
-	linear_allocator<0>::linear_allocator(vblk block)
-		:linear_allocator(block.mem,block.size)
+	lin_alloc_<0>::lin_alloc_(vblk block)
+		:lin_alloc_(block.mem,block.size)
 	{
 	}
 
@@ -90,4 +90,21 @@ namespace dggt
 	{
 		return a->used;
 	}
+
+	stack_state save_stack(lin_alloc* a)
+	{
+		return 0;
+	}
+
+	b32 restore_stack(lin_alloc* a,stack_state state)
+	{
+		return 0;
+	}
+
+	b32 is_stack_balanced(lin_alloc* a)
+	{
+		return 1;
+	}
+
+
 }

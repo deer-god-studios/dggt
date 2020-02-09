@@ -5,8 +5,8 @@
 
 namespace dggt
 {
-	//typedef u32 alloc_t;
 	typedef msize stack_state;
+	struct free_block;
 }
 
 /*! @cond IncludeGuard */

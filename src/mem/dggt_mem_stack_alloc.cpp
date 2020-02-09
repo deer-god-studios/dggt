@@ -2,38 +2,34 @@
 
 namespace dggt
 {
-	allocator<alloc_t::STACK>::allocator()
+	stack_alloc_<0>::stack_alloc_()
 	{
-		buff=blk<void>();
+		buff=vblk();
 		used=0;
 		stateCount=0;
 		prevState=0;
 	}
-	allocator<alloc_t::STACK>::allocator(void* ptr,msize size)
-		: allocator()
+
+	stack_alloc_<0>::stack_alloc_(void* ptr,msize size)
 	{
 		buff.mem=ptr;
 		buff.size=size;
 	}
 
-	allocator<alloc_t::STACK>::allocator(blk<void> buffer)
-		: allocator(buffer.mem,buffer.size) { }
-
-	blk<void> allocator<alloc_t::STACK>::alloc(msize size)
+	stack_alloc_<0>::stack_alloc_(vblk block)
+		:stack_alloc_(block.mem,block.size)
 	{
-		void* result=alloc(&size);
-		return blk<void>(result,size);
 	}
 
-	void* allocator<alloc_t::STACK>::alloc(msize* size)
+	void* alloc(stack_alloc* a,msize* size)
 	{
 		void* result=0;
 		if (size&&*size)
 		{
-			if (used+*size<=buff.size)
+			if (a->used+*size<=a->buff.size)
 			{
-				result=ptr_add(buff.mem,used);
-				used+=*size;
+				result=ptr_add(a->buff.mem,a->used);
+				a->used+=*size;
 			}
 			else
 			{
@@ -43,58 +39,64 @@ namespace dggt
 		else
 		{
 			msize s=4;
-			if (used+s<=buff.size)
+			if (a->used+s<=a->buff.size)
 			{
-				result=ptr_add(buff.mem,used);
-				used+=s;
+				result=ptr_add(a->buff.mem,a->used);
+				a->used+=s;
 			}
 		}
 		return result;
 	}
 
-	b32 allocator<alloc_t::STACK>::free(void* ptr,msize size)
+	vblk alloc(stack_alloc* a,msize size)
+	{
+		void* result=alloc(&size);
+		return vblk(result,size);
+	}
+
+	b32 free(stack_alloc* a,void* ptr,msize size)
 	{
 		b32 result=0;
-		blk<void> b=blk<void>(ptr,size);
+		vblk b=vblk(ptr,size);
 		if (owns(b)&&
-				used-size>=(msize)prevState)
+				a->used-size>=(msize)a->prevState)
 		{
-			void* allocEndAddr=ptr_add(buff.mem,used);
+			void* allocEndAddr=ptr_add(a->buff.mem,a->used);
 			void* blkEndAddr=ptr_add(ptr,size);
 			if (allocEndAddr==blkEndAddr)
 			{
-				used-=size;
+				a->used-=size;
 				result=1;
 			}
 		}
 		return result;
 	}
 
-	b32 allocator<alloc_t::STACK>::free(blk<void> block)
+	b32 free(stack_alloc* a,vblk block)
 	{
-		return free(block.mem,block.size);
+		return free(a,block.mem,block.size);
 	}
 
-	stack_state allocator<alloc_t::STACK>::save_stack()
+	stack_state save_stack(stack_alloc* a)
 	{
-		stack_state result=(stack_state)used;
-		prevState=result;
-		++stateCount;
+		stack_state result=(stack_state)a->used;
+		a->prevState=result;
+		++a->stateCount;
 		return result;
 	}
 
-	b32 allocator<alloc_t::STACK>::restore_stack(stack_state state)
+	b32 restore_stack(stack_alloc* a,stack_state state)
 	{
-		b32 result=state==prevState;
+		b32 result=state==a->prevState;
 		if (result)
 		{
-			used=state;
-			--stateCount;
+			a->used=state;
+			--a->stateCount;
 		}
 		return result;
 	}
 
-	b32 allocator<alloc_t::STACK>::clear()
+	b32 clear(stack_alloc* a)
 	{
 		used=0;
 		stateCount=0;
@@ -102,30 +104,29 @@ namespace dggt
 		return 1;
 	}
 
-	b32 allocator<alloc_t::STACK>::is_stack_balanced() const
+	b32 is_stack_balance(const stack_alloc* a)
 	{
-		return stateCount==0;
+		return a->stateCount==0;
 	}
 
-	b32 allocator<alloc_t::STACK>::owns(const void* ptr) const
+	b32 owns(const stack_alloc* a,const void* ptr,msize size)
 	{
 		return ptr>=buff.mem&&
-			ptr<=ptr_add(buff.mem,buff.size);
+			ptr_add(ptr,size)<=ptr_add(buff.mem,buff.size);
 	}
 
-	b32 allocator<alloc_t::STACK>::owns(blk<void> block) const
+	b32 owns(const stack_alloc* a,const vblk block)
 	{
-		return owns(block.mem)&&
-			ptr_add(block.mem,block.size)<=ptr_add(buff.mem,buff.size);
+		return owns(a,block.mem,block.size);
 	}
 
-	msize allocator<alloc_t::STACK>::available_mem() const
+	msize available_mem(const stack_alloc* a)
 	{
-		return buff.size-used;
+		return a->buff.size-a->used;
 	}
 
-	msize allocator<alloc_t::STACK>::used_mem() const
+	msize used_mem(const stack_alloc* a)
 	{
-		return used;
+		return a->used;
 	}
 }

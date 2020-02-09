@@ -68,7 +68,7 @@ namespace dggt
 	// lin_stalloc<SIZE>
 	// {
 	template <u32 SIZE>
-	linear_allocator<SIZE>::linear_allocator()
+	lin_alloc_<SIZE>::lin_alloc_()
 	{
 		a_=lin_alloc<>((void*)buff,SIZE);
 	}
@@ -161,6 +161,24 @@ namespace dggt
 	msize used_mem(const lin_stalloc<SIZE>* a)
 	{
 		return used_mem(&a->a_);
+	}
+
+	template <u32 SIZE>
+	stack_state save_stack(lin_stalloc<SIZE>* a)
+	{
+		return 0;
+	}
+
+	template <u32 SIZE>
+	b32 restore_stack(lin_stalloc<SIZE>* a,stack_state state)
+	{
+		return 0;
+	}
+
+	template <u32 SIZE>
+	b32 is_stack_balanced(lin_stalloc<SIZE>* a)
+	{
+		return 1;
 	}
 
 	// }

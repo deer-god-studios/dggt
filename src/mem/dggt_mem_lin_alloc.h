@@ -1,30 +1,30 @@
 #ifndef _DGGT_MEM_LINEAR_ALLOCATOR_H_
 
-#include "dggt_mem_allocator.h"
+#include "dggt_mem_alloc.h"
 
 namespace dggt
 {
 	template <u32 SIZE=0>
-	struct linear_allocator:allocator<linear_allocator<SIZE>>
+	struct lin_alloc_:allocator<lin_alloc_<SIZE>>
 	{
-		linear_allocator<0> a_; 
+		lin_alloc_<0> a_; 
 		ubyte buff[SIZE];
-		linear_allocator();
+		lin_alloc_();
 	};
 
 	template <>
-	struct linear_allocator<0>
+	struct lin_alloc_<0>
 	{
 		vblk buff;
 		msize used;
-		linear_allocator();
-		linear_allocator(void* ptr,msize size);
-		explicit linear_allocator(vblk block);
+		lin_alloc_();
+		lin_alloc_(void* ptr,msize size);
+		explicit lin_alloc_(vblk block);
 	};
 
 	// lin_alloc
 
-	typedef linear_allocator<0> lin_alloc;
+	typedef lin_alloc_<0> lin_alloc;
 
 	void* alloc(lin_alloc* a,msize* size=0);
 
@@ -62,10 +62,16 @@ namespace dggt
 	
 	msize used_mem(const lin_alloc* a);
 
+	stack_state save_stack(lin_alloc* a);
+
+	b32 restore_stack(lin_alloc* a,stack_state state);
+
+	b32 is_stack_balanced(lin_alloc* a);
+
 	// lin_stalloc<SIZE>
 
 	template <u32 SIZE>
-	using lin_stalloc=linear_allocator<SIZE>;
+	using lin_stalloc=lin_alloc_<SIZE>;
 
 	template <u32 SIZE>
 	void* alloc(lin_stalloc<SIZE>* a,msize* size=0);
@@ -111,9 +117,18 @@ namespace dggt
 
 	template <u32 SIZE>
 	msize used_mem(const lin_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	stack_state save_stack(lin_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	b32 restore_stack(lin_stalloc<SIZE>* a,stack_state state);
+
+	template <u32 SIZE>
+	b32 is_stack_balanced(lin_stalloc<SIZE>* a);
 }
 
-#include "dggt_mem_linear_allocator.inl"
+#include "dggt_mem_lin_alloc.inl"
 
 #define _DGGT_MEM_LINEAR_ALLOCATOR_H_
 #endif

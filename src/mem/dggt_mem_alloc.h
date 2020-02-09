@@ -12,10 +12,12 @@ namespace dggt
 {
 	struct pool_block;
 	struct store_block;
-	struct free_block;
+
+	// TODO: this doesn't work well either maybe.  Maybe try a more
+	// 		traditional approach?
 
 	template <typename D>
-	struct allocator
+	struct allocator:alloc_base
 	{
 		D* derived;
 		allocator(D* derivedAlloc);
@@ -56,6 +58,15 @@ namespace dggt
 	
 	template <typename D,typename T>
 	b32 owns(const allocator<D>* a,const T* ptr,u32 count);
+
+	template <typename D>
+	stack_state save_stack(allocator<D>* a);
+
+	template <typename D>
+	b32 restore_stack(allocator<D>* a,stack_state state);
+
+	template <typename D>
+	b32 is_stack_balanced(const allocator<D>* a);
 }
 
 #include "dggt_mem_alloc.inl"
