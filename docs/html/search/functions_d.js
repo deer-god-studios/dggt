@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['used_5fcache_5fmem_357',['used_cache_mem',['../da/d08/group__mem.html#ga6ec9d44b8ab3d48c99f8298e00e16085',1,'dggt']]]
+  ['used_5fcache_5fmem_369',['used_cache_mem',['../da/d08/group__mem.html#ga6ec9d44b8ab3d48c99f8298e00e16085',1,'dggt']]]
 ];

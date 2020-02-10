@@ -7,7 +7,7 @@ it difficult to consistently work.
 This library is going to be a constant work in progress
 and I'll eventually use it to make some games.<br>
 If you find any of this code useful and want to help contribute then please
-<a href=donate.html>donate</a> to help me continue to learn and bring you
+@ref don donate to help me continue to learn and bring you
 quality code and in the future, quality games.
 @htmlonly
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">

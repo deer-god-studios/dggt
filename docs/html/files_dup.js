@@ -29,11 +29,12 @@ var files_dup =
     [ "dggt_mem_defines.h", "dc/d70/dggt__mem__defines_8h_source.html", null ],
     [ "dggt_mem_fallback_alloc.h", "d9/d7e/dggt__mem__fallback__alloc_8h_source.html", null ],
     [ "dggt_mem_free_list_alloc.h", "db/d39/dggt__mem__free__list__alloc_8h_source.html", null ],
-    [ "dggt_mem_linear_alloc.h", "d8/d7a/dggt__mem__linear__alloc_8h_source.html", null ],
+    [ "dggt_mem_lin_alloc.h", "d5/dee/dggt__mem__lin__alloc_8h_source.html", null ],
     [ "dggt_mem_mem.h", "db/d0b/dggt__mem__mem_8h_source.html", null ],
     [ "dggt_mem_pool_alloc.h", "dd/dcc/dggt__mem__pool__alloc_8h_source.html", null ],
     [ "dggt_mem_stack_alloc.h", "df/d63/dggt__mem__stack__alloc_8h_source.html", null ],
     [ "dggt_mem_store_alloc.h", "d6/d64/dggt__mem__store__alloc_8h_source.html", null ],
     [ "dggt_mem_store_table_alloc.h", "d8/dc3/dggt__mem__store__table__alloc_8h_source.html", null ],
+    [ "dggt_mem_types.h", "de/db6/dggt__mem__types_8h_source.html", null ],
     [ "dggt_types.h", "da/da3/dggt__types_8h_source.html", null ]
 ];

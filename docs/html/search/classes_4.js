@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['linked_5flist_265',['linked_list',['../df/d86/structdggt_1_1linked__list.html',1,'dggt']]],
-  ['linked_5flist_3c_20k_2c_20v_20_3e_266',['linked_list&lt; K, V &gt;',['../df/d86/structdggt_1_1linked__list.html',1,'dggt']]]
+  ['iter_266',['iter',['../de/da8/structdggt_1_1iter.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20linked_5flist_3c_20t_20_3e_2c_20slnode_3c_20t_20_3e_20_2a_20_3e_267',['iter&lt; T, linked_list&lt; T &gt;, slnode&lt; T &gt; * &gt;',['../d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20queue_3c_20t_20_3e_2c_20blk_3c_20t_20_3e_20_3e_268',['iter&lt; T, queue&lt; T &gt;, blk&lt; T &gt; &gt;',['../d7/df4/structdggt_1_1iter_3_01T_00_01queue_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html',1,'dggt']]],
+  ['iter_3c_20t_2c_20stack_3c_20t_20_3e_2c_20blk_3c_20t_20_3e_20_3e_269',['iter&lt; T, stack&lt; T &gt;, blk&lt; T &gt; &gt;',['../d3/d28/structdggt_1_1iter_3_01T_00_01stack_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html',1,'dggt']]],
+  ['iter_3c_20table_5fpair_3c_20k_2c_20v_20_3e_2c_20hash_5ftable_3c_20k_2c_20v_20_3e_2c_20table_5fblk_3c_20k_2c_20v_20_3e_20_3e_270',['iter&lt; table_pair&lt; K, V &gt;, hash_table&lt; K, V &gt;, table_blk&lt; K, V &gt; &gt;',['../d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html',1,'dggt']]]
 ];

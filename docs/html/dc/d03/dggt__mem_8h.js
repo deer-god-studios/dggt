@@ -1,9 +1,9 @@
 var dggt__mem_8h =
 [
-    [ "lin_alloc", "dc/d03/dggt__mem_8h.html#ga38eec63211e105d0b9168e650a7c5ac5", null ],
-    [ "stack_alloc", "dc/d03/dggt__mem_8h.html#ga25e213671003c944c63b9a1c902c2a34", null ],
-    [ "pool_alloc", "dc/d03/dggt__mem_8h.html#ga261657728fcfa7b1212cfbf5e79e26ed", null ],
-    [ "free_list_alloc", "dc/d03/dggt__mem_8h.html#ga3b5505e733acbc7082d71dddb523b2c9", null ],
+    [ "lin_alloc", "dc/d03/dggt__mem_8h.html#ga5b0bf00ef1545864298228420542e99a", null ],
+    [ "stack_alloc", "dc/d03/dggt__mem_8h.html#gaa78b7c5d5d31ebbba3b30b5c9ac04b3f", null ],
+    [ "pool_alloc", "dc/d03/dggt__mem_8h.html#gabf41bc39456f9bc688c7dda3501eefe5", null ],
+    [ "free_list_alloc", "dc/d03/dggt__mem_8h.html#gaa15d73504269fb906761b8a648a4158c", null ],
     [ "store_alloc", "dc/d03/dggt__mem_8h.html#ga04a8b41b40539abd96c5d495f6128d6f", null ],
     [ "store_table_alloc", "dc/d03/dggt__mem_8h.html#gabe06c7e8496f184df5208e5e1eeaf148", null ],
     [ "fallback_alloc", "dc/d03/dggt__mem_8h.html#gae469f0d4156bd9fb7ea3bb8995a2c3cd", null ],

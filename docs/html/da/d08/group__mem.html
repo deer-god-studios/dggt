@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('da/d08/group__mem.html','../../'); ini
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Memory Management Library<div class="ingroups"><a class="el" href="../../d6/d77/group__dggt.html">DGGT Library</a></div></div>  </div>
 </div><!--header-->
@@ -104,30 +104,30 @@ $(document).ready(function(){initNavTree('da/d08/group__mem.html','../../'); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d23/structdggt_1_1allocator.html">dggt::allocator&lt; A, SIZE, As &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d23/structdggt_1_1allocator.html">dggt::allocator&lt; D &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga38eec63211e105d0b9168e650a7c5ac5"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
-<tr class="memitem:ga38eec63211e105d0b9168e650a7c5ac5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga38eec63211e105d0b9168e650a7c5ac5">dggt::lin_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::LINEAR, SIZE &gt;</td></tr>
-<tr class="memdesc:ga38eec63211e105d0b9168e650a7c5ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../dd/d21/structdggt_1_1allocator_3_01alloc__t_1_1LINEAR_00_01SIZE_01_4.html">allocator&lt;alloc_t::LINEAR,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga38eec63211e105d0b9168e650a7c5ac5">More...</a><br /></td></tr>
-<tr class="separator:ga38eec63211e105d0b9168e650a7c5ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25e213671003c944c63b9a1c902c2a34"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
-<tr class="memitem:ga25e213671003c944c63b9a1c902c2a34"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga25e213671003c944c63b9a1c902c2a34">dggt::stack_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STACK, SIZE &gt;</td></tr>
-<tr class="memdesc:ga25e213671003c944c63b9a1c902c2a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d9/dc4/structdggt_1_1allocator_3_01alloc__t_1_1STACK_00_01SIZE_01_4.html">allocator&lt;alloc_t::STACK,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga25e213671003c944c63b9a1c902c2a34">More...</a><br /></td></tr>
-<tr class="separator:ga25e213671003c944c63b9a1c902c2a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga261657728fcfa7b1212cfbf5e79e26ed"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
-<tr class="memitem:ga261657728fcfa7b1212cfbf5e79e26ed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga261657728fcfa7b1212cfbf5e79e26ed">dggt::pool_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::POOL, SIZE &gt;</td></tr>
-<tr class="memdesc:ga261657728fcfa7b1212cfbf5e79e26ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../dc/d77/structdggt_1_1allocator_3_01alloc__t_1_1POOL_00_01SIZE_01_4.html">allocator&lt;alloc_t::POOL,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga261657728fcfa7b1212cfbf5e79e26ed">More...</a><br /></td></tr>
-<tr class="separator:ga261657728fcfa7b1212cfbf5e79e26ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b5505e733acbc7082d71dddb523b2c9"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
-<tr class="memitem:ga3b5505e733acbc7082d71dddb523b2c9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga3b5505e733acbc7082d71dddb523b2c9">dggt::free_list_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FREE_LIST, SIZE &gt;</td></tr>
-<tr class="memdesc:ga3b5505e733acbc7082d71dddb523b2c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html">allocator&lt;alloc_t::FREE_LIST,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga3b5505e733acbc7082d71dddb523b2c9">More...</a><br /></td></tr>
-<tr class="separator:ga3b5505e733acbc7082d71dddb523b2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b0bf00ef1545864298228420542e99a"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
+<tr class="memitem:ga5b0bf00ef1545864298228420542e99a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga5b0bf00ef1545864298228420542e99a">dggt::lin_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::LINEAR, SIZE &gt;</td></tr>
+<tr class="memdesc:ga5b0bf00ef1545864298228420542e99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::LINEAR,SIZE&gt;.  <a href="../../da/d08/group__mem.html#ga5b0bf00ef1545864298228420542e99a">More...</a><br /></td></tr>
+<tr class="separator:ga5b0bf00ef1545864298228420542e99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa78b7c5d5d31ebbba3b30b5c9ac04b3f"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
+<tr class="memitem:gaa78b7c5d5d31ebbba3b30b5c9ac04b3f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gaa78b7c5d5d31ebbba3b30b5c9ac04b3f">dggt::stack_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STACK, SIZE &gt;</td></tr>
+<tr class="memdesc:gaa78b7c5d5d31ebbba3b30b5c9ac04b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator&lt;alloc_t::STACK,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#gaa78b7c5d5d31ebbba3b30b5c9ac04b3f">More...</a><br /></td></tr>
+<tr class="separator:gaa78b7c5d5d31ebbba3b30b5c9ac04b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf41bc39456f9bc688c7dda3501eefe5"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
+<tr class="memitem:gabf41bc39456f9bc688c7dda3501eefe5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gabf41bc39456f9bc688c7dda3501eefe5">dggt::pool_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::POOL, SIZE &gt;</td></tr>
+<tr class="memdesc:gabf41bc39456f9bc688c7dda3501eefe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::POOL,SIZE&gt;.  <a href="../../da/d08/group__mem.html#gabf41bc39456f9bc688c7dda3501eefe5">More...</a><br /></td></tr>
+<tr class="separator:gabf41bc39456f9bc688c7dda3501eefe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa15d73504269fb906761b8a648a4158c"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
+<tr class="memitem:gaa15d73504269fb906761b8a648a4158c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gaa15d73504269fb906761b8a648a4158c">dggt::free_list_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FREE_LIST, SIZE &gt;</td></tr>
+<tr class="memdesc:gaa15d73504269fb906761b8a648a4158c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::FREE_LIST,SIZE&gt;.  <a href="../../da/d08/group__mem.html#gaa15d73504269fb906761b8a648a4158c">More...</a><br /></td></tr>
+<tr class="separator:gaa15d73504269fb906761b8a648a4158c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga04a8b41b40539abd96c5d495f6128d6f"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 0&gt; </td></tr>
 <tr class="memitem:ga04a8b41b40539abd96c5d495f6128d6f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f">dggt::store_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STORE, SIZE &gt;</td></tr>
-<tr class="memdesc:ga04a8b41b40539abd96c5d495f6128d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write <a class="el" href="../../d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html">allocator&lt;alloc_t::FREE_LIST,SIZE&gt;</a>.  <a href="../../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f">More...</a><br /></td></tr>
+<tr class="memdesc:ga04a8b41b40539abd96c5d495f6128d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::FREE_LIST,SIZE&gt;.  <a href="../../da/d08/group__mem.html#ga04a8b41b40539abd96c5d495f6128d6f">More...</a><br /></td></tr>
 <tr class="separator:ga04a8b41b40539abd96c5d495f6128d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplParams" colspan="2">template&lt;u32 SIZE = 2048&gt; </td></tr>
 <tr class="memitem:gabe06c7e8496f184df5208e5e1eeaf148"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gabe06c7e8496f184df5208e5e1eeaf148">dggt::store_table_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::STORE_TABLE, SIZE &gt;</td></tr>
@@ -141,28 +141,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd">dggt::scratch_alloc</a> = <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; alloc_t::FALLBACK, alloc_t::STORE_TABLE, TABLESIZE, alloc_t::LINEAR, LINEARSIZE &gt;</td></tr>
 <tr class="memdesc:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short way to write allocator&lt;alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE&gt;.  <a href="../../da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd">More...</a><br /></td></tr>
 <tr class="separator:ga05df2b28b66c42ff05ff5fe73a153dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3a62351ffa8859889750469d0de2271f"><td class="memItemLeft" align="right" valign="top"><a id="ga3a62351ffa8859889750469d0de2271f"></a>
-typedef <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::stack_state</b></td></tr>
-<tr class="separator:ga3a62351ffa8859889750469d0de2271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gae7163554e1c14e03c14f999d529a3a3c"><td class="memItemLeft" align="right" valign="top"><a id="gae7163554e1c14e03c14f999d529a3a3c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c">dggt::alloc_t</a> : u32 { <br />
-&#160;&#160;<b>NONE</b>, 
-<b>LINEAR</b>, 
-<b>STACK</b>, 
-<b>AUTO_STACK</b>, 
-<br />
-&#160;&#160;<b>POOL</b>, 
-<b>FREE_LIST</b>, 
-<b>STORE</b>, 
-<b>STORE_TABLE</b>, 
-<br />
-&#160;&#160;<b>FALLBACK</b>
-<br />
- }</td></tr>
-<tr class="memdesc:gae7163554e1c14e03c14f999d529a3a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">an enumerator containing all the basic allocators. <br /></td></tr>
-<tr class="separator:gae7163554e1c14e03c14f999d529a3a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -246,11 +224,80 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:ga0cc7505ac0d4ccfe0adf94a1c452558b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d08/group__mem.html#ga0cc7505ac0d4ccfe0adf94a1c452558b">dggt::destroy_alloc</a> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; A &gt; *alloc)</td></tr>
 <tr class="memdesc:ga0cc7505ac0d4ccfe0adf94a1c452558b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an allocator by freeing it's underlying memory back to the cache if applicable.  <a href="../../da/d08/group__mem.html#ga0cc7505ac0d4ccfe0adf94a1c452558b">More...</a><br /></td></tr>
 <tr class="separator:ga0cc7505ac0d4ccfe0adf94a1c452558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga697070668d00dde3e9b90716c63a868c"><td class="memItemLeft" align="right" valign="top"><a id="ga697070668d00dde3e9b90716c63a868c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::allocator&lt; D &gt;::allocator</b> (D *derivedAlloc)</td></tr>
+<tr class="separator:ga697070668d00dde3e9b90716c63a868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6f06794b0b04093179daf211446c7d1"><td class="memTemplParams" colspan="2"><a id="gae6f06794b0b04093179daf211446c7d1"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gae6f06794b0b04093179daf211446c7d1"><td class="memTemplItemLeft" align="right" valign="top">vblk&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::alloc</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size=4)</td></tr>
+<tr class="separator:gae6f06794b0b04093179daf211446c7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf613b33d65d9d87a17ade89d75a7839a"><td class="memTemplParams" colspan="2"><a id="gaf613b33d65d9d87a17ade89d75a7839a"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gaf613b33d65d9d87a17ade89d75a7839a"><td class="memTemplItemLeft" align="right" valign="top">void *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::alloc</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> *size=0)</td></tr>
+<tr class="separator:gaf613b33d65d9d87a17ade89d75a7839a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fdce6e0197d9094cc233962c382678a"><td class="memTemplParams" colspan="2"><a id="ga4fdce6e0197d9094cc233962c382678a"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:ga4fdce6e0197d9094cc233962c382678a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::alloc</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, <a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count=1)</td></tr>
+<tr class="separator:ga4fdce6e0197d9094cc233962c382678a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b94e8246f8d7665f73e8d7f44b2fa9a"><td class="memTemplParams" colspan="2"><a id="ga8b94e8246f8d7665f73e8d7f44b2fa9a"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:ga8b94e8246f8d7665f73e8d7f44b2fa9a"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::alloc</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, <a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> *count=0)</td></tr>
+<tr class="separator:ga8b94e8246f8d7665f73e8d7f44b2fa9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2305767d60efe2717e6ba53ad6f7fe10"><td class="memTemplParams" colspan="2"><a id="ga2305767d60efe2717e6ba53ad6f7fe10"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:ga2305767d60efe2717e6ba53ad6f7fe10"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::free</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, void *ptr, <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</td></tr>
+<tr class="separator:ga2305767d60efe2717e6ba53ad6f7fe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20a8b31094c1147650b01b0f3faf3901"><td class="memTemplParams" colspan="2"><a id="ga20a8b31094c1147650b01b0f3faf3901"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:ga20a8b31094c1147650b01b0f3faf3901"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::free</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, vblk block)</td></tr>
+<tr class="separator:ga20a8b31094c1147650b01b0f3faf3901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bdd673ac63453ababfd434d2936036b"><td class="memTemplParams" colspan="2"><a id="ga9bdd673ac63453ababfd434d2936036b"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:ga9bdd673ac63453ababfd434d2936036b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::free</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, T *ptr, <a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count)</td></tr>
+<tr class="separator:ga9bdd673ac63453ababfd434d2936036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41cc8dbda4a5efed9fafd4956df577ab"><td class="memTemplParams" colspan="2"><a id="ga41cc8dbda4a5efed9fafd4956df577ab"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:ga41cc8dbda4a5efed9fafd4956df577ab"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::free</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, <a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; T &gt; block)</td></tr>
+<tr class="separator:ga41cc8dbda4a5efed9fafd4956df577ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga323192db8f39efea4fb4e1a14fd4cba2"><td class="memTemplParams" colspan="2"><a id="ga323192db8f39efea4fb4e1a14fd4cba2"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:ga323192db8f39efea4fb4e1a14fd4cba2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::clear</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a)</td></tr>
+<tr class="separator:ga323192db8f39efea4fb4e1a14fd4cba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade2c77cfc858a7ab6cd076ae4a86f72f"><td class="memTemplParams" colspan="2"><a id="gade2c77cfc858a7ab6cd076ae4a86f72f"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gade2c77cfc858a7ab6cd076ae4a86f72f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::owns</b> (const <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, const void *ptr, <a class="el" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> size)</td></tr>
+<tr class="separator:gade2c77cfc858a7ab6cd076ae4a86f72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd46bbaaaaadfbf6ff134a6a232a7449"><td class="memTemplParams" colspan="2"><a id="gabd46bbaaaaadfbf6ff134a6a232a7449"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:gabd46bbaaaaadfbf6ff134a6a232a7449"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::owns</b> (const <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, const <a class="el" href="../../d0/d39/structdggt_1_1blk.html">blk</a>&lt; T &gt; block)</td></tr>
+<tr class="separator:gabd46bbaaaaadfbf6ff134a6a232a7449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad125030961f40a806f85c72a6211d808"><td class="memTemplParams" colspan="2"><a id="gad125030961f40a806f85c72a6211d808"></a>
+template&lt;typename D , typename T &gt; </td></tr>
+<tr class="memitem:gad125030961f40a806f85c72a6211d808"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::owns</b> (const <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, const T *ptr, <a class="el" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> count)</td></tr>
+<tr class="separator:gad125030961f40a806f85c72a6211d808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0135659fd5036b3360479d4f3fb124b"><td class="memTemplParams" colspan="2"><a id="gac0135659fd5036b3360479d4f3fb124b"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gac0135659fd5036b3360479d4f3fb124b"><td class="memTemplItemLeft" align="right" valign="top">stack_state&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::save_stack</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a)</td></tr>
+<tr class="separator:gac0135659fd5036b3360479d4f3fb124b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1c895a256bd2c5d8bf5e13c55b88339"><td class="memTemplParams" colspan="2"><a id="gae1c895a256bd2c5d8bf5e13c55b88339"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gae1c895a256bd2c5d8bf5e13c55b88339"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::restore_stack</b> (<a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a, stack_state state)</td></tr>
+<tr class="separator:gae1c895a256bd2c5d8bf5e13c55b88339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac1d69fc2e8abed0edc95ec1df95c703"><td class="memTemplParams" colspan="2"><a id="gaac1d69fc2e8abed0edc95ec1df95c703"></a>
+template&lt;typename D &gt; </td></tr>
+<tr class="memitem:gaac1d69fc2e8abed0edc95ec1df95c703"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d2e/namespacedggt.html#a871ff622137b86e29987fa9d956a5c3a">b32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dggt::is_stack_balanced</b> (const <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt; D &gt; *a)</td></tr>
+<tr class="separator:gaac1d69fc2e8abed0edc95ec1df95c703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gaacdbae1bff13e8439eaa85f17aa6153c"><td class="memItemLeft" align="right" valign="top"><a id="gaacdbae1bff13e8439eaa85f17aa6153c"></a>
+D *&#160;</td><td class="memItemRight" valign="bottom"><b>dggt::allocator&lt; D &gt;::derived</b></td></tr>
+<tr class="separator:gaacdbae1bff13e8439eaa85f17aa6153c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga38eec63211e105d0b9168e650a7c5ac5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga38eec63211e105d0b9168e650a7c5ac5">&#9670;&nbsp;</a></span>lin_alloc</h2>
+<a id="ga5b0bf00ef1545864298228420542e99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b0bf00ef1545864298228420542e99a">&#9670;&nbsp;</a></span>lin_alloc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,12 +305,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 template&lt;u32 SIZE = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#ga38eec63211e105d0b9168e650a7c5ac5">dggt::lin_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::LINEAR,SIZE&gt;</td>
+          <td class="memname">typedef <a class="el" href="../../d6/d7e/structdggt_1_1lin__alloc__.html">lin_alloc_</a>&lt; 0 &gt; <a class="el" href="../../da/d08/group__mem.html#ga5b0bf00ef1545864298228420542e99a">dggt::lin_alloc</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A short way to write <a class="el" href="../../dd/d21/structdggt_1_1allocator_3_01alloc__t_1_1LINEAR_00_01SIZE_01_4.html">allocator&lt;alloc_t::LINEAR,SIZE&gt;</a>. </p>
+<p>A short way to write allocator&lt;alloc_t::LINEAR,SIZE&gt;. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SIZE</td><td>The optional memory stack size (pass 0 for heap allocation.). </td></tr>
@@ -273,8 +320,8 @@ template&lt;u32 SIZE = 0&gt; </div>
 
 </div>
 </div>
-<a id="ga25e213671003c944c63b9a1c902c2a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga25e213671003c944c63b9a1c902c2a34">&#9670;&nbsp;</a></span>stack_alloc</h2>
+<a id="gaa78b7c5d5d31ebbba3b30b5c9ac04b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa78b7c5d5d31ebbba3b30b5c9ac04b3f">&#9670;&nbsp;</a></span>stack_alloc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,12 +329,12 @@ template&lt;u32 SIZE = 0&gt; </div>
 template&lt;u32 SIZE = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#ga25e213671003c944c63b9a1c902c2a34">dggt::stack_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::STACK,SIZE&gt;</td>
+          <td class="memname">typedef <a class="el" href="../../d0/d51/structdggt_1_1stack__alloc__.html">stack_alloc_</a>&lt; 0 &gt; <a class="el" href="../../da/d08/group__mem.html#gaa78b7c5d5d31ebbba3b30b5c9ac04b3f">dggt::stack_alloc</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A short way to write <a class="el" href="../../d9/dc4/structdggt_1_1allocator_3_01alloc__t_1_1STACK_00_01SIZE_01_4.html">allocator&lt;alloc_t::STACK,SIZE&gt;</a>. </p>
+<p>A short way to write <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator&lt;alloc_t::STACK,SIZE&gt;</a>. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SIZE</td><td>The optional memory stack size (pass 0 for heap allocation.). </td></tr>
@@ -297,8 +344,8 @@ template&lt;u32 SIZE = 0&gt; </div>
 
 </div>
 </div>
-<a id="ga261657728fcfa7b1212cfbf5e79e26ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga261657728fcfa7b1212cfbf5e79e26ed">&#9670;&nbsp;</a></span>pool_alloc</h2>
+<a id="gabf41bc39456f9bc688c7dda3501eefe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf41bc39456f9bc688c7dda3501eefe5">&#9670;&nbsp;</a></span>pool_alloc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,12 +353,12 @@ template&lt;u32 SIZE = 0&gt; </div>
 template&lt;u32 SIZE = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#ga261657728fcfa7b1212cfbf5e79e26ed">dggt::pool_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::POOL,SIZE&gt;</td>
+          <td class="memname">typedef <a class="el" href="../../d3/df2/structdggt_1_1pool__alloc__.html">pool_alloc_</a>&lt; 0 &gt; <a class="el" href="../../da/d08/group__mem.html#gabf41bc39456f9bc688c7dda3501eefe5">dggt::pool_alloc</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A short way to write <a class="el" href="../../dc/d77/structdggt_1_1allocator_3_01alloc__t_1_1POOL_00_01SIZE_01_4.html">allocator&lt;alloc_t::POOL,SIZE&gt;</a>. </p>
+<p>A short way to write allocator&lt;alloc_t::POOL,SIZE&gt;. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SIZE</td><td>The optional memory stack size (pass 0 for heap allocation.). </td></tr>
@@ -321,8 +368,8 @@ template&lt;u32 SIZE = 0&gt; </div>
 
 </div>
 </div>
-<a id="ga3b5505e733acbc7082d71dddb523b2c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3b5505e733acbc7082d71dddb523b2c9">&#9670;&nbsp;</a></span>free_list_alloc</h2>
+<a id="gaa15d73504269fb906761b8a648a4158c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa15d73504269fb906761b8a648a4158c">&#9670;&nbsp;</a></span>free_list_alloc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,12 +377,12 @@ template&lt;u32 SIZE = 0&gt; </div>
 template&lt;u32 SIZE = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../da/d08/group__mem.html#ga3b5505e733acbc7082d71dddb523b2c9">dggt::free_list_alloc</a> = typedef <a class="el" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>&lt;alloc_t::FREE_LIST,SIZE&gt;</td>
+          <td class="memname">typedef <a class="el" href="../../da/d48/structdggt_1_1free__list__alloc__.html">free_list_alloc_</a>&lt; 0 &gt; <a class="el" href="../../da/d08/group__mem.html#gaa15d73504269fb906761b8a648a4158c">dggt::free_list_alloc</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A short way to write <a class="el" href="../../d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html">allocator&lt;alloc_t::FREE_LIST,SIZE&gt;</a>. </p>
+<p>A short way to write allocator&lt;alloc_t::FREE_LIST,SIZE&gt;. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SIZE</td><td>The optional memory stack size (pass 0 for heap allocation.). </td></tr>
@@ -359,7 +406,7 @@ template&lt;u32 SIZE = 0&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>A short way to write <a class="el" href="../../d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html">allocator&lt;alloc_t::FREE_LIST,SIZE&gt;</a>. </p>
+<p>A short way to write allocator&lt;alloc_t::FREE_LIST,SIZE&gt;. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SIZE</td><td>The optional block size (pass 0 for run-time block size.). </td></tr>
