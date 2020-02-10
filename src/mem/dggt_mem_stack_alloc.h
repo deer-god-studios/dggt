@@ -4,90 +4,132 @@
 
 namespace dggt
 {
-	template <>
-	struct allocator<alloc_t::STACK>
+	template <u32 SIZE=0>
+	struct stack_alloc_:allocator<stack_alloc_<SIZE>>
 	{
-		static const alloc_t TYPE=alloc_t::STACK;
-		blk<void> buff;
+		stack_alloc_<0> a_;
+		ubyte buff[SIZE];
+		stack_alloc_();
+	};
+
+	template <>
+	struct stack_alloc_<0>
+	{
+		vblk buff;
 		msize used;
 		u32 stateCount;
 		stack_state prevState;
-
-		allocator();
-		allocator(blk<void> buffer);
-		allocator(void* buffPtr,msize buffSize);
-
-		blk<void> alloc(msize size=4);
-		void* alloc(msize* size=0);
-		template <typename T>
-		blk<T> alloc(u32 count=1);
-		template <typename T>
-		T* alloc(u32* count=0);
-		b32 free(blk<void> block);
-		b32 free(void* ptr,msize size);
-		template <typename T>
-		b32 free(blk<T> block);
-		template <typename T>
-		b32 free(T* ptr,u32 count);
-
-		stack_state save_stack();
-		b32 restore_stack(stack_state state);
-		b32 is_stack_balanced() const;
-
-		b32 clear();
-
-		b32 owns(const void* ptr) const;
-		b32 owns(const blk<void> block) const;
-		template <typename T>
-		b32 owns(const T* ptr) const;
-		template <typename T>
-		b32 owns(blk<T> block) const;
-
-		msize available_mem() const;
-		msize used_mem() const;
-
+		stack_alloc_();
+		stack_alloc_(void* ptr,msize size);
+		explicit stack_alloc_(vblk block);
 	};
+
+	// stack_alloc
+	typedef stack_alloc_<0> stack_alloc;
+
+	void* alloc(stack_alloc* a,msize* size=0);
+
+	vblk alloc(stack_alloc* a,msize size=4);
+
+	template <typename T>
+	T* alloc(stack_alloc* a,u32* count=0);
+
+	template <typename T>
+	blk<T> alloc(stack_alloc* a,u32 count=1);
+
+	b32 free(stack_alloc* a,void* ptr,msize size);
+
+	b32 free(stack_alloc* a,vblk block);
+
+	template <typename T>
+	b32 free(stack_alloc* a,T* ptr,u32 count);
+
+	template <typename T>
+	b32 free(stack_alloc* a,blk<T> block);
+
+	b32 clear(stack_alloc* a);
+
+	b32 owns(const stack_alloc* a,const void* ptr,msize size);
+
+	b32 owns(const stack_alloc* a,const vblk block);
+
+	template <typename T>
+	b32 owns(const stack_alloc* a,const T* ptr,u32 count);
+
+	template <typename T>
+	b32 owns(const stack_alloc* a,const blk<T> block);
+
+	msize available_mem(const stack_alloc* a);
+	
+	msize used_mem(const stack_alloc* a);
+
+	stack_state save_stack(stack_alloc* a);
+
+	b32 restore_stack(stack_alloc* a,stack_state state);
+
+	b32 is_stack_balanced(stack_alloc* a);
+
+	// stack_stalloc
 
 	template <u32 SIZE>
-	struct allocator<alloc_t::STACK,SIZE>
-	{
-		static const alloc_t TYPE=alloc_t::STACK;
-		static const u32 S=SIZE;
-		ubyte buff[SIZE];
-		allocator<alloc_t::STACK> internalAlloc;
+	using stack_stalloc=stack_alloc_<SIZE>;
+	
+	template <u32 SIZE>
+	void* alloc(stack_stalloc<SIZE>* a,msize* size=0);
+	
+	template <u32 SIZE>
+	vblk alloc(stack_stalloc<SIZE>* a,msize size=4);
 
-		allocator() { internalAlloc=allocator<alloc_t::STACK>((void*)buff,SIZE); }
-		blk<void> alloc(msize size=4) { return internalAlloc.alloc(size); }
-		void* alloc(msize* size=0) { return internalAlloc.alloc(size); }
-		template <typename T>
-		blk<T> alloc(u32 count=1) { return internalAlloc.alloc<T>(count); }
-		template <typename T>
-		T* alloc(u32* count=0) { return internalAlloc.alloc<T>(count); }
-		b32 free(blk<void> block) { return internalAlloc.free(block); }
-		b32 free(void* ptr,msize size) { return internalAlloc.free(ptr,size); }
-		template <typename T>
-		b32 free(blk<T> block) { return internalAlloc.free(block); }
-		template <typename T>
-		b32 free(T* ptr,u32 count) { return internalAlloc.free(ptr,count); }
+	template <u32 SIZE,typename T>
+	T* alloc(stack_stalloc<SIZE>* a,u32* count=0);
+	
+	template <u32 SIZE,typename T>
+	blk<T> alloc(stack_stalloc<SIZE>* a,u32 count=1);
 
-		stack_state save_stack() { return internalAlloc.save_stack(); }
-		b32 restore_stack(stack_state state) { return internalAlloc.restore_stack(state); }
-		b32 is_stack_balanced() const { return internalAlloc.is_stack_balanced(); }
+	template <u32 SIZE>
+	b32 free(stack_stalloc<SIZE>* a,void* ptr,msize size);
+	
+	template <u32 SIZE>
+	b32 free(stack_stalloc<SIZE>* a,vblk block);
 
-		b32 clear() { return internalAlloc.clear(); }
+	template <u32 SIZE,typename T>
+	b32 free(stack_stalloc<SIZE>* a,T* ptr,u32 count);
 
-		b32 owns(const void* ptr) const { return internalAlloc.owns(ptr); }
-		b32 owns(const blk<void> block) const { return internalAlloc.owns(block); }
-		template <typename T>
-		b32 owns(const T* ptr) const { return internalAlloc.owns(ptr); }
-		template <typename T>
-		b32 owns(blk<T> block) const { return internalAlloc.owns(block); }
+	template <u32 SIZE,typename T>
+	b32 free(stack_stalloc<SIZE>* a,blk<T> block);
 
-		msize available_mem() const { return internalAlloc.available_mem(); }
-		msize used_mem() const { return internalAlloc.used_mem(); }
-	};
+	template <u32 SIZE>
+	b32 clear(stack_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	b32 owns(const stack_stalloc<SIZE>* a,const void* ptr,msize size);
+
+	template <u32 SIZE>
+	b32 owns(const stack_stalloc<SIZE>* a,const vblk block);
+
+	template <u32 SIZE,typename T>
+	b32 owns(const stack_stalloc<SIZE>* a,const T* ptr,u32 count);
+
+	template <u32 SIZE,typename T>
+	b32 owns(const stack_stalloc<SIZE>* a,const blk<T> block);
+
+	template <u32 SIZE>
+	msize available_mem(const stack_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	msize used_mem(const stack_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	stack_state save_stack(stack_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	b32 restore_stack(stack_stalloc<SIZE>* a,stack_state state);
+
+	template <u32 SIZE>
+	b32 is_stack_balanced(stack_stalloc<SIZE>* a);
 }
 
 #include "dggt_mem_stack_alloc.inl"
+
 #define _DGGT_MEM_STACK_ALLOC_H_
 #endif

@@ -4,85 +4,128 @@
 
 namespace dggt
 {
-	template <>
-	struct allocator<alloc_t::POOL>
+
+	template <u32 BLOCKSIZE,u32 BUFFSIZE=0>
+	struct pool_alloc_:allocator<pool_allocator_<BUFFSIZE>>
 	{
-		static const alloc_t TYPE=alloc_t::POOL;
-
-		blk<void> buff;
-		msize used;
-		msize blockSize;
-		u32 blockCount;
-		u32 blocksUsed;
-		pool_block* pool;
-
-		allocator();
-		allocator(void* ptr,msize size,msize blockSize);
-		allocator(blk<void> buffer,msize blockSize);
-
-		template <typename T>
-		blk<T> alloc();
-		blk<void> alloc();
-
-		b32 free(void* ptr,msize size=0);
-		b32 free(blk<void> block);
-		template <typename T>
-		b32 free(T* ptr,u32 count=0);
-		template <typename T>
-		b32 free(blk<T> block);
-
-		b32 clear();
-
-		b32 owns(const void* ptr) const;
-		b32 owns(const blk<void> block) const;
-		template <typename T>
-		b32 owns(const T* ptr) const;
-		template <typename T>
-		b32 owns(const blk<T> block) const;
-
-		msize available_mem() const;
-		msize used_mem() const;
-		u32 available_blocks() const;
-		u32 used_blocks() const;
-
+		pool_alloc_<0> a_;
+		ubyte buff[BUFFSIZE];
+		pool_alloc_();
 	};
+
+	template <u32 BLOCKSIZE>
+	struct pool_alloc_<BLOCKSIZE,0>
+	{
+		vblk buff;
+		msize used;
+		pool_block* pool;
+		pool_alloc_();
+		pool_alloc_(void* ptr,msize size);
+		explicit pool_alloc(vblk block);
+	};
+
+	typedef pool_alloc_<0> pool_alloc;
+
+	void* alloc(pool_alloc* a,msize* size=0);
+
+	vblk alloc(pool_alloc* a,msize size=4);
+
+	template <typename T>
+	T* alloc(pool_alloc* a,u32* count=0);
+
+	template <typename T>
+	blk<T> alloc(pool_alloc* a,u32 count=1);
+
+	b32 free(pool_alloc* a,void* ptr,msize size);
+
+	b32 free(pool_alloc* a,vblk block);
+
+	template <typename T>
+	b32 free(pool_alloc* a,T* ptr,u32 count);
+
+	template <typename T>
+	b32 free(pool_alloc* a,blk<T> block);
+
+	b32 clear(pool_alloc* a);
+
+	b32 owns(const pool_alloc* a,const void* ptr,msize size);
+
+	b32 owns(const pool_alloc* a,const vblk block);
+
+	template <typename T>
+	b32 owns(const pool_alloc* a,const T* ptr,u32 count);
+
+	template <typename T>
+	b32 owns(const pool_alloc* a,const blk<T> block);
+
+	msize available_mem(const pool_alloc* a);
+	
+	msize used_mem(const pool_alloc* a);
+
+	stack_state save_stack(pool_alloc* a);
+
+	b32 restore_stack(pool_alloc* a,stack_state state);
+
+	b32 is_stack_balanced(pool_alloc* a);
+
+	// free_list_stalloc<SIZE>
 
 	template <u32 SIZE>
-	struct allocator<alloc_t::POOL,SIZE>
-	{
-		static const alloc_t TYPE=alloc_t::POOL;
-		static const u32 S=SIZE;
-		ubyte buff[SIZE];
-		allocator<alloc_t::POOL> internalAlloc;
+	using pool_stalloc=pool_alloc_<SIZE>;
 
-		allocator() { internalAlloc=allocator<alloc_t::POOL>(); }
-		allocator(msize blockSize) : allocator() { internalAlloc=allocator<alloc_t::POOL>((void*)buff,SIZE,blockSize); }
+	template <u32 SIZE>
+	void* alloc(pool_stalloc<SIZE>* a,msize* size=0);
+	
+	template <u32 SIZE>
+	vblk alloc(pool_stalloc<SIZE>* a,msize size=4);
 
-		template <typename T>
-		blk<T> alloc() { return internalAlloc.alloc<T>(); }
-		blk<void> alloc() { return internalAlloc.alloc(); }
+	template <u32 SIZE,typename T>
+	T* alloc(pool_stalloc<SIZE>* a,u32* count=0);
+	
+	template <u32 SIZE,typename T>
+	blk<T> alloc(pool_stalloc<SIZE>* a,u32 count=1);
 
-		b32 free(void* ptr) { return internalAlloc.free(ptr); }
-		b32 free(blk<void> block) { return internalAlloc.free(block); }
-		template <typename T>
-		b32 free(T* ptr) { return internalAlloc.free<T>(ptr); }
-		template <typename T>
-		b32 free(blk<T> block) { return internalAlloc.free<T>(block); }
+	template <u32 SIZE>
+	b32 free(pool_stalloc<SIZE>* a,void* ptr,msize size);
+	
+	template <u32 SIZE>
+	b32 free(pool_stalloc<SIZE>* a,vblk block);
 
-		b32 clear() { return internalAlloc.clear(); }
+	template <u32 SIZE,typename T>
+	b32 free(pool_stalloc<SIZE>* a,T* ptr,u32 count);
 
-		b32 owns(const void* ptr) const { return internalAlloc.owns(ptr); }
-		b32 owns(const blk<void> block) const { return internalAlloc.owns(block); }
-		template <typename T>
-		b32 owns(const T* ptr) const { return internalAlloc.owns(ptr); }
-		template <typename T>
-		b32 owns(const blk<T> block) const { return internalAlloc.owns(block); }
+	template <u32 SIZE,typename T>
+	b32 free(pool_stalloc<SIZE>* a,blk<T> block);
 
-		msize available_mem() const { return internalAlloc.available_mem(); }
-		msize used_mem() const { return internalAlloc.used_mem(); }
-		u32 available_blocks() const { return internalAlloc.available_blocks(); }
-		u32 used_blocks() const { return internalAlloc.used_blocks(); }
-	};
+	template <u32 SIZE>
+	b32 clear(pool_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	b32 owns(const pool_stalloc<SIZE>* a,const void* ptr,msize size);
+
+	template <u32 SIZE>
+	b32 owns(const pool_stalloc<SIZE>* a,const vblk block);
+
+	template <u32 SIZE,typename T>
+	b32 owns(const pool_stalloc<SIZE>* a,const T* ptr,u32 count);
+
+	template <u32 SIZE,typename T>
+	b32 owns(const pool_stalloc<SIZE>* a,const blk<T> block);
+
+	template <u32 SIZE>
+	msize available_mem(const pool_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	msize used_mem(const pool_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	stack_state save_stack(pool_stalloc<SIZE>* a);
+
+	template <u32 SIZE>
+	b32 restore_stack(pool_stalloc<SIZE>* a,stack_state state);
+
+	template <u32 SIZE>
+	b32 is_stack_balanced(pool_stalloc<SIZE>* a);
 }
 
 #include "dggt_mem_pool_alloc.inl"
