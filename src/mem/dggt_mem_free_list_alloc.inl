@@ -1,47 +1,158 @@
 
 namespace dggt
 {
+	// free_list_alloc
 
 	template <typename T>
-	T* allocator<alloc_t::FREE_LIST>::alloc(u32* count)
+	T* alloc(free_list_alloc* a,u32* count)
 	{
 		T* result=0;
 		if (count&&*count)
 		{
 			msize size=*count*sizeof(T);
-			result=(T*)alloc(&size);
+			result=(T*)alloc(a,&size);
 		}
 		return result;
 	}
 
 	template <typename T>
-	blk<T> allocator<alloc_t::FREE_LIST>::alloc(u32 count)
+	blk<T> alloc(free_list_alloc* a,u32 count)
 	{
-		return (blk<T>)alloc((msize)count*sizeof(T));
+		return (blk<T>)alloc(a,(msize)count*sizeof(T));
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::FREE_LIST>::free(T* ptr,u32 count)
+	b32 free(free_list_alloc* a,T* ptr,u32 count)
 	{
 		return free(ptr,(msize)count*sizeof(T));
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::FREE_LIST>::free(blk<T> block)
+	b32 free(free_list_alloc* a,blk<T> block)
 	{
 		return free(block.mem,block.count);
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::FREE_LIST>::owns(const T* ptr) const
+	b32 owns(const free_list_alloc* a,const T* ptr,u32 count)
 	{
-		return owns((void*)ptr);
+		return owns(a,ptr,sizeof(T)*count);
 	}
 
 	template <typename T>
-	b32 allocator<alloc_t::FREE_LIST>::owns(const blk<T> block) const
+	b32 owns(const free_list_alloc* a,const blk<T> block)
 	{
-		return owns(block.mem)&&
-			block.mem+block.count<=ptr_add(buff.mem,buff.size);
+		return owns(a,block.mem,block.count);
+	}
+
+
+	// free_list_stalloc
+
+	template <u32 SIZE>
+	void* alloc(free_list_stalloc<SIZE>* a,msize* size)
+	{
+		return alloc(&a->a_,size);
+	}
+	
+	template <u32 SIZE>
+	vblk alloc(free_list_stalloc<SIZE>* a,msize size)
+	{
+		return alloc(&a->a_,size);
+	}
+
+	template <u32 SIZE,typename T>
+	T* alloc(free_list_stalloc<SIZE>* a,u32* count)
+	{
+		return alloc(&a->a_,count);
+	}
+	
+	template <u32 SIZE,typename T>
+	blk<T> alloc(free_list_stalloc<SIZE>* a,u32 count)
+	{
+		return alloc(&a->a_,count);
+	}
+
+	template <u32 SIZE>
+	b32 free(free_list_stalloc<SIZE>* a,void* ptr,msize size)
+	{
+		return free(&a->a_,ptr,size);
+	}
+	
+	template <u32 SIZE>
+	b32 free(free_list_stalloc<SIZE>* a,vblk block)
+	{
+		return free(&a->a_,block);
+	}
+
+	template <u32 SIZE,typename T>
+	b32 free(free_list_stalloc<SIZE>* a,T* ptr,u32 count)
+	{
+		return free(&a->a_,ptr,count);
+	}
+
+	template <u32 SIZE,typename T>
+	b32 free(free_list_stalloc<SIZE>* a,blk<T> block)
+	{
+		return free(&a->a_,block);
+	}
+
+	template <u32 SIZE>
+	b32 clear(free_list_stalloc<SIZE>* a)
+	{
+		return clear(&a->a_);
+	}
+
+	template <u32 SIZE>
+	b32 owns(const free_list_stalloc<SIZE>* a,const void* ptr,msize size)
+	{
+		return owns(&a->a_,ptr,size);
+	}
+
+	template <u32 SIZE>
+	b32 owns(const free_list_stalloc<SIZE>* a,const vblk block)
+	{
+		return owns(&a->a_,block);
+	}
+
+	template <u32 SIZE,typename T>
+	b32 owns(const free_list_stalloc<SIZE>* a,const T* ptr,u32 count)
+	{
+		return owns(&a->a_,ptr,count);
+	}
+
+	template <u32 SIZE,typename T>
+	b32 owns(const free_list_stalloc<SIZE>* a,const blk<T> block)
+	{
+		return owns(&a->a_,block);
+	}
+
+	template <u32 SIZE>
+	msize available_mem(const free_list_stalloc<SIZE>* a)
+	{
+		return available_mem(&a->a_);
+	}
+
+	template <u32 SIZE>
+	msize used_mem(const free_list_stalloc<SIZE>* a)
+	{
+		return used_mem(&a->a_);
+	}
+
+	template <u32 SIZE>
+	stack_state save_stack(free_list_stalloc<SIZE>* a)
+	{
+		return save_stack(&a->a_);
+	}
+
+	template <u32 SIZE>
+	b32 restore_stack(free_list_stalloc<SIZE>* a,stack_state state)
+	{
+		return restore_stack(&a->a_,state);
+	}
+
+	template <u32 SIZE>
+	b32 is_stack_balanced(free_list_stalloc<SIZE>* a)
+	{
+		return is_stack_balanced(&a->a_);
 	}
 }

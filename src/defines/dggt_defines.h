@@ -23,6 +23,21 @@
  * @brief Halts (ie. crashes) the program if the given predicate evaluates to false.
  * */
 
+/*!
+ * @brief For global variables.
+ * */
+#define global static
+
+/*!
+ * @brief For internal functions (with respect to the translation unit.).
+ * */
+#define internal static
+
+/*!
+ * @brief For locally persistant variables. 
+ * */
+#define local static
+
 /// @brief Resolves to the number of elements in a stack array.
 /// @warning Only works with arrays defined with the syntax: type arrayName[#]
 #define ARRAY_COUNT(X) (sizeof((X)))/(sizeof((X)[0]))

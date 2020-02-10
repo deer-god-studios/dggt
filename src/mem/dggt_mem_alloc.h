@@ -17,37 +17,68 @@ namespace dggt
 	 * @{
 	 * */
 
-	/*!
-	 * @brief an enumerator containing all the basic allocators.
-	 * */
-	enum alloc_t:u32
+
+
+	// TODO: this doesn't work well either maybe.  Maybe try a more
+	// 		traditional approach?
+
+	template <typename D>
+	struct allocator:alloc_base
 	{
-		NONE,
-		LINEAR,
-		STACK,
-		AUTO_STACK,
-		POOL,
-		FREE_LIST,
-		STORE,
-		STORE_TABLE,
-		FALLBACK,
+		D* derived;
+		allocator(D* derivedAlloc);
 	};
 
-	struct pool_block;
-	struct store_block;
-	struct free_block;
-	typedef msize stack_state;
+	template <typename D>
+	vblk alloc(allocator<D>* a,msize size=4);
 
-	// NOTE: variadic template args are for composite allocator types.
-	template <alloc_t A,u32 SIZE=0,u32... As>
-	struct allocator;
+	template <typename D>
+	void* alloc(allocator<D>* a,msize* size=0);
 
-	/*!
-	 * @}
-	 * */
+	template <typename D,typename T>
+	blk<T> alloc(allocator<D>* a,u32 count=1);
+
+	template <typename D,typename T>
+	T* alloc(allocator<D>* a,u32* count=0);
+
+	template <typename D>
+	b32 free(allocator<D>* a,void* ptr,msize size);
+
+	template <typename D>
+	b32 free(allocator<D>* a,vblk block);
+
+	template <typename D,typename T>
+	b32 free(allocator<D>* a,T* ptr,u32 count);
+
+
+	template <typename D,typename T>
+	b32 free(allocator<D>* a,blk<T> block);
+
+	template <typename D>
+	b32 clear(allocator<D>* a);
+
+	template <typename D>
+	b32 owns(const allocator<D>* a,const void* ptr,msize size);
+
+	template <typename D,typename T>
+	b32 owns(const allocator<D>* a,const blk<T> block);
+	
+	template <typename D,typename T>
+	b32 owns(const allocator<D>* a,const T* ptr,u32 count);
+
+	template <typename D>
+	stack_state save_stack(allocator<D>* a);
+
+	template <typename D>
+	b32 restore_stack(allocator<D>* a,stack_state state);
+
+	template <typename D>
+	b32 is_stack_balanced(const allocator<D>* a);
 }
+
+#include "dggt_mem_alloc.inl"
 
 /*! @cond IncludeGuard */
 #define _DGGT_MEM_ALLOC_H_
 #endif
-/*! @endcond */
+/*! @endcond  */

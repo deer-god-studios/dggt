@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <sys/mman.h>
 #include "types/dggt_types.h"
+#include "dggt_mem_types.h"
 
 namespace dggt
 {
