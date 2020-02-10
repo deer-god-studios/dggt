@@ -96,47 +96,53 @@ $(document).ready(function(){initNavTree('dc/dad/dggt__mem__alloc_8h_source.html
 <div class="title">dggt_mem_alloc.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _DGGT_MEM_ALLOC_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// TODO: implement is_valid(block) to check if a block has already </span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//      been &#39;freed&#39;.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// TODO: allow pool allocs to free multiple blocks. </span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;dggt_mem_blk.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef _DGGT_MEM_ALLOC_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// TODO: implement is_valid(block) to check if a block has already </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//      been &#39;freed&#39;.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// TODO: allow pool allocs to free multiple blocks. </span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">enum</span> alloc_t:<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        NONE,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        LINEAR,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        STACK,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        AUTO_STACK,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        POOL,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        FREE_LIST,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        STORE,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        STORE_TABLE,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        FALLBACK,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">struct </span>pool_block;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">struct </span>store_block;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">struct </span>free_block;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> stack_state;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// NOTE: variadic template args are for composite allocator types.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">template</span> &lt;alloc_t A,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> SIZE=0,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a>... As&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d0/d23/structdggt_1_1allocator.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define _DGGT_MEM_ALLOC_H_</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;dggt_mem_blk.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="comment">// TODO: fix allocators!  This enumerator shit sucks.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d2e/namespacedggt.html">dggt</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c">   23</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c">alloc_t</a>:<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        NONE,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        LINEAR,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        STACK,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        AUTO_STACK,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        POOL,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        FREE_LIST,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        STORE,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        STORE_TABLE,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        FALLBACK,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">struct </span>pool_block;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">struct </span>store_block;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">struct </span>free_block;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">msize</a> stack_state;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// NOTE: variadic template args are for composite allocator types.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<a class="code" href="../../da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c">alloc_t</a> A,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a> SIZE=0,<a class="code" href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">u32</a>... As&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d0/d23/structdggt_1_1allocator.html">   43</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d0/d23/structdggt_1_1allocator.html">allocator</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define _DGGT_MEM_ALLOC_H_</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacedggt_html"><div class="ttname"><a href="../../db/d2e/namespacedggt.html">dggt</a></div><div class="ttdoc">The main namespace for the dggt library.</div><div class="ttdef"><b>Definition:</b> dggt_coll_hash_table.cpp:3</div></div>
 <div class="ttc" id="anamespacedggt_html_a1b476a6645bf671ff29f633871769eca"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a1b476a6645bf671ff29f633871769eca">dggt::msize</a></div><div class="ttdeci">size_t msize</div><div class="ttdoc">Represents memory size.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:14</div></div>
 <div class="ttc" id="anamespacedggt_html_a17a0c2407511b699e5d933ec2989d2a4"><div class="ttname"><a href="../../db/d2e/namespacedggt.html#a17a0c2407511b699e5d933ec2989d2a4">dggt::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdoc">Short hand for uint32.</div><div class="ttdef"><b>Definition:</b> dggt_types.h:56</div></div>
-<div class="ttc" id="astructdggt_1_1allocator_html"><div class="ttname"><a href="../../d0/d23/structdggt_1_1allocator.html">dggt::allocator</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_alloc.h:31</div></div>
+<div class="ttc" id="astructdggt_1_1allocator_html"><div class="ttname"><a href="../../d0/d23/structdggt_1_1allocator.html">dggt::allocator</a></div><div class="ttdef"><b>Definition:</b> dggt_mem_alloc.h:43</div></div>
+<div class="ttc" id="agroup__mem_html_gae7163554e1c14e03c14f999d529a3a3c"><div class="ttname"><a href="../../da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c">dggt::alloc_t</a></div><div class="ttdeci">alloc_t</div><div class="ttdoc">an enumerator containing all the basic allocators.</div><div class="ttdef"><b>Definition:</b> dggt_mem_alloc.h:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

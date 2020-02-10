@@ -1,5 +1,6 @@
 var group__mem =
 [
+    [ "allocator", "d0/d23/structdggt_1_1allocator.html", null ],
     [ "lin_alloc", "da/d08/group__mem.html#ga38eec63211e105d0b9168e650a7c5ac5", null ],
     [ "stack_alloc", "da/d08/group__mem.html#ga25e213671003c944c63b9a1c902c2a34", null ],
     [ "pool_alloc", "da/d08/group__mem.html#ga261657728fcfa7b1212cfbf5e79e26ed", null ],
@@ -8,6 +9,7 @@ var group__mem =
     [ "store_table_alloc", "da/d08/group__mem.html#gabe06c7e8496f184df5208e5e1eeaf148", null ],
     [ "fallback_alloc", "da/d08/group__mem.html#gae469f0d4156bd9fb7ea3bb8995a2c3cd", null ],
     [ "scratch_alloc", "da/d08/group__mem.html#ga05df2b28b66c42ff05ff5fe73a153dcd", null ],
+    [ "alloc_t", "da/d08/group__mem.html#gae7163554e1c14e03c14f999d529a3a3c", null ],
     [ "cache_init", "da/d08/group__mem.html#ga6ac3e5d0333251e6af3f2083912e1e9f", null ],
     [ "cache_is_initialized", "da/d08/group__mem.html#ga8423a9ef0442f16ef90faba75d929b4f", null ],
     [ "cache_shutdown", "da/d08/group__mem.html#gad17ab2dd0aa0683ebfc49eecad4353e0", null ],
@@ -16,5 +18,19 @@ var group__mem =
     [ "used_cache_mem", "da/d08/group__mem.html#ga6ec9d44b8ab3d48c99f8298e00e16085", null ],
     [ "cache_size", "da/d08/group__mem.html#gae90fcf02810d6610d63c625b68150d4b", null ],
     [ "cache_alloc", "da/d08/group__mem.html#ga78615e0f11ef43a87f900b316c1c2114", null ],
-    [ "cache_alloc", "da/d08/group__mem.html#ga3f427852793287eea991ebe3a7ce6d96", null ]
+    [ "cache_alloc", "da/d08/group__mem.html#ga3f427852793287eea991ebe3a7ce6d96", null ],
+    [ "cache_free", "da/d08/group__mem.html#gabae9b419e65d8acf1c1eb9510e46d680", null ],
+    [ "cache_free", "da/d08/group__mem.html#gaf5ae1d483befc59627669a4feba207b0", null ],
+    [ "cache_clear", "da/d08/group__mem.html#ga5b7e8e024b53ed7c9a7744354bbea892", null ],
+    [ "cache_alloc", "da/d08/group__mem.html#ga3dcab3df1fac70802e850da733c9a015", null ],
+    [ "cache_alloc", "da/d08/group__mem.html#ga132699597e4785dfed48992e656ba36e", null ],
+    [ "cache_free", "da/d08/group__mem.html#ga54527272d4ea91eea901dbbdf1653b80", null ],
+    [ "cache_free", "da/d08/group__mem.html#ga21cad0b5df3064e8c537f513dadd0cd7", null ],
+    [ "create_alloc", "da/d08/group__mem.html#gac1cde1ead56c0adfa96b5d1f5d7e7c2e", null ],
+    [ "create_alloc", "da/d08/group__mem.html#ga1eb57f1017ddb12725e6c1cf4cce1daf", null ],
+    [ "create_alloc", "da/d08/group__mem.html#gae80662ca9a09757fb75ea5f9beb905b2", null ],
+    [ "create_alloc", "da/d08/group__mem.html#ga4d524a4aaefcf6d63241df6691c52e78", null ],
+    [ "create_alloc", "da/d08/group__mem.html#gad8e79c4b3c71006da3b313096d8f2f1e", null ],
+    [ "create_alloc", "da/d08/group__mem.html#gaeb5f77d00b963704fe13a2abd215bcc5", null ],
+    [ "destroy_alloc", "da/d08/group__mem.html#ga0cc7505ac0d4ccfe0adf94a1c452558b", null ]
 ];

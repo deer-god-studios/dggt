@@ -23,7 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "dggt", "index.html", [
-    [ "README", "d0/d30/md_README.html", null ],
+    [ "README", "de/d6b/README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -54,10 +54,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html#a547060e7727caa677d880124c6c5f001",
-"db/d2e/namespacedggt.html",
-"dc/d74/structdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_00_01SIZE_01_4.html#aa07a7c7aba3faaddddab78c56c8c6bff",
-"df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html#a15da50179658d726446bf21f8fbf303e"
+"d4/d24/structdggt_1_1allocator_3_01alloc__t_1_1FREE__LIST_00_01SIZE_01_4.html#a69a9c20fd20f365b31a28b93e2d5174d",
+"da/ddf/structdggt_1_1blk_3_01void_01_4.html#a644c278304a066a8c8b7467980ba1508",
+"dc/d74/structdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_00_01SIZE_01_4.html#a2688cf34a07b291fc716d06fc8d6f99e",
+"de/df1/group__math.html#gad44e5cdae8488f020e15b9f600a345d4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

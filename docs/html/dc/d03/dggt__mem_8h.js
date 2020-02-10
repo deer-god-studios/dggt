@@ -24,7 +24,7 @@ var dggt__mem_8h =
     [ "cache_alloc", "dc/d03/dggt__mem_8h.html#ga132699597e4785dfed48992e656ba36e", null ],
     [ "cache_free", "dc/d03/dggt__mem_8h.html#ga54527272d4ea91eea901dbbdf1653b80", null ],
     [ "cache_free", "dc/d03/dggt__mem_8h.html#ga21cad0b5df3064e8c537f513dadd0cd7", null ],
-    [ "create_alloc", "dc/d03/dggt__mem_8h.html#ga4940a71743b9835cd4e4444109531003", null ],
+    [ "create_alloc", "dc/d03/dggt__mem_8h.html#gac1cde1ead56c0adfa96b5d1f5d7e7c2e", null ],
     [ "create_alloc", "dc/d03/dggt__mem_8h.html#ga1eb57f1017ddb12725e6c1cf4cce1daf", null ],
     [ "create_alloc", "dc/d03/dggt__mem_8h.html#gae80662ca9a09757fb75ea5f9beb905b2", null ],
     [ "create_alloc", "dc/d03/dggt__mem_8h.html#ga4d524a4aaefcf6d63241df6691c52e78", null ],
