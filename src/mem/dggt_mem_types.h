@@ -7,6 +7,8 @@ namespace dggt
 {
 	typedef msize stack_state;
 	struct free_block;
+	struct pool_block;
+	struct store_block;
 }
 
 /*! @cond IncludeGuard */

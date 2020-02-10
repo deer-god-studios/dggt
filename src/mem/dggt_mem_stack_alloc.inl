@@ -57,6 +57,12 @@ namespace dggt
 	// stack_stalloc
 
 	template <u32 SIZE>
+	stack_alloc_<SIZE>::stack_alloc_()
+	{
+		a_=stack_alloc_<0>((void*)buff,SIZE);
+	}
+
+	template <u32 SIZE>
 	void* alloc(stack_stalloc<SIZE>* a,msize* size)
 	{
 		return alloc(&a->a_,size);

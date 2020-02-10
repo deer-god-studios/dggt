@@ -10,8 +10,6 @@
 
 namespace dggt
 {
-	struct pool_block;
-	struct store_block;
 
 	// TODO: this doesn't work well either maybe.  Maybe try a more
 	// 		traditional approach?

@@ -70,7 +70,7 @@ namespace dggt
 	template <u32 SIZE>
 	lin_alloc_<SIZE>::lin_alloc_()
 	{
-		a_=lin_alloc<>((void*)buff,SIZE);
+		a_=lin_alloc_<0>((void*)buff,SIZE);
 	}
 
 	template <u32 SIZE>
