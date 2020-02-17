@@ -4,27 +4,25 @@
 
 namespace dggt
 {
-	template <u32 SIZE=0>
-	struct lin_alloc_:allocator<lin_alloc_<SIZE>>
-	{
-		lin_alloc_<0> a_; 
-		ubyte buff[SIZE];
-		lin_alloc_();
-	};
-
 	template <>
-	struct lin_alloc_<0>
+	struct allocator<ALLOC_T_LINEAR>
 	{
 		vblk buff;
 		msize used;
-		lin_alloc_();
-		lin_alloc_(void* ptr,msize size);
-		explicit lin_alloc_(vblk block);
+		allocator();
+		allocator(void* ptr,msize size);
+		explicit allocator(vblk block);
 	};
 
-	// lin_alloc
+	template <u32 SIZE>
+	struct allocator<ALLOC_T_LINEAR,SIZE>
+	{
+		allocator<ALLOC_T_LINEAR> a_; 
+		ubyte buff[SIZE];
+		allocator();
+	};
 
-	typedef lin_alloc_<0> lin_alloc;
+	typedef allocator<ALLOC_T_LINEAR> lin_alloc;
 
 	void* alloc(lin_alloc* a,msize* size=0);
 
@@ -71,7 +69,7 @@ namespace dggt
 	// lin_stalloc<SIZE>
 
 	template <u32 SIZE>
-	using lin_stalloc=lin_alloc_<SIZE>;
+	using lin_stalloc=allocator<ALLOC_T_LINEAR,SIZE>;
 
 	template <u32 SIZE>
 	void* alloc(lin_stalloc<SIZE>* a,msize* size=0);

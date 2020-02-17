@@ -2,7 +2,7 @@
 
 namespace dggt
 {
-	stack_alloc_<0>::stack_alloc_()
+	allocator<ALLOC_T_STACK>::allocator()
 	{
 		buff=vblk();
 		used=0;
@@ -10,13 +10,13 @@ namespace dggt
 		prevState=0;
 	}
 
-	stack_alloc_<0>::stack_alloc_(void* ptr,msize size)
+	allocator<ALLOC_T_STACK>::allocator(void* ptr,msize size)
 	{
 		buff.mem=ptr;
 		buff.size=size;
 	}
 
-	stack_alloc_<0>::stack_alloc_(vblk block)
+	allocator<ALLOC_T_STACK>::allocator(vblk block)
 		:stack_alloc_(block.mem,block.size)
 	{
 	}

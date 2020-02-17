@@ -2,22 +2,21 @@
 
 namespace dggt
 {
-	lin_alloc_<0>::lin_alloc_()
-		:allocator<lin_alloc_<0>>(this)
+	allocator<ALLOC_T_LINEAR>::allocator()
 	{
 		buff=blk<void>();
 		used=0;
 	}
 
-	lin_alloc_<0>::lin_alloc_(void* ptr,msize size)
-		:lin_alloc_()
+	allocator<ALLOC_T_LINEAR>::allocator(void* ptr,msize size)
+		:allocator()
 	{
 		buff.mem=ptr;
 		buff.size=size;
 	}
 
-	lin_alloc_<0>::lin_alloc_(vblk block)
-		:lin_alloc_(block.mem,block.size)
+	allocator<ALLOC_T_LINEAR>::allocator(vblk block)
+		:allocator(block.mem,block.size)
 	{
 	}
 
@@ -105,6 +104,4 @@ namespace dggt
 	{
 		return 1;
 	}
-
-
 }

@@ -92,7 +92,10 @@ namespace dggt
 		}
 	};
 
-	typename blk<void> vblk;
+	typename blk<void> blkv;
+	
+	typename blk<float32> blkf32;
+	typename blk<float64> blkf32;
 
 	template <typename T>
 	static const blk<T> NULL_BLK=blk<T>();

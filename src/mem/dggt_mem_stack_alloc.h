@@ -4,28 +4,29 @@
 
 namespace dggt
 {
-	template <u32 SIZE=0>
-	struct stack_alloc_:allocator<stack_alloc_<SIZE>>
-	{
-		stack_alloc_<0> a_;
-		ubyte buff[SIZE];
-		stack_alloc_();
-	};
-
 	template <>
-	struct stack_alloc_<0>
+	struct allocator<ALLOC_T_STACK>
 	{
 		vblk buff;
 		msize used;
 		u32 stateCount;
 		stack_state prevState;
-		stack_alloc_();
-		stack_alloc_(void* ptr,msize size);
-		explicit stack_alloc_(vblk block);
+		allocator();
+		allocator(void* ptr,msize size);
+		explicit allocator(vblk block);
+	};
+
+
+	template <u32 SIZE>
+	struct allocator<ALLOC_T_STACK,SIZE>
+	{
+		allocator<ALLOC_T_STACK> a_;
+		ubyte buff[SIZE];
+		allocator();
 	};
 
 	// stack_alloc
-	typedef stack_alloc_<0> stack_alloc;
+	typedef allocator<ALLOC_T_STACK> stack_alloc;
 
 	void* alloc(stack_alloc* a,msize* size=0);
 
@@ -72,7 +73,7 @@ namespace dggt
 	// stack_stalloc
 
 	template <u32 SIZE>
-	using stack_stalloc=stack_alloc_<SIZE>;
+	using stack_stalloc=allocator<ALLOC_T_STACK,SIZE>;
 	
 	template <u32 SIZE>
 	void* alloc(stack_stalloc<SIZE>* a,msize* size=0);

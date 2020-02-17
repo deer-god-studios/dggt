@@ -68,7 +68,7 @@ namespace dggt
 	// lin_stalloc<SIZE>
 	// {
 	template <u32 SIZE>
-	lin_alloc_<SIZE>::lin_alloc_()
+	allocator<ALLOC_T_LINEAR,SIZE>::allocator()
 	{
 		a_=lin_alloc_<0>((void*)buff,SIZE);
 	}
