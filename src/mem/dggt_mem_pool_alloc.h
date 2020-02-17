@@ -4,24 +4,35 @@
 
 namespace dggt
 {
-	template <u32 BLOCKSIZE>
+
+	template <u32 SIZE=0>
+	struct pool_block
+	{
+		pool_block<SIZE>* next;
+	};
+
+	template <u32 BLOCKSIZE=0>
 	struct allocator<ALLOC_T_POOL,BLOCKSIZE>
 	{
 		vblk buff;
 		msize used;
 		pool_block* pool;
 		allocator();
+		allocator(msize blockSize=4);
 		allocator(void* ptr,msize size);
 		explicit allocator(vblk block);
 	};
 
+	template <u32 BLOCKSIZE>
+	using pool_alloc=allocator<ALLOC_T_POOL,BLOCKSIZE>;
 
-	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	template <u32 BUFFSIZE,u32 BLOCKSIZE=0>
 	struct allocator<ALLOC_T_POOL,BLOCKSIZE,BUFFSIZE>
 	{
-		pool_alloc_<0> a_;
+		pool_alloc<BLOCKSIZE> a_;
 		ubyte buff[BUFFSIZE];
 		allocator();
+		allocator(
 	};
 
 	template <u32 BLOCKSIZE>

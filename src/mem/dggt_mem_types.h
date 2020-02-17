@@ -7,6 +7,7 @@ namespace dggt
 {
 	typedef msize stack_state;
 	struct free_block;
+	template <u32 SIZE=0>
 	struct pool_block;
 	struct store_block;
 }
