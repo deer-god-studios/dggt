@@ -264,7 +264,7 @@ namespace dggt
 	template <u32 BLOCKSIZE>
 	stack_state save_stack(pool_alloc<BLOCKSIZE>* a)
 	{
-		return 0;
+		return SAVE_STACK_FAIL;
 	}
 
 	template <u32 BLOCKSIZE>

@@ -4,7 +4,7 @@ namespace dggt
 {
 	allocator<ALLOC_T_STACK>::allocator()
 	{
-		buff=vblk();
+		buff=blkv();
 		used=0;
 		stateCount=0;
 		prevState=0;
@@ -16,7 +16,7 @@ namespace dggt
 		buff.size=size;
 	}
 
-	allocator<ALLOC_T_STACK>::allocator(vblk block)
+	allocator<ALLOC_T_STACK>::allocator(blkv block)
 		:stack_alloc_(block.mem,block.size)
 	{
 	}
@@ -48,16 +48,16 @@ namespace dggt
 		return result;
 	}
 
-	vblk alloc(stack_alloc* a,msize size)
+	blkv alloc(stack_alloc* a,msize size)
 	{
 		void* result=alloc(&size);
-		return vblk(result,size);
+		return blkv(result,size);
 	}
 
 	b32 free(stack_alloc* a,void* ptr,msize size)
 	{
 		b32 result=0;
-		vblk b=vblk(ptr,size);
+		blkv b=blkv(ptr,size);
 		if (owns(b)&&
 				a->used-size>=(msize)a->prevState)
 		{
@@ -72,7 +72,7 @@ namespace dggt
 		return result;
 	}
 
-	b32 free(stack_alloc* a,vblk block)
+	b32 free(stack_alloc* a,blkv block)
 	{
 		return free(a,block.mem,block.size);
 	}
@@ -115,7 +115,7 @@ namespace dggt
 			ptr_add(ptr,size)<=ptr_add(buff.mem,buff.size);
 	}
 
-	b32 owns(const stack_alloc* a,const vblk block)
+	b32 owns(const stack_alloc* a,const blkv block)
 	{
 		return owns(a,block.mem,block.size);
 	}

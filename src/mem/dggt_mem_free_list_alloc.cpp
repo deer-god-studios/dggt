@@ -3,12 +3,6 @@
 
 namespace dggt
 {
-	struct free_block
-	{
-		msize size;
-		free_block* next;
-	};
-
 	namespace dggt_internal_
 	{
 		struct best_fit_result
@@ -55,14 +49,14 @@ namespace dggt
 		}
 	}
 
-	free_list_alloc_::free_list_alloc_()
+	allocator<ALLOC_T_FREE_LIST>::allocator()
 	{
-		buff=vblk();
+		buff=blkv();
 		used=0;
 		freeList=0;
 	}
 
-	free_list_alloc_::free_list_alloc_(void* ptr,msize size)
+	allocator<ALLOC_T_FREE_LIST>::allocator(void* ptr,msize size)
 	{
 		ASSERT(size>=sizeof(free_block));
 		if (ptr&&size)
@@ -75,8 +69,8 @@ namespace dggt
 		}
 	}
 
-	free_list_alloc_::free_list_alloc_(vblk block)
-		: free_list_alloc_(block.mem,block.size)
+	allocator<ALLOC_T_FREE_LIST>::allocator(blkv block)
+		: allocator<ALLOC_T_FREE_LIST>(block.mem,block.size)
 	{
 	}
 
@@ -131,9 +125,9 @@ namespace dggt
 		return result;
 	}
 
-	vblk alloc(free_list_alloc* a,msize size)
+	blkv alloc(free_list_alloc* a,msize size)
 	{
-		vblk result;
+		blkv result;
 		result.mem=alloc(a,&size);
 		result.size=size;
 		return result;
@@ -228,7 +222,7 @@ namespace dggt
 		return result;
 	}
 
-	b32 free(free_list_alloc* a,vblk block)
+	b32 free(free_list_alloc* a,blkv block)
 	{
 		return free(a,block.mem,block.size);
 	}
@@ -247,7 +241,7 @@ namespace dggt
 			ptr_add(ptr,size)<=ptr_add(a->buff.mem,a->buff.size);
 	}
 
-	b32 owns(const free_list_alloc* a,const vblk block)
+	b32 owns(const free_list_alloc* a,const blkv block)
 	{
 		return owns(a,block.mem,block.size);
 	}
@@ -260,5 +254,20 @@ namespace dggt
 	msize used_mem(const free_list_alloc* a)
 	{
 		return a->used;
+	}
+
+	stack_state save_stack(free_list_alloc* a)
+	{
+		return SAVE_STACK_FAIL;
+	}
+
+	b32 restore_stack(free_list_alloc* a,stack_state state)
+	{
+		return 0;
+	}
+
+	b32 is_stack_balanced(free_list_alloc* a)
+	{
+		return 1;
 	}
 }

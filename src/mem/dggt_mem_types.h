@@ -6,6 +6,9 @@
 namespace dggt
 {
 	typedef msize stack_state;
+
+	global const SAVE_STACK_FAIL=MAX_MSIZE;
+
 	struct free_block;
 	template <u32 SIZE=0>
 	struct pool_block;

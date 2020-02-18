@@ -35,9 +35,9 @@ namespace dggt
 	}
 
 	template <typename T>
-	blk<T>::operator vblk()
+	blk<T>::operator blkv()
 	{
-		return vblk(mem,sizeof(T)*count);
+		return blkv(mem,sizeof(T)*count);
 	}
 
 	template <typename T>
@@ -144,7 +144,7 @@ namespace dggt
 	template <typename T>
 	void blk_cpy(blk<T> dest,blk<T> src,u32 count)
 	{
-		blk_cpy(vblk(dest),vblk(src),sizeof(T)*count);
+		blk_cpy(blkv(dest),blkv(src),sizeof(T)*count);
 	}
 
 

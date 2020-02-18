@@ -56,116 +56,116 @@ namespace dggt
 
 	// stack_stalloc
 
-	template <u32 SIZE>
-	allocator<ALLOC_T_STACK,SIZE>::allocator()
+	template <u32 BUFFSIZE>
+	allocator<ALLOC_T_STACK,BUFFSIZE>::allocator()
 	{
-		a_=allocator((void*)buff,SIZE);
+		a_=allocator((void*)buff,BUFFSIZE);
 	}
 
-	template <u32 SIZE>
-	void* alloc(stack_stalloc<SIZE>* a,msize* size)
+	template <u32 BUFFSIZE>
+	void* alloc(stack_stalloc<BUFFSIZE>* a,msize* size)
 	{
 		return alloc(&a->a_,size);
 	}
 	
-	template <u32 SIZE>
-	vblk alloc(stack_stalloc<SIZE>* a,msize size)
+	template <u32 BUFFSIZE>
+	blkv alloc(stack_stalloc<BUFFSIZE>* a,msize size)
 	{
 		alloc(&a->a_,size);
 	}
 
-	template <u32 SIZE,typename T>
-	T* alloc(stack_stalloc<SIZE>* a,u32* count)
+	template <u32 BUFFSIZE,typename T>
+	T* alloc(stack_stalloc<BUFFSIZE>* a,u32* count)
 	{
 		alloc(&a->a_,count);
 	}
 	
-	template <u32 SIZE,typename T>
-	blk<T> alloc(stack_stalloc<SIZE>* a,u32 count)
+	template <u32 BUFFSIZE,typename T>
+	blk<T> alloc(stack_stalloc<BUFFSIZE>* a,u32 count)
 	{
 		return alloc(&a->a_,count);
 	}
 
-	template <u32 SIZE>
-	b32 free(stack_stalloc<SIZE>* a,void* ptr,msize size)
+	template <u32 BUFFSIZE>
+	b32 free(stack_stalloc<BUFFSIZE>* a,void* ptr,msize size)
 	{
 		return free(&a->a_,ptr,size);
 	}
 	
-	template <u32 SIZE>
-	b32 free(stack_stalloc<SIZE>* a,vblk block)
+	template <u32 BUFFSIZE>
+	b32 free(stack_stalloc<BUFFSIZE>* a,blkv block)
 	{
 		return free(&a->a_,block);
 	}
 
-	template <u32 SIZE,typename T>
-	b32 free(stack_stalloc<SIZE>* a,T* ptr,u32 count)
+	template <u32 BUFFSIZE,typename T>
+	b32 free(stack_stalloc<BUFFSIZE>* a,T* ptr,u32 count)
 	{
 		return free(&a->a_,ptr,count);
 	}
 
-	template <u32 SIZE,typename T>
-	b32 free(stack_stalloc<SIZE>* a,blk<T> block)
+	template <u32 BUFFSIZE,typename T>
+	b32 free(stack_stalloc<BUFFSIZE>* a,blk<T> block)
 	{
 		return free(&a->a_,block);
 	}
 
-	template <u32 SIZE>
-	b32 clear(stack_stalloc<SIZE>* a)
+	template <u32 BUFFSIZE>
+	b32 clear(stack_stalloc<BUFFSIZE>* a)
 	{
 		return clear(&a->a_);
 	}
 
-	template <u32 SIZE>
-	b32 owns(const stack_stalloc<SIZE>* a,const void* ptr,msize size)
+	template <u32 BUFFSIZE>
+	b32 owns(const stack_stalloc<BUFFSIZE>* a,const void* ptr,msize size)
 	{
 		return owns(&a->a_,ptr,size);
 	}
 
-	template <u32 SIZE>
-	b32 owns(const stack_stalloc<SIZE>* a,const vblk block)
+	template <u32 BUFFSIZE>
+	b32 owns(const stack_stalloc<BUFFSIZE>* a,const blkv block)
 	{
 		return owns(&a->a_,block);
 	}
 
-	template <u32 SIZE,typename T>
-	b32 owns(const stack_stalloc<SIZE>* a,const T* ptr,u32 count)
+	template <u32 BUFFSIZE,typename T>
+	b32 owns(const stack_stalloc<BUFFSIZE>* a,const T* ptr,u32 count)
 	{
 		return owns(&a->a_,ptr,count);
 	}
 
-	template <u32 SIZE,typename T>
-	b32 owns(const stack_stalloc<SIZE>* a,const blk<T> block)
+	template <u32 BUFFSIZE,typename T>
+	b32 owns(const stack_stalloc<BUFFSIZE>* a,const blk<T> block)
 	{
 		return owns(&a->a_,block);
 	}
 
-	template <u32 SIZE>
-	msize available_mem(const stack_stalloc<SIZE>* a)
+	template <u32 BUFFSIZE>
+	msize available_mem(const stack_stalloc<BUFFSIZE>* a)
 	{
 		return available_mem(&a->a_);
 	}
 
-	template <u32 SIZE>
-	msize used_mem(const stack_stalloc<SIZE>* a)
+	template <u32 BUFFSIZE>
+	msize used_mem(const stack_stalloc<BUFFSIZE>* a)
 	{
 		return used_mem(&a->a_);
 	}
 
-	template <u32 SIZE>
-	stack_state save_stack(stack_stalloc<SIZE>* a)
+	template <u32 BUFFSIZE>
+	stack_state save_stack(stack_stalloc<BUFFSIZE>* a)
 	{
 		return save_stack(&a->a_);
 	}
 
-	template <u32 SIZE>
-	b32 restore_stack(stack_stalloc<SIZE>* a,stack_state state)
+	template <u32 BUFFSIZE>
+	b32 restore_stack(stack_stalloc<BUFFSIZE>* a,stack_state state)
 	{
 		return restore_stack(&a->a_,state);
 	}
 
-	template <u32 SIZE>
-	b32 is_stack_balanced(stack_stalloc<SIZE>* a)
+	template <u32 BUFFSIZE>
+	b32 is_stack_balanced(stack_stalloc<BUFFSIZE>* a)
 	{
 		return is_stack_balanced(&a->a_);
 	}

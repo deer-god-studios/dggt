@@ -105,13 +105,13 @@ namespace dggt
 	template <typename T>
 	void blk_free(blk<T> block);
 
-	vblk blk_alloc(msize size);
-	void blk_free(vblk block);
+	blkv blk_alloc(msize size);
+	void blk_free(blkv block);
 
 	template <typename T>
 	void blk_cpy(blk<T> dest,blk<T> src,u32 count);
 
-	void blk_cpy(vblk dest,vblk src,msize size);
+	void blk_cpy(blkv dest,blkv src,msize size);
 }
 
 #include "dggt_mem_blk.inl"

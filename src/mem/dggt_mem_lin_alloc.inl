@@ -80,7 +80,7 @@ namespace dggt
 	}
 
 	template <u32 SIZE>
-	vblk alloc(lin_stalloc<SIZE>* a,msize size)
+	blkv alloc(lin_stalloc<SIZE>* a,msize size)
 	{
 		return alloc(&a->a_,size);
 	}
@@ -104,7 +104,7 @@ namespace dggt
 	}
 	
 	template <u32 SIZE>
-	b32 free(lin_stalloc<SIZE>* a,vblk block)
+	b32 free(lin_stalloc<SIZE>* a,blkv block)
 	{
 		return free(&a->a_,block);
 	}
@@ -134,7 +134,7 @@ namespace dggt
 	}
 
 	template <u32 SIZE>
-	b32 owns(const lin_stalloc<SIZE>* a,const vblk block)
+	b32 owns(const lin_stalloc<SIZE>* a,const blkv block)
 	{
 		return owns(&a->a_,block);
 	}

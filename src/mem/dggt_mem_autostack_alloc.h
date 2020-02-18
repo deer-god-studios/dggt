@@ -4,275 +4,142 @@
 
 namespace dggt
 {
-	template <>
-	struct allocator<alloc_t::AUTO_STACK>
+	template <u32 BUFFSIZE=0>
+	struct allocator<ALLOC_T_AUTO_STACK,BUFFSIZE>
 	{
-		static const alloc_t TYPE=alloc_t::AUTO_STACK;
+		static const bool B=BUFFSIZE==0;
+		typedef enable_or<B,stack_alloc,stack_alloc<BUFFSIZE>>::val_t
+			alloc_t;
+
+		static const u32 TYPE=ALLOC_T_AUTO_STACK;
 		stack_state savedState;
-		allocator<alloc_t::STACK>* a;
+		alloc_t* a;
 
-		allocator() { savedState=0;a=0; }
-
-		allocator(allocator<alloc_t::STACK>* stackAlloc)
+		allocator() 
+			:a((alloc_t*)0)
 		{
-			a=stackAlloc;
-			savedState=a->save_stack();
+			savedState=save_stack(a);
 		}
 
-		allocator(allocator<alloc_t::AUTO_STACK>& other)
+		allocator(alloc_t* stackAlloc)
+			:allocator(),a(stackAlloc) { }
+
+		allocator(alloc_t& other)
+			:allocator(&other) { }
+
+		allocator<ALLOC_T_AUTO_STACK,BUFFSIZE>& operator=(allocator<ALLOC_T_AUTO_STACK,BUFFSIZE>& other)
 		{
 			a=other.a;
-			savedState=a->save_stack();
-		}
-
-		blk<void> alloc(msize size=4)
-		{
-			return a?a->alloc(size):blk<void>();
-		}
-
-		void* alloc(msize* size=0)
-		{
-			return a?a->alloc(size):0;
-		}
-		template <typename T>
-		blk<T> alloc(u32 count=1)
-		{
-			return a?a->alloc(count):blk<T>();
-		}
-		template <typename T>
-		T* alloc(u32* count=0)
-		{
-			return a?a->alloc<T>(count):0;
-		}
-
-		b32 free(blk<void> block)
-		{
-			return a?a->free(block):0;
-		}
-		b32 free(void* ptr,msize size)
-		{
-			return a?a->free(ptr,size):0;
-		}
-		template <typename T>
-		b32 free(blk<T> block)
-		{
-			return a?a->free(block):0;
-		}
-		template <typename T>
-		b32 free(T* ptr,u32 count)
-		{
-			return a?a->free(ptr,count):0;
-		}
-
-		stack_state save_stack()
-		{
-			return a?a->save_stack():0;
-		}
-		b32 restore_stack(stack_state state)
-		{
-			return a?a->restore_stack(state):0;
-		}
-		b32 is_stack_balanced() const
-		{
-			return a?a->is_stack_balanced():1;
-		}
-
-		b32 clear()
-		{
-			return a?a->clear():0;
-		}
-
-		b32 owns(const void* ptr) const
-		{
-			return a?a->owns(ptr):0;
-		}
-		b32 owns(const blk<void> block) const
-		{
-			return a?a->owns(block):0;
-		}
-		template <typename T>
-		b32 owns(const T* ptr) const
-		{
-			return a?a->owns(ptr):0;
-		}
-		template <typename T>
-		b32 owns(blk<T> block) const
-		{
-			return a?a->owns(block):0;
-		}
-
-		msize available_mem() const
-		{
-			return a?a->available_mem():0;
-		}
-		msize used_mem() const
-		{
-			return a?a->used_mem():0;
-		}
-
-		allocator<alloc_t::AUTO_STACK>& operator=(
-				allocator<alloc_t::AUTO_STACK>& rhs)
-		{
-			if (this!=&rhs)
-			{
-				a=rhs.a;
-				savedState=a->save_stack();
-			}
-			return *this;
-		}
-		allocator<alloc_t::AUTO_STACK>& operator=(
-				allocator<alloc_t::STACK>& rhs)
-		{
-
-			a=&rhs;
-			savedState=a->save_stack();
+			savedState=save_stack(a);
 			return *this;
 		}
 
 		~allocator()
 		{
-			if (a)
-			{
-				a->restore_stack(savedState);
-			}
+			restore_stack(a,savedState);
 		}
 	};
 
-	template <u32 SIZE>
-	struct allocator<alloc_t::AUTO_STACK,SIZE>
+	typedef auto_stack_alloc allocator<ALLOC_T_AUTO_STACK>;
+
+	template <u32 BUFFSIZE>
+	using auto_stack_stalloc=allocator<ALLOC_T_AUTO_STACK,BUFFSIZE>;
+
+	void* alloc(auto_stack_alloc* a,msize* size=0)
 	{
-		static const alloc_t TYPE=alloc_t::AUTO_STACK;
-		static const u32 S=SIZE;
-		stack_state savedState;
-		allocator<alloc_t::STACK,SIZE>* a;
+		return alloc(a->a,size);
+	}
 
-		allocator() { savedState=0;a=0; }
+	blkv alloc(auto_stack_alloc* a,msize size=4)
+	{
+		return alloc(a->a,size);
+	}
 
-		allocator(allocator<alloc_t::STACK,SIZE>* stackAlloc)
-		{
-			a=stackAlloc;
-			savedState=a->save_stack();
-		}
+	template <typename T>
+	T* alloc(auto_stack_alloc* a,u32* count=0)
+	{
+		return alloc(a->a,count);
+	}
 
-		allocator(allocator<alloc_t::AUTO_STACK,SIZE>& other)
-		{
-			a=other.a;
-			savedState=a->save_stack();
-		}
+	template <typename T>
+	blk<T> alloc(auto_stack_alloc* a,u32 count=1)
+	{
+		return alloc(a->a,count);
+	}
 
-		blk<void> alloc(msize size=4)
-		{
-			return a?a->alloc(size):blk<void>();
-		}
+	b32 free(auto_stack_alloc* a,void* ptr,msize size)
+	{
+		return free(a->a,ptr,size);
+	}
 
-		void* alloc(msize* size=0)
-		{
-			return a?a->alloc(size):0;
-		}
-		template <typename T>
-		blk<T> alloc(u32 count=1)
-		{
-			return a?a->alloc(count):blk<T>();
-		}
-		template <typename T>
-		T* alloc(u32* count=0)
-		{
-			return a?a->alloc(count):0;
-		}
+	b32 free(auto_stack_alloc* a,blkv block)
+	{
+		return free(a->a,block)
+	}
 
-		b32 free(blk<void> block)
-		{
-			return a?a->free(block):0;
-		}
-		b32 free(void* ptr,msize size)
-		{
-			return a?a->free(ptr,size):0;
-		}
-		template <typename T>
-		b32 free(blk<T> block)
-		{
-			return a?a->free(block):0;
-		}
-		template <typename T>
-		b32 free(T* ptr,u32 count)
-		{
-			return a?a->free(ptr,count):0;
-		}
+	template <typename T>
+	b32 free(auto_stack_alloc* a,T* ptr,u32 count)
+	{
+		return free(a->a,ptr,count);
+	}
 
-		stack_state save_stack()
-		{
-			return a?a->save_stack():0;
-		}
-		b32 restore_stack(stack_state state)
-		{
-			return a?a->restore_stack(state):0;
-		}
-		b32 is_stack_balanced() const
-		{
-			return a?a->is_stack_balanced():1;
-		}
+	template <typename T>
+	b32 free(auto_stack_alloc* a,blk<T> block)
+	{
+		return free(a->a,block);
+	}
 
-		b32 clear()
-		{
-			return a?a->clear():0;
-		}
+	b32 clear(auto_stack_alloc* a)
+	{
+		return clear(a->a);
+	}
 
-		b32 owns(const void* ptr) const
-		{
-			return a?a->owns(ptr):0;
-		}
-		b32 owns(const blk<void> block) const
-		{
-			return a?a->owns(block):0;
-		}
-		template <typename T>
-		b32 owns(const T* ptr) const
-		{
-			return a?a->owns(ptr):0;
-		}
-		template <typename T>
-		b32 owns(blk<T> block) const
-		{
-			return a?a->owns(block):0;
-		}
+	b32 owns(const auto_stack_alloc* a,const void* ptr,msize size)
+	{
+		return owns(a->a,ptr,size);
+	}
 
-		msize available_mem() const
-		{
-			return a?a->available_mem():0;
-		}
-		msize used_mem() const
-		{
-			return a?a->used_mem():0;
-		}
+	b32 owns(const auto_stack_alloc* a,const blkv block)
+	{
+		return owns(a->a,block);
+	}
 
-		allocator<alloc_t::AUTO_STACK,SIZE>& operator=(
-				allocator<alloc_t::AUTO_STACK,SIZE>& rhs)
-		{
-			if (this!=&rhs)
-			{
-				a=rhs.a;
-				savedState=a->save_stack();
-			}
-			return *this;
-		}
-		allocator<alloc_t::AUTO_STACK,SIZE>& operator=(
-				allocator<alloc_t::STACK,SIZE>& rhs)
-		{
+	template <typename T>
+	b32 owns(const auto_stack_alloc* a,const T* ptr,u32 count)
+	{
+		return owns(a->a,ptr,count);
+	}
 
-			a=&rhs;
-			savedState=a->save_stack();
-			return *this;
-		}
+	template <typename T>
+	b32 owns(const auto_stack_alloc* a,const blk<T> block)
+	{
+		return owns(a->a,block);
+	}
 
+	msize available_mem(const auto_stack_alloc* a)
+	{
+		return available_mem(a->a);
+	}
+	
+	msize used_mem(const auto_stack_alloc* a)
+	{
+		return used_mem(a->a);
+	}
 
-		~allocator()
-		{
-			if (a)
-			{
-				a->restore_stack(savedState);
-			}
-		}
-	};
+	stack_state save_stack(auto_stack_alloc* a)
+	{
+		return save_stack(a->a);
+	}
+
+	b32 restore_stack(auto_stack_alloc* a,stack_state state)
+	{
+		return restore_stack(a->a,state);
+	}
+
+	b32 is_stack_balanced(auto_stack_alloc* a)
+	{
+		return is_stack_balanced(a->a);
+	}
 }
 
 #define _DGGT_MEM_AUTOSTACK_H_

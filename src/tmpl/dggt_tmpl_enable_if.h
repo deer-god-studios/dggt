@@ -10,24 +10,56 @@ namespace dggt
 	template <typename T=void>
 	struct enable_if<false,T>
 	{
-		typedef T val;
+		typedef T val_t;
+	};
+
+	template <bool B,typename IF=void,typename OR=void>
+	struct enable_or
+	{
+		typedef OR val_t;
+	};
+
+	template <typename IF=void,typename OR=void>
+	struct enable_or<true,IF,OR>
+	{
+		typedef IF val_t;
 	};
 
 	template <bool B,typename T=u32>
 	struct val_if:enable_if<B,T>
 	{
-		val_if(T val) { }
-		operator T() { return (T)this; }
+		typedef T val_t;
+		val_if(val_t val) { }
+		operator val_t() { return (val_t)this; }
 	};
 
 	template <typename T=u32>
 	struct val_if:enable_if<true,T>
 	{
-		static T val;
+		typedef T val_t;
+		static val_t val;
 
-		val_if(T val) { this->val=val; }
+		val_if(val_t val) { this->val=val; }
 
-		operator T() { return val; }
+		operator val_t() { return val; }
+	};
+
+	template <bool B,typename IF,typename OR>
+	struct val_or:enable_or<B,IF,OR>
+	{
+		static val_t val;
+
+		val_or(val_t val) { this->val=val; }
+		operator val_t() { return val; }
+	};
+
+	template <typename IF,typename OR>
+	struct val_or<true,IF,OR>
+	{
+		static val_t val;
+
+		val_or(val_t val) { this->val=val; }
+		operator val_t() { return val; }
 	};
 
 	template <u32 VAL=0>

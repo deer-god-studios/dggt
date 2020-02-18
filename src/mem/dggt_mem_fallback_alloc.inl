@@ -1,686 +1,243 @@
 
 namespace dggt
 {
-	template <u32 P,u32 F>
-	void* allocator<alloc_t::FALLBACK,P,F>::alloc(msize* size)
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	struct allocator<ALLOC_T_FALLBACK,
+	PTYPE,PU32...,PTYPES...,
+	FTYPE,FU32s...,FTYPES>::allocator()
+		p((palloc*)0),
+		f((falloc*)0)
+	{
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	struct allocator<ALLOC_T_FALLBACK,
+	PTYPE,PU32...,PTYPES...,
+	FTYPE,FU32s...,FTYPES>::allocator(
+			palloc* primary,
+			falloc* fallback)
+	{
+		p=primary;
+		f=fallback;
+	}
+
+
+	void* alloc(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			msize* size)
 	{
 		void* result=0;
-		if (p)
+		if (a->p)
 		{
-			result=p->alloc(size);
+			result=alloc(a->p,size);
 		}
-		if (!result&&f)
+		if (!result&&a->f)
 		{
-			result=f->alloc(size);
+			result=alloc(a->f,size);
 		}
 		return result;
 	}
 
-	template <u32 P,u32 F>
-	blk<void> allocator<alloc_t::FALLBACK,P,F>::alloc(msize size)
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	blkv alloc(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			msize size)
 	{
-		blk<void> result=blk<void>();
-		if (p)
-		{
-			result=p->alloc(size);
-		}
-		if (!result.mem&&f)
-		{
-			result=f->alloc(size);
-		}
-		return result;
+		blkv result=blkv();
+		void* ptr=alloc(a,&size);
+		result.mem=ptr;
+		result.size=size;
 	}
 
-	template <u32 P,u32 F>
-	template <typename T>
-	T* allocator<alloc_t::FALLBACK,P,F>::alloc(u32* count)
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	T* alloc(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			u32* count)
 	{
 		T* result=0;
-		if (p)
+		msize size=0;
+		if (count)
 		{
-			result=p->alloc(count);
+			size=sizeof(T)*(*count);
 		}
-		if (!result&&f)
+		result=(T*)alloc(a,&size);
+		if (count)
 		{
-			result=f->alloc(count);
+			*count=size/sizeof(T);
 		}
 		return result;
 	}
 
-	template <u32 P,u32 F>
-	template <typename T>
-	blk<T> allocator<alloc_t::FALLBACK,P,F>::alloc(u32 count)
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	blk<T> alloc(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			u32 count)
 	{
 		blk<T> result=blk<T>();
-		if (p)
-		{
-			result=p->alloc(count);
-		}
-		if (!result&&f)
-		{
-			result=f->alloc(count);
-		}
+		result.mem=alloc(a,&count);
+		result.count=count;
 		return result;
 	}
 
-	template <u32 P,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,F>::free(void* ptr,msize size)
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 free(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			void* ptr,
+			msize size)
 	{
 		b32 result=0;
-		if (p)
+		if (a->p)
 		{
-			result=p->alloc(ptr,size);
+			result=free(p,ptr,size);
 		}
-		if (!result&&f)
+		else if (a->f)
 		{
-			result=f->alloc(ptr,size);
+			result=free(f,ptr,size);
 		}
 		return result;
 	}
 
-	template <u32 P,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,F>::free(blk<void> block)
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 free(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			blkv block)
+	{
+		void* ptr=block.mem;
+		msize size=block.size;
+		b32 result=free(a,ptr,size);
+		return result;
+	}
+
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 free(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			T* ptr,
+			u32 count)
+	{
+		msize size=block.count*sizeof(T);
+		return free(a,ptr,size);
+	}
+
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 free(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			blk<T> block)
+	{
+		return free(block.mem,block.count);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 clear(
+			fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a)
 	{
 		b32 result=0;
-		if (p)
+		return clear(a->p)&&clear(a->f);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 owns(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			const void* ptr,
+			msize size)
+	{
+		return owns(a->p,ptr,size)||owns(a->f,ptr,size);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 owns(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			const blkv block)
+	{
+		return owns(a,block.mem,block.size);
+	}
+
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 owns(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			const T* ptr,
+			u32 count)
+	{
+		return owns(a,ptr,count*sizeof(T));
+	}
+
+	template <typename T,u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 owns(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			const blk<T> block)
+	{
+		return owns(a,block.mem,block.count);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	msize available_mem(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a)
+	{
+		return available_mem(a->p)+available_mem(a->f);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	msize used_mem(
+			const fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a)
+	{
+		reutnr used_mem(a->p)+used_mem(a->f);
+	}
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	stack_state save_stack(fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a)
+	{
+		stack_state result=0;
+		if (a->p)
 		{
-			result=p->free(block);
+			result=save_stack(a->p);
 		}
-		if (!result&&f)
+		else if (result==SAVE_STACK_FAIL&&a->f)
 		{
-			result=f->free(block);
+			result=save_stack(a->f);
 		}
 		return result;
 	}
-	template <u32 P,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,F>::free(T* ptr,u32 count)
+
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 restore_stack(fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a,
+			stack_state state)
 	{
 		b32 result=0;
-		if (p)
+		if (state!=SAVE_STACK_FAIL)
 		{
-			result=p->free(ptr,count);
-		}
-		if (!result&&f)
-		{
-			result=f->free(ptr,count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,F>::free(blk<T> block)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(block);
-		}
-		if (!result&&f)
-		{
-			result=f->free(block);
+			if (a->p)
+			{
+				result=restore_stack(a->p,state);
+			}
+			else if (!result||a->f)
+			{
+				result=restore_stack(a->f,state);
+			}
 		}
 		return result;
 	}
 
-	template <u32 P,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,F>::clear()
+	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
+			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	b32 is_stack_balanced(fallback_alloc<PTYPE,PU32s...,PTYPES...,FTYPE,FU32s...,FTYPES...>* a)
 	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->clear();
-		}
-		if (!result&&f)
-		{
-			result=f->clear();
-		}
-		return result;
-	}
-	template <u32 P,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,F>::owns(const void* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=p->owns(ptr);
-		}
-		return result;
-	}
-	template <u32 P,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,F>::owns(const blk<void> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-	template <u32 P,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,F>::owns(const T* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(ptr);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 F>
-	template <typename T>	
-	b32 allocator<alloc_t::FALLBACK,P,F>::owns(const blk<T> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 F>
-	msize allocator<alloc_t::FALLBACK,P,F>::available_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->available_mem();
-		}
-		if (f)
-		{
-			result+=f->available_mem();
-		}
-		return result;
-	}
-
-	template <u32 P,u32 F>
-	msize allocator<alloc_t::FALLBACK,P,F>::used_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->used_mem();
-		}
-		if (f)
-		{
-			result+=f->used_mem();
-		}
-		return result;
-	}
-
-	// "temp_fallback"
-
-	template <u32 P,u32 SIZE,u32 F>
-	void* allocator<alloc_t::FALLBACK,P,SIZE,F>::alloc(msize* size)
-	{
-		void* result=0;
-		if (p)
-		{
-			result=p->alloc(size);
-		}
-		if (!result&&f)
-		{
-			result=f->alloc(size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	blk<void> allocator<alloc_t::FALLBACK,P,SIZE,F>::alloc(msize size)
-	{
-		blk<void> result=blk<void>();
-		if (p)
-		{
-			result=p->alloc(size);
-		}
-		if (!result.mem&&f)
-		{
-			result=f->alloc(size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>
-	T* allocator<alloc_t::FALLBACK,P,SIZE,F>::alloc(u32* count)
-	{
-		T* result=0;
-		if (p)
-		{
-			result=p->template alloc<T>(count);
-		}
-		if (!result&&f)
-		{
-			result=f->template alloc<T>(count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>
-	blk<T> allocator<alloc_t::FALLBACK,P,SIZE,F>::alloc(u32 count)
-	{
-		blk<T> result=blk<T>();
-		if (p)
-		{
-			result=p->template alloc<T>(count);
-		}
-		if (!result&&f)
-		{
-			result=f->template alloc<T>(count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::free(void* ptr,msize size)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->alloc(ptr,size);
-		}
-		if (!result&&f)
-		{
-			result=f->alloc(ptr,size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::free(blk<void> block)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(block);
-		}
-		if (!result&&f)
-		{
-			result=f->free(block);
-		}
-		return result;
-	}
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::free(T* ptr,u32 count)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(ptr,count);
-		}
-		if (!result&&f)
-		{
-			result=f->free(ptr,count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::free(blk<T> block)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(block);
-		}
-		if (!result&&f)
-		{
-			result=f->free(block);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::clear()
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->clear();
-		}
-		if (!result&&f)
-		{
-			result=f->clear();
-		}
-		return result;
-	}
-	template <u32 P,u32 SIZE,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::owns(const void* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=p->owns(ptr);
-		}
-		return result;
-	}
-	template <u32 P,u32 SIZE,u32 F>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::owns(const blk<void> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::owns(const T* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(ptr);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	template <typename T>	
-	b32 allocator<alloc_t::FALLBACK,P,SIZE,F>::owns(const blk<T> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	msize allocator<alloc_t::FALLBACK,P,SIZE,F>::available_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->available_mem();
-		}
-		if (f)
-		{
-			result+=f->available_mem();
-		}
-		return result;
-	}
-
-	template <u32 P,u32 SIZE,u32 F>
-	msize allocator<alloc_t::FALLBACK,P,SIZE,F>::used_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->used_mem();
-		}
-		if (f)
-		{
-			result+=f->used_mem();
-		}
-		return result;
-	}
-// "scratch_fallback"
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	void* allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::alloc(msize* size)
-	{
-		void* result=0;
-		if (p)
-		{
-			result=p->alloc(size);
-		}
-		if (!result&&f)
-		{
-			result=f->alloc(size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	blk<void> allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::alloc(msize size)
-	{
-		blk<void> result=blk<void>();
-		if (p)
-		{
-			result=p->alloc(size);
-		}
-		if (!result.mem&&f)
-		{
-			result=f->alloc(size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>
-	T* allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::alloc(u32* count)
-	{
-		T* result=0;
-		if (p)
-		{
-			result=p->template alloc<T>(count);
-		}
-		if (!result&&f)
-		{
-			result=f->template alloc<T>(count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>
-	blk<T> allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::alloc(u32 count)
-	{
-		blk<T> result=blk<T>();
-		if (p)
-		{
-			result=p->template alloc<T>(count);
-		}
-		if (!result&&f)
-		{
-			result=f->template alloc<T>(count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::free(void* ptr,msize size)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->alloc(ptr,size);
-		}
-		if (!result&&f)
-		{
-			result=f->alloc(ptr,size);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::free(blk<void> block)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(block);
-		}
-		if (!result&&f)
-		{
-			result=f->free(block);
-		}
-		return result;
-	}
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::free(T* ptr,u32 count)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(ptr,count);
-		}
-		if (!result&&f)
-		{
-			result=f->free(ptr,count);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::free(blk<T> block)
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->free(block);
-		}
-		if (!result&&f)
-		{
-			result=f->free(block);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::clear()
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->clear();
-		}
-		if (!result&&f)
-		{
-			result=f->clear();
-		}
-		return result;
-	}
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::owns(const void* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=p->owns(ptr);
-		}
-		return result;
-	}
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::owns(const blk<void> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::owns(const T* ptr) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(ptr);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(ptr);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	template <typename T>	
-	b32 allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::owns(const blk<T> block) const
-	{
-		b32 result=0;
-		if (p)
-		{
-			result=p->owns(block);
-		}
-		if (!result&&f)
-		{
-			result=f->owns(block);
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	msize allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::available_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->available_mem();
-		}
-		if (f)
-		{
-			result+=f->available_mem();
-		}
-		return result;
-	}
-
-	template <u32 P,u32 PSIZE,u32 F,u32 FSIZE>
-	msize allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE>::used_mem() const
-	{
-		msize result=0;
-		if (p)
-		{
-			result+=p->used_mem();
-		}
-		if (f)
-		{
-			result+=f->used_mem();
-		}
-		return result;
+		return is_stack_balanced(a->p)&&is_stack_balanced(a->f);
 	}
 }

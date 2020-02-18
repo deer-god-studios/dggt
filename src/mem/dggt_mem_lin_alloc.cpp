@@ -15,7 +15,7 @@ namespace dggt
 		buff.size=size;
 	}
 
-	allocator<ALLOC_T_LINEAR>::allocator(vblk block)
+	allocator<ALLOC_T_LINEAR>::allocator(blkv block)
 		:allocator(block.mem,block.size)
 	{
 	}
@@ -47,10 +47,10 @@ namespace dggt
 		return result;
 	}
 
-	vblk alloc(lin_alloc* a,msize size)
+	blkv alloc(lin_alloc* a,msize size)
 	{
 		void* mem=alloc(a,&size);
-		return vblk(mem,size);
+		return blkv(mem,size);
 	}
 
 	b32 free(lin_alloc* a,void* ptr,msize size)
@@ -58,7 +58,7 @@ namespace dggt
 		return 0;
 	}
 
-	b32 free(lin_alloc* a,vblk block)
+	b32 free(lin_alloc* a,blkv block)
 	{
 		return 0;
 	}
@@ -75,7 +75,7 @@ namespace dggt
 			ptr_add(ptr,size)<=ptr_add(a->buff.mem,a->buff.size);
 	}
 
-	b32 owns(const lin_alloc* a,const vblk block)
+	b32 owns(const lin_alloc* a,const blkv block)
 	{
 		return owns(a,block.mem,block.size);
 	}
@@ -92,7 +92,7 @@ namespace dggt
 
 	stack_state save_stack(lin_alloc* a)
 	{
-		return 0;
+		return SAVE_STACK_FAIL;
 	}
 
 	b32 restore_stack(lin_alloc* a,stack_state state)

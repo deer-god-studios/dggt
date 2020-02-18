@@ -7,19 +7,21 @@ namespace dggt
 	template <>
 	struct allocator<ALLOC_T_STACK>
 	{
-		vblk buff;
+		static const u32 TYPE=ALLOC_T_STACK;
+		blkv buff;
 		msize used;
 		u32 stateCount;
 		stack_state prevState;
 		allocator();
 		allocator(void* ptr,msize size);
-		explicit allocator(vblk block);
+		explicit allocator(blkv block);
 	};
 
 
 	template <u32 SIZE>
 	struct allocator<ALLOC_T_STACK,SIZE>
 	{
+		static const u32 TYPE=ALLOC_T_STACK;
 		allocator<ALLOC_T_STACK> a_;
 		ubyte buff[SIZE];
 		allocator();
@@ -30,7 +32,7 @@ namespace dggt
 
 	void* alloc(stack_alloc* a,msize* size=0);
 
-	vblk alloc(stack_alloc* a,msize size=4);
+	blkv alloc(stack_alloc* a,msize size=4);
 
 	template <typename T>
 	T* alloc(stack_alloc* a,u32* count=0);
@@ -40,7 +42,7 @@ namespace dggt
 
 	b32 free(stack_alloc* a,void* ptr,msize size);
 
-	b32 free(stack_alloc* a,vblk block);
+	b32 free(stack_alloc* a,blkv block);
 
 	template <typename T>
 	b32 free(stack_alloc* a,T* ptr,u32 count);
@@ -52,7 +54,7 @@ namespace dggt
 
 	b32 owns(const stack_alloc* a,const void* ptr,msize size);
 
-	b32 owns(const stack_alloc* a,const vblk block);
+	b32 owns(const stack_alloc* a,const blkv block);
 
 	template <typename T>
 	b32 owns(const stack_alloc* a,const T* ptr,u32 count);
@@ -79,7 +81,7 @@ namespace dggt
 	void* alloc(stack_stalloc<SIZE>* a,msize* size=0);
 	
 	template <u32 SIZE>
-	vblk alloc(stack_stalloc<SIZE>* a,msize size=4);
+	blkv alloc(stack_stalloc<SIZE>* a,msize size=4);
 
 	template <u32 SIZE,typename T>
 	T* alloc(stack_stalloc<SIZE>* a,u32* count=0);
@@ -91,7 +93,7 @@ namespace dggt
 	b32 free(stack_stalloc<SIZE>* a,void* ptr,msize size);
 	
 	template <u32 SIZE>
-	b32 free(stack_stalloc<SIZE>* a,vblk block);
+	b32 free(stack_stalloc<SIZE>* a,blkv block);
 
 	template <u32 SIZE,typename T>
 	b32 free(stack_stalloc<SIZE>* a,T* ptr,u32 count);
@@ -106,7 +108,7 @@ namespace dggt
 	b32 owns(const stack_stalloc<SIZE>* a,const void* ptr,msize size);
 
 	template <u32 SIZE>
-	b32 owns(const stack_stalloc<SIZE>* a,const vblk block);
+	b32 owns(const stack_stalloc<SIZE>* a,const blkv block);
 
 	template <u32 SIZE,typename T>
 	b32 owns(const stack_stalloc<SIZE>* a,const T* ptr,u32 count);

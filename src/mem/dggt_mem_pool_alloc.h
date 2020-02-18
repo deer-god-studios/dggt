@@ -16,7 +16,8 @@ namespace dggt
 	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct allocator<ALLOC_T_POOL,BLOCKSIZE>
 	{
-		vblk buff;
+		static const u32 TYPE=ALLOC_T_POOL;
+		blkv buff;
 		msize used;
 		pool_block<BLOCKSIZE>* pool;
 		val_if<pool_block<BLOCKSIZE>::IS_NO_SIZE> ifBlockSize;
@@ -32,7 +33,8 @@ namespace dggt
 	template <u32 BUFFSIZE=DEF_BUFFSIZE,u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct allocator<ALLOC_T_POOL,BUFFSIZE,BLOCKSIZE>
 	{
-		pool_alloc<ALLOC_T_POOL,BLOCKSIZE> a_;
+		static const u32 TYPE=ALLOC_T_POOL;
+		pool_alloc<BLOCKSIZE> a_;
 		ubyte buff[BUFFSIZE];
 		allocator(msize blockSize=DEF_BLOCKSIZE);
 	};
@@ -44,7 +46,7 @@ namespace dggt
 	void* alloc(pool_alloc<BLOCKSIZE>* a,msize* size=0);
 
 	template <u32 BLOCKSIZE>
-	vblk alloc(pool_alloc<BLOCKSIZE>* a,msize size=4);
+	blkv alloc(pool_alloc<BLOCKSIZE>* a,msize size=4);
 
 	template <typename T,u32 BLOCKSIZE>
 	T* alloc(pool_alloc<BLOCKSIZE>* a,u32* count=0);
@@ -56,7 +58,7 @@ namespace dggt
 	b32 free(pool_alloc<BLOCKSIZE>* a,void* ptr,msize size);
 
 	template <u32 BLOCKSIZE>
-	b32 free(pool_alloc<BLOCKSIZE>* a,vblk block);
+	b32 free(pool_alloc<BLOCKSIZE>* a,blkv block);
 
 	template <typename T,u32 BLOCKSIZE>
 	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count);
@@ -71,7 +73,7 @@ namespace dggt
 	b32 owns(const pool_alloc<BLOCKSIZE>* a,const void* ptr,msize size);
 
 	template <u32 BLOCKSIZE>
-	b32 owns(const pool_alloc<BLOCKSIZE>* a,const vblk block);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const blkv block);
 
 	template <typename T,u32 BLOCKSIZE>
 	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
@@ -101,7 +103,7 @@ namespace dggt
 	void* alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,msize* size=0);
 	
 	template <u32 BLOCKSIZE,u32 BUFFSIZE>
-	vblk alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,msize size=4);
+	blkv alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,msize size=4);
 
 	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
 	T* alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,u32* count=0);
@@ -113,7 +115,7 @@ namespace dggt
 	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,void* ptr,msize size);
 	
 	template <u32 BLOCKSIZE,u32 BUFFSIZE>
-	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,vblk block);
+	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,blkv block);
 
 	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
 	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,T* ptr,u32 count);
@@ -128,7 +130,7 @@ namespace dggt
 	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const void* ptr,msize size);
 
 	template <u32 BLOCKSIZE,u32 BUFFSIZE>
-	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const vblk block);
+	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const blkv block);
 
 	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
 	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const T* ptr,u32 count);
