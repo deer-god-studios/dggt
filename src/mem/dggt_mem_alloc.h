@@ -16,7 +16,10 @@ namespace dggt
 	 * @addtogroup mem
 	 * @{
 	 * */
-
+	static const u32 NO_BLOCKSIZE=0;
+	static const u32 DEF_BLOCKSIZE=BYTES(4);
+	static const u32 DEF_BUFFSIZE=KB(10);
+ 
 	static const u32 ALLOC_T_NULL=0;
 	static const u32 ALLOC_T_LINEAR=1;
 	static const u32 ALLOC_T_STACK=2;

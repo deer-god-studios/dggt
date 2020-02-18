@@ -13,15 +13,43 @@ namespace dggt
 		typedef T val;
 	};
 
-	template <bool B,u32 VAL=0>
-	struct enable_u32_if
+	template <bool B,typename T=u32>
+	struct val_if:enable_if<B,T>
 	{
+		val_if(T val) { }
+		operator T() { return (T)this; }
+	};
+
+	template <typename T=u32>
+	struct val_if:enable_if<true,T>
+	{
+		static T val;
+
+		val_if(T val) { this->val=val; }
+
+		operator T() { return val; }
 	};
 
 	template <u32 VAL=0>
+	struct enable_u32_if<true,VAL>
 	{
 		static const u32 VAL;
+
+		operator u32() { return VAL; }
 	};
+
+
+	template <bool B,u32 VAL=0>
+	void init_u32_if(u32* val) { }
+
+	template <u32 VAL=0>
+	void init_u32_if<true,VAL>(u32* val) { *val=VAL; }
+
+	template <bool B,u32 VAL=0>
+	void init_u32_or(u32 val,u32* valOut) { *valOut=val; }
+
+	template <u32 VAL=0>
+	void init_u32_or<true,VAL>(u32 val,u32* valOut) { *valOut=VAL; }
 }
 
 #define _DGGT_TMP_ENABLE_IF_H_

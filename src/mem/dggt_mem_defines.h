@@ -1,6 +1,8 @@
 #ifndef _DGGT_MEM_DEFINES_H_
 
-#define KILOBYTES(X) (1024ULL*(X))
+#define BYTES(X) (X)
+#define B(X) BYTES(X)
+#define KILOBYTES(X) (1024ULL*(BYTES((X))))
 #define KB(X) KILOBYTES(X)
 #define MEGABYTES(X) (1024ULL*(KILOBYTES((X))))
 #define MB(X) MEGABYTES(X)

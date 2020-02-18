@@ -4,152 +4,152 @@
 
 namespace dggt
 {
-
-	template <u32 SIZE=0>
+	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct pool_block
 	{
-		pool_block<SIZE>* next;
+		static const bool IS_NO_SIZE=(BLOCKSIZE==NO_BLOCKSIZE);
+		static const enable_u32_if<!IS_SIZE_ZERO,BLOCKSIZE> IF_BLOCKSIZE;
+		val_if<IS_NO_SIZE> ifBlockSize;
+		pool_block* next;
 	};
 
-	template <u32 BLOCKSIZE=0>
+	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct allocator<ALLOC_T_POOL,BLOCKSIZE>
 	{
 		vblk buff;
 		msize used;
-		pool_block* pool;
+		pool_block<BLOCKSIZE>* pool;
+		val_if<pool_block<BLOCKSIZE>::IS_NO_SIZE> ifBlockSize;
 		allocator();
-		allocator(msize blockSize=4);
-		allocator(void* ptr,msize size);
-		explicit allocator(vblk block);
+		allocator(msize blockSize=DEF_BLOCKSIZE);
+		allocator(void* ptr,msize size,msize blockSize=DEF_BLOCKSIZE);
+		explicit allocator(blkv block,msize blockSize=DEF_BLOCKSIZE);
 	};
 
-	template <u32 BLOCKSIZE>
+	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	using pool_alloc=allocator<ALLOC_T_POOL,BLOCKSIZE>;
 
-	template <u32 BUFFSIZE,u32 BLOCKSIZE=0>
-	struct allocator<ALLOC_T_POOL,BLOCKSIZE,BUFFSIZE>
+	template <u32 BUFFSIZE=DEF_BUFFSIZE,u32 BLOCKSIZE=NO_BLOCKSIZE>
+	struct allocator<ALLOC_T_POOL,BUFFSIZE,BLOCKSIZE>
 	{
-		pool_alloc<BLOCKSIZE> a_;
+		pool_alloc<ALLOC_T_POOL,BLOCKSIZE> a_;
 		ubyte buff[BUFFSIZE];
-		allocator();
-		allocator(
+		allocator(msize blockSize=DEF_BLOCKSIZE);
 	};
 
-	template <u32 BLOCKSIZE>
-	using pool_alloc=allocator<ALLOC_T_POOL,BLOCKSIZE>;
+	template <u32 BUFFSIZE=DEF_BUFFSIZE,u32 BLOCKSIZE=0>
+	using pool_stalloc=allocator<ALLOC_T_POOL,BUFFSIZE,BLOCKSIZE>;
 
 	template <u32 BLOCKSIZE>
-	void* alloc(pool_alloc* a,msize* size=0);
+	void* alloc(pool_alloc<BLOCKSIZE>* a,msize* size=0);
 
 	template <u32 BLOCKSIZE>
-	vblk alloc(pool_alloc* a,msize size=4);
+	vblk alloc(pool_alloc<BLOCKSIZE>* a,msize size=4);
 
 	template <typename T,u32 BLOCKSIZE>
-	T* alloc(pool_alloc* a,u32* count=0);
+	T* alloc(pool_alloc<BLOCKSIZE>* a,u32* count=0);
 
 	template <typename T,u32 BLOCKSIZE>
-	blk<T> alloc(pool_alloc* a,u32 count=1);
+	blk<T> alloc(pool_alloc<BLOCKSIZE>* a,u32 count=1);
 
 	template <u32 BLOCKSIZE>
-	b32 free(pool_alloc* a,void* ptr,msize size);
+	b32 free(pool_alloc<BLOCKSIZE>* a,void* ptr,msize size);
 
 	template <u32 BLOCKSIZE>
-	b32 free(pool_alloc* a,vblk block);
+	b32 free(pool_alloc<BLOCKSIZE>* a,vblk block);
 
 	template <typename T,u32 BLOCKSIZE>
-	b32 free(pool_alloc* a,T* ptr,u32 count);
+	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count);
 
 	template <typename T,u32 BLOCKSIZE>
-	b32 free(pool_alloc* a,blk<T> block);
+	b32 free(pool_alloc<BLOCKSIZE>* a,blk<T> block);
 
 	template <u32 BLOCKSIZE>
-	b32 clear(pool_alloc* a);
+	b32 clear(pool_alloc<BLOCKSIZE>* a);
 
 	template <u32 BLOCKSIZE>
-	b32 owns(const pool_alloc* a,const void* ptr,msize size);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const void* ptr,msize size);
 
 	template <u32 BLOCKSIZE>
-	b32 owns(const pool_alloc* a,const vblk block);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const vblk block);
 
 	template <typename T,u32 BLOCKSIZE>
-	b32 owns(const pool_alloc* a,const T* ptr,u32 count);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
 
 	template <typename T,u32 BLOCKSIZE>
-	b32 owns(const pool_alloc* a,const blk<T> block);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const blk<T> block);
 
 	template <u32 BLOCKSIZE>
-	msize available_mem(const pool_alloc* a);
+	msize available_mem(const pool_alloc<BLOCKSIZE>* a);
 	
 	template <u32 BLOCKSIZE>
-	msize used_mem(const pool_alloc* a);
+	msize used_mem(const pool_alloc<BLOCKSIZE>* a);
 
 	template <u32 BLOCKSIZE>
-	stack_state save_stack(pool_alloc* a);
+	stack_state save_stack(pool_alloc<BLOCKSIZE>* a);
 
 	template <u32 BLOCKSIZE>
-	b32 restore_stack(pool_alloc* a,stack_state state);
+	b32 restore_stack(pool_alloc<BLOCKSIZE>* a,stack_state state);
 
 	template <u32 BLOCKSIZE>
-	b32 is_stack_balanced(pool_alloc* a);
+	b32 is_stack_balanced(pool_alloc<BLOCKSIZE>* a);
 
-	// free_list_stalloc<SIZE>
+	// pool_stalloc<SIZE>
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	using pool_stalloc=allocator<ALLOC_T_POOL,BLOCKSIZE,SIZE>;
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	void* alloc(pool_stalloc<BLOCKSIZE,SIZE>* a,msize* size=0);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	void* alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,msize* size=0);
 	
-	template <u32 BLOCKSIZE,u32 SIZE>
-	vblk alloc(pool_stalloc<BLOCKSIZE,SIZE>* a,msize size=4);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	vblk alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,msize size=4);
 
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	T* alloc(pool_stalloc<BLOCKSIZE,SIZE>* a,u32* count=0);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	T* alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,u32* count=0);
 	
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	blk<T> alloc(pool_stalloc<BLOCKSIZE,SIZE>* a,u32 count=1);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	blk<T> alloc(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,u32 count=1);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 free(pool_stalloc<BLOCKSIZE,SIZE>* a,void* ptr,msize size);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,void* ptr,msize size);
 	
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 free(pool_stalloc<BLOCKSIZE,SIZE>* a,vblk block);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,vblk block);
 
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	b32 free(pool_stalloc<BLOCKSIZE,SIZE>* a,T* ptr,u32 count);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,T* ptr,u32 count);
 
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	b32 free(pool_stalloc<BLOCKSIZE,SIZE>* a,blk<T> block);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 free(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,blk<T> block);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 clear(pool_stalloc<BLOCKSIZE,SIZE>* a);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 clear(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 owns(const pool_stalloc<BLOCKSIZE,SIZE>* a,const void* ptr,msize size);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const void* ptr,msize size);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 owns(const pool_stalloc<BLOCKSIZE,SIZE>* a,const vblk block);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const vblk block);
 
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	b32 owns(const pool_stalloc<BLOCKSIZE,SIZE>* a,const T* ptr,u32 count);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const T* ptr,u32 count);
 
-	template <typename T,u32 BLOCKSIZE,u32 SIZE>
-	b32 owns(const pool_stalloc<BLOCKSIZE,SIZE>* a,const blk<T> block);
+	template <typename T,u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 owns(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,const blk<T> block);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	msize available_mem(const pool_stalloc<BLOCKSIZE,SIZE>* a);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	msize available_mem(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	msize used_mem(const pool_stalloc<BLOCKSIZE,SIZE>* a);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	msize used_mem(const pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	stack_state save_stack(pool_stalloc<BLOCKSIZE,SIZE>* a);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	stack_state save_stack(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 restore_stack(pool_stalloc<BLOCKSIZE,SIZE>* a,stack_state state);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 restore_stack(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a,stack_state state);
 
-	template <u32 BLOCKSIZE,u32 SIZE>
-	b32 is_stack_balanced(pool_stalloc<BLOCKSIZE,SIZE>* a);
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	b32 is_stack_balanced(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
 }
 
 #include "dggt_mem_pool_alloc.inl"

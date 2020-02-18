@@ -7,6 +7,7 @@
 
 namespace dggt
 {
+
 	/*! @brief Represents memory size.
 	 *
 	 * This is an integer type that always represents a memory size and is the same type returned by sizeof and is platform dependent.
@@ -55,6 +56,8 @@ namespace dggt
 	 * */
 	typedef uint32_t u32;
 
+	typedef bool1 bool;
+	typedef b1 bool;
 	/*!
 	 * @brief A 32-bit integer type for use in boolean expressions.
 	 *
