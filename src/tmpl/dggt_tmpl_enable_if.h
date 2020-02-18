@@ -10,7 +10,17 @@ namespace dggt
 	template <typename T=void>
 	struct enable_if<false,T>
 	{
-		static T val;
+		typedef T val;
+	};
+
+	template <bool B,u32 VAL=0>
+	struct enable_u32_if
+	{
+	};
+
+	template <u32 VAL=0>
+	{
+		static const u32 VAL;
 	};
 }
 
