@@ -1,22 +1,15 @@
 
 namespace dggt
 {
-	namespace dggt_internal_
-	{
-		template <u32 BLOCKSIZE>
-		u32 get_block_size(pool_allocator<BLOCKSIZE>* a)
-		{
-			return BLOCKSIZE?BLOCKSIZE:ifBlockSize;
-		}
-	}
-
 	template <u32 BLOCKSIZE>
 	struct pool_block<BLOCKSIZE>::pool_block()
 	: next((pool_block<BLOCKSIZE>*)0) { }
 
 	template <u32 BLOCKSIZE>
 	struct pool_block<BLOCKSIZE>::pool_block(msize blockSize)
-	: pool_block(), ifblockSize(0) { }
+	{
+		init_member_if(this,blockSize);
+	}
 
 	template <u32 BLOCKSIZE>
 	allocator<ALLOC_T_POOL,BLOCKSIZE>::allocator()
@@ -30,11 +23,8 @@ namespace dggt
 		buff.mem=ptr;
 		buff.size=size;
 		pool->next=0;
-		init_u32_or<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-				blockSize,&ifBlockSize);
-		init_u32_or<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-				ifBlockSize,&pool->ifBlockSize);
-		
+		init_member_if(this,blockSize);
+	
 		if (blockSize<sizeof(pool_block))
 		{
 			blockSize=sizeof(pool_block);
@@ -45,8 +35,7 @@ namespace dggt
 		for (u32 i=0;i<blockCount;++i)
 		{
 			pool_block<BLOCKSIZE>* current=pool+i;
-			init_if<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-					ifBlockSize,&current->ifBlockSize);
+			init_member_if(current,val);
 			current->next=
 				i==blockCount-1?0:current+1;
 		}
@@ -119,10 +108,10 @@ namespace dggt
 			result=pool;
 			if (size)
 			{
-				*size=dggt_internal_::get_block_size(a);
+				*size=get_member_if(a);
 			}
 			pool=pool->next;
-			used+=dggt_internal_::get_block_size(a);
+			used+=get_member_if(a);
 		}
 		return result;
 	}
@@ -141,7 +130,7 @@ namespace dggt
 	T* alloc(pool_alloc<BLOCKSIZE>* a,u32* count)
 	{
 		T* result=0;
-		if (sizeof(T)<=dggt_internal_::get_block_size(a))
+		if (sizeof(T)<=get_member_if(a))
 		{
 			if (count)
 			{
@@ -171,8 +160,7 @@ namespace dggt
 		if (owns(a,ptr,size))
 		{
 			pool_block<BLOCKSIZE>* newBlock=(pool_block<BLOCKSIZE>*)ptr;
-			init_if<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-					blockSize,&newBlock->ifBlockSize);
+			init_member_if(newBlock,val);
 			newBlock->next=pool;
 			pool=newBlock;
 			used-=blockSize;
@@ -191,7 +179,7 @@ namespace dggt
 	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count)
 	{
 		b32 result=0;
-		u32 blockSize=dggt_internal_::get_block_size(a);
+		u32 blockSize=get_member_if(a);
 		if (sizeof(T)<=blockSize)
 		{
 			result=free(a,ptr,(msize)blockSize);
@@ -209,16 +197,13 @@ namespace dggt
 	b32 clear(pool_alloc<BLOCKSIZE>* a)
 	{
 		pool->next=0;
-		init_if<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-				ifBlockSize,&pool->ifBlockSize);
 
 		blockCount=(u32)(size/blockSize);
 		pool=(pool_block<BLOCKSIZE>*)ptr;
 		for (u32 i=0;i<blockCount;++i)
 		{
 			pool_block<BLOCKSIZE>* current=pool+i;
-			init_if<BLOCKSIZE==NO_BLOCKSIZE,BLOCKSIZE>(
-					ifBlockSize,&current->ifBlockSize);
+			init_member_if(current,val);
 			current->next=
 				i==blockCount-1?0:current+1;
 	}
@@ -226,7 +211,7 @@ namespace dggt
 	template <u32 BLOCKSIZE>
 	b32 owns(const pool_alloc<BLOCKSIZE>* a,const void* ptr,msize size)
 	{
-		return size<=dggt_internal_::get_block_size(a)&&
+		return size<=get_member_if(a)&&
 			intvl(ptr,buff.mem,ptr_add(buff.mem,buff.size))&&
 			intvl(ptr_add(ptr,size),buff.mem,ptr_add(buff.mem,buff.size));
 	}

@@ -4,11 +4,13 @@
 
 namespace dggt
 {
-	template <u32 PTYPE,u32... PU32s,typename... PTYPES,
-			 u32 FTYPE,u32... FU32s,typename... FTYPES>
+	template <u32 PTYPE,u32 FTYPE,
+			 u32... PU32s,u32... FU32s,
+			 typename... PTYPES,typename... FTYPES>
 	struct allocator<ALLOC_T_FALLBACK,
-	PTYPE,PU32...,PTYPES...,
-	FTYPE,FU32s...,FTYPES>
+	PTYPE,FTYPE,
+	PU32...,FU32s...,
+	PTYPES...,FTYPES>
 	{
 		static const u32 TYPE=ALLOC_T_FALLBACK;
 		typedef allocator<PTYPE,PU32s...,PTYPES...> palloc;

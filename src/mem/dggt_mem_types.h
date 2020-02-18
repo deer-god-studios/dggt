@@ -10,7 +10,7 @@ namespace dggt
 	global const SAVE_STACK_FAIL=MAX_MSIZE;
 
 	struct free_block;
-	template <u32 SIZE=0>
+	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct pool_block;
 	struct store_block;
 }

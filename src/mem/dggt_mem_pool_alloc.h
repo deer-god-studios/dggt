@@ -6,21 +6,20 @@ namespace dggt
 {
 	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct pool_block
+	:member_val_or<BLOCKSIZE>
 	{
-		static const bool IS_NO_SIZE=(BLOCKSIZE==NO_BLOCKSIZE);
-		static const enable_u32_if<!IS_SIZE_ZERO,BLOCKSIZE> IF_BLOCKSIZE;
-		val_if<IS_NO_SIZE> ifBlockSize;
 		pool_block* next;
+		pool_block();
 	};
 
 	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct allocator<ALLOC_T_POOL,BLOCKSIZE>
+	:member_val_or<BLOCKSIZE>
 	{
 		static const u32 TYPE=ALLOC_T_POOL;
 		blkv buff;
 		msize used;
 		pool_block<BLOCKSIZE>* pool;
-		val_if<pool_block<BLOCKSIZE>::IS_NO_SIZE> ifBlockSize;
 		allocator();
 		allocator(msize blockSize=DEF_BLOCKSIZE);
 		allocator(void* ptr,msize size,msize blockSize=DEF_BLOCKSIZE);

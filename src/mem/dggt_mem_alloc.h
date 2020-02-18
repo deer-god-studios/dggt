@@ -16,6 +16,7 @@ namespace dggt
 	 * @addtogroup mem
 	 * @{
 	 * */
+
 	static const u32 NO_BLOCKSIZE=0;
 	static const u32 DEF_BLOCKSIZE=BYTES(4);
 	static const u32 DEF_BUFFSIZE=KB(10);
@@ -90,6 +91,9 @@ namespace dggt
 
 	template <u32 ALLOC_T,u32... S,typename... Ts>
 	msize available_mem(allocator<ALLOC_T,S...,Ts...>* a);
+
+	template <u32 ALLOC_T,u32... S,typename... Ts>
+	u32 get_block_size(allocator<ALLOC_T,S...,Ts...>* a);
 }
 
 //#include "dggt_mem_alloc.inl"
