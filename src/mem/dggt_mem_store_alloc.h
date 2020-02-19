@@ -4,7 +4,6 @@
 
 namespace dggt
 {
-
 	struct store_block
 	{
 		store_block* next;

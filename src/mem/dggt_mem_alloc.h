@@ -17,20 +17,23 @@ namespace dggt
 	 * @{
 	 * */
 
-	static const u32 NO_BLOCKSIZE=0;
-	static const u32 DEF_BLOCKSIZE=BYTES(4);
-	static const u32 DEF_BUFFSIZE=KB(10);
- 
-	static const u32 ALLOC_T_NULL=0;
-	static const u32 ALLOC_T_LINEAR=1;
-	static const u32 ALLOC_T_STACK=2;
-	static const u32 ALLOC_T_AUTOSTACK=3;
-	static const u32 ALLOC_T_FREE=4;
-	static const u32 ALLOC_T_POOL=5;
-	static const u32 ALLOC_T_FALLBACK=6;
+	global const u32 NO_BLOCKSIZE=0;
+	global const u32 DEF_BLOCKSIZE=BYTES(4);
+	global const u32 DEF_BUFFSIZE=KB(10);
 
-	static const u32 ALLOC_T_LIB_END=ALLOC_T_FALLBACK;
-	static const u32 ALLOC_T_BEGIN=ALLOC_T_LIB_END+1;
+	global const u32 NO_TABLESIZE=0;
+	global const u32 DEF_TABLESIZE=KB(4);
+ 
+	global const u32 ALLOC_T_NULL=0;
+	global const u32 ALLOC_T_LINEAR=1;
+	global const u32 ALLOC_T_STACK=2;
+	global const u32 ALLOC_T_AUTOSTACK=3;
+	global const u32 ALLOC_T_FREE=4;
+	global const u32 ALLOC_T_POOL=5;
+	global const u32 ALLOC_T_FALLBACK=6;
+
+	global const u32 ALLOC_T_LIB_END=ALLOC_T_FALLBACK;
+	global const u32 ALLOC_T_BEGIN=ALLOC_T_LIB_END+1;
 
 	template <u32 ALLOC_T,u32... S,typename... Ts> 
 	struct allocator

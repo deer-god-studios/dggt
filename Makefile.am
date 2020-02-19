@@ -23,7 +23,8 @@ nobase_include_HEADERS = src/dggt.h \
 				  src/math/lin/dggt_math_mat2.h \
 				  src/math/lin/dggt_math_mat3.h \
 				  src/math/lin/dggt_math_mat4.h \
-				  src/math/dggt_math.h
+				  src/math/dggt_math.h \
+				  src/tmpl/dggt_tmpl_enable_if.h
 
 libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_defines.h \
@@ -56,6 +57,7 @@ libdggtmem_la_SOURCES = src/mem/dggt_mem.h \
 						src/mem/dggt_mem_store_table_alloc.inl \
 						src/mem/dggt_mem_fallback_alloc.h \
 						src/mem/dggt_mem_fallback_alloc.inl
+
 libdggtmem_la_CPPFLAGS = -O0 -g -DDEBUG
 libdggtmem_la_CXXFLAGS = -std=c++2a -I$(top_srcdir)/src
 
