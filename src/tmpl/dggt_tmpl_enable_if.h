@@ -86,6 +86,7 @@ namespace dggt
 	template <u32 VAL=0>
 	void init_u32_or<true,VAL>(u32 val,u32* valOut) { *valOut=VAL; }
 
+	// TODO: not general.
 	template <u32 S>
 	struct member_val_or
 	:enable_u32_if<S!=0,S>,val_if<S==0,u32>

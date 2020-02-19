@@ -4,6 +4,7 @@
 
 namespace dggt
 {
+	// TODO: use blocksize instead of next pointer.
 	template <u32 BLOCKSIZE=NO_BLOCKSIZE>
 	struct pool_block
 	:member_val_or<BLOCKSIZE>
@@ -95,6 +96,9 @@ namespace dggt
 	template <u32 BLOCKSIZE>
 	b32 is_stack_balanced(pool_alloc<BLOCKSIZE>* a);
 
+	template <u32 BLOCKSIZE>
+	u32 get_block_size(pool_alloc<BLOCKSIZE>* a);
+
 	// pool_stalloc<SIZE>
 
 
@@ -151,6 +155,11 @@ namespace dggt
 
 	template <u32 BLOCKSIZE,u32 BUFFSIZE>
 	b32 is_stack_balanced(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a);
+
+	template <u32 BLOCKSIZE,u32 BUFFSIZE>
+	u32 get_block_size(pool_alloc<BLOCKSIZE,BUFFSIZE>* a);
+
+
 }
 
 #include "dggt_mem_pool_alloc.inl"

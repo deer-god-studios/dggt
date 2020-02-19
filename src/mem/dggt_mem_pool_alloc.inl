@@ -264,6 +264,13 @@ namespace dggt
 		return 1;
 	}
 
+	template <u32 BLOCKSIZE>
+	u32 get_block_size(pool_alloc<BLOCKSIZE>* a)
+	{
+		return get_member_if(a);
+	}
+
+
 	// pool_stalloc<SIZE>
 
 
@@ -381,5 +388,11 @@ namespace dggt
 	b32 is_stack_balanced(pool_stalloc<BLOCKSIZE,BUFFSIZE>* a)
 	{
 		return is_stack_balanced(&a->a_);
+	}
+
+	template <u32 BLOCKSIZE,BUFFSIZE>
+	u32 get_block_size(pool_alloc<BLOCKSIZE,BUFFSIZE>* a)
+	{
+		return get_block_size(&a->a_);
 	}
 }
