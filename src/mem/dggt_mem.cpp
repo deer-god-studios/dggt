@@ -5,7 +5,7 @@ namespace dggt
 	namespace dggt_internal_
 	{
 		static b32 isInitialized=0;
-		static blk<void> cacheBlock=blk<void>();
+		static blkv cacheBlock=blkv();
 		static allocator<alloc_t::FREE_LIST> cache=
 			allocator<alloc_t::FREE_LIST>(0,0);
 	}
@@ -28,7 +28,7 @@ namespace dggt
 		if (dggt_internal_::isInitialized)
 		{
 			blk_free(dggt_internal_::cacheBlock);
-			dggt_internal_::cache.buff=blk<void>();
+			dggt_internal_::cache.buff=blkv();
 			dggt_internal_::isInitialized=0;
 		}
 	}
@@ -82,9 +82,9 @@ namespace dggt
 		return dggt_internal_::cache.alloc(size);
 	}
 
-	blk<void> cache_alloc(msize size)
+	blkv cache_alloc(msize size)
 	{
-		blk<void> result;
+		blkv result;
 		if (dggt_internal_::isInitialized)
 		{
 			result=dggt_internal_::cache.alloc(size);
@@ -102,31 +102,13 @@ namespace dggt
 		return result;
 	}
 
-	b32 cache_free(blk<void> block)
+	b32 cache_free(blkv block)
 	{
 		b32 result=0;
 		if (dggt_internal_::isInitialized)
 		{
 			result=dggt_internal_::cache.free(block);
 		}
-		return result;
-	}
-
-	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize)
-	{
-		allocator<alloc_t::POOL> result=allocator<alloc_t::POOL>();
-		void* buffPtr=cache_alloc(&size);
-		if (buffPtr)
-		{
-			result=allocator<alloc_t::POOL>(buffPtr,size,blockSize);
-		}
-		return result;
-	}
-
-	allocator<alloc_t::STORE> create_alloc(msize blockSize)
-	{
-		allocator<alloc_t::STORE> result=
-			allocator<alloc_t::STORE>(blockSize);
 		return result;
 	}
 }

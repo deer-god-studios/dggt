@@ -56,8 +56,8 @@ namespace dggt
 	 * */
 	typedef uint32_t u32;
 
-	typedef bool1 bool;
-	typedef b1 bool;
+	typedef bool bool1;
+	typedef bool b1;
 	/*!
 	 * @brief A 32-bit integer type for use in boolean expressions.
 	 *

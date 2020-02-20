@@ -4,6 +4,7 @@
 
 namespace dggt
 {
+	// TODO: oops, can't do that.
 	template <u32 PTYPE,u32 FTYPE,
 			 u32... PU32s,u32... FU32s,
 			 typename... PTYPES,typename... FTYPES>

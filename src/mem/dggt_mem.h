@@ -8,14 +8,14 @@
 
 #include "dggt_mem_defines.h"
 #include "dggt_mem_alloc.h"
-#include "dggt_mem_linear_alloc.h"
+#include "dggt_mem_lin_alloc.h"
 #include "dggt_mem_stack_alloc.h"
 #include "dggt_mem_autostack_alloc.h"
 #include "dggt_mem_pool_alloc.h"
 #include "dggt_mem_free_list_alloc.h"
+#include "dggt_mem_fallback_alloc.h"
 #include "dggt_mem_store_alloc.h"
 #include "dggt_mem_store_table_alloc.h"
-#include "dggt_mem_fallback_alloc.h"
 
 // TODO: Rearange/refactor allocator template arguments.
 
@@ -29,69 +29,6 @@ namespace dggt
 	 * @addtogroup mem
 	 * @{
 	 * */
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::LINEAR,SIZE>.
-	 * @tparam SIZE The optional memory stack size (pass 0 for heap allocation.).
-	 * */
-	template <u32 SIZE=0>
-	using lin_alloc=allocator<alloc_t::LINEAR,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::STACK,SIZE>.
-	 * @tparam SIZE The optional memory stack size (pass 0 for heap allocation.).
-	 * */
-	template <u32 SIZE=0>
-	using stack_alloc=allocator<alloc_t::STACK,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::POOL,SIZE>.
-	 * @tparam SIZE The optional memory stack size (pass 0 for heap allocation.).
-	 * */
-	template <u32 SIZE=0>
-	using pool_alloc=allocator<alloc_t::POOL,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::FREE_LIST,SIZE>.
-	 * @tparam SIZE The optional memory stack size (pass 0 for heap allocation.).
-	 * */
-	template <u32 SIZE=0>
-	using free_list_alloc=allocator<alloc_t::FREE_LIST,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::FREE_LIST,SIZE>.
-	 * @tparam SIZE The optional block size (pass 0 for run-time block size.).
-	 * */
-	template <u32 SIZE=0>
-	using store_alloc=allocator<alloc_t::STORE,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::STORE_TABLE,SIZE>.
-	 * @tparam SIZE The required store table size (ie. The number of different block size's that the allocator can handle.).
-	 * */
-	template <u32 SIZE=2048>
-	using store_table_alloc=allocator<alloc_t::STORE_TABLE,SIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::FALLBACK,P,SIZE,F,FSIZE>.
-	 * @tparam P The primary allocator type.
-	 * @tparam SIZE The primary allocator size.
-	 * @tparam F The fallback allocator type.
-	 * @tparam FSIZE The fallback allocator size.
-	 * */
-	template <u32 P=alloc_t::STORE_TABLE,u32 SIZE=2048,
-			 u32 F=alloc_t::LINEAR,u32 FSIZE=0>
-	using fallback_alloc=allocator<alloc_t::FALLBACK,P,SIZE,F,FSIZE>;
-
-	/*!
-	 * @brief A short way to write allocator<alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE>.
-	 *
-	 * This is a type of allocator where all memory comes off of the stack from a linear allocator and is recycled into a store table allocator.
-	 * @tparam TABLESIZE The number of memory recycling slots in the store table allocator.  Defaults to 2048.
-	 * @tparam LINEARSIZE The amount of memory off the stack to allocate from the linear allocator.  Defaults to 10 KB.
-	 * */
-	template <u32 TABLESIZE=2048,u32 LINEARSIZE=KB(10)>
-	using scratch_alloc=allocator<alloc_t::FALLBACK,alloc_t::STORE_TABLE,TABLESIZE,alloc_t::LINEAR,LINEARSIZE>;
 
 	/*!
 	 * @brief Initializes the library's memory cache.
@@ -152,7 +89,7 @@ namespace dggt
 	 * requested amount.
 	 * @param size The size to allocate.
 	 * */
-	blk<void> cache_alloc(msize size);
+	blkv cache_alloc(msize size);
 
 	/*!
 	 * @brief Frees cache memory from a previous cache_alloc call.
@@ -217,100 +154,6 @@ namespace dggt
 	 * */
 	template <typename T>
 	b32 cache_free(T* ptr,u32 count);
-
-	/*!
-	 * @brief Creates an allocator which draws from cache memory of a desired
-	 * size.
-	 * @tparam A An allocator type enum value.
-	 * @param size The memory size available to the allocator.
-	 * @return The newly created allocator.
-	 * */
-	template <alloc_t A>
-	allocator<A> create_alloc(msize size);
-
-	/*!
-	 * @brief Creates an allocator which draws from stack memory of a desired
-	 * size.
-	 * @tparam A An allocator type enum value.
-	 * @tparam SIZE The stack memory size.
-	 * @return The newly created allocator.
-	 * */
-	template <alloc_t A,u32 SIZE>
-	allocator<A,SIZE> create_alloc();
-
-	/*!
-	 * @brief Creates a fallback allocator consisting of two allocators both
-	 * with, under normal circumstance, memory off the heap.
-	 * @tparam P The primary allocator type enum value.
-	 * @tparam F The primary allocator type enum value.
-	 * @param primaryAlloc A pointer to the primary allocator.
-	 * @param fallbackAlloc A pointer to the fallback allocator.
-	 * @return The newly created allocator.
-	 * */
-	template <alloc_t P,alloc_t F>
-	allocator<alloc_t::FALLBACK,P,F> create_alloc(
-			allocator<P>* primaryAlloc,
-			allocator<F>* fallbackAlloc);
-
-	/*!
-	 * @brief Creates a fallback allocator consisting of a primary allocator
-	 * with a template SIZE argument and a fallback allocator with none.
-	 * @tparam P The primary allocator type enum value.
-	 * @tparam SIZE The stack memory size.
-	 * @tparam F The primary allocator type enum value.
-	 * @param primaryAlloc A pointer to the primary allocator.
-	 * @param fallbackAlloc A pointer to the fallback allocator.
-	 * @return The newly created allocator.
-	 * */
-	template <alloc_t P,u32 SIZE,alloc_t F>
-	allocator<alloc_t::FALLBACK,P,SIZE,F> create_alloc(
-			allocator<P,SIZE>* primaryAlloc,
-			allocator<F>* fallbackAlloc);
-
-	/*!
-	 * @brief Creates a fallback allocator consisting of two allocators both
-	 * of which draw memory off the stack under normal circumstances.
-	 * @tparam P The primary allocator type enum value.
-	 * @tparam PSIZE The primary allocator stack size.
-	 * @tparam F The fallback allocator type enum value.
-	 * @tparam FSIZE The fallback allocator stack size.
-	 * @param primaryAlloc A pointer to the primary allocator.
-	 * @param fallbackAlloc A pointer to the fallback allocator.
-	 * @return The newly created fallback allocator.
-	 * */
-	template <alloc_t P,u32 PSIZE,alloc_t F,u32 FSIZE>
-	allocator<alloc_t::FALLBACK,P,PSIZE,F,FSIZE> create_alloc(
-			allocator<P,PSIZE>* primaryAlloc,
-			allocator<F,FSIZE>* fallbackAlloc);
-
-	/*!
-	 * @brief Creates a pool allocator which draws from cache memory.
-	 * @param size The size of cache memory the pool will have access to.
-	 * @param blockSize The size of each block of memory the pool will
-	 * allocate.
-	 * @return The newly created pool allocator.
-	 * */
-	allocator<alloc_t::POOL> create_alloc(msize size,msize blockSize);
-
-	/*!
-	 * @brief Creates a store allocator (recycles memory previously freed into
-	 * it.).
-	 * @param blockSize The block size the store allocator can free and
-	 * allocate.
-	 * @return The newly created store allocator.
-	 * */
-	allocator<alloc_t::STORE> create_alloc(msize blockSize);
-
-	/*!
-	 * @brief Destroys an allocator by freeing it's underlying memory back
-	 * to the cache if applicable.
-	 * @tparam A The allocator type enum value.
-	 * @param A pointer to the allocator to destroy.
-	 * @return Nonzero if the allocator was successfully destroyed, zero
-	 * otherwise.
-	 * */
-	template <alloc_t A>
-	b32 destroy_alloc(allocator<A>* alloc);
 
 	/*!
 	 * @}

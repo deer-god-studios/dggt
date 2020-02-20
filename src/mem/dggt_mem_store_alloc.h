@@ -13,7 +13,7 @@ namespace dggt
 	struct allocator<ALLOC_T_STORE,BLOCKSIZE>
 	: member_val_or<BLOCKSIZE>
 	{
-		static const alloc_t TYPE=ALLOC_T_STORE;
+		static const u32 TYPE=ALLOC_T_STORE;
 		store_block* head;
 		u32 blockCount;
 
