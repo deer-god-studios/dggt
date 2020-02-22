@@ -5,7 +5,7 @@
 namespace dggt
 {
 	template <>
-	struct allocator<ALLOC_T_LINEAR>
+	struct allocator<make_alloc_type<ALLOC_T_LINEAR>::type>
 	{
 		static const u32 TYPE=ALLOC_T_LINEAR;
 		blkv buff;
@@ -15,16 +15,18 @@ namespace dggt
 		explicit allocator(blkv block);
 	};
 
+	typedef allocator<make_alloc_type<ALLOC_T_LINEAR>::type> lin_alloc;
+
 	template <u32 BUFFSIZE>
-	struct allocator<ALLOC_T_LINEAR,BUFFSIZE>
+	struct allocator<make_alloc_type<ALLOC_T_LINEAR,
+		make_sequence<BUFFSIZE>::type>>
 	{
 		static const u32 TYPE=ALLOC_T_LINEAR;
-		allocator<ALLOC_T_LINEAR> a_; 
+		typedef SizeArgs<u32...> size_args;
+		lin_alloc a_; 
 		ubyte buff[BUFFSIZE];
 		allocator();
 	};
-
-	typedef allocator<ALLOC_T_LINEAR> lin_alloc;
 
 	void* alloc(lin_alloc* a,msize* size=0);
 
@@ -71,7 +73,9 @@ namespace dggt
 	// lin_stalloc<BUFFSIZE>
 
 	template <u32 BUFFSIZE>
-	using lin_stalloc=allocator<ALLOC_T_LINEAR,BUFFSIZE>;
+	using lin_stalloc=
+	allocator<make_alloc_type<ALLOC_T_LINEAR,
+		make_sequence<BUFFSIZE>::type>>;
 
 	template <u32 BUFFSIZE>
 	void* alloc(lin_stalloc<BUFFSIZE>* a,msize* size=0);

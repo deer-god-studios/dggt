@@ -5,12 +5,12 @@
 namespace dggt
 {
 	template <>
-	struct allocator<ALLOC_T_NULL>
+	struct allocator<alloc_t_args<ALLOC_T_NULL>>
 	{
 		static const u32 TYPE=ALLOC_T_NULL;
 	};
 
-	typedef allocator<ALLOC_T_NULL> null_alloc;
+	typedef allocator<alloc_t_args<ALLOC_T_NULL>> null_alloc;
 
 	blkv alloc(null_alloc* a,msize size=4);
 

@@ -4,6 +4,7 @@
 /*! @endcond */
 
 #include "defines/dggt_defines.h"
+#include "dggt_mem_defines.h"
 
 namespace dggt
 {

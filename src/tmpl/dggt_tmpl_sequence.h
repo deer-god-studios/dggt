@@ -6,37 +6,44 @@ namespace dggt
 	struct sequence { };
 
 	template <u32... S>
-	sequence<S...> make_sequence()
+	struct make_sequence
 	{
-		return sequence<S...>();
-	}
+		typedef sequence<S...> type;
+	};
+
+	template <u32 NEW,template <u32...> seq>
+	struct sequence_push;
 
 	template <u32 NEW,u32... REST>
-	sequence<NEW,REST...> push(sequence<REST...> seq)
+	struct sequence_push<NEW,sequence<REST...>>
 	{
-		return sequence<NEW,REST...>(); 
-	}
+		using type=sequence<NEW,REST...>;
+	};
+
+	template <template <u32...> seq>
+	struct sequence_pop;
 
 	template <u32 HEAD,u32... REST>
-	sequence<REST...> pop(sequence<HEAD,REST...> seq)
+	struct sequence_pop<sequence<HEAD,REST...>>
 	{
-		return sequence<REST...>();
-	}
+		using type=sequence<REST...>;
+	};
 
-	template <u32 I,u32... S>
-	constexpr u32 get(sequence<S...> seq);
+	template <u32 I,template <u32...> seq>
+	struct sequence_get;
 
 	template <u32 HEAD,u32... REST>
-	constexpr u32 get<0>(sequence<HEAD,REST...>& seq)
+	struct sequence_get<0,sequence<HEAD,REST...>>
 	{
-		return HEAD;
-	}
+		static constexpr const u32 value=HEAD;
+	};
 
 	template <u32 I,u32 HEAD,u32... REST>
-	constexpr u32 get(sequence<HEAD,REST...>& seq)
+	struct sequence_get<I,sequence<HEAD,REST...>>
 	{
-		return get<I-1>(sequence<REST...>& seq);
-	}
+		static constexpr const u32 value=
+			sequence_get<I-1,sequence<REST...>>::value;
+	};
 }
 
 #define _DGGT_TMPL_SEQUENCE_H_

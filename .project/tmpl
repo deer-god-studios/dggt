@@ -1,0 +1,9 @@
+dggt
+defines
+types
+dggt_tmpl_enable_if.h
+dggt_tmpl.h
+dggt_tmpl_nocv.h
+dggt_tmpl_sequence.h
+dggt_tmpl_tuple.h
+dggt_tmpl_type_list.h
