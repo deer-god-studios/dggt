@@ -2,63 +2,37 @@
 
 namespace dggt
 {
-	allocator<ALLOC_T_LINEAR>::allocator()
+	lin_alloc::lin_alloc()
 	{
-		buff=blk<void>();
+		baseAlloc=allocator(ALLOC_T_LIN);
+		buff=0;
+		buffSize=0;
 		used=0;
 	}
 
-	allocator<ALLOC_T_LINEAR>::allocator(void* ptr,msize size)
-		:allocator()
+	lin_alloc::lin_alloc(void* ptr,msize size)
+		:lin_alloc()
 	{
-		buff.mem=ptr;
-		buff.size=size;
+		buff=ptr;
+		buffSize=size;
 	}
 
-	allocator<ALLOC_T_LINEAR>::allocator(blkv block)
-		:allocator(block.mem,block.size)
-	{
-	}
-
-	void* alloc(lin_alloc* a,msize* size)
+	void* alloc(lin_alloc* a,msize size)
 	{
 		void* result=0;
-		if (size&&*size)
+
+		if (size)
 		{
-			if (a->used+*size<=a->buff.size)
+			if (a->used+size<=a->buffSize)
 			{
-				result=ptr_add(a->buff.mem,a->used);
-				a->used+=*size;
-			}
-			else
-			{
-				*size=0;
-			}
-		}
-		else
-		{
-			msize s=4;
-			if (a->used+s<=a->buff.size)
-			{
-				result=ptr_add(a->buff.mem,a->used);
-				a->used+=s;
+				result=ptr_add(a->buff,a->used);
+				a->used+=size;
 			}
 		}
 		return result;
 	}
 
-	blkv alloc(lin_alloc* a,msize size)
-	{
-		void* mem=alloc(a,&size);
-		return blkv(mem,size);
-	}
-
 	b32 free(lin_alloc* a,void* ptr,msize size)
-	{
-		return 0;
-	}
-
-	b32 free(lin_alloc* a,blkv block)
 	{
 		return 0;
 	}
@@ -71,21 +45,16 @@ namespace dggt
 
 	b32 owns(const lin_alloc* a,const void* ptr,msize size)
 	{
-		return ptr>=a->buff.mem&&
-			ptr_add(ptr,size)<=ptr_add(a->buff.mem,a->buff.size);
+		return ptr>=a->buff&&
+			ptr_add(ptr,size)<=ptr_add(a->buff,a->buffSize);
 	}
 
-	b32 owns(const lin_alloc* a,const blkv block)
+	msize available_mem(const lin_alloc* a)
 	{
-		return owns(a,block.mem,block.size);
+		return a->buffSize-a->used;
 	}
 
-	msize available_mem(lin_alloc* a)
-	{
-		return a->buff.size-a->used;
-	}
-
-	msize used_mem(lin_alloc* a)
+	msize used_mem(const lin_alloc* a)
 	{
 		return a->used;
 	}
@@ -97,11 +66,11 @@ namespace dggt
 
 	b32 restore_stack(lin_alloc* a,stack_state state)
 	{
-		return 0;
+		return false;
 	}
 
-	b32 is_stack_balanced(lin_alloc* a)
+	b32 is_stack_balanced(const lin_alloc* a)
 	{
-		return 1;
+		return true;
 	}
 }

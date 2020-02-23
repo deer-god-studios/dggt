@@ -2,79 +2,52 @@
 
 namespace dggt
 {
-	allocator<ALLOC_T_STACK>::allocator()
+	stack_alloc::stack_alloc()
 	{
-		buff=blkv();
+		baseAlloc=allocator(ALLOC_T_STACK);
+		buff=0;
+		buffSize=0;
 		used=0;
 		stateCount=0;
 		prevState=0;
 	}
 
-	allocator<ALLOC_T_STACK>::allocator(void* ptr,msize size)
+	stack_alloc::stack_alloc(void* ptr,msize size)
+		:stack_alloc()
 	{
-		buff.mem=ptr;
-		buff.size=size;
+		buff=ptr;
+		buffSize=size;
 	}
 
-	allocator<ALLOC_T_STACK>::allocator(blkv block)
-		:stack_alloc_(block.mem,block.size)
-	{
-	}
-
-	void* alloc(stack_alloc* a,msize* size)
+	void* alloc(stack_alloc* a,msize size)
 	{
 		void* result=0;
-		if (size&&*size)
+		if (size)
 		{
-			if (a->used+*size<=a->buff.size)
+			if (a->used+size<=a->buffSize)
 			{
-				result=ptr_add(a->buff.mem,a->used);
-				a->used+=*size;
-			}
-			else
-			{
-				*size=0;
-			}
-		}
-		else
-		{
-			msize s=4;
-			if (a->used+s<=a->buff.size)
-			{
-				result=ptr_add(a->buff.mem,a->used);
-				a->used+=s;
+				result=ptr_add(a->buff,a->used);
+				a->used+=size;
 			}
 		}
 		return result;
-	}
-
-	blkv alloc(stack_alloc* a,msize size)
-	{
-		void* result=alloc(&size);
-		return blkv(result,size);
 	}
 
 	b32 free(stack_alloc* a,void* ptr,msize size)
 	{
-		b32 result=0;
-		blkv b=blkv(ptr,size);
-		if (owns(b)&&
+		b32 result=false;
+		if (owns(a,ptr,size)&&
 				a->used-size>=(msize)a->prevState)
 		{
-			void* allocEndAddr=ptr_add(a->buff.mem,a->used);
+			void* allocEndAddr=ptr_add(a->buff,a->used);
 			void* blkEndAddr=ptr_add(ptr,size);
 			if (allocEndAddr==blkEndAddr)
 			{
 				a->used-=size;
-				result=1;
+				result=true;
 			}
 		}
 		return result;
-	}
-
-	b32 free(stack_alloc* a,blkv block)
-	{
-		return free(a,block.mem,block.size);
 	}
 
 	stack_state save_stack(stack_alloc* a)
@@ -98,26 +71,22 @@ namespace dggt
 
 	b32 clear(stack_alloc* a)
 	{
-		used=0;
-		stateCount=0;
-		prevState=0;
-		return 1;
-	}
-
-	b32 is_stack_balance(const stack_alloc* a)
-	{
-		return a->stateCount==0;
+		a->used=0;
+		a->stateCount=0;
+		a->prevState=0;
+		return true;
 	}
 
 	b32 owns(const stack_alloc* a,const void* ptr,msize size)
 	{
-		return ptr>=buff.mem&&
-			ptr_add(ptr,size)<=ptr_add(buff.mem,buff.size);
+		return ptr>=a->buff&&
+			ptr_add(ptr,size)<=ptr_add(a->buff,a->buffSize);
 	}
 
-	b32 owns(const stack_alloc* a,const blkv block)
+
+	b32 is_stack_balance(const stack_alloc* a)
 	{
-		return owns(a,block.mem,block.size);
+		return a->stateCount==0;
 	}
 
 	msize available_mem(const stack_alloc* a)

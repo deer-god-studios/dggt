@@ -8,19 +8,19 @@ namespace dggt
 	template <u32... S>
 	struct make_sequence
 	{
-		typedef sequence<S...> type;
+		using type=sequence<S...>;
 	};
 
-	template <u32 NEW,template <u32...> seq>
+	template <typename seq,u32 NEW>
 	struct sequence_push;
 
-	template <u32 NEW,u32... REST>
-	struct sequence_push<NEW,sequence<REST...>>
+	template <u32... REST,u32 NEW>
+	struct sequence_push<sequence<REST...>,NEW>
 	{
 		using type=sequence<NEW,REST...>;
 	};
 
-	template <template <u32...> seq>
+	template <typename seq>
 	struct sequence_pop;
 
 	template <u32 HEAD,u32... REST>
@@ -29,7 +29,7 @@ namespace dggt
 		using type=sequence<REST...>;
 	};
 
-	template <u32 I,template <u32...> seq>
+	template <u32 I,typename seq>
 	struct sequence_get;
 
 	template <u32 HEAD,u32... REST>

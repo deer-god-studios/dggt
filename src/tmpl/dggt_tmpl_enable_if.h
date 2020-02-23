@@ -7,59 +7,59 @@ namespace dggt
 	{
 	};
 
-	template <typename T=void>
+	template <typename T>
 	struct enable_if<false,T>
 	{
-		typedef T val_t;
+		typedef T type;
 	};
 
 	template <bool B,typename IF=void,typename OR=void>
 	struct enable_or
 	{
-		typedef OR val_t;
+		typedef OR type;
 	};
 
-	template <typename IF=void,typename OR=void>
+	template <typename IF,typename OR>
 	struct enable_or<true,IF,OR>
 	{
-		typedef IF val_t;
+		typedef IF type;
 	};
 
 	template <bool B,typename T=u32>
 	struct val_if:enable_if<B,T>
 	{
-		typedef T val_t;
-		val_if(val_t val) { }
-		operator val_t() { return (val_t)this; }
+		typedef T type;
+		val_if(type val) { }
+		operator type() { return (type)this; }
 	};
 
-	template <typename T=u32>
-	struct val_if:enable_if<true,T>
+	template <typename T>
+	struct val_if<true,T>:enable_if<true,T>
 	{
-		typedef T val_t;
-		val_t val;
+		typedef T type;
+		type val;
 
-		val_if(val_t val) { this->val=val; }
+		val_if(type val) { this->val=val; }
 
-		operator val_t() { return val; }
+		operator type() { return val; }
 	};
 
 	template <bool B,typename IF,typename OR>
 	struct val_or:enable_or<B,IF,OR>
 	{
-		val_t val;
+		OR val;
 
-		val_or(val_t val) { this->val=val; }
-		operator val_t() { return val; }
+		val_or(OR val) { this->val=val; }
+		operator OR() { return val; }
 	};
 
 	template <typename IF,typename OR>
 	struct val_or<true,IF,OR>
 	{
-		val_t val;
+		IF val;
 
-		val_or(val_t val) { this->val=val; }
-		operator val_t() { return val; }
+		val_or(IF val) { this->val=val; }
+		operator IF() { return val; }
 	};
 
 	template <bool B,u32 VAL=0>
@@ -67,24 +67,11 @@ namespace dggt
 	{
 	};
 
-	template <u32 VAL=0>
+	template <u32 VAL>
 	struct enable_u32_if<true,VAL>
 	{
-		static const u32 VAL;
+		static const u32 val=VAL;
 	};
-
-
-	template <bool B,u32 VAL=0>
-	void init_u32_if(u32* val) { }
-
-	template <u32 VAL=0>
-	void init_u32_if<true,VAL>(u32* val) { *val=VAL; }
-
-	template <bool B,u32 VAL=0>
-	void init_u32_or(u32 val,u32* valOut) { *valOut=val; }
-
-	template <u32 VAL=0>
-	void init_u32_or<true,VAL>(u32 val,u32* valOut) { *valOut=VAL; }
 
 	// TODO: not general.
 	template <u32 S>
@@ -92,23 +79,6 @@ namespace dggt
 	:enable_u32_if<S!=0,S>,val_if<S==0,u32>
 	{
 	};
-
-	template <u32 S>
-	void init_member_if(member_val_or<S>* m,u32 val)
-	{
-		if (S==0)
-		{
-			m->val=val;
-		}
-	}
-
-	template <u32 S>
-	u32 get_member_if(member_val_or<S>* m)
-	{
-		return S==0?m->val:S;
-	}
-
-
 }
 
 #define _DGGT_TMP_ENABLE_IF_H_
