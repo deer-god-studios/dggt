@@ -1,77 +1,68 @@
-/*! @cond IncludeGuard */
-#ifndef _DGGT_MEM_ALLOC_H_
-/*! @endcond */
+#ifndef _DGGT_MEM_ALLOCATOR_H_
 
-// TODO: implement is_valid(block) to check if a block has already been 'freed'.
-
+#include "types/dggt_types.h"
+#include "defines/dggt_defines.h"
 
 namespace dggt
 {
-	/*!
-	 * @addtogroup mem
-	 * @{
-	 * */
-
 	typedef u32 alloc_t;
 	typedef msize stack_state;
+
+	global constexpr const stack_state SAVE_STACK_FAIL=MAX_MSIZE;
 
 	global const alloc_t ALLOC_T_NULL=0;
 	global const alloc_t ALLOC_T_LIN=1;
 	global const alloc_t ALLOC_T_STACK=2;
-	global const alloc_t ALLOC_T_AUTOSTACK=3;
 	global const alloc_t ALLOC_T_FREE=4;
 	global const alloc_t ALLOC_T_POOL=5;
 	global const alloc_t ALLOC_T_FALLBACK=6;
-	global const alloc_t ALLOC_T_STORE=7;
-	global const alloc_t ALLOC_T_STORE_TABLE=8;
 
-	global const alloc_t ALLOC_T_LIB_END=ALLOC_T_STORE_TABLE;
-	global const alloc_t ALLOC_T_BEGIN=ALLOC_T_LIB_END+1;
-
-	global const stack_state SAVE_STACK_FAIL=MAX_MSIZE;
-
-	global const msize DEF_BLOCKSIZE=BYTES(4);
-
-	global const msize DEF_TABLESIZE=4096;
-
+	template <msize... SizeArgs>
 	struct allocator
 	{
-		const alloc_t TYPE;
+		const alloc_t type;
 
-		allocator(alloc_t type):TYPE(type) { }
+		allocator(alloc_t type);
 	};
 
-	void* alloc(allocator* a,msize size=4);
+	template <msize... SizeArgs>
+	void* alloc(allocator<SizeArgs...>* a,msize size);
 
-	template <typename T>
-	T* alloc(allocator* a,u32 count=1);
-
-	b32 free(allocator* a,void* ptr,msize size=4);
+	template <msize... SizeArgs>
+	b32 free(allocator<SizeArgs...>* a,void* ptr,msize size);
 	
-	template <typename T>
-	b32 free(allocator* a,T* ptr,u32 count=1);
+	template <msize... SizeArgs>
+	b32 clear(allocator<SizeArgs...>* a);
 
-	b32 clear(allocator* a);
+	template <msize... SizeArgs>
+	b32 owns(const allocator<SizeArgs...>* a,const void* ptr,msize size);
 
-	b32 owns(const allocator* a,const void* ptr,msize size=4);
+	template <msize... SizeArgs>
+	stack_state save_stack(allocator<SizeArgs...>* a);
 
-	template <typename T>
-	b32 owns(const allocator* a,const T* ptr,u32 count=1);
+	template <msize... SizeArgs>
+	b32 restore_stack(allocator<SizeArgs...>* a,stack_state state);
 
-	stack_state save_stack(allocator* a);
+	template <msize... SizeArgs>
+	b32 is_stack_balanced(const allocator<SizeArgs...>* a);
 
-	b32 restore_stack(allocator* a,stack_state state);
+	template <msize... SizeArgs>
+	msize used_mem(const allocator<SizeArgs...>* a);
 
-	b32 is_stack_balanced(const allocator* a);
+	template <msize... SizeArgs>
+	msize available_mem(const allocator<SizeArgs...>* a);
 
-	msize used_mem(const allocator* a);
+	template <typename T,msize... SizeArgs>
+	T* alloc(allocator<SizeArgs...>* a,u32 count);
 
-	msize available_mem(const allocator* a);
+	template <typename T,msize... SizeArgs>
+	b32 free(allocator<SizeArgs...>* a,T* ptr,u32 count);
+
+	template <typename T,msize... SizeArgs>
+	b32 owns(const allocator<SizeArgs...>* a,const T* ptr,u32 count);
 }
 
 #include "dggt_mem_allocator.inl"
 
-/*! @cond IncludeGuard */
-#define _DGGT_MEM_ALLOC_H_
+#define _DGGT_MEM_ALLOCATOR_H_
 #endif
-/*! @endcond  */

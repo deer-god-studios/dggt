@@ -14,9 +14,8 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 owns(stack_alloc* a,const T* ptr,u32 count)
+	b32 owns(const stack_alloc* a,const T* ptr,u32 count)
 	{
 		return owns(a,ptr,sizeof(T)*count);
 	}
-
 }

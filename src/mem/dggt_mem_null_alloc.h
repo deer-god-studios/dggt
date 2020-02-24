@@ -6,45 +6,40 @@ namespace dggt
 {
 	struct null_alloc
 	{
-		allocator baseAlloc;
+		allocator<> baseAlloc;
 
-		null_alloc()
-			: baseAlloc(allocator(ALLOC_T_NULL)) { }
+		null_alloc();
 	};
 
-	void* alloc(null_alloc* a,msize size=0) { return 0; }
+	void* alloc(null_alloc* a,msize size);
 
-	template <typename T>
-	T* alloc(null_alloc* a,u32 count=0) { return 0; }
-
-	b32 free(null_alloc* a,void* ptr,msize size) { return false; }
-
-	template <typename T>
-	b32 free(null_alloc* a,T* ptr,u32 count) { return false; }
-
-	b32 clear(null_alloc* a) { return true; }
+	b32 free(null_alloc* a,void* ptr,msize size);
 	
-	b32 owns(const null_alloc* a,const void* ptr,msize size)
-	{
-		return ptr==0&&size==0;
-	}
+	b32 clear(null_alloc* a);
+
+	b32 owns(const null_alloc* a,const void* ptr,msize size);
+
+	stack_state save_stack(null_alloc* a);
+
+	b32 restore_stack(null_alloc* a,stack_state state);
+
+	b32 is_stack_balanced(const null_alloc* a);
+
+	msize used_mem(const null_alloc* a);
+
+	msize available_mem(const null_alloc* a);
 
 	template <typename T>
-	b32 owns(const null_alloc* a,const T* ptr,u32 count)
-	{
-		return ptr==0&&count==0;
-	}
+	T* alloc(null_alloc* a,u32 count);
 
-	stack_state save_stack(null_alloc* a) { return SAVE_STACK_FAIL; }
+	template <typename T>
+	b32 free(null_alloc* a,T* ptr,u32 count);
 
-	b32 restore_stack(null_alloc* a,stack_state state) { return false; }
-
-	b32 is_stack_balanced(null_alloc* a) { return true; }
-
-	msize used_mem(null_alloc* a) { return 0; }
-
-	msize available_mem(null_alloc* a) { return 0; }
+	template <typename T>
+	b32 owns(const null_alloc* a,const T* ptr,u32 count);
 }
+
+#include "dggt_mem_null_alloc.inl"
 
 #define _DGGT_MEM_NULL_ALLOC_H_
 #endif
