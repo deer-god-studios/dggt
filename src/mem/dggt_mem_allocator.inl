@@ -27,6 +27,10 @@ namespace dggt
 				{
 					result=alloc((pool_alloc<SizeArgs...>*)a,size);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=alloc((store_alloc<SizeArgs...>*)a,size);
+				} break;
 		}
 		return result;
 	}
@@ -56,6 +60,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=free((pool_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=free((store_alloc<SizeArgs...>*)a,ptr,size);
 				} break;
 		}
 		return result;
@@ -87,6 +95,10 @@ namespace dggt
 				{
 					result=clear((pool_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=clear((store_alloc<SizeArgs...>*)a);
+				} break;
 		}
 		return result;
 	}
@@ -116,6 +128,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=owns((pool_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=owns((store_alloc<SizeArgs...>*)a,ptr,size);
 				} break;
 		}
 		return result;
@@ -147,6 +163,10 @@ namespace dggt
 				{
 					result=save_stack((pool_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=save_stack((store_alloc<SizeArgs...>*)a)
+				} break;
 		}
 		return result;
 	}
@@ -176,6 +196,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=restore_stack((pool_alloc<SizeArgs...>*)a,state);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=restore_stack((store_alloc<SizeArgs...>*)a,state);
 				} break;
 		}
 		return result;
@@ -207,6 +231,10 @@ namespace dggt
 				{
 					result=is_stack_balanced((pool_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=is_stack_balanced((store_alloc<SizeArgs...>*)a);
+				} break;
 		}
 		return result;
 	}
@@ -236,6 +264,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=used_mem((pool_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=used_mem((store_alloc<SizeArgs...>*)a);
 				} break;
 		}
 		return result;
@@ -267,6 +299,10 @@ namespace dggt
 				{
 					result=available_mem((pool_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=available_mem((store_alloc<SizeArgs...>*)a)
+				} break;
 		}
 	}
 
@@ -295,6 +331,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=alloc((pool_alloc<SizeArgs...>*)a,count);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=alloc((store_alloc<SizeArgs...>*)a,count);
 				} break;
 		}
 		return result;
@@ -326,6 +366,10 @@ namespace dggt
 				{
 					result=free((pool_alloc<SizeArgs...>*)a,count);
 				} break;
+			case ALLOC_T_STORE:
+				{
+					result=free((store_alloc<SizeArgs...>*)a,count);
+				} break;
 		}
 		return result;
 	}
@@ -355,6 +399,10 @@ namespace dggt
 			case ALLOC_T_POOL:
 				{
 					result=owns((pool_alloc<SizeArgs...>*)a,count);
+				} break;
+			case ALLOC_T_STORE:
+				{
+					result=owns((store_alloc<SizeArgs...>*)a,count);
 				} break;
 		}
 		return result;
