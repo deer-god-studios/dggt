@@ -17,6 +17,10 @@ namespace dggt
 	global const alloc_t ALLOC_T_POOL=5;
 	global const alloc_t ALLOC_T_FALLBACK=6;
 	global const alloc_t ALLOC_T_STORE=7;
+	global const alloc_t ALLOC_T_TABLE=8;
+
+	global const alloc_t ALLOC_T_LIB_END=ALLOC_T_TABLE;
+	global const alloc_t ALLOC_T_BEGIN=ALLOC_T_LIB_END+1;
 
 	template <msize... SizeArgs>
 	struct allocator
