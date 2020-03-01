@@ -1,5 +1,6 @@
 #ifndef _DGGT_MEM_FREE_ALLOC_H_
 
+#include "dggt_mem_utils.h"
 #include "dggt_mem_allocator.h"
 #include "dggt_mem_block.h"
 

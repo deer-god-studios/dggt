@@ -11,13 +11,13 @@ namespace dggt
 			if (*head)
 			{
 				result=*head;
-				*head=*head->next;
+				*head=(*head)->next;
 				++*blockCount;
 			}
 			return result;
 		}
 
-		b32 store_owns(void* ptr,msize size,msize blockSize)
+		b32 store_owns(const void* ptr,msize size,msize blockSize)
 		{
 			return size==blockSize;
 		}
@@ -41,6 +41,7 @@ namespace dggt
 		{
 			*head=0;
 			*blockCount=0;
+			return true;
 		}
 
 		msize store_used_mem(u32 blockCount)
@@ -57,7 +58,7 @@ namespace dggt
 	store_alloc<0>::store_alloc(msize blockSize)
 	{
 		ASSERT(blockSize>=sizeof(store_block));
-		baseAlloc(allocator<>(ALLOC_T_STORE));
+		baseAlloc=allocator<>(ALLOC_T_STORE);
 		head=0;
 		blockCount=0;
 		this->blockSize=blockSize;
@@ -72,7 +73,7 @@ namespace dggt
 	b32 free(store_alloc<>* a,void* ptr,msize size)
 	{
 		return dggt_internal_::store_free(&a->head,&a->blockCount,
-				ptr,size,blockSize);
+				ptr,size,a->blockSize);
 	}
 	
 	b32 clear(store_alloc<>* a)
@@ -107,21 +108,9 @@ namespace dggt
 
 	msize available_mem(const store_alloc<>* a)
 	{
-		return dggt_internal_::store_available_mem(a->blockCount);
+		return dggt_internal_::store_available_mem(a->blockCount,
+				a->blockSize);
 	}
 
-	T* alloc(store_alloc<>* a,u32 count)
-	{
-		return (T*)alloc(a,sizeof(T)*count);
-	}
 
-	b32 free(store_alloc<>* a,T* ptr,u32 count)
-	{
-		return free(a,ptr,sizeof(T)*count);
-	}
-
-	b32 owns(const store_alloc<>* a,const T* ptr,u32 count)
-	{
-		return owns(a,ptr,sizeof(T)*count);
-	}
 }

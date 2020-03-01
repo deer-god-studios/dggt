@@ -12,6 +12,8 @@ namespace dggt
 		store_alloc<> storeTable[TABLESIZE];
 		msize availableMem;
 		u32 storeCount;
+
+		table_alloc();
 	};
 
 	template <msize TABLESIZE>

@@ -31,6 +31,14 @@ namespace dggt
 				{
 					result=alloc((store_alloc<SizeArgs...>*)a,size);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=alloc((table_alloc<SizeArgs...>*)a,size);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=alloc((fallback_alloc<SizeArgs...>*)a,size);
+				} break;
 		}
 		return result;
 	}
@@ -64,6 +72,14 @@ namespace dggt
 			case ALLOC_T_STORE:
 				{
 					result=free((store_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=free((table_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=free((fallback_alloc<SizeArgs...>*)a,ptr,size);
 				} break;
 		}
 		return result;
@@ -99,6 +115,14 @@ namespace dggt
 				{
 					result=clear((store_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=clear((table_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=clear((fallback_alloc<SizeArgs...>*)a);
+				} break;
 		}
 		return result;
 	}
@@ -133,6 +157,14 @@ namespace dggt
 				{
 					result=owns((store_alloc<SizeArgs...>*)a,ptr,size);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=owns((table_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=owns((fallback_alloc<SizeArgs...>*)a,ptr,size);
+				} break;
 		}
 		return result;
 	}
@@ -165,7 +197,15 @@ namespace dggt
 				} break;
 			case ALLOC_T_STORE:
 				{
-					result=save_stack((store_alloc<SizeArgs...>*)a)
+					result=save_stack((store_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=save_stack((table_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=save_stack((fallback_alloc<SizeArgs...>*)a);
 				} break;
 		}
 		return result;
@@ -201,6 +241,14 @@ namespace dggt
 				{
 					result=restore_stack((store_alloc<SizeArgs...>*)a,state);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=restore_stack((table_alloc<SizeArgs...>*)a,state);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=restore_stack((fallback_alloc<SizeArgs...>*)a,state);
+				} break;
 		}
 		return result;
 	}
@@ -234,6 +282,14 @@ namespace dggt
 			case ALLOC_T_STORE:
 				{
 					result=is_stack_balanced((store_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=is_stack_balanced((table_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=is_stack_balanced((fallback_alloc<SizeArgs...>*)a);
 				} break;
 		}
 		return result;
@@ -269,6 +325,14 @@ namespace dggt
 				{
 					result=used_mem((store_alloc<SizeArgs...>*)a);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=used_mem((table_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=used_mem((fallback_alloc<SizeArgs...>*)a);
+				} break;
 		}
 		return result;
 	}
@@ -301,9 +365,18 @@ namespace dggt
 				} break;
 			case ALLOC_T_STORE:
 				{
-					result=available_mem((store_alloc<SizeArgs...>*)a)
+					result=available_mem((store_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=available_mem((table_alloc<SizeArgs...>*)a);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=available_mem((fallback_alloc<SizeArgs...>*)a);
 				} break;
 		}
+		return result;
 	}
 
 	template <typename T,msize... SizeArgs>
@@ -335,6 +408,14 @@ namespace dggt
 			case ALLOC_T_STORE:
 				{
 					result=alloc((store_alloc<SizeArgs...>*)a,count);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=alloc((table_alloc<SizeArgs...>*)a,count);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=alloc((fallback_alloc<SizeArgs...>*)a,count);
 				} break;
 		}
 		return result;
@@ -370,6 +451,14 @@ namespace dggt
 				{
 					result=free((store_alloc<SizeArgs...>*)a,count);
 				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=free((table_alloc<SizeArgs...>*)a,ptr,count);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=free((fallback_alloc<SizeArgs...>*)a,ptr,count);
+				} break;
 		}
 		return result;
 	}
@@ -382,27 +471,35 @@ namespace dggt
 		{
 			case ALLOC_T_NULL:
 				{
-					result=owns((null_alloc*)a,count);
+					result=owns((null_alloc*)a,ptr,count);
 				} break;
 			case ALLOC_T_LIN:
 				{
-					result=owns((lin_alloc*)a,count);
+					result=owns((lin_alloc*)a,ptr,count);
 				} break;
 			case ALLOC_T_STACK:
 				{
-					result=owns((stack_alloc*)a,count);
+					result=owns((stack_alloc*)a,ptr,count);
 				} break;
 			case ALLOC_T_FREE:
 				{
-					result=owns((free_alloc*)a,count);
+					result=owns((free_alloc*)a,ptr,count);
 				} break;
 			case ALLOC_T_POOL:
 				{
-					result=owns((pool_alloc<SizeArgs...>*)a,count);
+					result=owns((pool_alloc<SizeArgs...>*)a,ptr,count);
 				} break;
 			case ALLOC_T_STORE:
 				{
-					result=owns((store_alloc<SizeArgs...>*)a,count);
+					result=owns((store_alloc<SizeArgs...>*)a,ptr,count);
+				} break;
+			case ALLOC_T_TABLE:
+				{
+					result=owns((table_alloc<SizeArgs...>*)a,ptr,count);
+				} break;
+			case ALLOC_T_FALLBACK:
+				{
+					result=owns((fallback_alloc<SizeArgs...>*)a,ptr,count);
 				} break;
 		}
 		return result;

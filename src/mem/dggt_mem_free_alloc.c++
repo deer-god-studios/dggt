@@ -49,7 +49,7 @@ namespace dggt
 		}
 
 		void* free_alloc(free_block** freeList,msize* used,
-				msize size)
+				msize buffSize,msize size)
 		{
 			void* result=0;
 			if (size<sizeof(free_block))
@@ -96,7 +96,7 @@ namespace dggt
 		}
 
 		b32 free_owns(void* buff,msize buffSize,
-				void* ptr,msize size)
+				const void* ptr,msize size)
 		{
 			return ptr>=buff&&
 				ptr_add(ptr,size)<=ptr_add(buff,buffSize);
@@ -196,7 +196,7 @@ namespace dggt
 				msize buffSize,msize* used)
 		{
 			*freeList=(free_block*)buff;
-			*freeList->size=buffSize;
+			(*freeList)->size=buffSize;
 			*used=0;
 			return 1;
 		}
@@ -247,7 +247,7 @@ namespace dggt
 	void* alloc(free_alloc* a,msize size)
 	{
 		return dggt_internal_::free_alloc(&a->freeList,
-				&a->used,size);
+				&a->used,a->buffSize,size);
 	}
 
 	b32 free(free_alloc* a,void* ptr,msize size)

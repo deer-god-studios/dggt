@@ -11,7 +11,7 @@ namespace dggt
 			if (*head)
 			{
 				result=*head;
-				*head=*head->next;
+				*head=(*head)->next;
 				++*blockCount;
 			}
 			return result;
@@ -44,6 +44,7 @@ namespace dggt
 		{
 			*head=0;
 			*blockCount=0;
+			return true;
 		}
 
 		template <msize BLOCKSIZE>

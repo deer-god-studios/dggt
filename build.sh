@@ -13,5 +13,5 @@ if has_source_files $TARGET; then
 	OUT=(`get_module_output $TARGET`)
 
 	${CC} ${CC_FLAGS} ${SRCS}
-	${CC} ${OBJS} ${OUT}
+	${CC} ${LINKER_FLAGS} ${OUT} ${OBJS}
 fi

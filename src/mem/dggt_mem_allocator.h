@@ -25,9 +25,11 @@ namespace dggt
 	template <msize... SizeArgs>
 	struct allocator
 	{
-		const alloc_t type;
+		alloc_t type;
 
-		allocator(alloc_t type);
+		allocator() { type=ALLOC_T_NULL; }
+		allocator(alloc_t allocType)
+			: type(allocType) { }
 	};
 
 	template <msize... SizeArgs>
@@ -66,8 +68,6 @@ namespace dggt
 	template <typename T,msize... SizeArgs>
 	b32 owns(const allocator<SizeArgs...>* a,const T* ptr,u32 count);
 }
-
-#include "dggt_mem_allocator.inl"
 
 #define _DGGT_MEM_ALLOCATOR_H_
 #endif

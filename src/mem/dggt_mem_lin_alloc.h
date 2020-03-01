@@ -1,6 +1,7 @@
 #ifndef _DGGT_MEM_LIN_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
+#include "dggt_mem_utils.h"
 
 namespace dggt
 {

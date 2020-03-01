@@ -17,7 +17,7 @@ namespace dggt
 		}
 
 		b32 stack_owns(void* buff,msize buffSize,
-				void* ptr,msize size)
+				const void* ptr,msize size)
 		{
 			return ptr>buff&&
 				ptr_add(ptr,size)<=ptr_add(buff,buffSize);
@@ -103,7 +103,7 @@ namespace dggt
 	}
 
 	stack_alloc::stack_alloc(void* ptr,msize size)
-		stack_alloc()
+		: stack_alloc()
 	{
 		buff=ptr;
 		buffSize=size;
@@ -112,7 +112,7 @@ namespace dggt
 	void* alloc(stack_alloc* a,msize size)
 	{
 		return dggt_internal_::stack_alloc(a->buff,a->buffSize,
-			&a->used,a->size);
+			&a->used,size);
 	}
 
 	b32 free(stack_alloc* a,void* ptr,msize size)

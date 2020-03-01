@@ -5,7 +5,8 @@ SRCDIR=$WDIR/src
 BDIR=$WDIR/build
 IDIR=$SRCDIR
 CC=gcc
-CC_FLAGS=(-c -std=c++2a -I$IDIR)
+CC_FLAGS=(-c -std=c++2a -I$IDIR -fpic)
+LINKER_FLAGS=(-shared)
 MODULE_TYPES=(APP LIB HEADER)
 
 get_modules()
@@ -164,7 +165,8 @@ get_obj_list()
 {
 	local module=$1
 	local source_list=$(get_source_list $module)
-	echo $(echo $source_list | sed 's/\.cxx/\.o/g; s/\.cpp/\.o/g; s/\.c\+\+/\.o/g')
+	local objs=$(echo $(basename -a $(echo $source_list | sed 's/\.cxx/.o/g; s/\.cpp/.o/g; s/\.c++/.o/g'))|sed 's/\n/ /g')
+	echo $objs
 }
 
 has_source_files()
@@ -184,9 +186,9 @@ get_module_output()
 	if is_module $module; then
 		if has_source_files $module; then
 			if [[ $(get_module_type $module) == LIB ]]; then
-				echo "dggt_"$module".so"
+				echo "-o dggt_"$module".so"
 			elif [[ $(get_module_type $module) == APP ]]; then
-				echo "dggt_"$module
+				echo "-o dggt_"$module
 			fi
 		fi
 	fi

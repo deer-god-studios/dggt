@@ -10,7 +10,7 @@ namespace dggt
 			if (*pool)
 			{
 				result=*pool;
-				*pool=*pool->next;
+				*pool=(*pool)->next;
 				*used+=BLOCKSIZE;
 			}
 			return result;
@@ -31,7 +31,7 @@ namespace dggt
 				msize* used,void* ptr,msize size)
 		{
 			b32 result=false;
-			if (pool_owns(buff,buffSize,ptr,size))
+			if (pool_owns<BLOCKSIZE>(buff,buffSize,ptr,size))
 			{
 				pool_block* newBlock=(pool_block*)ptr;
 				newBlock->next=*pool;
@@ -48,12 +48,12 @@ namespace dggt
 		{
 			*used=0;
 			*blockCount=(u32)(buffSize/BLOCKSIZE);
-			*pool=(pool_block*)ptr;
-			for (u32 i=0;i<blockCount;++i)
+			*pool=(pool_block*)buff;
+			for (u32 i=0;i<*blockCount;++i)
 			{
 				pool_block* current=*pool+i;
 				current->next=
-					i==blockCount-1?0:current+1;
+					i==*blockCount-1?0:current+1;
 			}
 		}
 	}
@@ -96,7 +96,7 @@ namespace dggt
 	template <msize BLOCKSIZE>
 	b32 clear(pool_alloc<BLOCKSIZE>* a)
 	{
-		dggt_internal_::pool_init<BLOCKSIZE>(
+		return dggt_internal_::pool_init<BLOCKSIZE>(
 				&a->pool,a->buff,a->buffSize,&a->blockCount,&a->used);
 	}
 
@@ -110,7 +110,7 @@ namespace dggt
 	template <msize BLOCKSIZE>
 	stack_state save_stack(pool_alloc<BLOCKSIZE>* a)
 	{
-		return STACK_SAVE_FAIL;
+		return SAVE_STACK_FAIL;
 	}
 
 	template <msize BLOCKSIZE>

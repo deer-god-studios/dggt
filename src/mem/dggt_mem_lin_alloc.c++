@@ -31,10 +31,10 @@ namespace dggt
 		}
 
 		b32 linear_owns(void* buff,msize buffSize,
-				void* ptr,msize size)
+				const void* ptr,msize size)
 		{
-			return ptr>=a->buff&&
-				ptr_add(ptr,size)<=ptr_add(a->buff,a->buffSize);
+			return ptr>=buff&&
+				ptr_add(ptr,size)<=ptr_add(buff,buffSize);
 		}
 
 		msize linear_used_mem(msize used)
@@ -80,7 +80,7 @@ namespace dggt
 
 	void* alloc(lin_alloc* a,msize size)
 	{
-		return=dggt_internal_::linear_alloc(a->buff,
+		return dggt_internal_::linear_alloc(a->buff,
 				a->buffSize,&a->used,size);
 	}
 
