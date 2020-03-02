@@ -5,8 +5,11 @@ SRCDIR=$WDIR/src
 BDIR=$WDIR/build
 IDIR=$SRCDIR
 CC=gcc
-CC_FLAGS=(-c -std=c++2a -I$IDIR -fpic)
-LINKER_FLAGS=(-shared)
+CC_LIB_FLAGS=(-c -std=c++2a -I$IDIR -fpic)
+CC_APP_FLAGS=(-L. -std=c++2a -I$IDIR)
+LINKER_LIB_FLAGS=(-shared)
+LINKER_APP_FLAGS=(-L.)
+LINKED_LIBS=(-ldggt_mem)
 MODULE_TYPES=(APP LIB HEADER)
 
 get_modules()
@@ -69,6 +72,39 @@ get_module_type()
 				continue
 			fi
 		done <<< $(cat $PDIR/$module)
+	fi
+}
+
+get_cc_flags()
+{
+	local module=$1
+	local module_type=$(get_module_type $1)
+	if [[ $module_type == LIB ]]; then
+		echo $CC_LIB_FLAGS
+	elif [[ $module_type == APP ]]; then
+		echo $CC_APP_FLAGS
+	fi
+}
+
+get_linker_flags()
+{
+	local module=$1
+	local module_type=$(get_module_type $1)
+	if [[ $module_type == LIB ]]; then
+		echo $LINKER_LIB_FLAGS
+	elif [[ $module_type == APP ]]; then
+		echo $LINKER_APP_FLAGS
+	fi
+}
+
+get_linked_libs()
+{
+	local module=$1
+	local module_type=$(get_module_type $1)
+	if [[ $module_type == LIB ]]; then
+		echo ""
+	elif [[ $module_type == APP ]]; then
+		echo $LINKED_LIBS
 	fi
 }
 
@@ -186,7 +222,7 @@ get_module_output()
 	if is_module $module; then
 		if has_source_files $module; then
 			if [[ $(get_module_type $module) == LIB ]]; then
-				echo "-o dggt_"$module".so"
+				echo "-o libdggt_"$module".so"
 			elif [[ $(get_module_type $module) == APP ]]; then
 				echo "-o dggt_"$module
 			fi

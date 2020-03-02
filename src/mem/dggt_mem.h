@@ -1,5 +1,6 @@
 #ifndef _DGGT_MEM_H_
 
+#include "dggt_mem_defines.h"
 #include "dggt_mem_utils.h"
 #include "dggt_mem_null_alloc.h"
 #include "dggt_mem_lin_alloc.h"
@@ -25,6 +26,8 @@ namespace dggt
 	msize available_cache_mem();
 	
 	msize used_cache_mem();
+
+	free_alloc* get_cache_alloc();
 
 	void* cache_alloc(msize size);
 

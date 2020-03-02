@@ -67,9 +67,9 @@ namespace dggt { }
 #include "defines/dggt_defines.h"
 #include "math/dggt_math.h"
 #include "types/dggt_types.h"
-#include "tmpl/dggt_tmpl.h"
+//#include "tmpl/dggt_tmpl.h"
 #include "mem/dggt_mem.h"
-#include "coll/dggt_coll.h"
+//#include "coll/dggt_coll.h"
 
 /// @cond IncludeGuard
 #define _DGGT_H_

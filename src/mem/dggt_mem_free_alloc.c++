@@ -197,6 +197,7 @@ namespace dggt
 		{
 			*freeList=(free_block*)buff;
 			(*freeList)->size=buffSize;
+			(*freeList)->next=0;
 			*used=0;
 			return 1;
 		}
@@ -242,6 +243,9 @@ namespace dggt
 		ASSERT(size>=sizeof(free_block));
 		buff=ptr;
 		buffSize=size;
+		freeList=(free_block*)buff;
+		freeList->size=buffSize;
+		freeList->next=0;
 	}
 
 	void* alloc(free_alloc* a,msize size)

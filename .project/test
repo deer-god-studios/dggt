@@ -1,3 +1,4 @@
+APP
 dggt
 defines
 types
@@ -6,4 +7,4 @@ math
 math.lin
 mem
 coll
-test
+dggt_test_linux.c++

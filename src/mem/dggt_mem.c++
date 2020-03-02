@@ -50,4 +50,19 @@ namespace dggt
 	{
 		return cache_is_initialized()?free(dggt_internal_::cacheAlloc,ptr,size):false;
 	}
+
+	msize available_cache_mem()
+	{
+		return available_mem(dggt_internal_::cacheAlloc);
+	}
+
+	msize used_cache_mem()
+	{
+		return used_mem(dggt_internal_::cacheAlloc);
+	}
+
+	free_alloc* get_cache_alloc()
+	{
+		return dggt_internal_::cacheAlloc;
+	}
 }
