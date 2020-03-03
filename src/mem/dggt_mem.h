@@ -11,10 +11,11 @@
 #include "dggt_mem_table_alloc.h"
 #include "dggt_mem_fallback_alloc.h"
 
-#include "dggt_mem_allocator.inl"
-
 namespace dggt
 {
+	global const msize DEF_BUFFSIZE=GB(2);
+	global const msize DEF_BLOCK_SIZE=8;
+
 	void cache_init(msize size);
 
 	b32 cache_is_initialized();
@@ -29,41 +30,15 @@ namespace dggt
 
 	free_alloc* get_cache_alloc();
 
-	void* cache_alloc(msize size);
+	void* cache_alloc(msize size=DEF_BLOCK_SIZE);
 
 	template <typename T>
 	T* cache_alloc(u32 count=1);
 
-	b32 cache_free(void* ptr,msize size);
+	b32 cache_free(void* ptr,msize size=DEF_BLOCK_SIZE);
 
 	template <typename T>
 	b32 cache_free(T* ptr,u32 count=1);
-
-	allocator<>* create_alloc(alloc_t type,
-			void* buff,msize size,
-			msize blockSize=4);
-
-	allocator<>* create_alloc(alloc_t type,msize size,msize blockSize=4);
-
-	template <msize... SizeArgs>
-	allocator<SizeArgs...>* create_alloc(alloc_t type,
-			void* buff,msize size);
-
-	template <msize... SizeArgs>
-	allocator<SizeArgs...>* create_alloc(alloc_t type,msize size);
-
-	template <msize PrimaryArg,msize FallbackArg>
-	allocator<PrimaryArg,FallbackArg>* create_alloc(alloc_t type,
-			allocator<PrimaryArg>* primary,
-			allocator<FallbackArg>* fallback); 
-
-	template <msize PrimaryArg,msize FallbackArg>
-	allocator<PrimaryArg,FallbackArg>* create_alloc(alloc_t type,
-			alloc_t primaryType,msize primarySize,
-			alloc_t fallbackType,msize fallbackSize);
-
-	template <msize... SizeArgs>
-	b32 destroy_alloc(allocator<SizeArgs...>* a);
 }
 
 #include "dggt_mem.inl"

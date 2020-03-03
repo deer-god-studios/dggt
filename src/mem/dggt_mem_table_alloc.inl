@@ -219,7 +219,6 @@ namespace dggt
 	template <msize TABLESIZE>
 	table_alloc<TABLESIZE>::table_alloc()
 	{
-		baseAlloc=allocator<TABLESIZE>();
 		for (msize i=0;i<TABLESIZE;++i)
 		{
 			flagTable[i]=dggt_internal_::STORE_TABLE_EMPTY;

@@ -63,7 +63,6 @@ namespace dggt
 	template <msize BLOCKSIZE>
 	store_alloc<BLOCKSIZE>::store_alloc()
 	{
-		baseAlloc(allocator<BLOCKSIZE>(ALLOC_T_STORE));
 		head=0;
 		blockCount=0;
 	}

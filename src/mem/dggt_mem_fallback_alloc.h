@@ -1,60 +1,59 @@
 #ifndef _DGGT_MEM_FALLBACK_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
-
 namespace dggt
 {
-	template <msize PrimaryArg,msize FallbackArg>
+	template <typename P,typename F>
 	struct fallback_alloc
 	{
-		allocator<> baseAlloc;
-		allocator<PrimaryArg>* p;
-		allocator<FallbackArg>* f;
+		P* p;
+		F* f;
 
 		fallback_alloc();
-		fallback_alloc(allocator<PrimaryArg>* primary,
-				allocator<FallbackArg>* fallback);
+		fallback_alloc(P* primary,F* fallback);
 	};
 
-	template <msize PrimaryArg,msize FallbackArg>
-	void* alloc(fallback_alloc<PrimaryArg,FallbackArg>* a,msize size);
+	template <typename P,typename F>
+	void* alloc(fallback_alloc<P,F>* a,msize size);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	b32 free(fallback_alloc<PrimaryArg,FallbackArg>* a,void* ptr,msize size);
+	template <typename P,typename F>
+	b32 free(fallback_alloc<P,F>* a,void* ptr,msize size);
 	
-	template <msize PrimaryArg,msize FallbackArg>
-	b32 clear(fallback_alloc<PrimaryArg,FallbackArg>* a);
+	template <typename P,typename F>
+	b32 clear(fallback_alloc<P,F>* a);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	b32 owns(const fallback_alloc<PrimaryArg,FallbackArg>* a,
+	template <typename P,typename F>
+	b32 owns(const fallback_alloc<P,F>* a,
 			const void* ptr,msize size);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	stack_state save_stack(fallback_alloc<PrimaryArg,FallbackArg>* a);
+	template <typename P,typename F>
+	stack_state save_stack(fallback_alloc<P,F>* a);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	b32 restore_stack(fallback_alloc<PrimaryArg,FallbackArg>* a,
+	template <typename P,typename F>
+	b32 restore_stack(fallback_alloc<P,F>* a,
 			stack_state state);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	b32 is_stack_balanced(const fallback_alloc<PrimaryArg,FallbackArg>* a);
+	template <typename P,typename F>
+	b32 is_stack_balanced(const fallback_alloc<P,F>* a);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	msize used_mem(const fallback_alloc<PrimaryArg,FallbackArg>* a);
+	template <typename P,typename F>
+	msize used_mem(const fallback_alloc<P,F>* a);
 
-	template <msize PrimaryArg,msize FallbackArg>
-	msize available_mem(const fallback_alloc<PrimaryArg,FallbackArg>* a);
+	template <typename P,typename F>
+	msize available_mem(const fallback_alloc<P,F>* a);
 
-	template <typename T,msize PrimaryArg,msize FallbackArg>
-	T* alloc(fallback_alloc<PrimaryArg,FallbackArg>* a,u32 count);
+	template <typename T,typename P,typename F>
+	T* alloc(fallback_alloc<P,F>* a,u32 count);
 
-	template <typename T,msize PrimaryArg,msize FallbackArg>
-	b32 free(fallback_alloc<PrimaryArg,FallbackArg>* a,T* ptr,u32 count);
+	template <typename T,typename P,typename F>
+	b32 free(fallback_alloc<P,F>* a,T* ptr,u32 count);
 
-	template <typename T,msize PrimaryArg,msize FallbackArg>
-	b32 owns(const fallback_alloc<PrimaryArg,FallbackArg>* a,
+	template <typename T,typename P,typename F>
+	b32 owns(const fallback_alloc<P,F>* a,
 			const T* ptr,u32 count);
 }
+
+#include "dggt_mem_fallback_alloc.inl"
 
 #define _DGGT_MEM_FALLBACK_ALLOC_H_
 #endif

@@ -94,7 +94,6 @@ namespace dggt
 
 	stack_alloc::stack_alloc()
 	{
-		baseAlloc=allocator<>(ALLOC_T_STACK);
 		buff=0;
 		buffSize=0;
 		used=0;

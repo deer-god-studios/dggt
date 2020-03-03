@@ -11,7 +11,6 @@ namespace dggt
 	struct store_alloc
 	{
 		static_assert(BLOCKSIZE>=sizeof(store_block));
-		allocator<BLOCKSIZE> baseAlloc;
 		store_block* head;
 		u32 blockCount;
 
@@ -21,7 +20,6 @@ namespace dggt
 	template <>
 	struct store_alloc<0>
 	{
-		allocator<> baseAlloc;
 		store_block* head;
 		u32 blockCount;
 		msize blockSize;

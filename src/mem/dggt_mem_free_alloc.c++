@@ -230,7 +230,6 @@ namespace dggt
 
 	free_alloc::free_alloc()
 	{
-		baseAlloc=allocator<>(ALLOC_T_FREE);
 		buff=0;
 		buffSize=0;
 		freeList=0;

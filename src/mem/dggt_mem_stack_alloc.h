@@ -7,7 +7,6 @@ namespace dggt
 {
 	struct stack_alloc
 	{
-		allocator<> baseAlloc;
 		void* buff;
 		msize buffSize;
 		msize used;

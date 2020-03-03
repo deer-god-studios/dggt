@@ -1,7 +1,7 @@
 #ifndef _DGGT_MEM_FREE_ALLOC_H_
 
-#include "dggt_mem_utils.h"
 #include "dggt_mem_allocator.h"
+#include "dggt_mem_utils.h"
 #include "dggt_mem_block.h"
 
 namespace dggt
@@ -10,7 +10,6 @@ namespace dggt
 
 	struct free_alloc
 	{
-		allocator<> baseAlloc;
 		void* buff;
 		msize buffSize;
 		free_block* freeList;

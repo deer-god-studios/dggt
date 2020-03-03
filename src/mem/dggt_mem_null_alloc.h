@@ -1,13 +1,10 @@
 #ifndef _DGGT_MEM_NULL_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
-
 namespace dggt
 {
 	struct null_alloc
 	{
-		allocator<> baseAlloc;
-
 		null_alloc();
 	};
 

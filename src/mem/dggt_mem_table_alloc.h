@@ -1,15 +1,15 @@
 #ifndef _DGGT_MEM_TABLE_ALLOC_H_
 
+#include "dggt_mem_allocator.h"
 #include "dggt_mem_store_alloc.h"
 
 namespace dggt
 {
 	global constexpr msize DEF_TABLESIZE=4096;
 
-	template <msize TABLESIZE=DEF_TABLESIZE>
+	template <msize TABLESIZE>
 	struct table_alloc
 	{
-		allocator<TABLESIZE> baseAlloc;
 		flag32 flagTable[TABLESIZE];
 		store_alloc<> storeTable[TABLESIZE];
 		msize availableMem;

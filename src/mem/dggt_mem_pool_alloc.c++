@@ -58,7 +58,6 @@ namespace dggt
 
 	pool_alloc<0>::pool_alloc()
 	{
-		baseAlloc=allocator<>(ALLOC_T_POOL);
 		buff=0;
 		buffSize=0;
 		used=0;

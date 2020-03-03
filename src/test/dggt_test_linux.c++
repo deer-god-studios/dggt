@@ -95,7 +95,19 @@ int main(int argc, char* argv[])
 	printf("cache_init\n");
 	cache_init(GB(2));
 
-	allocator<>* a=create_alloc(ALLOC_T_LIN,MB(2));
+	pool_alloc<8> a_=pool_alloc<8>(cache_alloc(KB(8)),KB(8));
+	pool_alloc<8>* a=&a_;
+
+	int* intArr=alloc<int>(a,20);
+	for (u32 i=0;i<20;++i)
+	{
+		intArr[i]=i;
+	}
+	for (u32 i=0;i<20;++i)
+	{
+		printf("%d\n",intArr[i]);
+	}
+	free(a,intArr,20);
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

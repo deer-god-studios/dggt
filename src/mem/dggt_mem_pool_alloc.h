@@ -1,7 +1,7 @@
 #ifndef _DGGT_MEM_POOL_ALLOC_H_
 
-#include "dggt_mem_utils.h"
 #include "dggt_mem_allocator.h"
+#include "dggt_mem_utils.h"
 #include "dggt_mem_block.h"
 
 namespace dggt
@@ -12,7 +12,6 @@ namespace dggt
 	struct pool_alloc
 	{
 		static_assert(BLOCKSIZE>=sizeof(pool_block));
-		allocator<BLOCKSIZE> baseAlloc;
 		void* buff;
 		msize buffSize;
 		msize used;
@@ -26,7 +25,6 @@ namespace dggt
 	template <>
 	struct pool_alloc<>
 	{
-		allocator<> baseAlloc;
 		void* buff;
 		msize buffSize;
 		msize used;

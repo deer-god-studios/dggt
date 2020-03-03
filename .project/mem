@@ -6,7 +6,6 @@ tmpl
 dggt_mem.c++
 dggt_mem.inl
 dggt_mem_allocator.h
-dggt_mem_allocator.inl
 dggt_mem_block.h
 dggt_mem_fallback_alloc.h
 dggt_mem_fallback_alloc.inl

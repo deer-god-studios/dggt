@@ -65,7 +65,6 @@ namespace dggt
 
 	lin_alloc::lin_alloc()
 	{
-		baseAlloc=allocator<>(ALLOC_T_LIN);
 		buff=0;
 		buffSize=0;
 		used=0;

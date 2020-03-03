@@ -2,8 +2,7 @@
 
 namespace dggt
 {
-	null_alloc::null_alloc()
-		: baseAlloc(allocator(ALLOC_T_NULL)) { }
+	null_alloc::null_alloc() { }
 
 	void* alloc(null_alloc* a,msize size)
 	{
