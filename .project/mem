@@ -19,12 +19,12 @@ dggt_mem_lin_alloc.inl
 dggt_mem_null_alloc.c++
 dggt_mem_null_alloc.h
 dggt_mem_null_alloc.inl
+dggt_mem_pool_alloc.c++
 dggt_mem_pool_alloc.h
 dggt_mem_pool_alloc.inl
 dggt_mem_stack_alloc.c++
 dggt_mem_stack_alloc.h
 dggt_mem_stack_alloc.inl
-dggt_mem_stallocator.h
 dggt_mem_store_alloc.c++
 dggt_mem_store_alloc.h
 dggt_mem_store_alloc.inl

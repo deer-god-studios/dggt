@@ -39,6 +39,16 @@ namespace dggt
 	template <typename T>
 	b32 cache_free(T* ptr,u32 count=1);
 
+	allocator<>* create_alloc(alloc_t type,
+			void* buff,msize size,
+			msize blockSize=4);
+
+	allocator<>* create_alloc(alloc_t type,msize size,msize blockSize=4);
+
+	template <msize... SizeArgs>
+	allocator<SizeArgs...>* create_alloc(alloc_t type,
+			void* buff,msize size);
+
 	template <msize... SizeArgs>
 	allocator<SizeArgs...>* create_alloc(alloc_t type,msize size);
 
@@ -51,10 +61,6 @@ namespace dggt
 	allocator<PrimaryArg,FallbackArg>* create_alloc(alloc_t type,
 			alloc_t primaryType,msize primarySize,
 			alloc_t fallbackType,msize fallbackSize);
-
-	template <msize... SizeArgs>
-	allocator<SizeArgs...>* create_alloc(alloc_t type,
-			void* buff,msize size);
 
 	template <msize... SizeArgs>
 	b32 destroy_alloc(allocator<SizeArgs...>* a);

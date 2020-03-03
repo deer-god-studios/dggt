@@ -55,6 +55,14 @@ namespace dggt
 		}
 	}
 
+	store_alloc<0>::store_alloc()
+	{
+		baseAlloc=allocator<>(ALLOC_T_STORE);
+		head=0;
+		blockCount=0;
+		blockSize=0;
+	}
+
 	store_alloc<0>::store_alloc(msize blockSize)
 	{
 		ASSERT(blockSize>=sizeof(store_block));
@@ -111,6 +119,4 @@ namespace dggt
 		return dggt_internal_::store_available_mem(a->blockCount,
 				a->blockSize);
 	}
-
-
 }

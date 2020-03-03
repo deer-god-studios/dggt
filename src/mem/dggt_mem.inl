@@ -47,11 +47,11 @@ namespace dggt
 						cache_alloc<stack_alloc>();
 					if (buff)
 					{
-						*a=lin_alloc(buff,size);
+						*a=stack_alloc(buff,size);
 					}
 					else
 					{
-						*a=lin_alloc();
+						*a=stack_alloc();
 					}
 					result=(allocator<SizeArgs...>*)a;
 				} break;
@@ -111,7 +111,7 @@ namespace dggt
 	template <msize... SizeArgs>
 	allocator<SizeArgs...>* create_alloc(alloc_t type,msize size)
 	{
-		return create_alloc<SizeArgs...>(type,cache_alloc(size));
+		return create_alloc<SizeArgs...>(type,cache_alloc(size),size);
 	}
 
 	template <msize PrimaryArg,msize FallbackArg>

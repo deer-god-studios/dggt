@@ -26,6 +26,7 @@ namespace dggt
 		u32 blockCount;
 		msize blockSize;
 
+		store_alloc();
 		store_alloc(msize blockSize);
 	};
 
@@ -34,7 +35,7 @@ namespace dggt
 
 	template <msize BLOCKSIZE>
 	b32 free(store_alloc<BLOCKSIZE>* a,void* ptr,msize size);
-	
+
 	template <msize BLOCKSIZE>
 	b32 clear(store_alloc<BLOCKSIZE>* a);
 
@@ -64,6 +65,33 @@ namespace dggt
 
 	template <typename T,msize BLOCKSIZE>
 	b32 owns(const store_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
+
+	msize available_mem(const store_alloc<>* a);
+
+	msize used_mem(const store_alloc<>* a);
+
+	b32 is_stack_balanced(const store_alloc<>* a);
+
+	b32 restore_stack(store_alloc<>* a,stack_state state);
+
+	stack_state save_stack(store_alloc<>* a);
+
+	b32 owns(const store_alloc<>* a,const void* ptr,msize size);
+
+	b32 clear(store_alloc<>* a);
+
+	b32 free(store_alloc<>* a,void* ptr,msize size);
+
+	void* alloc(store_alloc<>* a,msize size);
+
+	template <typename T>
+	b32 owns(const store_alloc<>* a,const T* ptr,u32 count);
+
+	template <typename T>
+	b32 free(store_alloc<>* a,T* ptr,u32 count);
+
+	template <typename T>
+	T* alloc(store_alloc<>* a,u32 count);
 }
 
 #include "dggt_mem_store_alloc.inl"

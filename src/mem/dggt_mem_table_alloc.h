@@ -4,7 +4,9 @@
 
 namespace dggt
 {
-	template <msize TABLESIZE>
+	global constexpr msize DEF_TABLESIZE=4096;
+
+	template <msize TABLESIZE=DEF_TABLESIZE>
 	struct table_alloc
 	{
 		allocator<TABLESIZE> baseAlloc;

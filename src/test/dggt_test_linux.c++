@@ -58,11 +58,8 @@ void test_hash_table()
 
 }
 
-int main(int argc, char* argv[])
+void test_cache()
 {
-	printf("cache_init\n");
-	cache_init(MB(2));
-
 	msize buffSize=KB(50);
 	printf("cache_alloc\n");
 	void* buff=cache_alloc(buffSize);
@@ -89,6 +86,16 @@ int main(int argc, char* argv[])
 	{
 		printf("%f\n",floatArr[i]);
 	}
+
+	cache_free(buff,buffSize);
+}
+
+int main(int argc, char* argv[])
+{
+	printf("cache_init\n");
+	cache_init(GB(2));
+
+	allocator<>* a=create_alloc(ALLOC_T_LIN,MB(2));
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

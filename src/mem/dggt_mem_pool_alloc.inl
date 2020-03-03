@@ -96,8 +96,9 @@ namespace dggt
 	template <msize BLOCKSIZE>
 	b32 clear(pool_alloc<BLOCKSIZE>* a)
 	{
-		return dggt_internal_::pool_init<BLOCKSIZE>(
+		dggt_internal_::pool_init<BLOCKSIZE>(
 				&a->pool,a->buff,a->buffSize,&a->blockCount,&a->used);
+		return true;
 	}
 
 	template <msize BLOCKSIZE>
@@ -151,6 +152,24 @@ namespace dggt
 
 	template <typename T,msize BLOCKSIZE>
 	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count)
+	{
+		return owns(a,ptr,sizeof(T)*count);
+	}
+
+	template <typename T>
+	T* alloc(pool_alloc<>* a,u32 count)
+	{
+		return (T*)alloc(a,sizeof(T)*count);
+	}
+
+	template <typename T>
+	b32 free(pool_alloc<>* a,T* ptr,u32 count)
+	{
+		return free(a,ptr,sizeof(T)*count);
+	}
+
+	template <typename T>
+	b32 owns(const pool_alloc<>* a,const T* ptr,u32 count)
 	{
 		return owns(a,ptr,sizeof(T)*count);
 	}
