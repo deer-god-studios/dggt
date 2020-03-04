@@ -1,39 +1,61 @@
 #ifndef _DGGT_COLL_STACK_H_
 
-#include "dggt_coll_iter.h"
-
 namespace dggt
 {
 	template <typename T>
 	struct stack;
 
 	template <typename T>
-	using stack_iter=iter<T,stack<T>,blk<T>>;
-
-	template <typename T>
-	struct iter<T,stack<T>,blk<T>>
+	struct stack_iter
 	{
 		u32 current;
-		blk<T> table;
+		T* table;
+		u32 tableCount;
 		stack<T>* stk;
 
-		b32 is_end() const;
-		b32 next();
-		T& get();
-		const T& get() const;
-		T* get_ptr();
-		const T* get_ptr() const;
-		blk<T> get_mem();
-		const blk<T> get_mem() const;
-		b32 is_coll_valid() const;
-		b32 is_mem_valid() const;
-		b32 vindicate_mem();
+		T& operator*();
+		const T& operator*() const;
+		stack_iter<T>& operator++();
+		stack_iter<T>& operator++(int);
 	};
+
+	template <typename T>
+	b32 is_end(const stack_iter<T>* it);
+
+	template <typename T>
+	b32 advance(stack_iter<T>* it);
+
+	template <typename T>
+	T& get(stack_iter<T>* it);
+
+	template <typename T>
+	const T& get(const stack_iter<T>* it);
+
+	template <typename T>
+	T* get_ptr(stack_iter<T>* it);
+
+	template <typename T>
+	const T* get_ptr(const stack_iter<T>* it);
+	
+	template <typename T>
+	T* get_mem(stack_iter<T>* it);
+
+	template <typename T>
+	const slnode<T>* get_mem(const stack_iter<T>* it);
+
+	template <typename T>
+	b32 is_coll_valid(const stack_iter<T>* it);
+
+	template <typename T>
+	b32 is_mem_valid(const stack_iter<T>* it);
+
+	template <typename T>
+	b32 vindicate_mem(stack_iter<T>* it);
 
 	template <typename T>
 	struct stack
 	{
-		blk<T> table;
+		T* table;
 		u32 count;
 
 		T& operator[](u32 index);
@@ -41,7 +63,7 @@ namespace dggt
 	};
 
 	template <typename T,typename A>
-	stack<T> create_stack(A* alloc) { return stack<T>{alloc->template alloc<T>(2),0}; }
+	stack<T> create_stack(A* a) { return stack<T>{alloc<T>(a,2),0}; }
 
 	// NOTE: To see if the push succeeded use, is_coll_valid(iter).
 	template <typename T,typename A>

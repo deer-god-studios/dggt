@@ -11,73 +11,107 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>,slnode<T>*>::is_end() const
+	T& list_iter<T>::operator*()
 	{
-		return current==0;
+		return get(this);
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>,slnode<T>*>::next()
+	const T& list_iter<T>::operator*() const
 	{
-		if (!is_end())
+		return get(this);
+	}
+
+	template <typename T>
+	list_iter<T>& operator++()
+	{
+		if (!is_end(this))
 		{
-			current=current->next;
-			return 1;
+			advance(this);
 		}
-		return 0;
+		return *this;
 	}
 
 	template <typename T>
-	T& iter<T,linked_list<T>,slnode<T>*>::get()
+	list_iter<T>& operator++(int)
 	{
-		return current->val;
+		list_iter<T>& result=*this;
+		if (!is_end(this))
+		{
+			advance(this);
+		}
+		return result;
 	}
 
 	template <typename T>
-	const T& iter<T,linked_list<T>,slnode<T>*>::get() const
+	b32 is_end(const list_iter<T>* it)
 	{
-		return current->val;
-	}
-	template <typename T>
-	T* iter<T,linked_list<T>,slnode<T>*>::get_ptr()
-	{
-		return &current->val;
+		return it->current==0;
 	}
 
 	template <typename T>
-	const T* iter<T,linked_list<T>,slnode<T>*>::get_ptr() const
+	b32 advance(list_iter<T>* it)
 	{
-		return &current->val;
+		b32 result=false;
+		if (!is_end(it))
+		{
+			it->current=it->current->next;
+			result=true;
+		}
+		return result;
 	}
 
 	template <typename T>
-	slnode<T>* iter<T,linked_list<T>,slnode<T>*>::get_mem()
+	T& get(list_iter<T>* it)
 	{
-		return current;
-	}
-	template <typename T>
-	const slnode<T>* iter<T,linked_list<T>,slnode<T>*>::get_mem() const
-	{
-		return current;
+		return it->current->val;
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>,slnode<T>*>::is_coll_valid() const
+	const T& get(const list_iter<T>* it)
 	{
-		return list!=0;
+		return it->current->val;
+	}
+	template <typename T>
+	T* get_ptr(list_iter<T>* it)
+	{
+		return &it->current->val;
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>,slnode<T>*>::is_mem_valid() const
+	const T* get_ptr(list_iter<T>* it)
 	{
-		return is_coll_valid()&&memIsValid;
+		return &it->current->val;
 	}
 
 	template <typename T>
-	b32 iter<T,linked_list<T>,slnode<T>*>::vindicate_mem()
+	slnode<T>* get_mem(list_iter<T>* it)
+	{
+		return it->current;
+	}
+	template <typename T>
+	const slnode<T>* get_mem(list_iter<T>* it)
+	{
+		return it->current;
+	}
+
+	template <typename T>
+	b32 is_coll_valid(const list_iter<T>* it)
+	{
+		return it->list!=0;
+	}
+
+	template <typename T>
+	b32 is_mem_valid(const list_iter<T>* it)
+	{
+		return is_coll_valid(it)&&it->memIsValid;
+	}
+
+	template <typename T>
+	b32 vindicate_mem(list_iter<T>* it)
 	{
 		b32 result=0;
-		if (is_coll_valid()&&!is_mem_valid())
+		if (is_coll_valid(it)&&!is_mem_valid(it))
 		{
 			current=list->head;
 			memIsValid=1;
@@ -87,13 +121,12 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> push(linked_list<T>* list,A* alloc)
+	list_iter<T> push(linked_list<T>* list,A* a)
 	{
-		list_iter<T> result=list_iter<T>{0,list,0};
-		if (list&&alloc)
+		list_iter<T> result=dggt_internal_::default_iter(list);
+		if (list&&a)
 		{
-			u32 nodeCount=1;
-			slnode<T>* newNode=alloc->template alloc<slnode<T>>(&nodeCount);
+			slnode<T>* newNode=alloc<slnode<T>>(a);
 			if (newNode)
 			{
 				newNode->next=list->head;
@@ -109,10 +142,10 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> push(linked_list<T>* list,const T& val,A* alloc)
+	list_iter<T> push(linked_list<T>* list,const T& val,A* a)
 	{
-		list_iter<T> result=push(list,alloc);
-		if (!result.is_end())
+		list_iter<T> result=push(list,a);
+		if (!is_end(&result))
 		{
 			result.current->val=val;
 		}
@@ -120,7 +153,7 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> pop(linked_list<T>* list,A* alloc)
+	list_iter<T> pop(linked_list<T>* list,A* a)
 	{
 		list_iter<T> result;
 		if (list&&list->count)
@@ -130,7 +163,7 @@ namespace dggt
 			result.memIsValid=0;
 			list->head=nodeToFree->next;
 			--list->count;
-			if (alloc->free(nodeToFree,1))
+			if (free(a,nodeToFree))
 			{
 				result.current=list->head;
 				result.list=list;
@@ -197,7 +230,7 @@ namespace dggt
 	list_iter<T> remove(
 			linked_list<T>* list,
 			slnode<T>* prev,
-			slnode<T>* toRemove,A* alloc)
+			slnode<T>* toRemove,A* a)
 	{
 		list_iter<T> result={0,list,0};
 		if (list)
@@ -209,7 +242,7 @@ namespace dggt
 				result.memIsValid=0;
 				prev->next=toRemove->next;
 				--list->count;
-				if (alloc->free(toRemove,1))
+				if (free(a,toRemove,1))
 				{
 					result.current=prev;
 					result.list=list;
@@ -218,7 +251,7 @@ namespace dggt
 			}
 			else
 			{
-				result=pop(list,alloc);
+				result=pop(list,a);
 			}
 		}
 
@@ -226,7 +259,7 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> clear(linked_list<T>* list,A* alloc)
+	list_iter<T> clear(linked_list<T>* list,A* a)
 	{
 		list_iter<T> result=dggt_internal_::default_iter(list);
 		if (list)
@@ -237,7 +270,7 @@ namespace dggt
 			{
 				slnode<T>* nodeToFree=current;
 				current=current->next;
-				if (!alloc->free(nodeToFree,1))
+				if (!free(a,nodeToFree,1))
 				{
 					nodeToFree->next=result.current;
 					result.current=nodeToFree;
@@ -255,13 +288,12 @@ namespace dggt
 
 	template <typename T,typename A>
 	list_iter<T> insert(linked_list<T>* list,slnode<T>* prev,
-			const T& val,A* alloc)
+			const T& val,A* a)
 	{
 		list_iter<T> result=list_iter<T>{0,list,0};
 		if (list)
 		{
-			u32 nodeCount=1;
-			slnode<T>* newNode=alloc->template alloc<slnode<T>>(&nodeCount);
+			slnode<T>* newNode=alloc<slnode<T>>(a);
 			if (newNode)
 			{
 				result.current=newNode;

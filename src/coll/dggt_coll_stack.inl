@@ -1,7 +1,6 @@
 
 namespace dggt
 {
-
 	namespace dggt_internal_
 	{
 		template <typename T>
@@ -12,46 +11,46 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 iter<T,stack<T>,blk<T>>::is_end() const
+	b32 is_end(list_iter<T>* it)
 	{
-		return !is_coll_valid()||
-			(is_coll_valid()&&current>=stk->table.count)||
-			(is_coll_valid()&&!is_mem_valid());
+		return !is_coll_valid(it)||
+			(is_coll_valid(it)&&current>=stk->table.count)||
+			(is_coll_valid(it)&&!is_mem_valid(it));
 	}
 
 	template <typename T>
-	b32 iter<T,stack<T>,blk<T>>::next()
+	b32 advance(list_iter<T>* it)
 	{
-		b32 result=0;
-		if (!is_end())
+		b32 result=false;
+		if (!is_end(it))
 		{
-			--current;
+			--it->current;
 		}
 		return result;
 	}
 
 	template <typename T>
-	T& iter<T,stack<T>,blk<T>>::get()
+	T& get(list_iter<T>* it)
 	{
-		return table[current];
+		return it->table[current];
 	}
 
 	template <typename T>
-	const T& iter<T,stack<T>,blk<T>>::get() const
+	const T& get(const list_iter<T>* it)
 	{
-		return table[current];
+		return it->table[current];
 	}
 
 	template <typename T>
-	T* iter<T,stack<T>,blk<T>>::get_ptr()
+	T* get_ptr(list_iter<T>* it)
 	{
-		return table.mem+current;
+		return it->table.mem+it->current;
 	}
 
 	template <typename T>
-	const T* iter<T,stack<T>,blk<T>>::get_ptr() const
+	const T* get_ptr(list_iter<T>* it)
 	{
-		return table.mem+current;
+		return it->table.mem+it->current;
 	}
 
 	template <typename T>
