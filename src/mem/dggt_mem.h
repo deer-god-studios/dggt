@@ -2,6 +2,7 @@
 
 #include "dggt_mem_defines.h"
 #include "dggt_mem_utils.h"
+#include "dggt_mem_blk.h"
 #include "dggt_mem_null_alloc.h"
 #include "dggt_mem_lin_alloc.h"
 #include "dggt_mem_stack_alloc.h"
