@@ -1,3 +1,4 @@
+#include "mem/dggt_mem.h"
 
 namespace dggt
 {
@@ -8,87 +9,6 @@ namespace dggt
 		{
 			return stack_iter<T>{0,blk<T>(),stk};
 		}
-	}
-
-	template <typename T>
-	b32 is_end(list_iter<T>* it)
-	{
-		return !is_coll_valid(it)||
-			(is_coll_valid(it)&&current>=stk->table.count)||
-			(is_coll_valid(it)&&!is_mem_valid(it));
-	}
-
-	template <typename T>
-	b32 advance(list_iter<T>* it)
-	{
-		b32 result=false;
-		if (!is_end(it))
-		{
-			--it->current;
-		}
-		return result;
-	}
-
-	template <typename T>
-	T& get(list_iter<T>* it)
-	{
-		return it->table[current];
-	}
-
-	template <typename T>
-	const T& get(const list_iter<T>* it)
-	{
-		return it->table[current];
-	}
-
-	template <typename T>
-	T* get_ptr(list_iter<T>* it)
-	{
-		return it->table.mem+it->current;
-	}
-
-	template <typename T>
-	const T* get_ptr(list_iter<T>* it)
-	{
-		return it->table.mem+it->current;
-	}
-
-	template <typename T>
-	blk<T> iter<T,stack<T>,blk<T>>::get_mem()
-	{
-		return table;
-	}
-
-	template <typename T>
-	const blk<T> iter<T,stack<T>,blk<T>>::get_mem() const
-	{
-		return table;
-	}
-
-	template <typename T>
-	b32 iter<T,stack<T>,blk<T>>::is_coll_valid() const
-	{
-		return stk!=0;
-	}
-
-	template <typename T>
-	b32 iter<T,stack<T>,blk<T>>::is_mem_valid() const
-	{
-		return is_coll_valid()&&
-			table==stk->table;
-	}
-
-	template <typename T>
-	b32 iter<T,stack<T>,blk<T>>::vindicate_mem()
-	{
-		b32 result=0;
-		if (!is_mem_valid()&&
-				is_coll_valid())
-		{
-			table=stk->table;
-			result=1;
-		}
-		return result;
 	}
 
 	template <typename T>

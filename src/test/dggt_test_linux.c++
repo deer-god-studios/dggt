@@ -3,6 +3,7 @@
 #include "types/dggt_types.h"
 #include "math/dggt_math.h"
 #include "mem/dggt_mem.h"
+#include "coll/dggt_coll.h"
 
 using namespace dggt;
 

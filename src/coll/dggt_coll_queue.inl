@@ -1,10 +1,12 @@
 
+#include "mem/dggt_mem.h"
+
 namespace dggt
 {
 	namespace dggt_internal_
 	{
 		template <typename T>
-		inline queue_iter<T> default_iter(queue<T>* q)
+		inline queue_iter<T> def_queue_iter(queue<T>* q)
 		{
 			return queue_iter<T>{0,0,0,blk<T>(),q};
 		}
@@ -18,117 +20,6 @@ namespace dggt
 		{
 			return (tail-index)%cap;
 		}
-
-		template <typename T>
-		b32 is_index_valid(queue<T>* q,u32 index)
-		{
-			b32 result=0;
-			if (q)
-			{
-				bool32 headFirst=q->head<q->tail;
-				bool32 validIndex=0;
-				if (headFirst)
-				{
-					validIndex=
-						(index>=q->head&&
-						 index<=q->tail);
-				}
-				else
-				{
-					validIndex=
-						(index<=q->tail||
-						 index>=q->head);
-				}
-				result=validIndex;
-			}
-			return result;
-		}
-	}
-	template <typename T>
-	b32 iter<T,queue<T>,blk<T>>::is_end() const
-	{
-		bool32 result=0;
-		bool32 validColl=is_coll_valid();
-		bool32 validMem=is_mem_valid();
-		bool32 headFirst=head<tail;
-		bool32 validCurrent=dggt_internal_::is_index_valid(q,current);
-		result=!validColl||
-			!validCurrent||
-			!validMem;
-		return result;
-	}
-
-	template <typename T>
-	b32 iter<T,queue<T>,blk<T>>::next()
-	{
-		b32 result=0;
-		if (!is_end())
-		{
-			current=(current+1)%table.count;
-		}
-		return result;
-	}
-
-	template <typename T>
-	T& iter<T,queue<T>,blk<T>>::get()
-	{
-		return table[current];
-	}
-
-	template <typename T>
-	const T& iter<T,queue<T>,blk<T>>::get() const
-	{
-		return table[current];
-	}
-
-	template <typename T>
-	T* iter<T,queue<T>,blk<T>>::get_ptr()
-	{
-		return table.mem+current;
-	}
-
-	template <typename T>
-	const T* iter<T,queue<T>,blk<T>>::get_ptr() const
-	{
-		return table.mem+current;
-	}
-
-	template <typename T>
-	blk<T> iter<T,queue<T>,blk<T>>::get_mem()
-	{
-		return table;
-	}
-
-	template <typename T>
-	const blk<T> iter<T,queue<T>,blk<T>>::get_mem() const
-	{
-		return table;
-	}
-
-	template <typename T>
-	b32 iter<T,queue<T>,blk<T>>::is_coll_valid() const
-	{
-		return q!=0;
-	}
-
-	template <typename T>
-	b32 iter<T,queue<T>,blk<T>>::is_mem_valid() const
-	{
-		return is_coll_valid()&&
-			table==q->table;
-	}
-
-	template <typename T>
-	b32 iter<T,queue<T>,blk<T>>::vindicate_mem()
-	{
-		b32 result=0;
-		if (!is_mem_valid()&&
-				is_coll_valid())
-		{
-			table=q->table;
-			result=1;
-		}
-		return result;
 	}
 
 	template <typename T>
@@ -143,8 +34,33 @@ namespace dggt
 		return table[(head+index)%table.count];
 	}
 
+	template <typename T>
+	b32 is_index_valid(queue<T>* q,u32 index)
+	{
+		b32 result=0;
+		if (q)
+		{
+			bool32 headFirst=q->head<q->tail;
+			bool32 validIndex=0;
+			if (headFirst)
+			{
+				validIndex=
+					(index>=q->head&&
+					 index<=q->tail);
+			}
+			else
+			{
+				validIndex=
+					(index<=q->tail||
+					 index>=q->head);
+			}
+			result=validIndex;
+		}
+		return result;
+	}
+
 	template <typename T,typename A>
-	queue_iter<T> enqueue(queue<T>* q,A* alloc)
+	queue_iter<T> enqueue(queue<T>* q,A* allocator)
 	{
 		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};
 		if (q)
@@ -153,7 +69,7 @@ namespace dggt
 			u32 capacity=get_capacity(q);
 			if (count+1>capacity) // needs resizing.
 			{
-				result=resize(q,2*capacity,alloc);
+				result=resize(q,2*capacity,allocator);
 				capacity=get_capacity(q);
 			}
 			else if (q)
@@ -179,9 +95,9 @@ namespace dggt
 	}
 	
 	template <typename T,typename A>
-	queue_iter<T> enqueue(queue<T>* q,const T& val,A* alloc)
+	queue_iter<T> enqueue(queue<T>* q,const T& val,A* allocator)
 	{
-		queue_iter<T> result=enqueue(q,alloc);
+		queue_iter<T> result=enqueue(q,allocator);
 		if (q)
 		{
 			q->table.mem[q->tail]=val;
@@ -190,16 +106,16 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	queue_iter<T> clear(queue<T>* q,A* alloc)
+	queue_iter<T> clear(queue<T>* q,A* allocator)
 	{
-		queue_iter<T> result=dggt_internal_::default_iter(q);
+		queue_iter<T> result=dggt_internal_::def_queue_iter(q);
 		if (q)
 		{
 			blk<T> table=q->table;
 			result.table=table;
 			q->table=blk<T>();
 			q->count=0;
-			if (alloc->free(table))
+			if (free(allocator,table.ptr,table.count))
 			{
 				result.table=blk<T>();
 			}
@@ -207,9 +123,9 @@ namespace dggt
 		return result;
 	}
 	template <typename T,typename A>
-	queue_iter<T> dequeue(queue<T>* q,A* alloc)
+	queue_iter<T> dequeue(queue<T>* q,A* allocator)
 	{
-		queue_iter<T> result=dggt_internal_::default_iter(q);
+		queue_iter<T> result=dggt_internal_::def_queue_iter(q);
 		u32 count=get_count(q);
 		u32 capacity=get_capacity(q);
 		if (q&&count)
@@ -225,7 +141,7 @@ namespace dggt
 			u32 capacity=get_capacity(q);
 			if (count&&get_load_factor<real32>(q)<0.25f)
 			{
-				result=resize(q,capacity/2,alloc);
+				result=resize(q,capacity/2,allocator);
 			}
 			if (result.is_mem_valid())
 			{
@@ -256,11 +172,11 @@ namespace dggt
 	template <typename T>
 	queue_iter<T> get_iter(queue<T>* q,u32 index)
 	{
-		queue_iter<T> result=dggt_internal_::default_iter(q);
+		queue_iter<T> result=dggt_internal_::def_queue_iter(q);
 		u32 absIndex=dggt_internal_::get_index_from_head(q->head,
 				get_capacity(q),
 				index);
-		if (q&&dggt_internal_::is_index_valid(q,absIndex))
+		if (q&&is_index_valid(q,absIndex))
 		{
 			result.current=absIndex;
 			result.head=q->head;
@@ -286,18 +202,19 @@ namespace dggt
 	template <typename T,typename F>
 	F get_load_factor(const queue<T>* q)
 	{
-		return q?F(get_count(q))/F(get_capacity(q)):F(0);
+		return q?(F)get_count(q)/(F)get_capacity(q):(F)0;
 	}
 
 	template <typename T,typename A>
-	queue_iter<T> resize(queue<T>* q,u32 newCapacity,A* alloc)
+	queue_iter<T> resize(queue<T>* q,u32 newCapacity,A* allocator)
 	{
-		queue_iter<T> result={0,0,0,blk<T>(),q};
-		if (q&&alloc)
+		queue_iter<T> result=dggt_internal_::def_queue_iter(q);
+		if (q&&allocator)
 		{
 			result.table=q->table;
 			u32 oldCapacity=get_capacity(q);
-			blk<T> newTable=alloc->template alloc<T>(newCapacity);
+			blk<T> newTable=
+				blk<T>(alloc<T>(q,newCapacity),newCapacity);
 			if (newTable.mem)
 			{
 				blk<T> oldTable=q->table;
@@ -312,7 +229,7 @@ namespace dggt
 				q->head=0;
 				q->tail=q->count?q->count-1:0;
 				q->table=newTable;
-				if (alloc->free(oldTable))
+				if (free(allocator,oldTable.ptr,oldTable.count))
 				{
 					result.table=newTable;
 				}

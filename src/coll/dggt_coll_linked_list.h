@@ -1,5 +1,8 @@
 #ifndef _DGGT_COLL_LINKED_LIST_H_
 
+#include "mem/dggt_mem_blk.h"
+#include "dggt_coll_list_iter.h"
+
 namespace dggt
 {
 	template <typename T>
@@ -10,65 +13,17 @@ namespace dggt
 	};
 
 	template <typename T>
-	struct linked_list;
-
-	template <typename T>
-	struct list_iter
-	{
-		slnode<T>* current;
-		linked_list<T>* list;
-		b32 memIsValid;
-
-		T& operator*();
-		const T& operator*() const;
-		list_iter<T>& operator++();
-		list_iter<T>& operator++(int);
-	};
-
-	template <typename T>
-	b32 is_end(const list_iter<T>* it);
-
-	template <typename T>
-	b32 advance(list_iter<T>* it);
-
-	template <typename T>
-	T& get(list_iter<T>* it);
-
-	template <typename T>
-	const T& get(const list_iter<T>* it);
-
-	template <typename T>
-	T* get_ptr(list_iter<T>* it);
-
-	template <typename T>
-	const T* get_ptr(const list_iter<T>* it);
-	
-	template <typename T>
-	slnode<T>* get_mem(list_iter<T>* it);
-
-	template <typename T>
-	const slnode<T>* get_mem(const list_iter<T>* it);
-
-	template <typename T>
-	b32 is_coll_valid(const list_iter<T>* it);
-
-	template <typename T>
-	b32 is_mem_valid(const list_iter<T>* it);
-
-	template <typename T>
-	b32 vindicate_mem(list_iter<T>* it);
-
-	template <typename T>
 	struct linked_list
 	{
-		slnode<T>* head;
-		u32 count;
+		blk<slnode<T>> chain;
+
+		linked_list() : chain(blk<slnode<T>>()) { }
 	};
 
-	template <typename T>
+	template <typename T,typename A>
 	linked_list<T> create_linked_list()
 	{
-		return linked_list<T>{};
+		return linked_list<T>();
 	}
 
 	// if push succeeds it returns an iterator to the list's new head node
@@ -110,9 +65,9 @@ namespace dggt
 
 	template <typename T>
 	b32 contains(linked_list<T>* list,const T& item);
-
 }
 
+#include "dggt_coll_list_iter.inl"
 #include "dggt_coll_linked_list.inl"
 
 #define _DGGT_COLL_LINKED_LIST_H_

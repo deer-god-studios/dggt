@@ -1,13 +1,15 @@
+#include "mem/dggt_mem.h"
 #include "math/dggt_math_constants.h"
+
 namespace dggt
 {
 	namespace dggt_internal_
 	{
 		template <typename K,typename V>
-		table_iter<K,V> default_iter(hash_table<K,V>* table)
+		table_iter<K,V> def_table_iter(hash_table<K,V>* table)
 		{
 			return table_iter<K,V>{
-				0,0,0,blk<table_bucket<K,V>>(),table
+				0,0,0,table_mem<K,V>(),table
 			};
 		}
 
@@ -19,113 +21,6 @@ namespace dggt
 		}
 	}
 	
-	template <typename K,typename V>
-	b32 iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	is_end() const
-	{
-		return (currentIndex>=table.count)&&(currentNode==0);
-	}
-
-	template <typename K,typename V>
-	b32 iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	next()
-	{
-		b32 result=0;
-		if (!is_end())
-		{
-			if (currentNode)
-			{
-				currentNode=currentNode->next;
-				if (!currentNode)
-				{
-					while (currentIndex<table.count)
-					{
-						currentBucket=table.mem+currentIndex++;
-						if (get_count(currentBucket))
-						{
-							currentNode=currentBucket->head;
-							result=1;
-							break;
-						}
-					}
-				}
-				else
-				{
-					result=1;
-				}
-			}
-		}
-		return result;
-	}
-
-	template <typename K,typename V>
-	table_pair<K,V>& iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get()
-	{
-		return currentNode->val;
-	}
-
-	template <typename K,typename V>
-	const table_pair<K,V>& iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get() const
-	{
-		return currentNode->val;
-	}
-
-	template <typename K,typename V>
-	table_pair<K,V>* iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get_ptr()
-	{
-		return &currentNode->val;
-	}
-	template <typename K,typename V>
-	const table_pair<K,V>* iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get_ptr() const
-	{
-		return &currentNode->val;
-	}
-	
-	template <typename K,typename V>
-	blk<table_bucket<K,V>> iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get_mem()
-	{
-		return table;
-	}
-
-	template <typename K,typename V>
-	const blk<table_bucket<K,V>> iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	get_mem() const
-	{
-		return table;
-	}
-
-	template <typename K,typename V>
-	b32 iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	is_coll_valid() const
-	{
-		return hashTable!=0;
-	}
-
-	template <typename K,typename V>
-	b32 iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	is_mem_valid() const
-	{
-		return is_coll_valid()&&table==hashTable->table;
-	}
-
-	template <typename K,typename V>
-	b32 iter<table_pair<K,V>,hash_table<K,V>,blk<table_bucket<K,V>>>::
-	vindicate_mem()
-	{
-		b32 result=0;
-		if (is_coll_valid()&&!is_mem_valid())
-		{
-			table=hashTable->table;
-			result=1;
-		}
-		return result;
-	}
-
 	template <typename K,typename V>
 	table_iter<K,V> hash_table<K,V>::operator[](const K& key)
 	{
@@ -139,11 +34,13 @@ namespace dggt
 	}
 
 	template <typename K,typename V,typename A>
-	hash_table<K,V> create_hash_table(A* alloc)
+	hash_table<K,V> create_hash_table(A* allocator)
 	{
 		u32 count=0;
 		u32 capacity=2;
-		table_blk<K,V> table=alloc->template alloc<table_bucket<K,V>>(capacity);
+		table_mem<K,V> table=
+			table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,capacity),
+					capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
 			table.mem[i]=create_linked_list<table_pair<K,V>>();
@@ -152,9 +49,10 @@ namespace dggt
 	}
 
 	template <typename K,typename V,typename A>
-	table_iter<K,V> insert(hash_table<K,V>* hashTable,const K& key,A* alloc)
+	table_iter<K,V> insert(hash_table<K,V>* hashTable,const K& key,
+			A* allocator)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(hashTable);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(hashTable);
 		if (hashTable)
 		{
 			u32 preh=prehash<K>(key);
@@ -166,13 +64,14 @@ namespace dggt
 			result.currentBucket=bucket;
 			if (!contains(bucket,newNode))
 			{
-				push(bucket,newNode,alloc);
+				push(bucket,newNode,allocator);
 			}
 			result.currentNode=bucket->head;
 			if (get_load_factor<float32>(hashTable)>2.0f)
 			{
 				u32 cap=get_capacity(hashTable);
-				table_iter<K,V> resizeResult=resize(hashTable,2.0f*cap,alloc);
+				table_iter<K,V> resizeResult=resize(hashTable,2.0f*cap,
+						allocator);
 				result=search(hashTable,key);
 			}
 		}
@@ -181,9 +80,9 @@ namespace dggt
 
 	template <typename K,typename V,typename A>
 	table_iter<K,V> insert(hash_table<K,V>* table,const K& key,
-			const V& val,A* alloc)
+			const V& val,A* allocator)
 	{
-		table_iter<K,V> result=insert(table,key,alloc);
+		table_iter<K,V> result=insert(table,key,allocator);
 		table_pair<K,V> newNode=table_pair<K,V>(key,val);
 		result.get()=newNode;
 		return result;
@@ -192,7 +91,7 @@ namespace dggt
 	template <typename K,typename V>
 	table_iter<K,V> search(hash_table<K,V>* table,const K& key)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(table);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(table);
 		if (table)
 		{
 			u32 preh=prehash<K>(key);
@@ -216,7 +115,7 @@ namespace dggt
 	template <typename K,typename V>
 	const table_iter<K,V> search(const hash_table<K,V>* table,const K& key)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(table);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(table);
 		if (table)
 		{
 			u32 preh=prehash<K>(key);
@@ -239,9 +138,9 @@ namespace dggt
 
 	template <typename K,typename V,typename A>
 	table_iter<K,V> remove(hash_table<K,V>* hashTable,const K& key,
-			A* alloc)
+			A* allocator)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(hashTable);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(hashTable);
 		if (hashTable)
 		{
 			u32 preh=prehash<K>(key);
@@ -255,7 +154,7 @@ namespace dggt
 				current=it.get_ptr();
 				if (it.get()==key)
 				{
-					remove(bucket,prev,current,alloc);
+					remove(bucket,prev,current,allocator);
 					--hashTable->count;
 					break;
 				}
@@ -265,27 +164,28 @@ namespace dggt
 			if (get_load_factor<float32>(hashTable)<0.25f)
 			{
 				u32 cap=get_capacity(hashTable);
-				result=resize(hashTable,0.5f*cap,alloc);
+				result=resize(hashTable,0.5f*cap,allocator);
 			}
 		}
 		return result;
 	}
 
 	template <typename K,typename V,typename A>
-	table_iter<K,V> clear(hash_table<K,V>* table,A* alloc)
+	table_iter<K,V> clear(hash_table<K,V>* table,A* allocator)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(table);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(table);
 		if (table)
 		{
 			result=get_iter(table);
-			if (alloc)
+			if (allocator)
 			{
 				for (u32 i=0;i<get_capacity(table);++i)
 				{
 					table_bucket<K,V>* bucket=table->table.mem+i;
 					if (get_count(bucket))
 					{
-						list_iter<table_pair<K,V>> clearResult=clear(bucket,alloc);
+						list_iter<table_pair<K,V>> clearResult=clear(bucket,
+								allocator);
 						if (!clearResult.is_mem_valid())
 						{
 							slnode<table_pair<K,V>>* current=clearResult.current;
@@ -301,7 +201,7 @@ namespace dggt
 				}
 				blk<table_bucket<K,V>> tableToFree=table->table;
 				result.table=tableToFree;
-				if (alloc->free(tableToFree))
+				if (free(allocator,tableToFree))
 				{
 					result.table=blk<table_bucket<K,V>>();
 				}
@@ -331,20 +231,22 @@ namespace dggt
 	}
 
 	template <typename K,typename V,typename A>
-	table_iter<K,V> resize(hash_table<K,V>* hashTable,u32 newSize,A* alloc)
+	table_iter<K,V> resize(hash_table<K,V>* hashTable,u32 newSize,
+			A* allocator)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(hashTable);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(hashTable);
 		if (hashTable)
 		{
-			table_blk<K,V> newTable=
-				alloc->template alloc<table_bucket<K,V>>(newSize);
+			table_mem<K,V> newTable=
+				table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,newSize),
+						newSize);
 			if (newTable.mem)
 			{
 				for (u32 i=0;i<newTable.count;++i)
 				{
 					newTable.mem[i]=create_linked_list<table_pair<K,V>>();
 				}
-				table_blk<K,V> oldTable=hashTable->table;
+				table_mem<K,V> oldTable=hashTable->table;
 				hashTable->table=newTable;
 				hashTable->count=0;
 				for (u32 index=0;index<oldTable.count;++index)
@@ -370,7 +272,7 @@ namespace dggt
 	template <typename K,typename V>
 	table_iter<K,V> get_iter(hash_table<K,V>* table)
 	{
-		table_iter<K,V> result=dggt_internal_::default_iter(table);
+		table_iter<K,V> result=dggt_internal_::def_table_iter(table);
 		if (table)
 		{
 			result.hashTable=table;
