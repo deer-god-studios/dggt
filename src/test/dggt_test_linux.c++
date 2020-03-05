@@ -99,16 +99,19 @@ int main(int argc, char* argv[])
 	pool_alloc<8> a_=pool_alloc<8>(cache_alloc(KB(8)),KB(8));
 	pool_alloc<8>* a=&a_;
 
-	int* intArr=alloc<int>(a,20);
+	linked_list<real32> real32List=create_linked_list<real32>();
+
 	for (u32 i=0;i<20;++i)
 	{
-		intArr[i]=i;
+		push(&real32List,(real32)i/7.5f,a);
+		list_iter<real32> p=peek(&real32List);
+		printf("%f\n",get(&p));
 	}
+
 	for (u32 i=0;i<20;++i)
 	{
-		printf("%d\n",intArr[i]);
+
 	}
-	free(a,intArr,20);
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

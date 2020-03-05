@@ -37,10 +37,10 @@ namespace dggt
 	};
 
 	template <msize BLOCKSIZE>
-	void* alloc(pool_alloc<BLOCKSIZE>* a,msize size);
+	void* alloc(pool_alloc<BLOCKSIZE>* a,msize size=8);
 
 	template <msize BLOCKSIZE>
-	b32 free(pool_alloc<BLOCKSIZE>* a,void* ptr,msize size);
+	b32 free(pool_alloc<BLOCKSIZE>* a,void* ptr,msize size=8);
 	
 	template <msize BLOCKSIZE>
 	b32 clear(pool_alloc<BLOCKSIZE>* a);
@@ -64,10 +64,10 @@ namespace dggt
 	msize available_mem(const pool_alloc<BLOCKSIZE>* a);
 
 	template <typename T,msize BLOCKSIZE>
-	T* alloc(pool_alloc<BLOCKSIZE>* a,u32 count);
+	T* alloc(pool_alloc<BLOCKSIZE>* a,u32 count=1);
 
 	template <typename T,msize BLOCKSIZE>
-	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count);
+	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count=1);
 
 	template <typename T,msize BLOCKSIZE>
 	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
@@ -91,10 +91,10 @@ namespace dggt
 	msize available_mem(const pool_alloc<>* a);
 
 	template <typename T>
-	T* alloc(pool_alloc<>* a,u32 count);
+	T* alloc(pool_alloc<>* a,u32 count=1);
 
 	template <typename T>
-	b32 free(pool_alloc<>* a,T* ptr,u32 count);
+	b32 free(pool_alloc<>* a,T* ptr,u32 count=1);
 
 	template <typename T>
 	b32 owns(const pool_alloc<>* a,const T* ptr,u32 count);

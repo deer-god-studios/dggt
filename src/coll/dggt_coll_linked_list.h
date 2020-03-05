@@ -20,7 +20,7 @@ namespace dggt
 		linked_list() : chain(blk<slnode<T>>()) { }
 	};
 
-	template <typename T,typename A>
+	template <typename T>
 	linked_list<T> create_linked_list()
 	{
 		return linked_list<T>();
