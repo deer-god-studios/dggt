@@ -36,81 +36,81 @@ namespace dggt
 
 
 	template <typename T>
-	b32 is_end(stack_iter<T>* it)
+	b32 is_end(stack_iter<T>& it)
 	{
 		return !is_coll_valid(it)||
-			(is_coll_valid(it)&&it->current>=it->stk->table.count)||
+			(is_coll_valid(it)&&it.current>=it.stk->table.count)||
 			(is_coll_valid(it)&&!is_mem_valid(it));
 	}
 
 	template <typename T>
-	b32 advance(stack_iter<T>* it)
+	b32 advance(stack_iter<T>& it)
 	{
 		b32 result=false;
 		if (!is_end(it))
 		{
-			--it->current;
+			--it.current;
 		}
 		return result;
 	}
 
 	template <typename T>
-	T& get(stack_iter<T>* it)
+	T& get(stack_iter<T>& it)
 	{
-		return it->table[it->current];
+		return it.table[it.current];
 	}
 
 	template <typename T>
-	const T& get(const stack_iter<T>* it)
+	const T& get(const stack_iter<T>& it)
 	{
-		return it->table[it->current];
+		return it.table[it.current];
 	}
 
 	template <typename T>
-	T* get_ptr(stack_iter<T>* it)
+	T* get_ptr(stack_iter<T>& it)
 	{
-		return it->table.mem+it->current;
+		return it.table.mem+it.current;
 	}
 
 	template <typename T>
-	const T* get_ptr(stack_iter<T>* it)
+	const T* get_ptr(stack_iter<T>& it)
 	{
-		return it->table.mem+it->current;
+		return it.table.mem+it.current;
 	}
 
 	template <typename T>
-	blk<T> get_mem(stack_iter<T>* it)
+	blk<T> get_mem(stack_iter<T>& it)
 	{
-		return it->table;
+		return it.table;
 	}
 
 	template <typename T>
-	const blk<T> get_mem(const stack_iter<T>* it)
+	const blk<T> get_mem(const stack_iter<T>& it)
 	{
-		return it->table;
+		return it.table;
 	}
 
 	template <typename T>
-	b32 is_coll_valid(const stack_iter<T>* it)
+	b32 is_coll_valid(const stack_iter<T>& it)
 	{
-		return it->stk!=0;
+		return it.stk!=0;
 	}
 
 	template <typename T>
-	b32 is_mem_valid(const stack_iter<T>* it)
+	b32 is_mem_valid(const stack_iter<T>& it)
 	{
 		return is_coll_valid(it)&&
-			it->table==it->stk->table;
+			it.table==it.stk->table;
 	}
 
 	template <typename T>
-	b32 vindicate_mem(stack_iter<T>* it)
+	b32 vindicate_mem(stack_iter<T>& it)
 	{
 		b32 result=false;
 		if (!is_mem_valid(it)&&
 				is_coll_valid(it))
 		{
-			it->table=it->stk->table;
+			it.table=it.stk->table;
 			result=false;
 		}
 		return result;

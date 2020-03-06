@@ -116,8 +116,13 @@ namespace dggt
 
 	b32 free(stack_alloc* a,void* ptr,msize size)
 	{
-		return dggt_internal_::stack_free(a->buff,a->buffSize,
-				a->prevState,&a->used,ptr,size);
+		b32 result=false;
+		if (a)
+		{
+			result=dggt_internal_::stack_free(a->buff,a->buffSize,
+					a->prevState,&a->used,ptr,size);
+		}
+		return result;
 	}
 	
 	b32 clear(stack_alloc* a)

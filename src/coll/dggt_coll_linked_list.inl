@@ -5,29 +5,16 @@ namespace dggt
 	namespace dggt_internal_
 	{
 		template <typename T>
-		list_iter<T> default_iter(linked_list<T>* list)
+		list_iter<T> def_list_iter(linked_list<T>* list)
 		{
 			return list_iter<T>{0,list,0};
 		}
 	}
 
-	template <typename T>
-	b32 vindicate_mem(list_iter<T>* it)
-	{
-		b32 result=0;
-		if (is_coll_valid(it)&&!is_mem_valid(it))
-		{
-			it->current=it->list->chain.ptr;
-			it->memIsValid=true;
-			result=true;
-		}
-		return result;
-	}
-
 	template <typename T,typename A>
 	list_iter<T> push(linked_list<T>* list,A* a)
 	{
-		list_iter<T> result=dggt_internal_::default_iter(list);
+		list_iter<T> result=dggt_internal_::def_list_iter(list);
 		if (list&&a)
 		{
 			slnode<T>* newNode=alloc<slnode<T>>(a);
@@ -49,7 +36,7 @@ namespace dggt
 	list_iter<T> push(linked_list<T>* list,const T& val,A* a)
 	{
 		list_iter<T> result=push(list,a);
-		if (!is_end(&result))
+		if (!is_end(result))
 		{
 			result.current->val=val;
 		}
@@ -59,7 +46,7 @@ namespace dggt
 	template <typename T,typename A>
 	list_iter<T> pop(linked_list<T>* list,A* a)
 	{
-		list_iter<T> result;
+		list_iter<T> result=dggt_internal_::def_list_iter(list);
 		if (list&&list->chain.count)
 		{
 			slnode<T>* nodeToFree=list->chain.ptr;
@@ -67,7 +54,7 @@ namespace dggt
 			result.memIsValid=false;
 			list->chain.ptr=nodeToFree->next;
 			--list->chain.count;
-			if (free(a,nodeToFree))
+			if (free(a,nodeToFree,1))
 			{
 				result.current=list->chain.ptr;
 				result.list=list;
@@ -116,14 +103,14 @@ namespace dggt
 	template <typename T>
 	b32 contains(linked_list<T>* list,const T& item)
 	{
-		b32 result=0;
+		b32 result=false;
 		for (list_iter<T> it=get_iter(list);
-				!it.is_end();
-				it.next())
+				!is_end(it);
+				next(it))
 		{
 			if (it.get()==item)
 			{
-				result=1;
+				result=true;
 				break;
 			}
 		}
@@ -165,7 +152,7 @@ namespace dggt
 	template <typename T,typename A>
 	list_iter<T> clear(linked_list<T>* list,A* a)
 	{
-		list_iter<T> result=dggt_internal_::default_iter(list);
+		list_iter<T> result=dggt_internal_::def_list_iter(list);
 		if (list)
 		{
 			slnode<T>* current=list->chain.ptr;

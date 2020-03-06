@@ -36,37 +36,37 @@ namespace dggt
 	};
 
 	template <typename K,typename V>
-	b32 is_end(const table_iter<K,V>* it);
+	b32 is_end(const table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	b32 advance(table_iter<K,V>* it);
+	b32 advance(table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	table_pair<K,V>& get(table_iter<K,V>* it);
+	table_pair<K,V>& get(table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	const table_pair<K,V>& get(const table_iter<K,V>* it);
+	const table_pair<K,V>& get(const table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	table_pair<K,V>* get_ptr(table_iter<K,V>* it);
+	table_pair<K,V>* get_ptr(table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	const table_pair<K,V>* get_ptr(const table_iter<K,V>* it);
+	const table_pair<K,V>* get_ptr(const table_iter<K,V>& it);
 	
 	template <typename K,typename V>
-	table_mem<K,V> get_mem(table_iter<K,V>* it);
+	table_mem<K,V> get_mem(table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	const table_mem<K,V> get_mem(const table_iter<K,V>* it);
+	const table_mem<K,V> get_mem(const table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	b32 is_coll_valid(const table_iter<K,V>* it);
+	b32 is_coll_valid(const table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	b32 is_mem_valid(const table_iter<K,V>* it);
+	b32 is_mem_valid(const table_iter<K,V>& it);
 
 	template <typename K,typename V>
-	b32 vindicate_mem(table_iter<K,V>* it);
+	b32 vindicate_mem(table_iter<K,V>& it);
 }
 
 #define _DGGT_COLL_TABLE_ITER_H_

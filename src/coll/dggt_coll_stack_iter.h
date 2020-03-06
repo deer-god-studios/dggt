@@ -19,37 +19,37 @@ namespace dggt
 	};
 
 	template <typename T>
-	b32 is_end(const stack_iter<T>* it);
+	b32 is_end(const stack_iter<T>& it);
 
 	template <typename T>
-	b32 advance(stack_iter<T>* it);
+	b32 advance(stack_iter<T>& it);
 
 	template <typename T>
-	T& get(stack_iter<T>* it);
+	T& get(stack_iter<T>& it);
 
 	template <typename T>
-	const T& get(const stack_iter<T>* it);
+	const T& get(const stack_iter<T>& it);
 
 	template <typename T>
-	T* get_ptr(stack_iter<T>* it);
+	T* get_ptr(stack_iter<T>& it);
 
 	template <typename T>
-	const T* get_ptr(const stack_iter<T>* it);
+	const T* get_ptr(const stack_iter<T>& it);
 	
 	template <typename T>
-	T* get_mem(stack_iter<T>* it);
+	T* get_mem(stack_iter<T>& it);
 
 	template <typename T>
-	const slnode<T>* get_mem(const stack_iter<T>* it);
+	const slnode<T>* get_mem(const stack_iter<T>& it);
 
 	template <typename T>
-	b32 is_coll_valid(const stack_iter<T>* it);
+	b32 is_coll_valid(const stack_iter<T>& it);
 
 	template <typename T>
-	b32 is_mem_valid(const stack_iter<T>* it);
+	b32 is_mem_valid(const stack_iter<T>& it);
 
 	template <typename T>
-	b32 vindicate_mem(stack_iter<T>* it);
+	b32 vindicate_mem(stack_iter<T>& it);
 }
 
 #define _DGGT_COLL_STACK_ITER_H_

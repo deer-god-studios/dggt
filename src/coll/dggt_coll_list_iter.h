@@ -22,37 +22,37 @@ namespace dggt
 	};
 
 	template <typename T>
-	b32 is_end(const list_iter<T>* it);
+	b32 is_end(const list_iter<T>& it);
 
 	template <typename T>
-	b32 advance(list_iter<T>* it);
+	b32 advance(list_iter<T>& it);
 
 	template <typename T>
-	T& get(list_iter<T>* it);
+	T& get(list_iter<T>& it);
 
 	template <typename T>
-	const T& get(const list_iter<T>* it);
+	const T& get(const list_iter<T>& it);
 
 	template <typename T>
-	T* get_ptr(list_iter<T>* it);
+	T* get_ptr(list_iter<T>& it);
 
 	template <typename T>
-	const T* get_ptr(const list_iter<T>* it);
+	const T* get_ptr(const list_iter<T>& it);
 	
 	template <typename T>
-	slnode<T>* get_mem(list_iter<T>* it);
+	slnode<T>* get_mem(list_iter<T>& it);
 
 	template <typename T>
-	const slnode<T>* get_mem(const list_iter<T>* it);
+	const slnode<T>* get_mem(const list_iter<T>& it);
 
 	template <typename T>
-	b32 is_coll_valid(const list_iter<T>* it);
+	b32 is_coll_valid(const list_iter<T>& it);
 
 	template <typename T>
-	b32 is_mem_valid(const list_iter<T>* it);
+	b32 is_mem_valid(const list_iter<T>& it);
 
 	template <typename T>
-	b32 vindicate_mem(list_iter<T>* it);
+	b32 vindicate_mem(list_iter<T>& it);
 }
 
 #define _DGGT_COLL_LIST_ITER_H_

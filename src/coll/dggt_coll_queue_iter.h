@@ -23,37 +23,37 @@ namespace dggt
 	};
 
 	template <typename T>
-	b32 is_end(const queue_iter<T>* it);
+	b32 is_end(const queue_iter<T>& it);
 
 	template <typename T>
-	b32 advance(queue_iter<T>* it);
+	b32 advance(queue_iter<T>& it);
 
 	template <typename T>
-	T& get(queue_iter<T>* it);
+	T& get(queue_iter<T>& it);
 
 	template <typename T>
-	const T& get(const queue_iter<T>* it);
+	const T& get(const queue_iter<T>& it);
 
 	template <typename T>
-	T* get_ptr(queue_iter<T>* it);
+	T* get_ptr(queue_iter<T>& it);
 
 	template <typename T>
-	const T* get_ptr(const queue_iter<T>* it);
+	const T* get_ptr(const queue_iter<T>& it);
 	
 	template <typename T>
-	blk<T> get_mem(queue_iter<T>* it);
+	blk<T> get_mem(queue_iter<T>& it);
 
 	template <typename T>
-	const blk<T> get_mem(const queue_iter<T>* it);
+	const blk<T> get_mem(const queue_iter<T>& it);
 
 	template <typename T>
-	b32 is_coll_valid(const queue_iter<T>* it);
+	b32 is_coll_valid(const queue_iter<T>& it);
 
 	template <typename T>
-	b32 is_mem_valid(const queue_iter<T>* it);
+	b32 is_mem_valid(const queue_iter<T>& it);
 
 	template <typename T>
-	b32 vindicate_mem(queue_iter<T>* it);
+	b32 vindicate_mem(queue_iter<T>& it);
 }
 
 #define _DGGT_COLL_QUEUE_ITER_H_

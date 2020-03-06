@@ -35,66 +35,80 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 is_end(const list_iter<T>* it)
+	b32 vindicate_mem(list_iter<T>& it)
 	{
-		return it->current==0;
+		b32 result=0;
+		if (is_coll_valid(it)&&!is_mem_valid(it))
+		{
+			it->current=it->list->chain.ptr;
+			it->memIsValid=true;
+			result=true;
+		}
+		return result;
+	}
+
+
+	template <typename T>
+	b32 is_end(const list_iter<T>& it)
+	{
+		return it.current==0;
 	}
 
 	template <typename T>
-	b32 advance(list_iter<T>* it)
+	b32 advance(list_iter<T>& it)
 	{
 		b32 result=false;
 		if (!is_end(it))
 		{
-			it->current=it->current->next;
+			it.current=it.current->next;
 			result=true;
 		}
 		return result;
 	}
 
 	template <typename T>
-	T& get(list_iter<T>* it)
+	T& get(list_iter<T>& it)
 	{
-		return it->current->val;
+		return it.current->val;
 	}
 
 	template <typename T>
-	const T& get(const list_iter<T>* it)
+	const T& get(const list_iter<T>& it)
 	{
-		return it->current->val;
+		return it.current->val;
 	}
 	template <typename T>
-	T* get_ptr(list_iter<T>* it)
+	T* get_ptr(list_iter<T>& it)
 	{
-		return &it->current->val;
-	}
-
-	template <typename T>
-	const T* get_ptr(list_iter<T>* it)
-	{
-		return &it->current->val;
+		return &it.current->val;
 	}
 
 	template <typename T>
-	slnode<T>* get_mem(list_iter<T>* it)
+	const T* get_ptr(list_iter<T>& it)
 	{
-		return it->current;
-	}
-	template <typename T>
-	const slnode<T>* get_mem(list_iter<T>* it)
-	{
-		return it->current;
+		return &it.current->val;
 	}
 
 	template <typename T>
-	b32 is_coll_valid(const list_iter<T>* it)
+	slnode<T>* get_mem(list_iter<T>& it)
 	{
-		return it->list!=0;
+		return it.current;
+	}
+	template <typename T>
+	const slnode<T>* get_mem(list_iter<T>& it)
+	{
+		return it.current;
 	}
 
 	template <typename T>
-	b32 is_mem_valid(const list_iter<T>* it)
+	b32 is_coll_valid(const list_iter<T>& it)
 	{
-		return is_coll_valid(it)&&it->memIsValid;
+		return it.list!=0;
+	}
+
+	template <typename T>
+	b32 is_mem_valid(const list_iter<T>& it)
+	{
+		return is_coll_valid(it)&&it.memIsValid;
 	}
 }

@@ -96,22 +96,19 @@ int main(int argc, char* argv[])
 	printf("cache_init\n");
 	cache_init(GB(2));
 
-	pool_alloc<8> a_=pool_alloc<8>(cache_alloc(KB(8)),KB(8));
-	pool_alloc<8>* a=&a_;
+	stack_alloc a_=stack_alloc(cache_alloc(KB(8)),KB(8));
+	stack_alloc* a=&a_;
 
 	linked_list<real32> real32List=create_linked_list<real32>();
 
 	for (u32 i=0;i<20;++i)
 	{
 		push(&real32List,(real32)i/7.5f,a);
-		list_iter<real32> p=peek(&real32List);
-		printf("%f\n",get(&p));
+		printf("%f\n",get(peek(&real32List)));
 	}
 
-	for (u32 i=0;i<20;++i)
-	{
-
-	}
+	while (!is_end(pop(&real32List,(stack_alloc*)0))) { }
+	printf("%d\n",get_count(&real32List));
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

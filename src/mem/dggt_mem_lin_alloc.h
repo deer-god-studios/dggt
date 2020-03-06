@@ -34,10 +34,10 @@ namespace dggt
 	msize available_mem(const lin_alloc* a);
 
 	template <typename T>
-	T* alloc(lin_alloc* a,u32 count);
+	T* alloc(lin_alloc* a,u32 count=1);
 
 	template <typename T>
-	b32 free(lin_alloc* a,T* ptr,u32 count);
+	b32 free(lin_alloc* a,T* ptr,u32 count=1);
 
 	template <typename T>
 	b32 owns(const lin_alloc* a,const T* ptr,u32 count);

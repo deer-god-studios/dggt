@@ -17,9 +17,9 @@ namespace dggt
 		stack_alloc(void* ptr,msize size);
 	};
 
-	void* alloc(stack_alloc* a,msize size);
+	void* alloc(stack_alloc* a,msize size=8);
 
-	b32 free(stack_alloc* a,void* ptr,msize size);
+	b32 free(stack_alloc* a,void* ptr,msize size=8);
 	
 	b32 clear(stack_alloc* a);
 
@@ -36,7 +36,7 @@ namespace dggt
 	msize available_mem(const stack_alloc* a);
 
 	template <typename T>
-	T* alloc(stack_alloc* a,u32 count);
+	T* alloc(stack_alloc* a,u32 count=1);
 
 	template <typename T>
 	b32 free(stack_alloc* a,T* ptr,u32 count);

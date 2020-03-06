@@ -22,37 +22,37 @@ namespace dggt
 	};
 
 	template <typename T>
-	b32 is_end(const array_iter<T>* it);
+	b32 is_end(const array_iter<T>& it);
 
 	template <typename T>
-	b32 advance(array_iter<T>* it);
+	b32 advance(array_iter<T>& it);
 
 	template <typename T>
-	T& get(array_iter<T>* it);
+	T& get(array_iter<T>& it);
 
 	template <typename T>
-	const T& get(const array_iter<T>* it);
+	const T& get(const array_iter<T>& it);
 
 	template <typename T>
-	T* get_ptr(array_iter<T>* it);
+	T* get_ptr(array_iter<T>& it);
 
 	template <typename T>
-	const T* get_ptr(const array_iter<T>* it);
+	const T* get_ptr(const array_iter<T>& it);
 	
 	template <typename T>
-	blk<T> get_mem(array_iter<T>* it);
+	blk<T> get_mem(array_iter<T>& it);
 
 	template <typename T>
-	const blk<T> get_mem(const array_iter<T>* it);
+	const blk<T> get_mem(const array_iter<T>& it);
 
 	template <typename T>
-	b32 is_coll_valid(const array_iter<T>* it);
+	b32 is_coll_valid(const array_iter<T>& it);
 
 	template <typename T>
-	b32 is_mem_valid(const array_iter<T>* it);
+	b32 is_mem_valid(const array_iter<T>& it);
 
 	template <typename T>
-	b32 vindicate_mem(array_iter<T>* it);
+	b32 vindicate_mem(array_iter<T>& it);
 }
 
 #define _DGGT_COLL_ARRAY_ITER_H_
