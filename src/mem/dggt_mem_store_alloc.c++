@@ -72,24 +72,52 @@ namespace dggt
 
 	void* alloc(store_alloc<>* a,msize size)
 	{
-		return dggt_internal_::store_alloc(&a->head,
-				&a->blockCount,size);
+		if (a)
+		{
+			return dggt_internal_::store_alloc(&a->head,
+					&a->blockCount,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 free(store_alloc<>* a,void* ptr,msize size)
 	{
-		return dggt_internal_::store_free(&a->head,&a->blockCount,
-				ptr,size,a->blockSize);
+		if (a)
+		{
+			return dggt_internal_::store_free(&a->head,&a->blockCount,
+					ptr,size,a->blockSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	b32 clear(store_alloc<>* a)
 	{
-		return dggt_internal_::store_clear(&a->head,&a->blockCount);
+		if (a)
+		{
+			return dggt_internal_::store_clear(&a->head,&a->blockCount);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 owns(const store_alloc<>* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::store_owns(ptr,size,a->blockSize);
+		if (a)
+		{
+			return dggt_internal_::store_owns(ptr,size,a->blockSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	stack_state save_stack(store_alloc<>* a)
@@ -109,12 +137,26 @@ namespace dggt
 
 	msize used_mem(const store_alloc<>* a)
 	{
-		return dggt_internal_::store_used_mem(a->blockCount);
+		if (a)
+		{
+			return dggt_internal_::store_used_mem(a->blockCount);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	msize available_mem(const store_alloc<>* a)
 	{
-		return dggt_internal_::store_available_mem(a->blockCount,
-				a->blockSize);
+		if (a)
+		{
+			return dggt_internal_::store_available_mem(a->blockCount,
+					a->blockSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }

@@ -230,28 +230,56 @@ namespace dggt
 	template <msize TABLESIZE>
 	void* alloc(table_alloc<TABLESIZE>* a,msize size)
 	{
-		return dggt_internal_::table_alloc(a->flagTable,
-				a->storeTable,&a->availableMem,size);
+		if (a)
+		{
+			return dggt_internal_::table_alloc(a->flagTable,
+					a->storeTable,&a->availableMem,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	template <msize TABLESIZE>
 	b32 free(table_alloc<TABLESIZE>* a,void* ptr,msize size)
 	{
-		return dggt_internal_::table_free(a->flagTable,
-				a->storeTable,&a->availableMem,ptr,size);
+		if (a)
+		{
+			return dggt_internal_::table_free(a->flagTable,
+					a->storeTable,&a->availableMem,ptr,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	template <msize TABLESIZE>
 	b32 clear(table_alloc<TABLESIZE>* a)
 	{
-		return dggt_internal_::clear_table(a->flagTable,
-				a->storeTable);
+		if (a)
+		{
+			return dggt_internal_::clear_table(a->flagTable,
+					a->storeTable);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	template <msize TABLESIZE>
 	b32 owns(const table_alloc<TABLESIZE>* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::table_owns(a->storeCount);
+		if (a)
+		{
+			return dggt_internal_::table_owns(a->storeCount);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	template <msize TABLESIZE>
@@ -299,6 +327,13 @@ namespace dggt
 	template <typename T,msize TABLESIZE>
 	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,u32 count)
 	{
-		return dggt_internal_::table_owns(a->storeCount);
+		if (a)
+		{
+			return dggt_internal_::table_owns(a->storeCount);
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

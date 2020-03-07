@@ -79,8 +79,15 @@ namespace dggt
 
 	void* alloc(lin_alloc* a,msize size)
 	{
-		return dggt_internal_::linear_alloc(a->buff,
-				a->buffSize,&a->used,size);
+		if (a)
+		{
+			return dggt_internal_::linear_alloc(a->buff,
+					a->buffSize,&a->used,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 free(lin_alloc* a,void* ptr,msize size)
@@ -90,24 +97,52 @@ namespace dggt
 
 	b32 clear(lin_alloc* a)
 	{
-		return dggt_internal_::linear_clear(&a->used);
+		if (a)
+		{
+			return dggt_internal_::linear_clear(&a->used);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 owns(const lin_alloc* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::linear_owns(a->buff,a->buffSize,
-				ptr,size);
+		if (a)
+		{
+			return dggt_internal_::linear_owns(a->buff,a->buffSize,
+					ptr,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	msize available_mem(const lin_alloc* a)
 	{
-		return dggt_internal_::linear_available_mem(a->used,
-				a->buffSize);
+		if (a)
+		{
+			return dggt_internal_::linear_available_mem(a->used,
+					a->buffSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	msize used_mem(const lin_alloc* a)
 	{
-		return dggt_internal_::linear_used_mem(a->used);
+		if (a)
+		{
+			return dggt_internal_::linear_used_mem(a->used);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	stack_state save_stack(lin_alloc* a)

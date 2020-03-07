@@ -110,8 +110,15 @@ namespace dggt
 
 	void* alloc(stack_alloc* a,msize size)
 	{
-		return dggt_internal_::stack_alloc(a->buff,a->buffSize,
-			&a->used,size);
+		if (a)
+		{
+			return dggt_internal_::stack_alloc(a->buff,a->buffSize,
+					&a->used,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 free(stack_alloc* a,void* ptr,msize size)
@@ -133,34 +140,74 @@ namespace dggt
 
 	b32 owns(const stack_alloc* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::stack_owns(a->buff,a->buffSize,
-				ptr,size);
+		if (a)
+		{
+			return dggt_internal_::stack_owns(a->buff,a->buffSize,
+					ptr,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	stack_state save_stack(stack_alloc* a)
 	{
-		return dggt_internal_::stack_save_stack(a->used,
-				&a->prevState,&a->stateCount);
+		if (a)
+		{
+			return dggt_internal_::stack_save_stack(a->used,
+					&a->prevState,&a->stateCount);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 restore_stack(stack_alloc* a,stack_state state)
 	{
-		return dggt_internal_::stack_restore_stack(a->used,
-				&a->prevState,&a->stateCount);
+		if (a)
+		{
+			return dggt_internal_::stack_restore_stack(a->used,
+					&a->prevState,&a->stateCount);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 is_stack_balanced(const stack_alloc* a)
 	{
-		return dggt_internal_::stack_is_stack_balanced(a->stateCount);
+		if (a)
+		{
+			return dggt_internal_::stack_is_stack_balanced(a->stateCount);
+		{
+			return 0;
+		}
 	}
 
 	msize used_mem(const stack_alloc* a)
 	{
-		return dggt_internal_::stack_used_mem(a->used);
+		if (a)
+		{
+			return dggt_internal_::stack_used_mem(a->used);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	msize available_mem(const stack_alloc* a)
 	{
-		return dggt_internal_::stack_available_mem(a->used,a->buffSize);
+		if (a)
+		{
+			return dggt_internal_::stack_available_mem(a->used,a->buffSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }

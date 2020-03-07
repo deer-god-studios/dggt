@@ -250,26 +250,54 @@ namespace dggt
 
 	void* alloc(free_alloc* a,msize size)
 	{
-		return dggt_internal_::free_alloc(&a->freeList,
-				&a->used,a->buffSize,size);
+		if (a)
+		{
+			return dggt_internal_::free_alloc(&a->freeList,
+					&a->used,a->buffSize,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 free(free_alloc* a,void* ptr,msize size)
 	{
-		return dggt_internal_::free_free(&a->freeList,a->buff,
-				a->buffSize,ptr,size,&a->used);
+		if (a)
+		{
+			return dggt_internal_::free_free(&a->freeList,a->buff,
+					a->buffSize,ptr,size,&a->used);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	b32 clear(free_alloc* a)
 	{
-		return dggt_internal_::free_clear(&a->freeList,
-				a->buff,a->buffSize,&a->used);
+		if (a)
+		{
+			return dggt_internal_::free_clear(&a->freeList,
+					a->buff,a->buffSize,&a->used);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 owns(const free_alloc* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::free_owns(a->buff,a->buffSize,
-				ptr,size);
+		if (a)
+		{
+			return dggt_internal_::free_owns(a->buff,a->buffSize,
+					ptr,size);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	stack_state save_stack(free_alloc* a)
@@ -294,6 +322,13 @@ namespace dggt
 
 	msize available_mem(const free_alloc* a)
 	{
-		return dggt_internal_::free_available_mem(a->used,a->buffSize);
+		if (a)
+		{
+			return dggt_internal_::free_available_mem(a->used,a->buffSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }

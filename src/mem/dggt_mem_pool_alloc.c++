@@ -84,25 +84,42 @@ namespace dggt
 
 	b32 free(pool_alloc<>* a,void* ptr,msize size)
 	{
-		return dggt_internal_::pool_free(
-				&a->pool,a->buff,a->buffSize,
-				&a->used,ptr,size,
-				a->blockSize);
+		if (a)
+		{
+			return dggt_internal_::pool_free(
+					&a->pool,a->buff,a->buffSize,
+					&a->used,ptr,size,
+					a->blockSize);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	b32 clear(pool_alloc<>* a)
 	{
-		dggt_internal_::pool_init(
-				&a->pool,a->buff,a->buffSize,&a->blockCount,&a->used,
-				a->blockSize);
+		if (a)
+		{
+			dggt_internal_::pool_init(
+					&a->pool,a->buff,a->buffSize,&a->blockCount,&a->used,
+					a->blockSize);
+		}
 		return true;
 	}
 
 	b32 owns(const pool_alloc<>* a,const void* ptr,msize size)
 	{
-		return dggt_internal_::pool_owns(
-				a->buff,a->buffSize,ptr,size,
-				a->blockSize);
+		if (a)
+		{
+			return dggt_internal_::pool_owns(
+					a->buff,a->buffSize,ptr,size,
+					a->blockSize);
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	stack_state save_stack(pool_alloc<>* a)
@@ -122,11 +139,11 @@ namespace dggt
 	
 	msize used_mem(const pool_alloc<>* a)
 	{
-		return a->used;
+		return a?a->used:MAX_MSIZE;
 	}
 
 	msize available_mem(const pool_alloc<>* a)
 	{
-		return a->buffSize-a->used;
+		return a?a->buffSize-a->used:0;
 	}
 }
