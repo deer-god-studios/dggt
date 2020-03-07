@@ -12,6 +12,7 @@ namespace dggt
 		u32 current;
 		stack<T>* stk;
 
+		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
 		stack_iter<T>& operator++();

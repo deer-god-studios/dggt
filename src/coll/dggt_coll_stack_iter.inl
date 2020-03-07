@@ -2,6 +2,12 @@
 namespace dggt
 {
 	template <typename T>
+	b32 stack_iter<T>::is_end() const
+	{
+		return dggt::is_end(*this);
+	}
+
+	template <typename T>
 	T& stack_iter<T>::operator*()
 	{
 		return *table.ptr;

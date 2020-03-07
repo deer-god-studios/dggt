@@ -15,6 +15,7 @@ namespace dggt
 		u32 current;
 		array<T>* arr;
 
+		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
 		array_iter<T>& operator++();

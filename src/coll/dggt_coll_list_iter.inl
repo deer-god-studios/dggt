@@ -2,9 +2,9 @@
 namespace dggt
 {
 	template <typename T>
-	b32 list_iter<T>::is_end()
+	b32 list_iter<T>::is_end() const
 	{
-		return is_end(*this);
+		return dggt::is_end(*this);
 	}
 
 	template <typename T>
@@ -22,7 +22,7 @@ namespace dggt
 	template <typename T>
 	list_iter<T>& list_iter<T>::operator++()
 	{
-		if (!is_end(*this))
+		if (!dggt::is_end(*this))
 		{
 			advance(*this);
 		}
@@ -90,7 +90,7 @@ namespace dggt
 	}
 
 	template <typename T>
-	const T* get_ptr(list_iter<T>& it)
+	const T* get_ptr(const list_iter<T>& it)
 	{
 		return &it.current->val;
 	}
@@ -101,7 +101,7 @@ namespace dggt
 		return it.current;
 	}
 	template <typename T>
-	const slnode<T>* get_mem(list_iter<T>& it)
+	const slnode<T>* get_mem(const list_iter<T>& it)
 	{
 		return it.current;
 	}

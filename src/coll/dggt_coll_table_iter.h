@@ -29,6 +29,7 @@ namespace dggt
 		table_mem<K,V> table;
 		hash_table<K,V>* hashTable;
 
+		b32 is_end() const;
 		table_pair<K,V>& operator*();
 		const table_pair<K,V>& operator*() const;
 		table_iter<K,V>& operator++();
@@ -67,6 +68,9 @@ namespace dggt
 
 	template <typename K,typename V>
 	b32 vindicate_mem(table_iter<K,V>& it);
+
+	template <typename K,typename V,typename A>
+	b32 free(A* a,table_iter<K,V>& it);
 }
 
 #define _DGGT_COLL_TABLE_ITER_H_

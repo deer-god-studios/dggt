@@ -1,6 +1,12 @@
 namespace dggt
 {
 	template <typename T>
+	b32 queue_iter<T>::is_end() const
+	{
+		return dggt::is_end(*this);
+	}
+
+	template <typename T>
 	T& queue_iter<T>::operator*()
 	{
 		return *table.ptr;
@@ -15,9 +21,9 @@ namespace dggt
 	template <typename T>
 	queue_iter<T>& queue_iter<T>::operator++()
 	{
-		if (!is_end(this))
+		if (!is_end(*this))
 		{
-			advance(this);
+			advance(*this);
 		}
 		return *this;
 	}
@@ -116,6 +122,18 @@ namespace dggt
 		{
 			it.table=it.q->table;
 			result=true;
+		}
+		return result;
+	}
+
+	template <typename T,typename A>
+	b32 free(A* a,queue_iter<T>& it)
+	{
+		b32 result=false;
+		if (!is_mem_valid(it))
+		{
+			free(a,it.table.ptr,it.table.count);
+			vindicate_mem(it);
 		}
 		return result;
 	}

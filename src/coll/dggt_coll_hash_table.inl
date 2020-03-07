@@ -43,7 +43,7 @@ namespace dggt
 					capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
-			table.mem[i]=create_linked_list<table_pair<K,V>>();
+			table.ptr[i]=create_linked_list<table_pair<K,V>>();
 		}
 		return hash_table<K,V>{table,count};
 	}
@@ -57,7 +57,7 @@ namespace dggt
 		{
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(hashTable));
-			table_bucket<K,V>* bucket=hashTable->table.mem+index;
+			table_bucket<K,V>* bucket=hashTable->table.ptr+index;
 			table_pair<K,V> newNode=table_pair<K,V>(key,V(0));
 			++hashTable->count;
 			result.table=hashTable->table;
@@ -66,7 +66,7 @@ namespace dggt
 			{
 				push(bucket,newNode,allocator);
 			}
-			result.currentNode=bucket->head;
+			result.currentNode=bucket->chain.ptr;
 			if (get_load_factor<float32>(hashTable)>2.0f)
 			{
 				u32 cap=get_capacity(hashTable);
@@ -84,7 +84,7 @@ namespace dggt
 	{
 		table_iter<K,V> result=insert(table,key,allocator);
 		table_pair<K,V> newNode=table_pair<K,V>(key,val);
-		result.get()=newNode;
+		get(result)=newNode;
 		return result;
 	}
 
@@ -96,15 +96,15 @@ namespace dggt
 		{
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(table));
-			table_bucket<K,V>* bucket=table->table.mem+index;
+			table_bucket<K,V>* bucket=table->table.ptr+index;
 			for (bucket_iter<K,V> it=get_iter(bucket);!it.is_end();
-					it.next())
+					++it)
 			{
-				table_pair<K,V> node=it.get();
+				table_pair<K,V> node=get(it);
 				if (node.key_==key)
 				{
 					result=table_iter<K,V>{
-						index,bucket,it.get_mem(),table->table,table};
+						index,bucket,get_mem(it),table->table,table};
 					break;
 				}
 			}
@@ -122,7 +122,7 @@ namespace dggt
 			u32 index=dggt_internal_::hash(preh,get_capacity(table));
 			table_bucket<K,V>* bucket=table.mem+index;
 			for (list_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
-					next(it))
+					++it)
 			{
 				table_pair<K,V> node=get(it);
 				if (node.key==key)
@@ -145,14 +145,14 @@ namespace dggt
 		{
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(hashTable));
-			table_bucket<K,V>* bucket=hashTable->table.mem+index;
+			table_bucket<K,V>* bucket=hashTable->table.ptr+index;
 			slnode<table_pair<K,V>>* current=0;
 			slnode<table_pair<K,V>>* prev=current;
 			for (list_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
-					next(it))
+					++it)
 			{
-				current=it.get_ptr();
-				if (it.get()==key)
+				current=get_mem(it);
+				if (get(it).get_key()==key)
 				{
 					remove(bucket,prev,current,allocator);
 					--hashTable->count;
@@ -240,26 +240,26 @@ namespace dggt
 			table_mem<K,V> newTable=
 				table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,newSize),
 						newSize);
-			if (newTable.mem)
+			if (newTable.ptr)
 			{
 				for (u32 i=0;i<newTable.count;++i)
 				{
-					newTable.mem[i]=create_linked_list<table_pair<K,V>>();
+					newTable.ptr[i]=create_linked_list<table_pair<K,V>>();
 				}
 				table_mem<K,V> oldTable=hashTable->table;
 				hashTable->table=newTable;
 				hashTable->count=0;
 				for (u32 index=0;index<oldTable.count;++index)
 				{
-					table_bucket<K,V>* bucket=oldTable.mem+index;
+					table_bucket<K,V>* bucket=oldTable.ptr+index;
 					if (get_count(bucket))
 					{
 						for (list_iter<table_pair<K,V>> it=get_iter(bucket);
-								!it.is_end();it.next())
+								!it.is_end();++it)
 						{
-							K key=it.get().key_;
-							V val=it.get().val_;
-							insert(hashTable,key,val,alloc);
+							K key=get(it).key_;
+							V val=get(it).val_;
+							insert(hashTable,key,val,allocator);
 						}
 					}
 				}
@@ -279,7 +279,7 @@ namespace dggt
 			result.currentIndex=0;
 			for (u32 index=0;index<get_capacity(table);++index)
 			{
-				table_bucket<K,V>* bucket=table->table.mem+index;
+				table_bucket<K,V>* bucket=table->table.ptr+index;
 				if (get_count(bucket))
 				{
 					result.currentBucket=bucket;
@@ -288,7 +288,7 @@ namespace dggt
 			}
 			if (result.currentBucket)
 			{
-				result.currentNode=result.currentBucket->head;
+				result.currentNode=result.currentBucket->chain.ptr;
 			}
 			result.table=table->table;
 			result.hashTable=table;

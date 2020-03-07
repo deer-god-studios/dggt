@@ -99,22 +99,16 @@ int main(int argc, char* argv[])
 	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
 	free_alloc* a=&a_;
 
-	linked_list<real32> real32List=create_linked_list<real32>();
+	hash_table<u32,float32> floatTable=create_hash_table<u32,float32>(a);
+	insert(&floatTable,0U,3.14f,a);
+	insert(&floatTable,50U,77.1f,a);
 
-	array<u32> u32Arr=create_array<u32>(2,a);
+	printf("%f\n",get(floatTable[0U]).get_val());
 
-	for (u32 i=0;i<20;++i)
-	{
-		push(&u32Arr,i%3,a);
-		printf("%d\n",*(peek(&u32Arr)));
-	}
+	remove(&floatTable,0U,a);
 
-	while (!is_end(pop(&u32Arr,a))) { }
+	printf("%f\n",get(floatTable[50U]).get_val());
 
-	printf("%d\n",get_count(&u32Arr));
-
-	printf("%d\n",a->freeList->size);
-	printf("%d\n",KB(8));
 	printf("cache_shutdown\n");
 	cache_shutdown();
 

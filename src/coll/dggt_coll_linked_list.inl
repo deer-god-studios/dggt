@@ -106,9 +106,9 @@ namespace dggt
 		b32 result=false;
 		for (list_iter<T> it=get_iter(list);
 				!is_end(it);
-				next(it))
+				++it)
 		{
-			if (it.get()==item)
+			if (get(it)==item)
 			{
 				result=true;
 				break;

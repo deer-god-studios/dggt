@@ -2,6 +2,12 @@
 namespace dggt
 {
 	template <typename T>
+	b32 array_iter<T>::is_end() const
+	{
+		return dggt::is_end(*this);
+	}
+
+	template <typename T>
 	T& array_iter<T>::operator*()
 	{
 		return get(*this);
@@ -37,7 +43,7 @@ namespace dggt
 	template <typename T>
 	b32 is_end(const array_iter<T>& it)
 	{
-		return it.current<it.table.count;
+		return it.current>=it.table.count;
 	}
 
 	template <typename T>

@@ -15,11 +15,11 @@ namespace dggt
 		linked_list<T>* list;
 		b32 memIsValid;
 
+		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
 		list_iter<T>& operator++();
 		list_iter<T> operator++(int);
-		b32 is_end();
 	};
 
 	template <typename T>

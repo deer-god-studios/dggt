@@ -16,6 +16,7 @@ namespace dggt
 		u32 head;
 		u32 tail;
 
+		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
 		queue_iter<T>& operator++();
@@ -54,6 +55,9 @@ namespace dggt
 
 	template <typename T>
 	b32 vindicate_mem(queue_iter<T>& it);
+
+	template <typename T,typename A>
+	b32 free(A* a,queue_iter<T>& it);
 }
 
 #define _DGGT_COLL_QUEUE_ITER_H_

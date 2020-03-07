@@ -71,7 +71,7 @@ namespace dggt
 
 			if (is_mem_valid(result))
 			{
-				result=peek(arr);
+				result=get_iter(arr);
 			}
 		}
 		return result;
