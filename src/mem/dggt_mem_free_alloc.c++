@@ -22,6 +22,7 @@ namespace dggt
 			{
 				if (current->size<size)
 				{
+					current=current->next;
 					continue;
 				}
 				msize sizeDiff=current->size-size;

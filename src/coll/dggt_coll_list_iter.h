@@ -19,6 +19,7 @@ namespace dggt
 		const T& operator*() const;
 		list_iter<T>& operator++();
 		list_iter<T> operator++(int);
+		b32 is_end();
 	};
 
 	template <typename T>
@@ -53,6 +54,9 @@ namespace dggt
 
 	template <typename T>
 	b32 vindicate_mem(list_iter<T>& it);
+
+	template <typename T,typename A>
+	b32 free(A* a,list_iter<T>& it);
 }
 
 #define _DGGT_COLL_LIST_ITER_H_

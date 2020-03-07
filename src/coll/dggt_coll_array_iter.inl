@@ -4,21 +4,21 @@ namespace dggt
 	template <typename T>
 	T& array_iter<T>::operator*()
 	{
-		return get(this);
+		return get(*this);
 	}
 
 	template <typename T>
 	const T& array_iter<T>::operator*() const
 	{
-		return get(this);
+		return get(*this);
 	}
 
 	template <typename T>
 	array_iter<T>& array_iter<T>::operator++()
 	{
-		if (!is_end(this))
+		if (!is_end(*this))
 		{
-			advance(this);
+			advance(*this);
 		}
 		return *this;
 	}
@@ -27,9 +27,9 @@ namespace dggt
 	array_iter<T> array_iter<T>::operator++(int)
 	{
 		array_iter<T>& result=*this;
-		if (!is_end(this))
+		if (!is_end(*this))
 		{
-			advance(this);
+			advance(*this);
 		}
 		return result;
 	}
@@ -108,6 +108,18 @@ namespace dggt
 		{
 			it.table.ptr=it.arr->table.ptr;
 			it.table.count=it.arr->table.count;
+		}
+		return result;
+	}
+
+	template <typename T,typename A>
+	b32 free(A* a,array_iter<T>& it)
+	{
+		b32 result=false;
+		if (!is_mem_valid(it))
+		{
+			result=free(a,it.table.ptr,it.table.count);
+			vindicate_mem(it);
 		}
 		return result;
 	}

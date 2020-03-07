@@ -53,6 +53,9 @@ namespace dggt
 
 	template <typename T>
 	b32 vindicate_mem(array_iter<T>& it);
+
+	template <typename T,typename A>
+	b32 free(A* a,array_iter<T>& it);
 }
 
 #define _DGGT_COLL_ARRAY_ITER_H_

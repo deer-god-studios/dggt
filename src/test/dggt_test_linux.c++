@@ -96,20 +96,25 @@ int main(int argc, char* argv[])
 	printf("cache_init\n");
 	cache_init(GB(2));
 
-	stack_alloc a_=stack_alloc(cache_alloc(KB(8)),KB(8));
-	stack_alloc* a=&a_;
+	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
+	free_alloc* a=&a_;
 
 	linked_list<real32> real32List=create_linked_list<real32>();
 
+	array<u32> u32Arr=create_array<u32>(2,a);
+
 	for (u32 i=0;i<20;++i)
 	{
-		push(&real32List,(real32)i/7.5f,a);
-		printf("%f\n",get(peek(&real32List)));
+		push(&u32Arr,i%3,a);
+		printf("%d\n",*(peek(&u32Arr)));
 	}
 
-	while (!is_end(pop(&real32List,(stack_alloc*)0))) { }
-	printf("%d\n",get_count(&real32List));
+	while (!is_end(pop(&u32Arr,a))) { }
 
+	printf("%d\n",get_count(&u32Arr));
+
+	printf("%d\n",a->freeList->size);
+	printf("%d\n",KB(8));
 	printf("cache_shutdown\n");
 	cache_shutdown();
 

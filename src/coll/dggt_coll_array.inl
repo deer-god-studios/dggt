@@ -25,15 +25,16 @@ namespace dggt
 	array_iter<T> push(array<T>* arr,A* allocator)
 	{
 		array_iter<T> result=dggt_internal_::def_array_iter(arr);
-		if (arr&&get_count(arr)<get_capacity(arr))
+		if (arr)
 		{
 			++arr->count;
+			result.table=arr->table;
 			if (get_load_factor<real32>(arr)>0.5f)
 			{
 				result=resize(arr,get_capacity(arr)*2,allocator);
 			}
 
-			if (is_mem_valid(&result))
+			if (is_mem_valid(result))
 			{
 				result=peek(arr);
 			}
@@ -45,11 +46,11 @@ namespace dggt
 	array_iter<T> push(array<T>* arr,const T& val,A* allocator)
 	{
 		array_iter<T> result=push(arr,allocator);
-		if (is_mem_valid(&result)&&
+		if (is_mem_valid(result)&&
 				result.table.ptr&&
-				result.current==get_capacity(arr)-1)
+				result.current==get_count(arr)-1)
 		{
-			get(&result)=val;
+			get(result)=val;
 		}
 		return result;
 	}
@@ -61,13 +62,14 @@ namespace dggt
 		if (arr&&arr->count)
 		{
 			--arr->count;
+			result.table=arr->table;
 
 			if (get_load_factor<real32>(arr)<0.25f)
 			{
 				result=resize(arr,get_capacity(arr)*0.5f,allocator);
 			}
 
-			if (is_mem_valid(&result))
+			if (is_mem_valid(result))
 			{
 				result=peek(arr);
 			}
@@ -78,14 +80,14 @@ namespace dggt
 	template <typename T>
 	array_iter<T> peek(array<T>* arr)
 	{
-		return get(arr,get_capacity(arr)-1);
+		return get(arr,get_count(arr)-1);
 	}
 
 	template <typename T>
 	array_iter<T> get(array<T>* arr,u32 index)
 	{
 		array_iter<T> result=dggt_internal_::def_array_iter(arr);
-		if (arr&&index<get_capacity(arr))
+		if (arr&&index<get_count(arr))
 		{
 			result.table=arr->table;
 			result.current=index;
