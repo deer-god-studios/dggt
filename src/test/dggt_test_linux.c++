@@ -1,3 +1,7 @@
+// TODO: test stallocator
+// TODO: test autostack
+// TODO: test queue
+
 #include <cstdio>
 #include "defines/dggt_defines.h"
 #include "types/dggt_types.h"
