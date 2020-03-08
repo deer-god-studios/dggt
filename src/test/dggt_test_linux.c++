@@ -113,8 +113,8 @@ int main(int argc, char* argv[])
 
 	printf("%f\n",get(floatTable[50U]).get_val());
 
-	stallocator<4096,lin_alloc> linStalloc;
-	int* intMem=alloc<int>(&linStalloc,4);
+	stallocator<4096,free_alloc> freeStalloc;
+	int* intMem=alloc<int>(&freeStalloc,4);
 	intMem[0]=40;
 	intMem[1]=1;
 	intMem[2]=4;
