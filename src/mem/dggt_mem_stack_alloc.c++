@@ -182,6 +182,8 @@ namespace dggt
 		if (a)
 		{
 			return dggt_internal_::stack_is_stack_balanced(a->stateCount);
+		}
+		else
 		{
 			return 0;
 		}

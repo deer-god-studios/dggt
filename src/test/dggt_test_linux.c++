@@ -109,6 +109,13 @@ int main(int argc, char* argv[])
 
 	printf("%f\n",get(floatTable[50U]).get_val());
 
+	stallocator<4096,lin_alloc> linStalloc;
+	int* intMem=alloc<int>(&linStalloc,4);
+	intMem[0]=40;
+	intMem[1]=1;
+	intMem[2]=4;
+	intMem[4]=6;
+
 	printf("cache_shutdown\n");
 	cache_shutdown();
 
