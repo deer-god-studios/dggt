@@ -119,8 +119,9 @@ int main(int argc, char* argv[])
 	intMem[1]=1;
 	intMem[2]=4;
 	intMem[4]=6;
-
 	printf("cache_shutdown\n");
+
+
 	cache_shutdown();
 
 	return 0;

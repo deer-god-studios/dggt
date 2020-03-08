@@ -4,7 +4,7 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
-		global free_alloc cacheAlloc_=free_alloc();
+		global free_alloc cacheAlloc_=free_alloc(); // global cache.  allocated off the heap at startup, available on request.
 		global free_alloc* cacheAlloc=&cacheAlloc_;
 		global b32 isInitialized=false;
 	}

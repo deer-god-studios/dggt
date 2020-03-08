@@ -36,6 +36,7 @@
 // TODO: collections
 // 		* trees
 // 		* graphs
+// 		* heap/priority queues
 // 		* iterators
 // 		* nodes
 // 		* search
@@ -58,6 +59,7 @@
 // 		* state machine
 // 		* 'goal-oriented' AI
 // 		* path-finding (A*)
+// TODO: function timing/clocks.
 
 /*!
  * @brief The main namespace for the dggt library.
