@@ -1,36 +1,22 @@
-#ifndef _DGGT_COLL_LINKED_LIST_H_
-
-#include "mem/dggt_mem_blk.h"
-#include "dggt_coll_list_iter.h"
+#ifndef _DGGT_COLL_DL_NODE_H_
 
 namespace dggt
 {
 	template <typename T>
-	struct slnode
+	struct dlnode
 	{
 		T val;
-		slnode* next;
+		dlnode<T>* prev;
+		dlnode<T>* next;
 	};
 
 	template <typename T>
-	slchain=blk<slnode<T>>;
-
-	template <typename T>
-	struct sllist
+	struct dl_list
 	{
-		sl_list_chain<T> chain;
+		blk<dfnode<T>> chain;
 
-		sllist() : chain(slchain<T>()) { }
+		dl_list() : chain(dlnode) { }
 	};
-
-	template <typename T>
-	using sl_list=sllist<T> 
-
-	template <typename T>
-	sllist<T> create_sllist()
-	{
-		return sllist<T>();
-	}
 
 	// if push succeeds it returns an iterator to the list's new head node
 	// otherwise the iterator points to null but still points to the list.
@@ -73,8 +59,5 @@ namespace dggt
 	b32 contains(sllist<T>* list,const T& item);
 }
 
-#include "dggt_coll_list_iter.inl"
-#include "dggt_coll_sllist.inl"
-
-#define _DGGT_COLL_LINKED_LIST_H_
+#define _DGGT_COLL_DL_NODE_H_
 #endif

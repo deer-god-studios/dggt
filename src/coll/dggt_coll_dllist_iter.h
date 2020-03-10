@@ -1,0 +1,4 @@
+#ifndef _DGGT_COLL_DLLIST_ITER_H_
+
+#define _DGGT_COLL_DLLIST_ITER_H_
+#endif _DGGT_COLL_DLLIST_ITER_H_
