@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
 	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
 	free_alloc* a=&a_;
 
-	hash_table<u32,float32> floatTable=create_hash_table<u32,float32>(a);
+	chntable<u32,float32> floatTable=create_chntable<u32,float32>(a);
 	insert(&floatTable,0U,3.14f,a);
 	insert(&floatTable,50U,77.1f,a);
 

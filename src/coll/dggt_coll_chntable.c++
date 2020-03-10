@@ -1,4 +1,4 @@
-#include "dggt_coll_hash_table.h"
+#include "dggt_coll_chntable.h"
 
 namespace dggt
 {
