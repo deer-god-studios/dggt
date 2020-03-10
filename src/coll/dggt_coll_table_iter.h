@@ -1,7 +1,7 @@
 #ifndef _DGGT_COLL_TABLE_ITER_H_
 
 #include "dggt_coll_table_pair.h"
-#include "dggt_coll_linked_list.h"
+#include "dggt_coll_sllist.h"
 
 namespace dggt
 {
@@ -9,10 +9,10 @@ namespace dggt
 	struct hash_table;
 
 	template <typename K,typename V>
-	using table_bucket=linked_list<table_pair<K,V>>;
+	using table_bucket=sllist<table_pair<K,V>>;
 
 	template <typename K,typename V>
-	using bucket_iter=list_iter<table_pair<K,V>>;
+	using bucket_iter=sllist_iter<table_pair<K,V>>;
 
 	template <typename K,typename V>
 	using table_mem=blk<table_bucket<K,V>>;

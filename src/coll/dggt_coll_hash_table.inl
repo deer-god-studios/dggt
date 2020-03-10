@@ -43,7 +43,7 @@ namespace dggt
 					capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
-			table.ptr[i]=create_linked_list<table_pair<K,V>>();
+			table.ptr[i]=create_sllist<table_pair<K,V>>();
 		}
 		return hash_table<K,V>{table,count};
 	}
@@ -121,7 +121,7 @@ namespace dggt
 			u32 preh=prehash<K>(key);
 			u32 index=dggt_internal_::hash(preh,get_capacity(table));
 			table_bucket<K,V>* bucket=table.mem+index;
-			for (list_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
+			for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
 					++it)
 			{
 				table_pair<K,V> node=get(it);
@@ -148,7 +148,7 @@ namespace dggt
 			table_bucket<K,V>* bucket=hashTable->table.ptr+index;
 			slnode<table_pair<K,V>>* current=0;
 			slnode<table_pair<K,V>>* prev=current;
-			for (list_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
+			for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
 					++it)
 			{
 				current=get_mem(it);
@@ -184,7 +184,7 @@ namespace dggt
 					table_bucket<K,V>* bucket=table->table.mem+i;
 					if (get_count(bucket))
 					{
-						list_iter<table_pair<K,V>> clearResult=clear(bucket,
+						sllist_iter<table_pair<K,V>> clearResult=clear(bucket,
 								allocator);
 						if (!clearResult.is_mem_valid())
 						{
@@ -244,7 +244,7 @@ namespace dggt
 			{
 				for (u32 i=0;i<newTable.count;++i)
 				{
-					newTable.ptr[i]=create_linked_list<table_pair<K,V>>();
+					newTable.ptr[i]=create_sllist<table_pair<K,V>>();
 				}
 				table_mem<K,V> oldTable=hashTable->table;
 				hashTable->table=newTable;
@@ -254,7 +254,7 @@ namespace dggt
 					table_bucket<K,V>* bucket=oldTable.ptr+index;
 					if (get_count(bucket))
 					{
-						for (list_iter<table_pair<K,V>> it=get_iter(bucket);
+						for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);
 								!it.is_end();++it)
 						{
 							K key=get(it).key_;
