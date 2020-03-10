@@ -1,6 +1,7 @@
 var modules =
 [
     [ "DGGT Library", "d6/d77/group__dggt.html", "d6/d77/group__dggt" ],
+    [ "Memory Management Library", "da/d08/group__mem.html", null ],
     [ "Example Code Source Files", "d2/de5/group__ex.html", null ],
     [ "Collections Library", "d0/d49/group__coll.html", null ],
     [ "String Library", "d7/d86/group__str.html", null ],

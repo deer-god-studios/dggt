@@ -56,10 +56,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d5/d13/structdggt_1_1table__pair.html",
-"db/da0/group__lin.html#ga20b5a93f1fa14a5e7ba29b1e09decf2a",
-"dd/d2b/structdggt_1_1allocator_3_01alloc__t_1_1STORE_00_01BLOCKSIZE_01_4.html",
-"functions_n.html"
+"d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html#a869f00cfc4f7ecfc823b9a1a119a4ca0",
+"db/da0/group__lin.html#ga7c45193d7d91b9a7a6159c352ab27267",
+"df/d63/dggt__mem__stack__alloc_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

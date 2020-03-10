@@ -1,56 +1,87 @@
 var hierarchy =
 [
-    [ "alloc_base", null, [
-      [ "dggt::allocator< alloc_t::STACK >", "d0/d23/structdggt_1_1allocator.html", null ],
-      [ "dggt::allocator< alloc_t::STACK, SIZE >", "d0/d23/structdggt_1_1allocator.html", null ],
-      [ "dggt::allocator< free_list_alloc_< 0 > >", "d0/d23/structdggt_1_1allocator.html", [
-        [ "dggt::free_list_alloc_< SIZE >", "da/d48/structdggt_1_1free__list__alloc__.html", null ]
-      ] ],
-      [ "dggt::allocator< lin_alloc_< 0 > >", "d0/d23/structdggt_1_1allocator.html", [
-        [ "dggt::lin_alloc_< SIZE >", "d6/d7e/structdggt_1_1lin__alloc__.html", null ]
-      ] ],
-      [ "dggt::allocator< pool_allocator_< 0 > >", "d0/d23/structdggt_1_1allocator.html", [
-        [ "dggt::pool_alloc_< BLOCKSIZE, BUFFSIZE >", "d3/df2/structdggt_1_1pool__alloc__.html", null ]
-      ] ],
-      [ "dggt::allocator< stack_alloc_< 0 > >", "d0/d23/structdggt_1_1allocator.html", [
-        [ "dggt::stack_alloc_< SIZE >", "d0/d51/structdggt_1_1stack__alloc__.html", null ]
-      ] ],
-      [ "dggt::allocator< D >", "d0/d23/structdggt_1_1allocator.html", null ]
-    ] ],
-    [ "dggt::allocator< alloc_t::AUTO_STACK >", "df/d62/structdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::AUTO_STACK, SIZE >", "dc/d74/structdggt_1_1allocator_3_01alloc__t_1_1AUTO__STACK_00_01SIZE_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::FALLBACK, P, F >", "db/d6a/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01F_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::FALLBACK, P, PSIZE, F, FSIZE >", "dd/dea/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01PSIZE_00_01F_00_01FSIZE_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::FALLBACK, P, SIZE, F >", "d3/d40/structdggt_1_1allocator_3_01alloc__t_1_1FALLBACK_00_01P_00_01SIZE_00_01F_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::STORE >", "d4/d0d/structdggt_1_1allocator_3_01alloc__t_1_1STORE_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::STORE, BLOCKSIZE >", "dd/d2b/structdggt_1_1allocator_3_01alloc__t_1_1STORE_00_01BLOCKSIZE_01_4.html", null ],
-    [ "dggt::allocator< alloc_t::STORE_TABLE, TABLESIZE >", "dc/dba/structdggt_1_1allocator_3_01alloc__t_1_1STORE__TABLE_00_01TABLESIZE_01_4.html", null ],
+    [ "dggt::array< T >", "d7/de1/structdggt_1_1array.html", null ],
+    [ "dggt::array_iter< T >", "dd/d22/structdggt_1_1array__iter.html", null ],
+    [ "dggt::autostack_alloc", "db/d3c/structdggt_1_1autostack__alloc.html", null ],
+    [ "dggt::bin_tree< T >", "d8/df3/structdggt_1_1bin__tree.html", null ],
     [ "dggt::blk< T >", "d0/d39/structdggt_1_1blk.html", null ],
+    [ "dggt::blk< dggt::slnode< K > >", "d0/d39/structdggt_1_1blk.html", null ],
+    [ "dggt::blk< dggt::slnode< T > >", "d0/d39/structdggt_1_1blk.html", null ],
     [ "dggt::blk< K, V >", "d0/d39/structdggt_1_1blk.html", null ],
-    [ "dggt::blk< void >", "da/ddf/structdggt_1_1blk_3_01void_01_4.html", null ],
-    [ "dggt::free_list_alloc_< 0 >", "dc/d75/structdggt_1_1free__list__alloc___3_010_01_4.html", null ],
+    [ "dggt::enable_if< B, T >", "da/dc9/structdggt_1_1enable__if.html", null ],
+    [ "dggt::enable_if< B, u32 >", "da/dc9/structdggt_1_1enable__if.html", [
+      [ "dggt::val_if< B, T >", "df/df0/structdggt_1_1val__if.html", null ],
+      [ "dggt::val_if< S==0, u32 >", "df/df0/structdggt_1_1val__if.html", [
+        [ "dggt::member_val_or< S >", "d8/d4c/structdggt_1_1member__val__or.html", null ]
+      ] ]
+    ] ],
+    [ "dggt::enable_if< false, T >", "d6/df6/structdggt_1_1enable__if_3_01false_00_01T_01_4.html", null ],
+    [ "dggt::enable_if< true, T >", "da/dc9/structdggt_1_1enable__if.html", [
+      [ "dggt::val_if< true, T >", "d2/da5/structdggt_1_1val__if_3_01true_00_01T_01_4.html", null ]
+    ] ],
+    [ "dggt::enable_or< B, IF, OR >", "d7/d48/structdggt_1_1enable__or.html", [
+      [ "dggt::val_or< B, IF, OR >", "da/d14/structdggt_1_1val__or.html", null ]
+    ] ],
+    [ "dggt::enable_or< true, IF, OR >", "db/d3b/structdggt_1_1enable__or_3_01true_00_01IF_00_01OR_01_4.html", null ],
+    [ "dggt::enable_u32_if< B, VAL >", "d5/db1/structdggt_1_1enable__u32__if.html", null ],
+    [ "dggt::enable_u32_if< S!=0, S >", "d5/db1/structdggt_1_1enable__u32__if.html", [
+      [ "dggt::member_val_or< S >", "d8/d4c/structdggt_1_1member__val__or.html", null ]
+    ] ],
+    [ "dggt::enable_u32_if< true, VAL >", "da/d1d/structdggt_1_1enable__u32__if_3_01true_00_01VAL_01_4.html", null ],
+    [ "dggt::fallback_alloc< P, F >", "d9/df5/structdggt_1_1fallback__alloc.html", null ],
+    [ "dggt::free_alloc", "db/d1f/structdggt_1_1free__alloc.html", null ],
     [ "dggt::hash_table< K, V >", "d0/d0e/structdggt_1_1hash__table.html", null ],
-    [ "dggt::iter< T, C, M >", "de/da8/structdggt_1_1iter.html", null ],
-    [ "dggt::iter< T, linked_list< T >, slnode< T > * >", "d5/d87/structdggt_1_1iter_3_01T_00_01linked__list_3_01T_01_4_00_01slnode_3_01T_01_4_01_5_01_4.html", null ],
-    [ "dggt::iter< T, queue< T >, blk< T > >", "d7/df4/structdggt_1_1iter_3_01T_00_01queue_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html", null ],
-    [ "dggt::iter< T, stack< T >, blk< T > >", "d3/d28/structdggt_1_1iter_3_01T_00_01stack_3_01T_01_4_00_01blk_3_01T_01_4_01_4.html", null ],
-    [ "dggt::iter< table_pair< K, V >, hash_table< K, V >, table_blk< K, V > >", "d4/dc0/structdggt_1_1iter_3_01table__pair_3_01K_00_01V_01_4_00_01hash__table_3_01K_00_01V_01_4_00_01table__blk_3_01K_00_01V_01_4_01_4.html", null ],
-    [ "dggt::lin_alloc_< 0 >", "d9/dea/structdggt_1_1lin__alloc___3_010_01_4.html", null ],
+    [ "dggt::lin_alloc", "d3/d0c/structdggt_1_1lin__alloc.html", null ],
     [ "dggt::linked_list< T >", "df/d86/structdggt_1_1linked__list.html", null ],
     [ "dggt::linked_list< K, V >", "df/d86/structdggt_1_1linked__list.html", null ],
+    [ "dggt::list_iter< T >", "de/dc0/structdggt_1_1list__iter.html", null ],
+    [ "dggt::make_sequence< S >", "d9/d60/structdggt_1_1make__sequence.html", null ],
     [ "dggt::mat< C, R, T >", "d8/de1/structdggt_1_1mat.html", null ],
     [ "dggt::mat< 2, 2, T >", "d5/d98/structdggt_1_1mat_3_012_00_012_00_01T_01_4.html", null ],
     [ "dggt::mat< 3, 3, T >", "dc/d66/structdggt_1_1mat_3_013_00_013_00_01T_01_4.html", null ],
     [ "dggt::mat< 4, 4, T >", "d2/dbd/structdggt_1_1mat_3_014_00_014_00_01T_01_4.html", null ],
     [ "dggt::mat< N, N, T >", "d0/dd1/structdggt_1_1mat_3_01N_00_01N_00_01T_01_4.html", null ],
-    [ "dggt::pool_alloc_< BLOCKSIZE, 0 >", "da/dc0/structdggt_1_1pool__alloc___3_01BLOCKSIZE_00_010_01_4.html", null ],
+    [ "dggt::mem_block", "d6/dc1/structdggt_1_1mem__block.html", null ],
+    [ "dggt::no_cv< T >", "d7/d40/structdggt_1_1no__cv.html", null ],
+    [ "dggt::no_cv< const T >", "d7/db9/structdggt_1_1no__cv_3_01const_01T_01_4.html", null ],
+    [ "dggt::no_cv< const volatile T >", "d9/d9a/structdggt_1_1no__cv_3_01const_01volatile_01T_01_4.html", null ],
+    [ "dggt::no_cv< volatile T >", "d6/da8/structdggt_1_1no__cv_3_01volatile_01T_01_4.html", null ],
+    [ "dggt::null_alloc", "de/db3/structdggt_1_1null__alloc.html", null ],
+    [ "dggt::pool_alloc< BLOCKSIZE >", "d0/dd9/structdggt_1_1pool__alloc.html", null ],
+    [ "dggt::pool_alloc<>", "d7/dff/structdggt_1_1pool__alloc_3_4.html", null ],
+    [ "dggt::pow2< Val >", "de/d74/structdggt_1_1pow2.html", null ],
+    [ "dggt::pow2< 0, typename T >", "d3/d7d/structdggt_1_1pow2_3_010_00_01typename_01T_01_4.html", null ],
     [ "dggt::queue< T >", "d7/d26/structdggt_1_1queue.html", null ],
+    [ "dggt::queue_iter< T >", "d0/d4e/structdggt_1_1queue__iter.html", null ],
+    [ "dggt::sequence< S >", "d1/d83/structdggt_1_1sequence.html", null ],
+    [ "dggt::sequence_get< I, seq >", "da/df5/structdggt_1_1sequence__get.html", null ],
+    [ "dggt::sequence_get< 0, sequence< HEAD, REST... > >", "d8/d6e/structdggt_1_1sequence__get_3_010_00_01sequence_3_01HEAD_00_01REST_8_8_8_01_4_01_4.html", null ],
+    [ "dggt::sequence_get< I, sequence< HEAD, REST... > >", "d2/d02/structdggt_1_1sequence__get_3_01I_00_01sequence_3_01HEAD_00_01REST_8_8_8_01_4_01_4.html", null ],
+    [ "dggt::sequence_pop< seq >", "d3/def/structdggt_1_1sequence__pop.html", null ],
+    [ "dggt::sequence_pop< sequence< HEAD, REST... > >", "d4/de7/structdggt_1_1sequence__pop_3_01sequence_3_01HEAD_00_01REST_8_8_8_01_4_01_4.html", null ],
+    [ "dggt::sequence_push< seq, NEW >", "d6/d21/structdggt_1_1sequence__push.html", null ],
+    [ "dggt::sequence_push< sequence< REST... >, NEW >", "dc/d9d/structdggt_1_1sequence__push_3_01sequence_3_01REST_8_8_8_01_4_00_01NEW_01_4.html", null ],
+    [ "dggt::sized_block", "d9/d86/structdggt_1_1sized__block.html", null ],
     [ "dggt::slnode< T >", "d7/d69/structdggt_1_1slnode.html", null ],
     [ "dggt::slnode< K >", "d7/d69/structdggt_1_1slnode.html", null ],
     [ "dggt::slnode< K, V >", "d7/d69/structdggt_1_1slnode.html", null ],
     [ "dggt::stack< T >", "d0/d0b/structdggt_1_1stack.html", null ],
-    [ "dggt::stack_alloc_< 0 >", "d3/d65/structdggt_1_1stack__alloc___3_010_01_4.html", null ],
+    [ "dggt::stack_alloc", "d4/d56/structdggt_1_1stack__alloc.html", null ],
+    [ "dggt::stack_iter< T >", "d9/d22/structdggt_1_1stack__iter.html", null ],
+    [ "dggt::stallocator< BUFFSIZE, A >", "d0/d6f/structdggt_1_1stallocator.html", null ],
+    [ "dggt::store_alloc< BLOCKSIZE >", "d4/d23/structdggt_1_1store__alloc.html", null ],
+    [ "dggt::store_alloc< 0 >", "d2/d34/structdggt_1_1store__alloc_3_010_01_4.html", null ],
+    [ "dggt::table_alloc< TABLESIZE >", "d0/d8b/structdggt_1_1table__alloc.html", null ],
+    [ "dggt::table_iter< K, V >", "d1/d66/structdggt_1_1table__iter.html", null ],
     [ "dggt::table_pair< K, V >", "d5/d13/structdggt_1_1table__pair.html", null ],
+    [ "dggt::tree_node< T >", "d9/da0/structdggt_1_1tree__node.html", null ],
+    [ "dggt::tuple< Ts >", "d8/d89/structdggt_1_1tuple.html", null ],
+    [ "dggt::tuple< T >", "db/d9b/structdggt_1_1tuple_3_01T_01_4.html", null ],
+    [ "dggt::tuple< TRest... >", "d8/d89/structdggt_1_1tuple.html", [
+      [ "dggt::tuple< T, TRest... >", "d6/d8d/structdggt_1_1tuple_3_01T_00_01TRest_8_8_8_01_4.html", null ]
+    ] ],
+    [ "dggt::type_list< Ts >", "dc/d21/structdggt_1_1type__list.html", null ],
+    [ "dggt::val_or< true, IF, OR >", "df/d40/structdggt_1_1val__or_3_01true_00_01IF_00_01OR_01_4.html", null ],
     [ "dggt::vec< D, T >", "d3/dab/structdggt_1_1vec.html", null ],
     [ "dggt::vec< 1, T >", "d2/d03/structdggt_1_1vec_3_011_00_01T_01_4.html", null ],
     [ "dggt::vec< 2, T >", "df/d10/structdggt_1_1vec_3_012_00_01T_01_4.html", null ],
