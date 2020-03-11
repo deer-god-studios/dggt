@@ -4,12 +4,6 @@
 
 namespace dggt
 {
-	template <typename K>
-	u32 prehash(const K& key);
-
-	template <>
-	u32 prehash(const u32& key);
-
 	template <typename K,typename V>
 	struct chntable
 	{

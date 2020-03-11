@@ -11,18 +11,29 @@ namespace dggt
 		static const fl32 TABLE_DELETED=2;
 
 		template <typename K,typename V>
-		chntable_iter<K,V> def_chntable_iter(chntable<K,V>* table)
+		oatable_iter<K,V> def_oatable_iter(oatable<K,V>* table)
 		{
-			return chntable_iter<K,V>{
-				0,0,0,table_mem<K,V>(),table
+			return oatable_iter<K,V>{
+				0,0,0,table_mem<K,V>(),flag_mem(),table
 			};
 		}
 
-		u32 hash(u32 preh,u32 tableSize)
+		u32 hash0(u32 preh,u32 tableSize)
 		{
 			u32 a=5;
 			u32 b=11;
 			return ((a*preh+b)%LARGE_PRIME32)%tableSize;
+		}
+
+		u32 hash1(u32 preh,u32 tableSize)
+		{
+			return (((hash0(preh,tableSize)>>1)<<)&1);
+		}
+
+		u32 hash(u32 preh,u32 tableSize,u32 trial)
+		{
+			return hash0(preh,tableSize)+
+				trial*hash1(preh,tableSize);
 		}
 	}
 
@@ -46,11 +57,15 @@ namespace dggt
 		table_mem<K,V> table=
 			table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,capacity),
 					capacity);
+		flag_mem flagTable=flag_mem(
+				alloc<table_pair<K,V>>(allocator,capacity),
+				capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
-			table.ptr[i]=create_sllist<table_pair<K,V>>();
+			table.ptr[i]=table_pair<K,V>();
+			flagTable.ptr[i]=TABLE_EMPTY;
 		}
-		return chntable<K,V>{table,count};
+		return chntable<K,V>{flagTable,table,count};
 	}
 
 	template <typename K,typename V,typename A>

@@ -1,24 +1,7 @@
 
 namespace dggt
 {
-	namespace dggt_internal_
-	{
-		template <typename K,typename V>
-		chntable_iter<K,V> def_chntable_iter(chntable<K,V>* table)
-		{
-			return chntable_iter<K,V>{
-				0,0,0,table_mem<K,V>(),table
-			};
-		}
 
-		u32 hash(u32 preh,u32 tableSize)
-		{
-			u32 a=5;
-			u32 b=11;
-			return ((a*preh+b)%LARGE_PRIME32)%tableSize;
-		}
-	}
-	
 	template <typename K,typename V>
 	table_pair<K,V>& chntable_iter<K,V>::operator*()
 	{
