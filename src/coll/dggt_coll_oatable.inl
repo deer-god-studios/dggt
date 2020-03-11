@@ -38,19 +38,19 @@ namespace dggt
 	}
 
 	template <typename K,typename V>
-	chntable_iter<K,V> chntable<K,V>::operator[](const K& key)
+	oatable_iter<K,V> oatable<K,V>::operator[](const K& key)
 	{
 		return search(this,key);
 	}
 
 	template <typename K,typename V>
-	const chntable_iter<K,V> chntable<K,V>::operator[](const K& key) const
+	const oatable_iter<K,V> oatable<K,V>::operator[](const K& key) const
 	{
 		return search(this,key);
 	}
 
 	template <typename K,typename V,typename A>
-	chntable<K,V> create_chntable(A* allocator)
+	oatable<K,V> create_oatable(A* allocator)
 	{
 		u32 count=0;
 		u32 capacity=2;
@@ -65,253 +65,162 @@ namespace dggt
 			table.ptr[i]=table_pair<K,V>();
 			flagTable.ptr[i]=TABLE_EMPTY;
 		}
-		return chntable<K,V>{flagTable,table,count};
+		return oatable<K,V>{flagTable,table,count};
 	}
 
 	template <typename K,typename V,typename A>
-	chntable_iter<K,V> insert(chntable<K,V>* chnTable,const K& key,
+	oatable_iter<K,V> insert(oatable<K,V>* oaTable,const K& key,
 			A* allocator)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(chnTable);
-		if (chnTable)
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(oaTable);
+		if (oaTable)
 		{
+			u32 trial=0;
+			u32 count=oaTable->count;
+			u32 tableSize=result.table.count;
+			result.flagTable=oaTable->flagTable;
+			result.table=oaTable->table;
+			result.currentIndex=dggt_internal_::hash(preh,count,trial);
+			result.currentFlag=result.flagTable.ptr[result.currentIndex];
+			result.currentPair=result.table.ptr[result.currentIndex];
 			u32 preh=prehash<K>(key);
-			u32 index=dggt_internal_::hash(preh,get_capacity(chnTable));
-			table_bucket<K,V>* bucket=chnTable->table.ptr+index;
-			table_pair<K,V> newNode=table_pair<K,V>(key,V(0));
-			++chnTable->count;
-			result.table=chnTable->table;
-			result.currentBucket=bucket;
-			if (!contains(bucket,newNode))
+
+			while (trial<tableSize&&
+					result.currentFlag==dggt_internal_::TABLE_OCCUPIED)
 			{
-				push(bucket,newNode,allocator);
+				result.currentIndex=
+					dggt_internal_::hash(preh,tableSize,trial++);
+				result.currentFlag=result.flagTable.ptr[result.currentIndex];
+				result.currentPair=result.table.ptr+result.currentIndex;
 			}
-			result.currentNode=bucket->chain.ptr;
-			if (get_load_factor<float32>(chnTable)>2.0f)
+			if (result.currentFlag==dggt_internal_::TABLE_EMTPY||
+					result.currentFlag==dggt_internal_::TABLE_DELETED)
 			{
-				u32 cap=get_capacity(chnTable);
-				chntable_iter<K,V> resizeResult=resize(chnTable,2.0f*cap,
-						allocator);
-				result=search(chnTable,key);
+				*result.currentPair=table_pair<K,V>(key,V(0));
+				result.flagTable.ptr[result.currentIndex]==
+					dggt_internal_::TABLE_OCCUPIED;
 			}
 		}
 		return result;
 	}
 
 	template <typename K,typename V,typename A>
-	chntable_iter<K,V> insert(chntable<K,V>* table,const K& key,
+	oatable_iter<K,V> insert(oatable<K,V>* table,const K& key,
 			const V& val,A* allocator)
 	{
-		chntable_iter<K,V> result=insert(table,key,allocator);
+		oatable_iter<K,V> result=insert(table,key,allocator);
 		table_pair<K,V> newNode=table_pair<K,V>(key,val);
 		get(result)=newNode;
 		return result;
 	}
 
 	template <typename K,typename V>
-	chntable_iter<K,V> search(chntable<K,V>* table,const K& key)
+	oatable_iter<K,V> search(oatable<K,V>* oaTable,const K& key)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(table);
-		if (table)
-		{
-			u32 preh=prehash<K>(key);
-			u32 index=dggt_internal_::hash(preh,get_capacity(table));
-			table_bucket<K,V>* bucket=table->table.ptr+index;
-			for (bucket_iter<K,V> it=get_iter(bucket);!it.is_end();
-					++it)
-			{
-				table_pair<K,V> node=get(it);
-				if (node.key_==key)
-				{
-					result=chntable_iter<K,V>{
-						index,bucket,get_mem(it),table->table,table};
-					break;
-				}
-			}
-		}
-		return result;
+		return search(oaTable,key);
 	}
 
 	template <typename K,typename V>
-	const chntable_iter<K,V> search(const chntable<K,V>* table,const K& key)
+	const oatable_iter<K,V> search(const oatable<K,V>* table,const K& key)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(table);
-		if (table)
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(table);
+		if (oaTable)
 		{
+			u32 trial=0;
+			u32 count=result.hashTable->count;
+			u32 capacity=result.table.count;
+			result.table=oaTable.table;
+			result.flagTable=oaTable.flagTable;
 			u32 preh=prehash<K>(key);
-			u32 index=dggt_internal_::hash(preh,get_capacity(table));
-			table_bucket<K,V>* bucket=table.mem+index;
-			for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
-					++it)
+			result.currentIndex=dggt_internal_::hash(preh,tableSize,trial);
+			result.currentFlag=result.flagTable.ptr[result.currentIndex];
+			result.currentPair=result.flagTable.ptr[result.currentIndex];
+
+			while (trial<tableSize&&
+					result.currentFlag==TABLE_EMPTY||
+					result.currentFlag==TABLE_DELETED)
 			{
-				table_pair<K,V> node=get(it);
-				if (node.key==key)
-				{
-					result=chntable_iter<K,V>{
-						index,bucket,get_mem(it),table->table,table};
-					break;
-				}
+				result.currentIndex=dggt_internal_::hash(preh,tableSize,trial++);
+				result.currentFlag=result.flagTable.ptr[result.currentIndex];
+				result.currentPair=result.flagTable.ptr[result.currentIndex];
 			}
 		}
 		return result;
 	}
 
 	template <typename K,typename V,typename A>
-	chntable_iter<K,V> remove(chntable<K,V>* chnTable,const K& key,
+	oatable_iter<K,V> remove(oatable<K,V>* oaTable,const K& key,
 			A* allocator)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(chnTable);
-		if (chnTable)
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(oaTable);
+		if (oaTable)
 		{
-			u32 preh=prehash<K>(key);
-			u32 index=dggt_internal_::hash(preh,get_capacity(chnTable));
-			table_bucket<K,V>* bucket=chnTable->table.ptr+index;
-			slnode<table_pair<K,V>>* current=0;
-			slnode<table_pair<K,V>>* prev=current;
-			for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);!is_end(it);
-					++it)
-			{
-				current=get_mem(it);
-				if (get(it).get_key()==key)
-				{
-					remove(bucket,prev,current,allocator);
-					--chnTable->count;
-					break;
-				}
-				prev=current;
-			}
-			result=get_iter(chnTable);
-			if (get_load_factor<float32>(chnTable)<0.25f)
-			{
-				u32 cap=get_capacity(chnTable);
-				result=resize(chnTable,0.5f*cap,allocator);
-			}
+
 		}
 		return result;
 	}
 
 	template <typename K,typename V,typename A>
-	chntable_iter<K,V> clear(chntable<K,V>* table,A* allocator)
+	oatable_iter<K,V> clear(oatable<K,V>* table,A* allocator)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(table);
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(table);
 		if (table)
 		{
-			result=get_iter(table);
-			if (allocator)
-			{
-				for (u32 i=0;i<get_capacity(table);++i)
-				{
-					table_bucket<K,V>* bucket=table->table.mem+i;
-					if (get_count(bucket))
-					{
-						sllist_iter<table_pair<K,V>> clearResult=clear(bucket,
-								allocator);
-						if (!clearResult.is_mem_valid())
-						{
-							slnode<table_pair<K,V>>* current=clearResult.current;
-							while (current)
-							{
-								slnode<table_pair<K,V>>* toFree=current;
-								toFree->next=result.currentNode;
-								result.currentNode=toFree;
-								current=current->next;
-							}
-						}
-					}
-				}
-				blk<table_bucket<K,V>> tableToFree=table->table;
-				result.table=tableToFree;
-				if (free(allocator,tableToFree))
-				{
-					result.table=blk<table_bucket<K,V>>();
-				}
-			}
-			table->count=0;
-			table->table=blk<table_bucket<K,V>>();
+
 		}
 		return result;
 	}
 
 	template <typename F,typename K,typename V>
-	F get_load_factor(const chntable<K,V>* table)
+	F get_load_factor(const oatable<K,V>* table)
 	{
 		return F(get_count(table))/F(get_capacity(table));
 	}
 
 	template <typename K,typename V>
-	u32 get_count(const chntable<K,V>* table)
+	u32 get_count(const oatable<K,V>* table)
 	{
 		return table?table->count:0;
 	}
 
 	template <typename K,typename V>
-	u32 get_capacity(const chntable<K,V>* table)
+	u32 get_capacity(const oatable<K,V>* table)
 	{
 		return table?table->table.count:0;
 	}
 
 	template <typename K,typename V,typename A>
-	chntable_iter<K,V> resize(chntable<K,V>* chnTable,u32 newSize,
+	oatable_iter<K,V> resize(oatable<K,V>* oaTable,u32 newSize,
 			A* allocator)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(chnTable);
-		if (chnTable)
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(oaTable);
+		if (oaTable)
 		{
-			table_mem<K,V> newTable=
-				table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,newSize),
-						newSize);
-			if (newTable.ptr)
-			{
-				for (u32 i=0;i<newTable.count;++i)
-				{
-					newTable.ptr[i]=create_sllist<table_pair<K,V>>();
-				}
-				table_mem<K,V> oldTable=chnTable->table;
-				chnTable->table=newTable;
-				chnTable->count=0;
-				for (u32 index=0;index<oldTable.count;++index)
-				{
-					table_bucket<K,V>* bucket=oldTable.ptr+index;
-					if (get_count(bucket))
-					{
-						for (sllist_iter<table_pair<K,V>> it=get_iter(bucket);
-								!it.is_end();++it)
-						{
-							K key=get(it).key_;
-							V val=get(it).val_;
-							insert(chnTable,key,val,allocator);
-						}
-					}
-				}
-			}
-			result=get_iter(chnTable);
+
 		}
 		return result;
 	}
 
 	template <typename K,typename V>
-	chntable_iter<K,V> get_iter(chntable<K,V>* table)
+	oatable_iter<K,V> get_iter(oatable<K,V>* table)
 	{
-		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(table);
+		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(table);
 		if (table)
 		{
-			result.chnTable=table;
-			result.currentIndex=0;
-			for (u32 index=0;index<get_capacity(table);++index)
-			{
-				table_bucket<K,V>* bucket=table->table.ptr+index;
-				if (get_count(bucket))
-				{
-					result.currentBucket=bucket;
-					break;
-				}
-			}
-			if (result.currentBucket)
-			{
-				result.currentNode=result.currentBucket->chain.ptr;
-			}
+			u32 tableCount=table->table.count;
+			u32 count=table->count;
+			result.flagTable=table->flagTable;
 			result.table=table->table;
-			result.chnTable=table;
+			result.currentIndex=0;
+			result.currentFlag=result.flagTable.ptr[result.CurrentIndex];
+			while (result.currentIndex<tableCount&&
+					result.currentFlag!=TABLE_OCCUPIED)
+			{
+				++result.currentIndex;
+				result.currentFlag=
+					result.flagTable.ptr[result.currentIndex];
+				result.currentPair=result.table.ptr[result.currentIndex];
+			}
 		}
 		return result;
 	}
