@@ -14,7 +14,7 @@ namespace dggt
 		chntable_iter<K,V> def_chntable_iter(chntable<K,V>* table)
 		{
 			return chntable_iter<K,V>{
-				0,0,0,table_mem<K,V>(),table
+				0,0,0,chntable_mem<K,V>(),table
 			};
 		}
 
@@ -43,14 +43,28 @@ namespace dggt
 	{
 		u32 count=0;
 		u32 capacity=2;
-		table_mem<K,V> table=
-			table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,capacity),
+		chntable_mem<K,V> table=
+			chntable_mem<K,V>(alloc<table_bucket<K,V>>(allocator,capacity),
 					capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
 			table.ptr[i]=create_sllist<table_pair<K,V>>();
 		}
 		return chntable<K,V>{table,count};
+	}
+
+	template <typename K,typename V,typename A>
+	chntable_iter<K,V> destroy_chntable(chntable<K,V>* table,A* allocator)
+	{
+		chntable_iter<K,V> result=clear(table);
+		if (is_mem_valid(result))
+		{
+			result.chnTable=NULLPTR;
+			result.currentBucket=NULLPTR;
+			result.currentNode=NULLPTR;
+			result.currentIndex=0;
+		}
+		return result;
 	}
 
 	template <typename K,typename V,typename A>
@@ -191,9 +205,10 @@ namespace dggt
 					{
 						sllist_iter<table_pair<K,V>> clearResult=clear(bucket,
 								allocator);
-						if (!clearResult.is_mem_valid())
+						if (!is_mem_valid(clearResult))
 						{
-							slnode<table_pair<K,V>>* current=clearResult.current;
+							slnode<table_pair<K,V>>* current=
+								clearResult.current;
 							while (current)
 							{
 								slnode<table_pair<K,V>>* toFree=current;
@@ -242,8 +257,8 @@ namespace dggt
 		chntable_iter<K,V> result=dggt_internal_::def_chntable_iter(chnTable);
 		if (chnTable)
 		{
-			table_mem<K,V> newTable=
-				table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,newSize),
+			chntable_mem<K,V> newTable=
+				chntable_mem<K,V>(alloc<table_bucket<K,V>>(allocator,newSize),
 						newSize);
 			if (newTable.ptr)
 			{
@@ -251,7 +266,7 @@ namespace dggt
 				{
 					newTable.ptr[i]=create_sllist<table_pair<K,V>>();
 				}
-				table_mem<K,V> oldTable=chnTable->table;
+				chntable_mem<K,V> oldTable=chnTable->table;
 				chnTable->table=newTable;
 				chnTable->count=0;
 				for (u32 index=0;index<oldTable.count;++index)

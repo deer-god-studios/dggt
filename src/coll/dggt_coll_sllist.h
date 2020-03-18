@@ -1,4 +1,4 @@
-#ifndef _DGGT_COLL_LINKED_LIST_H_
+#ifndef _DGGT_COLL_SLLIST_H_
 
 #include "mem/dggt_mem_blk.h"
 #include "dggt_coll_sllist_iter.h"
@@ -28,6 +28,9 @@ namespace dggt
 	{
 		return sllist<T>();
 	}
+
+	template <typename T,typename A>
+	sllist_iter<T> destroy_sllist(sllist<T>* list,A* alloc);
 
 	// if push succeeds it returns an iterator to the list's new head node
 	// otherwise the iterator points to null but still points to the list.
@@ -73,5 +76,5 @@ namespace dggt
 #include "dggt_coll_sllist_iter.inl"
 #include "dggt_coll_sllist.inl"
 
-#define _DGGT_COLL_LINKED_LIST_H_
+#define _DGGT_COLL_SLLIST_H_
 #endif

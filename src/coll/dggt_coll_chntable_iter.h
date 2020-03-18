@@ -15,7 +15,7 @@ namespace dggt
 	using bucket_iter=sllist_iter<table_pair<K,V>>;
 
 	template <typename K,typename V>
-	using table_mem=blk<table_bucket<K,V>>;
+	using chntable_mem=blk<table_bucket<K,V>>;
 
 	template <typename K,typename V>
 	using table_node=slnode<table_pair<K,V>>;
@@ -26,7 +26,7 @@ namespace dggt
 		u32 currentIndex;
 		table_bucket<K,V>* currentBucket;
 		table_node<K,V>* currentNode;
-		table_mem<K,V> table;
+		chntable_mem<K,V> table;
 		chntable<K,V>* chnTable;
 
 		b32 is_end() const;
@@ -55,10 +55,10 @@ namespace dggt
 	const table_pair<K,V>* get_ptr(const chntable_iter<K,V>& it);
 	
 	template <typename K,typename V>
-	table_mem<K,V> get_mem(chntable_iter<K,V>& it);
+	chntable_mem<K,V> get_mem(chntable_iter<K,V>& it);
 
 	template <typename K,typename V>
-	const table_mem<K,V> get_mem(const chntable_iter<K,V>& it);
+	const chntable_mem<K,V> get_mem(const chntable_iter<K,V>& it);
 
 	template <typename K,typename V>
 	b32 is_coll_valid(const chntable_iter<K,V>& it);

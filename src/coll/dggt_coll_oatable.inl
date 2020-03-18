@@ -6,15 +6,11 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
-		static const fl32 TABLE_EMPTY=0;
-		static const fl32 TABLE_OCCUPIED=1;
-		static const fl32 TABLE_DELETED=2;
-
 		template <typename K,typename V>
 		oatable_iter<K,V> def_oatable_iter(oatable<K,V>* table)
 		{
 			return oatable_iter<K,V>{
-				0,0,0,table_mem<K,V>(),flag_mem(),table
+				0,0,0,oatable_mem<K,V>(),flag_mem(),table
 			};
 		}
 
@@ -27,7 +23,7 @@ namespace dggt
 
 		u32 hash1(u32 preh,u32 tableSize)
 		{
-			return (((hash0(preh,tableSize)>>1)<<)&1);
+			return (((hash0(preh,tableSize)>>1)<<1)|1);
 		}
 
 		u32 hash(u32 preh,u32 tableSize,u32 trial)
@@ -38,13 +34,13 @@ namespace dggt
 	}
 
 	template <typename K,typename V>
-	oatable_iter<K,V> oatable<K,V>::operator[](const K& key)
+	oatable_iter<K,V>& oatable<K,V>::operator[](const K& key)
 	{
 		return search(this,key);
 	}
 
 	template <typename K,typename V>
-	const oatable_iter<K,V> oatable<K,V>::operator[](const K& key) const
+	const oatable_iter<K,V>& oatable<K,V>::operator[](const K& key) const
 	{
 		return search(this,key);
 	}
@@ -54,11 +50,11 @@ namespace dggt
 	{
 		u32 count=0;
 		u32 capacity=2;
-		table_mem<K,V> table=
-			table_mem<K,V>(alloc<table_bucket<K,V>>(allocator,capacity),
+		oatable_mem<K,V> table=
+			oatable_mem<K,V>(alloc<table_pair<K,V>>(allocator,capacity),
 					capacity);
 		flag_mem flagTable=flag_mem(
-				alloc<table_pair<K,V>>(allocator,capacity),
+				alloc<fl32>(allocator,capacity),
 				capacity);
 		for (u32 i=0;i<capacity;++i)
 		{
@@ -80,21 +76,21 @@ namespace dggt
 			u32 tableSize=result.table.count;
 			result.flagTable=oaTable->flagTable;
 			result.table=oaTable->table;
+			u32 preh=prehash<K>(key);
 			result.currentIndex=dggt_internal_::hash(preh,count,trial);
 			result.currentFlag=result.flagTable.ptr[result.currentIndex];
 			result.currentPair=result.table.ptr[result.currentIndex];
-			u32 preh=prehash<K>(key);
 
 			while (trial<tableSize&&
-					result.currentFlag==dggt_internal_::TABLE_OCCUPIED)
+					result.currentFlag==TABLE_OCCUPIED)
 			{
 				result.currentIndex=
 					dggt_internal_::hash(preh,tableSize,trial++);
 				result.currentFlag=result.flagTable.ptr[result.currentIndex];
 				result.currentPair=result.table.ptr+result.currentIndex;
 			}
-			if (result.currentFlag==dggt_internal_::TABLE_EMTPY||
-					result.currentFlag==dggt_internal_::TABLE_DELETED)
+			if (result.currentFlag==TABLE_EMPTY||
+					result.currentFlag==TABLE_DELETED)
 			{
 				*result.currentPair=table_pair<K,V>(key,V(0));
 				result.flagTable.ptr[result.currentIndex]==
@@ -124,23 +120,23 @@ namespace dggt
 	const oatable_iter<K,V> search(const oatable<K,V>* table,const K& key)
 	{
 		oatable_iter<K,V> result=dggt_internal_::def_oatable_iter(table);
-		if (oaTable)
+		if (table)
 		{
 			u32 trial=0;
 			u32 count=result.hashTable->count;
 			u32 capacity=result.table.count;
-			result.table=oaTable.table;
-			result.flagTable=oaTable.flagTable;
+			result.table=table->table;
+			result.flagTable=table->flagTable;
 			u32 preh=prehash<K>(key);
-			result.currentIndex=dggt_internal_::hash(preh,tableSize,trial);
+			result.currentIndex=dggt_internal_::hash(preh,capacity,trial);
 			result.currentFlag=result.flagTable.ptr[result.currentIndex];
 			result.currentPair=result.flagTable.ptr[result.currentIndex];
 
-			while (trial<tableSize&&
+			while (trial<capacity&&
 					result.currentFlag==TABLE_EMPTY||
 					result.currentFlag==TABLE_DELETED)
 			{
-				result.currentIndex=dggt_internal_::hash(preh,tableSize,trial++);
+				result.currentIndex=dggt_internal_::hash(preh,capacity,trial++);
 				result.currentFlag=result.flagTable.ptr[result.currentIndex];
 				result.currentPair=result.flagTable.ptr[result.currentIndex];
 			}

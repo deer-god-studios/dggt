@@ -59,7 +59,7 @@ namespace dggt
 		{
 			fl32 currentFlag=it.flagTable.ptr[it.current];
 			while (!is_end(it)&&
-					currentFlag==TABLE_EMTPY||
+					currentFlag==TABLE_EMPTY||
 					currentFlag==TABLE_DELETED)
 			{
 				currentFlag=it.flagTable.ptr[++it.current];
@@ -98,13 +98,13 @@ namespace dggt
 	}
 	
 	template <typename K,typename V>
-	table_mem<K,V> gem_mem(oatable_iter<K,V>& it)
+	oatable_mem<K,V> gem_mem(oatable_iter<K,V>& it)
 	{
 		return it.table;
 	}
 
 	template <typename K,typename V>
-	const table_mem<K,V> get_mem(const oatable_iter<K,V>& it)
+	const oatable_mem<K,V> get_mem(const oatable_iter<K,V>& it)
 	{
 		return it.table;
 	}

@@ -26,7 +26,7 @@ namespace dggt
 		template <msize TABLESIZE>
 		u32 table_hash1(u32 sizeKey)
 		{
-			return ((table_hash0<TABLESIZE>(sizeKey)>>1)<<1)&1;
+			return ((table_hash0<TABLESIZE>(sizeKey)>>1)<<1)|1;
 		}
 
 		template <msize TABLESIZE>

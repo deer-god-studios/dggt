@@ -1,18 +1,23 @@
 #ifndef _DGGT_COLL_CHNTABLE_H_
 
 #include "dggt_coll_oatable_iter.h"
+#include "defines/dggt_defines.h"
 
 namespace dggt
 {
+	global const fl32 TABLE_EMPTY=0;
+	global const fl32 TABLE_OCCUPIED=1;
+	global const fl32 TABLE_DELETED=2;
+
 	template <typename K,typename V>
 	struct oatable
 	{
 		flag_mem flagTable;
-		table_mem<K,V> table;
+		oatable_mem<K,V> table;
 		u32 count;
 
-		oatable_iter<K,V>& operator[](u32 index);
-		const oatable_iter<K,V>& operator[](u32 index) const;
+		oatable_iter<K,V>& operator[](const K& index);
+		const oatable_iter<K,V>& operator[](const K& index) const;
 	};
 
 	template <typename K,typename V,typename A>
@@ -52,8 +57,8 @@ namespace dggt
 	oatable_iter<K,V> get_iter(oatable<K,V>* table);
 }
 
-#include "dggt_coll_oatable.inl"
 #include "dggt_coll_oatable_iter.inl"
+#include "dggt_coll_oatable.inl"
 
 #define _DGGT_COLL_CHNTABLE_H_
 #endif

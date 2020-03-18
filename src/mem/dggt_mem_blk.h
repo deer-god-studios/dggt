@@ -1,6 +1,7 @@
 #ifndef _DGGT_MEM_BLK_H_
 
 #include "types/dggt_types.h"
+#include "defines/dggt_defines.h"
 
 namespace dggt
 {
@@ -18,6 +19,9 @@ namespace dggt
 		T& operator[] (u32 index) { return ptr[index]; }
 		const T& operator[] (u32 index) const { return ptr[index]; }
 	};
+
+	template <typename T>
+	global constexpr const blk<T> NULL_BLK=blk<T>();
 }
 
 #define _DGGT_MEM_BLK_H_

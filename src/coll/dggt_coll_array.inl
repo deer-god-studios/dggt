@@ -22,6 +22,26 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	array_iter<T> destroy_array(array<T>* arr,A* allocator)
+	{
+		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		if (arr)
+		{
+			result.arr=arr;
+			result.table=arr->table;
+			arr->count=0;
+			b32 freeResult=
+				free<T>(allocator,arr->table.ptr,arr->table.count);
+			if (freeResult)
+			{
+				result.arr=0;
+				result.table=blk<T>();
+			}
+		}
+		return result;
+	}
+
+	template <typename T,typename A>
 	array_iter<T> push(array<T>* arr,A* allocator)
 	{
 		array_iter<T> result=dggt_internal_::def_array_iter(arr);

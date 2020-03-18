@@ -104,13 +104,13 @@ namespace dggt
 	}
 	
 	template <typename K,typename V>
-	table_mem<K,V> gem_mem(chntable_iter<K,V>& it)
+	chntable_mem<K,V> gem_mem(chntable_iter<K,V>& it)
 	{
 		return it.table;
 	}
 
 	template <typename K,typename V>
-	const table_mem<K,V> get_mem(const chntable_iter<K,V>& it)
+	const chntable_mem<K,V> get_mem(const chntable_iter<K,V>& it)
 	{
 		return it.table;
 	}

@@ -12,6 +12,22 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	sllist_iter<T> destroy_sllist(sllist<T>* list,A* alloc)
+	{
+		sllist_iter<T> result=clear(list,alloc);
+		if (is_mem_valid(result))
+		{
+			if (list)
+			{
+				result.list=NULLPTR;
+				result.memIsValid=false;
+				list->chain=NULL_BLK<T>;
+			}
+		}
+		return result;
+	}
+
+	template <typename T,typename A>
 	sllist_iter<T> push(sllist<T>* list,A* a)
 	{
 		sllist_iter<T> result=dggt_internal_::def_sllist_iter(list);
@@ -156,7 +172,7 @@ namespace dggt
 		if (list)
 		{
 			slnode<T>* current=list->chain.ptr;
-			result.memIsValid=1;
+			result.memIsValid=true;
 			while (current)
 			{
 				slnode<T>* nodeToFree=current;
@@ -165,7 +181,7 @@ namespace dggt
 				{
 					nodeToFree->next=result.current;
 					result.current=nodeToFree;
-					result.memIsValid=0;
+					result.memIsValid=false;
 				}
 			}
 			if (result.memIsValid)

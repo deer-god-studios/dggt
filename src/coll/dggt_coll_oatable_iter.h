@@ -10,7 +10,7 @@ namespace dggt
 	typedef blk<fl32> flag_mem;
 
 	template <typename K,typename V>
-	using table_mem=blk<table_pair<K,V>>;
+	using oatable_mem=blk<table_pair<K,V>>;
 
 	template <typename K,typename V>
 	struct oatable_iter
@@ -18,7 +18,7 @@ namespace dggt
 		u32 currentIndex;
 		fl32 currentFlag;
 		table_pair<K,V>* currentPair;
-		table_mem<K,V> table;
+		oatable_mem<K,V> table;
 		flag_mem flagTable;
 		oatable<K,V>* hashTable;
 
@@ -48,10 +48,10 @@ namespace dggt
 	const table_pair<K,V>* get_ptr(const oatable_iter<K,V>& it);
 	
 	template <typename K,typename V>
-	table_mem<K,V> get_mem(oatable_iter<K,V>& it);
+	oatable_mem<K,V> get_mem(oatable_iter<K,V>& it);
 
 	template <typename K,typename V>
-	const table_mem<K,V> get_mem(const oatable_iter<K,V>& it);
+	const oatable_mem<K,V> get_mem(const oatable_iter<K,V>& it);
 
 	template <typename K,typename V>
 	b32 is_coll_valid(const oatable_iter<K,V>& it);

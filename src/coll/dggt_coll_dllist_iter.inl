@@ -19,6 +19,7 @@ namespace dggt
 		return get(*this);
 	}
 
+	template <typename T>
 	dllist_iter<T>& dllist_iter<T>::operator--()
 	{
 		if (!dggt::is_end(*this))
@@ -28,6 +29,7 @@ namespace dggt
 		return *this;
 	}
 
+	template <typename T>
 	dllist_iter<T> dllist_iter<T>::operator--(int)
 	{
 		dllist_iter<T>& result=*this;
@@ -59,17 +61,6 @@ namespace dggt
 			advance(*this);
 		}
 		return *this;
-	}
-
-	template <typename T>
-	dllist_iter<T> dllist_iter<T>::operator++(int)
-	{
-		dllist_iter<T>& result=*this;
-		if (!is_end(*this))
-		{
-			advance(*this);
-		}
-		return result;
 	}
 
 	template <typename T>

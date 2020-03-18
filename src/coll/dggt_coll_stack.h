@@ -17,6 +17,9 @@ namespace dggt
 	template <typename T,typename A>
 	stack<T> create_stack(A* a) { return stack<T>{alloc<T>(a,2),0}; }
 
+	template <typename T,typename A>
+	stack_iter<T> destroy_stack(stack<T>* stk,A* allocator);
+
 	// NOTE: To see if the push succeeded use, is_coll_valid(iter).
 	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc);

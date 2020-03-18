@@ -7,7 +7,7 @@ namespace dggt
 	template <typename K,typename V>
 	struct chntable
 	{
-		table_mem<K,V> table;
+		chntable_mem<K,V> table;
 		u32 count;
 
 		chntable_iter<K,V> operator[](const K& key);
@@ -16,6 +16,9 @@ namespace dggt
 
 	template <typename K,typename V,typename A>
 	chntable<K,V> create_chntable(A* allocator);
+
+	template <typename K,typename V,typename A>
+	chntable_iter<K,V> destroy_chntable(chntable<K,V>* table,A* allocator);
 
 	template <typename K,typename V,typename A>
 	chntable_iter<K,V> insert(chntable<K,V>* table,const K& key,A* allocator);

@@ -61,6 +61,8 @@
 /// @brief A different way of representing MIN_REAL32
 #define MIN_REAL32 MIN_REAL32
 
+#define NULLPTR 0;
+
 /// @cond IncludeGuard
 #define _DGGT_DEFINES_H_
 #endif
