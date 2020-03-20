@@ -110,6 +110,12 @@ int main(int argc, char* argv[])
 
 	oatable<u32,float64> float64ChnTable=create_oatable<u32,float64>(a);
 
+	insert(&float64ChnTable,5U,4.5d,a);
+
+	printf("%d,%F\n",
+			get(float64ChnTable[5U]).get_key(),
+			get(float64ChnTable[5U]).get_val());
+
 	printf("cache_shutdown\n");
 	cache_shutdown();
 

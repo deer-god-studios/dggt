@@ -20,7 +20,7 @@ namespace dggt
 		table_pair<K,V>* currentPair;
 		oatable_mem<K,V> table;
 		flag_mem flagTable;
-		oatable<K,V>* hashTable;
+		const oatable<K,V>* hashTable;
 
 		b32 is_end() const;
 		table_pair<K,V>& operator*();

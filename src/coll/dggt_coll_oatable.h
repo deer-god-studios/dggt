@@ -16,8 +16,8 @@ namespace dggt
 		oatable_mem<K,V> table;
 		u32 count;
 
-		oatable_iter<K,V>& operator[](const K& index);
-		const oatable_iter<K,V>& operator[](const K& index) const;
+		oatable_iter<K,V> operator[](const K& index);
+		const oatable_iter<K,V> operator[](const K& index) const;
 	};
 
 	template <typename K,typename V,typename A>

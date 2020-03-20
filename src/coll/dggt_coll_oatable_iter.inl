@@ -59,8 +59,8 @@ namespace dggt
 		{
 			fl32 currentFlag=it.flagTable.ptr[it.current];
 			while (!is_end(it)&&
-					currentFlag==TABLE_EMPTY||
-					currentFlag==TABLE_DELETED)
+					(currentFlag==TABLE_EMPTY||
+					currentFlag==TABLE_DELETED))
 			{
 				currentFlag=it.flagTable.ptr[++it.current];
 			}
@@ -77,13 +77,13 @@ namespace dggt
 	template <typename K,typename V>
 	table_pair<K,V>& get(oatable_iter<K,V>& it)
 	{
-		return it.currentPair;
+		return *it.currentPair;
 	}
 
 	template <typename K,typename V>
 	const table_pair<K,V>& get(const oatable_iter<K,V>& it) 
 	{
-		return it.currentPair;
+		return *it.currentPair;
 	}
 
 	template <typename K,typename V>
