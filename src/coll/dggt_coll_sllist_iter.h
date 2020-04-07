@@ -1,4 +1,4 @@
-#ifndef _DGGT_COLL_LIST_ITER_H_
+#ifndef _DGGT_COLL_SLLIST_ITER_H_
 
 namespace dggt
 {
@@ -59,5 +59,5 @@ namespace dggt
 	b32 free(A* a,sllist_iter<T>& it);
 }
 
-#define _DGGT_COLL_LIST_ITER_H_
+#define _DGGT_COLL_SLLIST_ITER_H_
 #endif

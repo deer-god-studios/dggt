@@ -2,12 +2,13 @@
 
 #include "dggt_coll_oatable_iter.h"
 #include "defines/dggt_defines.h"
+#include "dggt_coll_membership.h"
 
 namespace dggt
 {
-	global const fl32 TABLE_EMPTY=0;
-	global const fl32 TABLE_OCCUPIED=1;
-	global const fl32 TABLE_DELETED=2;
+	global const fl32 TABLE_EMPTY=MEMB_EMPTY;
+	global const fl32 TABLE_OCCUPIED=MEMB_OCCUPIED;
+	global const fl32 TABLE_DELETED=MEMB_DELETED;
 
 	template <typename K,typename V>
 	struct oatable

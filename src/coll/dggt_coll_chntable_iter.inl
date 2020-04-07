@@ -143,7 +143,7 @@ namespace dggt
 	b32 free(A* a,chntable_iter<K,V>& it)
 	{
 		b32 result=false;
-		if (is_mem_valid(it))
+		if (!is_mem_valid(it))
 		{
 			if (is_coll_valid(it))
 			{

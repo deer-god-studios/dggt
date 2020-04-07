@@ -7,7 +7,7 @@ namespace dggt
 	template <typename K,typename V>
 	struct oatable;
 
-	typedef blk<fl32> flag_mem;
+	typedef blk<fl32> oatable_flag_mem;
 
 	template <typename K,typename V>
 	using oatable_mem=blk<table_pair<K,V>>;
@@ -15,11 +15,11 @@ namespace dggt
 	template <typename K,typename V>
 	struct oatable_iter
 	{
+		oatable_mem<K,V> table;
+		oatable_flag_mem flagTable;
 		u32 currentIndex;
 		fl32 currentFlag;
 		table_pair<K,V>* currentPair;
-		oatable_mem<K,V> table;
-		flag_mem flagTable;
 		const oatable<K,V>* hashTable;
 
 		b32 is_end() const;

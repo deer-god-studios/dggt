@@ -7,16 +7,16 @@ namespace dggt
 	template <typename F,typename T>
 	struct graph_edge
 	{
-		uuid nodeA;
-		uuid nodeB;
+		uuid start;
+		uuid end;
 		F weight;
 		T val;
 	};
 
 	template <typename F,typename T>
-	graph_edge create_graph_edge(uuid nodeA,uuid nodeB,F weight,T val)
+	graph_edge create_graph_edge(uuid start,uuid end,F weight,T val)
 	{
-		return graph_edge<F,T>{nodeA,nodeB,weight,val};
+		return graph_edge<F,T>{start,end,weight,val};
 	}
 }
 

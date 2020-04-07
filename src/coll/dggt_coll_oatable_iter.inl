@@ -139,7 +139,7 @@ namespace dggt
 	b32 free(A* a,oatable_iter<K,V>& it)
 	{
 		b32 result=false;
-		if (is_mem_valid(it))
+		if (!is_mem_valid(it))
 		{
 			b32 freeTable=free(a,it.table.ptr,it.table.count);
 			b32 freeFlagTable=free(a,it.flagTable.ptr,it.flagTable.count);
