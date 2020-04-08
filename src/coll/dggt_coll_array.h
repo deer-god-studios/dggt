@@ -19,6 +19,9 @@ namespace dggt
 	array<T> create_array(u32 capacity,A* allocator);
 
 	template <typename T,typename A>
+	array_iter<T> destroy_array(array<T>* arr,A* allocator);
+
+	template <typename T,typename A>
 	array_iter<T> push(array<T>* arr,A* allocator);
 
 	template <typename T,typename A>

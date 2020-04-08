@@ -23,6 +23,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	queue_iter<T> destroy_queue(queue<T>* q,A* allocator);
+
+	template <typename T,typename A>
 	queue_iter<T> enqueue(queue<T>* q,A* alloc);
 
 	template <typename T,typename A>

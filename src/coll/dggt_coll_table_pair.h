@@ -14,7 +14,7 @@ namespace dggt
 		table_pair(K key,V val)
 			: key_(key),val_(val) { }
 
-		const K& get_key() { return key_; }
+		const K& get_key() const { return key_; }
 		V& get_val() { return val_;}
 		const V& get_val() const { return val_;}
 

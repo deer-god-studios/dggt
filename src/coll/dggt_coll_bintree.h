@@ -6,8 +6,8 @@ namespace dggt
 	struct tree_node
 	{
 		T val;
-		tree_node* left;
-		tree_node* right;
+		tree_node<T>* left;
+		tree_node<T>* right;
 	};
 
 	template <typename T>

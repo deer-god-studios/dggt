@@ -1,3 +1,4 @@
+
 #include "mem/dggt_mem.h"
 
 namespace dggt
@@ -5,22 +6,23 @@ namespace dggt
 	namespace dggt_internal_
 	{
 		template <typename T>
-		list_iter<T> def_list_iter(linked_list<T>* list)
+		dllist_iter<T> def_dllist_iter(dllist<T>* list)
 		{
-			return list_iter<T>{0,list,0};
+			return dllist_iter<T>{0,list,0};
 		}
 	}
 
 	template <typename T,typename A>
-	list_iter<T> push(linked_list<T>* list,A* a)
+	dllist_iter<T> push(dllist<T>* list,A* a)
 	{
-		list_iter<T> result=dggt_internal_::def_list_iter(list);
+		dllist_iter<T> result=dggt_internal_::def_dllist_iter(list);
 		if (list&&a)
 		{
-			slnode<T>* newNode=alloc<slnode<T>>(a);
+			dlnode<T>* newNode=alloc<dlnode<T>>(a);
 			if (newNode)
 			{
 				newNode->next=list->chain.ptr;
+				list->chain.ptr->prev=newNode;
 				zero_struct<T>(&newNode->val);
 				result.current=newNode;
 				result.list=list;
@@ -33,9 +35,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> push(linked_list<T>* list,const T& val,A* a)
+	dllist_iter<T> push(dllist<T>* list,const T& val,A* a)
 	{
-		list_iter<T> result=push(list,a);
+		dllist_iter<T> result=push(list,a);
 		if (!is_end(result))
 		{
 			result.current->val=val;
@@ -44,12 +46,12 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> pop(linked_list<T>* list,A* a)
+	dllist_iter<T> pop(dllist<T>* list,A* a)
 	{
-		list_iter<T> result=dggt_internal_::def_list_iter(list);
+		dllist_iter<T> result=dggt_internal_::def_dllist_iter(list);
 		if (list&&list->chain.count)
 		{
-			slnode<T>* nodeToFree=list->chain.ptr;
+			dlnode<T>* nodeToFree=list->chain.ptr;
 			result.current=nodeToFree;
 			result.memIsValid=false;
 			list->chain.ptr=nodeToFree->next;
@@ -65,21 +67,21 @@ namespace dggt
 	}
 
 	template <typename T>
-	list_iter<T> peek(linked_list<T>* list)
+	dllist_iter<T> peek(dllist<T>* list)
 	{
-		return list_iter<T>{list?list->chain.ptr:0,list};
+		return dllist_iter<T>{list?list->chain.ptr:0,list};
 	}
 
 	template <typename T>
-	list_iter<T> get(linked_list<T>* list,u32 index)
+	dllist_iter<T> get(dllist<T>* list,u32 index)
 	{
-		list_iter<T> result=list_iter<T>{0,list};
-		list_iter<T> it=get_iter(list);
+		dllist_iter<T> result=dllist_iter<T>{0,list};
+		dllist_iter<T> it=get_iter(list);
 		u32 i=0;
 		while (!is_end(it)&&i<index)
 		{
 			++i;
-			next(it);
+			advance(it);
 		}
 		if (!is_end(it))
 		{
@@ -89,22 +91,22 @@ namespace dggt
 	}
 
 	template <typename T>
-	list_iter<T> get_iter(linked_list<T>* list)
+	dllist_iter<T> get_iter(dllist<T>* list)
 	{
 		return peek(list);
 	}
 
 	template <typename T>
-	u32 get_count(const linked_list<T>* list)
+	u32 get_count(const dllist<T>* list)
 	{
 		return list?list->chain.count:0;
 	}
 
 	template <typename T>
-	b32 contains(linked_list<T>* list,const T& item)
+	b32 contains(dllist<T>* list,const T& item)
 	{
 		b32 result=false;
-		for (list_iter<T> it=get_iter(list);
+		for (dllist_iter<T> it=get_iter(list);
 				!is_end(it);
 				++it)
 		{
@@ -118,12 +120,12 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> remove(
-			linked_list<T>* list,
-			slnode<T>* prev,
-			slnode<T>* toRemove,A* a)
+	dllist_iter<T> remove(
+			dllist<T>* list,
+			dlnode<T>* prev,
+			dlnode<T>* toRemove,A* a)
 	{
-		list_iter<T> result={0,list,0};
+		dllist_iter<T> result={0,list,0};
 		if (list)
 		{
 			if (prev)
@@ -150,16 +152,16 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> clear(linked_list<T>* list,A* a)
+	dllist_iter<T> clear(dllist<T>* list,A* a)
 	{
-		list_iter<T> result=dggt_internal_::def_list_iter(list);
+		dllist_iter<T> result=dggt_internal_::def_dllist_iter(list);
 		if (list)
 		{
-			slnode<T>* current=list->chain.ptr;
+			dlnode<T>* current=list->chain.ptr;
 			result.memIsValid=1;
 			while (current)
 			{
-				slnode<T>* nodeToFree=current;
+				dlnode<T>* nodeToFree=current;
 				current=current->next;
 				if (!free(a,nodeToFree,1))
 				{
@@ -178,13 +180,13 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	list_iter<T> insert(linked_list<T>* list,slnode<T>* prev,
+	dllist_iter<T> insert(dllist<T>* list,dlnode<T>* prev,
 			const T& val,A* a)
 	{
-		list_iter<T> result=list_iter<T>{0,list,0};
+		dllist_iter<T> result=dllist_iter<T>{0,list,0};
 		if (list)
 		{
-			slnode<T>* newNode=alloc<slnode<T>>(a);
+			dlnode<T>* newNode=alloc<dlnode<T>>(a);
 			if (newNode)
 			{
 				result.current=newNode;
@@ -193,10 +195,12 @@ namespace dggt
 				if (prev)
 				{
 					newNode->next=prev->next;
+					newNode->prev=newNode;
 					prev->next=newNode;
 				}
 				else
 				{
+					list->chain.ptr->prev=newNode;
 					newNode->next=list->chain.ptr->next;
 					list->chain.ptr=newNode;
 				}

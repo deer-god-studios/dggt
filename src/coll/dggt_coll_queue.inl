@@ -60,6 +60,24 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	queue_iter<T> destroy_queue(queue<T>* q,A* allocator)
+	{
+		queue_iter<T> result=dggt_internal_::def_queue_iter(q);
+		if (q)
+		{
+			result.q=q;
+			result.table=q->table;
+			if (free(q->table.ptr,q->table.count))
+			{
+				result.q=NULLPTR;
+				result.table=NULL_BLK<T>;
+			}
+		}
+		return result;
+	}
+
+
+	template <typename T,typename A>
 	queue_iter<T> enqueue(queue<T>* q,A* allocator)
 	{
 		queue_iter<T> result=queue_iter<T>{0,0,0,blk<T>(),q};

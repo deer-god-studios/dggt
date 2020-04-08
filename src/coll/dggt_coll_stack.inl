@@ -24,6 +24,25 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
+	stack_iter<T> destroy_stack(stack<T>* stk,A* allocator)
+	{
+		stack_iter<T> result=dggt_internal_::default_iter(stk);
+		if (stk)
+		{
+			result.stk=stk;
+			result.table=stk->table;
+			if (free(stk->table.ptr,stk->table.count))
+			{
+				result.stk=0;
+				result.table=blk<T>();
+				stk->count=0;
+				stk->table=blk<T>();
+			}
+		}
+		return result;
+	}
+
+	template <typename T,typename A>
 	stack_iter<T> push(stack<T>* stk,A* alloc)
 	{
 		stack_iter<T> result=dggt_internal_::default_iter(stk);

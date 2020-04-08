@@ -139,18 +139,6 @@ namespace dggt
 	 * @brief An 8-bit signed integer type.
 	 * */
 	typedef int8_t sbyte; 
-
-	typedef u32 uid32;
-
-	typedef u32 uuid32;
-
-	typedef uid32 uid;
-
-	typedef uuid32 uuid;
-
-	typedef u64 uid64;
-
-	typedef u64 uuid64;
 }
 
 /// @cond IncludeGuard

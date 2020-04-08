@@ -27,40 +27,13 @@ void line_break()
 	printf("---------------------------------------------------------------\n");
 }
 
-void print_alloc_info()
+template <typename A>
+void print_alloc_info(A* allocator)
 {
+	line_break();
 
-}
-
-void init_test()
-{
-
-}
-
-template <u32 BLOCKS>
-void test_alloc()
-{
-
-}
-
-void test_linked_list()
-{
-
-}
-
-void test_stack()
-{
-
-}
-
-void test_queue()
-{
-
-}
-
-void test_hash_table()
-{
-
+	printf("used_mem: %d\n",used_mem(allocator));
+	printf("available_mem: %d\n",available_mem(allocator));
 }
 
 void test_cache()
@@ -95,15 +68,10 @@ void test_cache()
 	cache_free(buff,buffSize);
 }
 
-int main(int argc, char* argv[])
+template <typename K,typename V,typename A>
+void test_chntable(chntable<K,V>* table,A* a)
 {
-	printf("cache_init\n");
-	cache_init(GB(2));
-
-	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
-	free_alloc* a=&a_;
-
-	hash_table<u32,float32> floatTable=create_hash_table<u32,float32>(a);
+	chntable<u32,float32> floatTable=create_chntable<u32,float32>(a);
 	insert(&floatTable,0U,3.14f,a);
 	insert(&floatTable,50U,77.1f,a);
 
@@ -113,15 +81,42 @@ int main(int argc, char* argv[])
 
 	printf("%f\n",get(floatTable[50U]).get_val());
 
+}
+
+void test_stallocator()
+{
 	stallocator<4096,free_alloc> freeStalloc;
 	int* intMem=alloc<int>(&freeStalloc,4);
 	intMem[0]=40;
 	intMem[1]=1;
 	intMem[2]=4;
 	intMem[4]=6;
+
+	for (u32 i=0;i<5;++i)
+	{
+		printf("intMem[%d]: %d\n",i,intMem[i]);
+	}
+}
+
+int main(int argc, char* argv[])
+{
+	printf("cache_init\n");
+	cache_init(GB(2));
+
+	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
+	free_alloc* a=&a_;
+	//test_stallocator();
+	//test_cache();
+
+	oatable<u32,float64> float64ChnTable=create_oatable<u32,float64>(a);
+
+	insert(&float64ChnTable,5U,4.5d,a);
+
+	printf("%d,%F\n",
+			get(float64ChnTable[5U]).get_key(),
+			get(float64ChnTable[5U]).get_val());
+
 	printf("cache_shutdown\n");
-
-
 	cache_shutdown();
 
 	return 0;
