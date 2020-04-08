@@ -1,6 +1,6 @@
-#ifndef _DGGT_COLL_BLOCK_LIST_ITER_H_
+#ifndef _DGGT_COLL_PGELIST_ITER_H_
 
-#include "dggt_coll_starray.h"
+#include "mem/dggt_mem_page.h"
 #include "dggt_coll_sllist.h"
 
 namespace dggt
@@ -9,13 +9,7 @@ namespace dggt
 	struct pgelist;
 
 	template <typename T,u32 S>
-	using page=starray<T,S>;
-
-	template <typename T,u32 S>
 	using pgelist_mem=sllist<page<T,S>>;
-
-	template <typename T,u32 S>
-	using page_iter=starray_iter<T,S>;
 
 	template <typename T,u32 S>
 	using pgelist_mem_iter=sllist_iter<page<T,S>>;
@@ -23,8 +17,16 @@ namespace dggt
 	template <typename T,u32 S>
 	struct pgelist_iter
 	{
+		pgelist_mem<T,S> pgeListMem;
+		pgelist_mem_iter<T,S> sllistIter;
+
+		b32 is_end() const;
+		T& operator*();
+		const T& operator*() const;
+		array_iter<T>& operator++();
+		array_iter<T> operator++(int);
 	};
 }
 
-#define _DGGT_COLL_BLOCK_LIST_ITER_H_
+#define _DGGT_COLL_PGELIST_ITER_H_
 #endif
