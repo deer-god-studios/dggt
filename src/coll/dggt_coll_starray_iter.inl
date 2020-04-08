@@ -71,13 +71,13 @@ namespace dggt
 	template <typename T,msize S>
 	T* get_ptr(starray_iter<T,S>& it)
 	{
-		return it.starrayMem+it.currentOffset;
+		return it.starrayMem.mem+it.currentOffset;
 	}
 
 	template <typename T,msize S>
 	const T* get_ptr(const starray_iter<T,S>& it)
 	{
-		return it.starrayMem+it.currentOffset;
+		return it.starrayMem.mem+it.currentOffset;
 	}
 	
 	template <typename T,msize S>

@@ -5,26 +5,34 @@
 
 namespace dggt
 {
-	template <typename T,u32 PAGESIZE>
+	template <typename T,u32 S>
 	struct pgelist;
 
 	template <typename T,u32 S>
-	using pgelist_mem=sllist<page<T,S>>;
+	using page_mem=starray<T,S>
 
 	template <typename T,u32 S>
-	using pgelist_mem_iter=sllist_iter<page<T,S>>;
+	using page_mem_iter=starray_iter<T,S>;
+
+	template <typename T,u32 S>
+	using pgelist_mem=sllist<page_mem<T,S>>;
+
+	template <typename T,u32 S>
+	using pgelist_mem_iter=sllist_iter<page_mem<T,S>>;
 
 	template <typename T,u32 S>
 	struct pgelist_iter
 	{
 		pgelist_mem<T,S> pgeListMem;
-		pgelist_mem_iter<T,S> sllistIter;
+		page_mem_iter<T<S> pgeMemIter;
+		pgelist_mem_iter<T,S> pgelistMemIter;
+		pgelist<T,S>* pgeList;
 
 		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
-		array_iter<T>& operator++();
-		array_iter<T> operator++(int);
+		pgelist_iter<T>& operator++();
+		pgelist_iter<T> operator++(int);
 	};
 }
 

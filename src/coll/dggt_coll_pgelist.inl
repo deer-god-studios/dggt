@@ -3,22 +3,22 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
-		template <typename T,u32 BLOCKSIZE>
-		block_list_iter<T,BLOCKSIZE> get_def_block_list_iter(
-				block_list<T,BLOCKSIZE>* blockList)
+		template <typename T,u32 S>
+		pgelist_iter<T,S> get_def_pgelist_iter(
+				pgelist<T,S>* pgeList)
 		{
-			block_list_iter<T,BLOCKSIZE> result={};
-			result.blockList=blockList;
+			pgelist_iter<T,S> result={};
+			result.pgeList=pgeList;
 			return result;
 		}
 	}
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list<T,BLOCKSIZE> create_block_list(u32 capacity,A* allocator)
+	template <typename T,u32 S,typename A>
+	pgelist<T,S> create_pgelist(u32 capacity,A* allocator)
 	{
-		block_list<T,BLOCKSIZE> result=block_list<T,BLOCKSIZE>{
+		pgelist<T,S> result=pgelist<T,S>{
 			create_sllist()};
-		u32 listCount=capacity/BLOCKSIZE;
+		u32 listCount=capacity/S;
 		for (u32 i=0;i<listCount;++i)
 		{
 			push(&result.list,allocator);
@@ -26,51 +26,51 @@ namespace dggt
 		return result;
 	}
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list_iter<T,BLOCKSIZE> destroy_block_list(
-			block_list<T,BLOCKSIZE>* blockList,A* allocator)
+	template <typename T,u32 S,typename A>
+	pgelist_iter<T,S> destroy_pgelist(
+			pgelist<T,S>* pgeList,A* allocator)
 	{
-		block_list_iter<T,BLOCKSIZE> result=
-			dggt_internal_::get_def_block_list_iter(blockList);
-		if (blockList)
+		pgelist_iter<T,S> result=
+			dggt_internal_::get_def_pgelist_iter(pgeList);
+		if (pgeList)
 		{
-			result.blockListMem=blockList->list;
-			result.lblockListIter=get_iter(&blockList->list);
-			result.lblockIter=get_iter(*result.lblockListIter);
-			if (!is_coll_valid(destroy_sllist(blockList->list,allocator)))
+			result.pgeListMem=pgeList->list;
+			result.lpgeListIter=get_iter(&pgeList->list);
+			result.lblockIter=get_iter(*result.lpgeListIter);
+			if (!is_coll_valid(destroy_sllist(pgeList->list,allocator)))
 			{
 				result=
-					dggt_internal_::get_def_block_list_iter<T,BLOCKSIZE>(
-							(block_list<T,BLOCKSIZE>*)0);
+					dggt_internal_::get_def_pgelist_iter<T,S>(
+							(pgelist<T,S>*)0);
 			}
 		}
 		return result;
 	}
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list_iter<T,BLOCKSIZE> push(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S,typename A>
+	pgelist_iter<T,S> push(pgelist<T,S>* pgeList,
 			A* allocator)
 	{
-		block_list_iter<T,BLOCKSIZE> result=
-			dggt_internal_::get_def_block_list_iter(blockList);
-		if (blockList)
+		pgelist_iter<T,S> result=
+			dggt_internal_::get_def_pgelist_iter(pgeList);
+		if (pgeList)
 		{
-			result.blockListMem=blockList->list;
-			result.lblockListIter=get_iter(blockList->list);
-			if (get(get_iter(blockList->list)).count>=BLOCKSIZE)
+			result.pgeListMem=pgeList->list;
+			result.lpgeListIter=get_iter(pgeList->list);
+			if (get(get_iter(pgeList->list)).count>=S)
 			{
-				result.lblockListIter=push(blockList->list,allocator);
+				result.lpgeListIter=push(pgeList->list,allocator);
 			}
-			result.lblockIter=push(get_ptr(get_iter(blockList->list)));
+			result.lblockIter=push(get_ptr(get_iter(pgeList->list)));
 		}
 		return result;
 	}
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list_iter<T,BLOCKSIZE> push(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S,typename A>
+	pgelist_iter<T,S> push(pgelist<T,S>* pgeList,
 			const T& val,A* allocator)
 	{
-		block_list_iter<T,BLOCKSIZE> result=push(blockList,allocator);
+		pgelist_iter<T,S> result=push(pgeList,allocator);
 		if (is_mem_valid(result))
 		{
 			*result=val;
@@ -78,38 +78,38 @@ namespace dggt
 		return result;
 	}
 
-	template <typename T,u32 BLOCKSIZE>
-	block_list_iter<T,BLOCKSIZE> peek(block_list<T,BLOCKSIZE>* blockList);
+	template <typename T,u32 S>
+	pgelist_iter<T,S> peek(pgelist<T,S>* pgeList);
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list_iter<T,BLOCKSIZE> pop(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S,typename A>
+	pgelist_iter<T,S> pop(pgelist<T,S>* pgeList,
 			A* allocator);
 
-	template <typename T,u32 BLOCKSIZE>
-	block_list_iter<T,BLOCKSIZE> get(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S>
+	pgelist_iter<T,S> get(pgelist<T,S>* pgeList,
 			u32 index);
 
-	template <typename T,u32 BLOCKSIZE>
-	list_block_iter<T,BLOCKSIZE> get_block(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S>
+	list_block_iter<T,S> get_block(pgelist<T,S>* pgeList,
 			u32 blockIndex);
 
-	template <typename T,u32 BLOCKSIZE,typename A>
-	block_list_iter<T,BLOCKSIZE> clear(block_list<T,BLOCKSIZE>* blockList,
+	template <typename T,u32 S,typename A>
+	pgelist_iter<T,S> clear(pgelist<T,S>* pgeList,
 			A* allocator);
 
-	template <typename T,u32 BLOCKSIZE>
-	block_list_iter<T,BLOCKSIZE> get_iter(block_list<T,BLOCKSIZE>* blockList);
+	template <typename T,u32 S>
+	pgelist_iter<T,S> get_iter(pgelist<T,S>* pgeList);
 
-	template <typename T,u32 BLOCKSIZE>
-	list_block_iter<T,BLOCKSIZE> get_block_iter(
-			block_list<T,BLOCKSIZE>* blockList);
+	template <typename T,u32 S>
+	list_block_iter<T,S> get_block_iter(
+			pgelist<T,S>* pgeList);
 
-	template <typename T,u32 BLOCKSIZE>
-	b32 contains(block_list<T,BLOCKSIZE>* blockList,const T& item);
+	template <typename T,u32 S>
+	b32 contains(pgelist<T,S>* pgeList,const T& item);
 
-	template <typename T,u32 BLOCKSIZE>
-	u32 get_capacity(block_list<T,BLOCKSIZE>* blockList);
+	template <typename T,u32 S>
+	u32 get_capacity(pgelist<T,S>* pgeList);
 
-	template <typename T,u32 BLOCKSIZE>
-	u32 get_count(block_list<T,BLOCKSIZE>* blockList);
+	template <typename T,u32 S>
+	u32 get_count(pgelist<T,S>* pgeList);
 }

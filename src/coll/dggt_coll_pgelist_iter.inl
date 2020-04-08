@@ -1,26 +1,26 @@
 
 namespace dggt
 {
-	template <u32 BLOCKSIZE,typename T>
-	b32 block_list_iter<BLOCKSIZE,T>::is_end() const
+	template <typename T,u32 S>
+	b32 pgelist_iter<S,T>::is_end() const
 	{
 		return dggt::is_end(*this);
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	T& block_list_iter<BLOCKSIZE,T>::operator*()
+	template <typename T,u32 S>
+	T& pgelist_iter<S,T>::operator*()
 	{
 		return get(*this);
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	const T& block_list_iter<BLOCKSIZE,T>::operator*() const
+	template <typename T,u32 S>
+	const T& pgelist_iter<S,T>::operator*() const
 	{
 		return get(*this);
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	block_list_iter<BLOCKSIZE,T>& block_list_iter<BLOCKSIZE,T>::operator++()
+	template <typename T,u32 S>
+	pgelist_iter<S,T>& pgelist_iter<S,T>::operator++()
 	{
 		if (!dggt::is_end(*this))
 		{
@@ -29,34 +29,34 @@ namespace dggt
 		return *this;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	block_list_iter<BLOCKSIZE,T> block_list_iter<BLOCKSIZE,T>::operator++(int)
+	template <typename T,u32 S>
+	pgelist_iter<S,T> pgelist_iter<S,T>::operator++(int)
 	{
-		block_list_iter<BLOCKSIZE,T> result=*this;
+		pgelist_iter<S,T> result=*this;
 		this->operator++();
 		return result;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	b32 is_end(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	b32 is_end(const pgelist_iter<S,T>& it)
 	{
-		is_end(it.lblockListIter)&&
-			is_end(it.lblockIter);
+		is_end(it.pgeMemIter)&&
+			is_end(it.pgelistMemIter);
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	b32 advance(block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	b32 advance(pgelist_iter<S,T>& it)
 	{
 		b32 result=false;
 		if (!it.is_end())
 		{
-			++it.lblockIter;
-			if (it.lblockIter.is_end())
+			++it.pgeMemIter;
+			if (it.pgeMemIter.is_end())
 			{
-				++it.lblockListIter;
-				if (!it.lblockListIter.is_end())
+				++it.pgelistMemIter;
+				if (!it.pgelistMemIter.is_end())
 				{
-					it.lblockIter=get_iter(*it.lblockListIter);
+					it.pgeMemIter=get_iter(*it.pgelistMemIter);
 					result=true;
 				}
 			}
@@ -64,70 +64,70 @@ namespace dggt
 		return result;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	T& get(block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	T& get(pgelist_iter<S,T>& it)
 	{
-		return *it.lblockIter;
+		return *it.pgeMemIter;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	const T& get(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	const T& get(const pgelist_iter<S,T>& it)
 	{
-		return *it.lblockIter;
+		return *it.pgeMemIter;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	T* get_ptr(block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	T* get_ptr(pgelist_iter<S,T>& it)
 	{
-		return get_ptr(it.lblockIter);
+		return get_ptr(it.pgeMemIter);
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	const T* get_ptr(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	const T* get_ptr(const pgelist_iter<S,T>& it)
 	{
-		return get_ptr(it.lblockIter);
+		return get_ptr(it.pgeMemIter);
 	}
 	
-	template <u32 BLOCKSIZE,typename T>
-	block_list_mem<BLOCKSIZE,T> get_mem(block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	pgelist_mem<S,T> get_mem(pgelist_iter<S,T>& it)
 	{
-		return it.blockListMem;
+		return it.pgeListMem;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	const block_list_mem<BLOCKSIZE,T> get_mem(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	const pgelist_mem<S,T> get_mem(const pgelist_iter<S,T>& it)
 	{
-		return it.blockListMem;
+		return it.pgeListMem;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	b32 is_coll_valid(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	b32 is_coll_valid(const pgelist_iter<S,T>& it)
 	{
-		return it.blockList!=0;
+		return it.pgeList!=0;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	b32 is_mem_valid(const block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	b32 is_mem_valid(const pgelist_iter<S,T>& it)
 	{
 		return is_coll_valid(it)&&
-			it.blockListMem==it.blockList->list;
+			it.pgelistMem==it.pgeList->list;
 	}
 
-	template <u32 BLOCKSIZE,typename T>
-	b32 vindicate_mem(block_list_iter<BLOCKSIZE,T>& it)
+	template <typename T,u32 S>
+	b32 vindicate_mem(pgelist_iter<S,T>& it)
 	{
 		b32 result=false;
 		if (!is_mem_valid(it)&&
 				is_coll_valid(it))
 		{
-			it.blockListMem=it.blockList->list;
+			it.pgelistMem=it.pgelistMem->list;
 		}
 		return result;
 	}
 
 	template <typename T,typename A>
-	b32 free(A* a,block_list_iter<BLOCKSIZE,T>& it)
+	b32 free(A* a,pgelist_iter<S,T>& it)
 	{
-		return !is_coll_valid(destroy_sllist(it.blockList,a));
+		return !is_coll_valid(destroy_sllist(it.pgeList,a));
 	}
 }

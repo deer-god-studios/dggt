@@ -5,13 +5,13 @@
 namespace dggt
 {
 	template <typename T,msize SIZE>
-	struct page
+	struct stblk
 	{
 		T[SIZE] mem;
 
-		page();
-		page(const T& val);
-		page(T[SIZE] mem);
+		stblk();
+		stblk(const T& val);
+		stblk(T[SIZE] mem);
 
 		T* get_ptr(msize offset=0);
 		const T* get_ptr(msize offset=0) const;
@@ -22,8 +22,8 @@ namespace dggt
 		T& operator[](msize offset);
 		const T& operator[](msize offset) const;
 
-		b32 operator==(const page<T,S>& rhs) const;
-		b32 operator!=(const page<T,S>& rhs) const;
+		b32 operator==(const stblk<T,S>& rhs) const;
+		b32 operator!=(const stblk<T,S>& rhs) const;
 	};
 }
 

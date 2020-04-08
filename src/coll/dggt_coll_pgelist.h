@@ -30,20 +30,16 @@ namespace dggt
 			A* allocator);
 
 	template <typename T,u32 S>
-	pgelist_iter<T,S> get(pgelist<T,S>* pgeList,
-			u32 index);
+	pgelist_iter<T,S> get(pgelist<T,S>* pgeList,u32 index);
 
 	template <typename T,u32 S>
-	lblock_iter<T,S> get_lblock(pgelist<T,S>* pgeList,
-			u32 blockIndex);
+	page_mem_iter<T,S> get_page_mem(pgelist<T,S>* pgeList,u32 blockIndex);
 
 	template <typename T,u32 S>
-	lpgelist_iter<T,S> get_lpgelist(
-			pgelist<T,S>* pgeList,u32 blockIndex);
+	pgelist_mem_iter<T,S> get_pgelist_mem(pgelist<T,S>* pgeList,u32 blockIndex);
 
 	template <typename T,u32 S,typename A>
-	pgelist_iter<T,S> clear(pgelist<T,S>* pgeList,
-			A* allocator);
+	pgelist_iter<T,S> clear(pgelist<T,S>* pgeList,A* allocator);
 
 	template <typename T,u32 S>
 	pgelist_iter<T,S> get_iter(pgelist<T,S>* pgeList);
