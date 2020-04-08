@@ -7,7 +7,7 @@ namespace dggt
 	template <typename T,msize S>
 	struct starray
 	{
-		page<T,S> mem;
+		stblk<T,S> mem;
 		u32 count;
 	};
 

@@ -1,7 +1,7 @@
 #ifndef _DGGT_COLL_STARRAY_ITER_H_
 
 #include "types/dggt_types.h"
-#include "mem/dggt_mem_page.h"
+#include "mem/dggt_mem_stblk.h"
 
 namespace dggt
 {
@@ -9,7 +9,7 @@ namespace dggt
 	struct starray;
 
 	template <typename T,msize S>
-	using starray_mem=page<T,S>;
+	using starray_mem=stblk<T,S>;
 
 	template <typename T,msize S>
 	struct starray_iter
