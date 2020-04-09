@@ -1,22 +1,21 @@
-#ifndef _DGGT_COLL_DLLIST_ITER_H_
+#ifndef _DGGT_COLL_DEQUE_ITER_H_
+
+#include "types/dggt_types.h"
 
 namespace dggt
 {
 	template <typename T>
-	struct dlnode;
+	struct deque;
 
 	template <typename T>
-	struct dllist;
+	using deque_mem=blk<T>;
 
 	template <typename T>
-	using dllist_mem=dlnode<T>*;
-
-	template <typename T>
-	struct dllist_iter
+	struct deque_iter
 	{
-		dllist_mem<T> current;
-		dllist<T>* list;
-		b32 memIsValid;
+		deque_mem<T> dequeMem;
+		u32 current;
+		deque<T>* dque;
 
 		b32 is_end() const;
 		T& operator*();
@@ -46,7 +45,7 @@ namespace dggt
 	const T* get_ptr(const dllist_iter<T>& it);
 	
 	template <typename T>
-	dllist_mem<T>* get_mem(dllist_iter<T>& it);
+	slnode<T>* get_mem(dllist_iter<T>& it);
 
 	template <typename T>
 	const slnode<T>* get_mem(const dllist_iter<T>& it);
@@ -64,6 +63,5 @@ namespace dggt
 	b32 free(A* a,dllist_iter<T>& it);
 }
 
-
-#define _DGGT_COLL_DLLIST_ITER_H_
+#define _DGGT_COLL_DEQUE_ITER_H_
 #endif

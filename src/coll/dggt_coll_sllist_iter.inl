@@ -1,6 +1,17 @@
 
 namespace dggt
 {
+	namespace dggt_internal_
+	{
+		template <typename T>
+		sllist_iter<T> get_def_sllist_iter(sllist<T>* list)
+		{
+			sllist_iter<T> result={};
+			result.list=list;
+			return result;
+		}
+	}
+
 	template <typename T>
 	b32 sllist_iter<T>::is_end() const
 	{

@@ -7,10 +7,10 @@ namespace dggt
 	template <typename T>
 	struct array
 	{
-		blk<T> table;
+		array_mem<T> table;
 		u32 count;
 
-		array() : table(blk<T>()) { }
+		array() : table(array_mem<T>()) { }
 		T& operator[](u32 index) { return table[index]; }
 		const T& operator[](u32 index) const { return table[index]; }
 	};

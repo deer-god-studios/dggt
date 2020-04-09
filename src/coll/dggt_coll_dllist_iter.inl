@@ -168,7 +168,7 @@ namespace dggt
 			slnode<T>* current=it.current;
 			while (current)
 			{
-				slnode<T>* toFree=current;
+				dlnode<T>* toFree=current;
 				current=current->next;
 				b32 freeResult=free(a,toFree);
 				if (!freeResult)

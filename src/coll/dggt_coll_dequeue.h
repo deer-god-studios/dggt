@@ -6,13 +6,14 @@
 
 namespace
 {
-	template <typename T>
-	using deque_mem=blk<T>;
-	
+
 	template <typename T>
 	struct dequeue
 	{
 		deque_mem table;
+		u32 head;
+		u32 tail;
+		u32 count;
 	};
 
 	template <typename T,typename A>

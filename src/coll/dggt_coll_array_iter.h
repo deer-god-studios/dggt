@@ -2,6 +2,7 @@
 
 #include "types/dggt_types.h"
 #include "mem/dggt_mem_blk.h"
+#include "dggt_coll_iter.h"
 
 namespace dggt
 {
@@ -9,11 +10,14 @@ namespace dggt
 	struct array;
 
 	template <typename T>
-	struct array_iter
+	using array_mem=blk<T>;
+
+	template <typename T>
+	struct array_iter:iter<T,array_mem<T>,array<T>>
 	{
-		blk<T> table;
 		u32 current;
-		array<T>* arr;
+
+		array_iter(MemType mem,CollType* coll);
 
 		b32 is_end() const;
 		T& operator*();
@@ -41,10 +45,10 @@ namespace dggt
 	const T* get_ptr(const array_iter<T>& it);
 	
 	template <typename T>
-	blk<T> get_mem(array_iter<T>& it);
+	array_mem<T> get_mem(array_iter<T>& it);
 
 	template <typename T>
-	const blk<T> get_mem(const array_iter<T>& it);
+	const array_mem<T> get_mem(const array_iter<T>& it);
 
 	template <typename T>
 	b32 is_coll_valid(const array_iter<T>& it);
