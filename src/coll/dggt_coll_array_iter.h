@@ -1,7 +1,7 @@
 #ifndef _DGGT_COLL_ARRAY_ITER_H_
 
 #include "types/dggt_types.h"
-#include "mem/dggt_mem_blk.h"
+#include "mem/dggt_mem_page.h"
 #include "dggt_coll_iter.h"
 
 namespace dggt
@@ -10,20 +10,32 @@ namespace dggt
 	struct array;
 
 	template <typename T>
-	using array_mem=blk<T>;
+	using array_mem=page<T>;
 
 	template <typename T>
-	struct array_iter:iter<T,array_mem<T>,array<T>>
+	struct array_iter
 	{
+		array_mem<T> mem;
+		array<T>* coll;
 		u32 current;
 
-		array_iter(MemType mem,CollType* coll);
+		array_iter(array_mem<T> mem,array<T>* coll);
+		array_iter() : array_iter(array_mem<T>(),0) { }
+
+		array_mem<T>& operator->();
+		const array_mem<T>& operator->() const;
 
 		b32 is_end() const;
 		T& operator*();
 		const T& operator*() const;
+
+		array_iter<T> operator+(msize offset);
+
 		array_iter<T>& operator++();
+
 		array_iter<T> operator++(int);
+
+		explicit operator array_mem<T>();
 	};
 
 	template <typename T>

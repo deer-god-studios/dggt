@@ -2,6 +2,14 @@
 namespace dggt
 {
 	template <typename T>
+	array_iter<T>::array_iter(array_mem<T> mem,array<T>* coll)
+	:this->mem(mem),this->coll(coll),current(0) { }
+
+	template <typename T>
+	array_iter<T>::array_iter()
+	:array_iter(array_mem<T>(),0) { }
+
+	template <typename T>
 	b32 array_iter<T>::is_end() const
 	{
 		return dggt::is_end(*this);
@@ -43,7 +51,7 @@ namespace dggt
 	template <typename T>
 	b32 is_end(const array_iter<T>& it)
 	{
-		return it.current>=it.table.count;
+		return it.current>=it.mem.count;
 	}
 
 	template <typename T>
@@ -60,37 +68,37 @@ namespace dggt
 	template <typename T>
 	T& get(array_iter<T>& it)
 	{
-		return *(it.table);
+		return *(it.mem);
 	}
 
 	template <typename T>
 	const T& get(const array_iter<T>& it)
 	{
-		return *(it.table);
+		return *(it.mem);
 	}
 
 	template <typename T>
 	T* get_ptr(array_iter<T>& it)
 	{
-		return it.table.ptr;
+		return it.mem.ptr;
 	}
 
 	template <typename T>
 	const T* get_ptr(const array_iter<T>& it)
 	{
-		return it.table.ptr;
+		return it.mem.ptr;
 	}
 	
 	template <typename T>
 	blk<T> get_mem(array_iter<T>& it)
 	{
-		return it.table;
+		return it.mem;
 	}
 
 	template <typename T>
 	const blk<T> get_mem(const array_iter<T>& it)
 	{
-		return it.table;
+		return it.mem;
 	}
 
 	template <typename T>
@@ -102,8 +110,8 @@ namespace dggt
 	template <typename T>
 	b32 is_mem_valid(const array_iter<T>& it)
 	{
-		return is_coll_valid(it)&&it.table.ptr==it.arr->table.ptr&&
-			it.table.count==it.arr->table.count;
+		return is_coll_valid(it)&&it.mem.ptr==it.arr->mem.ptr&&
+			it.mem.count==it.arr->mem.count;
 	}
 
 	template <typename T>
@@ -112,8 +120,8 @@ namespace dggt
 		b32 result=false;
 		if (is_coll_valid(it))
 		{
-			it.table.ptr=it.arr->table.ptr;
-			it.table.count=it.arr->table.count;
+			it.mem.ptr=it.arr->mem.ptr;
+			it.mem.count=it.arr->mem.count;
 		}
 		return result;
 	}
@@ -124,7 +132,7 @@ namespace dggt
 		b32 result=false;
 		if (!is_mem_valid(it))
 		{
-			result=free(a,it.table.ptr,it.table.count);
+			result=free(a,it.mem);
 			vindicate_mem(it);
 		}
 		return result;

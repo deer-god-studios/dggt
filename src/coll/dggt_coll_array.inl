@@ -4,7 +4,7 @@ namespace dggt
 	namespace dggt_internal_
 	{
 		template <typename T>
-		array_iter<T> def_array_iter(array<T>* arr)
+		array<T>::iter def_array_iter(array<T>* arr)
 		{
 			return { blk<T>(),0,arr };
 		}
@@ -22,9 +22,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> destroy_array(array<T>* arr,A* allocator)
+	array<T>::iter destroy_array(array<T>* arr,A* allocator)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr)
 		{
 			result.arr=arr;
@@ -42,9 +42,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> push(array<T>* arr,A* allocator)
+	array<T>::iter push(array<T>* arr,A* allocator)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr)
 		{
 			++arr->count;
@@ -63,9 +63,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> push(array<T>* arr,const T& val,A* allocator)
+	array<T>::iter push(array<T>* arr,const T& val,A* allocator)
 	{
-		array_iter<T> result=push(arr,allocator);
+		array<T>::iter result=push(arr,allocator);
 		if (is_mem_valid(result)&&
 				result.table.ptr&&
 				result.current==get_count(arr)-1)
@@ -76,9 +76,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> pop(array<T>* arr,A* allocator)
+	array<T>::iter pop(array<T>* arr,A* allocator)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr&&arr->count)
 		{
 			--arr->count;
@@ -98,15 +98,15 @@ namespace dggt
 	}
 
 	template <typename T>
-	array_iter<T> peek(array<T>* arr)
+	array<T>::iter peek(array<T>* arr)
 	{
 		return get(arr,get_count(arr)-1);
 	}
 
 	template <typename T>
-	array_iter<T> get(array<T>* arr,u32 index)
+	array<T>::iter get(array<T>* arr,u32 index)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr&&index<get_count(arr))
 		{
 			result.table=arr->table;
@@ -116,9 +116,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> clear(array<T>* arr,A* allocator)
+	array<T>::iter clear(array<T>* arr,A* allocator)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr)
 		{
 			arr->count=0;
@@ -134,7 +134,7 @@ namespace dggt
 	}
 
 	template <typename T>
-	array_iter<T> get_iter(array<T>* arr)
+	array<T>::iter get_iter(array<T>* arr)
 	{
 		return get(arr,0);
 	}
@@ -145,7 +145,7 @@ namespace dggt
 		b32 result=false;
 		if (arr)
 		{
-			for (array_iter<T> it=get_iter(arr);
+			for (array<T>::iter it=get_iter(arr);
 					!is_end(&it);++it)
 			{
 				if (*it==item)
@@ -171,9 +171,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	array_iter<T> resize(array<T>* arr,u32 newCapacity,A* allocator)
+	array<T>::iter resize(array<T>* arr,u32 newCapacity,A* allocator)
 	{
-		array_iter<T> result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=dggt_internal_::def_array_iter(arr);
 		if (arr)
 		{
 			u32 oldCapacity=get_capacity(arr);

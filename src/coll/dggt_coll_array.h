@@ -7,7 +7,8 @@ namespace dggt
 	template <typename T>
 	struct array
 	{
-		array_mem<T> table;
+		typedef array_iter<T> iter;
+		array_mem<T> mem;
 		u32 count;
 
 		array() : table(array_mem<T>()) { }
@@ -19,31 +20,31 @@ namespace dggt
 	array<T> create_array(u32 capacity,A* allocator);
 
 	template <typename T,typename A>
-	array_iter<T> destroy_array(array<T>* arr,A* allocator);
+	array<T>::iter destroy_array(array<T>* arr,A* allocator);
 
 	template <typename T,typename A>
-	array_iter<T> push(array<T>* arr,A* allocator);
+	array<T>::iter push(array<T>* arr,A* allocator);
 
 	template <typename T,typename A>
-	array_iter<T> push(array<T>* arr,const T& val,A* allocator);
+	array<T>::iter push(array<T>* arr,const T& val,A* allocator);
 
 	template <typename T,typename A>
-	array_iter<T> pop(array<T>* arr,A* allocator);
+	array<T>::iter pop(array<T>* arr,A* allocator);
 
 	template <typename T>
-	array_iter<T> peek(array<T>* arr);
+	array<T>::iter peek(array<T>* arr);
 
 	template <typename T>
-	array_iter<T> get(array<T>* arr,u32 index);
+	array<T>::iter get(array<T>* arr,u32 index);
 
 	template <typename T,typename A>
-	array_iter<T> clear(array<T>* arr,A* allocator);
+	array<T>::iter clear(array<T>* arr,A* allocator);
 
 	template <typename T>
 	u32 get_count(const array<T>* arr);
 
 	template <typename T>
-	array_iter<T> get_iter(array<T>* arr);
+	array<T>::iter get_iter(array<T>* arr);
 
 	template <typename T>
 	b32 contains(array<T>* arr,const T& item);
@@ -55,7 +56,7 @@ namespace dggt
 	F get_load_factor(array<T>* arr);
 
 	template <typename T,typename A>
-	array_iter<T> resize(array<T>* arr,u32 newCapacity,A* allocator);
+	array<T>::iter resize(array<T>* arr,u32 newCapacity,A* allocator);
 }
 
 #include "dggt_coll_array_iter.inl"

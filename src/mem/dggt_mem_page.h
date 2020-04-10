@@ -11,7 +11,7 @@ namespace dggt
 		T* ptr;
 		msize size;
 
-		page(T* memPtr,msize memCount) : ptr(memPtr), size(memCount) { }
+		page(T* ptr,msize size) : this->ptr(ptr),this->size(size) { }
 		page() : page(0,0) { }
 
 		T* operator->() { return ptr; }
@@ -20,25 +20,6 @@ namespace dggt
 		const T& operator*() const { return *ptr; }
 		T& operator[] (msize index) { return ptr[index]; }
 		const T& operator[] (msize index) const { return ptr[index]; }
-
-		page<T> operator+(msize offset)
-		{
-			return offset<size?page<T>(ptr+offset,size-offset):page<T>();
-		}
-
-		const page<T> operator+(msize offset) const
-		{
-			return page<T>(ptr+offset,size-offset):page<T>();
-		}
-
-		page<T>& operator++() { return this->operator+(1); }
-
-		page<T> operator++(int)
-		{
-			page<T> result=*this;
-			this->operator++();
-			return result;
-		}
 
 		explicit operator T*() { return ptr; }
 	};
