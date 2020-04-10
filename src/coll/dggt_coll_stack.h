@@ -5,42 +5,52 @@
 namespace dggt
 {
 	template <typename T>
-	struct stack
+	struct stack:
+		collection<T,stack_mem<T>,stack<T>,stack_iter<T>>
 	{
-		T* table;
 		u32 count;
-
-		T& operator[](u32 index);
-		const T& operator[](u32 index) const;
 	};
 
-	template <typename T,typename A>
-	stack<T> create_stack(A* a) { return stack<T>{alloc<T>(a,2),0}; }
+	template typename T,typename A>
+	b32 free(A* a,stack_mem<T>& mem)
+	{
+		mem.count=0;
+		return destroy_array(&mem,a)==array<T>::iter();
+	}
 
 	template <typename T,typename A>
-	stack_iter<T> destroy_stack(stack<T>* stk,A* allocator);
+	stack<T> create_stack(u32 capacity,A* a)
+	{
+		stack<T> result=stack<T>{};
+		result.mem=create_array<T,A>(capacity,a);
+		result.count=0;
+		return result;
+	}
+
+	template <typename T,typename A>
+	stack<T>::iter destroy_stack(stack<T>* stk,A* allocator);
 
 	// NOTE: To see if the push succeeded use, is_coll_valid(iter).
 	template <typename T,typename A>
-	stack_iter<T> push(stack<T>* stk,A* alloc);
+	stack<T>::iter push(stack<T>* stk,A* alloc);
 	
 	template <typename T,typename A>
-	stack_iter<T> push(stack<T>* stk,const T& val,A* alloc);
+	stack<T>::iter push(stack<T>* stk,const T& val,A* alloc);
 
 	// NOTE: To see if there is a possible memory leak use,
 	// 		is_mem_valid(iter).  If it fails, free the memory (or not)
 	// 		and call vindicate_mem(iter).
 	template <typename T,typename A>
-	stack_iter<T> pop(stack<T>* stk,A* alloc);
+	stack<T>::iter pop(stack<T>* stk,A* alloc);
 
 	template <typename T>
-	stack_iter<T> peek(stack<T>* stk);
+	stack<T>::iter peek(stack<T>* stk);
 
 	template <typename T>
-	stack_iter<T> get(stack<T>* stk,u32 index);
+	stack<T>::iter get(stack<T>* stk,u32 index);
 
 	template <typename T>
-	stack_iter<T> get_iter(stack<T>* stk,u32 index=0);
+	stack<T>::iter get_iter(stack<T>* stk,u32 index=0);
 
 	template <typename T>
 	u32 get_count(const stack<T>* stk);
@@ -49,7 +59,7 @@ namespace dggt
 	u32 get_capacity(const stack<T>* stk);
 
 	template <typename T,typename A>
-	stack_iter<T> clear(stack<T>* stk,A* alloc);
+	stack<T>::iter clear(stack<T>* stk,A* alloc);
 
 	template <typename T,typename F=float32>
 	F get_load_factor(const stack<T>* stk);
@@ -62,7 +72,7 @@ namespace dggt
 	// 		stack's table is resized as long as the allocator succeeds in 
 	// 		allocating the new table.
 	template <typename T,typename A>
-	stack_iter<T> resize(stack<T>* stk,u32 newCapacity,A* alloc);
+	stack<T>::iter resize(stack<T>* stk,u32 newCapacity,A* alloc);
 
 	template <typename T>
 	u32 get_head(const stack<T>* stk);

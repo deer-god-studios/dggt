@@ -2,7 +2,7 @@
 
 #include "types/dggt_types.h"
 #include "mem/dggt_mem_page.h"
-#include "dggt_coll_iter.h"
+#include "dggt_coll_iterator.h"
 
 namespace dggt
 {
@@ -13,29 +13,40 @@ namespace dggt
 	using array_mem=page<T>;
 
 	template <typename T>
-	struct array_iter
+	struct array_iter:iterator<T,array_mem<T>,array<T>>
 	{
-		array_mem<T> mem;
-		array<T>* coll;
-		u32 current;
+		msize current;
 
-		array_iter(array_mem<T> mem,array<T>* coll);
-		array_iter() : array_iter(array_mem<T>(),0) { }
+		array_iter(coll_type* coll)
+			: iterator(coll) { }
+		array_iter(const mem_type& mem, coll_type* coll,msize current=0)
+			: iterator(mem,coll),this->current(current) { }
+		array_iter() : iterator(),this->current(0) { }
 
-		array_mem<T>& operator->();
-		const array_mem<T>& operator->() const;
+		T* operator->() { return (T*)mem; }
+		const T* operator->() const { return (T*)mem; }
 
-		b32 is_end() const;
-		T& operator*();
-		const T& operator*() const;
+		b32 is_end() const { return dggt::is_end(*this); }
+		T& operator*() { return get(*this); }
+		const T& operator*() const { return get(*this); }
 
-		array_iter<T> operator+(msize offset);
+		array_iter<T>& operator++()
+		{
+			if (!dggt::is_end(*this))
+			{
+				advance(*this);
+			}
+			return *this;
+		}
 
-		array_iter<T>& operator++();
+		array_iter<T> operator++(int)
+		{
+			array_iter<T> result=*this;
+			this->operator++();
+			return result;
+		}
 
-		array_iter<T> operator++(int);
-
-		explicit operator array_mem<T>();
+		explicit operator array_mem<T>() { return mem; }
 	};
 
 	template <typename T>
@@ -55,24 +66,6 @@ namespace dggt
 
 	template <typename T>
 	const T* get_ptr(const array_iter<T>& it);
-	
-	template <typename T>
-	array_mem<T> get_mem(array_iter<T>& it);
-
-	template <typename T>
-	const array_mem<T> get_mem(const array_iter<T>& it);
-
-	template <typename T>
-	b32 is_coll_valid(const array_iter<T>& it);
-
-	template <typename T>
-	b32 is_mem_valid(const array_iter<T>& it);
-
-	template <typename T>
-	b32 vindicate_mem(array_iter<T>& it);
-
-	template <typename T,typename A>
-	b32 free(A* a,array_iter<T>& it);
 }
 
 #define _DGGT_COLL_ARRAY_ITER_H_

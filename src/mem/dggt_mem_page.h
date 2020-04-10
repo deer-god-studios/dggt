@@ -22,6 +22,27 @@ namespace dggt
 		const T& operator[] (msize index) const { return ptr[index]; }
 
 		explicit operator T*() { return ptr; }
+
+		page<T>& operator=(const page<T>& rhs)
+		{
+			if (this!=&rhs)
+			{
+				ptr=rhs.ptr;
+				size=rhs.size;
+			}
+			return *this;
+		}
+
+		b32 operator==(const page<T>& rhs)
+		{
+			return this==&rhs||
+				(ptr==rhs.ptr&&size==rhs.size);
+		}
+
+		b32 operator!=(const page<T>& rhs)
+		{
+			return !(this->operator==(rhs));
+		}
 	};
 
 	template <typename T>
@@ -30,7 +51,7 @@ namespace dggt
 	template <typename T,typename A>
 	page<T> malloc_page(A* a,msize size)
 	{
-		return page<T>(malloc(a,size),size);
+		return page<T>(malloc<T>(a,size),size);
 	}
 
 	template <typename T,typename A>

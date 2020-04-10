@@ -1,64 +1,14 @@
 
 namespace dggt
 {
-	namespace dggt_internal_
-	{
-		template <typename T>
-		sllist_iter<T> get_def_sllist_iter(sllist<T>* list)
-		{
-			sllist_iter<T> result={};
-			result.list=list;
-			return result;
-		}
-	}
-
-	template <typename T>
-	b32 sllist_iter<T>::is_end() const
-	{
-		return dggt::is_end(*this);
-	}
-
-	template <typename T>
-	T& sllist_iter<T>::operator*()
-	{
-		return get(*this);
-	}
-
-	template <typename T>
-	const T& sllist_iter<T>::operator*() const
-	{
-		return get(*this);
-	}
-
-	template <typename T>
-	sllist_iter<T>& sllist_iter<T>::operator++()
-	{
-		if (!dggt::is_end(*this))
-		{
-			advance(*this);
-		}
-		return *this;
-	}
-
-	template <typename T>
-	sllist_iter<T> sllist_iter<T>::operator++(int)
-	{
-		sllist_iter<T>& result=*this;
-		if (!is_end(*this))
-		{
-			advance(*this);
-		}
-		return result;
-	}
-
 	template <typename T>
 	b32 vindicate_mem(sllist_iter<T>& it)
 	{
 		b32 result=false;
 		if (is_coll_valid(it)&&!is_mem_valid(it))
 		{
-			it->current=it->list->chain.ptr;
-			it->memIsValid=true;
+			it.mem=it.coll->mem;
+			it.current=it.coll->mem.head;
 			result=true;
 		}
 		return result;
@@ -107,49 +57,9 @@ namespace dggt
 	}
 
 	template <typename T>
-	slnode<T>* get_mem(sllist_iter<T>& it)
-	{
-		return it.current;
-	}
-	template <typename T>
-	const slnode<T>* get_mem(const sllist_iter<T>& it)
-	{
-		return it.current;
-	}
-
-	template <typename T>
-	b32 is_coll_valid(const sllist_iter<T>& it)
-	{
-		return it.list!=0;
-	}
-
-	template <typename T>
 	b32 is_mem_valid(const sllist_iter<T>& it)
 	{
-		return is_coll_valid(it)&&it.memIsValid;
-	}
-
-	template <typename T,typename A>
-	b32 free(sllist_iter<T>& it,A* a)
-	{
-		b32 result=false;
-		if (!is_mem_valid(it))
-		{
-			slnode<T>* current=it.current;
-			while (current)
-			{
-				slnode<T>* toFree=current;
-				current=current->next;
-				b32 freeResult=free(a,toFree);
-				if (!freeResult)
-				{
-					result=false;
-					break;
-				}
-			}
-			vindicate_mem(it);
-			result=true;
-		}
-		return result;
+		return is_mem_valid((iterator<T,sllist_mem<T>,sllist<T>>&)it)&&
+			it.mem.valid;
 	}
 }

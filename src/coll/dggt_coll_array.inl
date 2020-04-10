@@ -1,22 +1,13 @@
 
 namespace dggt
 {
-	namespace dggt_internal_
-	{
-		template <typename T>
-		array<T>::iter def_array_iter(array<T>* arr)
-		{
-			return { blk<T>(),0,arr };
-		}
-	}
-
 	template <typename T,typename A>
 	array<T> create_array(u32 capacity,A* allocator)
 	{
 		array<T> result=array<T>();
-		blk<T> table=
-			blk<T>(alloc<T>(allocator,capacity),capacity);
-		result.table=table;
+		array<T>::mem_type mem=
+			malloc_page<T>(allocator,capacity);
+		result.mem=mem;
 		result.count=0;
 		return result;
 	}
@@ -24,18 +15,15 @@ namespace dggt
 	template <typename T,typename A>
 	array<T>::iter destroy_array(array<T>* arr,A* allocator)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr)
 		{
-			result.arr=arr;
-			result.table=arr->table;
+			result.mem=arr->mem;
 			arr->count=0;
-			b32 freeResult=
-				free<T>(allocator,arr->table.ptr,arr->table.count);
+			b32 freeResult=free(allocator,arr->mem);
 			if (freeResult)
 			{
-				result.arr=0;
-				result.table=blk<T>();
+				result=array<T>::iter();
 			}
 		}
 		return result;
@@ -44,11 +32,11 @@ namespace dggt
 	template <typename T,typename A>
 	array<T>::iter push(array<T>* arr,A* allocator)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr)
 		{
 			++arr->count;
-			result.table=arr->table;
+			result.mem=arr->mem;
 			if (get_load_factor<real32>(arr)>0.5f)
 			{
 				result=resize(arr,get_capacity(arr)*2,allocator);
@@ -67,10 +55,10 @@ namespace dggt
 	{
 		array<T>::iter result=push(arr,allocator);
 		if (is_mem_valid(result)&&
-				result.table.ptr&&
+				result.mem.ptr&&
 				result.current==get_count(arr)-1)
 		{
-			get(result)=val;
+			*result=val;
 		}
 		return result;
 	}
@@ -78,11 +66,11 @@ namespace dggt
 	template <typename T,typename A>
 	array<T>::iter pop(array<T>* arr,A* allocator)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr&&arr->count)
 		{
 			--arr->count;
-			result.table=arr->table;
+			result.mem=arr->mem;
 
 			if (get_load_factor<real32>(arr)<0.25f)
 			{
@@ -106,10 +94,10 @@ namespace dggt
 	template <typename T>
 	array<T>::iter get(array<T>* arr,u32 index)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr&&index<get_count(arr))
 		{
-			result.table=arr->table;
+			result.mem=arr->mem;
 			result.current=index;
 		}
 		return result;
@@ -118,7 +106,7 @@ namespace dggt
 	template <typename T,typename A>
 	array<T>::iter clear(array<T>* arr,A* allocator)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr)
 		{
 			arr->count=0;
@@ -161,7 +149,7 @@ namespace dggt
 	template <typename T>
 	u32 get_capacity(array<T>* arr)
 	{
-		return arr?arr->table.count:0;
+		return arr?arr->mem.count:0;
 	}
 
 	template <typename F,typename T>
@@ -173,28 +161,26 @@ namespace dggt
 	template <typename T,typename A>
 	array<T>::iter resize(array<T>* arr,u32 newCapacity,A* allocator)
 	{
-		array<T>::iter result=dggt_internal_::def_array_iter(arr);
+		array<T>::iter result=array<T>::iter(arr);
 		if (arr)
 		{
 			u32 oldCapacity=get_capacity(arr);
-			blk<T> oldTable=arr->table;
-			blk<T> newTable=blk<T>(
-					alloc<T>(allocator,newCapacity),
-					newCapacity);
-			if (newTable.ptr)
+			array<T>::mem_type oldMem=arr->mem;
+			array<T>::mem_type newMem=malloc_page<T>(allocator,newCapacity);
+			if (newMem.ptr)
 			{
-				arr->table=newTable;
+				arr->mem=newMem;
 				u32 copyCount=newCapacity>oldCapacity?oldCapacity:newCapacity;
 				msize copySize=sizeof(T)*copyCount;
-				mem_cpy(newTable.ptr,oldTable.ptr,copySize);
-				b32 oldTableFreed=free(allocator,oldTable.ptr,oldTable.count);
-				if (oldTableFreed)
+				mem_cpy(newMem.ptr,oldMem.ptr,copySize);
+				b32 oldMemFreed=free(allocator,oldMem.ptr,oldMem.count);
+				if (oldMemFreed)
 				{
 					result=get_iter(arr);
 				}
 				else
 				{
-					result.table=oldTable;
+					result.mem=oldMem;
 				}
 			}
 			else

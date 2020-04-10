@@ -1,19 +1,18 @@
 #ifndef _DGGT_COLL_ARRAY_H_
 
 #include "dggt_coll_array_iter.h"
+#include "dggt_coll_collection.h"
 
 namespace dggt
 {
 	template <typename T>
-	struct array
+	struct array:
+		collection<T,array_mem<T>,array<T>,array_iter<T>>
 	{
-		typedef array_iter<T> iter;
-		array_mem<T> mem;
 		u32 count;
 
-		array() : table(array_mem<T>()) { }
-		T& operator[](u32 index) { return table[index]; }
-		const T& operator[](u32 index) const { return table[index]; }
+		T& operator[](msize index) { return mem[index]; }
+		const T& operator[](msize index) const { return mem[index]; }
 	};
 
 	template <typename T,typename A>

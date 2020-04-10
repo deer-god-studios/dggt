@@ -1,37 +1,73 @@
 #ifndef _DGGT_COLL_DLLIST_ITER_H_
 
+#include "dggt_coll_iterator.h"
+
 namespace dggt
 {
 	template <typename T>
 	struct dlnode;
 
 	template <typename T>
+	struct dlchain;
+
+	template <typename T>
 	struct dllist;
 
 	template <typename T>
-	using dllist_mem=dlnode<T>*;
+	using dllist_mem=dlchain<T>;
 
 	template <typename T>
-	struct dllist_iter
+	struct dllist_iter:
+		iterator<T,dllist_mem<T>,dllist<T>>
 	{
-		dllist_mem<T> current;
-		dllist<T>* list;
-		b32 memIsValid;
+		dlnode<T>* current;
+		dlnode<T>* prev;
 
-		b32 is_end() const;
-		T& operator*();
-		const T& operator*() const;
-		dllist_iter<T>& operator++();
-		dllist_iter<T> operator++(int);
-		dllist_iter<T>& operator--();
-		dllist_iter<T> operator--(int);
+		b32 is_end() const { return dggt::is_end(*this); }
+		b32 is_begin() const { return dggt::is_begin(*this); }
+		T& operator*() { return get(*this); }
+		const T& operator*() const { return get(*this); }
+		dllist_iter<T>& operator++()
+		{
+			if (!dggt::is_end(*this))
+			{
+				advance(*this);
+			}
+			return *this;
+		}
+		dllist_iter<T> operator++(int)
+		{
+			dllist_iter<T> result=*this;
+			this->operator++();
+			return result;
+		}
+		dllist_iter<T>& operator--()
+		{
+			if (!dggt::is_begin(*this))
+			{
+				decrement(*this);
+			}
+			return *this;
+		}
+		dllist_iter<T> operator--(int)
+		{
+			dllist_iter<T> result=*this;
+			this->operator--();
+			return result;
+		}
 	};
 
 	template <typename T>
 	b32 is_end(const dllist_iter<T>& it);
 
 	template <typename T>
+	b32 is_begin(const dllist_iter<T>& it);
+
+	template <typename T>
 	b32 advance(dllist_iter<T>& it);
+
+	template <typename T>
+	b32 decrement(dllist_iter<T>& it);
 
 	template <typename T>
 	T& get(dllist_iter<T>& it);
@@ -46,22 +82,16 @@ namespace dggt
 	const T* get_ptr(const dllist_iter<T>& it);
 	
 	template <typename T>
-	dllist_mem<T>* get_mem(dllist_iter<T>& it);
+	dllist_iter<T>::mem_type get_mem(dllist_iter<T>& it);
 
 	template <typename T>
-	const slnode<T>* get_mem(const dllist_iter<T>& it);
-
-	template <typename T>
-	b32 is_coll_valid(const dllist_iter<T>& it);
+	const dllist_iter<T>::mem_type get_mem(const dllist_iter<T>& it);
 
 	template <typename T>
 	b32 is_mem_valid(const dllist_iter<T>& it);
 
 	template <typename T>
 	b32 vindicate_mem(dllist_iter<T>& it);
-
-	template <typename T,typename A>
-	b32 free(A* a,dllist_iter<T>& it);
 }
 
 

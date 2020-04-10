@@ -1,7 +1,6 @@
 
 namespace dggt
 {
-
 	template <typename T,msize S>
 	b32 starray_iter<T,S>::is_end() const
 	{
@@ -41,7 +40,7 @@ namespace dggt
 	template <typename T,msize S>
 	b32 is_end(const starray_iter<T,S>& it)
 	{
-		return it.currentOffset>=S;
+		return it.current>=S;
 	}
 
 	template <typename T,msize S>
@@ -50,7 +49,7 @@ namespace dggt
 		b32 result=false;
 		if (!is_end(it))
 		{
-			++it.currentOffset;
+			++it.current;
 			result=true;
 		}
 		return result;
@@ -59,61 +58,36 @@ namespace dggt
 	template <typename T,msize S>
 	T& get(starray_iter<T,S>& it)
 	{
-		return it.starrayMem[it.currentOffset];
+		return it.mem[it.current];
 	}
 
 	template <typename T,msize S>
 	const T& get(const starray_iter<T,S>& it)
 	{
-		return it.starrayMem[it.currentOffset];
+		return it.mem[it.current];
 	}
 
 	template <typename T,msize S>
 	T* get_ptr(starray_iter<T,S>& it)
 	{
-		return it.starrayMem.mem+it.currentOffset;
+		return it.mem.mem+it.current;
 	}
 
 	template <typename T,msize S>
 	const T* get_ptr(const starray_iter<T,S>& it)
 	{
-		return it.starrayMem.mem+it.currentOffset;
+		return it.mem.mem+it.current;
 	}
 	
 	template <typename T,msize S>
-	starray_mem<T,S> get_mem(starray_iter<T,S>& it)
+	starray<T,S>::mem_type get_mem(starray_iter<T,S>& it)
 	{
-		return it.starrayMem;
+		return it.mem;
 	}
 
 	template <typename T,msize S>
-	const starray_mem<T,S> get_mem(const starray_iter<T,S>& it)
+	const starray<T,S>::mem_type get_mem(const starray_iter<T,S>& it)
 	{
-		return it.starrayMem;
-	}
-
-	template <typename T,msize S>
-	b32 is_coll_valid(const starray_iter<T,S>& it)
-	{
-		return it.starr!=0;
-	}
-
-	template <typename T,msize S>
-	b32 is_mem_valid(const starray_iter<T,S>& it)
-	{
-		return is_coll_valid(it)&&
-			it.starrayMem==it.starr->mem;
-	}
-
-	template <typename T,msize S>
-	b32 vindicate_mem(starray_iter<T,S>& it)
-	{
-		b32 result=false;
-		if (!is_mem_valid(it)&&is_coll_valid(it))
-		{
-			it.starrayMem=it.starr->mem;
-			result=true;
-		}
-		return result;
+		return it.mem;
 	}
 }

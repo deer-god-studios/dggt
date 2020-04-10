@@ -26,17 +26,14 @@ namespace dggt
 	template <typename T,typename A>
 	stack_iter<T> destroy_stack(stack<T>* stk,A* allocator)
 	{
-		stack_iter<T> result=dggt_internal_::default_iter(stk);
+		stack<T>::iter result=stack<T>::iter(stk);
 		if (stk)
 		{
-			result.stk=stk;
-			result.table=stk->table;
-			if (free(stk->table.ptr,stk->table.count))
+			result.mem=stk->mem;
+			stk->count=0;
+			if (free(allocator,stk->mem))
 			{
-				result.stk=0;
-				result.table=blk<T>();
-				stk->count=0;
-				stk->table=blk<T>();
+				result=stack<T>::iter();
 			}
 		}
 		return result;

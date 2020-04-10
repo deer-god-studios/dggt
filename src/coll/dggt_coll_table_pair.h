@@ -1,26 +1,23 @@
 #ifndef _DGGT_COLL_TABLE_PAIR_H_
 
-#include "types/dggt_types.h"
+#include "dggt_coll_pair.h"
 
 namespace dggt
 {
 	template <typename K,typename V>
-	struct table_pair
+	struct table_pair:pair<K,V>
 	{
-		K key_;
-		V val_;
-
 		table_pair() { }
 		table_pair(K key,V val)
-			: key_(key),val_(val) { }
+			: first(key),second(val) { }
 
-		const K& get_key() const { return key_; }
-		V& get_val() { return val_;}
-		const V& get_val() const { return val_;}
+		const K& get_key() const { return first; }
+		V& get_val() { return second;}
+		const V& get_val() const { return second;}
 
 		b32 operator==(const table_pair& other)
 		{
-			return key_==other.key_;
+			return first==other.first;
 		}
 	};
 }

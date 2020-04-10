@@ -3,19 +3,34 @@
 #include "dggt_coll_membership.h"
 
 #include "dggt_coll_idxtable_iter.h"
+#include "dggt_coll_collection.h"
 
 namespace dggt
 {
+	template <typename T>
+	struct idxtable_mem
+	{
+		idxmem<T> mem;
+		idxmem<flag32> flags;
+	};
+
 	global const fl32 IDX_EMPTY=MEMB_EMPTY;
 	global const fl32 IDX_OCCUPIED=MEMB_OCCUPIED;
 
 	template <typename T>
-	struct idxtable
+	struct idxtable:
+		collection<T,idxtable_mem<T>,idxtable<T>,idxtable_iter<T>>
 	{
-		u32 nextHandle;
-		array<T> table;
-		array<flag32> flags;
+		msize nextHandle;
+		u32 count;
 	};
+
+	template <typename T,typename A>
+	b32 free(A* a,idxtable_mem<T>& mem)
+	{
+		return free(a,(stack_mem<T>&)mem.mem)&&
+			free((stack_mem<flag32>&)a,mem.flags);
+	}
 
 	template <typename T,typename A>
 	idxtable<T> create_idxtable(u32 capacity,A* allocator);

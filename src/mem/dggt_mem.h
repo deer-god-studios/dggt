@@ -13,6 +13,7 @@
 #include "dggt_mem_fallback_alloc.h"
 #include "dggt_mem_stallocator.h"
 #include "dggt_mem_page.h"
+#include "dggt_mem_blk.h"
 
 namespace dggt
 {
