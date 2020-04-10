@@ -14,6 +14,8 @@ namespace dggt
 		page(T* memPtr,msize memCount) : ptr(memPtr), size(memCount) { }
 		page() : page(0,0) { }
 
+		T* operator->() { return ptr; }
+		const T* operator->() const { return ptr; }
 		T& operator*() { return *ptr; }
 		const T& operator*() const { return *ptr; }
 		T& operator[] (msize index) { return ptr[index]; }
