@@ -68,7 +68,7 @@ namespace dggt
 	}
 
 	template <msize BLOCKSIZE>
-	void* alloc(store_alloc<BLOCKSIZE>* a,msize size)
+	void* malloc(store_alloc<BLOCKSIZE>* a,msize size)
 	{
 		return dggt_internal_::store_alloc<BLOCKSIZE>(&a->head,
 				&a->blockCount,size);
@@ -124,38 +124,38 @@ namespace dggt
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	T* alloc(store_alloc<BLOCKSIZE>* a,u32 count)
+	T* malloc(store_alloc<BLOCKSIZE>* a,msize size)
 	{
-		return (T*)alloc(a,sizeof(T)*count);
+		return (T*)malloc(a,sizeof(T)*size);
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	b32 free(store_alloc<BLOCKSIZE>* a,T* ptr,u32 count)
+	b32 free(store_alloc<BLOCKSIZE>* a,T* ptr,msize size)
 	{
-		return free(a,ptr,sizeof(T)*count);
+		return free(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	b32 owns(const store_alloc<BLOCKSIZE>* a,const T* ptr,u32 count)
+	b32 owns(const store_alloc<BLOCKSIZE>* a,const T* ptr,msize size)
 	{
-		return owns(a,ptr,sizeof(T)*count);
+		return owns(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T>
-	b32 owns(const store_alloc<>* a,const T* ptr,u32 count)
+	b32 owns(const store_alloc<>* a,const T* ptr,msize size)
 	{
-		return owns(a,ptr,sizeof(T)*count);
+		return owns(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T>
-	b32 free(store_alloc<>* a,T* ptr,u32 count)
+	b32 free(store_alloc<>* a,T* ptr,msize size)
 	{
-		return free(a,ptr,sizeof(T)*count);
+		return free(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T>
-	T* alloc(store_alloc<>* a,u32 count)
+	T* malloc(store_alloc<>* a,msize size)
 	{
-		return alloc(a,sizeof(T)*count);
+		return malloc(a,sizeof(T)*size);
 	}
 }

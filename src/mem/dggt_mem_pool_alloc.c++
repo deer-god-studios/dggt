@@ -76,7 +76,7 @@ namespace dggt
 				&used,blockSize);
 	}
 
-	void* alloc(pool_alloc<>* a,msize size)
+	void* malloc(pool_alloc<>* a,msize size)
 	{
 		return dggt_internal_::pool_alloc(&a->pool,&a->used,
 				a->blockSize);

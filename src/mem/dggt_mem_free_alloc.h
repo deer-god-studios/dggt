@@ -2,11 +2,10 @@
 
 #include "dggt_mem_allocator.h"
 #include "dggt_mem_utils.h"
-#include "dggt_mem_block.h"
 
 namespace dggt
 {
-	typedef sized_block free_block;
+	typedef smblock free_block;
 
 	struct free_alloc
 	{
@@ -19,8 +18,10 @@ namespace dggt
 		free_alloc(void* ptr,msize size);
 	};
 
-	void* alloc(free_alloc* a,msize size=8);
+	template <typename I>
+	void* malloc(free_alloc* a,I size=I(8));
 
+	template <typename
 	b32 free(free_alloc* a,void* ptr,msize size=8);
 	
 	b32 clear(free_alloc* a);
@@ -38,13 +39,13 @@ namespace dggt
 	msize available_mem(const free_alloc* a);
 
 	template <typename T>
-	T* alloc(free_alloc* a,u32 count=1);
+	T* malloc(free_alloc* a,msize size=1);
 
 	template <typename T>
-	b32 free(free_alloc* a,T* ptr,u32 count=1);
+	b32 free<T,free_alloc,I>(free_alloc* a,T* ptr,msize size=1);
 
 	template <typename T>
-	b32 owns(const free_alloc* a,const T* ptr,u32 count);
+	b32 owns(const free_alloc* a,const T* ptr,msize size=1);
 }
 
 #include "dggt_mem_free_alloc.inl"

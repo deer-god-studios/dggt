@@ -19,9 +19,9 @@ namespace dggt
 		~autostack_alloc();
 	};
 
-	void* alloc(autostack_alloc* a,msize size=8);
+	void* malloc(autostack_alloc* a,msize size);
 
-	b32 free(autostack_alloc* a,void* ptr,msize size=8);
+	b32 free(autostack_alloc* a,void* ptr,msize size);
 	
 	b32 clear(autostack_alloc* a);
 
@@ -38,13 +38,13 @@ namespace dggt
 	msize available_mem(const autostack_alloc* a);
 
 	template <typename T>
-	T* alloc(autostack_alloc* a,u32 count=1);
+	T* malloc(autostack_alloc* a,msize size=1);
 
 	template <typename T>
-	b32 free(autostack_alloc* a,T* ptr,u32 count);
+	b32 free(autostack_alloc* a,T* ptr,msize size=1);
 
 	template <typename T>
-	b32 owns(const autostack_alloc* a,const T* ptr,u32 count);
+	b32 owns(const autostack_alloc* a,const T* ptr,msize size=1);
 }
 
 #include "dggt_mem_autostack_alloc.inl"

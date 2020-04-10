@@ -14,9 +14,9 @@ namespace dggt
 	};
 
 	template <msize BuffSize,typename A>
-	void* alloc(stallocator<BuffSize,A>* a,msize size)
+	void* malloc(stallocator<BuffSize,A>* a,msize size)
 	{
-		return alloc(&a->a_,size);
+		return malloc(&a->a_,size);
 	}
 
 	template <msize BuffSize,typename A>
@@ -68,21 +68,21 @@ namespace dggt
 	}
 
 	template <typename T,msize BuffSize,typename A>
-	T* alloc(stallocator<BuffSize,A>* a,u32 count=1)
+	T* malloc(stallocator<BuffSize,A>* a,msize size=1)
 	{
-		return alloc<T>(&a->a_,count);
+		return malloc<T>(&a->a_,size);
 	}
 
 	template <typename T,msize BuffSize,typename A>
-	b32 free(stallocator<BuffSize,A>* a,T* ptr,u32 count=1)
+	b32 free(stallocator<BuffSize,A>* a,T* ptr,msize size=1)
 	{
-		return free(&a->a_,ptr,count);
+		return free(&a->a_,ptr,size);
 	}
 
 	template <typename T,msize BuffSize,typename A>
-	b32 owns(const stallocator<BuffSize,A>* a,const T* ptr,u32 count)
+	b32 owns(const stallocator<BuffSize,A>* a,const T* ptr,msize size=1)
 	{
-		return owns(&a->a_,ptr,count);
+		return owns(&a->a_,ptr,size);
 	}
 }
 

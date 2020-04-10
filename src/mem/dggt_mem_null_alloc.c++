@@ -4,7 +4,7 @@ namespace dggt
 {
 	null_alloc::null_alloc() { }
 
-	void* alloc(null_alloc* a,msize size)
+	void* malloc(null_alloc* a,msize size)
 	{
 		return 0;
 	}

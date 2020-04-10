@@ -248,7 +248,7 @@ namespace dggt
 		freeList->next=0;
 	}
 
-	void* alloc(free_alloc* a,msize size)
+	void* malloc(free_alloc* a,msize size)
 	{
 		if (a)
 		{

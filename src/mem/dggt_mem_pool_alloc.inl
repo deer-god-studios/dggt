@@ -79,7 +79,7 @@ namespace dggt
 	}
 
 	template <msize BLOCKSIZE>
-	void* alloc(pool_alloc<BLOCKSIZE>* a,msize size)
+	void* malloc(pool_alloc<BLOCKSIZE>* a,msize size)
 	{
 		return dggt_internal_::pool_alloc<BLOCKSIZE>(&a->pool,&a->used);
 	}
@@ -138,38 +138,38 @@ namespace dggt
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	T* alloc(pool_alloc<BLOCKSIZE>* a,u32 count)
+	T* malloc(pool_alloc<BLOCKSIZE>* a,msize size)
 	{
-		return (T*)alloc(a,sizeof(T)*count);
+		return (T*)malloc(a,sizeof(T)*size);
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count)
+	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,msize size)
 	{
-		return free(a,(void*)ptr,sizeof(T)*count);
+		return free(a,(void*)ptr,sizeof(T)*size);
 	}
 
 	template <typename T,msize BLOCKSIZE>
-	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count)
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,msize size)
 	{
-		return owns(a,(void*)ptr,sizeof(T)*count);
+		return owns(a,(void*)ptr,sizeof(T)*size);
 	}
 
 	template <typename T>
-	T* alloc(pool_alloc<>* a,u32 count)
+	T* malloc(pool_alloc<>* a,msize size)
 	{
-		return (T*)alloc(a,sizeof(T)*count);
+		return (T*)malloc(a,sizeof(T)*size);
 	}
 
 	template <typename T>
-	b32 free(pool_alloc<>* a,T* ptr,u32 count)
+	b32 free(pool_alloc<>* a,T* ptr,msize size)
 	{
-		return free(a,(void*)ptr,sizeof(T)*count);
+		return free(a,(void*)ptr,sizeof(T)*size);
 	}
 
 	template <typename T>
-	b32 owns(const pool_alloc<>* a,const T* ptr,u32 count)
+	b32 owns(const pool_alloc<>* a,const T* ptr,msize size)
 	{
-		return owns(a,(void*)ptr,sizeof(T)*count);
+		return owns(a,(void*)ptr,sizeof(T)*size);
 	}
 }

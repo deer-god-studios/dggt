@@ -186,7 +186,7 @@ namespace dggt
 					flagTable,storeTable,size);
 			if (storeTable&&flagTable&&availableMem)
 			{
-				result=alloc(storeAlloc,size);
+				result=malloc(storeAlloc,size);
 				*availableMem-=size;
 			}
 			return result;
@@ -228,7 +228,7 @@ namespace dggt
 	}
 
 	template <msize TABLESIZE>
-	void* alloc(table_alloc<TABLESIZE>* a,msize size)
+	void* malloc(table_alloc<TABLESIZE>* a,msize size)
 	{
 		if (a)
 		{
@@ -313,19 +313,19 @@ namespace dggt
 	}
 
 	template <typename T,msize TABLESIZE>
-	T* alloc(table_alloc<TABLESIZE>* a,u32 count)
+	T* malloc(table_alloc<TABLESIZE>* a,msize size)
 	{
-		return (T*)alloc(a,sizeof(T)*count);
+		return (T*)malloc(a,sizeof(T)*size);
 	}
 
 	template <typename T,msize TABLESIZE>
-	b32 free(table_alloc<TABLESIZE>* a,T* ptr,u32 count)
+	b32 free(table_alloc<TABLESIZE>* a,T* ptr,msize size)
 	{
-		return free(a,ptr,sizeof(T)*count);
+		return free(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T,msize TABLESIZE>
-	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,u32 count)
+	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,msize size)
 	{
 		if (a)
 		{

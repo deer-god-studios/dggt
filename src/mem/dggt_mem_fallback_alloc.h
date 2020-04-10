@@ -1,6 +1,7 @@
 #ifndef _DGGT_MEM_FALLBACK_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
+
 namespace dggt
 {
 	template <typename P,typename F>
@@ -14,7 +15,7 @@ namespace dggt
 	};
 
 	template <typename P,typename F>
-	void* alloc(fallback_alloc<P,F>* a,msize size);
+	void* malloc(fallback_alloc<P,F>* a,msize size);
 
 	template <typename P,typename F>
 	b32 free(fallback_alloc<P,F>* a,void* ptr,msize size);
@@ -43,14 +44,14 @@ namespace dggt
 	msize available_mem(const fallback_alloc<P,F>* a);
 
 	template <typename T,typename P,typename F>
-	T* alloc(fallback_alloc<P,F>* a,u32 count);
+	T* malloc(fallback_alloc<P,F>* a,msize size=1);
 
 	template <typename T,typename P,typename F>
-	b32 free(fallback_alloc<P,F>* a,T* ptr,u32 count);
+	b32 free(fallback_alloc<P,F>* a,T* ptr,msize size=1);
 
 	template <typename T,typename P,typename F>
 	b32 owns(const fallback_alloc<P,F>* a,
-			const T* ptr,u32 count);
+			const T* ptr,msize size=1);
 
  
 }

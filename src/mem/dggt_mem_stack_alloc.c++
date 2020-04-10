@@ -108,7 +108,7 @@ namespace dggt
 		buffSize=size;
 	}
 
-	void* alloc(stack_alloc* a,msize size)
+	void* malloc(stack_alloc* a,msize size)
 	{
 		if (a)
 		{

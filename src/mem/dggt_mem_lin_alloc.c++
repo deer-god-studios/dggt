@@ -77,7 +77,7 @@ namespace dggt
 		buffSize=size;
 	}
 
-	void* alloc(lin_alloc* a,msize size)
+	void* malloc(lin_alloc* a,msize size)
 	{
 		if (a)
 		{

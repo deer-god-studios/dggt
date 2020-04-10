@@ -19,7 +19,7 @@ namespace dggt
 	};
 
 	template <msize TABLESIZE>
-	void* alloc(table_alloc<TABLESIZE>* a,msize size);
+	void* malloc(table_alloc<TABLESIZE>* a,msize size);
 
 	template <msize TABLESIZE>
 	b32 free(table_alloc<TABLESIZE>* a,void* ptr,msize size);
@@ -46,13 +46,13 @@ namespace dggt
 	msize available_mem(const table_alloc<TABLESIZE>* a);
 
 	template <typename T,msize TABLESIZE>
-	T* alloc(table_alloc<TABLESIZE>* a,u32 count);
+	T* malloc(table_alloc<TABLESIZE>* a,msize size=1);
 
 	template <typename T,msize TABLESIZE>
-	b32 free(table_alloc<TABLESIZE>* a,T* ptr,u32 count);
+	b32 free(table_alloc<TABLESIZE>* a,T* ptr,msize size=1);
 
 	template <typename T,msize TABLESIZE>
-	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,u32 count);
+	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,msize size=1);
 }
 
 #include "dggt_mem_table_alloc.inl"

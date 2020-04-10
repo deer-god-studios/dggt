@@ -2,11 +2,10 @@
 
 #include "dggt_mem_allocator.h"
 #include "dggt_mem_utils.h"
-#include "dggt_mem_block.h"
 
 namespace dggt
 {
-	typedef mem_block pool_block;
+	typedef mblock pool_block;
 
 	template <msize BLOCKSIZE=0>
 	struct pool_alloc
@@ -37,7 +36,7 @@ namespace dggt
 	};
 
 	template <msize BLOCKSIZE>
-	void* alloc(pool_alloc<BLOCKSIZE>* a,msize size=8);
+	void* malloc(pool_alloc<BLOCKSIZE>* a,msize size=8);
 
 	template <msize BLOCKSIZE>
 	b32 free(pool_alloc<BLOCKSIZE>* a,void* ptr,msize size=8);
@@ -64,15 +63,15 @@ namespace dggt
 	msize available_mem(const pool_alloc<BLOCKSIZE>* a);
 
 	template <typename T,msize BLOCKSIZE>
-	T* alloc(pool_alloc<BLOCKSIZE>* a,u32 count=1);
+	T* malloc(pool_alloc<BLOCKSIZE>* a,msize size=1);
 
 	template <typename T,msize BLOCKSIZE>
-	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,u32 count=1);
+	b32 free(pool_alloc<BLOCKSIZE>* a,T* ptr,msize size=1);
 
 	template <typename T,msize BLOCKSIZE>
-	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
+	b32 owns(const pool_alloc<BLOCKSIZE>* a,const T* ptr,msize size=1);
 
-	void* alloc(pool_alloc<>* a,msize size);
+	void* malloc(pool_alloc<>* a,msize size);
 
 	b32 free(pool_alloc<>* a,void* ptr,msize size);
 	
@@ -91,13 +90,13 @@ namespace dggt
 	msize available_mem(const pool_alloc<>* a);
 
 	template <typename T>
-	T* alloc(pool_alloc<>* a,u32 count=1);
+	T* malloc(pool_alloc<>* a,msize size=1);
 
 	template <typename T>
-	b32 free(pool_alloc<>* a,T* ptr,u32 count=1);
+	b32 free(pool_alloc<>* a,T* ptr,msize size=1);
 
 	template <typename T>
-	b32 owns(const pool_alloc<>* a,const T* ptr,u32 count);
+	b32 owns(const pool_alloc<>* a,const T* ptr,msize size=1);
 }
 
 #include "dggt_mem_pool_alloc.inl"

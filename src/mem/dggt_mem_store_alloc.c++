@@ -70,7 +70,7 @@ namespace dggt
 		this->blockSize=blockSize;
 	}
 
-	void* alloc(store_alloc<>* a,msize size)
+	void* malloc(store_alloc<>* a,msize size)
 	{
 		if (a)
 		{

@@ -1,11 +1,10 @@
 #ifndef _DGGT_MEM_STORE_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
-#include "dggt_mem_block.h"
 
 namespace dggt
 {
-	typedef mem_block store_block;
+	typedef mblock store_block;
 
 	template <msize BLOCKSIZE=0>
 	struct store_alloc
@@ -29,7 +28,7 @@ namespace dggt
 	};
 
 	template <msize BLOCKSIZE>
-	void* alloc(store_alloc<BLOCKSIZE>* a,msize size);
+	void* malloc(store_alloc<BLOCKSIZE>* a,msize size);
 
 	template <msize BLOCKSIZE>
 	b32 free(store_alloc<BLOCKSIZE>* a,void* ptr,msize size);
@@ -56,13 +55,13 @@ namespace dggt
 	msize available_mem(const store_alloc<BLOCKSIZE>* a);
 
 	template <typename T,msize BLOCKSIZE>
-	T* alloc(store_alloc<BLOCKSIZE>* a,u32 count);
+	T* malloc(store_alloc<BLOCKSIZE>* a,msize size=1);
 
 	template <typename T,msize BLOCKSIZE>
-	b32 free(store_alloc<BLOCKSIZE>* a,T* ptr,u32 count);
+	b32 free(store_alloc<BLOCKSIZE>* a,T* ptr,msize size=1);
 
 	template <typename T,msize BLOCKSIZE>
-	b32 owns(const store_alloc<BLOCKSIZE>* a,const T* ptr,u32 count);
+	b32 owns(const store_alloc<BLOCKSIZE>* a,const T* ptr,msize size=1);
 
 	msize available_mem(const store_alloc<>* a);
 
@@ -80,16 +79,16 @@ namespace dggt
 
 	b32 free(store_alloc<>* a,void* ptr,msize size);
 
-	void* alloc(store_alloc<>* a,msize size);
+	void* malloc(store_alloc<>* a,msize size);
 
 	template <typename T>
-	b32 owns(const store_alloc<>* a,const T* ptr,u32 count);
+	b32 owns(const store_alloc<>* a,const T* ptr,msize size=1);
 
 	template <typename T>
-	b32 free(store_alloc<>* a,T* ptr,u32 count);
+	b32 free(store_alloc<>* a,T* ptr,msize size=1);
 
 	template <typename T>
-	T* alloc(store_alloc<>* a,u32 count);
+	T* malloc(store_alloc<>* a,msize size=1);
 }
 
 #include "dggt_mem_store_alloc.inl"

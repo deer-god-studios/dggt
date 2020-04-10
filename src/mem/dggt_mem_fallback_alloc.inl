@@ -17,12 +17,12 @@ namespace dggt
 	}
 
 	template <typename P,typename F>
-	void* alloc(fallback_alloc<P,F>* a,msize size)
+	void* malloc(fallback_alloc<P,F>* a,msize size)
 	{
-		void* result=alloc(a->p,size);
+		void* result=malloc(a->p,size);
 		if (result==0)
 		{
-			result=alloc(a->f,size);
+			result=malloc(a->f,size);
 		}
 		return result;
 	}
@@ -94,21 +94,21 @@ namespace dggt
 	}
 
 	template <typename T,typename P,typename F>
-	T* alloc(fallback_alloc<P,F>* a,u32 count)
+	T* malloc(fallback_alloc<P,F>* a,msize size)
 	{
-		return (T*)alloc(a,sizeof(T)*count);
+		return (T*)malloc(a,sizeof(T)*size);
 	}
 
 	template <typename T,typename P,typename F>
-	b32 free(fallback_alloc<P,F>* a,T* ptr,u32 count)
+	b32 free(fallback_alloc<P,F>* a,T* ptr,msize size)
 	{
-		return free(a,ptr,sizeof(T)*count);
+		return free(a,ptr,sizeof(T)*size);
 	}
 
 	template <typename T,typename P,typename F>
 	b32 owns(const fallback_alloc<P,F>* a,
-			const T* ptr,u32 count)
+			const T* ptr,msize size)
 	{
-		return owns(a,ptr,sizeof(T)*count);
+		return owns(a,ptr,sizeof(T)*size);
 	}
 }

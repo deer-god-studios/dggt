@@ -1,6 +1,7 @@
 #ifndef _DGGT_MEM_NULL_ALLOC_H_
 
 #include "dggt_mem_allocator.h"
+
 namespace dggt
 {
 	struct null_alloc
@@ -8,13 +9,13 @@ namespace dggt
 		null_alloc();
 	};
 
-	void* alloc(null_alloc* a,msize size);
+	void* malloc(null_alloc* a,msize size=0);
 
-	b32 free(null_alloc* a,void* ptr,msize size);
+	b32 free(null_alloc* a,void* ptr,msize size=0);
 	
 	b32 clear(null_alloc* a);
 
-	b32 owns(const null_alloc* a,const void* ptr,msize size);
+	b32 owns(const null_alloc* a,const void* ptr,msize size=0);
 
 	stack_state save_stack(null_alloc* a);
 
@@ -27,13 +28,13 @@ namespace dggt
 	msize available_mem(const null_alloc* a);
 
 	template <typename T>
-	T* alloc(null_alloc* a,u32 count);
+	T* malloc(null_alloc* a,msize size=0);
 
 	template <typename T>
-	b32 free(null_alloc* a,T* ptr,u32 count);
+	b32 free(null_alloc* a,T* ptr,msize size=0);
 
 	template <typename T>
-	b32 owns(const null_alloc* a,const T* ptr,u32 count);
+	b32 owns(const null_alloc* a,const T* ptr,msize size=0);
 }
 
 #include "dggt_mem_null_alloc.inl"

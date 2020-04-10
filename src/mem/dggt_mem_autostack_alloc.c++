@@ -42,9 +42,9 @@ namespace dggt
 		restore_stack(a,prevState);
 	}
 
-	void* alloc(autostack_alloc* a,msize size)
+	void* malloc(autostack_alloc* a,msize size)
 	{
-		return alloc(a->a,size);
+		return malloc(a->a,size);
 	}
 
 	b32 free(autostack_alloc* a,void* ptr,msize size)

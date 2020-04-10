@@ -2,7 +2,6 @@
 
 #include "dggt_mem_defines.h"
 #include "dggt_mem_utils.h"
-#include "dggt_mem_blk.h"
 #include "dggt_mem_null_alloc.h"
 #include "dggt_mem_lin_alloc.h"
 #include "dggt_mem_stack_alloc.h"
@@ -13,6 +12,7 @@
 #include "dggt_mem_table_alloc.h"
 #include "dggt_mem_fallback_alloc.h"
 #include "dggt_mem_stallocator.h"
+#include "dggt_mem_page.h"
 
 namespace dggt
 {
@@ -33,10 +33,10 @@ namespace dggt
 
 	free_alloc* get_cache_alloc();
 
-	void* cache_alloc(msize size=DEF_BLOCK_SIZE);
+	void* cache_malloc(msize size=DEF_BLOCK_SIZE);
 
 	template <typename T>
-	T* cache_alloc(u32 count=1);
+	T* cache_malloc(u32 count=1);
 
 	b32 cache_free(void* ptr,msize size=DEF_BLOCK_SIZE);
 
