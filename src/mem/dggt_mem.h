@@ -37,12 +37,12 @@ namespace dggt
 	void* cache_malloc(msize size=DEF_BLOCK_SIZE);
 
 	template <typename T>
-	T* cache_malloc(u32 count=1);
+	T* cache_malloc(msize size=1);
 
 	b32 cache_free(void* ptr,msize size=DEF_BLOCK_SIZE);
 
 	template <typename T>
-	b32 cache_free(T* ptr,u32 count=1);
+	b32 cache_free(T* ptr,msize size=1);
 }
 
 #include "dggt_mem.inl"

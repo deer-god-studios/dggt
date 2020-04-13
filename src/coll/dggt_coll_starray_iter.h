@@ -1,7 +1,8 @@
 #ifndef _DGGT_COLL_STARRAY_ITER_H_
 
-#include "types/dggt_types.h"
-#include "mem/dggt_mem_blk.h"
+#include "dggt_coll_iterator.h"
+#include "dggt_coll_starray_mem.h"
+#include "dggt_coll_starray_key.h"
 
 namespace dggt
 {
@@ -9,38 +10,11 @@ namespace dggt
 	struct starray;
 
 	template <typename T,msize S>
-	using starray_mem=blk<T,S>;
+	using starray_iter_settings=
+	iter_settings<T,starray_mem<T,S>,starray<T,S>,starray_key<T,S>>;
 
 	template <typename T,msize S>
-	struct starray_iter
-	:iterator<T,starray_mem<T,S>,starray<T,S>>
-	{
-		msize current;
-
-		b32 is_end() const;
-		T& operator*();
-		const T& operator*() const;
-		starray_iter<T>& operator++();
-		starray_iter<T> operator++(int);
-	};
-
-	template <typename T,msize S>
-	b32 is_end(const starray_iter<T,S>& it);
-
-	template <typename T,msize S>
-	b32 advance(starray_iter<T,S>& it);
-
-	template <typename T,msize S>
-	T& get(starray_iter<T,S>& it);
-
-	template <typename T,msize S>
-	const T& get(const starray_iter<T,S>& it);
-
-	template <typename T,msize S>
-	T* get_ptr(starray_iter<T,S>& it);
-
-	template <typename T,msize S>
-	const T* get_ptr(const starray_iter<T,S>& it);
+	using starray_iter=iterator<starray_iter_settings<T,S>>;
 }
 
 #define _DGGT_COLL_STARRAY_ITER_H_

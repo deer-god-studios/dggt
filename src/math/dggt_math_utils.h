@@ -360,6 +360,12 @@ namespace dggt
 		return intvl_centered(val,T(1),ends);
 	}
 
+	template <typename T=u32>
+	inline T get_nth_digit(T val,T n)
+	{
+		return val/pow(T(10),n-T(1))%pow(T(10),n);
+	}
+
 	/*!
 	 * @}
 	 * */

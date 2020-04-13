@@ -5,7 +5,8 @@
 namespace dggt
 {
 	template <typename K,typename V>
-	struct table_pair:pair<K,V>
+	struct table_pair:
+		pair<K,V>
 	{
 		table_pair() { }
 		table_pair(K key,V val)

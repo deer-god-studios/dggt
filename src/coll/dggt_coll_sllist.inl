@@ -3,88 +3,85 @@
 namespace dggt
 {
 	template <typename T,typename A>
-	sllist<T>::iter destroy_sllist(sllist<T>* list,A* alloc)
+	typename sllist<T>::iter destroy_sllist(sllist<T>& list,A* alloc)
 	{
-		sllist<T>::iter result=clear(list,alloc);
+		typename sllist<T>::iter result=clear(list,alloc);
 		if (is_mem_valid(result))
 		{
-			if (list)
-			{
-				result.coll=NULLPTR;
-				result.mem.valid=false;
-				list->mem=sllist<T>::mem_type{};
-			}
+			result=typename sllist<T>::iter();
 		}
 		return result;
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter push(sllist<T>* list,A* a)
+	typename sllist<T>::iter push(sllist<T>& list,A* a)
 	{
-		sllist<T>::iter result=sllist<T>::iter(list);
-		if (list&&a)
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		if (a)
 		{
-			result.mem=list->mem;
-			slnode<T>* newNode=malloc_slnode(a);
+			slnode<T>* newNode=malloc_slnode<T>(a);
 			if (newNode)
 			{
-				newNode->next=list->mem.head;
+				newNode->next=list.mem.head;
 				zero_struct<T>(&newNode->val);
-				result.current=newNode;
-				list->chain.ptr=newNode;
-				++list->chain.count;
+				list.mem.head=newNode;
+				++list.count;
+				result=peek(list);
 			}
 		}
 		return result;
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter push(sllist<T>* list,const T& val,A* a)
+	typename sllist<T>::iter push(sllist<T>& list,const T& val,A* a)
 	{
-		sllist<T>::iter result=push(list,a);
-		if (!is_end(result))
+		typename sllist<T>::iter result=push(list,a);
+		if (is_mem_valid(result)&&
+				result==peek(list))
 		{
-			result.current->val=val;
+			*result=val;
 		}
 		return result;
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter pop(sllist<T>* list,A* a)
+	typename sllist<T>::iter pop(sllist<T>& list,A* a)
 	{
-		sllist<T>::iter result=sllist<T>::iter(list);
-		if (list&&list->count)
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		if (get_count(list))
 		{
-			slnode<T>* nodeToFree=list->mem.head;
-			result.current=nodeToFree;
-			result.mem=list->mem;
+			slnode<T>* nodeToFree=list.mem.head;
+			result=peek(list);
 			result.mem.valid=false;
-			list->mem.head=nodeToFree->next;
-			--list->count;
-			if (free(a,nodeToFree))
+			list.mem.head=nodeToFree->next;
+			--list.count;
+			if (free<slnode<T>>(a,nodeToFree))
 			{
-				result.current=list->mem.head;
-				result.coll=list;
-				result.mem.valid=list->mem.valid;
+				result=peek(list);
 			}
 		}
 		return result;
 	}
 
 	template <typename T>
-	sllist<T>::iter peek(sllist<T>* list)
+	typename sllist<T>::iter peek(sllist<T>& list)
 	{
-		return list?sllist<T>::iter():
-			sllist<T>::iter(list->mem,list,list->mem.head);
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		result.current=sllist_key<T>(list.mem.head);
+		return result;
 	}
 
 	template <typename T>
-	sllist<T>::iter get(sllist<T>* list,u32 index)
+	typename sllist<T>::iter get(sllist<T>& list,u32 index)
 	{
-		sllist<T>::iter result=sllist<T>::iter(list);
-		sllist<T>::iter it=get_iter(list);
-		for (sllist<T>::iter it=get_iter(list),u32 i=0;
-				!is_end(it)&&i<index;++i,++it) { }
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		typename sllist<T>::iter it=get_iter(list);
+		u32 i=0;
+		for (typename sllist<T>::iter it=get_iter(list);
+				!is_end(it)&&i<index;++it)
+		{
+			++i;
+		}
 		if (!is_end(it))
 		{
 			result=it;
@@ -93,22 +90,22 @@ namespace dggt
 	}
 
 	template <typename T>
-	sllist<T>::iter get_iter(sllist<T>* list)
+	typename sllist<T>::iter get_iter(sllist<T>& list)
 	{
 		return peek(list);
 	}
 
 	template <typename T>
-	u32 get_count(const sllist<T>* list)
+	u32 get_count(const sllist<T>& list)
 	{
-		return list?list->count:0;
+		return list.count;
 	}
 
 	template <typename T>
-	b32 contains(sllist<T>* list,const T& item)
+	b32 contains(sllist<T>& list,const T& item)
 	{
 		b32 result=false;
-		for (sllist<T>::iter it=get_iter(list);
+		for (typename sllist<T>::iter it=get_iter(list);
 				!is_end(it);
 				++it)
 		{
@@ -122,13 +119,12 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter remove(
-			sllist<T>* list,
+	typename sllist<T>::iter remove(
+			sllist<T>& list,
 			slnode<T>* prev,
 			slnode<T>* toRemove,A* a)
 	{
-		sllist<T>::iter result={0,list,0};
-		if (list)
+		typename sllist<T>::iter result={0,list,0};
 		{
 			result.mem=list.mem;
 			if (prev)
@@ -137,11 +133,11 @@ namespace dggt
 				result.current=toRemove;
 				result.mem.valid=false;
 				prev->next=toRemove->next;
-				--list->count;
+				--list.count;
 				if (free(a,toRemove))
 				{
 					result.current=prev;
-					result.mem.valid=list->mem.valid;
+					result.mem.valid=list.mem.valid;
 				}
 			}
 			else
@@ -154,58 +150,51 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter clear(sllist<T>* list,A* a)
+	typename sllist<T>::iter clear(sllist<T>& list,A* a)
 	{
-		sllist<T>::iter result=sllist<T>::iter(list);
-		if (list)
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		slnode<T>* current=list.mem.head;
+		while (current)
 		{
-			result.mem=list->mem;
-			slnode<T>* current=list->mem.head;
-			while (current)
+			slnode<T>* nodeToFree=current;
+			current=current->next;
+			if (!free<T>(a,nodeToFree))
 			{
-				slnode<T>* nodeToFree=current;
-				current=current->next;
-				if (!free(a,nodeToFree))
-				{
-					nodeToFree->next=result.current;
-					result.current=nodeToFree;
-					result.mem.valid=false;
-				}
+				nodeToFree->next=result.current.node;
+				result.current=nodeToFree;
+				result.mem.valid=false;
 			}
-			if (result.mem.valid)
-			{
-				result.current=list->mem.head;
-			}
-			list->count=0;
 		}
+		if (result.mem.valid)
+		{
+			result.current=list.mem.head;
+		}
+		list.count=0;
 		return result;
 	}
 
 	template <typename T,typename A>
-	sllist<T>::iter insert(sllist<T>* list,slnode<T>* prev,
+	typename sllist<T>::iter insert(sllist<T>& list,slnode<T>* prev,
 			const T& val,A* a)
 	{
-		sllist<T>::iter result=sllist<T>::iter(list);
-		if (list)
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
+		result.mem=list.mem;
+		slnode<T>* newNode=malloc_slnode<T>(a);
+		if (newNode)
 		{
-			result.mem=list->mem;
-			slnode<T>* newNode=malloc_slnode<T>(a);
-			if (newNode)
+			result.current=newNode;
+			newNode->val=val;
+			if (prev)
 			{
-				result.current=newNode;
-				newNode->val=val;
-				if (prev)
-				{
-					newNode->next=prev->next;
-					prev->next=newNode;
-				}
-				else
-				{
-					newNode->next=list->chain.ptr->next;
-					list->chain.ptr=newNode;
-				}
-				++list->count;
+				newNode->next=prev->next;
+				prev->next=newNode;
 			}
+			else
+			{
+				newNode->next=list.chain.ptr->next;
+				list.chain.ptr=newNode;
+			}
+			++list.count;
 		}
 		return result;
 	}

@@ -1,3 +1,5 @@
+// TODO: module namespaces.
+
 /*!
  * @file dggt.h
  * @brief The public interface of the @ref dggt.

@@ -1,7 +1,5 @@
 #ifndef _DGGT_COLL_IDXTABLE_
 
-#include "dggt_coll_membership.h"
-
 #include "dggt_coll_idxtable_iter.h"
 #include "dggt_coll_collection.h"
 
@@ -14,15 +12,12 @@ namespace dggt
 		idxmem<flag32> flags;
 	};
 
-	global const fl32 IDX_EMPTY=MEMB_EMPTY;
-	global const fl32 IDX_OCCUPIED=MEMB_OCCUPIED;
-
 	template <typename T>
 	struct idxtable:
 		collection<T,idxtable_mem<T>,idxtable<T>,idxtable_iter<T>>
 	{
 		msize nextHandle;
-		u32 count;
+		msize count;
 	};
 
 	template <typename T,typename A>
@@ -36,28 +31,28 @@ namespace dggt
 	idxtable<T> create_idxtable(u32 capacity,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> destroy_idxtable(idxtable<T>* table,A* allocator);
+	idxtable<T>::iter destroy_idxtable(idxtable<T>* table,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> add(idxtable<T>* table,A* allocator);
+	idxtable<T>::iter add(idxtable<T>* table,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> add(idxtable<T>* table,const T& val,A* allocator);
+	idxtable<T>::iter add(idxtable<T>* table,const T& val,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> remove(idxtable<T>* table,const T& val,A* allocator);
+	idxtable<T>::iter remove(idxtable<T>* table,const T& val,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> remove(idxtable<T>* table,u32 handle,A* allocator);
+	idxtable<T>::iter remove(idxtable<T>* table,u32 handle,A* allocator);
 
 	template <typename T,typename A>
-	idxtable_iter<T> clear(idxtable<T>* table,A* allocator);
+	idxtable<T>::iter clear(idxtable<T>* table,A* allocator);
 
 	template <typename T>
 	u32 get_count(const idxtable<T>* table);
 
 	template <typename T>
-	idxtable_iter<T> get_iter(idxtable<T>* table);
+	idxtable<T>::iter get_iter(idxtable<T>* table);
 
 	template <typename T>
 	b32 contains(idxtable<T>* table,const T& item);
@@ -65,14 +60,13 @@ namespace dggt
 	template <typename T>
 	u32 get_capacity(idxtable<T>* table);
 
-	template <typename F,typename T>
+	template <typename T,typename F=float32>
 	F get_load_factor(idxtable<T>* table);
 
 	template <typename T,typename A>
-	idxtable_iter<T> resize(idxtable<T>* table,u32 newCapacity,A* allocator);
+	idxtable<T>::iter resize(idxtable<T>* table,u32 newCapacity,A* allocator);
 }
 
-#include "dggt_coll_idxtable_iter.inl"
 #include "dggt_coll_idxtable.inl"
 
 #define _DGGT_COLL_IDXTABLE_

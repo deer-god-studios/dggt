@@ -1,16 +1,15 @@
-#include "tmpl/dggt_tmpl_is_same.h"
 
 namespace dggt
 {
 	template <typename T>
-	T* cache_alloc(u32 count)
+	T* cache_malloc(msize size)
 	{
-		return (T*)cache_alloc(sizeof(T)*count);
+		return (T*)cache_malloc(sizeof(T)*size);
 	}
 
 	template <typename T>
-	b32 cache_free(T* ptr,u32 count)
+	b32 cache_free(T* ptr,msize size)
 	{
-		return cache_free((void*)ptr,sizeof(T)*count);
+		return cache_free((void*)ptr,sizeof(T)*size);
 	}
 }

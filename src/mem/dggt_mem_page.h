@@ -11,7 +11,7 @@ namespace dggt
 		T* ptr;
 		msize size;
 
-		page(T* ptr,msize size) : this->ptr(ptr),this->size(size) { }
+		page(T* ptr,msize size) : ptr(ptr),size(size) { }
 		page() : page(0,0) { }
 
 		T* operator->() { return ptr; }
@@ -33,13 +33,13 @@ namespace dggt
 			return *this;
 		}
 
-		b32 operator==(const page<T>& rhs)
+		b32 operator==(const page<T>& rhs) const
 		{
 			return this==&rhs||
 				(ptr==rhs.ptr&&size==rhs.size);
 		}
 
-		b32 operator!=(const page<T>& rhs)
+		b32 operator!=(const page<T>& rhs) const
 		{
 			return !(this->operator==(rhs));
 		}

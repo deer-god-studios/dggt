@@ -17,10 +17,21 @@ namespace dggt
 	struct dlpair:
 		pair<dlnode<T>*>
 	{
-		dlnode<T>* get_head() { return first; }
-		const dlnode<T>* get_head() const { return first; }
-		dlnode<T>* get_tail() { return second; }
-		const dlnode<T>* get_tail() const { return second; }
+		dlnode<T>* get_head() { return this->first; }
+		const dlnode<T>* get_head() const { return this->first; }
+		dlnode<T>* get_tail() { return this->second; }
+		const dlnode<T>* get_tail() const { return this->second; }
+
+		b32 operator==(const dlpair<T>& rhs) const
+		{
+			return this==&rhs||
+				(this->first==rhs.first&&this->second==rhs.second);
+		}
+
+		b32 operator!=(const dlpair<T>& rhs) const
+		{
+			return !(this->operator!=(rhs));
+		}
 	};
 
 	template <typename T,typename A>

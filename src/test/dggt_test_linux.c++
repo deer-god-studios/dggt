@@ -36,65 +36,60 @@ void print_alloc_info(A* allocator)
 	printf("available_mem: %d\n",available_mem(allocator));
 }
 
-void test_cache()
+template <typename A>
+void test_array(A* a)
 {
-	msize buffSize=KB(50);
-	printf("cache_alloc\n");
-	void* buff=cache_alloc(buffSize);
-	printf("available_cache_mem: %d\n",available_cache_mem());
+	array<int> intArr=create_array<int>(a);
 
-	free_alloc* cacheAlloc=get_cache_alloc();
-	printf("cacheAlloc.buff: %X\n",cacheAlloc->buff);
-	printf("cacheAlloc.buffSize: %d\n",cacheAlloc->buffSize);
-	printf("cacheAlloc.used: %d\n",cacheAlloc->used);
-	printf("cacheAlloc.freeList: %d\n",cacheAlloc->freeList);
-	printf("lin_alloc\n");
-	lin_alloc linAlloc=lin_alloc(buff,buffSize);
-	printf("linAlloc.buff: %X\n",linAlloc.buff);
-	printf("linAlloc.buffSize: %d\n",linAlloc.buffSize);
-	printf("linAlloc.used: %d\n",linAlloc.used);
-	u32 floatCount=50;
-	printf("alloc\n");
-	float* floatArr=alloc<float>(&linAlloc,floatCount);
-	for (u32 i=0;i<floatCount;++i)
+	for (u32 i=0;i<16;++i)
 	{
-		floatArr[i]=(float)i/7.0f;
+		push(intArr,(int)i,a);
 	}
-	for (u32 i=0;i<floatCount;++i)
+	pop(intArr,a);
+	u32 i=0;
+	for (array<int>::iter it=peek(intArr);!it.is_begin();--it)
 	{
-		printf("%f\n",floatArr[i]);
+		int arrVal=*it;
+		printf("intArr[%d]: %d\n",i,arrVal);
+		++i;
 	}
-
-	cache_free(buff,buffSize);
+	destroy_array(intArr,a);
 }
 
-template <typename K,typename V,typename A>
-void test_chntable(chntable<K,V>* table,A* a)
+template <typename A>
+void test_sllist(A* a)
 {
-	chntable<u32,float32> floatTable=create_chntable<u32,float32>(a);
-	insert(&floatTable,0U,3.14f,a);
-	insert(&floatTable,50U,77.1f,a);
+	sllist<float32> floatList=create_sllist<float32>(a);
+	printf("count: %d\n",get_count(floatList));
+	for (u32 i=0;i<16;++i)
+	{
+		push(floatList,i/7.6f,a);
+	}
 
-	printf("%f\n",get(floatTable[0U]).get_val());
+	pop(floatList,a);
 
-	remove(&floatTable,0U,a);
-
-	printf("%f\n",get(floatTable[50U]).get_val());
-
+	u32 i=0;
+	for (sllist<float32>::iter it=get_iter(floatList);!it.is_end();++it)
+	{
+		printf("floatList[%d]: %f\n",i,*it);
+		++i;
+	}
+	destroy_sllist(floatList,a);
 }
 
-void test_stallocator()
+void test_starray()
 {
-	stallocator<4096,free_alloc> freeStalloc;
-	int* intMem=alloc<int>(&freeStalloc,4);
-	intMem[0]=40;
-	intMem[1]=1;
-	intMem[2]=4;
-	intMem[4]=6;
+	starray<float64,32> fl64Starr=create_starray<float64,32>();
 
-	for (u32 i=0;i<5;++i)
+	for (u32 i=0;i<32;++i)
 	{
-		printf("intMem[%d]: %d\n",i,intMem[i]);
+		push(fl64Starr,i/3.14);
+	}
+	u32 i=0;
+	for (starray<float64,32>::iter it=get_iter(fl64Starr);!it.is_end();++it)
+	{
+		printf("fl64Starr[%d]: %f\n",i,*it);
+		++i;
 	}
 }
 
@@ -103,18 +98,26 @@ int main(int argc, char* argv[])
 	printf("cache_init\n");
 	cache_init(GB(2));
 
-	free_alloc a_=free_alloc(cache_alloc(KB(8)),KB(8));
+	free_alloc a_=free_alloc(cache_malloc(KB(8)),KB(8));
 	free_alloc* a=&a_;
-	//test_stallocator();
-	//test_cache();
 
-	oatable<u32,float64> float64ChnTable=create_oatable<u32,float64>(a);
+//	test_array(a);
+//	test_sllist(a);
+//	test_starray();
 
-	insert(&float64ChnTable,5U,4.5d,a);
+	dllist<ubyte> ubytList=create_dllist<ubyte>(a);
 
-	printf("%d,%F\n",
-			get(float64ChnTable[5U]).get_key(),
-			get(float64ChnTable[5U]).get_val());
+	for (u32 i=0;i<5;++i)
+	{
+		push(ubytList,(ubyte)4,a);
+	}
+
+	for (dllist<ubyte>::iter it=get_iter(ubytList);!it.is_end();++it)
+	{
+		printf("%d\n",*it);
+	}
+
+	destroy_dllist(ubytList,a);
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

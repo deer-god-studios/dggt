@@ -9,6 +9,9 @@ namespace dggt
 	{
 		T val;
 		slnode<T>* next;
+
+		explicit operator T*() { return &val; }
+		explicit operator const T*() const { return &val; }
 	};
 
 	template <typename T,typename A>
@@ -48,7 +51,7 @@ namespace dggt
 			{
 				slnode<T>* toFree=current;
 				current=current->next;
-				result=result&&free(a,toFree);
+				result=result&&free<slnode<T>>(a,toFree);
 				++i;
 			}
 		}

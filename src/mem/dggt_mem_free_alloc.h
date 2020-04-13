@@ -18,11 +18,9 @@ namespace dggt
 		free_alloc(void* ptr,msize size);
 	};
 
-	template <typename I>
-	void* malloc(free_alloc* a,I size=I(8));
+	void* malloc(free_alloc* a,msize size);
 
-	template <typename
-	b32 free(free_alloc* a,void* ptr,msize size=8);
+	b32 free(free_alloc* a,void* ptr,msize size);
 	
 	b32 clear(free_alloc* a);
 
@@ -42,7 +40,7 @@ namespace dggt
 	T* malloc(free_alloc* a,msize size=1);
 
 	template <typename T>
-	b32 free<T,free_alloc,I>(free_alloc* a,T* ptr,msize size=1);
+	b32 free(free_alloc* a,T* ptr,msize size=1);
 
 	template <typename T>
 	b32 owns(const free_alloc* a,const T* ptr,msize size=1);

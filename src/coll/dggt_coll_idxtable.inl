@@ -1,35 +1,23 @@
 
 namespace dggt
 {
-	namespace dggt_internal_
-	{
-		template <typename T>
-		idx_table_iter<T> get_def_idx_table_iter(idx_table<T>* idxTable)
-		{
-			return idx_table_iter<T>{
-				idx_table_mem<T>{},idx_table_flag_mem{},
-					0,0,idxTable};
-		}
-	}
-
 	template <typename T,typename A>
-	idx_table<T> create_idx_table(u32 capacity,A* allocator)
+	idxtable<T> create_idxtable(u32 capacity,A* allocator)
 	{
-		idx_table<T> result={create_array<T>(capacity,allocator),
+		idxtable<T> result={create_array<T>(capacity,allocator),
 			create_array<flag32>(capacity,allocator)};
 
 		for (u32 i=0;i<get_capacity(result);++i)
 		{
-			result.flags[i]=IDX_EMPTY;
+			result.mem[i]=IDX_EMPTY;
 		}
 		return result;
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> destroy_idx_table(idx_table<T>* table,A* allocator)
+	idxtable<T>::iter destroy_idxtable(idxtable<T>* table,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
 			result.tableMem=table->table;
@@ -46,10 +34,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> add(idx_table<T>* table,A* allocator)
+	idxtable<T>::iter add(idxtable<T>* table,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
 			if (get_count(table)>=get_capacity(table))
@@ -70,9 +57,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> add(idx_table<T>* table,const T& val,A* allocator)
+	idxtable<T>::iter add(idxtable<T>* table,const T& val,A* allocator)
 	{
-		idx_table_iter<T> result=add(table,allocator);
+		idxtable<T>::iter result=add(table,allocator);
 		if (is_mem_valid(table))
 		{
 			*result=val;
@@ -82,13 +69,12 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> remove(idx_table<T>* table,const T& val,A* allocator)
+	idxtable<T>::iter remove(idxtable<T>* table,const T& val,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
-			for (idx_table_iter<T> it=get_iter(table);
+			for (idxtable<T>::iter it=get_iter(table);
 					!it.is_end();++it)
 			{
 				if (*it==val)
@@ -104,10 +90,9 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> remove(idx_table<T>* table,u32 handle,A* allocator)
+	idxtable<T>::iter remove(idxtable<T>* table,u32 handle,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table&&handle<get_count(table))
 		{
 			result=get_iter(table);
@@ -128,14 +113,13 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> clear(idx_table<T>* table,A* allocator)
+	idxtable<T>::iter clear(idxtable<T>* table,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
 			result=get_iter(table);
-			for (idx_table_iter<T> it=get_iter(table);
+			for (idxtable<T>::iter it=get_iter(table);
 					!it.is_end();++it)
 			{
 				it.flagMem[get_current(it)]=IDX_EMPTY;
@@ -146,16 +130,15 @@ namespace dggt
 	}
 
 	template <typename T>
-	u32 get_count(const idx_table<T>* table)
+	u32 get_count(const idxtable<T>* table)
 	{
 		return table?table->nextHandle:0;
 	}
 
 	template <typename T>
-	idx_table_iter<T> get_iter(idx_table<T>* table)
+	idxtable<T>::iter get_iter(idxtable<T>* table)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
 			result.tableMem=table->tableMem;
@@ -170,12 +153,12 @@ namespace dggt
 	}
 
 	template <typename T>
-	b32 contains(idx_table<T>* table,const T& item)
+	b32 contains(idxtable<T>* table,const T& item)
 	{
 		b32 result=false;
 		if (table)
 		{
-			for (idx_table_iter<T> it=get_iter(table);
+			for (idxtable<T>::iter it=get_iter(table);
 					!it.is_end();++it)
 			{
 				if (*it==item)
@@ -189,22 +172,21 @@ namespace dggt
 	}
 
 	template <typename T>
-	u32 get_capacity(idx_table<T>* table)
+	u32 get_capacity(idxtable<T>* table)
 	{
 		return table?table->table.count:0;
 	}
 
 	template <typename F,typename T>
-	F get_load_factor(idx_table<T>* table)
+	F get_load_factor(idxtable<T>* table)
 	{
 		return get_capacity(table)?get_count(table)/get_capacity(table):0;
 	}
 
 	template <typename T,typename A>
-	idx_table_iter<T> resize(idx_table<T>* table,u32 newCapacity,A* allocator)
+	idxtable<T>::iter resize(idxtable<T>* table,u32 newCapacity,A* allocator)
 	{
-		idx_table_iter<T> result=
-			dggt_internal_::get_def_idx_table_iter(table);
+		idxtable<T>::iter result=idxtable<T>::iter(table);
 		if (table)
 		{
 			result.tableMem=table->table;
