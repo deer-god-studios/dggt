@@ -1,12 +1,13 @@
 #ifndef _DGGT_MEM_AUTOSTACK_H_
 
 #include "dggt_mem_stack_alloc.h"
+#include "dggt_mem_allocator.h"
 
 namespace dggt
 {
-	struct autostack_alloc
+	struct autostack_alloc:
+		allocator<stack_alloc*>
 	{
-		stack_alloc* a;
 		stack_state prevState;
 
 		autostack_alloc();
