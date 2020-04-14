@@ -29,8 +29,10 @@ namespace dggt
 	struct val_if:enable_if<B,T>
 	{
 		typedef T type;
+
 		val_if(type val) { }
-		operator type() { return (type)this; }
+
+		operator type() { return type(); }
 	};
 
 	template <typename T>
@@ -39,7 +41,7 @@ namespace dggt
 		typedef T type;
 		type val;
 
-		val_if(type val) { this->val=val; }
+		val_if(type val) { }
 
 		operator type() { return val; }
 	};

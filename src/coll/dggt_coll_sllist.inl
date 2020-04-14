@@ -121,22 +121,22 @@ namespace dggt
 	template <typename T,typename A>
 	typename sllist<T>::iter remove(
 			sllist<T>& list,
-			slnode<T>* prev,
-			slnode<T>* toRemove,A* a)
+			typename sllist<T>::iter& prev,
+			typename sllist<T>::iter& node,A* a)
 	{
-		typename sllist<T>::iter result={0,list,0};
+		slnode<T>* p=prev.current.node;
+		slnode<T>* n=node.current.node;
+		typename sllist<T>::iter result=typename sllist<T>::iter(list);
 		{
-			result.mem=list.mem;
-			if (prev)
+			if (p)
 			{
-				ASSERT(toRemove&&prev->next==toRemove);
-				result.current=toRemove;
+				result.current=sllist_key<T>(n);
 				result.mem.valid=false;
-				prev->next=toRemove->next;
+				p->next=n->next;
 				--list.count;
-				if (free(a,toRemove))
+				if (free<T>(a,n))
 				{
-					result.current=prev;
+					result.current=sllist_key<T>(p);
 					result.mem.valid=list.mem.valid;
 				}
 			}
@@ -158,7 +158,7 @@ namespace dggt
 		{
 			slnode<T>* nodeToFree=current;
 			current=current->next;
-			if (!free<T>(a,nodeToFree))
+			if (!free<slnode<T>>(a,nodeToFree))
 			{
 				nodeToFree->next=result.current.node;
 				result.current=nodeToFree;
@@ -174,25 +174,27 @@ namespace dggt
 	}
 
 	template <typename T,typename A>
-	typename sllist<T>::iter insert(sllist<T>& list,slnode<T>* prev,
+	typename sllist<T>::iter insert(sllist<T>& list,
+			typename sllist<T>::iter& node,
 			const T& val,A* a)
 	{
+		slnode<T>* n=node.current.node;
 		typename sllist<T>::iter result=typename sllist<T>::iter(list);
-		result.mem=list.mem;
 		slnode<T>* newNode=malloc_slnode<T>(a);
 		if (newNode)
 		{
-			result.current=newNode;
+			result.current=sllist_key<T>(newNode);
 			newNode->val=val;
-			if (prev)
+			if (n)
 			{
-				newNode->next=prev->next;
-				prev->next=newNode;
+				result.current=sllist_key<T>(n);
+				newNode->next=n->next;
+				n->next=newNode;
 			}
 			else
 			{
-				newNode->next=list.chain.ptr->next;
-				list.chain.ptr=newNode;
+				newNode->next=list.mem.head->next;
+				list.mem.head=newNode;
 			}
 			++list.count;
 		}

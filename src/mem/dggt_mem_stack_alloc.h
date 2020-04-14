@@ -1,20 +1,15 @@
 #ifndef _DGGT_MEM_STACK_ALLOC_H_
 
-#include "dggt_mem_utils.h"
 #include "dggt_mem_allocator.h"
 
 namespace dggt
 {
-	struct stack_alloc
+	struct stack_alloc:
+		allocator<alloc_stack>
 	{
-		void* buff;
-		msize buffSize;
-		msize used;
-		stack_state prevState;
-		u32 stateCount;
-
-		stack_alloc();
-		stack_alloc(void* ptr,msize size);
+		stack_alloc(void* ptr,msize size):
+			allocator(alloc_stack(vpage(ptr,size),0)) { }
+		stack_alloc() : stack_alloc(0,0) { }
 	};
 
 	void* malloc(stack_alloc* a,msize size);
@@ -22,30 +17,7 @@ namespace dggt
 	b32 free(stack_alloc* a,void* ptr,msize size);
 	
 	b32 clear(stack_alloc* a);
-
-	b32 owns(const stack_alloc* a,const void* ptr,msize size);
-
-	stack_state save_stack(stack_alloc* a);
-
-	b32 restore_stack(stack_alloc* a,stack_state state);
-
-	b32 is_stack_balanced(const stack_alloc* a);
-
-	msize used_mem(const stack_alloc* a);
-
-	msize available_mem(const stack_alloc* a);
-
-	template <typename T>
-	T* malloc(stack_alloc* a,msize size=1);
-
-	template <typename T>
-	b32 free(stack_alloc* a,T* ptr,msize size=1);
-
-	template <typename T>
-	b32 owns(const stack_alloc* a,const T* ptr,msize size=1);
 }
-
-#include "dggt_mem_stack_alloc.inl"
 
 #define _DGGT_MEM_STACK_ALLOC_H_
 #endif

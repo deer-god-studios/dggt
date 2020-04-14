@@ -45,26 +45,43 @@ namespace dggt
 		}
 	};
 
+	template <>
+	struct page<void>
+	{
+		void* ptr;
+		msize size;
+
+		page(void* ptr,msize size) : ptr(ptr),size(size) { }
+		page() : page(0,0) { }
+
+		explicit operator void*() { return ptr; }
+
+		page<void>& operator=(const page<void>& rhs)
+		{
+			if (this!=&rhs)
+			{
+				ptr=rhs.ptr;
+				size=rhs.size;
+			}
+			return *this;
+		}
+
+		b32 operator==(const page<void>& rhs) const
+		{
+			return this==&rhs||
+				(ptr==rhs.ptr&&size==rhs.size);
+		}
+
+		b32 operator!=(const page<void>& rhs) const
+		{
+			return !(this->operator==(rhs));
+		}
+	};
+
 	template <typename T>
 	global constexpr const page<T> NULL_PAGE=page<T>();
 
-	template <typename T,typename A>
-	page<T> malloc_page(A* a,msize size)
-	{
-		return page<T>(malloc<T>(a,size),size);
-	}
-
-	template <typename T,typename A>
-	b32 free(A* a,page<T>& pge)
-	{
-		return free(a,pge.ptr,pge.size);
-	}
-
-	template <typename T,typename A>
-	b32 owns(A* a,page<T>& pge)
-	{
-		return owns(a,pge.ptr,pge.size);
-	}
+	typedef page<void> vpage;
 }
 
 #define _DGGT_MEM_PAGE_H_

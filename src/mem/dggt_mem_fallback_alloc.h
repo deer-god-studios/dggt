@@ -52,8 +52,6 @@ namespace dggt
 	template <typename T,typename P,typename F>
 	b32 owns(const fallback_alloc<P,F>* a,
 			const T* ptr,msize size=1);
-
- 
 }
 
 #include "dggt_mem_fallback_alloc.inl"

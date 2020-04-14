@@ -121,6 +121,7 @@ namespace dggt
 
 				while (current&&current<toFree)
 				{
+					ASSERT(current!=toFree);
 					prev=current;
 					current=current->next;
 				}
