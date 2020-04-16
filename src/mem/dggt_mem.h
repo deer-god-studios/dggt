@@ -2,7 +2,6 @@
 
 #include "dggt_mem_defines.h"
 #include "dggt_mem_utils.h"
-#include "dggt_mem_null_alloc.h"
 #include "dggt_mem_lin_alloc.h"
 #include "dggt_mem_stack_alloc.h"
 #include "dggt_mem_autostack_alloc.h"
@@ -27,9 +26,9 @@ namespace dggt
 
 	void cache_reinit(msize cacheSize);
 
-	msize available_cache_mem();
+	msize get_available_cache();
 	
-	msize used_cache_mem();
+	msize get_used_cache();
 
 	free_alloc* get_cache_alloc();
 

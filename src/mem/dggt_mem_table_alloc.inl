@@ -5,10 +5,6 @@ namespace dggt
 {
 	namespace dggt_internal_
 	{
-		static const flag32 STORE_TABLE_EMPTY=0;
-		static const flag32 STORE_TABLE_OCCUPIED=1;
-		static const flag32 STORE_TABLE_DELETED=2;
-
 		template <msize TABLESIZE>
 		b32 table_owns(u32 storeCount)
 		{
@@ -39,7 +35,7 @@ namespace dggt
 		template <msize TABLESIZE>
 		b32 table_hash_insert(
 				flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				msize size,u32* indexOut)
 		{
 			b32 result=0;
@@ -72,7 +68,7 @@ namespace dggt
 		template <msize TABLESIZE>
 		b32 table_hash_search(
 				flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				msize size,u32* indexOut)
 		{
 			b32 result=0;
@@ -99,26 +95,26 @@ namespace dggt
 		}
 
 		template <msize TABLESIZE>
-		dggt::store_alloc<>* get_store_alloc(
-				dggt::store_alloc<> storeTable[TABLESIZE],
+		dggt::store_alloc* get_store_alloc(
+				dggt::store_alloc storeTable[TABLESIZE],
 				u32 index)
 		{
-			dggt::store_alloc<>* result=0;
+			dggt::store_alloc* result=0;
 			if (storeTable)
 			{
 				result=
-					(dggt::store_alloc<>*)storeTable+index;
+					(dggt::store_alloc*)storeTable+index;
 			}
 			return result;
 		}
 
 		template <msize TABLESIZE>
-		dggt::store_alloc<>* search_table_alloc(
+		dggt::store_alloc* search_table_alloc(
 				flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				msize size)
 		{
-			dggt::store_alloc<>* result=0;
+			dggt::store_alloc* result=0;
 
 			if (flagTable&&storeTable&&size)
 			{
@@ -132,21 +128,21 @@ namespace dggt
 		}
 
 		template <msize TABLESIZE>
-		dggt::store_alloc<>* insert_store_alloc(
+		dggt::store_alloc* insert_store_alloc(
 				flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				u32* storeCount,
 				msize size)
 		{
-			dggt::store_alloc<>* result=0;
+			dggt::store_alloc* result=0;
 			if (storeTable&&flagTable&&storeCount)
 			{
 				u32 i=0;
 				if (table_hash_insert<TABLESIZE>(flagTable,storeTable,size,&i))
 				{
-					dggt::store_alloc<>* storeAlloc=
+					dggt::store_alloc* storeAlloc=
 						get_store_alloc<TABLESIZE>(storeTable,i);
-					*storeAlloc=dggt::store_alloc<>(size);
+					*storeAlloc=dggt::store_alloc(size);
 					++*storeCount;
 					flagTable[i]=STORE_TABLE_OCCUPIED;
 					result=storeAlloc;
@@ -157,16 +153,16 @@ namespace dggt
 
 		template <msize TABLESIZE>
 		b32 clear_table(flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE])
+				dggt::store_alloc storeTable[TABLESIZE])
 		{
 			b32 result=0;
 			if (flagTable&&storeTable)
 			{
 				for (u32 i=0;i<TABLESIZE;++i)
 				{
-					dggt::store_alloc<>* storeAlloc=
+					dggt::store_alloc* storeAlloc=
 						get_store_alloc<TABLESIZE>(flagTable,storeTable,i);
-					if (storeAlloc&&available_mem(storeAlloc))
+					if (storeAlloc&&get_available(storeAlloc))
 					{
 						clear(storeAlloc);
 					}
@@ -177,12 +173,12 @@ namespace dggt
 
 		template <msize TABLESIZE>
 		void* table_alloc(flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				msize* availableMem,
 				msize size)
 		{
 			void* result=0;
-			dggt::store_alloc<>* storeAlloc=search_table_alloc<TABLESIZE>(
+			dggt::store_alloc* storeAlloc=search_table_alloc<TABLESIZE>(
 					flagTable,storeTable,size);
 			if (storeTable&&flagTable&&availableMem)
 			{
@@ -194,12 +190,12 @@ namespace dggt
 
 		template <msize TABLESIZE>
 		b32 table_free(flag32 flagTable[TABLESIZE],
-				dggt::store_alloc<> storeTable[TABLESIZE],
+				dggt::store_alloc storeTable[TABLESIZE],
 				msize* availableMem,u32* storeCount,
 				void* ptr,msize size)
 		{
 			b32 result=0;
-			dggt::store_alloc<>* storeAlloc=
+			dggt::store_alloc* storeAlloc=
 				search_table_alloc<TABLESIZE>(flagTable,storeTable,size);
 			if (storeAlloc==0)
 			{
@@ -214,17 +210,6 @@ namespace dggt
 			}
 			return result;
 		}
-	}
-
-	template <msize TABLESIZE>
-	table_alloc<TABLESIZE>::table_alloc()
-	{
-		for (msize i=0;i<TABLESIZE;++i)
-		{
-			flagTable[i]=dggt_internal_::STORE_TABLE_EMPTY;
-		}
-		availableMem=0;
-		storeCount=0;
 	}
 
 	template <msize TABLESIZE>
@@ -283,57 +268,14 @@ namespace dggt
 	}
 
 	template <msize TABLESIZE>
-	stack_state save_stack(table_alloc<TABLESIZE>* a)
+	msize get_used(const table_alloc<TABLESIZE>* a)
 	{
-		return SAVE_STACK_FAIL;
+		return get_available(a)?0:MAX_MSIZE;
 	}
 
 	template <msize TABLESIZE>
-	b32 restore_stack(table_alloc<TABLESIZE>* a,stack_state state)
-	{
-		return false;
-	}
-
-	template <msize TABLESIZE>
-	b32 is_stack_balanced(const table_alloc<TABLESIZE>* a)
-	{
-		return true;
-	}
-
-	template <msize TABLESIZE>
-	msize used_mem(const table_alloc<TABLESIZE>* a)
-	{
-		return available_mem(a)?0:MAX_MSIZE;
-	}
-
-	template <msize TABLESIZE>
-	msize available_mem(const table_alloc<TABLESIZE>* a)
+	msize get_available(const table_alloc<TABLESIZE>* a)
 	{
 		return a->availableMem;
-	}
-
-	template <typename T,msize TABLESIZE>
-	T* malloc(table_alloc<TABLESIZE>* a,msize size)
-	{
-		return (T*)malloc(a,sizeof(T)*size);
-	}
-
-	template <typename T,msize TABLESIZE>
-	b32 free(table_alloc<TABLESIZE>* a,T* ptr,msize size)
-	{
-		return free(a,ptr,sizeof(T)*size);
-	}
-
-	template <typename T,msize TABLESIZE>
-	b32 owns(const table_alloc<TABLESIZE>* a,const T* ptr,msize size)
-	{
-		if (a)
-		{
-			return dggt_internal_::table_owns(a->storeCount);
-		}
-		else
-		{
-			return false;
-		}
 	}
 }

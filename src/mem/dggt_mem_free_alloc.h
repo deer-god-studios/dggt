@@ -1,52 +1,53 @@
 #ifndef _DGGT_MEM_FREE_ALLOC_H_
 
-#include "dggt_mem_allocator.h"
-#include "dggt_mem_utils.h"
+#include "dggt_mem_lin_alloc.h"
 
 namespace dggt
 {
-	typedef smblock free_block;
-
-	struct free_alloc
+	struct free_block
 	{
-		void* buff;
-		msize buffSize;
-		free_block* freeList;
-		msize used;
+		free_block* next;
+		msize size;
+	};
 
-		free_alloc();
-		free_alloc(void* ptr,msize size);
+	struct free_alloc:
+		allocator<free_alloc>
+	{
+		lin_alloc linAlloc;
+		free_block* freeList;
+
+		free_alloc(void* ptr,msize size)
+			: allocator<free_alloc>(this),
+			linAlloc(lin_alloc(ptr,size)),
+			freeList((free_block*)ptr)
+		{
+			freeList->next=0;
+			freeList->size=size;
+		}
+
+		free_alloc(vpage buff)
+			: free_alloc(buff.ptr,buff.size) { }
+		free_alloc() : free_alloc(0,0) { }
 	};
 
 	void* malloc(free_alloc* a,msize size);
-
+	
 	b32 free(free_alloc* a,void* ptr,msize size);
 	
 	b32 clear(free_alloc* a);
-
+	
 	b32 owns(const free_alloc* a,const void* ptr,msize size);
 
-	stack_state save_stack(free_alloc* a);
+	msize get_used(const free_alloc* a);
+	
+	msize get_available(const free_alloc* a);
 
-	b32 restore_stack(free_alloc* a,stack_state state);
+	msize get_capacity(const free_alloc* a);
 
-	b32 is_stack_balanced(const free_alloc* a);
+	void* get_buff_ptr(free_alloc* a);
 
-	msize used_mem(const free_alloc* a);
-
-	msize available_mem(const free_alloc* a);
-
-	template <typename T>
-	T* malloc(free_alloc* a,msize size=1);
-
-	template <typename T>
-	b32 free(free_alloc* a,T* ptr,msize size=1);
-
-	template <typename T>
-	b32 owns(const free_alloc* a,const T* ptr,msize size=1);
+	const void* get_buff_ptr(const free_alloc* a);
 }
-
-#include "dggt_mem_free_alloc.inl"
 
 #define _DGGT_MEM_FREE_ALLOC_H_
 #endif

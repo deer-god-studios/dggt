@@ -159,10 +159,10 @@ int main(int argc, char* argv[])
 	free_alloc* a=&a_;
 
 	test_allocator(a);
-//	test_array(a);
-//	test_sllist(a);
-//	test_starray();
-//	test_dllist(a);
+	test_array(a);
+	test_sllist(a);
+	test_starray();
+	test_dllist(a);
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

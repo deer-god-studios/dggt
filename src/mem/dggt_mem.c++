@@ -24,8 +24,8 @@ namespace dggt
 	void cache_shutdown()
 	{
 		clear(internal_::cacheAlloc);
-		free(internal_::cacheAlloc_.buff,
-				internal_::cacheAlloc_.buffSize);
+		free(internal_::cacheAlloc_.linAlloc.buff.ptr,
+				internal_::cacheAlloc_.linAlloc.buff.size);
 		internal_::isInitialized=false;
 	}
 
@@ -50,14 +50,14 @@ namespace dggt
 		return cache_is_initialized()?free(internal_::cacheAlloc,ptr,size):false;
 	}
 
-	msize available_cache_mem()
+	msize get_available_cache()
 	{
-		return available_mem(internal_::cacheAlloc);
+		return get_available(internal_::cacheAlloc);
 	}
 
-	msize used_cache_mem()
+	msize get_used_cache()
 	{
-		return used_mem(internal_::cacheAlloc);
+		return get_used(internal_::cacheAlloc);
 	}
 
 	free_alloc* get_cache_alloc()
