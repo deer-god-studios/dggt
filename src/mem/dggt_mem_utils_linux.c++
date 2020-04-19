@@ -17,7 +17,7 @@ namespace dggt
 			*((ubyte*)mem+b)=0;
 		}
 	}
-	void* alloc(msize size)
+	void* malloc(msize size)
 	{
 		return mmap(0,size,PROT_READ|PROT_WRITE,MAP_SHARED|MAP_ANONYMOUS,0,0);
 	}

@@ -4,7 +4,6 @@
 #include "dggt_mem_utils.h"
 #include "dggt_mem_lin_alloc.h"
 #include "dggt_mem_free_alloc.h"
-/*
 #include "dggt_mem_stack_alloc.h"
 #include "dggt_mem_autostack_alloc.h"
 #include "dggt_mem_pool_alloc.h"
@@ -12,7 +11,6 @@
 #include "dggt_mem_table_alloc.h"
 #include "dggt_mem_fallback_alloc.h"
 #include "dggt_mem_stallocator.h"
-*/
 #include "dggt_mem_blk.h"
 
 namespace dggt

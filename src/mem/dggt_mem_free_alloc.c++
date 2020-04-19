@@ -45,13 +45,18 @@ namespace dggt
 					result=bestFit; // set result.
 					if (minDiff>=sizeof(free_block)) // needs splitting.
 					{
-						size+=minDiff; // adjust size.
 						// split and hook up.
 						free_block* newBlock=(free_block*)ptr_add(result,size);
 						newBlock->next=bestFit->next;
 						newBlock->size=minDiff;
-						if (prev)
-							prev->next=newBlock;
+						if (bestFitPrev)
+							bestFitPrev->next=newBlock;
+						else
+							freeAlloc->freeList=newBlock;
+					}
+					else if (minDiff>0)
+					{
+						size+=minDiff; // adjust size.
 					}
 					freeAlloc->used+=size;
 				}
@@ -192,7 +197,14 @@ namespace dggt
 	}
 
 	free_alloc::free_alloc(alloc_func_table* tbl,vpage buff)
-		:lin_alloc(tbl,buff),freeList((free_block*)buff.ptr) { }
+		:lin_alloc(tbl,buff),freeList((free_block*)buff.ptr)
+	{
+		if (freeList)
+		{
+			freeList->size=buff.size;
+			freeList->next=0;
+		}
+	}
 
 	free_alloc::free_alloc()
 		:free_alloc(&internal_::FREE_ALLOC_TABLE,vpage()) { }

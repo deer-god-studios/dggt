@@ -43,7 +43,7 @@ namespace dggt
 		return result;
 	}
 
-	void* alloc(msize size);
+	void* malloc(msize size);
 
 	b32 free(void* ptr,msize size);
 

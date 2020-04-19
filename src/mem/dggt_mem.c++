@@ -11,7 +11,7 @@ namespace dggt
 
 	void cache_init(msize size)
 	{
-		void* cacheMem=alloc(size);
+		void* cacheMem=malloc(size);
 		if (cacheMem)
 		{
 			internal_::cacheAlloc_=free_alloc(

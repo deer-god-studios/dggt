@@ -6,7 +6,7 @@ namespace dggt
 	{
 		void* lin_alloc_malloc(allocator* a,msize size)
 		{
-			void* result=allocator_malloc(a,size);
+			void* result=0;
 			lin_alloc* linAlloc=(lin_alloc*)a;
 			if (linAlloc&&
 					lin_alloc_get_used(linAlloc)+size<=
@@ -25,7 +25,7 @@ namespace dggt
 
 		b32 lin_alloc_clear(allocator* a)
 		{
-			b32 result=allocator_clear(a);
+			b32 result=false;
 			lin_alloc* linAlloc=(lin_alloc*)a;
 			if (linAlloc)
 			{
@@ -37,7 +37,7 @@ namespace dggt
 
 		msize lin_alloc_get_used(const allocator* a)
 		{
-			msize result=allocator_get_used(a);
+			msize result=0;
 			lin_alloc* linAlloc=(lin_alloc*)a;
 			if (linAlloc)
 			{

@@ -7,7 +7,7 @@ namespace dggt
 	{
 		b32 buff_alloc_owns(const allocator* a,const void* ptr,msize size)
 		{
-			b32 result=allocator_owns(a,ptr,size);
+			b32 result=false;
 			buff_alloc* buffAlloc=(buff_alloc*)a;
 			if (buffAlloc)
 			{
@@ -26,7 +26,7 @@ namespace dggt
 
 		msize buff_alloc_get_capacity(const allocator* a)
 		{
-			msize result=allocator_get_capacity(a);
+			msize result=0;
 			buff_alloc* buffAlloc=(buff_alloc*)a;
 			if (buffAlloc)
 			{
@@ -42,7 +42,7 @@ namespace dggt
 
 		vpage buff_alloc_get_buff(allocator* a)
 		{
-			vpage result=allocator_get_buff(a);
+			vpage result=vpage();
 			buff_alloc* buffAlloc=(buff_alloc*)a;
 			if (buffAlloc)
 			{
@@ -53,7 +53,7 @@ namespace dggt
 
 		const vpage buff_alloc_get_buff(const allocator* a)
 		{
-			vpage result=allocator_get_buff(a);
+			vpage result=vpage();
 			buff_alloc* buffAlloc=(buff_alloc*)a;
 			if (buffAlloc)
 			{
