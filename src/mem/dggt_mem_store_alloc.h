@@ -9,30 +9,31 @@ namespace dggt
 		store_block* next;
 	};
 
-	struct store_alloc:allocator<store_alloc>
+	struct store_alloc
+		: allocator
 	{
 		store_block* store;
 		msize bCount;
 		msize bSize;
 
-		store_alloc(msize blockSize)
-			: allocator<store_alloc>(this),
-			store(0),bCount(0),
-			bSize(blockSize<sizeof(store_block)?
-					sizeof(store_block):blockSize) { }
+		store_alloc();
+		store_alloc(alloc_func_table* tbl,msize blockSize);
+		store_alloc(msize blockSize);
 	};
 
-	void* malloc(store_alloc* a,msize size=0);
-	
-	b32 free(store_alloc* a,void* ptr,msize size=0);
-	
-	b32 clear(store_alloc* a);
-	
-	b32 owns(const store_alloc* a,const void* ptr,msize size);
-
-	msize get_used(const store_alloc* a);
-	
-	msize get_available(const store_alloc* a);
+	namespace internal_
+	{
+		void* store_alloc_malloc(allocator* a,msize size);
+		vpage store_alloc_malloc_vpage(allocator* a,msize size);
+		b32 store_alloc_free(allocator* a,void* ptr,msize size);
+		b32 store_alloc_free(allocator* a,vpage& pge);
+		b32 store_alloc_clear(allocator* a);
+		b32 store_alloc_owns(const allocator* a,const void* ptr,msize size);
+		b32 store_alloc_owns(const allocator* a,const vpage& pge);
+		msize store_alloc_get_used(const allocator* a);
+		msize store_alloc_get_available(const allocator* a);
+		msize store_alloc_get_capacity(const allocator* a);
+	}
 }
 
 #define _DGGT_MEM_STORE_ALLOC_H_

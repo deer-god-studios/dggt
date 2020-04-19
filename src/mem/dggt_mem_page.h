@@ -79,9 +79,11 @@ namespace dggt
 	};
 
 	template <typename T>
-	global constexpr const page<T> NULL_PAGE=page<T>();
+	global const page<T> NULL_PAGE=page<T>();
 
 	typedef page<void> vpage;
+
+	global const vpage NULL_VPAGE=NULL_PAGE<void>;
 }
 
 #define _DGGT_MEM_PAGE_H_

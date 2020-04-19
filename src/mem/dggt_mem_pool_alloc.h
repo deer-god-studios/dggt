@@ -9,40 +9,25 @@ namespace dggt
 	typedef store_block pool_block;
 
 	struct pool_alloc
-		: allocator<pool_alloc>
+		:lin_alloc
 	{
-		lin_alloc linAlloc;
-		store_alloc storeAlloc;
+		store_alloc store;
 
-		pool_alloc(void* ptr,msize size,msize blockSize)
-			:allocator<pool_alloc>(this),
-			linAlloc(ptr,size),
-			storeAlloc(blockSize)
-		{
-			ASSERT(size>=sizeof(store_block));
-			msize count=size/storeAlloc.bSize;
-			for (msize i=0;i<count;++i)
-			{
-					free<pool_block>(&storeAlloc,
-							malloc<pool_block>(&linAlloc,storeAlloc.bSize));
-			}
-		}
-
-		pool_alloc(vpage buff,msize blockSize)
-			: pool_alloc(buff.ptr,buff.size,blockSize) { }
+		pool_alloc();
+		pool_alloc(alloc_func_table* tbl,vpage buff,msize blockSize);
+		pool_alloc(vpage buff,msize blockSize);
+		pool_alloc(void* buff,msize size,msize blockSize);
 	};
 
-	void* malloc(pool_alloc* a,msize size=0);
-	
-	b32 free(pool_alloc* a,void* ptr,msize size=0);
-	
-	b32 clear(pool_alloc* a);
-	
-	msize get_used(const store_alloc* a);
-
-	msize get_available(const pool_alloc* a);
-
-	b32 owns(const store_alloc* a,const void* ptr,msize size);
+	namespace internal_
+	{
+		void* pool_alloc_malloc(allocator* a,msize size);
+		vpage pool_alloc_malloc_vpage(allocator* a,msize size);
+		b32 pool_alloc_free(allocator* a,void* ptr,msize size);
+		b32 pool_alloc_free(allocator* a,vpage& pge);
+		b32 pool_alloc_clear(allocator* a);
+		msize pool_alloc_get_available(const allocator* a);
+	}
 }
 
 #define _DGGT_MEM_POOL_ALLOC_H_

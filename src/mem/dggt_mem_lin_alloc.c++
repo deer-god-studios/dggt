@@ -2,52 +2,86 @@
 
 namespace dggt
 {
-	void* malloc(lin_alloc* a,msize size)
+	namespace internal_
 	{
-		void* result=0;
-		if (a&&get_used(a)+size<=get_available(a))
+		void* lin_alloc_malloc(allocator* a,msize size)
 		{
-			result=ptr_add(get_buff_ptr(a),get_used(a));
-			++a->used;
+			void* result=allocator_malloc(a,size);
+			lin_alloc* linAlloc=(lin_alloc*)a;
+			if (linAlloc&&
+					lin_alloc_get_used(linAlloc)+size<=
+					lin_alloc_get_available(linAlloc))
+			{
+				result=ptr_add(get_buff_ptr(linAlloc),get_used(linAlloc));
+				++linAlloc->used;
+			}
+			return result;
 		}
-		return result;
-	}
 
-	b32 owns(const lin_alloc* a,void* ptr,msize size)
-	{
-		b32 result=0;
-		if (a)
+		vpage lin_alloc_malloc_vpage(allocator* a,msize size)
 		{
-			return ptr>=a->buff.ptr&&
-				ptr_add(ptr,size)<ptr_add(a->buff.ptr,a->buff.size);
+			return vpage(lin_alloc_malloc(a,size),size);
 		}
-		return result;
-	}
 
-	b32 clear(lin_alloc* a)
-	{
-		b32 result=false;
-		if (a)
+		b32 lin_alloc_clear(allocator* a)
 		{
-			a->used=0;
-			result=true;
+			b32 result=allocator_clear(a);
+			lin_alloc* linAlloc=(lin_alloc*)a;
+			if (linAlloc)
+			{
+				linAlloc->used=0;
+				result=true;
+			}
+			return result;
 		}
-		return result;
+
+		msize lin_alloc_get_used(const allocator* a)
+		{
+			msize result=allocator_get_used(a);
+			lin_alloc* linAlloc=(lin_alloc*)a;
+			if (linAlloc)
+			{
+				return linAlloc->used;
+			}
+			return result;
+		}
+
+		msize lin_alloc_get_available(const allocator* a)
+		{
+			return buff_alloc_get_capacity(a)-lin_alloc_get_used(a);
+		}
+
+		static alloc_func_table LIN_ALLOC_TABLE=
+		{
+			lin_alloc_malloc,
+			lin_alloc_malloc_vpage,
+			allocator_free,
+			allocator_free,
+			lin_alloc_clear,
+			buff_alloc_owns,
+			buff_alloc_owns,
+			allocator_save_stack,
+			allocator_restore_stack,
+			allocator_is_stack_balanced,
+			lin_alloc_get_used,
+			lin_alloc_get_available,
+			buff_alloc_get_capacity,
+			buff_alloc_get_buff,
+			buff_alloc_get_buff,
+			buff_alloc_get_buff_ptr,
+			buff_alloc_get_buff_ptr
+		};
 	}
 
-	msize get_used(const lin_alloc* a) { return a?a->used:MAX_MSIZE; }
+	lin_alloc::lin_alloc(alloc_func_table* tbl,vpage buff)
+		:buff_alloc(tbl,buff),used(0) { }
 
-	msize get_available(const lin_alloc* a) { return a?get_capacity(a)-get_used(a):0; }
+	lin_alloc::lin_alloc()
+		:lin_alloc(&internal_::LIN_ALLOC_TABLE,vpage()) { }
 
-	void* get_buff_ptr(lin_alloc* a)
-	{
-		return a?a->buff.ptr:0;
-	}
+	lin_alloc::lin_alloc(vpage buff)
+		:lin_alloc(&internal_::LIN_ALLOC_TABLE,buff) { }
 
-	const void* get_buff_ptr(const lin_alloc* a)
-	{
-		return a?a->buff.ptr:0;
-	}
-
-
+	lin_alloc::lin_alloc(void* buff,msize size)
+		:lin_alloc(vpage(buff,size)) { }
 }

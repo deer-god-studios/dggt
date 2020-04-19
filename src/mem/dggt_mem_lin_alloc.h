@@ -1,36 +1,29 @@
 #ifndef _DGGT_MEM_LIN_ALLOC_H_
 
-#include "dggt_mem_allocator.h"
+#include "dggt_mem_buff_alloc.h"
 #include "dggt_mem_utils.h"
 
 namespace dggt
 {
-	struct lin_alloc:allocator<lin_alloc>
+	struct lin_alloc:
+		buff_alloc
 	{
-		vpage buff;
 		msize used;
 
-		lin_alloc(vpage buff)
-			:allocator<lin_alloc>(this),used(0) { }
-		lin_alloc(void* ptr,msize size) :
-			lin_alloc(vpage(ptr,size)) { }
+		lin_alloc();
+		lin_alloc(alloc_func_table* tbl,vpage buff);
+		lin_alloc(vpage buff);
+		lin_alloc(void* ptr,msize size);
 	};
 
-	void* malloc(lin_alloc* a,msize size);
-
-	b32 owns(const lin_alloc* a,void* ptr,msize size);
-
-	b32 clear(lin_alloc* a);
-
-	msize get_used(const lin_alloc* a);
-
-	msize get_available(const lin_alloc* a);
-
-	void* get_buff_ptr(lin_alloc* a);
-
-	const void* get_buff_ptr(const lin_alloc* a);
-
-
+	namespace internal_
+	{
+		void* lin_alloc_malloc(allocator* a,msize size);
+		vpage lin_alloc_malloc_vpage(allocator* a,msize size);
+		b32 lin_alloc_clear(allocator* a);
+		msize lin_alloc_get_used(const allocator* a);
+		msize lin_alloc_get_available(const allocator* a);
+	}
 }
 
 #define _DGGT_MEM_LIN_ALLOC_H_

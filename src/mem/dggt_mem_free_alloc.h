@@ -11,42 +11,24 @@ namespace dggt
 	};
 
 	struct free_alloc:
-		allocator<free_alloc>
+		lin_alloc
 	{
-		lin_alloc linAlloc;
 		free_block* freeList;
 
-		free_alloc(void* ptr,msize size)
-			: allocator<free_alloc>(this),
-			linAlloc(lin_alloc(ptr,size)),
-			freeList((free_block*)ptr)
-		{
-			freeList->next=0;
-			freeList->size=size;
-		}
-
-		free_alloc(vpage buff)
-			: free_alloc(buff.ptr,buff.size) { }
-		free_alloc() : free_alloc(0,0) { }
+		free_alloc();
+		free_alloc(alloc_func_table* tbl,vpage buff);
+		free_alloc(void* ptr,msize size);
+		free_alloc(vpage buff);
 	};
 
-	void* malloc(free_alloc* a,msize size);
-	
-	b32 free(free_alloc* a,void* ptr,msize size);
-	
-	b32 clear(free_alloc* a);
-	
-	b32 owns(const free_alloc* a,const void* ptr,msize size);
-
-	msize get_used(const free_alloc* a);
-	
-	msize get_available(const free_alloc* a);
-
-	msize get_capacity(const free_alloc* a);
-
-	void* get_buff_ptr(free_alloc* a);
-
-	const void* get_buff_ptr(const free_alloc* a);
+	namespace internal_
+	{
+		void* free_alloc_malloc(allocator* a,msize size);
+		vpage free_alloc_malloc_vpage(allocator* a,msize size);
+		b32 free_alloc_free(allocator* a,void* ptr,msize size);
+		b32 free_alloc_free(allocator* a,vpage& pge);
+		b32 free_alloc_clear(allocator* a);
+	}
 }
 
 #define _DGGT_MEM_FREE_ALLOC_H_

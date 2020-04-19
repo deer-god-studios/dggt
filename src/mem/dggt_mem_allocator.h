@@ -8,104 +8,112 @@ namespace dggt
 	typedef msize stack_state;
 	static constexpr const stack_state SAVE_STACK_FAIL=MAX_MSIZE;
 
-	template <typename A>
+	struct allocator;
+
+	struct alloc_func_table
+	{
+		void* (*malloc)(allocator*,msize);                    // 1
+		vpage (*malloc_vpage)(allocator*,msize);              // 2
+		b32 (*free)(allocator*,void*,msize);                  // 3
+		b32 (*free_vpage)(allocator*,vpage& pge);             // 4
+		b32 (*clear)(allocator*);                             // 5
+		b32 (*owns)(const allocator*,const void*,msize);      // 6
+		b32 (*owns_vpage)(const allocator*,const vpage& pge); // 7
+		stack_state (*save_stack)(allocator*);                // 8
+		b32 (*restore_stack)(allocator*,stack_state);         // 9
+		b32 (*is_stack_balanced)(const allocator*);           // 10
+		msize (*get_used)(const allocator*);                  // 11
+		msize (*get_available)(const allocator*);             // 12
+		msize (*get_capacity)(const allocator*);              // 13
+		vpage (*get_buff)(allocator*);                        // 14
+		const vpage (*get_buff_const)(const allocator*);      // 15
+		void* (*get_buff_ptr)(allocator*);                    // 16
+		const void* (*get_buff_ptr_const)(const allocator*);  // 17
+	};
+
 	struct allocator
 	{
-		using alloc_type=A;
-		alloc_type* a;
+		alloc_func_table* vtbl;
 
-		allocator(alloc_type* alloc) : a(alloc) { }
+		allocator();
+		allocator(alloc_func_table* vtbl);
 	};
+
+	namespace internal_
+	{
+		void* allocator_malloc(allocator* a,msize size);
+		vpage allocator_malloc_vpage(allocator* a,msize size);
+		b32 allocator_free(allocator* a,void* ptr,msize size);
+		b32 allocator_free(allocator* a,vpage& pge);
+		b32 allocator_clear(allocator* a);
+		b32 allocator_owns(const allocator* a,const void* ptr,msize size);
+		b32 allocator_owns(const allocator* a,const vpage& pge);
+		stack_state allocator_save_stack(allocator* a);
+		b32 allocator_restore_stack(allocator* a,stack_state state);
+		b32 allocator_is_stack_balanced(const allocator* a);
+		msize allocator_get_used(const allocator* a);
+		msize allocator_get_available(const allocator* a);
+		msize allocator_get_capacity(const allocator* a);
+		vpage allocator_get_buff(allocator* a);
+		const vpage allocator_get_buff(const allocator* a);
+		void* allocator_get_buff_ptr(allocator* a);
+		const void* allocator_get_buff_ptr(const allocator* a);
+	}
+
+	void* malloc(allocator* a,msize size);
+
+	vpage malloc_vpage(allocator* a,msize size);
+
+	b32 free(allocator* a,void* ptr,msize size);
+
+	b32 free(allocator* a,vpage& pge);
+
+	b32 clear(allocator* a);
+
+	b32 owns(const allocator* a,const void* ptr,msize size);
+
+	b32 owns(const allocator* a,const vpage& pge);
+
+	stack_state save_stack(allocator* a);
+
+	b32 restore_stack(allocator* a,stack_state state);
+
+	b32 is_stack_balanced(const allocator* a);
+
+	msize get_used(const allocator* a);
+
+	msize get_available(const allocator* a);
+
+	msize get_capacity(const allocator* a);
+
+	vpage get_buff(allocator* a);
+
+	const vpage get_buff(const allocator* a);
+
+	void* get_buff_ptr(allocator* a);
+
+	const void* get_buff_ptr(const allocator* a);
+
+	template <typename T>
+	T* malloc(allocator* a,msize size=1);
+
+	template <typename T>
+	page<T> malloc_page(allocator* a,msize size);
+
+	template <typename T>
+	b32 free(allocator* a,T* ptr,msize size=1);
+
+	template <typename T>
+	b32 free(allocator* a,page<T>& pge);
 	
-	template <typename A>
-	void* malloc(allocator<A>* a,msize size=0) { return 0; }
-	
-	template <typename A>
-	b32 free(allocator<A>* a,void* ptr,msize size=0) { return false; }
-	
-	template <typename A>
-	b32 clear(allocator<A>* a) { return false; }
-	
-	template <typename A>
-	b32 owns(const allocator<A>* a,const void* ptr,msize size) { return false; }
+	template <typename T>
+	b32 owns(const allocator* a,const T* ptr,msize size);
 
-	template <typename A>
-	stack_state save_stack(const allocator<A>* a) { return SAVE_STACK_FAIL; }
-
-	template <typename A>
-	b32 restore_stack(allocator<A>* a,stack_state state) { return false; }
-	
-	template <typename A>
-	b32 is_stack_balanced(const allocator<A>* a) { return true; }
-	
-	template <typename A>
-	msize get_used(const allocator<A>* a) { return 0; }
-	
-	template <typename A>
-	msize get_available(const allocator<A>* a) { return 0; }
-
-	template <typename A>
-	msize get_capacity(const allocator<A>* a) { return get_available(a); }
-
-	template <typename A>
-	void* get_buff_ptr(allocator<A>* a) { return 0; }
-
-	template <typename A>
-	const void* get_buff_ptr(const allocator<A>* a) { return 0; }
-
-	template <typename T,typename A>
-	T* malloc(allocator<A>* a,msize size=1)
-	{
-		return (T*)malloc(a->a,sizeof(T)*size);
-	}
-	template <typename T,typename A>
-	page<T> malloc_page(allocator<A>* a,msize size)
-	{
-		return page<T>(malloc<T>(a->a,size),size);
-	}
-
-	template <typename A>
-	vpage malloc_vpage(allocator<A>* a,msize size)
-	{
-		return vpage(malloc(a->a,size),size);
-	}
-
-	template <typename T,typename A>
-	b32 free(allocator<A>* a,T* ptr,msize size=1)
-	{
-		return free(a->a,(void*)ptr,sizeof(T)*size);
-	}
-
-	template <typename A>
-	b32 free(allocator<A>* a,vpage& pge)
-	{
-		return free(a->a,(void*)pge.ptr,pge.size);
-	}
-
-	template <typename T,typename A>
-	b32 free(allocator<A>* a,page<T>& pge)
-	{
-		return free(a->a,(void*)pge.ptr,sizeof(T)*pge.size);
-	}
-	
-	template <typename T,typename A>
-	b32 owns(const allocator<A>* a,const T* ptr,msize size)
-	{
-		return owns(a->a,(void*)ptr,sizeof(T)*size);
-	}
-
-	template <typename T,typename A>
-	b32 owns(allocator<A>* a,page<T>& pge)
-	{
-		return owns(a->a,(void*)pge.ptr,sizeof(T)*pge.size);
-	}
-
-	template <typename A>
-	b32 owns(allocator<A>* a,vpage& pge)
-	{
-		return owns(a->a,(void*)pge.ptr,pge.size);
-	}
+	template <typename T>
+	b32 owns(const allocator* a,page<T>& pge);
 }
+
+#include "dggt_mem_allocator.inl"
 
 #define _DGGT_MEM_ALLOCATOR_H_
 #endif

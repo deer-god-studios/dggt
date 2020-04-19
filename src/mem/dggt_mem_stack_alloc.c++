@@ -2,93 +2,103 @@
 
 namespace dggt
 {
-	void* malloc(stack_alloc* a,msize size)
+	namespace internal_
 	{
-		void* result=0;
-		if (a)
+		b32 stack_alloc_free(allocator* a,void* ptr,msize size)
 		{
-			result=malloc(&a->linAlloc,size);
-		}
-		return result;
-	}
-
-	b32 free(stack_alloc* a,void* ptr,msize size)
-	{
-		b32 result=false;
-		if (a)
-		{
-			if (ptr_add(get_buff_ptr(a),get_used(a))==
-					ptr_add(ptr,size))
+			b32 result=false;
+			stack_alloc* stackAlloc=(stack_alloc*)a;
+			if (stackAlloc)
 			{
-				a->linAlloc.used-=size;
-				if (a->prevState==get_used(a))
+				if (ptr_add(get_buff_ptr(stackAlloc),get_used(stackAlloc))==
+						ptr_add(ptr,size))
 				{
-					restore_stack(a,get_used(a));
+					stackAlloc->used-=size;
+					if (stackAlloc->prevState==get_used(stackAlloc))
+					{
+						restore_stack(stackAlloc,get_used(stackAlloc));
+					}
 				}
 			}
+			return result;
 		}
-		return result;
-	}
-	
-	b32 clear(stack_alloc* a)
-	{
-		b32 result=clear(&a->linAlloc);
-		if (result)
-		{
-			a->prevState=0;
-			a->stateCount=0;
-		}
-		return result;
-	}
 
-	stack_state save_stack(stack_alloc* a)
-	{
-		stack_state result=SAVE_STACK_FAIL;
-		if (a)
+		b32 stack_alloc_free(allocator* a,vpage& pge)
 		{
-			result=get_used(a);
-			++a->stateCount;
+			return stack_alloc_free(a,pge.ptr,pge.size);
 		}
-		return result;
-	}
 
-	b32 restore_stack(stack_alloc* a,stack_state state)
-	{
-		b32 result=false;
-		if (a)
+		stack_state stack_alloc_save_state(allocator* a)
 		{
-			if (state!=SAVE_STACK_FAIL&&
-					state==a->prevState)
+			stack_state result=SAVE_STACK_FAIL;
+			stack_alloc* stackAlloc=(stack_alloc*)a;
+			if (stackAlloc)
 			{
-				a->linAlloc.used=state;
-				--a->stateCount;
+				result=stackAlloc->used;
+				stackAlloc->prevState=result;
+				++stackAlloc->stateCount;
 			}
+			return result;
 		}
-		return result;
+
+		b32 stack_alloc_restore_state(allocator* a,stack_state state)
+		{
+			b32 result=false;
+			stack_alloc* stackAlloc=(stack_alloc*)a;
+			if (stackAlloc)
+			{
+				if (state!=SAVE_STACK_FAIL&&
+						state==stackAlloc->prevState)
+				{
+					stackAlloc->used=state;
+					--stackAlloc->stateCount;
+				}
+			}
+			return result;
+		}
+
+		b32 stack_alloc_is_stack_balanced(const allocator* a)
+		{
+			b32 result=false;
+			stack_alloc* stackAlloc=(stack_alloc*)a;
+			if (stackAlloc)
+			{
+				return stackAlloc->stateCount==0;
+			}
+			return result;
+		}
+
+		global alloc_func_table STACK_ALLOC_TABLE=
+		{
+			lin_alloc_malloc,
+			lin_alloc_malloc_vpage,
+			stack_alloc_free,
+			stack_alloc_free,
+			lin_alloc_clear,
+			buff_alloc_owns,
+			buff_alloc_owns,
+			stack_alloc_save_state,
+			stack_alloc_restore_state,
+			stack_alloc_is_stack_balanced,
+			lin_alloc_get_used,
+			lin_alloc_get_available,
+			buff_alloc_get_capacity,
+			buff_alloc_get_buff,
+			buff_alloc_get_buff,
+			buff_alloc_get_buff_ptr,
+			buff_alloc_get_buff_ptr
+		};
 	}
 
-	b32 is_stack_balanced(stack_alloc* a)
-	{
-		return a?a->stateCount==0:true;
-	}
+	stack_alloc::stack_alloc(alloc_func_table* tbl,vpage buff)
+		:lin_alloc(tbl,buff),prevState(0),stateCount(0) { }
 
-	void* get_buff_ptr(stack_alloc* a)
-	{
-		return a?get_buff_ptr(&a->linAlloc):0;
-	}
+	stack_alloc::stack_alloc()
+		:stack_alloc(&internal_::STACK_ALLOC_TABLE,vpage()) { }
 
-	const void* get_buff_ptr(const stack_alloc* a)
-	{
-		return a?get_buff_ptr(&a->linAlloc):0;
-	}
+	stack_alloc::stack_alloc(vpage buff)
+		:stack_alloc(&internal_::STACK_ALLOC_TABLE,buff) { }
 
-	msize get_used(const stack_alloc* a)
-	{
-		return a?get_used(&a->linAlloc):0;
-	}
-
-	msize get_available(const stack_alloc* a)
-	{
-		return a?get_used(&a->linAlloc):0;
-	}
+	stack_alloc::stack_alloc(void* buff,msize size)
+		:stack_alloc(vpage(buff,size)) { }
 }

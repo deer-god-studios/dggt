@@ -24,8 +24,8 @@ namespace dggt
 	void cache_shutdown()
 	{
 		clear(internal_::cacheAlloc);
-		free(internal_::cacheAlloc_.linAlloc.buff.ptr,
-				internal_::cacheAlloc_.linAlloc.buff.size);
+		free(internal_::cacheAlloc_.buff.ptr,
+				internal_::cacheAlloc_.buff.size);
 		internal_::isInitialized=false;
 	}
 

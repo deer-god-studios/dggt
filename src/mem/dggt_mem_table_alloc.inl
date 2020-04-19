@@ -227,6 +227,12 @@ namespace dggt
 	}
 
 	template <msize TABLESIZE>
+	vpage malloc_vpage(table_alloc<TABLESIZE>* a,msize size)
+	{
+		return vpage(malloc(a,size),size);
+	}
+
+	template <msize TABLESIZE>
 	b32 free(table_alloc<TABLESIZE>* a,void* ptr,msize size)
 	{
 		if (a)
@@ -240,6 +246,12 @@ namespace dggt
 		}
 	}
 	
+	template <msize TABLESIZE>
+	b32 free(table_alloc<TABLESIZE>* a,vpage& pge)
+	{
+		return free(a,pge.ptr,pge.size);
+	}
+
 	template <msize TABLESIZE>
 	b32 clear(table_alloc<TABLESIZE>* a)
 	{
@@ -265,6 +277,30 @@ namespace dggt
 		{
 			return 0;
 		}
+	}
+
+	template <msize TABLESIZE>
+	b32 owns(const table_alloc<TABLESIZE>* a,vpage pge)
+	{
+		return owns(a,pge.ptr,pge.size);
+	}
+
+	template <msize TABLESIZE>
+	stack_state save_stack(table_alloc<TABLESIZE>* a)
+	{
+		return SAVE_STACK_FAIL;
+	}
+
+	template <msize TABLESIZE>
+	b32 restore_stack(table_alloc<TABLESIZE>* a,stack_state state)
+	{
+		return false;
+	}
+
+	template <msize TABLESIZE>
+	b32 is_stack_balanced(const table_alloc<TABLESIZE>* a)
+	{
+		return true;
 	}
 
 	template <msize TABLESIZE>

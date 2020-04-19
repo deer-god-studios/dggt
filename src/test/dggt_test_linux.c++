@@ -5,9 +5,10 @@
 #include <cstdio>
 #include "defines/dggt_defines.h"
 #include "types/dggt_types.h"
-#include "math/dggt_math.h"
-#include "mem/dggt_mem.h"
-#include "coll/dggt_coll.h"
+#include "mem/dggt_mem_allocator.h"
+//#include "math/dggt_math.h"
+//#include "mem/dggt_mem.h"
+//#include "coll/dggt_coll.h"
 
 using namespace dggt;
 
@@ -32,10 +33,12 @@ void print_alloc_info(A* allocator)
 {
 	line_break();
 
+
 	printf("used_mem: %d\n",used_mem(allocator));
 	printf("available_mem: %d\n",available_mem(allocator));
 }
 
+/*
 template <typename A>
 void test_array(A* a)
 {
@@ -149,23 +152,26 @@ void test_allocator(A* a)
 	printf("free(a,intArrs)\n");
 	free(a,intArrs);
 }
-
+*/
 int main(int argc, char* argv[])
 {
 	printf("cache_init\n");
-	cache_init(GB(2));
+//	cache_init(GB(2));
 
-	free_alloc a_=free_alloc(cache_malloc(KB(8)),KB(8));
-	free_alloc* a=&a_;
+//	free_alloc a_=free_alloc(cache_malloc(KB(8)),KB(8));
+//	free_alloc* a=&a_;
 
+	/*
 	test_allocator(a);
 	test_array(a);
 	test_sllist(a);
 	test_starray();
 	test_dllist(a);
-
+	*/
+	dggt::allocator a=allocator();
+	void* r=malloc(&a,20);
 	printf("cache_shutdown\n");
-	cache_shutdown();
+//	cache_shutdown();
 
 	return 0;
 }
