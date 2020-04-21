@@ -8,11 +8,10 @@ namespace dggt
 	struct dllist_key
 	{
 		dlnode<T>* node;
-		dlpair<T> pair;
 
-		dllist_key(dlnode<T>* node,dlpair<T> pair) :
-			node(node),pair(pair) { }
-		dllist_key() : dllist_key(0,dlpair<T>()) { }
+		dllist_key(dlnode<T>* node) :
+			node(node) { }
+		dllist_key() : dllist_key(0) { }
 
 		b32 operator==(const dllist_key<T>& rhs) const
 		{
@@ -43,9 +42,9 @@ namespace dggt
 
 		dllist_key<T>& operator--()
 		{
-			if (!is_end())
+			if (!is_begin())
 			{
-				node=node->next;
+				node=node->prev;
 			}
 			return *this;
 		}
@@ -64,7 +63,7 @@ namespace dggt
 
 		b32 is_begin() const
 		{
-			return node==pair.get_head();
+			return node==0;
 		}
 
 		T& operator*()
@@ -80,8 +79,6 @@ namespace dggt
 		explicit operator T*() { return (T*)node; }
 		explicit operator const T*() const { return (T*)node; }
 	};
-
-
 }
 
 #define _DGGT_COLL_DLLIST_KEY_H_

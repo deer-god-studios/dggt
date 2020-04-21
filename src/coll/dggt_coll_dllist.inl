@@ -25,6 +25,7 @@ namespace dggt
 			{
 				zero_struct<T>(&newNode->val);
 				newNode->next=list.mem.pair.first;
+				newNode->prev=0;
 				list.mem.pair.first=newNode;
 				if (get_count(list)==0)
 				{
@@ -61,7 +62,7 @@ namespace dggt
 		if (get_count(list))
 		{
 			dlnode<T>* nodeToFree=list.mem.pair.first;
-			result.current=dllist_key<T>(nodeToFree,list.mem.pair);
+			result.current=dllist_key<T>(nodeToFree);
 			result.mem.valid=false;
 			list.mem.pair.first=nodeToFree->next;
 			if (list.mem.pair.first)
@@ -85,8 +86,7 @@ namespace dggt
 	typename dllist<T>::iter peek(dllist<T>& list)
 	{
 		typename dllist<T>::iter result=typename dllist<T>::iter(list);
-		result.current=dllist_key<T>(list.mem.pair.first,
-				list.mem.pair);
+		result.current=dllist_key<T>(list.mem.pair.first);
 		return result;
 	}
 
@@ -100,8 +100,7 @@ namespace dggt
 	typename dllist<T>::iter get_end(dllist<T>& list)
 	{
 		typename dllist<T>::iter result=typename dllist<T>::iter(list);
-		result.current=dllist_key<T>(list.mem.pair.second,
-				list.mem.pair);
+		result.current=dllist_key<T>(list.mem.pair.second);
 		return result;
 	}
 
@@ -198,14 +197,13 @@ namespace dggt
 				if (!free(a,nodeToFree))
 				{
 					nodeToFree->next=result.current.node;
-					result.current=dllist_key<T>(nodeToFree,list.mem.pair);
+					result.current=dllist_key<T>(nodeToFree);
 					result.mem.valid=0;
 				}
 			}
 			if (result.mem.valid)
 			{
-				result.current=dllist_key<T>(list.mem.pair.get_head(),
-						list.mem.pair);
+				result.current=dllist_key<T>(list.mem.pair.get_head());
 			}
 			list.count=0;
 		}
