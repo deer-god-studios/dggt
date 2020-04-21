@@ -2,9 +2,9 @@
 
 #include "dggt_coll_array.h"
 #include "dggt_coll_sllist.h"
-/*
 #include "dggt_coll_starray.h"
 #include "dggt_coll_dllist.h"
+/*
 #include "dggt_coll_stack.h"
 #include "dggt_coll_queue.h"
 #include "dggt_coll_idxtable.h"

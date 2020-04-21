@@ -8,9 +8,11 @@ namespace dggt
 	struct dllist_key
 	{
 		dlnode<T>* node;
+		dlpair<T> pair;
 
-		dllist_key(dlnode<T>* node) : node(node) { }
-		dllist_key() : dllist_key(0) { }
+		dllist_key(dlnode<T>* node,dlpair<T> pair) :
+			node(node),pair(pair) { }
+		dllist_key() : dllist_key(0,dlpair<T>()) { }
 
 		b32 operator==(const dllist_key<T>& rhs) const
 		{
@@ -58,6 +60,11 @@ namespace dggt
 		b32 is_end() const
 		{
 			return node==0;
+		}
+
+		b32 is_begin() const
+		{
+			return node==pair.get_head();
 		}
 
 		T& operator*()

@@ -98,7 +98,6 @@ void test_sllist(A* a)
 	destroy_sllist(floatList,a);
 }
 
-/*
 void test_starray()
 {
 	starray<float64,32> fl64Starr=create_starray<float64,32>();
@@ -122,7 +121,7 @@ void test_dllist(A* a)
 
 	for (u32 i=0;i<5;++i)
 	{
-		push(ubytList,(ubyte)4,a);
+		push(ubytList,(ubyte)(4*i),a);
 	}
 
 	for (dllist<ubyte>::iter it=get_iter(ubytList);!it.is_end();++it)
@@ -130,11 +129,17 @@ void test_dllist(A* a)
 		printf("%d\n",*it);
 	}
 
+	line_break();
+
+	for (dllist<ubyte>::iter it=get_end(ubytList);
+			!it.is_begin();--it)
+	{
+		printf("%d\n",*it);
+	}
+
 	
 	destroy_dllist(ubytList,a);
 }
-
-*/
 
 template <typename A>
 void test_allocator(A* a)
@@ -167,11 +172,8 @@ int main(int argc, char* argv[])
 	test_allocator(a);
 	test_array(a);
 	test_sllist(a);
-	/*
 	test_starray();
 	test_dllist(a);
-	*/
-
 
 	printf("cache_shutdown\n");
 	cache_shutdown();

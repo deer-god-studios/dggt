@@ -66,6 +66,12 @@ namespace dggt
 	typename dllist<T>::iter get_iter(dllist<T>& list);
 
 	template <typename T>
+	typename dllist<T>::iter get_begin(dllist<T>& list);
+
+	template <typename T>
+	typename dllist<T>::iter get_end(dllist<T>& list);
+
+	template <typename T>
 	b32 contains(dllist<T>& list,const T& item);
 }
 
