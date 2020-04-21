@@ -8,7 +8,7 @@
 #include "mem/dggt_mem.h"
 //#include "math/dggt_math.h"
 //#include "mem/dggt_mem.h"
-//#include "coll/dggt_coll.h"
+#include "coll/dggt_coll.h"
 
 using namespace dggt;
 
@@ -38,7 +38,6 @@ void print_alloc_info(A* allocator)
 	printf("available_mem: %d\n",available_mem(allocator));
 }
 
-/*
 template <typename A>
 void test_array(A* a)
 {
@@ -77,16 +76,17 @@ void test_sllist(A* a)
 		printf("floatList[%d]: %f\n",i,*it);
 		if (*it==1.0f)
 		{
-			//printf("REMOVING: floatList[%d]: %f\n",i,*it);
-			//it=remove(floatList,prev,it,a);
+			printf("REMOVING: floatList[%d]: %f\n",i,*it);
+			it=remove(floatList,prev,it,a);
+			printf("INSERTING: floatList[%d]: %f\n",i,50.0f);
+			insert(floatList,it,50.0f,a);
 		}
 		prev=it;
 		++i;
 	}
 
 	new_line();
-	sllist<float32>::iter node=get(floatList,2);
-	insert(floatList,node,50.0f,a);
+
 	i=0;
 	for (sllist<float32>::iter it=get_iter(floatList);!it.is_end();++it)
 	{
@@ -98,6 +98,7 @@ void test_sllist(A* a)
 	destroy_sllist(floatList,a);
 }
 
+/*
 void test_starray()
 {
 	starray<float64,32> fl64Starr=create_starray<float64,32>();
@@ -164,12 +165,14 @@ int main(int argc, char* argv[])
 	free_alloc* a=&a_;
 
 	test_allocator(a);
-	/*
 	test_array(a);
 	test_sllist(a);
+	/*
 	test_starray();
 	test_dllist(a);
 	*/
+
+
 	printf("cache_shutdown\n");
 	cache_shutdown();
 

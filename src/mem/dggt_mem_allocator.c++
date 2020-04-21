@@ -68,86 +68,86 @@ namespace dggt
 
 	void* malloc(allocator* a,msize size)
 	{
-		return a?a->vtbl->malloc(a,size):0;
+		return a&&a->vtbl?a->vtbl->malloc(a,size):0;
 	}
 
 	vpage malloc_vpage(allocator* a,msize size)
 	{
-		return a?a->vtbl->malloc_vpage(a,size):vpage();
+		return a&&a->vtbl?a->vtbl->malloc_vpage(a,size):vpage();
 	}
 
 	b32 free(allocator* a,void* ptr,msize size)
 	{
-		return a?a->vtbl->free(a,ptr,size):false;
+		return a&&a->vtbl?a->vtbl->free(a,ptr,size):false;
 	}
 
 	b32 free(allocator* a,vpage& pge)
 	{
-		return a?a->vtbl->free_vpage(a,pge):false;
+		return a&&a->vtbl?a->vtbl->free_vpage(a,pge):false;
 	}
 
 	b32 clear(allocator* a)
 	{
-		return a?a->vtbl->clear(a):false;
+		return a&&a->vtbl?a->vtbl->clear(a):false;
 	}
 
 	b32 owns(const allocator* a,const void* ptr,msize size)
 	{
-		return a?a->vtbl->owns(a,ptr,size):false;
+		return a&&a->vtbl?a->vtbl->owns(a,ptr,size):false;
 	}
 
 	b32 owns(const allocator* a,const vpage& pge)
 	{
-		return a?a->vtbl->owns_vpage(a,pge):false;
+		return a&&a->vtbl?a->vtbl->owns_vpage(a,pge):false;
 	}
 
 	stack_state save_stack(allocator* a)
 	{
-		return a?a->vtbl->save_stack(a):SAVE_STACK_FAIL;
+		return a&&a->vtbl?a->vtbl->save_stack(a):SAVE_STACK_FAIL;
 	}
 
 	b32 restore_stack(allocator* a,stack_state state)
 	{
-		return a?a->vtbl->restore_stack(a,state):false;
+		return a&&a->vtbl?a->vtbl->restore_stack(a,state):false;
 	}
 
 	b32 is_stack_balanced(const allocator* a)
 	{
-		return a?a->vtbl->is_stack_balanced(a):true;
+		return a&&a->vtbl?a->vtbl->is_stack_balanced(a):true;
 	}
 
 	msize get_used(const allocator* a)
 	{
-		return a?a->vtbl->get_used(a):0;
+		return a&&a->vtbl?a->vtbl->get_used(a):0;
 	}
 
 	msize get_available(const allocator* a)
 	{
-		return a?a->vtbl->get_available(a):0;
+		return a&&a->vtbl?a->vtbl->get_available(a):0;
 	}
 
 	msize get_capacity(const allocator* a)
 	{
-		return a?a->vtbl->get_capacity(a):0;
+		return a&&a->vtbl?a->vtbl->get_capacity(a):0;
 	}
 
 	vpage get_buff(allocator* a)
 	{
-		return a?a->vtbl->get_buff(a):vpage();
+		return a&&a->vtbl?a->vtbl->get_buff(a):vpage();
 	}
 
 	const vpage get_buff(const allocator* a)
 	{
-		return a?a->vtbl->get_buff_const(a):vpage();
+		return a&&a->vtbl?a->vtbl->get_buff_const(a):vpage();
 	}
 
 	void* get_buff_ptr(allocator* a)
 	{
-		return a?a->vtbl->get_buff_ptr(a):0;
+		return a&&a->vtbl?a->vtbl->get_buff_ptr(a):0;
 	}
 
 	const void* get_buff_ptr(const allocator* a)
 	{
-		return a?a->vtbl->get_buff_ptr_const(a):0;
+		return a&&a->vtbl?a->vtbl->get_buff_ptr_const(a):0;
 	}
 }

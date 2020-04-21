@@ -1,7 +1,6 @@
 #ifndef _DGGT_COLL_ITER_H_
 
 /*
- * TODO: add is_begin
  * TODO: change advance to increment (or add increment).
  * TODO: change free to return a valid begin iterator.
  */

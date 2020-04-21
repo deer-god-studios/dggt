@@ -77,7 +77,7 @@ namespace dggt
 		typename sllist<T>::iter result=typename sllist<T>::iter(list);
 		typename sllist<T>::iter it=get_iter(list);
 		u32 i=0;
-		for (typename sllist<T>::iter it=get_iter(list);
+		for (it=get_iter(list);
 				!is_end(it)&&i<index;++it)
 		{
 			++i;

@@ -54,10 +54,21 @@ namespace dggt
 						else
 							freeAlloc->freeList=newBlock;
 					}
-					else if (minDiff>0)
+					else
 					{
-						size+=minDiff; // adjust size.
+						if (minDiff>0)
+							size+=minDiff; // adjust size.
+
+						if (bestFitPrev)
+						{
+							bestFitPrev->next=bestFit->next;
+						}
+						else
+						{
+							freeAlloc->freeList=bestFit->next;
+						}
 					}
+
 					freeAlloc->used+=size;
 				}
 			}
